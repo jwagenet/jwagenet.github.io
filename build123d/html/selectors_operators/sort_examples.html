@@ -1,0 +1,272 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sort Examples &mdash; build123d 0.9.2.dev40+gb1f0eed documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster.custom.css?v=7bc2f056" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster.bundle.min.css?v=37217874" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-shadow.min.css?v=6227e517" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-punk.min.css?v=94669e23" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-noir.min.css?v=21a39f42" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-light.min.css?v=a18b2449" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-borderless.min.css?v=dbff53e4" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/micromodal.css?v=d7bf34ee" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/sphinx_rtd_theme.css?v=3234e928" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c97902b4"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+      <script src="../_static/js/hoverxref.js?v=6ff7264e"></script>
+      <script src="../_static/js/tooltipster.bundle.min.js?v=18bf091b"></script>
+      <script src="../_static/js/micromodal.min.js?v=04d6302d"></script>
+      <script src="../_static/design-tabs.js?v=f930bc37"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Group Examples" href="group_examples.html" />
+    <link rel="prev" title="Selectors and Operators" href="../selectors_operators.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            build123d
+              <img src="../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../key_concepts.html">Key Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../key_concepts_builder.html">Key Concepts (builder mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../key_concepts_algebra.html">Key Concepts (algebra mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../moving_objects.html">Moving Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../OpenSCAD.html">Transitioning from OpenSCAD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introductory_examples.html">Introductory Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../objects.html">Objects</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../selectors_operators.html">Selectors and Operators</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../selectors_operators.html#selectors">Selectors</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../selectors_operators.html#operators">Operators</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../selectors_operators.html#id1">Overview</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../selectors_operators.html#sort">Sort</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="../selectors_operators.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../selectors_operators.html#group">Group</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../selectors_operators.html#filter">Filter</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../operations.html">Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../builders.html">Builders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../joints.html">Joints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assemblies.html">Assemblies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tips.html">Tips, Best Practices and FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../import_export.html">Import/Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cheat_sheet.html">Cheat Sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../external.html">External Tools and Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../builder_api_reference.html">Builder Common API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../direct_api_reference.html">Direct API Reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">build123d</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../selectors_operators.html">Selectors and Operators</a></li>
+      <li class="breadcrumb-item active">Sort Examples</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/selectors_operators/sort_examples.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="sort-examples">
+<h1>Sort Examples<a class="headerlink" href="#sort-examples" title="Link to this heading"></a></h1>
+<section id="sortby">
+<span id="sort-sortby"></span><h2>SortBy<a class="headerlink" href="#sortby" title="Link to this heading"></a></h2>
+<p><a class="hxr-hoverxref hxr-tooltip reference internal" href="../builder_api_reference.html#build_enums.SortBy" title="build_enums.SortBy"><code class="xref py py-class docutils literal notranslate"><span class="pre">SortBy</span></code></a> enums are shape property shorthands which work across
+<code class="docutils literal notranslate"><span class="pre">Shape</span></code> multiple object types. <code class="docutils literal notranslate"><span class="pre">SortBy</span></code> is a criteria for both <code class="docutils literal notranslate"><span class="pre">sort_by</span></code> and
+<code class="docutils literal notranslate"><span class="pre">group_by</span></code>.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">SortBy.LENGTH</span></code> works with <code class="docutils literal notranslate"><span class="pre">Edge</span></code>, <code class="docutils literal notranslate"><span class="pre">Wire</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SortBy.AREA</span></code> works with <code class="docutils literal notranslate"><span class="pre">Face</span></code>, <code class="docutils literal notranslate"><span class="pre">Solid</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SortBy.VOLUME</span></code> works with <code class="docutils literal notranslate"><span class="pre">Solid</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SortBy.RADIUS</span></code> works with <code class="docutils literal notranslate"><span class="pre">Edge</span></code>, <code class="docutils literal notranslate"><span class="pre">Face</span></code> with <a class="hxr-hoverxref hxr-tooltip reference internal" href="../builder_api_reference.html#build_enums.GeomType" title="build_enums.GeomType"><code class="xref py py-class docutils literal notranslate"><span class="pre">GeomType</span></code></a> <code class="docutils literal notranslate"><span class="pre">CIRCLE</span></code>, <code class="docutils literal notranslate"><span class="pre">CYLINDER</span></code>, <code class="docutils literal notranslate"><span class="pre">SPHERE</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SortBy.DISTANCE</span></code> works <code class="docutils literal notranslate"><span class="pre">Vertex</span></code>, <code class="docutils literal notranslate"><span class="pre">Edge</span></code>, <code class="docutils literal notranslate"><span class="pre">Wire</span></code>, <code class="docutils literal notranslate"><span class="pre">Face</span></code>, <code class="docutils literal notranslate"><span class="pre">Solid</span></code></p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">SortBy</span></code> is often interchangeable with the specific shape property or can be used with
+<code class="docutils literal notranslate"><span class="pre">group_by</span></code> as an alternative.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Setup</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">build123d</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+
+<span class="k">with</span> <span class="n">BuildPart</span><span class="p">()</span> <span class="k">as</span> <span class="n">part</span><span class="p">:</span>
+    <span class="n">Box</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">Cylinder</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+    <span class="n">edges</span> <span class="o">=</span> <span class="n">part</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="n">a</span><span class="o">.</span><span class="n">length</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">fillet</span><span class="p">(</span><span class="n">edges</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">part</span><span class="o">.</span><span class="n">wires</span><span class="p">()</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="n">SortBy</span><span class="o">.</span><span class="n">LENGTH</span><span class="p">)[:</span><span class="mi">4</span><span class="p">]</span>
+
+<span class="n">part</span><span class="o">.</span><span class="n">wires</span><span class="p">()</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="n">Wire</span><span class="o">.</span><span class="n">length</span><span class="p">)[:</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">part</span><span class="o">.</span><span class="n">wires</span><span class="p">()</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="n">SortBy</span><span class="o">.</span><span class="n">LENGTH</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+<img alt="../_images/sort_sortby_length.png" class="align-center" src="../_images/sort_sortby_length.png" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">part</span><span class="o">.</span><span class="n">vertices</span><span class="p">()</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="n">SortBy</span><span class="o">.</span><span class="n">DISTANCE</span><span class="p">)[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span>
+
+<span class="n">part</span><span class="o">.</span><span class="n">vertices</span><span class="p">()</span><span class="o">.</span><span class="n">sort_by_distance</span><span class="p">(</span><span class="n">Vertex</span><span class="p">())[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span>
+<span class="n">part</span><span class="o">.</span><span class="n">vertices</span><span class="p">()</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="n">Vertex</span><span class="p">()</span><span class="o">.</span><span class="n">distance</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+<img alt="../_images/sort_sortby_distance.png" class="align-center" src="../_images/sort_sortby_distance.png" />
+</section>
+<section id="along-wire">
+<span id="sort-along-wire"></span><h2>Along Wire<a class="headerlink" href="#along-wire" title="Link to this heading"></a></h2>
+<p>Vertices selected from and edge or wire might have a useful ordering when created from
+a single object, but when created from multiple objects the ordering not useful. Here,
+when applying incrementing fillet radii to a list of vertices from the face, the
+ordering is random.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Setup</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">build123d</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+
+<span class="k">with</span> <span class="n">BuildSketch</span><span class="p">()</span> <span class="k">as</span> <span class="n">along_wire</span><span class="p">:</span>
+    <span class="n">Rectangle</span><span class="p">(</span><span class="mi">48</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="n">Align</span><span class="o">.</span><span class="n">MIN</span><span class="p">)</span>
+    <span class="n">Rectangle</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="n">Align</span><span class="o">.</span><span class="n">MIN</span><span class="p">)</span>
+    <span class="n">Rectangle</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="n">Align</span><span class="o">.</span><span class="n">MIN</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details><div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">along_wire</span><span class="o">.</span><span class="n">vertices</span><span class="p">()):</span>
+        <span class="n">fillet</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../_images/sort_not_along_wire.png" class="align-center" src="../_images/sort_not_along_wire.png" />
+<p>The vertices may be sorted along the wire they fall on to create order. Notice the fillet
+radii increase in order.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">build123d</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+    <span class="n">sorted_verts</span> <span class="o">=</span> <span class="n">along_wire</span><span class="o">.</span><span class="n">vertices</span><span class="p">()</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="n">along_wire</span><span class="o">.</span><span class="n">wire</span><span class="p">())</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">sorted_verts</span><span class="p">):</span>
+        <span class="n">fillet</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../_images/sort_along_wire.png" class="align-center" src="../_images/sort_along_wire.png" />
+</section>
+<section id="distance-from">
+<span id="sort-distance-from"></span><h2>Distance From<a class="headerlink" href="#distance-from" title="Link to this heading"></a></h2>
+<p>A <code class="docutils literal notranslate"><span class="pre">sort_by_distance</span></code> and be used to sort objects by their distance from another object.
+Here we are sorting the boxes by distance from the origin, using an empty <code class="docutils literal notranslate"><span class="pre">Vertex</span></code>
+(at the origin) as the other shape to find distance to.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Setup</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">itertools</span><span class="w"> </span><span class="kn">import</span> <span class="n">product</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">build123d</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ocp_vscode</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">boxes</span> <span class="o">=</span> <span class="n">ShapeList</span><span class="p">(</span>
+    <span class="n">Box</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mf">0.75</span> <span class="k">if</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="k">else</span> <span class="mf">0.25</span><span class="p">)</span><span class="o">.</span><span class="n">translate</span><span class="p">((</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">product</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">repeat</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">boxes</span> <span class="o">=</span> <span class="n">boxes</span><span class="o">.</span><span class="n">sort_by_distance</span><span class="p">(</span><span class="n">Vertex</span><span class="p">())</span>
+<span class="n">show</span><span class="p">(</span><span class="o">*</span><span class="n">boxes</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">ColorMap</span><span class="o">.</span><span class="n">listed</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">boxes</span><span class="p">)))</span>
+</pre></div>
+</div>
+<img alt="../_images/sort_distance_from_origin.png" class="align-center" src="../_images/sort_distance_from_origin.png" />
+<p>The example can be extended by first sorting the boxes by volume using the <code class="docutils literal notranslate"><span class="pre">Solid</span></code>
+property <cite>volume</cite> and getting the last (largest) box. The boxes are then sorted by using
+the largest box as the reference to sort distance from.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">boxes</span> <span class="o">=</span> <span class="n">boxes</span><span class="o">.</span><span class="n">sort_by_distance</span><span class="p">(</span><span class="n">boxes</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="n">Solid</span><span class="o">.</span><span class="n">volume</span><span class="p">)</span><span class="o">.</span><span class="n">last</span><span class="p">)</span>
+<span class="n">show</span><span class="p">(</span><span class="o">*</span><span class="n">boxes</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">ColorMap</span><span class="o">.</span><span class="n">listed</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">boxes</span><span class="p">)))</span>
+</pre></div>
+</div>
+<img alt="../_images/sort_distance_from_largest.png" class="align-center" src="../_images/sort_distance_from_largest.png" />
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../selectors_operators.html" class="btn btn-neutral float-left" title="Selectors and Operators" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="group_examples.html" class="btn btn-neutral float-right" title="Group Examples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Gumyr.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

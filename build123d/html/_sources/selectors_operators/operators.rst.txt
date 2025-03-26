@@ -1,0 +1,145 @@
+Operators
+=========
+
+.. |vertices| replace:: :meth:`~topology.Shape.vertices`
+.. |edges| replace:: :meth:`~topology.Shape.edges`
+.. |wires| replace:: :meth:`~topology.Shape.wires`
+.. |faces| replace:: :meth:`~topology.Shape.faces`
+.. |solids| replace:: :meth:`~topology.Shape.solids`
+.. |sort_by| replace:: :meth:`~topology.ShapeList.sort_by`
+.. |sort_by_distance| replace:: :meth:`~topology.ShapeList.sort_by_distance`
+.. |group_by| replace:: :meth:`~topology.ShapeList.group_by`
+.. |filter_by| replace:: :meth:`~topology.ShapeList.filter_by`
+.. |filter_by_position| replace:: :meth:`~topology.ShapeList.filter_by_position`
+
+Operators offer methods refine a ``ShapeList`` of features isolated by a *selector* to
+further specify feature(s). These methods can sort, group, or filter ``ShapeList``
+objects and return a modified ``ShapeList``, or in the case of |group_by|, a list of
+ShapeLists.
+
+Overview
+---------------
+
++----------------------+------------------------------------------------------------------+-------------------------------------------------------+
+| Method               | Criteria                                                         | Description                                           |
++======================+==================================================================+=======================================================+
+| |sort_by|            | ``Axis``, ``Edge``, ``Wire``, ``SortBy``, callable, property     | Sort ``ShapeList`` by criteria                        |
++----------------------+------------------------------------------------------------------+-------------------------------------------------------+
+| |sort_by_distance|   | ``Shape``, ``VectorLike``                                        | Sort ``ShapeList`` by criteria                        |
++----------------------+------------------------------------------------------------------+-------------------------------------------------------+
+| |group_by|           | ``Axis``, ``Edge``, ``Wire``, ``SortBy``, callable, property     | Group ``ShapeList`` by criteria                       |
++----------------------+------------------------------------------------------------------+-------------------------------------------------------+
+| |filter_by|          | ``Axis``, ``Plane``, ```GeomType``, ``ShapePredicate``, property | Filter ``ShapeList`` by criteria                      |
++----------------------+------------------------------------------------------------------+-------------------------------------------------------+
+| |filter_by_position| | ``Axis``                                                         | Filter ``ShapeList`` by ``Axis`` & mix / max values   |
++----------------------+------------------------------------------------------------------+-------------------------------------------------------+
+
+Operator methods take a criteria to refine ShapeList. Broadly speaking, the criteria
+fall into the following categories, although not all operators take all criteria:
+
+- Geometric objects: ``Axis``, ``Plane``
+- Topological objects: ``Edge``, ``Wire``
+- Enums: :class:`~build_enums.SortBy`, :class:`~build_enums.GeomType`
+- Properties, eg: ``Face.area``, ``Edge.length``
+- ShapePredicate, eg: ``lambda e: e.length == 1``
+- Callable eg: TBD
+
+Sorting
+----------------------------
+
+A ShapeList can be sorted with the |sort_by|, |sort_by_distance|, or ``list.sorted``
+methods based on a sorting criteria. Sorting is a critical step when isolating individual
+features as a ``ShapeList`` from a selector is typically unordered.
+
+Here we want to capture some vertices from the object furthest along ``X``: All the
+vertices are first captured with the |edges| selector, then sort by ``Axis.X``.
+Finally, the vertices can be captured with a list slice for the last 4 list items, as the
+items are sorted from least to greatest ``X`` position. Remember, ``ShapeList`` is a
+subclass of ``list``, so any list slice can be used.
+
+.. code-block:: python
+
+    part.faces().sort_by(Axis.X)[-4:]
+
+.. image:: ../assets/selectors_operators/operators_sort_by_x.png
+    :align: center
+
+Examples
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. grid:: 3
+
+    .. grid-item-card:: Along Wire
+        :img-top:  ../assets/selectors_operators/thumb_sort_along_wire.png
+        :link: sorting_along_wire
+        :link-type: ref
+
+    .. grid-item-card:: By Distance
+        :img-top:  ../assets/selectors_operators/thumb_sort_distance.png
+        :link: sorting_by_distance
+        :link-type: ref
+
+
+Grouping
+----------------------------
+
+A ShapeList can be grouped and sorted with the |group_by| method based on a grouping
+criteria. Grouping can be a great way to organize features without knowing the values of
+specific feature properties. Rather than returning a ``Shapelist``, |group_by| returns
+a list which needs to be indexed to get a ``Shapelist`` for further operations.
+
+If we want only the edges from the smallest faces by area we can get the faces, then
+group by ``SortBy.AREA``. The ``ShapeList`` of smallest faces is available from the first
+list index. Finally, a ``ShapeList`` has access to selectors, so calling |edges| will
+return a new list of all edges in the previous list.
+
+.. code-block:: python
+
+    part.faces().group_by(SortBy.AREA)[0].edges()
+
+.. image:: ../assets/selectors_operators/operators_group_by_area.png
+    :align: center
+
+Examples
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. grid:: 3
+
+    .. grid-item-card:: By Axis and Length
+        :img-top:  ../assets/selectors_operators/thumb_group_by_axis.png
+        :link: grouping_by_axis
+        :link-type: ref
+
+Filtering
+----------------------------
+
+A ShapeList can be filtered with the |filter_by|, |filter_by_position|, or
+``list.filter`` methods based on a filtering criteria. Filters are flexible way to isolate
+(or exclude) features based on known criteria.
+
+Lets say we need all the faces with a normal in the ``+Z`` direction. One way to do this
+might be with a list comprehension, however |filter_by| has the capability to take a
+lambda function as a filter condition on the entire list. In this case, the normal of
+each face can be checked against a vector direction and filtered accordingly.
+
+.. code-block:: python
+
+    part.faces().filter_by(lambda f: f.normal_at() == Vector(0, 0, 1))
+
+.. image:: ../assets/selectors_operators/operators_filter_by_z_normal.png
+    :align: center
+
+Examples
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. grid:: 3
+
+    .. grid-item-card:: By Axis and Plane
+        :img-top:  ../assets/selectors_operators/thumb_filter_by_axisplane.png
+        :link: filtering-axis-plane
+        :link-type: ref
+
+    .. grid-item-card:: Edge and Face Properties
+        :img-top:  ../assets/selectors_operators/thumb_filter_shape_properties.png
+        :link: filtering-edge-face-properties
+        :link-type: ref

@@ -1,0 +1,576 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Joint Tutorial &mdash; build123d 0.9.2.dev40+gb1f0eed documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster.custom.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster.bundle.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-shadow.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-punk.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-noir.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-light.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-borderless.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/micromodal.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/sphinx_rtd_theme.css?v=3234e928" />
+      <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=c97902b4"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=f281be69"></script>
+      <script src="_static/js/hoverxref.js"></script>
+      <script src="_static/js/tooltipster.bundle.min.js"></script>
+      <script src="_static/js/micromodal.min.js"></script>
+      <script src="_static/design-tabs.js?v=f930bc37"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="The build123d Examples" href="examples_1.html" />
+    <link rel="prev" title="Lego Tutorial" href="tutorial_lego.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            build123d
+              <img src="_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts.html">Key Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts_builder.html">Key Concepts (builder mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts_algebra.html">Key Concepts (algebra mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="moving_objects.html">Moving Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OpenSCAD.html">Transitioning from OpenSCAD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introductory_examples.html">Introductory Examples</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="tutorials.html">Tutorials</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="tutorial_design.html">Designing a Part in build123d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_selectors.html">Selector Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_lego.html">Lego Tutorial</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Joint Tutorial</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#step-1-setup">Step 1: Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-2-create-hinge">Step 2: Create Hinge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-3-add-joints-to-the-hinge-leaf">Step 3: Add Joints to the Hinge Leaf</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#step-3a-leaf-joint">Step 3a: Leaf Joint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#step-3b-hinge-joint">Step 3b: Hinge Joint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#step-3c-fastener-joints">Step 3c: Fastener Joints</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#step-3d-call-super">Step 3d: Call Super</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#step-3e-instantiate-hinge-leaves">Step 3e: Instantiate Hinge Leaves</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#step-4-create-the-box">Step 4: Create the Box</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#step-4a-relocate-box">Step 4a: Relocate Box</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#step-5-create-the-lid">Step 5: Create the Lid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-6-import-a-screw-and-bind-a-joint-to-it">Step 6: Import a Screw and bind a Joint to it</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-7-connect-the-joints-together">Step 7: Connect the Joints together</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#step-7a-hinge-to-box">Step 7a: Hinge to Box</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#step-7b-hinge-to-hinge">Step 7b: Hinge to Hinge</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#step-7c-lid-to-hinge">Step 7c: Lid to Hinge</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#step-7d-screw-to-hinge">Step 7d: Screw to Hinge</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#conclusion">Conclusion</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="examples_1.html">The build123d Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tttt.html">Too Tall Toby (TTT) Tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_surface_modeling.html">Surface Modeling</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="selectors_operators.html">Selectors and Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operations.html">Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="builders.html">Builders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="joints.html">Joints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assemblies.html">Assemblies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tips.html">Tips, Best Practices and FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="import_export.html">Import/Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cheat_sheet.html">Cheat Sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="external.html">External Tools and Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="builder_api_reference.html">Builder Common API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="direct_api_reference.html">Direct API Reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">build123d</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="tutorials.html">Tutorials</a></li>
+      <li class="breadcrumb-item active">Joint Tutorial</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/tutorial_joints.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="joint-tutorial">
+<span id="id1"></span><h1>Joint Tutorial<a class="headerlink" href="#joint-tutorial" title="Link to this heading"></a></h1>
+<p>This tutorial provides a step by step guide in using <a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Joint" title="topology.Joint"><code class="xref py py-class docutils literal notranslate"><span class="pre">Joint</span></code></a>’s as we create
+a box with a hinged lid to illustrate the use of three different <a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Joint" title="topology.Joint"><code class="xref py py-class docutils literal notranslate"><span class="pre">Joint</span></code></a> types.</p>
+<img alt="_images/tutorial_joint.svg" class="align-center" src="_images/tutorial_joint.svg" />
+<section id="step-1-setup">
+<h2>Step 1: Setup<a class="headerlink" href="#step-1-setup" title="Link to this heading"></a></h2>
+<p>Before getting to the CAD operations, this selector script needs to import the build123d
+environment.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">build123d</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ocp_vscode</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+
+
+</pre></div>
+</div>
+</section>
+<section id="step-2-create-hinge">
+<h2>Step 2: Create Hinge<a class="headerlink" href="#step-2-create-hinge" title="Link to this heading"></a></h2>
+<p>This example uses a common Butt Hinge to connect the lid to the box base so a <code class="docutils literal notranslate"><span class="pre">Hinge</span></code> class
+is used to create that can create either of the two hinge leaves. As the focus of this
+tutorial is the joints and not the CAD operations to create objects, this code is not
+described in detail.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Hinge</span><span class="p">(</span><span class="n">Compound</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Hinge</span>
+
+<span class="sd">    Half a simple hinge with several joints. The joints are:</span>
+<span class="sd">    - &quot;leaf&quot;: RigidJoint where hinge attaches to object</span>
+<span class="sd">    - &quot;hinge_axis&quot;: RigidJoint (inner) or RevoluteJoint (outer)</span>
+<span class="sd">    - &quot;hole0&quot;, &quot;hole1&quot;, &quot;hole2&quot;: CylindricalJoints for attachment screws</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        width (float): width of one leaf</span>
+<span class="sd">        length (float): hinge length</span>
+<span class="sd">        barrel_diameter (float): size of hinge pin barrel</span>
+<span class="sd">        thickness (float): hinge leaf thickness</span>
+<span class="sd">        pin_diameter (float): hinge pin diameter</span>
+<span class="sd">        inner (bool, optional): inner or outer half of hinge . Defaults to True.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">width</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">length</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">barrel_diameter</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">thickness</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">pin_diameter</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">inner</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="c1"># The profile of the hinge used to create the tabs</span>
+        <span class="k">with</span> <span class="n">BuildPart</span><span class="p">()</span> <span class="k">as</span> <span class="n">hinge_profile</span><span class="p">:</span>
+            <span class="k">with</span> <span class="n">BuildSketch</span><span class="p">():</span>
+                <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">loc</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span>
+                    <span class="n">GridLocations</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">length</span> <span class="o">/</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="p">(</span><span class="n">Align</span><span class="o">.</span><span class="n">MIN</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">MIN</span><span class="p">))</span>
+                <span class="p">):</span>
+                    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="n">inner</span><span class="p">:</span>
+                        <span class="k">with</span> <span class="n">Locations</span><span class="p">(</span><span class="n">loc</span><span class="p">):</span>
+                            <span class="n">Rectangle</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">length</span> <span class="o">/</span> <span class="mi">5</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="p">(</span><span class="n">Align</span><span class="o">.</span><span class="n">MIN</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">MIN</span><span class="p">))</span>
+                <span class="n">Rectangle</span><span class="p">(</span>
+                    <span class="n">width</span> <span class="o">-</span> <span class="n">barrel_diameter</span><span class="p">,</span>
+                    <span class="n">length</span><span class="p">,</span>
+                    <span class="n">align</span><span class="o">=</span><span class="p">(</span><span class="n">Align</span><span class="o">.</span><span class="n">MIN</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">MIN</span><span class="p">),</span>
+                <span class="p">)</span>
+            <span class="n">extrude</span><span class="p">(</span><span class="n">amount</span><span class="o">=-</span><span class="n">barrel_diameter</span><span class="p">)</span>
+
+        <span class="c1"># The hinge pin</span>
+        <span class="k">with</span> <span class="n">BuildPart</span><span class="p">()</span> <span class="k">as</span> <span class="n">pin</span><span class="p">:</span>
+            <span class="n">Cylinder</span><span class="p">(</span>
+                <span class="n">radius</span><span class="o">=</span><span class="n">pin_diameter</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span>
+                <span class="n">height</span><span class="o">=</span><span class="n">length</span><span class="p">,</span>
+                <span class="n">align</span><span class="o">=</span><span class="p">(</span><span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">MIN</span><span class="p">),</span>
+            <span class="p">)</span>
+            <span class="k">with</span> <span class="n">BuildPart</span><span class="p">(</span><span class="n">pin</span><span class="o">.</span><span class="n">part</span><span class="o">.</span><span class="n">faces</span><span class="p">()</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="n">Axis</span><span class="o">.</span><span class="n">Z</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="k">as</span> <span class="n">pin_head</span><span class="p">:</span>
+                <span class="n">Cylinder</span><span class="p">(</span>
+                    <span class="n">radius</span><span class="o">=</span><span class="n">barrel_diameter</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span>
+                    <span class="n">height</span><span class="o">=</span><span class="n">pin_diameter</span><span class="p">,</span>
+                    <span class="n">align</span><span class="o">=</span><span class="p">(</span><span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">MIN</span><span class="p">),</span>
+                <span class="p">)</span>
+            <span class="n">fillet</span><span class="p">(</span>
+                <span class="n">pin_head</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">Select</span><span class="o">.</span><span class="n">LAST</span><span class="p">)</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="n">GeomType</span><span class="o">.</span><span class="n">CIRCLE</span><span class="p">),</span>
+                <span class="n">radius</span><span class="o">=</span><span class="n">pin_diameter</span> <span class="o">/</span> <span class="mi">3</span><span class="p">,</span>
+            <span class="p">)</span>
+
+        <span class="c1"># Either the external and internal leaf with joints</span>
+        <span class="k">with</span> <span class="n">BuildPart</span><span class="p">()</span> <span class="k">as</span> <span class="n">leaf_builder</span><span class="p">:</span>
+            <span class="k">with</span> <span class="n">BuildSketch</span><span class="p">():</span>
+                <span class="k">with</span> <span class="n">BuildLine</span><span class="p">():</span>
+                    <span class="n">l1</span> <span class="o">=</span> <span class="n">Line</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="n">width</span> <span class="o">-</span> <span class="n">barrel_diameter</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+                    <span class="n">l2</span> <span class="o">=</span> <span class="n">RadiusArc</span><span class="p">(</span>
+                        <span class="n">l1</span> <span class="o">@</span> <span class="mi">1</span><span class="p">,</span>
+                        <span class="n">l1</span> <span class="o">@</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">Vector</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">barrel_diameter</span><span class="p">),</span>
+                        <span class="o">-</span><span class="n">barrel_diameter</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span>
+                    <span class="p">)</span>
+                    <span class="n">l3</span> <span class="o">=</span> <span class="n">RadiusArc</span><span class="p">(</span>
+                        <span class="n">l2</span> <span class="o">@</span> <span class="mi">1</span><span class="p">,</span>
+                        <span class="p">(</span>
+                            <span class="n">width</span> <span class="o">-</span> <span class="n">barrel_diameter</span><span class="p">,</span>
+                            <span class="n">barrel_diameter</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span>
+                        <span class="p">),</span>
+                        <span class="o">-</span><span class="n">barrel_diameter</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span>
+                    <span class="p">)</span>
+                    <span class="n">l4</span> <span class="o">=</span> <span class="n">Line</span><span class="p">(</span><span class="n">l3</span> <span class="o">@</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="n">width</span> <span class="o">-</span> <span class="n">barrel_diameter</span><span class="p">,</span> <span class="n">thickness</span><span class="p">))</span>
+                    <span class="n">l5</span> <span class="o">=</span> <span class="n">Line</span><span class="p">(</span><span class="n">l4</span> <span class="o">@</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">thickness</span><span class="p">))</span>
+                    <span class="n">Line</span><span class="p">(</span><span class="n">l5</span> <span class="o">@</span> <span class="mi">1</span><span class="p">,</span> <span class="n">l1</span> <span class="o">@</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="n">make_face</span><span class="p">()</span>
+                <span class="k">with</span> <span class="n">Locations</span><span class="p">(</span>
+                    <span class="p">(</span><span class="n">width</span> <span class="o">-</span> <span class="n">barrel_diameter</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">barrel_diameter</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+                <span class="p">)</span> <span class="k">as</span> <span class="n">pin_center</span><span class="p">:</span>
+                    <span class="n">Circle</span><span class="p">(</span><span class="n">pin_diameter</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">MM</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">Mode</span><span class="o">.</span><span class="n">SUBTRACT</span><span class="p">)</span>
+            <span class="n">extrude</span><span class="p">(</span><span class="n">amount</span><span class="o">=</span><span class="n">length</span><span class="p">)</span>
+            <span class="n">add</span><span class="p">(</span><span class="n">hinge_profile</span><span class="o">.</span><span class="n">part</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="p">(</span><span class="mi">90</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="n">Mode</span><span class="o">.</span><span class="n">INTERSECT</span><span class="p">)</span>
+
+            <span class="c1"># Create holes for fasteners</span>
+            <span class="k">with</span> <span class="n">Locations</span><span class="p">(</span><span class="n">leaf_builder</span><span class="o">.</span><span class="n">part</span><span class="o">.</span><span class="n">faces</span><span class="p">()</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="n">Axis</span><span class="o">.</span><span class="n">Y</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]):</span>
+                <span class="k">with</span> <span class="n">GridLocations</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">length</span> <span class="o">/</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span>
+                    <span class="n">holes</span> <span class="o">=</span> <span class="n">CounterSinkHole</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">MM</span><span class="p">,</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">MM</span><span class="p">)</span>
+            <span class="c1"># Add the hinge pin to the external leaf</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">inner</span><span class="p">:</span>
+                <span class="k">with</span> <span class="n">Locations</span><span class="p">(</span><span class="n">pin_center</span><span class="o">.</span><span class="n">locations</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+                    <span class="n">add</span><span class="p">(</span><span class="n">pin</span><span class="o">.</span><span class="n">part</span><span class="p">)</span>
+
+</pre></div>
+</div>
+<p>Once the two leaves have been created they will look as follows:</p>
+<a class="reference internal image-reference" href="_images/tutorial_joint_outer_leaf.svg"><img alt="_images/tutorial_joint_outer_leaf.svg" src="_images/tutorial_joint_outer_leaf.svg" style="width: 40%;" />
+</a>
+<a class="reference internal image-reference" href="_images/tutorial_joint_inner_leaf.svg"><img alt="_images/tutorial_joint_inner_leaf.svg" src="_images/tutorial_joint_inner_leaf.svg" style="width: 40%;" />
+</a>
+<p>Note that the XYZ indicators and a circle around the hinge pin indicate
+joints that are discussed below.</p>
+</section>
+<section id="step-3-add-joints-to-the-hinge-leaf">
+<h2>Step 3: Add Joints to the Hinge Leaf<a class="headerlink" href="#step-3-add-joints-to-the-hinge-leaf" title="Link to this heading"></a></h2>
+<p>The hinge includes five joints:</p>
+<ul class="simple">
+<li><p>A <code class="xref py py-class docutils literal notranslate"><span class="pre">RigidJoint</span></code> to attach the leaf</p></li>
+<li><p>A <code class="xref py py-class docutils literal notranslate"><span class="pre">RigidJoint</span></code> or <code class="xref py py-class docutils literal notranslate"><span class="pre">RevoluteJoint</span></code> as the hinge Axis</p></li>
+<li><p>Three <code class="xref py py-class docutils literal notranslate"><span class="pre">CylindricalJoint</span></code>’s for the countersunk screws</p></li>
+</ul>
+<section id="step-3a-leaf-joint">
+<h3>Step 3a: Leaf Joint<a class="headerlink" href="#step-3a-leaf-joint" title="Link to this heading"></a></h3>
+<p>The first joint to add is a <code class="xref py py-class docutils literal notranslate"><span class="pre">RigidJoint</span></code> that is used to fix the hinge leaf to the box
+or lid.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>            <span class="c1">#</span>
+            <span class="c1"># Leaf attachment</span>
+            <span class="n">RigidJoint</span><span class="p">(</span>
+                <span class="n">label</span><span class="o">=</span><span class="s2">&quot;leaf&quot;</span><span class="p">,</span>
+                <span class="n">joint_location</span><span class="o">=</span><span class="n">Location</span><span class="p">(</span>
+                    <span class="p">(</span><span class="n">width</span> <span class="o">-</span> <span class="n">barrel_diameter</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">length</span> <span class="o">/</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">90</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="p">),</span>
+            <span class="p">)</span>
+</pre></div>
+</div>
+<p>Each joint has a label which identifies it - here the string “leaf” is used, the <code class="docutils literal notranslate"><span class="pre">to_part</span></code>
+binds the joint to <code class="docutils literal notranslate"><span class="pre">leaf_builder.part</span></code> (i.e. the part being built), and <code class="docutils literal notranslate"><span class="pre">joint_location</span></code>
+is specified as middle of the leaf along the edge of the pin. Note that
+<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#geometry.Location" title="geometry.Location"><code class="xref py py-class docutils literal notranslate"><span class="pre">Location</span></code></a> objects describe both a position and orientation which is
+why there are two tuples (the orientation listed is rotate about the X axis 90 degrees).</p>
+</section>
+<section id="step-3b-hinge-joint">
+<h3>Step 3b: Hinge Joint<a class="headerlink" href="#step-3b-hinge-joint" title="Link to this heading"></a></h3>
+<p>The second joint to add is either a <code class="xref py py-class docutils literal notranslate"><span class="pre">RigidJoint</span></code> (on the inner leaf) or a <code class="xref py py-class docutils literal notranslate"><span class="pre">RevoluteJoint</span></code>
+(on the outer leaf) that describes the hinge axis.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>            <span class="c1">#</span>
+            <span class="c1"># Leaf attachment</span>
+            <span class="n">RigidJoint</span><span class="p">(</span>
+                <span class="n">label</span><span class="o">=</span><span class="s2">&quot;leaf&quot;</span><span class="p">,</span>
+                <span class="n">joint_location</span><span class="o">=</span><span class="n">Location</span><span class="p">(</span>
+                    <span class="p">(</span><span class="n">width</span> <span class="o">-</span> <span class="n">barrel_diameter</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">length</span> <span class="o">/</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">90</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="p">),</span>
+            <span class="p">)</span>
+            <span class="c1"># [Hinge Axis] (fixed with inner)</span>
+<span class="hll">            <span class="k">if</span> <span class="n">inner</span><span class="p">:</span>
+</span><span class="hll">                <span class="n">RigidJoint</span><span class="p">(</span>
+</span><span class="hll">                    <span class="s2">&quot;hinge_axis&quot;</span><span class="p">,</span>
+</span><span class="hll">                    <span class="n">joint_location</span><span class="o">=</span><span class="n">Location</span><span class="p">(</span>
+</span><span class="hll">                        <span class="p">(</span><span class="n">width</span> <span class="o">-</span> <span class="n">barrel_diameter</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">barrel_diameter</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</span><span class="hll">                    <span class="p">),</span>
+</span><span class="hll">                <span class="p">)</span>
+</span><span class="hll">            <span class="k">else</span><span class="p">:</span>
+</span><span class="hll">                <span class="n">RevoluteJoint</span><span class="p">(</span>
+</span><span class="hll">                    <span class="s2">&quot;hinge_axis&quot;</span><span class="p">,</span>
+</span><span class="hll">                    <span class="n">axis</span><span class="o">=</span><span class="n">Axis</span><span class="p">(</span>
+</span><span class="hll">                        <span class="p">(</span><span class="n">width</span> <span class="o">-</span> <span class="n">barrel_diameter</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">barrel_diameter</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</span><span class="hll">                    <span class="p">),</span>
+</span><span class="hll">                    <span class="n">angular_range</span><span class="o">=</span><span class="p">(</span><span class="mi">90</span><span class="p">,</span> <span class="mi">270</span><span class="p">),</span>
+</span><span class="hll">                <span class="p">)</span>
+</span></pre></div>
+</div>
+<p>The inner leaf just pivots around the outer leaf and therefore the simple <code class="xref py py-class docutils literal notranslate"><span class="pre">RigidJoint</span></code> is
+used to define the Location of this pivot.  The outer leaf contains the more complex
+<code class="xref py py-class docutils literal notranslate"><span class="pre">RevoluteJoint</span></code> which defines an axis of rotation and angular limits to that rotation (90
+and 270 in this example as the two leaves will interfere with each other outside of this range).
+Note that the maximum angle must be greater than the minimum angle and therefore may be greater
+than 360°. Other types of joints have linear ranges as well as angular ranges.</p>
+</section>
+<section id="step-3c-fastener-joints">
+<h3>Step 3c: Fastener Joints<a class="headerlink" href="#step-3c-fastener-joints" title="Link to this heading"></a></h3>
+<p>The third set of joints to add are <code class="xref py py-class docutils literal notranslate"><span class="pre">CylindricalJoint</span></code>’s that describe how the countersunk
+screws used to attach the leaves move.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>            <span class="n">hole_locations</span> <span class="o">=</span> <span class="p">[</span><span class="n">hole</span><span class="o">.</span><span class="n">location</span> <span class="k">for</span> <span class="n">hole</span> <span class="ow">in</span> <span class="n">holes</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">hole</span><span class="p">,</span> <span class="n">hole_location</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">hole_locations</span><span class="p">):</span>
+                <span class="n">CylindricalJoint</span><span class="p">(</span>
+                    <span class="n">label</span><span class="o">=</span><span class="s2">&quot;hole&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">hole</span><span class="p">),</span>
+                    <span class="n">axis</span><span class="o">=</span><span class="n">hole_location</span><span class="o">.</span><span class="n">to_axis</span><span class="p">(),</span>
+                    <span class="n">linear_range</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span> <span class="o">*</span> <span class="n">CM</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">CM</span><span class="p">),</span>
+                    <span class="n">angular_range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">360</span><span class="p">),</span>
+                <span class="p">)</span>
+</pre></div>
+</div>
+<p>Much like the <code class="xref py py-class docutils literal notranslate"><span class="pre">RevoluteJoint</span></code>, a <code class="xref py py-class docutils literal notranslate"><span class="pre">CylindricalJoint</span></code> has an Axis of motion but this type
+of joint allows both movement around and along this axis - exactly as a screw would move.
+Here is the Axis is setup such that a position of 0 aligns with the screw being fully set
+in the hole and positive numbers indicate the distance the head of the screw is above the
+leaf surface. One could have reversed the direction of the Axis such that negative position
+values would correspond to a screw now fully in the hole - whatever makes sense to the situation.
+The angular range of this joint is set to (0°, 360°) as there is no limit to the angular rotation
+of the screw (one could choose to model thread pitch and calculate position from angle or
+vice-versa).</p>
+</section>
+<section id="step-3d-call-super">
+<h3>Step 3d: Call Super<a class="headerlink" href="#step-3d-call-super" title="Link to this heading"></a></h3>
+<p>To finish off, the base class for the Hinge class is initialized:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">leaf_builder</span><span class="o">.</span><span class="n">part</span><span class="o">.</span><span class="n">wrapped</span><span class="p">,</span> <span class="n">joints</span><span class="o">=</span><span class="n">leaf_builder</span><span class="o">.</span><span class="n">part</span><span class="o">.</span><span class="n">joints</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="step-3e-instantiate-hinge-leaves">
+<h3>Step 3e: Instantiate Hinge Leaves<a class="headerlink" href="#step-3e-instantiate-hinge-leaves" title="Link to this heading"></a></h3>
+<p>Now that the Hinge class is complete it can be used to instantiate the two hinge leaves
+required to attach the box and lid together.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hinge_inner</span> <span class="o">=</span> <span class="n">Hinge</span><span class="p">(</span>
+    <span class="n">width</span><span class="o">=</span><span class="mi">5</span> <span class="o">*</span> <span class="n">CM</span><span class="p">,</span>
+    <span class="n">length</span><span class="o">=</span><span class="mi">12</span> <span class="o">*</span> <span class="n">CM</span><span class="p">,</span>
+    <span class="n">barrel_diameter</span><span class="o">=</span><span class="mi">1</span> <span class="o">*</span> <span class="n">CM</span><span class="p">,</span>
+    <span class="n">thickness</span><span class="o">=</span><span class="mi">2</span> <span class="o">*</span> <span class="n">MM</span><span class="p">,</span>
+    <span class="n">pin_diameter</span><span class="o">=</span><span class="mi">4</span> <span class="o">*</span> <span class="n">MM</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">hinge_outer</span> <span class="o">=</span> <span class="n">Hinge</span><span class="p">(</span>
+    <span class="n">width</span><span class="o">=</span><span class="mi">5</span> <span class="o">*</span> <span class="n">CM</span><span class="p">,</span>
+    <span class="n">length</span><span class="o">=</span><span class="mi">12</span> <span class="o">*</span> <span class="n">CM</span><span class="p">,</span>
+    <span class="n">barrel_diameter</span><span class="o">=</span><span class="mi">1</span> <span class="o">*</span> <span class="n">CM</span><span class="p">,</span>
+    <span class="n">thickness</span><span class="o">=</span><span class="mi">2</span> <span class="o">*</span> <span class="n">MM</span><span class="p">,</span>
+    <span class="n">pin_diameter</span><span class="o">=</span><span class="mi">4</span> <span class="o">*</span> <span class="n">MM</span><span class="p">,</span>
+    <span class="n">inner</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span>
+
+</pre></div>
+</div>
+</section>
+</section>
+<section id="step-4-create-the-box">
+<h2>Step 4: Create the Box<a class="headerlink" href="#step-4-create-the-box" title="Link to this heading"></a></h2>
+<p>The box is created with <a class="hxr-hoverxref hxr-tooltip reference internal" href="build_part.html#build_part.BuildPart" title="build_part.BuildPart"><code class="xref py py-class docutils literal notranslate"><span class="pre">BuildPart</span></code></a> as a simple object - as shown below - let’s focus on
+the joint used to attach the outer hinge leaf.</p>
+<img alt="_images/tutorial_joint_box.svg" class="align-center" src="_images/tutorial_joint_box.svg" />
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">BuildPart</span><span class="p">()</span> <span class="k">as</span> <span class="n">box_builder</span><span class="p">:</span>
+    <span class="n">box</span> <span class="o">=</span> <span class="n">Box</span><span class="p">(</span><span class="mi">30</span> <span class="o">*</span> <span class="n">CM</span><span class="p">,</span> <span class="mi">30</span> <span class="o">*</span> <span class="n">CM</span><span class="p">,</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">CM</span><span class="p">)</span>
+    <span class="n">offset</span><span class="p">(</span><span class="n">amount</span><span class="o">=-</span><span class="mi">1</span> <span class="o">*</span> <span class="n">CM</span><span class="p">,</span> <span class="n">openings</span><span class="o">=</span><span class="n">box_builder</span><span class="o">.</span><span class="n">faces</span><span class="p">()</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="n">Axis</span><span class="o">.</span><span class="n">Z</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+    <span class="c1"># Create a notch for the hinge</span>
+    <span class="k">with</span> <span class="n">Locations</span><span class="p">((</span><span class="o">-</span><span class="mi">15</span> <span class="o">*</span> <span class="n">CM</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">CM</span><span class="p">)):</span>
+        <span class="n">Box</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">CM</span><span class="p">,</span> <span class="mi">12</span> <span class="o">*</span> <span class="n">CM</span><span class="p">,</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">MM</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">Mode</span><span class="o">.</span><span class="n">SUBTRACT</span><span class="p">)</span>
+    <span class="n">bbox</span> <span class="o">=</span> <span class="n">box</span><span class="o">.</span><span class="n">bounding_box</span><span class="p">()</span>
+    <span class="k">with</span> <span class="n">Locations</span><span class="p">(</span>
+        <span class="n">Plane</span><span class="p">(</span><span class="n">origin</span><span class="o">=</span><span class="p">(</span><span class="n">bbox</span><span class="o">.</span><span class="n">min</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">bbox</span><span class="o">.</span><span class="n">max</span><span class="o">.</span><span class="n">Z</span> <span class="o">-</span> <span class="mi">30</span> <span class="o">*</span> <span class="n">MM</span><span class="p">),</span> <span class="n">z_dir</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="p">):</span>
+        <span class="k">with</span> <span class="n">GridLocations</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">40</span> <span class="o">*</span> <span class="n">MM</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span>
+            <span class="n">Hole</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">MM</span><span class="p">,</span> <span class="mi">1</span> <span class="o">*</span> <span class="n">CM</span><span class="p">)</span>
+<span class="hll">    <span class="n">RigidJoint</span><span class="p">(</span>
+</span><span class="hll">        <span class="s2">&quot;hinge_attachment&quot;</span><span class="p">,</span>
+</span><span class="hll">        <span class="n">joint_location</span><span class="o">=</span><span class="n">Location</span><span class="p">((</span><span class="o">-</span><span class="mi">15</span> <span class="o">*</span> <span class="n">CM</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">CM</span><span class="p">),</span> <span class="p">(</span><span class="mi">180</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">0</span><span class="p">)),</span>
+</span><span class="hll">    <span class="p">)</span>
+</span></pre></div>
+</div>
+<p>Since the hinge will be fixed to the box another <code class="xref py py-class docutils literal notranslate"><span class="pre">RigidJoint</span></code> is used mark where the hinge
+will go. Note that the orientation of this <a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Joint" title="topology.Joint"><code class="xref py py-class docutils literal notranslate"><span class="pre">Joint</span></code></a> will control how the hinge leaf is
+attached and is independent of the orientation of the hinge as it was constructed.</p>
+<section id="step-4a-relocate-box">
+<h3>Step 4a: Relocate Box<a class="headerlink" href="#step-4a-relocate-box" title="Link to this heading"></a></h3>
+<p>Note that the position and orientation of the box’s joints are given as a global <a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#geometry.Location" title="geometry.Location"><code class="xref py py-class docutils literal notranslate"><span class="pre">Location</span></code></a>
+when created but will be translated to a relative <a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#geometry.Location" title="geometry.Location"><code class="xref py py-class docutils literal notranslate"><span class="pre">Location</span></code></a> internally to allow the <a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Joint" title="topology.Joint"><code class="xref py py-class docutils literal notranslate"><span class="pre">Joint</span></code></a>
+to “move” with the parent object. This allows users the freedom to relocate objects without
+having to recreate or modify <a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Joint" title="topology.Joint"><code class="xref py py-class docutils literal notranslate"><span class="pre">Joint</span></code></a>’s. Here is the box is moved upwards to show this
+property.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">box</span> <span class="o">=</span> <span class="n">box_builder</span><span class="o">.</span><span class="n">part</span><span class="o">.</span><span class="n">moved</span><span class="p">(</span><span class="n">Location</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">CM</span><span class="p">)))</span>
+
+</pre></div>
+</div>
+</section>
+</section>
+<section id="step-5-create-the-lid">
+<h2>Step 5: Create the Lid<a class="headerlink" href="#step-5-create-the-lid" title="Link to this heading"></a></h2>
+<p>Much like the box, the lid is created in a <a class="hxr-hoverxref hxr-tooltip reference internal" href="build_part.html#build_part.BuildPart" title="build_part.BuildPart"><code class="xref py py-class docutils literal notranslate"><span class="pre">BuildPart</span></code></a> context and is assigned a <code class="xref py py-class docutils literal notranslate"><span class="pre">RigidJoint</span></code>.</p>
+<img alt="_images/tutorial_joint_lid.svg" class="align-center" src="_images/tutorial_joint_lid.svg" />
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">BuildPart</span><span class="p">()</span> <span class="k">as</span> <span class="n">lid_builder</span><span class="p">:</span>
+    <span class="n">Box</span><span class="p">(</span><span class="mi">30</span> <span class="o">*</span> <span class="n">CM</span><span class="p">,</span> <span class="mi">30</span> <span class="o">*</span> <span class="n">CM</span><span class="p">,</span> <span class="mi">1</span> <span class="o">*</span> <span class="n">CM</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="p">(</span><span class="n">Align</span><span class="o">.</span><span class="n">MIN</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">MIN</span><span class="p">))</span>
+    <span class="k">with</span> <span class="n">Locations</span><span class="p">((</span><span class="mi">2</span> <span class="o">*</span> <span class="n">CM</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)):</span>
+        <span class="k">with</span> <span class="n">GridLocations</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">40</span> <span class="o">*</span> <span class="n">MM</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span>
+            <span class="n">Hole</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">MM</span><span class="p">,</span> <span class="mi">1</span> <span class="o">*</span> <span class="n">CM</span><span class="p">)</span>
+<span class="hll">    <span class="n">RigidJoint</span><span class="p">(</span>
+</span><span class="hll">        <span class="s2">&quot;hinge_attachment&quot;</span><span class="p">,</span>
+</span><span class="hll">        <span class="n">joint_location</span><span class="o">=</span><span class="n">Location</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">180</span><span class="p">)),</span>
+</span><span class="hll">    <span class="p">)</span>
+</span><span class="n">lid</span> <span class="o">=</span> <span class="n">lid_builder</span><span class="o">.</span><span class="n">part</span>
+
+</pre></div>
+</div>
+<p>Again, the original orientation of the lid and hinge inner leaf are not important, when the
+joints are connected together the parts will move into the correct position.</p>
+</section>
+<section id="step-6-import-a-screw-and-bind-a-joint-to-it">
+<h2>Step 6: Import a Screw and bind a Joint to it<a class="headerlink" href="#step-6-import-a-screw-and-bind-a-joint-to-it" title="Link to this heading"></a></h2>
+<p><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Joint" title="topology.Joint"><code class="xref py py-class docutils literal notranslate"><span class="pre">Joint</span></code></a>’s can be bound to simple objects the a <a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Compound" title="topology.Compound"><code class="xref py py-class docutils literal notranslate"><span class="pre">Compound</span></code></a> imported - in this case a
+screw.</p>
+<img alt="_images/tutorial_joint_m6_screw.svg" class="align-center" src="_images/tutorial_joint_m6_screw.svg" />
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">m6_screw</span> <span class="o">=</span> <span class="n">import_step</span><span class="p">(</span><span class="s2">&quot;M6-1x12-countersunk-screw.step&quot;</span><span class="p">)</span>
+<span class="n">m6_joint</span> <span class="o">=</span> <span class="n">RigidJoint</span><span class="p">(</span><span class="s2">&quot;head&quot;</span><span class="p">,</span> <span class="n">m6_screw</span><span class="p">,</span> <span class="n">Location</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)))</span>
+</pre></div>
+</div>
+<p>Here a simple <code class="xref py py-class docutils literal notranslate"><span class="pre">RigidJoint</span></code> is bound to the top of the screw head such that it can be
+connected to the hinge’s <code class="xref py py-class docutils literal notranslate"><span class="pre">CylindricalJoint</span></code>.</p>
+</section>
+<section id="step-7-connect-the-joints-together">
+<h2>Step 7: Connect the Joints together<a class="headerlink" href="#step-7-connect-the-joints-together" title="Link to this heading"></a></h2>
+<p>This last step is the most interesting. Now that all of the joints have been defined
+and bound to their parent objects, they can be connected together.</p>
+<section id="step-7a-hinge-to-box">
+<h3>Step 7a: Hinge to Box<a class="headerlink" href="#step-7a-hinge-to-box" title="Link to this heading"></a></h3>
+<p>To start, the outer hinge leaf will be connected to the box, as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">box</span><span class="o">.</span><span class="n">joints</span><span class="p">[</span><span class="s2">&quot;hinge_attachment&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">connect_to</span><span class="p">(</span><span class="n">hinge_outer</span><span class="o">.</span><span class="n">joints</span><span class="p">[</span><span class="s2">&quot;leaf&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Here the <code class="docutils literal notranslate"><span class="pre">hinge_attachment</span></code> joint of the <code class="docutils literal notranslate"><span class="pre">box</span></code> is connected to the <code class="docutils literal notranslate"><span class="pre">leaf</span></code> joint
+of <code class="docutils literal notranslate"><span class="pre">hinge_outer</span></code>. Note that the hinge leaf is the object to move.  Once this line
+is executed, we get the following:</p>
+<img alt="_images/tutorial_joint_box_outer.svg" class="align-center" src="_images/tutorial_joint_box_outer.svg" />
+</section>
+<section id="step-7b-hinge-to-hinge">
+<h3>Step 7b: Hinge to Hinge<a class="headerlink" href="#step-7b-hinge-to-hinge" title="Link to this heading"></a></h3>
+<p>Next, the hinge inner leaf is connected to the hinge outer leaf which is attached to the
+box.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hinge_outer</span><span class="o">.</span><span class="n">joints</span><span class="p">[</span><span class="s2">&quot;hinge_axis&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">connect_to</span><span class="p">(</span><span class="n">hinge_inner</span><span class="o">.</span><span class="n">joints</span><span class="p">[</span><span class="s2">&quot;hinge_axis&quot;</span><span class="p">],</span> <span class="n">angle</span><span class="o">=</span><span class="mi">120</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>As <code class="docutils literal notranslate"><span class="pre">hinge_outer.joints[&quot;hinge_axis&quot;]</span></code> is a <code class="xref py py-class docutils literal notranslate"><span class="pre">RevoluteJoint</span></code> there is an <code class="docutils literal notranslate"><span class="pre">angle</span></code>
+parameter that can be set (angles default to the minimum range value) - here to 120°.
+This is what that looks like:</p>
+<img alt="_images/tutorial_joint_box_outer_inner.svg" class="align-center" src="_images/tutorial_joint_box_outer_inner.svg" />
+</section>
+<section id="step-7c-lid-to-hinge">
+<h3>Step 7c: Lid to Hinge<a class="headerlink" href="#step-7c-lid-to-hinge" title="Link to this heading"></a></h3>
+<p>Now the <code class="docutils literal notranslate"><span class="pre">lid</span></code> is connected to the <code class="docutils literal notranslate"><span class="pre">hinge_inner</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hinge_inner</span><span class="o">.</span><span class="n">joints</span><span class="p">[</span><span class="s2">&quot;leaf&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">connect_to</span><span class="p">(</span><span class="n">lid</span><span class="o">.</span><span class="n">joints</span><span class="p">[</span><span class="s2">&quot;hinge_attachment&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>which results in:</p>
+<img alt="_images/tutorial_joint_box_outer_inner_lid.svg" class="align-center" src="_images/tutorial_joint_box_outer_inner_lid.svg" />
+<p>Note how the lid is now in an open position.  To close the lid just change the above <code class="docutils literal notranslate"><span class="pre">angle</span></code>
+parameter from 120° to 90°.</p>
+</section>
+<section id="step-7d-screw-to-hinge">
+<h3>Step 7d: Screw to Hinge<a class="headerlink" href="#step-7d-screw-to-hinge" title="Link to this heading"></a></h3>
+<p>The last step in this example is to place a screw in one of the hinges:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hinge_outer</span><span class="o">.</span><span class="n">joints</span><span class="p">[</span><span class="s2">&quot;hole2&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">connect_to</span><span class="p">(</span><span class="n">m6_joint</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="mi">5</span> <span class="o">*</span> <span class="n">MM</span><span class="p">,</span> <span class="n">angle</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>As the position is a positive number the screw is still proud of the hinge face as shown
+here:</p>
+<img alt="_images/tutorial_joint.svg" class="align-center" src="_images/tutorial_joint.svg" />
+<p>Try changing these position and angle values to “tighten” the screw.</p>
+</section>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading"></a></h2>
+<p>Use a <a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Joint" title="topology.Joint"><code class="xref py py-class docutils literal notranslate"><span class="pre">Joint</span></code></a> to locate two objects relative to each other with some degree of motion.
+Keep in mind that when using the <code class="docutils literal notranslate"><span class="pre">connect_to</span></code> method, <code class="docutils literal notranslate"><span class="pre">self</span></code> is always fixed
+and <code class="docutils literal notranslate"><span class="pre">other</span></code> will move to the appropriate <a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#geometry.Location" title="geometry.Location"><code class="xref py py-class docutils literal notranslate"><span class="pre">Location</span></code></a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The joint symbols can be displayed as follows (your viewer may use <code class="docutils literal notranslate"><span class="pre">show</span></code> instead
+of <code class="docutils literal notranslate"><span class="pre">show_object</span></code>):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">show_object</span><span class="p">(</span><span class="n">box</span><span class="o">.</span><span class="n">joints</span><span class="p">[</span><span class="s2">&quot;hinge_attachment&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">symbol</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;box attachment point&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">show_object</span><span class="p">(</span><span class="n">m6_joint</span><span class="o">.</span><span class="n">symbol</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;m6 screw symbol&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>or, with the ocp_vscode viewer</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">show</span><span class="p">(</span><span class="n">box</span><span class="p">,</span> <span class="n">render_joints</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="tutorial_lego.html" class="btn btn-neutral float-left" title="Lego Tutorial" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="examples_1.html" class="btn btn-neutral float-right" title="The build123d Examples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Gumyr.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

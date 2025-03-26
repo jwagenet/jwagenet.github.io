@@ -1,0 +1,500 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>topology.zero_d &mdash; build123d 0.9.2.dev40+gb1f0eed documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/tooltipster.custom.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/tooltipster.bundle.min.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/tooltipster-sideTip-shadow.min.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/tooltipster-sideTip-punk.min.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/tooltipster-sideTip-noir.min.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/tooltipster-sideTip-light.min.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/tooltipster-sideTip-borderless.min.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/micromodal.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/sphinx_rtd_theme.css?v=3234e928" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=c97902b4"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=f281be69"></script>
+      <script src="../../_static/js/hoverxref.js"></script>
+      <script src="../../_static/js/tooltipster.bundle.min.js"></script>
+      <script src="../../_static/js/micromodal.min.js"></script>
+      <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            build123d
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../key_concepts.html">Key Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../key_concepts_builder.html">Key Concepts (builder mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../key_concepts_algebra.html">Key Concepts (algebra mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../moving_objects.html">Moving Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../OpenSCAD.html">Transitioning from OpenSCAD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../introductory_examples.html">Introductory Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../selectors_operators.html">Selectors and Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../operations.html">Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../builders.html">Builders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../joints.html">Joints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../assemblies.html">Assemblies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tips.html">Tips, Best Practices and FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../import_export.html">Import/Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cheat_sheet.html">Cheat Sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../external.html">External Tools and Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../builder_api_reference.html">Builder Common API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../direct_api_reference.html">Direct API Reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">build123d</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">topology.zero_d</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for topology.zero_d</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">build123d topology</span>
+
+<span class="sd">name: zero_d.py</span>
+<span class="sd">by:   Gumyr</span>
+<span class="sd">date: January 07, 2025</span>
+
+<span class="sd">desc:</span>
+
+<span class="sd">This module provides the foundational implementation for zero-dimensional geometry in the build123d</span>
+<span class="sd">CAD system, focusing on the `Vertex` class and its related operations. A `Vertex` represents a</span>
+<span class="sd">single point in 3D space, serving as the cornerstone for more complex geometric structures such as</span>
+<span class="sd">edges, wires, and faces. It is directly integrated with the OpenCascade kernel, enabling precise</span>
+<span class="sd">modeling and manipulation of 3D objects.</span>
+
+<span class="sd">Key Features:</span>
+<span class="sd">- **Vertex Class**:</span>
+<span class="sd">  - Supports multiple constructors, including Cartesian coordinates, iterable inputs, and</span>
+<span class="sd">    OpenCascade `TopoDS_Vertex` objects.</span>
+<span class="sd">  - Offers robust arithmetic operations such as addition and subtraction with other vertices,</span>
+<span class="sd">    vectors, or tuples.</span>
+<span class="sd">  - Provides utility methods for transforming vertices, converting to tuples, and iterating over</span>
+<span class="sd">    coordinate components.</span>
+
+<span class="sd">- **Intersection Utilities**:</span>
+<span class="sd">  - Includes `topo_explore_common_vertex`, a utility to identify shared vertices between edges,</span>
+<span class="sd">    facilitating advanced topological queries.</span>
+
+<span class="sd">- **Integration with Shape Hierarchy**:</span>
+<span class="sd">  - Extends the `Shape` base class, inheriting essential features such as transformation matrices</span>
+<span class="sd">    and bounding box computations.</span>
+
+<span class="sd">This module plays a critical role in defining precise geometric points and their interactions,</span>
+<span class="sd">serving as the building block for complex 3D models in the build123d library.</span>
+
+<span class="sd">license:</span>
+
+<span class="sd">    Copyright 2025 Gumyr</span>
+
+<span class="sd">    Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span>
+<span class="sd">    you may not use this file except in compliance with the License.</span>
+<span class="sd">    You may obtain a copy of the License at</span>
+
+<span class="sd">        http://www.apache.org/licenses/LICENSE-2.0</span>
+
+<span class="sd">    Unless required by applicable law or agreed to in writing, software</span>
+<span class="sd">    distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span>
+<span class="sd">    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
+<span class="sd">    See the License for the specific language governing permissions and</span>
+<span class="sd">    limitations under the License.</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">itertools</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">overload</span><span class="p">,</span> <span class="n">TYPE_CHECKING</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">Iterable</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">OCP.TopAbs</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ta</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.BRep</span><span class="w"> </span><span class="kn">import</span> <span class="n">BRep_Tool</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.BRepBuilderAPI</span><span class="w"> </span><span class="kn">import</span> <span class="n">BRepBuilderAPI_MakeVertex</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.TopExp</span><span class="w"> </span><span class="kn">import</span> <span class="n">TopExp_Explorer</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.TopoDS</span><span class="w"> </span><span class="kn">import</span> <span class="n">TopoDS</span><span class="p">,</span> <span class="n">TopoDS_Shape</span><span class="p">,</span> <span class="n">TopoDS_Vertex</span><span class="p">,</span> <span class="n">TopoDS_Edge</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.gp</span><span class="w"> </span><span class="kn">import</span> <span class="n">gp_Pnt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">build123d.geometry</span><span class="w"> </span><span class="kn">import</span> <span class="n">Matrix</span><span class="p">,</span> <span class="n">Vector</span><span class="p">,</span> <span class="n">VectorLike</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing_extensions</span><span class="w"> </span><span class="kn">import</span> <span class="n">Self</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">.shape_core</span><span class="w"> </span><span class="kn">import</span> <span class="n">Shape</span><span class="p">,</span> <span class="n">ShapeList</span><span class="p">,</span> <span class="n">downcast</span><span class="p">,</span> <span class="n">shapetype</span>
+
+
+<span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>  <span class="c1"># pragma: no cover</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">.one_d</span><span class="w"> </span><span class="kn">import</span> <span class="n">Edge</span><span class="p">,</span> <span class="n">Wire</span>  <span class="c1"># pylint: disable=R0801</span>
+
+
+<div class="viewcode-block" id="Vertex">
+<a class="viewcode-back" href="../../direct_api_reference.html#topology.Vertex">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Vertex</span><span class="p">(</span><span class="n">Shape</span><span class="p">[</span><span class="n">TopoDS_Vertex</span><span class="p">]):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A Vertex in build123d represents a zero-dimensional point in the topological</span>
+<span class="sd">    data structure. It marks the endpoints of edges within a 3D model, defining precise</span>
+<span class="sd">    locations in space. Vertices play a crucial role in defining the geometry of objects</span>
+<span class="sd">    and the connectivity between edges, facilitating accurate representation and</span>
+<span class="sd">    manipulation of 3D shapes. They hold coordinate information and are essential</span>
+<span class="sd">    for constructing complex structures like wires, faces, and solids.&quot;&quot;&quot;</span>
+
+    <span class="n">order</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="c1"># ---- Constructor ----</span>
+
+    <span class="nd">@overload</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># pragma: no cover</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Default Vertext at the origin&quot;&quot;&quot;</span>
+
+    <span class="nd">@overload</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ocp_vx</span><span class="p">:</span> <span class="n">TopoDS_Vertex</span><span class="p">):</span>  <span class="c1"># pragma: no cover</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Vertex from OCCT TopoDS_Vertex object&quot;&quot;&quot;</span>
+
+    <span class="nd">@overload</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">Y</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">Z</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>  <span class="c1"># pragma: no cover</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Vertex from three float values&quot;&quot;&quot;</span>
+
+    <span class="nd">@overload</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">float</span><span class="p">]):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Vertex from Vector or other iterators&quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vertex_index</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="n">ocp_vx</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;ocp_vx&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;v&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;X&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;Y&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;Z&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+        <span class="c1"># Handle unexpected kwargs</span>
+        <span class="k">if</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unexpected argument(s): </span><span class="si">{</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">kwargs</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">args</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">TopoDS_Vertex</span><span class="p">):</span>
+                <span class="n">ocp_vx</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">Iterable</span><span class="p">):</span>
+                <span class="n">v</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">args</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="mi">0</span><span class="p">,)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">3</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="n">v</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">islice</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">chain</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]),</span> <span class="mi">3</span><span class="p">)</span>
+
+        <span class="n">ocp_vx</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">downcast</span><span class="p">(</span><span class="n">BRepBuilderAPI_MakeVertex</span><span class="p">(</span><span class="n">gp_Pnt</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">))</span><span class="o">.</span><span class="n">Vertex</span><span class="p">())</span>
+            <span class="k">if</span> <span class="n">ocp_vx</span> <span class="ow">is</span> <span class="kc">None</span>
+            <span class="k">else</span> <span class="n">ocp_vx</span>
+        <span class="p">)</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">ocp_vx</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">Y</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">Z</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_tuple</span><span class="p">()</span>
+
+    <span class="c1"># ---- Properties ----</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_dim</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">volume</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;volume - the volume of this Vertex, which is always zero&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="mf">0.0</span>
+
+    <span class="c1"># ---- Class Methods ----</span>
+
+<div class="viewcode-block" id="Vertex.cast">
+<a class="viewcode-back" href="../../direct_api_reference.html#topology.Vertex.cast">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">cast</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">obj</span><span class="p">:</span> <span class="n">TopoDS_Shape</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Self</span><span class="p">:</span>
+        <span class="s2">&quot;Returns the right type of wrapper, given a OCCT object&quot;</span>
+
+        <span class="c1"># define the shape lookup table for casting</span>
+        <span class="n">constructor_lut</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="n">ta</span><span class="o">.</span><span class="n">TopAbs_VERTEX</span><span class="p">:</span> <span class="n">Vertex</span><span class="p">,</span>
+        <span class="p">}</span>
+
+        <span class="n">shape_type</span> <span class="o">=</span> <span class="n">shapetype</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+        <span class="c1"># NB downcast is needed to handle TopoDS_Shape types</span>
+        <span class="k">return</span> <span class="n">constructor_lut</span><span class="p">[</span><span class="n">shape_type</span><span class="p">](</span><span class="n">downcast</span><span class="p">(</span><span class="n">obj</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="Vertex.extrude">
+<a class="viewcode-back" href="../../direct_api_reference.html#topology.Vertex.extrude">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extrude</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">obj</span><span class="p">:</span> <span class="n">Shape</span><span class="p">,</span> <span class="n">direction</span><span class="p">:</span> <span class="n">VectorLike</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Vertex</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;extrude - invalid operation for Vertex&quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;Vertices can&#39;t be created by extrusion&quot;</span><span class="p">)</span></div>
+
+
+    <span class="c1"># ---- Instance Methods ----</span>
+
+<div class="viewcode-block" id="Vertex.__add__">
+<a class="viewcode-back" href="../../direct_api_reference.html#topology.Vertex.__add__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__add__</span><span class="p">(</span>  <span class="c1"># type: ignore</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">Vertex</span> <span class="o">|</span> <span class="n">Vector</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Vertex</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add</span>
+
+<span class="sd">        Add to a Vertex with a Vertex, Vector or Tuple</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            other: Value to add</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            TypeError: other not in [Tuple,Vector,Vertex]</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Result</span>
+
+<span class="sd">        Example:</span>
+<span class="sd">            part.faces(&quot;&gt;z&quot;).vertices(&quot;&lt;y and &lt;x&quot;).val() + (0, 0, 15)</span>
+
+<span class="sd">            which creates a new Vertex 15 above one extracted from a part. One can add or</span>
+<span class="sd">            subtract a `Vertex` , `Vector` or `tuple` of float values to a Vertex.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Vertex</span><span class="p">):</span>
+            <span class="n">new_vertex</span> <span class="o">=</span> <span class="n">Vertex</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">X</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">Y</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">Y</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">Z</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">Z</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="p">(</span><span class="n">Vector</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
+            <span class="n">new_other</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+            <span class="n">new_vertex</span> <span class="o">=</span> <span class="n">Vertex</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">X</span> <span class="o">+</span> <span class="n">new_other</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">Y</span> <span class="o">+</span> <span class="n">new_other</span><span class="o">.</span><span class="n">Y</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">Z</span> <span class="o">+</span> <span class="n">new_other</span><span class="o">.</span><span class="n">Z</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+                <span class="s2">&quot;Vertex addition only supports Vertex,Vector or tuple(float,float,float) as input&quot;</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="n">new_vertex</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__and__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;intersect operator +&quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;Vertices can&#39;t be intersected&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize to beginning&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vertex_index</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__next__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;return the next value&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">vertex_index</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">vertex_index</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">X</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">vertex_index</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">vertex_index</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Y</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">vertex_index</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">vertex_index</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Z</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">StopIteration</span>
+        <span class="k">return</span> <span class="n">value</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;To String</span>
+
+<span class="sd">        Convert Vertex to String for display</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Vertex as String</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Vertex(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">X</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">Y</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">Z</span><span class="si">}</span><span class="s2">)&quot;</span>
+
+<div class="viewcode-block" id="Vertex.__sub__">
+<a class="viewcode-back" href="../../direct_api_reference.html#topology.Vertex.__sub__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__sub__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">Vertex</span> <span class="o">|</span> <span class="n">Vector</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Vertex</span><span class="p">:</span>  <span class="c1"># type: ignore</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Subtract</span>
+
+<span class="sd">        Substract a Vertex with a Vertex, Vector or Tuple from self</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            other: Value to add</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            TypeError: other not in [Tuple,Vector,Vertex]</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Result</span>
+
+<span class="sd">        Example:</span>
+<span class="sd">            part.faces(&quot;&gt;z&quot;).vertices(&quot;&lt;y and &lt;x&quot;).val() - Vector(10, 0, 0)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Vertex</span><span class="p">):</span>
+            <span class="n">new_vertex</span> <span class="o">=</span> <span class="n">Vertex</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">X</span> <span class="o">-</span> <span class="n">other</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">Y</span> <span class="o">-</span> <span class="n">other</span><span class="o">.</span><span class="n">Y</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">Z</span> <span class="o">-</span> <span class="n">other</span><span class="o">.</span><span class="n">Z</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="p">(</span><span class="n">Vector</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
+            <span class="n">new_other</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+            <span class="n">new_vertex</span> <span class="o">=</span> <span class="n">Vertex</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">X</span> <span class="o">-</span> <span class="n">new_other</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">Y</span> <span class="o">-</span> <span class="n">new_other</span><span class="o">.</span><span class="n">Y</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">Z</span> <span class="o">-</span> <span class="n">new_other</span><span class="o">.</span><span class="n">Z</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+                <span class="s2">&quot;Vertex subtraction only supports Vertex,Vector or tuple(float,float,float)&quot;</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="n">new_vertex</span></div>
+
+
+<div class="viewcode-block" id="Vertex.center">
+<a class="viewcode-back" href="../../direct_api_reference.html#topology.Vertex.center">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">center</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Vector</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The center of a vertex is itself!&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">Vector</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Vertex.to_tuple">
+<a class="viewcode-back" href="../../direct_api_reference.html#topology.Vertex.to_tuple">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">to_tuple</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return vertex as three tuple of floats&quot;&quot;&quot;</span>
+        <span class="n">geom_point</span> <span class="o">=</span> <span class="n">BRep_Tool</span><span class="o">.</span><span class="n">Pnt_s</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wrapped</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">geom_point</span><span class="o">.</span><span class="n">X</span><span class="p">(),</span> <span class="n">geom_point</span><span class="o">.</span><span class="n">Y</span><span class="p">(),</span> <span class="n">geom_point</span><span class="o">.</span><span class="n">Z</span><span class="p">())</span></div>
+
+
+<div class="viewcode-block" id="Vertex.transform_shape">
+<a class="viewcode-back" href="../../direct_api_reference.html#topology.Vertex.transform_shape">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">transform_shape</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">t_matrix</span><span class="p">:</span> <span class="n">Matrix</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Vertex</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Apply affine transform without changing type</span>
+
+<span class="sd">        Transforms a copy of this Vertex by the provided 3D affine transformation matrix.</span>
+<span class="sd">        Note that not all transformation are supported - primarily designed for translation</span>
+<span class="sd">        and rotation.  See :transform_geometry: for more comprehensive transformations.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            t_matrix (Matrix): affine transformation matrix</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Vertex: copy of transformed shape with all objects keeping their type</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">Vertex</span><span class="p">(</span><span class="o">*</span><span class="n">t_matrix</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="bp">self</span><span class="p">)))</span></div>
+
+
+<div class="viewcode-block" id="Vertex.vertex">
+<a class="viewcode-back" href="../../direct_api_reference.html#topology.Vertex.vertex">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">vertex</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Vertex</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the Vertex&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+
+<div class="viewcode-block" id="Vertex.vertices">
+<a class="viewcode-back" href="../../direct_api_reference.html#topology.Vertex.vertices">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">vertices</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ShapeList</span><span class="p">[</span><span class="n">Vertex</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;vertices - all the vertices in this Shape&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">ShapeList</span><span class="p">((</span><span class="bp">self</span><span class="p">,))</span>  <span class="c1"># Vertex is an iterable</span></div>
+</div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">topo_explore_common_vertex</span><span class="p">(</span>
+    <span class="n">edge1</span><span class="p">:</span> <span class="n">Edge</span> <span class="o">|</span> <span class="n">TopoDS_Edge</span><span class="p">,</span> <span class="n">edge2</span><span class="p">:</span> <span class="n">Edge</span> <span class="o">|</span> <span class="n">TopoDS_Edge</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Vertex</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Given two edges, find the common vertex&quot;&quot;&quot;</span>
+    <span class="n">topods_edge1</span> <span class="o">=</span> <span class="n">edge1</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">edge1</span><span class="p">,</span> <span class="n">TopoDS_Edge</span><span class="p">)</span> <span class="k">else</span> <span class="n">edge1</span><span class="o">.</span><span class="n">wrapped</span>
+    <span class="n">topods_edge2</span> <span class="o">=</span> <span class="n">edge2</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">edge2</span><span class="p">,</span> <span class="n">TopoDS_Edge</span><span class="p">)</span> <span class="k">else</span> <span class="n">edge2</span><span class="o">.</span><span class="n">wrapped</span>
+
+    <span class="k">if</span> <span class="n">topods_edge1</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">topods_edge2</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;edge is empty&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Explore vertices of the first edge</span>
+    <span class="n">vert_exp</span> <span class="o">=</span> <span class="n">TopExp_Explorer</span><span class="p">(</span><span class="n">topods_edge1</span><span class="p">,</span> <span class="n">ta</span><span class="o">.</span><span class="n">TopAbs_VERTEX</span><span class="p">)</span>
+    <span class="k">while</span> <span class="n">vert_exp</span><span class="o">.</span><span class="n">More</span><span class="p">():</span>
+        <span class="n">vertex1</span> <span class="o">=</span> <span class="n">vert_exp</span><span class="o">.</span><span class="n">Current</span><span class="p">()</span>
+
+        <span class="c1"># Explore vertices of the second edge</span>
+        <span class="n">explorer2</span> <span class="o">=</span> <span class="n">TopExp_Explorer</span><span class="p">(</span><span class="n">topods_edge2</span><span class="p">,</span> <span class="n">ta</span><span class="o">.</span><span class="n">TopAbs_VERTEX</span><span class="p">)</span>
+        <span class="k">while</span> <span class="n">explorer2</span><span class="o">.</span><span class="n">More</span><span class="p">():</span>
+            <span class="n">vertex2</span> <span class="o">=</span> <span class="n">explorer2</span><span class="o">.</span><span class="n">Current</span><span class="p">()</span>
+
+            <span class="c1"># Check if the vertices are the same</span>
+            <span class="k">if</span> <span class="n">vertex1</span><span class="o">.</span><span class="n">IsSame</span><span class="p">(</span><span class="n">vertex2</span><span class="p">):</span>
+                <span class="k">return</span> <span class="n">Vertex</span><span class="p">(</span><span class="n">TopoDS</span><span class="o">.</span><span class="n">Vertex_s</span><span class="p">(</span><span class="n">vertex1</span><span class="p">))</span>  <span class="c1"># Common vertex found</span>
+
+            <span class="n">explorer2</span><span class="o">.</span><span class="n">Next</span><span class="p">()</span>
+        <span class="n">vert_exp</span><span class="o">.</span><span class="n">Next</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="kc">None</span>  <span class="c1"># No common vertex found</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Gumyr.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

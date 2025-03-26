@@ -1,0 +1,505 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Key Concepts (builder mode) &mdash; build123d 0.9.2.dev40+gb1f0eed documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster.custom.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster.bundle.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-shadow.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-punk.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-noir.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-light.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-borderless.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/micromodal.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/sphinx_rtd_theme.css?v=3234e928" />
+      <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=c97902b4"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=f281be69"></script>
+      <script src="_static/js/hoverxref.js"></script>
+      <script src="_static/js/tooltipster.bundle.min.js"></script>
+      <script src="_static/js/micromodal.min.js"></script>
+      <script src="_static/design-tabs.js?v=f930bc37"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Key Concepts (algebra mode)" href="key_concepts_algebra.html" />
+    <link rel="prev" title="Key Concepts" href="key_concepts.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            build123d
+              <img src="_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts.html">Key Concepts</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Key Concepts (builder mode)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#understanding-the-builder-paradigm">Understanding the Builder Paradigm</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#how-the-builder-works">How the Builder Works</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-workflow">Example Workflow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#key-concepts">Key Concepts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#analogy-adding-numbers-on-paper">Analogy: Adding Numbers on Paper</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#builders">Builders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#implicit-builder-instance-variables">Implicit Builder Instance Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#workplanes">Workplanes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#locations-context">Locations Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#operation-inputs">Operation Inputs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#combination-modes">Combination Modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-locations-rotating-objects">Using Locations &amp; Rotating Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#builder-s-pending-objects">Builder’s Pending Objects</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts_algebra.html">Key Concepts (algebra mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="moving_objects.html">Moving Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OpenSCAD.html">Transitioning from OpenSCAD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introductory_examples.html">Introductory Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="selectors_operators.html">Selectors and Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operations.html">Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="builders.html">Builders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="joints.html">Joints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assemblies.html">Assemblies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tips.html">Tips, Best Practices and FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="import_export.html">Import/Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cheat_sheet.html">Cheat Sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="external.html">External Tools and Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="builder_api_reference.html">Builder Common API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="direct_api_reference.html">Direct API Reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">build123d</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Key Concepts (builder mode)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/key_concepts_builder.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="key-concepts-builder-mode">
+<h1>Key Concepts (builder mode)<a class="headerlink" href="#key-concepts-builder-mode" title="Link to this heading"></a></h1>
+<p>There are two primary APIs provided by build123d: builder and algebra. The builder
+API may be easier for new users as it provides some assistance and shortcuts; however,
+if you know what a Quaternion is you might prefer the algebra API which allows
+CAD objects to be created in the style of mathematical equations. Both API can
+be mixed in the same model with the exception that the algebra API can’t be used
+from within a builder context. As with music, there is no “best” genre or API,
+use the one you prefer or both if you like.</p>
+<p>The following key concepts will help new users understand build123d quickly.</p>
+<section id="understanding-the-builder-paradigm">
+<h2>Understanding the Builder Paradigm<a class="headerlink" href="#understanding-the-builder-paradigm" title="Link to this heading"></a></h2>
+<p>The <strong>Builder</strong> paradigm in build123d provides a powerful and intuitive way to construct
+complex geometric models. At its core, the Builder works like adding a column of numbers
+on a piece of paper: a running “total” is maintained internally as each new object is
+added or modified. This approach simplifies the process of constructing models by breaking
+it into smaller, incremental steps.</p>
+<section id="how-the-builder-works">
+<h3>How the Builder Works<a class="headerlink" href="#how-the-builder-works" title="Link to this heading"></a></h3>
+<p>When using a Builder (such as <strong>BuildLine</strong>, <strong>BuildSketch</strong>, or <strong>BuildPart</strong>), the
+following principles apply:</p>
+<ol class="arabic">
+<li><p><strong>Running Total</strong>:
+- The Builder maintains an internal “total,” which represents the current state of
+the object being built.
+- Each operation updates this total by combining the new object with the existing one.</p></li>
+<li><p><strong>Combination Modes</strong>:
+- Just as numbers in a column may have a <cite>+</cite> or <cite>-</cite> sign to indicate addition or
+subtraction, Builders use <strong>modes</strong> to control how each object is combined with
+the current total.
+- Common modes include:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>ADD</strong>: Adds the new object to the current total.</p></li>
+<li><p><strong>SUBTRACT</strong>: Removes the new object from the current total.</p></li>
+<li><p><strong>INTERSECT</strong>: Keeps only the overlapping regions of the new object and the current total.</p></li>
+<li><p><strong>REPLACE</strong>: Entirely replace the running total.</p></li>
+<li><p><strong>PRIVATE</strong>: Don’t change the running total at all.</p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p>The mode can be set dynamically for each operation, allowing for flexible and precise modeling.</p></li>
+</ul>
+</li>
+<li><p><strong>Extracting the Result</strong>:
+- At the end of the building process, the final object is accessed through the
+Builder’s attributes, such as <code class="docutils literal notranslate"><span class="pre">.line</span></code>, <code class="docutils literal notranslate"><span class="pre">.sketch</span></code>, or <code class="docutils literal notranslate"><span class="pre">.part</span></code>, depending on
+the Builder type.
+- For example:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>BuildLine</strong>: Use <code class="docutils literal notranslate"><span class="pre">.line</span></code> to retrieve the final wireframe geometry.</p></li>
+<li><p><strong>BuildSketch</strong>: Use <code class="docutils literal notranslate"><span class="pre">.sketch</span></code> to extract the completed 2D profile.</p></li>
+<li><p><strong>BuildPart</strong>: Use <code class="docutils literal notranslate"><span class="pre">.part</span></code> to obtain the 3D solid.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+</section>
+<section id="example-workflow">
+<h3>Example Workflow<a class="headerlink" href="#example-workflow" title="Link to this heading"></a></h3>
+<p>Here is an example of using a Builder to create a simple part:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">build123d</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+
+<span class="c1"># Using BuildPart to create a 3D model</span>
+<span class="k">with</span> <span class="n">BuildPart</span><span class="p">()</span> <span class="k">as</span> <span class="n">example_part</span><span class="p">:</span>
+    <span class="k">with</span> <span class="n">BuildSketch</span><span class="p">()</span> <span class="k">as</span> <span class="n">base_sketch</span><span class="p">:</span>
+        <span class="n">Rectangle</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+    <span class="n">extrude</span><span class="p">(</span><span class="n">amount</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># Create a base block</span>
+    <span class="k">with</span> <span class="n">BuildSketch</span><span class="p">(</span><span class="n">Plane</span><span class="p">(</span><span class="n">example_part</span><span class="o">.</span><span class="n">faces</span><span class="p">()</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="n">Axis</span><span class="o">.</span><span class="n">Z</span><span class="p">)</span><span class="o">.</span><span class="n">last</span><span class="p">))</span> <span class="k">as</span> <span class="n">cut_sketch</span><span class="p">:</span>
+        <span class="n">Circle</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+    <span class="n">extrude</span><span class="p">(</span><span class="n">amount</span><span class="o">=-</span><span class="mi">5</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">Mode</span><span class="o">.</span><span class="n">SUBTRACT</span><span class="p">)</span>  <span class="c1"># Subtract a cylinder</span>
+
+<span class="c1"># Access the final part</span>
+<span class="n">result_part</span> <span class="o">=</span> <span class="n">example_part</span><span class="o">.</span><span class="n">part</span>
+</pre></div>
+</div>
+</section>
+<section id="key-concepts">
+<h3>Key Concepts<a class="headerlink" href="#key-concepts" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Incremental Construction</strong>:
+Builders allow you to build objects step-by-step, maintaining clarity and modularity.</p></li>
+<li><p><strong>Dynamic Mode Switching</strong>:
+The <strong>mode</strong> parameter gives you precise control over how each operation modifies
+the current total.</p></li>
+<li><p><strong>Seamless Extraction</strong>:
+The Builder paradigm simplifies the retrieval of the final object, ensuring that you
+always have access to the most up-to-date result.</p></li>
+</ul>
+</section>
+<section id="analogy-adding-numbers-on-paper">
+<h3>Analogy: Adding Numbers on Paper<a class="headerlink" href="#analogy-adding-numbers-on-paper" title="Link to this heading"></a></h3>
+<p>Think of the Builder as a running tally when adding numbers on a piece of paper:</p>
+<ul class="simple">
+<li><p>Each number represents an operation or object.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">+</span></code> or <code class="docutils literal notranslate"><span class="pre">-</span></code> sign corresponds to the <strong>ADD</strong> or <strong>SUBTRACT</strong> mode.</p></li>
+<li><p>At the end, the total is the sum of all operations, which you can retrieve by referencing
+the Builder’s output.</p></li>
+</ul>
+<p>By adopting this approach, build123d ensures a natural, intuitive workflow for constructing
+2D and 3D models.</p>
+</section>
+</section>
+<section id="builders">
+<h2>Builders<a class="headerlink" href="#builders" title="Link to this heading"></a></h2>
+<p>The three builders, <code class="docutils literal notranslate"><span class="pre">BuildLine</span></code>, <code class="docutils literal notranslate"><span class="pre">BuildSketch</span></code>, and <code class="docutils literal notranslate"><span class="pre">BuildPart</span></code> are tools to create
+new objects - not the objects themselves. Each of the objects and operations applicable
+to these builders create objects of the standard CadQuery Direct API, most commonly
+<code class="docutils literal notranslate"><span class="pre">Compound</span></code> objects.  This is opposed to CadQuery’s Fluent API which creates objects
+of the <code class="docutils literal notranslate"><span class="pre">Workplane</span></code> class which frequently needed to be converted back to base
+class for further processing.</p>
+<p>One can access the objects created by these builders by referencing the appropriate
+instance variable. For example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">BuildPart</span><span class="p">()</span> <span class="k">as</span> <span class="n">my_part</span><span class="p">:</span>
+    <span class="o">...</span>
+
+<span class="n">show_object</span><span class="p">(</span><span class="n">my_part</span><span class="o">.</span><span class="n">part</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">BuildSketch</span><span class="p">()</span> <span class="k">as</span> <span class="n">my_sketch</span><span class="p">:</span>
+    <span class="o">...</span>
+
+<span class="n">show_object</span><span class="p">(</span><span class="n">my_sketch</span><span class="o">.</span><span class="n">sketch</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">BuildLine</span><span class="p">()</span> <span class="k">as</span> <span class="n">my_line</span><span class="p">:</span>
+    <span class="o">...</span>
+
+<span class="n">show_object</span><span class="p">(</span><span class="n">my_line</span><span class="o">.</span><span class="n">line</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="implicit-builder-instance-variables">
+<h2>Implicit Builder Instance Variables<a class="headerlink" href="#implicit-builder-instance-variables" title="Link to this heading"></a></h2>
+<p>One might expect to have to reference a builder’s instance variable when using
+objects or operations that impact that builder like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">BuildPart</span><span class="p">()</span> <span class="k">as</span> <span class="n">part_builder</span><span class="p">:</span>
+    <span class="n">Box</span><span class="p">(</span><span class="n">part_builder</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Instead, build123d determines from the scope of the object or operation which
+builder it applies to thus eliminating the need for the user to provide this
+information - as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">BuildPart</span><span class="p">()</span> <span class="k">as</span> <span class="n">part_builder</span><span class="p">:</span>
+    <span class="n">Box</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+    <span class="k">with</span> <span class="n">BuildSketch</span><span class="p">()</span> <span class="k">as</span> <span class="n">sketch_builder</span><span class="p">:</span>
+        <span class="n">Circle</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In this example, <code class="docutils literal notranslate"><span class="pre">Box</span></code> is in the scope of <code class="docutils literal notranslate"><span class="pre">part_builder</span></code> while <code class="docutils literal notranslate"><span class="pre">Circle</span></code>
+is in the scope of <code class="docutils literal notranslate"><span class="pre">sketch_builder</span></code>.</p>
+</section>
+<section id="workplanes">
+<h2>Workplanes<a class="headerlink" href="#workplanes" title="Link to this heading"></a></h2>
+<p>As build123d is a 3D CAD package one must be able to position objects anywhere. As one
+frequently will work in the same plane for a sequence of operations, the first parameter(s)
+of the builders is a (sequence of) workplane(s) which is (are) used
+to aid in the location of features. The default workplane in most cases is the <code class="docutils literal notranslate"><span class="pre">Plane.XY</span></code>
+where a tuple of numbers represent positions on the x and y axes. However workplanes can
+be generated on any plane which allows users to put a workplane where they are working
+and then work in local 2D coordinate space.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">BuildPart</span><span class="p">(</span><span class="n">Plane</span><span class="o">.</span><span class="n">XY</span><span class="p">)</span> <span class="k">as</span> <span class="n">example</span><span class="p">:</span>
+    <span class="o">...</span> <span class="c1"># a 3D-part</span>
+    <span class="k">with</span> <span class="n">BuildSketch</span><span class="p">(</span><span class="n">example</span><span class="o">.</span><span class="n">faces</span><span class="p">()</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="n">sort_by</span><span class="o">=</span><span class="n">Axis</span><span class="o">.</span><span class="n">Z</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span> <span class="k">as</span> <span class="n">bottom</span><span class="p">:</span>
+        <span class="o">...</span>
+    <span class="k">with</span> <span class="n">BuildSketch</span><span class="p">(</span><span class="n">Plane</span><span class="o">.</span><span class="n">XZ</span><span class="p">)</span> <span class="k">as</span> <span class="n">vertical</span><span class="p">:</span>
+        <span class="o">...</span>
+    <span class="k">with</span> <span class="n">BuildSketch</span><span class="p">(</span><span class="n">example</span><span class="o">.</span><span class="n">faces</span><span class="p">()</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="n">sort_by</span><span class="o">=</span><span class="n">Axis</span><span class="o">.</span><span class="n">Z</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="k">as</span> <span class="n">top</span><span class="p">:</span>
+        <span class="o">...</span>
+</pre></div>
+</div>
+<p>When <code class="docutils literal notranslate"><span class="pre">BuildPart</span></code> is invoked it creates the workplane provided as a parameter (which has a
+default of the <code class="docutils literal notranslate"><span class="pre">Plane.XY</span></code>). The <code class="docutils literal notranslate"><span class="pre">bottom</span></code> sketch is therefore created on the <code class="docutils literal notranslate"><span class="pre">Plane.XY</span></code> but with the
+normal reversed to point down. Subsequently the user has created the <code class="docutils literal notranslate"><span class="pre">vertical</span></code> (<code class="docutils literal notranslate"><span class="pre">Plane.XZ</span></code>) sketch.
+All objects or operations within the scope of a workplane will automatically be orientated with
+respect to this plane so the user only has to work with local coordinates.</p>
+<p>As shown above, workplanes can be created from faces as well. The <code class="docutils literal notranslate"><span class="pre">top</span></code> sketch is
+positioned on top of <code class="docutils literal notranslate"><span class="pre">example</span></code> by selecting its faces and finding the one with the greatest z value.</p>
+<p>One is not limited to a single workplane at a time. In the following example all six
+faces of the first box are used to define workplanes which are then used to position
+rotated boxes.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">build123d</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">bd</span>
+
+<span class="k">with</span> <span class="n">bd</span><span class="o">.</span><span class="n">BuildPart</span><span class="p">()</span> <span class="k">as</span> <span class="n">bp</span><span class="p">:</span>
+    <span class="n">bd</span><span class="o">.</span><span class="n">Box</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="k">with</span> <span class="n">bd</span><span class="o">.</span><span class="n">BuildSketch</span><span class="p">(</span><span class="o">*</span><span class="n">bp</span><span class="o">.</span><span class="n">faces</span><span class="p">()):</span>
+        <span class="n">bd</span><span class="o">.</span><span class="n">Rectangle</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+    <span class="n">bd</span><span class="o">.</span><span class="n">extrude</span><span class="p">(</span><span class="n">amount</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This is the result:</p>
+<img alt="_images/boxes_on_faces.svg" class="align-center" src="_images/boxes_on_faces.svg" />
+</section>
+<section id="locations-context">
+<span id="location-context-link"></span><h2>Locations Context<a class="headerlink" href="#locations-context" title="Link to this heading"></a></h2>
+<p>When positioning objects or operations within a builder Location Contexts are used.  These
+function in a very similar was to the builders in that they create a context where one or
+more locations are active within a scope.  For example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">BuildPart</span><span class="p">():</span>
+    <span class="k">with</span> <span class="n">Locations</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">),(</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">10</span><span class="p">)):</span>
+        <span class="n">Box</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">with</span> <span class="n">GridLocations</span><span class="p">(</span><span class="n">x_spacing</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">y_spacing</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">x_count</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">y_count</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+            <span class="n">Sphere</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">Cylinder</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In this example <code class="docutils literal notranslate"><span class="pre">Locations</span></code> creates two positions on the current workplane at (0,10) and (0,-10).
+Since <code class="docutils literal notranslate"><span class="pre">Box</span></code> is within the scope of <code class="docutils literal notranslate"><span class="pre">Locations</span></code>, two boxes are created at these locations. The
+<code class="docutils literal notranslate"><span class="pre">GridLocations</span></code> context creates four positions which apply to the <code class="docutils literal notranslate"><span class="pre">Sphere</span></code>. The <code class="docutils literal notranslate"><span class="pre">Cylinder</span></code> is
+out of the scope of <code class="docutils literal notranslate"><span class="pre">GridLocations</span></code> but in the scope of <code class="docutils literal notranslate"><span class="pre">Locations</span></code> so two cylinders are created.</p>
+<p>Note that these contexts are creating Location objects not just simple points. The difference
+isn’t obvious until the <code class="docutils literal notranslate"><span class="pre">PolarLocations</span></code> context is used which can also rotate objects within
+its scope - much as the hour and minute indicator on an analogue clock.</p>
+<p>Also note that the locations are local to the current location(s) - i.e. <code class="docutils literal notranslate"><span class="pre">Locations</span></code> can be
+nested. It’s easy for a user to retrieve the global locations:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">Locations</span><span class="p">(</span><span class="n">Plane</span><span class="o">.</span><span class="n">XY</span><span class="p">,</span> <span class="n">Plane</span><span class="o">.</span><span class="n">XZ</span><span class="p">):</span>
+    <span class="n">locs</span> <span class="o">=</span> <span class="n">GridLocations</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">locs</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Location</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">0.50</span><span class="p">,</span><span class="o">-</span><span class="mf">0.50</span><span class="p">,</span><span class="mf">0.00</span><span class="p">),</span> <span class="n">o</span><span class="o">=</span><span class="p">(</span><span class="mf">0.00</span><span class="p">,</span><span class="o">-</span><span class="mf">0.00</span><span class="p">,</span><span class="mf">0.00</span><span class="p">))</span>
+<span class="n">Location</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">0.50</span><span class="p">,</span><span class="mf">0.50</span><span class="p">,</span><span class="mf">0.00</span><span class="p">),</span> <span class="n">o</span><span class="o">=</span><span class="p">(</span><span class="mf">0.00</span><span class="p">,</span><span class="o">-</span><span class="mf">0.00</span><span class="p">,</span><span class="mf">0.00</span><span class="p">))</span>
+<span class="n">Location</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="p">(</span><span class="mf">0.50</span><span class="p">,</span><span class="o">-</span><span class="mf">0.50</span><span class="p">,</span><span class="mf">0.00</span><span class="p">),</span> <span class="n">o</span><span class="o">=</span><span class="p">(</span><span class="mf">0.00</span><span class="p">,</span><span class="o">-</span><span class="mf">0.00</span><span class="p">,</span><span class="mf">0.00</span><span class="p">))</span>
+<span class="n">Location</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="p">(</span><span class="mf">0.50</span><span class="p">,</span><span class="mf">0.50</span><span class="p">,</span><span class="mf">0.00</span><span class="p">),</span> <span class="n">o</span><span class="o">=</span><span class="p">(</span><span class="mf">0.00</span><span class="p">,</span><span class="o">-</span><span class="mf">0.00</span><span class="p">,</span><span class="mf">0.00</span><span class="p">))</span>
+<span class="n">Location</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">0.50</span><span class="p">,</span><span class="o">-</span><span class="mf">0.00</span><span class="p">,</span><span class="o">-</span><span class="mf">0.50</span><span class="p">),</span> <span class="n">o</span><span class="o">=</span><span class="p">(</span><span class="mf">90.00</span><span class="p">,</span><span class="o">-</span><span class="mf">0.00</span><span class="p">,</span><span class="mf">0.00</span><span class="p">))</span>
+<span class="n">Location</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">0.50</span><span class="p">,</span><span class="mf">0.00</span><span class="p">,</span><span class="mf">0.50</span><span class="p">),</span> <span class="n">o</span><span class="o">=</span><span class="p">(</span><span class="mf">90.00</span><span class="p">,</span><span class="o">-</span><span class="mf">0.00</span><span class="p">,</span><span class="mf">0.00</span><span class="p">))</span>
+<span class="n">Location</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="p">(</span><span class="mf">0.50</span><span class="p">,</span><span class="mf">0.00</span><span class="p">,</span><span class="o">-</span><span class="mf">0.50</span><span class="p">),</span> <span class="n">o</span><span class="o">=</span><span class="p">(</span><span class="mf">90.00</span><span class="p">,</span><span class="o">-</span><span class="mf">0.00</span><span class="p">,</span><span class="mf">0.00</span><span class="p">))</span>
+<span class="n">Location</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="p">(</span><span class="mf">0.50</span><span class="p">,</span><span class="mf">0.00</span><span class="p">,</span><span class="mf">0.50</span><span class="p">),</span> <span class="n">o</span><span class="o">=</span><span class="p">(</span><span class="mf">90.00</span><span class="p">,</span><span class="o">-</span><span class="mf">0.00</span><span class="p">,</span><span class="mf">0.00</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+<section id="operation-inputs">
+<h2>Operation Inputs<a class="headerlink" href="#operation-inputs" title="Link to this heading"></a></h2>
+<p>When one is operating on an existing object, e.g. adding a fillet to a part,
+an iterable of objects is often required (often a ShapeList).</p>
+<p>Here is the definition of <a class="hxr-hoverxref hxr-tooltip reference internal" href="operations.html#operations_generic.fillet" title="operations_generic.fillet"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fillet()</span></code></a> to help illustrate:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">fillet</span><span class="p">(</span>
+    <span class="n">objects</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">Edge</span><span class="p">,</span> <span class="n">Vertex</span><span class="p">],</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">Edge</span><span class="p">,</span> <span class="n">Vertex</span><span class="p">]]],</span>
+    <span class="n">radius</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+<span class="p">):</span>
+</pre></div>
+</div>
+<p>To use this fillet operation, an edge or vertex or iterable of edges or
+vertices must be provided followed by a fillet radius with or without the keyword as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">BuildPart</span><span class="p">()</span> <span class="k">as</span> <span class="n">pipes</span><span class="p">:</span>
+    <span class="n">Box</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">))</span>
+    <span class="o">...</span>
+    <span class="n">fillet</span><span class="p">(</span><span class="n">pipes</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">Select</span><span class="o">.</span><span class="n">LAST</span><span class="p">),</span> <span class="n">radius</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Here the fillet accepts the iterable ShapeList of edges from the last operation of
+the <code class="docutils literal notranslate"><span class="pre">pipes</span></code> builder and a radius is provided as a keyword argument.</p>
+</section>
+<section id="combination-modes">
+<h2>Combination Modes<a class="headerlink" href="#combination-modes" title="Link to this heading"></a></h2>
+<p>Almost all objects or operations have a <code class="docutils literal notranslate"><span class="pre">mode</span></code> parameter which is defined by the
+<code class="docutils literal notranslate"><span class="pre">Mode</span></code> Enum class as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Mode</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+    <span class="n">ADD</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">SUBTRACT</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">INTERSECT</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">REPLACE</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">PRIVATE</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">mode</span></code> parameter describes how the user would like the object or operation to
+interact with the object within the builder. For example, <code class="docutils literal notranslate"><span class="pre">Mode.ADD</span></code> will
+integrate a new object(s) in with an existing <code class="docutils literal notranslate"><span class="pre">part</span></code>.  Note that a part doesn’t
+necessarily have to be a single object so multiple distinct objects could be added
+resulting is multiple objects stored as a <code class="docutils literal notranslate"><span class="pre">Compound</span></code> object. As one might expect
+<code class="docutils literal notranslate"><span class="pre">Mode.SUBTRACT</span></code>, <code class="docutils literal notranslate"><span class="pre">Mode.INTERSECT</span></code>, and <code class="docutils literal notranslate"><span class="pre">Mode.REPLACE</span></code> subtract, intersect, or replace
+(from) the builder’s object. <code class="docutils literal notranslate"><span class="pre">Mode.PRIVATE</span></code> instructs the builder that this object
+should not be combined with the builder’s object in any way.</p>
+<p>Most commonly, the default <code class="docutils literal notranslate"><span class="pre">mode</span></code> is <code class="docutils literal notranslate"><span class="pre">Mode.ADD</span></code> but this isn’t always true.
+For example, the <code class="docutils literal notranslate"><span class="pre">Hole</span></code> classes use a default <code class="docutils literal notranslate"><span class="pre">Mode.SUBTRACT</span></code> as they remove
+a volume from the part under normal circumstances. However, the <code class="docutils literal notranslate"><span class="pre">mode</span></code> used in
+the <code class="docutils literal notranslate"><span class="pre">Hole</span></code> classes can be specified as <code class="docutils literal notranslate"><span class="pre">Mode.ADD</span></code> or <code class="docutils literal notranslate"><span class="pre">Mode.INTERSECT</span></code> to
+help in inspection or debugging.</p>
+</section>
+<section id="using-locations-rotating-objects">
+<h2>Using Locations &amp; Rotating Objects<a class="headerlink" href="#using-locations-rotating-objects" title="Link to this heading"></a></h2>
+<p>build123d stores points (to be specific <code class="docutils literal notranslate"><span class="pre">Location</span></code> (s)) internally to be used as
+positions for the placement of new objects.  By default, a single location
+will be created at the origin of the given workplane such that:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">BuildPart</span><span class="p">()</span> <span class="k">as</span> <span class="n">pipes</span><span class="p">:</span>
+    <span class="n">Box</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>will create a single 10x10x10 box centered at (0,0,0) - by default objects are
+centered. One can create multiple objects by pushing points prior to creating
+objects as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">BuildPart</span><span class="p">()</span> <span class="k">as</span> <span class="n">pipes</span><span class="p">:</span>
+    <span class="k">with</span> <span class="n">Locations</span><span class="p">((</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">),</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)):</span>
+        <span class="n">Box</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>which will create two boxes.</p>
+<p>To orient a part, a <code class="docutils literal notranslate"><span class="pre">rotation</span></code> parameter is available on <code class="docutils literal notranslate"><span class="pre">BuildSketch`</span></code> and
+<code class="docutils literal notranslate"><span class="pre">BuildPart</span></code> APIs. When working in a sketch, the rotation is a single angle in
+degrees so the parameter is a float. When working on a part, the rotation is
+a three dimensional <code class="docutils literal notranslate"><span class="pre">Rotation</span></code> object of the form
+<code class="docutils literal notranslate"><span class="pre">Rotation(&lt;about</span> <span class="pre">x&gt;,</span> <span class="pre">&lt;about</span> <span class="pre">y&gt;,</span> <span class="pre">&lt;about</span> <span class="pre">z&gt;)</span></code> although a simple three tuple of
+floats can be used as input.  As 3D rotations are not cumulative, one can
+combine rotations with the <cite>*</cite> operator like this:
+<code class="docutils literal notranslate"><span class="pre">Rotation(10,</span> <span class="pre">20,</span> <span class="pre">30)</span> <span class="pre">*</span> <span class="pre">Rotation(0,</span> <span class="pre">90,</span> <span class="pre">0)</span></code> to generate any desired rotation.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Experts Only</p>
+<p><code class="docutils literal notranslate"><span class="pre">Locations</span></code> will accept <code class="docutils literal notranslate"><span class="pre">Location</span></code> objects for input which allows one
+to specify both the position and orientation.  However, the orientation
+is often determined by the <code class="docutils literal notranslate"><span class="pre">Plane</span></code> that an object was created on.
+<code class="docutils literal notranslate"><span class="pre">Rotation</span></code> is a subclass of <code class="docutils literal notranslate"><span class="pre">Location</span></code> and therefore will also accept
+a position component.</p>
+</div>
+</section>
+<section id="builder-s-pending-objects">
+<h2>Builder’s Pending Objects<a class="headerlink" href="#builder-s-pending-objects" title="Link to this heading"></a></h2>
+<p>When a builder exits, it will push the object created back to its parent if
+there was one.  Here is an example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">thickness</span><span class="p">,</span> <span class="n">f_rad</span> <span class="o">=</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">10</span>
+
+<span class="k">with</span> <span class="n">BuildPart</span><span class="p">()</span> <span class="k">as</span> <span class="n">pillow_block</span><span class="p">:</span>
+    <span class="k">with</span> <span class="n">BuildSketch</span><span class="p">()</span> <span class="k">as</span> <span class="n">plan</span><span class="p">:</span>
+        <span class="n">Rectangle</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+        <span class="n">fillet</span><span class="p">(</span><span class="n">plan</span><span class="o">.</span><span class="n">vertices</span><span class="p">(),</span> <span class="n">radius</span><span class="o">=</span><span class="n">f_rad</span><span class="p">)</span>
+    <span class="n">extrude</span><span class="p">(</span><span class="n">amount</span><span class="o">=</span><span class="n">thickness</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">BuildSketch</span></code> exits after the <code class="docutils literal notranslate"><span class="pre">fillet</span></code> operation and when doing so it transfers
+the sketch to the <code class="docutils literal notranslate"><span class="pre">pillow_block</span></code> instance of <code class="docutils literal notranslate"><span class="pre">BuildPart</span></code> as the internal instance variable
+<code class="docutils literal notranslate"><span class="pre">pending_faces</span></code>. This allows the <code class="docutils literal notranslate"><span class="pre">extrude</span></code> operation to be immediately invoked as it
+extrudes these pending faces into <code class="docutils literal notranslate"><span class="pre">Solid</span></code> objects. Likewise, <code class="docutils literal notranslate"><span class="pre">loft</span></code> would take all of the
+<code class="docutils literal notranslate"><span class="pre">pending_faces</span></code> and attempt to create a single <code class="docutils literal notranslate"><span class="pre">Solid</span></code> object from them.</p>
+<p>Normally the user will not need to interact directly with pending objects; however,
+one can see pending Edges and Faces with <code class="docutils literal notranslate"><span class="pre">&lt;builder_instance&gt;.pending_edges</span></code> and
+<code class="docutils literal notranslate"><span class="pre">&lt;builder_instance&gt;.pending_faces</span></code> attributes.  In the above example, by adding a
+<code class="docutils literal notranslate"><span class="pre">print(pillow_block.pending_faces)</span></code> prior to the <code class="docutils literal notranslate"><span class="pre">extrude(amount=thickness)</span></code> the
+pending <code class="docutils literal notranslate"><span class="pre">Face</span></code> from the <code class="docutils literal notranslate"><span class="pre">BuildSketch</span></code> will be displayed.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="key_concepts.html" class="btn btn-neutral float-left" title="Key Concepts" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="key_concepts_algebra.html" class="btn btn-neutral float-right" title="Key Concepts (algebra mode)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Gumyr.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

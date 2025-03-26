@@ -1,0 +1,110 @@
+Selectors
+=========
+
+.. |vertices| replace:: :meth:`~topology.Shape.vertices`
+.. |edges| replace:: :meth:`~topology.Shape.edges`
+.. |wires| replace:: :meth:`~topology.Shape.wires`
+.. |faces| replace:: :meth:`~topology.Shape.faces`
+.. |solids| replace:: :meth:`~topology.Shape.solids`
+.. |sort_by| replace:: :meth:`~topology.ShapeList.sort_by`
+.. |sort_by_distance| replace:: :meth:`~topology.ShapeList.sort_by_distance`
+.. |group_by| replace:: :meth:`~topology.ShapeList.group_by`
+.. |filter_by| replace:: :meth:`~topology.ShapeList.filter_by`
+.. |filter_by_position| replace:: :meth:`~topology.ShapeList.filter_by_position`
+
+Selectors offer methods to isolate all or a subset of a feature type in the referenced
+object. These methods select Edges, Faces, Solids, Vertices, or Wires in Builder objects.
+All of these methods return objects of a subclass of ``list``, a :class:`~topology.ShapeList`
+which may be sorted, grouped, or filtered by *Operators*.
+
+Overview
+---------------
+
++--------------+----------------+-----------------------------------+-----------------------+
+| Selector     | Criteria       | Applicability                     | Description           |
++==============+================+===================================+=======================+
+| |vertices|   | ALL, LAST      | BuildLine, BuildSketch, BuildPart | ``Vertex`` extraction |
++--------------+----------------+-----------------------------------+-----------------------+
+| |edges|      | ALL, LAST, NEW | BuildLine, BuildSketch, BuildPart | ``Edge`` extraction   |
++--------------+----------------+-----------------------------------+-----------------------+
+| |wires|      | ALL, LAST      | BuildLine, BuildSketch, BuildPart | ``Wire`` extraction   |
++--------------+----------------+-----------------------------------+-----------------------+
+| |faces|      | ALL, LAST      | BuildSketch, BuildPart            | ``Face`` extraction   |
++--------------+----------------+-----------------------------------+-----------------------+
+| |solids|     | ALL, LAST      | BuildPart                         | ``Solid`` extraction  |
++--------------+----------------+-----------------------------------+-----------------------+
+
+Selector methods take :class:`~build_enums.Select` as criteria to specify a subset of
+the feature to isolate. By default a selector will select ALL of a feature, while LAST
+excludes features unchanged by the most recent operation. |edges| can uniquely
+specify NEW to only select edges created in the last operation which neither existed in
+the referenced object before the last operation, nor the modifying object.
+
+Use
+---------------
+
+Create a simple part to demonstrate selectors. Select using the default criteria ``Select.ALL``.
+
+.. code-block:: python
+
+    with BuildPart() as part:
+        Box(5, 5, 1)
+        Cylinder(1, 5)
+
+    part.vertices()
+    part.edges()
+    part.faces()
+
+.. image:: ../assets/selectors_operators/selectors_select_all.png
+    :align: center
+
+Select features changed in the last operation with criteria ``Select.LAST``.
+
+.. code-block:: python
+
+    part.vertices(Select.LAST)
+    part.edges(Select.LAST)
+    part.faces(Select.LAST)
+
+.. image:: ../assets/selectors_operators/selectors_select_last.png
+    :align: center
+
+Select only new edges from the last operation with ``Select.NEW``. Only a ShapeList of
+Edges has this option!
+
+.. code-block:: python
+
+    part.edges(Select.NEW)
+
+
+.. image:: ../assets/selectors_operators/selectors_select_new.png
+    :align: center
+
+This only returns the edges created where the Box and Cylinder ``intersect``. But what
+happens if the objects don't intersect?
+
+.. code-block:: python
+
+    with BuildPart() as part:
+        Box(5, 5, 1, align=(Align.CENTER, Align.CENTER, Align.MIN))
+        Cylinder(1, 2, align=(Align.CENTER, Align.CENTER, Align.MAX))
+
+    part.edges(Select.NEW)
+
+.. image:: ../assets/selectors_operators/selectors_select_new_none.png
+    :align: center
+
+No edges are selected! Unlike the previous example, the Edge between the Box and Cylinder
+objects already existed as all or part of an Edge in Cylinder. It's best to think of
+``Select.NEW`` as a way to select only completely new edges created by the operation.
+
+Similarly, note that while chamfer and fillet only modify the current object without a
+new object, they do not have new edges
+
+.. code-block:: python
+
+    edges = part.edges().filter_by(lambda a: a.length == 1)
+    fillet(edges, 1)
+
+.. image:: ../assets/selectors_operators/selectors_select_new_fillet.png
+    :align: center

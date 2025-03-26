@@ -1,0 +1,545 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Introduction &mdash; build123d 0.9.2.dev40+gb1f0eed documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster.custom.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster.bundle.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-shadow.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-punk.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-noir.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-light.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-borderless.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/micromodal.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/sphinx_rtd_theme.css?v=3234e928" />
+      <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=c97902b4"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=f281be69"></script>
+      <script src="_static/js/hoverxref.js"></script>
+      <script src="_static/js/tooltipster.bundle.min.js"></script>
+      <script src="_static/js/micromodal.min.js"></script>
+      <script src="_static/design-tabs.js?v=f930bc37"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Installation" href="installation.html" />
+    <link rel="prev" title="Overview" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            build123d
+              <img src="_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#key-aspects">Key Aspects</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#boundary-representation-brep-modelling">Boundary Representation (BREP) Modelling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#parameterized-models">Parameterized Models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#python-programming-language">Python Programming Language</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#open-source-software">Open Source Software</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#source-code-control-systems">Source Code Control Systems</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#automated-testing">Automated Testing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#automated-documentation">Automated Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#advantages-over-cadquery">Advantages Over CadQuery</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#standard-python-context-manager">Standard Python Context Manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#instantiated-objects">Instantiated Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#operators">Operators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#last-operation-objects">Last Operation Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#extensions">Extensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#enums">Enums</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#selectors-replaced-by-lists">Selectors replaced by Lists</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts.html">Key Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts_builder.html">Key Concepts (builder mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts_algebra.html">Key Concepts (algebra mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="moving_objects.html">Moving Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OpenSCAD.html">Transitioning from OpenSCAD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introductory_examples.html">Introductory Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="selectors_operators.html">Selectors and Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operations.html">Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="builders.html">Builders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="joints.html">Joints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assemblies.html">Assemblies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tips.html">Tips, Best Practices and FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="import_export.html">Import/Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cheat_sheet.html">Cheat Sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="external.html">External Tools and Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="builder_api_reference.html">Builder Common API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="direct_api_reference.html">Direct API Reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">build123d</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Introduction</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/introduction.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h1>
+<section id="key-aspects">
+<h2>Key Aspects<a class="headerlink" href="#key-aspects" title="Link to this heading"></a></h2>
+<p>The following sections describe some of the key aspects of build123d and illustrate
+why one might choose this open source system over proprietary options like SolidWorks,
+OnShape, Fusion 360, or even other open source systems like Blender, or OpenSCAD.</p>
+<section id="boundary-representation-brep-modelling">
+<h3>Boundary Representation (BREP) Modelling<a class="headerlink" href="#boundary-representation-brep-modelling" title="Link to this heading"></a></h3>
+<p>Boundary representation (BREP) and mesh-based CAD systems are both used to
+create and manipulate 3D models, but they differ in the way they represent and
+store the models.</p>
+<p>Advantages of BREP-based CAD systems (e.g. build123d &amp; SolidWorks):</p>
+<ul class="simple">
+<li><p>Precision: BREP-based CAD systems use mathematical representations to define
+the shape of an object, which allows for more precise and accurate modeling of
+complex shapes.</p></li>
+<li><p>Topology: BREP-based CAD systems maintain topological information of the 3D
+model, such as edges, faces and vertices. This allows for more robust and stable
+modeling, such as Boolean operations.</p></li>
+<li><p>Analytical modeling: BREP-based CAD systems can take advantage of the
+topological information to perform analytical operations such as collision
+detection, mass properties calculations, and finite element analysis.</p></li>
+<li><p>Features-based modeling: BREP-based CAD systems are often feature-based, which
+means that the model is built by creating and modifying individual features,
+such as holes, fillets, and chamfers. This allows for parametric design and easy
+modification of the model.</p></li>
+<li><p>Efficient storage: BREP-based CAD systems use a compact representation to
+store the 3D model, which is more efficient than storing a large number of
+triangles used in mesh-based systems.</p></li>
+</ul>
+<p>Advantages of Mesh-based CAD systems (e.g. Blender, OpenSCAD):</p>
+<ul class="simple">
+<li><p>Simplicity: Mesh-based CAD systems use a large number of triangles to
+represent the surface of an object, which makes them easy to use and understand.</p></li>
+<li><p>Real-time rendering: Mesh-based CAD systems can be rendered in real-time,
+which is useful for applications such as video games and virtual reality.</p></li>
+<li><p>Flexibility: Mesh-based CAD systems can be easily exported to other 3D
+modeling and animation software, which makes them a good choice for use in the
+entertainment industry.</p></li>
+<li><p>Handling of freeform surfaces: Mesh-based systems are better equipped to
+handle freeform surfaces, such as those found in organic shapes, as they do not
+rely on mathematical representation.</p></li>
+<li><p>Handling of large datasets: Mesh-based systems are more suitable for handling
+large datasets such as point clouds, as they can be easily converted into a mesh
+representation.</p></li>
+</ul>
+</section>
+<section id="parameterized-models">
+<h3>Parameterized Models<a class="headerlink" href="#parameterized-models" title="Link to this heading"></a></h3>
+<p>Parametrized CAD systems are more effective than non-parametric CAD systems in
+several ways:</p>
+<ul class="simple">
+<li><p>Reusability: Parametrized CAD models can be easily modified by changing a set
+of parameters, such as the length or width of an object, rather than having to
+manually edit the geometry. This makes it easy to create variations of a design
+without having to start from scratch.</p></li>
+<li><p>Design exploration: Parametrized CAD systems allow for easy exploration of
+different design options by changing the parameters and quickly visualizing the
+results.  This can save a lot of time and effort during the design process.</p></li>
+<li><p>Constraints and relationships: Parametrized CAD systems allow for the
+definition of constraints and relationships between different parameters. This
+ensures that the model remains valid and functional even when parameters are
+changed.</p></li>
+<li><p>Automation: Parametrized CAD systems can be automated to perform repetitive
+tasks, such as generating detailed drawings or creating parts lists. This can
+save a lot of time and effort and reduce the risk of errors.</p></li>
+<li><p>Collaboration: Parametrized CAD systems allow different team members to work
+on different aspects of a design simultaneously and ensure that the model
+remains consistent across different stages of the development process.</p></li>
+<li><p>Document management: Parametrized CAD systems can generate engineering
+drawings, BOMs, and other documents automatically, which makes it easier to
+manage and track the design history.</p></li>
+</ul>
+<p>In summary, parametrized CAD systems are more effective than non-parametric CAD
+systems because they provide a more efficient and flexible way to create and
+modify designs, and can be easily integrated into the design, manufacturing, and
+documentation process.</p>
+</section>
+<section id="python-programming-language">
+<h3>Python Programming Language<a class="headerlink" href="#python-programming-language" title="Link to this heading"></a></h3>
+<p>Python is a popular, high-level programming language that has several advantages
+over other programming languages:</p>
+<ul class="simple">
+<li><p>Readability: Python code is easy to read and understand, with a clear and
+consistent syntax. This makes it a great language for beginners and for teams of
+developers who need to collaborate on a project.</p></li>
+<li><p>Versatility: Python is a general-purpose language that can be used for a wide
+range of tasks, including web development, scientific computing, data analysis,
+artificial intelligence, and more. This makes it a great choice for developers
+who need to work on multiple types of projects.</p></li>
+<li><p>Large community: Python has a large and active community of developers who
+contribute to the language and its ecosystem. This means that there are many
+libraries and frameworks available for developers to use, which can save a lot
+of time and effort.</p></li>
+<li><p>Good for data science, machine learning, and CAD: Python has a number of libraries
+such as numpy, pandas, scikit-learn, tensorflow, and cadquery which are popularly
+used in data science and machine learning and CAD.</p></li>
+<li><p>High-level language: Python is a high-level language, which means it abstracts
+away many of the low-level details of the computer.  This makes it easy to write
+code quickly and focus on solving the problem at hand.</p></li>
+<li><p>Cross-platform: Python code runs on many different platforms, including
+Windows, Mac, and Linux, making it a great choice for developers who need to
+write code that runs on multiple operating systems.</p></li>
+<li><p>Open-source: Python is an open-source programming language, which means it is
+free to use and distribute.  This makes it accessible to developers of all
+levels and budgets.</p></li>
+<li><p>Large number of libraries and modules: Python has a vast collection of
+libraries and modules that make it easy to accomplish complex tasks such as
+connecting to web servers, reading and modifying files, and connecting to
+databases.</p></li>
+</ul>
+</section>
+<section id="open-source-software">
+<h3>Open Source Software<a class="headerlink" href="#open-source-software" title="Link to this heading"></a></h3>
+<p>Open source and proprietary software systems are different in several ways: B
+Licensing: Open source software is licensed in a way that allows users to view,
+modify, and distribute the source code, while proprietary software is closed
+source and the source code is not available to the public.</p>
+<ul class="simple">
+<li><p>Ownership: Open source software is usually developed and maintained by a
+community of developers, while proprietary software is owned by a company or
+individual.</p></li>
+<li><p>Cost: Open source software is typically free to use, while proprietary
+software may require payment for a license or subscription.  Customization: Open
+source software can be modified and customized by users and developers, while
+proprietary software is typically not modifiable by users.</p></li>
+<li><p>Support: Open source software may have a larger community of users who can
+provide support, while proprietary software may have a smaller community and
+relies on the company for support.  Security: Open source software can be
+audited by a large community of developers, which can make it more secure, while
+proprietary software may have fewer eyes on the code and may be more vulnerable
+to security issues.</p></li>
+<li><p>Interoperability: Open source software may have better interoperability with
+other software and platforms, while proprietary software may have more limited
+compatibility.</p></li>
+<li><p>Reliability: Open source software can be considered as reliable as proprietary
+software. It is usually used by large companies, governments, and organizations
+and has been tested by a large number of users.</p></li>
+</ul>
+<p>In summary, open source and proprietary software systems are different in terms
+of licensing, ownership, cost, customization, support, security,
+interoperability, and reliability. Open source software is typically free to use
+and can be modified by users and developers, while proprietary software is
+closed-source and may require payment for a license or subscription. Open source
+software may have a larger community of users who can provide support, while
+proprietary software may have a smaller community and relies on the company for
+support.</p>
+</section>
+<section id="source-code-control-systems">
+<h3>Source Code Control Systems<a class="headerlink" href="#source-code-control-systems" title="Link to this heading"></a></h3>
+<p>Most GUI based CAD systems provide version control systems which represent the
+CAD design and its history. They allows developers to see changes made to the design
+over time, in a format that is easy to understand.</p>
+<p>On the other hand, a source code control system like Git, is a command-line tool
+and it provides more granular control over the code. This makes it suitable for
+more advanced users and developers who are comfortable working with command-line
+interfaces. A source code control system like Git is more flexible and allows
+developers to perform tasks like branching and merging, which are not easily
+done with a GUI version control system. Systems like Git have several advantages,
+including:</p>
+<ul class="simple">
+<li><p>Version control: Git allows developers to keep track of changes made to the
+code over time, making it easy to revert to a previous version if necessary.</p></li>
+<li><p>Collaboration: Git makes it easy for multiple developers to work on the same
+codebase simultaneously, with the ability to merge changes from different
+branches of development.</p></li>
+<li><p>Backup: Git provides a way to backup and store the codebase in a remote
+repository, like GitHub. This can serve as a disaster recovery mechanism, in
+case of data loss.</p></li>
+<li><p>Branching: Git allows developers to create multiple branches of a project for
+different features or bug fixes, which can be easily merged into the main
+codebase once they are complete.</p></li>
+<li><p>Auditing: Git allows you to see who made changes to the code, when and what
+changes were made, which is useful for auditing and debugging.</p></li>
+<li><p>Open-source development: Git makes it easy for open-source developers to
+contribute to a project and share their work with the community.</p></li>
+<li><p>Flexibility: Git is a distributed version control system, which means that
+developers can work independently and offline.  They can then push their changes
+to a remote repository when they are ready to share them with others.</p></li>
+</ul>
+<p>In summary, GUI version control systems are generally more user-friendly and
+easier to use, while source code control systems like Git offer more flexibility
+and control over the code. Both can be used to achieve the same goal, but they
+cater to different types of users and use cases.</p>
+</section>
+<section id="automated-testing">
+<h3>Automated Testing<a class="headerlink" href="#automated-testing" title="Link to this heading"></a></h3>
+<p>Users of source based CAD systems can benefit from automated testing which improves
+their source code by:</p>
+<ul class="simple">
+<li><p>Finding bugs: Automated tests can detect bugs in the code, which can then be
+fixed before the code is released.  This helps to ensure that the code is of
+higher quality and less likely to cause issues when used.</p></li>
+<li><p>Regression testing: Automated tests can be used to detect regressions, which
+are bugs that are introduced by changes to the codebase. This helps to ensure
+that changes to the code do not break existing functionality.</p></li>
+<li><p>Documenting code behavior: Automated tests can serve as documentation for how
+the code is supposed to behave. This makes it easier for developers to
+understand the code and make changes without breaking it.</p></li>
+<li><p>Improving code design: Writing automated tests often requires a good
+understanding of the code and how it is supposed to behave. This can lead to a
+better design of the code, as developers will have a better understanding of the
+requirements and constraints.</p></li>
+<li><p>Saving time and cost: Automated testing can save time and cost by reducing the
+need for manual testing. Automated tests can be run quickly and often, which
+means that bugs can be found and fixed early in the development process, which
+is less expensive than finding them later.</p></li>
+<li><p>Continuous integration and delivery: Automated testing can be integrated into
+a continuous integration and delivery (CI/CD) pipeline. This means that tests
+are run automatically every time code is committed and can be integrated with
+other tools such as code coverage, static analysis and more.</p></li>
+<li><p>Improving maintainability: Automated tests can improve the maintainability of
+the code by making it easier to refactor and change the codebase. This is
+because automated tests provide a safety net that ensures that changes to the
+code do not introduce new bugs.</p></li>
+</ul>
+<p>Overall, automated testing is an essential part of the software development
+process, it helps to improve the quality of the code by detecting bugs early,
+documenting code behavior, and reducing the cost of maintaining and updating the
+code.</p>
+</section>
+<section id="automated-documentation">
+<h3>Automated Documentation<a class="headerlink" href="#automated-documentation" title="Link to this heading"></a></h3>
+<p>The Sphinx automated documentation system was used to create the page you are
+reading now and can be used for user design documentation as well.  Such systems
+are used for several reasons:</p>
+<ul class="simple">
+<li><p>Consistency: Sphinx and other automated documentation systems can generate
+documentation in a consistent format and style, which makes it easier to
+understand and use.</p></li>
+<li><p>Automation: Sphinx can automatically generate documentation from source code
+and comments, which saves time and effort compared to manually writing
+documentation.</p></li>
+<li><p>Up-to-date documentation: Automated documentation systems like Sphinx can
+update the documentation automatically when the code changes, ensuring that the
+documentation stays up-to-date with the code.</p></li>
+<li><p>Searchability: Sphinx and other automated documentation systems can include
+search functionality, which makes it easy to find the information you need.</p></li>
+<li><p>Cross-referencing: Sphinx can automatically create links between different
+parts of the documentation, making it easy to navigate and understand the
+relationships between different parts of the code.</p></li>
+<li><p>Customizable: Sphinx and other automated documentation systems can be
+customized to match the look and feel of your company’s documentation.</p></li>
+<li><p>Multiple output formats: Sphinx can generate documentation in multiple formats
+such as HTML, PDF, ePub, and more.</p></li>
+<li><p>Support for multiple languages: Sphinx can generate documentation in multiple
+languages, which can make it easier to support international users.</p></li>
+<li><p>Integration with code management: Sphinx can be integrated with code
+management tools like Git, which allows documentation to be versioned along with
+the code.</p></li>
+</ul>
+<p>In summary, automated documentation systems like Sphinx are used to generate
+consistent, up-to-date, and searchable documentation from source code and
+comments. They save time and effort compared to manual documentation, and can be
+customized to match the look and feel of your company’s documentation. They also
+provide multiple output formats, support for multiple languages and can be
+integrated with code management tools.</p>
+</section>
+</section>
+<section id="advantages-over-cadquery">
+<h2>Advantages Over CadQuery<a class="headerlink" href="#advantages-over-cadquery" title="Link to this heading"></a></h2>
+<p>As mentioned previously, the most significant advantage is that build123d is more pythonic.
+Specifically:</p>
+<section id="standard-python-context-manager">
+<h3>Standard Python Context Manager<a class="headerlink" href="#standard-python-context-manager" title="Link to this heading"></a></h3>
+<p>The creation of standard instance variables, looping and other normal python operations
+is enabled by the replacement of method chaining (fluent programming) with a standard
+python context manager.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># CadQuery Fluent API</span>
+<span class="n">pillow_block</span> <span class="o">=</span> <span class="p">(</span><span class="n">cq</span><span class="o">.</span><span class="n">Workplane</span><span class="p">(</span><span class="s2">&quot;XY&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">box</span><span class="p">(</span><span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">thickness</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="s2">&quot;|Z&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">fillet</span><span class="p">(</span><span class="n">fillet</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">faces</span><span class="p">(</span><span class="s2">&quot;&gt;Z&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">workplane</span><span class="p">()</span>
+    <span class="o">...</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># build123d API</span>
+<span class="k">with</span> <span class="n">BuildPart</span><span class="p">()</span> <span class="k">as</span> <span class="n">pillow_block</span><span class="p">:</span>
+    <span class="k">with</span> <span class="n">BuildSketch</span><span class="p">()</span> <span class="k">as</span> <span class="n">plan</span><span class="p">:</span>
+        <span class="n">Rectangle</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+        <span class="n">fillet</span><span class="p">(</span><span class="n">plan</span><span class="o">.</span><span class="n">vertices</span><span class="p">(),</span> <span class="n">radius</span><span class="o">=</span><span class="n">fillet</span><span class="p">)</span>
+    <span class="n">extrude</span><span class="p">(</span><span class="n">thickness</span><span class="p">)</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<p>The use of the standard <cite>with</cite> block allows standard python instructions to be
+inserted anyway in the code flow.  One can insert a CQ-editor <cite>debug</cite> or standard <cite>print</cite>
+statement anywhere in the code without impacting functionality. Simple python
+<cite>for</cite> loops can be used to repetitively create objects instead of forcing users
+into using more complex <cite>lambda</cite> and <cite>iter</cite> operations.</p>
+</section>
+<section id="instantiated-objects">
+<h3>Instantiated Objects<a class="headerlink" href="#instantiated-objects" title="Link to this heading"></a></h3>
+<p>Each object and operation is now a class instantiation that interacts with the
+active context implicitly for the user. These instantiations can be assigned to
+an instance variable as with standard python programming for direct use.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">BuildSketch</span><span class="p">()</span> <span class="k">as</span> <span class="n">plan</span><span class="p">:</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">area</span><span class="p">)</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+</section>
+<section id="operators">
+<h3>Operators<a class="headerlink" href="#operators" title="Link to this heading"></a></h3>
+<p>New operators have been created to extract information from objects created previously
+in the code. The <cite>&#64;</cite> operator extracts the position along an Edge or Wire while the
+<cite>%</cite> operator extracts the tangent along an Edge or Wire. The position parameter are float
+values between 0.0 and 1.0 which represent the beginning and end of the line. In the following
+example, a spline is created from the end of l5 (<cite>l5 &#64; 1</cite>) to the beginning of l6 (<cite>l6 &#64; 0</cite>)
+with tangents equal to the tangents of l5 and l6 at their end and beginning respectively.
+Being able to extract information from existing features allows the user to “snap” new
+features to these points without knowing their numeric values.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">BuildLine</span><span class="p">()</span> <span class="k">as</span> <span class="n">outline</span><span class="p">:</span>
+    <span class="o">...</span>
+    <span class="n">l5</span> <span class="o">=</span> <span class="n">Polyline</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+    <span class="n">l6</span> <span class="o">=</span> <span class="n">Polyline</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+    <span class="n">Spline</span><span class="p">(</span><span class="n">l5</span> <span class="o">@</span> <span class="mi">1</span><span class="p">,</span> <span class="n">l6</span> <span class="o">@</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tangents</span><span class="o">=</span><span class="p">(</span><span class="n">l5</span> <span class="o">%</span> <span class="mi">1</span><span class="p">,</span> <span class="n">l6</span> <span class="o">%</span> <span class="mi">0</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+<section id="last-operation-objects">
+<h3>Last Operation Objects<a class="headerlink" href="#last-operation-objects" title="Link to this heading"></a></h3>
+<p>All of the <cite>vertices()</cite>, <cite>edges()</cite>, <cite>faces()</cite>, and <cite>solids()</cite> methods of the builders
+can either return all of the objects requested or just the objects changed during the
+last operation. This allows the user to easily access features for further refinement,
+as shown in the following code where the final line selects the edges that were added
+by the last operation and fillets them. Such a selection would be quite difficult
+otherwise.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">build123d</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+
+<span class="k">with</span> <span class="n">BuildPart</span><span class="p">()</span> <span class="k">as</span> <span class="n">pipes</span><span class="p">:</span>
+    <span class="n">box</span> <span class="o">=</span> <span class="n">Box</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">))</span>
+    <span class="k">with</span> <span class="n">BuildSketch</span><span class="p">(</span><span class="o">*</span><span class="n">box</span><span class="o">.</span><span class="n">faces</span><span class="p">())</span> <span class="k">as</span> <span class="n">pipe</span><span class="p">:</span>
+        <span class="n">Circle</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">extrude</span><span class="p">(</span><span class="n">amount</span><span class="o">=-</span><span class="mi">5</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">Mode</span><span class="o">.</span><span class="n">SUBTRACT</span><span class="p">)</span>
+    <span class="k">with</span> <span class="n">BuildSketch</span><span class="p">(</span><span class="o">*</span><span class="n">box</span><span class="o">.</span><span class="n">faces</span><span class="p">())</span> <span class="k">as</span> <span class="n">pipe</span><span class="p">:</span>
+        <span class="n">Circle</span><span class="p">(</span><span class="mf">4.5</span><span class="p">)</span>
+        <span class="n">Circle</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">Mode</span><span class="o">.</span><span class="n">SUBTRACT</span><span class="p">)</span>
+    <span class="n">extrude</span><span class="p">(</span><span class="n">amount</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">fillet</span><span class="p">(</span><span class="n">pipes</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">Select</span><span class="o">.</span><span class="n">LAST</span><span class="p">),</span> <span class="mf">0.2</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="extensions">
+<h3>Extensions<a class="headerlink" href="#extensions" title="Link to this heading"></a></h3>
+<p>Extending build123d is relatively simple in that custom objects or operations
+can be created as new classes without the need to monkey patch any of the
+core functionality. These new classes will be seen in IDEs which is not
+possible with monkey patching the core CadQuery classes.</p>
+</section>
+<section id="enums">
+<h3>Enums<a class="headerlink" href="#enums" title="Link to this heading"></a></h3>
+<p>All <cite>Literal</cite> strings have been replaced with <cite>Enum</cite> which allows IDEs to
+prompt users for valid options without having to refer to documentation.</p>
+</section>
+<section id="selectors-replaced-by-lists">
+<h3>Selectors replaced by Lists<a class="headerlink" href="#selectors-replaced-by-lists" title="Link to this heading"></a></h3>
+<p>String based selectors have been replaced with standard python filters and
+sorting which opens up the full functionality of python lists. To aid the
+user, common operations have been optimized as shown here along with
+a fully custom selection:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">top</span> <span class="o">=</span> <span class="n">rail</span><span class="o">.</span><span class="n">faces</span><span class="p">()</span><span class="o">.</span><span class="n">filter_by_normal</span><span class="p">(</span><span class="n">Axis</span><span class="o">.</span><span class="n">Z</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="o">...</span>
+<span class="n">outside_vertices</span> <span class="o">=</span> <span class="nb">filter</span><span class="p">(</span>
+    <span class="k">lambda</span> <span class="n">v</span><span class="p">:</span> <span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">Y</span> <span class="o">==</span> <span class="mf">0.0</span> <span class="ow">or</span> <span class="n">v</span><span class="o">.</span><span class="n">Y</span> <span class="o">==</span> <span class="n">height</span><span class="p">)</span> <span class="ow">and</span> <span class="o">-</span><span class="n">width</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">&lt;</span> <span class="n">v</span><span class="o">.</span><span class="n">X</span> <span class="o">&lt;</span> <span class="n">width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="n">din</span><span class="o">.</span><span class="n">vertices</span><span class="p">(),</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="installation.html" class="btn btn-neutral float-right" title="Installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Gumyr.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

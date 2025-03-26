@@ -1,0 +1,275 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Key Concepts (algebra mode) &mdash; build123d 0.9.2.dev40+gb1f0eed documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster.custom.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster.bundle.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-shadow.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-punk.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-noir.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-light.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-borderless.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/micromodal.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/sphinx_rtd_theme.css?v=3234e928" />
+      <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=c97902b4"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=f281be69"></script>
+      <script src="_static/js/hoverxref.js"></script>
+      <script src="_static/js/tooltipster.bundle.min.js"></script>
+      <script src="_static/js/micromodal.min.js"></script>
+      <script src="_static/design-tabs.js?v=f930bc37"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Moving Objects" href="moving_objects.html" />
+    <link rel="prev" title="Key Concepts (builder mode)" href="key_concepts_builder.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            build123d
+              <img src="_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts.html">Key Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts_builder.html">Key Concepts (builder mode)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Key Concepts (algebra mode)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#object-arithmetic">Object arithmetic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#placement-arithmetic">Placement arithmetic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#combing-both-concepts">Combing both concepts</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="moving_objects.html">Moving Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OpenSCAD.html">Transitioning from OpenSCAD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introductory_examples.html">Introductory Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="selectors_operators.html">Selectors and Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operations.html">Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="builders.html">Builders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="joints.html">Joints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assemblies.html">Assemblies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tips.html">Tips, Best Practices and FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="import_export.html">Import/Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cheat_sheet.html">Cheat Sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="external.html">External Tools and Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="builder_api_reference.html">Builder Common API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="direct_api_reference.html">Direct API Reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">build123d</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Key Concepts (algebra mode)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/key_concepts_algebra.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="key-concepts-algebra-mode">
+<h1>Key Concepts (algebra mode)<a class="headerlink" href="#key-concepts-algebra-mode" title="Link to this heading"></a></h1>
+<p>Build123d’s algebra mode works on objects of the classes <code class="docutils literal notranslate"><span class="pre">Shape</span></code>, <code class="docutils literal notranslate"><span class="pre">Part</span></code>, <code class="docutils literal notranslate"><span class="pre">Sketch</span></code> and <code class="docutils literal notranslate"><span class="pre">Curve</span></code> and is based on two concepts:</p>
+<ol class="arabic simple">
+<li><p><strong>Object arithmetic</strong></p></li>
+<li><p><strong>Placement arithmetic</strong></p></li>
+</ol>
+<section id="object-arithmetic">
+<h2>Object arithmetic<a class="headerlink" href="#object-arithmetic" title="Link to this heading"></a></h2>
+<ul>
+<li><p>Creating a box and a cylinder centered at <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">0)</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">Box</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">Cylinder</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>Fusing a box and a cylinder</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="n">Box</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="n">Cylinder</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>Cutting a cylinder from a box</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="n">Box</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="n">Cylinder</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>Intersecting a box and a cylinder</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="n">Box</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">Cylinder</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><strong>Notes:</strong></p>
+<ul class="simple">
+<li><p><cite>b</cite>, <cite>c</cite> and <cite>r</cite> are instances of class <code class="docutils literal notranslate"><span class="pre">Compound</span></code> and can be viewed with every viewer that can show <code class="docutils literal notranslate"><span class="pre">build123d.Compound</span></code> objects.</p></li>
+<li><p>A discussion around performance can be found in <a class="reference internal" href="algebra_performance.html#algebra-performance"><span class="std std-ref">Performance considerations in algebra mode</span></a>.</p></li>
+<li><p>A mathematically formal definition of the algebra can be found in <a class="reference internal" href="algebra_definition.html#algebra-definition"><span class="std std-ref">Algebraic definition</span></a>.</p></li>
+</ul>
+</section>
+<section id="placement-arithmetic">
+<h2>Placement arithmetic<a class="headerlink" href="#placement-arithmetic" title="Link to this heading"></a></h2>
+<p>A <code class="docutils literal notranslate"><span class="pre">Part</span></code>, <code class="docutils literal notranslate"><span class="pre">Sketch</span></code> or <code class="docutils literal notranslate"><span class="pre">Curve</span></code> does not have any location or rotation parameter.
+The rationale is that an object defines its topology (shape, sizes and its center), but does not know
+where in space it will be located. Instead, it will be relocated with the <code class="docutils literal notranslate"><span class="pre">*</span></code> operator onto a plane
+and to location relative to the plane (similar <code class="docutils literal notranslate"><span class="pre">moved</span></code>).</p>
+<p>The generic forms of object placement are:</p>
+<ol class="arabic">
+<li><p>Placement on <code class="docutils literal notranslate"><span class="pre">plane</span></code> or at <code class="docutils literal notranslate"><span class="pre">location</span></code> relative to XY plane:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plane</span> <span class="o">*</span> <span class="n">alg_compound</span>
+<span class="n">location</span> <span class="o">*</span> <span class="n">alg_compound</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+<p>2. Placement on the <code class="docutils literal notranslate"><span class="pre">plane</span></code> and then moved relative to the <code class="docutils literal notranslate"><span class="pre">plane</span></code> by <code class="docutils literal notranslate"><span class="pre">location</span></code>
+(the location is relative to the local coordinate system of the plane).</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plane</span> <span class="o">*</span> <span class="n">location</span> <span class="o">*</span> <span class="n">alg_compound</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>Details can be found in <a class="reference internal" href="location_arithmetic.html#location-arithmetics"><span class="std std-ref">Location arithmetic for algebra mode</span></a>.</p>
+<p>Examples:</p>
+<ul>
+<li><p>Box on the <code class="docutils literal notranslate"><span class="pre">XY</span></code> plane, centered at <cite>(0, 0, 0)</cite> (both forms are equivalent):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Plane</span><span class="o">.</span><span class="n">XY</span> <span class="o">*</span> <span class="n">Box</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="n">Box</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Note: On the <code class="docutils literal notranslate"><span class="pre">XY</span></code> plane no placement is needed (mathematically <code class="docutils literal notranslate"><span class="pre">Plane.XY</span> <span class="pre">*</span></code> will not change the
+location of an object).</p>
+</li>
+<li><p>Box on the <code class="docutils literal notranslate"><span class="pre">XY</span></code> plane centered at <cite>(0, 1, 0)</cite> (all three are equivalent):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Plane</span><span class="o">.</span><span class="n">XY</span> <span class="o">*</span> <span class="n">Pos</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">*</span> <span class="n">Box</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="n">Pos</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">*</span> <span class="n">Box</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="n">Pos</span><span class="p">(</span><span class="n">Y</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">Box</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Note: Again, <code class="docutils literal notranslate"><span class="pre">Plane.XY</span></code> can be omitted.</p>
+</li>
+<li><p>Box on plane <code class="docutils literal notranslate"><span class="pre">Plane.XZ</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Plane</span><span class="o">.</span><span class="n">XZ</span> <span class="o">*</span> <span class="n">Box</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>Box on plane <code class="docutils literal notranslate"><span class="pre">Plane.XZ</span></code> with a location <code class="docutils literal notranslate"><span class="pre">(X=1,</span> <span class="pre">Y=2,</span> <span class="pre">Z=3)</span></code> relative to the <code class="docutils literal notranslate"><span class="pre">XZ</span></code> plane, i.e.,
+using the x-, y- and z-axis of the <code class="docutils literal notranslate"><span class="pre">XZ</span></code> plane:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Plane</span><span class="o">.</span><span class="n">XZ</span> <span class="o">*</span> <span class="n">Pos</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="n">Box</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>Box on plane <code class="docutils literal notranslate"><span class="pre">Plane.XZ</span></code> moved to <code class="docutils literal notranslate"><span class="pre">(X=1,</span> <span class="pre">Y=2,</span> <span class="pre">Z=3)</span></code> relative to this plane and rotated there
+by the angles <cite>(X=0, Y=100, Z=45)</cite> around <code class="docutils literal notranslate"><span class="pre">Plane.XZ</span></code> axes:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Plane</span><span class="o">.</span><span class="n">XZ</span> <span class="o">*</span> <span class="n">Pos</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="n">Rot</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">45</span><span class="p">)</span> <span class="o">*</span> <span class="n">Box</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="n">Location</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">45</span><span class="p">))</span> <span class="o">*</span> <span class="n">Box</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Note: <code class="docutils literal notranslate"><span class="pre">Pos</span> <span class="pre">*</span> <span class="pre">Rot</span></code> is the same as using <code class="docutils literal notranslate"><span class="pre">Location</span></code> directly</p>
+</li>
+<li><p>Box on plane <code class="docutils literal notranslate"><span class="pre">Plane.XZ</span></code> rotated on this plane by the angles <code class="docutils literal notranslate"><span class="pre">(X=0,</span> <span class="pre">Y=100,</span> <span class="pre">Z=45)</span></code> (using the
+x-, y- and z-axis of the <code class="docutils literal notranslate"><span class="pre">XZ</span></code> plane) and then moved to <code class="docutils literal notranslate"><span class="pre">(X=1,</span> <span class="pre">Y=2,</span> <span class="pre">Z=3)</span></code> relative to the <code class="docutils literal notranslate"><span class="pre">XZ</span></code> plane:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Plane</span><span class="o">.</span><span class="n">XZ</span> <span class="o">*</span> <span class="n">Rot</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">45</span><span class="p">)</span> <span class="o">*</span> <span class="n">Pos</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">Box</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="combing-both-concepts">
+<h2>Combing both concepts<a class="headerlink" href="#combing-both-concepts" title="Link to this heading"></a></h2>
+<p><strong>Object arithmetic</strong> and <strong>Placement at locations</strong> can be combined:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">Plane</span><span class="o">.</span><span class="n">XZ</span> <span class="o">*</span> <span class="n">Rot</span><span class="p">(</span><span class="n">X</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span> <span class="o">*</span> <span class="n">Box</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="n">Plane</span><span class="o">.</span><span class="n">YZ</span> <span class="o">*</span> <span class="n">Pos</span><span class="p">(</span><span class="n">X</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">Cylinder</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>Note:</strong> In Python <code class="docutils literal notranslate"><span class="pre">*</span></code> binds stronger then <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>, hence brackets are not needed.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="key_concepts_builder.html" class="btn btn-neutral float-left" title="Key Concepts (builder mode)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="moving_objects.html" class="btn btn-neutral float-right" title="Moving Objects" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Gumyr.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

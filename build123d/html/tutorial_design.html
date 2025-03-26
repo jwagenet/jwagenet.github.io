@@ -1,0 +1,454 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Designing a Part in build123d &mdash; build123d 0.9.2.dev40+gb1f0eed documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster.custom.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster.bundle.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-shadow.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-punk.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-noir.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-light.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-borderless.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/micromodal.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/sphinx_rtd_theme.css?v=3234e928" />
+      <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=c97902b4"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=f281be69"></script>
+      <script src="_static/js/hoverxref.js"></script>
+      <script src="_static/js/tooltipster.bundle.min.js"></script>
+      <script src="_static/js/micromodal.min.js"></script>
+      <script src="_static/design-tabs.js?v=f930bc37"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Selector Tutorial" href="tutorial_selectors.html" />
+    <link rel="prev" title="Tutorials" href="tutorials.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            build123d
+              <img src="_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts.html">Key Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts_builder.html">Key Concepts (builder mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts_algebra.html">Key Concepts (algebra mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="moving_objects.html">Moving Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OpenSCAD.html">Transitioning from OpenSCAD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introductory_examples.html">Introductory Examples</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="tutorials.html">Tutorials</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Designing a Part in build123d</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#step-1-examine-the-part-in-all-three-orientations">Step 1. Examine the Part in All Three Orientations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-2-identify-rotational-symmetries">Step 2. Identify Rotational Symmetries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-3-select-a-convenient-origin">Step 3. Select a Convenient Origin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-4-create-2d-profiles">Step 4. Create 2D Profiles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-5-use-extrusion-for-prismatic-features">Step 5. Use Extrusion for Prismatic Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-6-generate-revolved-features">Step 6. Generate Revolved Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-7-combine-sub-parts-intelligently">Step 7. Combine Sub-parts Intelligently</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-8-apply-chamfers-and-fillets">Step 8. Apply Chamfers and Fillets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-9-design-for-assembly">Step 9. Design for Assembly</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-10-plan-for-parametric-flexibility">Step 10. Plan for Parametric Flexibility</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-11-test-fit-and-tolerances">Step 11. Test Fit and Tolerances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_selectors.html">Selector Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_lego.html">Lego Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_joints.html">Joint Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples_1.html">The build123d Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tttt.html">Too Tall Toby (TTT) Tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_surface_modeling.html">Surface Modeling</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="selectors_operators.html">Selectors and Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operations.html">Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="builders.html">Builders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="joints.html">Joints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assemblies.html">Assemblies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tips.html">Tips, Best Practices and FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="import_export.html">Import/Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cheat_sheet.html">Cheat Sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="external.html">External Tools and Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="builder_api_reference.html">Builder Common API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="direct_api_reference.html">Direct API Reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">build123d</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="tutorials.html">Tutorials</a></li>
+      <li class="breadcrumb-item active">Designing a Part in build123d</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/tutorial_design.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="designing-a-part-in-build123d">
+<span id="design-tutorial"></span><h1>Designing a Part in build123d<a class="headerlink" href="#designing-a-part-in-build123d" title="Link to this heading"></a></h1>
+<p>Designing a part with build123d involves a systematic approach that leverages the power
+of 2D profiles, extrusions, and revolutions. Where possible, always work in the lowest
+possible dimension, 1D lines before 2D sketches before 3D parts. The following guide will
+get you started:</p>
+<p><em>As an example, we’ll go through the design process for this bracket:</em></p>
+<img alt="_images/bracket_hand_drawing.jpg" class="align-center" src="_images/bracket_hand_drawing.jpg" />
+<section id="step-1-examine-the-part-in-all-three-orientations">
+<h2>Step 1. Examine the Part in All Three Orientations<a class="headerlink" href="#step-1-examine-the-part-in-all-three-orientations" title="Link to this heading"></a></h2>
+<p>Start by visualizing the part from the front, top, and side views. Identify any symmetries
+in these orientations, as symmetries can simplify the design by reducing the number of
+unique features you need to model.</p>
+<p><em>In the following view of the bracket one can see two planes of symmetry
+so we’ll only need to design one quarter of it.</em></p>
+<img alt="_images/bracket_with_symmetry.png" class="align-center" src="_images/bracket_with_symmetry.png" />
+</section>
+<section id="step-2-identify-rotational-symmetries">
+<h2>Step 2. Identify Rotational Symmetries<a class="headerlink" href="#step-2-identify-rotational-symmetries" title="Link to this heading"></a></h2>
+<p>Look for structures that could be created through the rotation of a 2D shape. For instance,
+cylindrical or spherical features are often the result of revolving a profile around an axis.
+Identify the axis of rotation and make a note of it.</p>
+<p><em>There are no rotational structures in the example bracket.</em></p>
+</section>
+<section id="step-3-select-a-convenient-origin">
+<h2>Step 3. Select a Convenient Origin<a class="headerlink" href="#step-3-select-a-convenient-origin" title="Link to this heading"></a></h2>
+<p>Choose an origin point that minimizes the need to move or transform components later in the
+design process. Ideally, the origin should be placed at a natural center of symmetry or a
+critical reference point on the part.</p>
+<p><em>The planes of symmetry for the bracket was identified in step 1, making it logical to
+place the origin at the intersection of these planes on the bracket’s front face. Additionally,
+we’ll define the coordinate system we’ll be working in: Plane.XY (the default), where
+the origin is set at the global (0,0,0) position. In this system, the x-axis aligns with
+the front of the bracket, and the z-axis corresponds to its width. It’s important to note
+that all coordinate systems/planes in build123d adhere to the</em>
+<a class="reference external" href="https://en.wikipedia.org/wiki/Right-hand_rule">right-hand rule</a> <em>meaning the y-axis is
+automatically determined by this convention.</em></p>
+<img alt="_images/bracket_with_origin.png" class="align-center" src="_images/bracket_with_origin.png" />
+</section>
+<section id="step-4-create-2d-profiles">
+<h2>Step 4. Create 2D Profiles<a class="headerlink" href="#step-4-create-2d-profiles" title="Link to this heading"></a></h2>
+<p>Design the 2D profiles of your part in the appropriate orientation(s). These profiles are
+the foundation of the part’s geometry and can often represent cross-sections of the part.
+Mirror parts of profiles across any axes of symmetry identified earlier.</p>
+<p><em>The 2D profile of the bracket is as follows:</em></p>
+<img alt="_images/bracket_sketch.png" class="align-center" src="_images/bracket_sketch.png" />
+<p><em>The build123d code to generate this profile is as follows:</em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">BuildSketch</span><span class="p">()</span> <span class="k">as</span> <span class="n">sketch</span><span class="p">:</span>
+    <span class="k">with</span> <span class="n">BuildLine</span><span class="p">()</span> <span class="k">as</span> <span class="n">profile</span><span class="p">:</span>
+        <span class="n">FilletPolyline</span><span class="p">(</span>
+            <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="n">length</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="n">length</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">height</span><span class="p">),</span> <span class="n">radius</span><span class="o">=</span><span class="n">bend_radius</span>
+        <span class="p">)</span>
+        <span class="n">offset</span><span class="p">(</span><span class="n">amount</span><span class="o">=</span><span class="n">thickness</span><span class="p">,</span> <span class="n">side</span><span class="o">=</span><span class="n">Side</span><span class="o">.</span><span class="n">LEFT</span><span class="p">)</span>
+    <span class="n">make_face</span><span class="p">()</span>
+    <span class="n">mirror</span><span class="p">(</span><span class="n">about</span><span class="o">=</span><span class="n">Plane</span><span class="o">.</span><span class="n">YZ</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><em>This code creates a 2D sketch of a mirrored profile in the build123d CAD system. Here’s a step-by-step explanation of what it does:</em></p>
+<blockquote>
+<div><dl class="simple">
+<dt>with BuildSketch() as sketch:</dt><dd><p><em>This starts a context for creating a 2D sketch, which defines the overall boundary and geometric features. The sketch will be stored in the variable sketch.</em></p>
+</dd>
+<dt>with BuildLine() as profile:</dt><dd><p><em>This starts another context, this time for drawing lines (or profiles) within the sketch. The profile consists of connected line segments, arcs, or polylines.</em></p>
+</dd>
+<dt>FilletPolyline((0, 0), (length / 2, 0), (length / 2, height), radius=bend_radius)</dt><dd><p><em>This object draws a polyline with three points: (0,0), (length/2, 0), and (length/2, height). A fillet (curved corner) with a radius of bend_radius is added where applicable between the segments of the polyline.</em></p>
+</dd>
+<dt>offset(amount=thickness, side=Side.LEFT)</dt><dd><p><em>This applies an offset to the polyline created earlier. The offset creates a parallel line at a distance of thickness to the left side of the original polyline. This operation essentially thickens the profile by a given amount.</em></p>
+</dd>
+<dt>make_face()</dt><dd><p><em>This command creates a 2D face from the closed profile. The offset operation ensures that the profile is closed, allowing the creation of a solid face from the boundary defined.</em></p>
+</dd>
+<dt>mirror(about=Plane.YZ)</dt><dd><p><em>This mirrors the entire face about the YZ plane (which runs along the center of the sketch), creating a symmetrical counterpart of the face. The mirrored geometry will complete the final shape.</em></p>
+</dd>
+</dl>
+</div></blockquote>
+</section>
+<section id="step-5-use-extrusion-for-prismatic-features">
+<h2>Step 5. Use Extrusion for Prismatic Features<a class="headerlink" href="#step-5-use-extrusion-for-prismatic-features" title="Link to this heading"></a></h2>
+<p>For solid or prismatic shapes, extrude the 2D profiles along the necessary axis. You can
+also combine multiple extrusions by intersecting or unionizing them to form complex shapes.
+Use the resulting geometry as sub-parts if needed.</p>
+<p><em>The next step in implementing our design in build123d is to convert the above sketch into
+a part by extruding it as shown in this code:</em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">BuildPart</span><span class="p">()</span> <span class="k">as</span> <span class="n">bracket</span><span class="p">:</span>
+    <span class="k">with</span> <span class="n">BuildSketch</span><span class="p">()</span> <span class="k">as</span> <span class="n">sketch</span><span class="p">:</span>
+        <span class="k">with</span> <span class="n">BuildLine</span><span class="p">()</span> <span class="k">as</span> <span class="n">profile</span><span class="p">:</span>
+            <span class="n">FilletPolyline</span><span class="p">(</span>
+                <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="n">length</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="n">length</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">height</span><span class="p">),</span> <span class="n">radius</span><span class="o">=</span><span class="n">bend_radius</span>
+            <span class="p">)</span>
+            <span class="n">offset</span><span class="p">(</span><span class="n">amount</span><span class="o">=</span><span class="n">thickness</span><span class="p">,</span> <span class="n">side</span><span class="o">=</span><span class="n">Side</span><span class="o">.</span><span class="n">LEFT</span><span class="p">)</span>
+        <span class="n">make_face</span><span class="p">()</span>
+        <span class="n">mirror</span><span class="p">(</span><span class="n">about</span><span class="o">=</span><span class="n">Plane</span><span class="o">.</span><span class="n">YZ</span><span class="p">)</span>
+    <span class="n">extrude</span><span class="p">(</span><span class="n">amount</span><span class="o">=</span><span class="n">width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">mirror</span><span class="p">(</span><span class="n">about</span><span class="o">=</span><span class="n">Plane</span><span class="o">.</span><span class="n">XY</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><em>In this example, we’ve wrapped the sketch within a BuildPart context, which is used
+for creating 3D parts. We utilized the extrude function to extend the 2D sketch into
+a solid object, turning it into a 3D part. Additionally, we applied the mirror function
+to replicate the partial part across a plane of symmetry, ensuring a symmetrical design.</em></p>
+</section>
+<section id="step-6-generate-revolved-features">
+<h2>Step 6. Generate Revolved Features<a class="headerlink" href="#step-6-generate-revolved-features" title="Link to this heading"></a></h2>
+<p>If any part of the geometry can be created by revolving a 2D profile around an axis, use
+the revolve operation. This is particularly useful for parts that include cylindrical,
+conical, or spherical features. Combine these revolved sub-parts with existing features
+using additive, subtractive, or intersecting operations.</p>
+<p><em>Our example has no revolved features.</em></p>
+</section>
+<section id="step-7-combine-sub-parts-intelligently">
+<h2>Step 7. Combine Sub-parts Intelligently<a class="headerlink" href="#step-7-combine-sub-parts-intelligently" title="Link to this heading"></a></h2>
+<p>When combining multiple sub-parts, keep in mind whether they need to be added, subtracted,
+or intersected. Subtracting or intersecting can create more refined details, while addition
+is useful for creating complex assemblies.</p>
+<p><em>Out example only has one sub-part but further sub-parts could be created in the
+BuildPart context by defining more sketches and extruding or revolving them.</em></p>
+</section>
+<section id="step-8-apply-chamfers-and-fillets">
+<h2>Step 8. Apply Chamfers and Fillets<a class="headerlink" href="#step-8-apply-chamfers-and-fillets" title="Link to this heading"></a></h2>
+<p>Identify critical edges or vertices that need chamfering or filleting. Use build123d’s
+selectors to apply these operations accurately. Always visually inspect the results to
+ensure the correct edges have been modified.</p>
+<p><em>The back corners of the bracket need to be rounded off or filleted so the edges that
+define these corners need to be isolated. The following code, placed to follow the previous
+code block, captures just these edges:</em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">corners</span> <span class="o">=</span> <span class="n">bracket</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="n">Axis</span><span class="o">.</span><span class="n">X</span><span class="p">)</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="n">Axis</span><span class="o">.</span><span class="n">Y</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">fillet</span><span class="p">(</span><span class="n">corners</span><span class="p">,</span> <span class="n">fillet_radius</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><em>These lines isolates specific corner edges that are then filleted.</em></p>
+<blockquote>
+<div><dl class="simple">
+<dt>corners = bracket.edges().filter_by(Axis.X).group_by(Axis.Y)[-1]</dt><dd><p><em>This line is used to select specific edges from the 3D part (bracket) that was
+created by the extrusion.</em></p>
+<ul class="simple">
+<li><p>bracket.edges() <em>retrieves all the edges of the bracket part.</em></p></li>
+<li><p>filter_by(Axis.X) <em>filters the edges to only those that are aligned along the
+X-axis.</em></p></li>
+<li><p>group_by(Axis.Y) <em>groups the edges by their positions along the Y-axis. This
+operation essentially organizes the filtered X-axis edges into groups based on
+their Y-coordinate positions.</em></p></li>
+<li><p>[-1] <em>selects the last group of edges along the Y-axis, which corresponds
+to the back of the part - the edges we are looking for.</em></p></li>
+</ul>
+</dd>
+<dt>fillet(corners, fillet_radius)</dt><dd><p><em>This function applies a fillet (a rounded edge) to the selected corners, with a
+specified radius (fillet_radius). The fillet smooths the sharp edges at the corners,
+giving the part a more refined shape.</em></p>
+</dd>
+</dl>
+</div></blockquote>
+</section>
+<section id="step-9-design-for-assembly">
+<h2>Step 9. Design for Assembly<a class="headerlink" href="#step-9-design-for-assembly" title="Link to this heading"></a></h2>
+<p>If the part is intended to connect with others, add features like joints, holes, or other
+attachment points. Ensure that these features are precisely located to ensure proper fitment
+and functionality in the final assembly.</p>
+<p><em>Our example has two circular holes and a slot that need to be created. First we’ll create
+the two circular holes:</em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">Locations</span><span class="p">(</span><span class="n">bracket</span><span class="o">.</span><span class="n">faces</span><span class="p">()</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="n">Axis</span><span class="o">.</span><span class="n">X</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]):</span>
+    <span class="n">Hole</span><span class="p">(</span><span class="n">hole_diameter</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><em>This code creates a hole in a specific face of the bracket part.</em></p>
+<blockquote>
+<div><dl class="simple">
+<dt>with Locations(bracket.faces().sort_by(Axis.X)[-1]):</dt><dd><p><em>This context sets a location(s) for subsequent operations.</em></p>
+<ul class="simple">
+<li><p>bracket.faces() <em>retrieves all the faces of the bracket part.</em></p></li>
+<li><p>sort_by(Axis.X) <em>sorts these faces based on their position along the X-axis (from
+one side of the bracket to the other).</em></p></li>
+<li><p>[-1] <em>selects the last face in this sorted list, which would be the face farthest
+along the X-axis, the extreme right side of the part.</em></p></li>
+<li><p>Locations() <em>creates a new local context or coordinate system at the selected face,
+effectively setting this face as the working location for any subsequent operations
+inside the with block.</em></p></li>
+</ul>
+</dd>
+<dt>Hole(hole_diameter / 2)</dt><dd><p><em>This creates a hole in the selected face. The radius of the hole is specified as
+hole_diameter / 2. The hole is placed at the origin of the selected face, based on
+the local coordinate system created by Locations(). As the depth of the hole is
+not provided it is assumed to go entirely through the part.</em></p>
+</dd>
+</dl>
+</div></blockquote>
+<p><em>Next the slot needs to be created in the bracket with will be done by sketching a slot on
+the front of the bracket and extruding the sketch through the part.</em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">BuildSketch</span><span class="p">(</span><span class="n">bracket</span><span class="o">.</span><span class="n">faces</span><span class="p">()</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="n">Axis</span><span class="o">.</span><span class="n">Y</span><span class="p">)[</span><span class="mi">0</span><span class="p">]):</span>
+    <span class="n">SlotOverall</span><span class="p">(</span><span class="mi">20</span> <span class="o">*</span> <span class="n">MM</span><span class="p">,</span> <span class="n">hole_diameter</span><span class="p">)</span>
+<span class="n">extrude</span><span class="p">(</span><span class="n">amount</span><span class="o">=-</span><span class="n">thickness</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">Mode</span><span class="o">.</span><span class="n">SUBTRACT</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><em>Here’s a detailed explanation of what each part does:</em></p>
+<blockquote>
+<div><dl class="simple">
+<dt>with BuildSketch(bracket.faces().sort_by(Axis.Y)[0]):</dt><dd><p><em>This line sets up a sketching context.</em></p>
+<ul class="simple">
+<li><p>bracket.faces() <em>retrieves all the faces of the bracket part.</em></p></li>
+<li><p>sort_by(Axis.Y) <em>sorts the faces along the Y-axis, arranging them from the lowest
+Y-coordinate to the highest.</em></p></li>
+<li><p>[0] <em>selects the first face in this sorted list, which is the one located at the
+lowest Y-coordinate, the nearest face of the part.</em></p></li>
+<li><p>BuildSketch() <em>creates a new sketching context on this selected face, where 2D
+geometry will be drawn.</em></p></li>
+</ul>
+</dd>
+<dt>SlotOverall(20, hole_diameter)</dt><dd><p><em>This command draws a slot (a rounded rectangle or elongated hole) on the selected
+face. The slot has a total length of 20 mm and a width equal to hole_diameter.
+The slot is defined within the 2D sketch on the selected face of the bracket.</em></p>
+</dd>
+<dt>extrude(amount=-thickness, mode=Mode.SUBTRACT)</dt><dd><p>extrude() <em>takes the 2D sketch (the slot) and extends it into the 3D space by a
+distance equal to -thickness, creating a cut into the part. The negative value
+(-thickness) indicates that the extrusion is directed inward into the part (a cut).</em>
+mode=Mode.SUBTRACT <em>specifies that the extrusion is a subtractive operation,
+meaning it removes material from the bracket, effectively cutting the slot through
+the face of the part.</em></p>
+</dd>
+</dl>
+</div></blockquote>
+<p><em>Although beyond the scope of this tutorial, joints could be defined for each of the
+holes to allow programmatic connection to other parts.</em></p>
+</section>
+<section id="step-10-plan-for-parametric-flexibility">
+<h2>Step 10. Plan for Parametric Flexibility<a class="headerlink" href="#step-10-plan-for-parametric-flexibility" title="Link to this heading"></a></h2>
+<p>Wherever possible, make your design parametric, allowing dimensions and features to be
+easily adjusted later. This flexibility can be crucial if the design needs modifications
+or if variations of the part are needed.</p>
+<p><em>The dimensions of the bracket are defined as follows:</em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">thickness</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">MM</span>
+<span class="n">width</span> <span class="o">=</span> <span class="mi">25</span> <span class="o">*</span> <span class="n">MM</span>
+<span class="n">length</span> <span class="o">=</span> <span class="mi">50</span> <span class="o">*</span> <span class="n">MM</span>
+<span class="n">height</span> <span class="o">=</span> <span class="mi">25</span> <span class="o">*</span> <span class="n">MM</span>
+<span class="n">hole_diameter</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">MM</span>
+<span class="n">bend_radius</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">MM</span>
+<span class="n">fillet_radius</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">MM</span>
+</pre></div>
+</div>
+</section>
+<section id="step-11-test-fit-and-tolerances">
+<h2>Step 11. Test Fit and Tolerances<a class="headerlink" href="#step-11-test-fit-and-tolerances" title="Link to this heading"></a></h2>
+<p>Visualize the fit of the part within its intended assembly. Consider tolerances for
+manufacturing, such as clearance between moving parts or shrinkage for 3D-printed parts.
+Adjust the design as needed to ensure real-world functionality.</p>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading"></a></h2>
+<p>These steps should guide you through a logical and efficient workflow in build123d
+(or any CAD tool), helping you to design parts with accuracy and ease.</p>
+<p><em>The entire code block for the bracket example is shown here:</em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">build123d</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ocp_vscode</span><span class="w"> </span><span class="kn">import</span> <span class="n">show_all</span>
+
+<span class="n">thickness</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">MM</span>
+<span class="n">width</span> <span class="o">=</span> <span class="mi">25</span> <span class="o">*</span> <span class="n">MM</span>
+<span class="n">length</span> <span class="o">=</span> <span class="mi">50</span> <span class="o">*</span> <span class="n">MM</span>
+<span class="n">height</span> <span class="o">=</span> <span class="mi">25</span> <span class="o">*</span> <span class="n">MM</span>
+<span class="n">hole_diameter</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">MM</span>
+<span class="n">bend_radius</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">MM</span>
+<span class="n">fillet_radius</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">MM</span>
+
+<span class="k">with</span> <span class="n">BuildPart</span><span class="p">()</span> <span class="k">as</span> <span class="n">bracket</span><span class="p">:</span>
+    <span class="k">with</span> <span class="n">BuildSketch</span><span class="p">()</span> <span class="k">as</span> <span class="n">sketch</span><span class="p">:</span>
+        <span class="k">with</span> <span class="n">BuildLine</span><span class="p">()</span> <span class="k">as</span> <span class="n">profile</span><span class="p">:</span>
+            <span class="n">FilletPolyline</span><span class="p">(</span>
+                <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="n">length</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="n">length</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">height</span><span class="p">),</span> <span class="n">radius</span><span class="o">=</span><span class="n">bend_radius</span>
+            <span class="p">)</span>
+            <span class="n">offset</span><span class="p">(</span><span class="n">amount</span><span class="o">=</span><span class="n">thickness</span><span class="p">,</span> <span class="n">side</span><span class="o">=</span><span class="n">Side</span><span class="o">.</span><span class="n">LEFT</span><span class="p">)</span>
+        <span class="n">make_face</span><span class="p">()</span>
+        <span class="n">mirror</span><span class="p">(</span><span class="n">about</span><span class="o">=</span><span class="n">Plane</span><span class="o">.</span><span class="n">YZ</span><span class="p">)</span>
+    <span class="n">extrude</span><span class="p">(</span><span class="n">amount</span><span class="o">=</span><span class="n">width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">mirror</span><span class="p">(</span><span class="n">about</span><span class="o">=</span><span class="n">Plane</span><span class="o">.</span><span class="n">XY</span><span class="p">)</span>
+    <span class="n">corners</span> <span class="o">=</span> <span class="n">bracket</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="n">Axis</span><span class="o">.</span><span class="n">X</span><span class="p">)</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="n">Axis</span><span class="o">.</span><span class="n">Y</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">fillet</span><span class="p">(</span><span class="n">corners</span><span class="p">,</span> <span class="n">fillet_radius</span><span class="p">)</span>
+    <span class="k">with</span> <span class="n">Locations</span><span class="p">(</span><span class="n">bracket</span><span class="o">.</span><span class="n">faces</span><span class="p">()</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="n">Axis</span><span class="o">.</span><span class="n">X</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]):</span>
+        <span class="n">Hole</span><span class="p">(</span><span class="n">hole_diameter</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="k">with</span> <span class="n">BuildSketch</span><span class="p">(</span><span class="n">bracket</span><span class="o">.</span><span class="n">faces</span><span class="p">()</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="n">Axis</span><span class="o">.</span><span class="n">Y</span><span class="p">)[</span><span class="mi">0</span><span class="p">]):</span>
+        <span class="n">SlotOverall</span><span class="p">(</span><span class="mi">20</span> <span class="o">*</span> <span class="n">MM</span><span class="p">,</span> <span class="n">hole_diameter</span><span class="p">)</span>
+    <span class="n">extrude</span><span class="p">(</span><span class="n">amount</span><span class="o">=-</span><span class="n">thickness</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">Mode</span><span class="o">.</span><span class="n">SUBTRACT</span><span class="p">)</span>
+
+<span class="n">show_all</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="_images/bracket.png" class="align-center" src="_images/bracket.png" />
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="tutorials.html" class="btn btn-neutral float-left" title="Tutorials" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tutorial_selectors.html" class="btn btn-neutral float-right" title="Selector Tutorial" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Gumyr.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

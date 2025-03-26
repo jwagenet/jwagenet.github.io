@@ -1,0 +1,481 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>operations_sketch &mdash; build123d 0.9.2.dev40+gb1f0eed documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster.custom.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster.bundle.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-shadow.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-punk.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-noir.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-light.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-borderless.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/micromodal.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/sphinx_rtd_theme.css?v=3234e928" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c97902b4"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+      <script src="../_static/js/hoverxref.js"></script>
+      <script src="../_static/js/tooltipster.bundle.min.js"></script>
+      <script src="../_static/js/micromodal.min.js"></script>
+      <script src="../_static/design-tabs.js?v=f930bc37"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            build123d
+              <img src="../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../key_concepts.html">Key Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../key_concepts_builder.html">Key Concepts (builder mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../key_concepts_algebra.html">Key Concepts (algebra mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../moving_objects.html">Moving Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../OpenSCAD.html">Transitioning from OpenSCAD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introductory_examples.html">Introductory Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../selectors_operators.html">Selectors and Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operations.html">Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../builders.html">Builders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../joints.html">Joints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assemblies.html">Assemblies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tips.html">Tips, Best Practices and FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../import_export.html">Import/Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cheat_sheet.html">Cheat Sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../external.html">External Tools and Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../builder_api_reference.html">Builder Common API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../direct_api_reference.html">Direct API Reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">build123d</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Module code</a></li>
+      <li class="breadcrumb-item active">operations_sketch</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for operations_sketch</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Sketch Operations</span>
+
+<span class="sd">name: operations_sketch.py</span>
+<span class="sd">by:   Gumyr</span>
+<span class="sd">date: March 21th 2023</span>
+
+<span class="sd">desc:</span>
+<span class="sd">    This python module contains operations (functions) that work on</span>
+<span class="sd">    planar Sketches.</span>
+
+<span class="sd">license:</span>
+
+<span class="sd">    Copyright 2022 Gumyr</span>
+
+<span class="sd">    Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span>
+<span class="sd">    you may not use this file except in compliance with the License.</span>
+<span class="sd">    You may obtain a copy of the License at</span>
+
+<span class="sd">        http://www.apache.org/licenses/LICENSE-2.0</span>
+
+<span class="sd">    Unless required by applicable law or agreed to in writing, software</span>
+<span class="sd">    distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span>
+<span class="sd">    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
+<span class="sd">    See the License for the specific language governing permissions and</span>
+<span class="sd">    limitations under the License.</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">Iterable</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.spatial</span><span class="w"> </span><span class="kn">import</span> <span class="n">Voronoi</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">build123d.build_enums</span><span class="w"> </span><span class="kn">import</span> <span class="n">Mode</span><span class="p">,</span> <span class="n">SortBy</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">build123d.topology</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">Compound</span><span class="p">,</span>
+    <span class="n">Curve</span><span class="p">,</span>
+    <span class="n">Edge</span><span class="p">,</span>
+    <span class="n">Face</span><span class="p">,</span>
+    <span class="n">ShapeList</span><span class="p">,</span>
+    <span class="n">Wire</span><span class="p">,</span>
+    <span class="n">Sketch</span><span class="p">,</span>
+    <span class="n">topo_explore_connected_edges</span><span class="p">,</span>
+    <span class="n">topo_explore_common_vertex</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">build123d.geometry</span><span class="w"> </span><span class="kn">import</span> <span class="n">Vector</span><span class="p">,</span> <span class="n">TOLERANCE</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">build123d.build_common</span><span class="w"> </span><span class="kn">import</span> <span class="n">flatten_sequence</span><span class="p">,</span> <span class="n">validate_inputs</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">build123d.build_sketch</span><span class="w"> </span><span class="kn">import</span> <span class="n">BuildSketch</span>
+
+
+<div class="viewcode-block" id="full_round">
+<a class="viewcode-back" href="../operations.html#operations_sketch.full_round">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">full_round</span><span class="p">(</span>
+    <span class="n">edge</span><span class="p">:</span> <span class="n">Edge</span><span class="p">,</span>
+    <span class="n">invert</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">voronoi_point_count</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span>
+    <span class="n">mode</span><span class="p">:</span> <span class="n">Mode</span> <span class="o">=</span> <span class="n">Mode</span><span class="o">.</span><span class="n">REPLACE</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Sketch</span><span class="p">,</span> <span class="n">Vector</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Sketch Operation: full_round</span>
+
+<span class="sd">    Given an edge from a Face/Sketch, modify the face by replacing the given edge with the</span>
+<span class="sd">    arc of the Voronoi largest empty circle that will fit within the Face.  This</span>
+<span class="sd">    &quot;rounds off&quot; the end of the object.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        edge (Edge): target Edge to remove</span>
+<span class="sd">        invert (bool, optional): make the arc concave instead of convex. Defaults to False.</span>
+<span class="sd">        voronoi_point_count (int, optional): number of points along each edge</span>
+<span class="sd">            used to create the voronoi vertices as potential locations for the</span>
+<span class="sd">            center of the largest empty circle. Defaults to 100.</span>
+<span class="sd">        mode (Mode, optional): combination mode. Defaults to Mode.REPLACE.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: Invalid geometry</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        (Sketch, Vector, float): A tuple where the first value is the modified shape, the second the</span>
+<span class="sd">        geometric center of the arc, and the third the radius of the arc</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">context</span><span class="p">:</span> <span class="n">BuildSketch</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="n">BuildSketch</span><span class="o">.</span><span class="n">_get_context</span><span class="p">(</span><span class="s2">&quot;full_round&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">edge</span><span class="p">,</span> <span class="n">Edge</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;A single Edge must be provided&quot;</span><span class="p">)</span>
+    <span class="n">validate_inputs</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="s2">&quot;full_round&quot;</span><span class="p">,</span> <span class="n">edge</span><span class="p">)</span>
+
+    <span class="c1">#</span>
+    <span class="c1"># Generate a set of evenly spaced points along the given edge and the</span>
+    <span class="c1"># edges connected to it and use them to generate the Voronoi vertices</span>
+    <span class="c1"># as possible locations for the center of the largest empty circle</span>
+    <span class="c1"># Note: full_round could be enhanced to handle the case of a face composed</span>
+    <span class="c1"># of two edges.</span>
+    <span class="n">connected_edges</span> <span class="o">=</span> <span class="n">topo_explore_connected_edges</span><span class="p">(</span><span class="n">edge</span><span class="p">,</span> <span class="n">edge</span><span class="o">.</span><span class="n">topo_parent</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">connected_edges</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Invalid geometry - 3 or more edges required&quot;</span><span class="p">)</span>
+
+    <span class="n">edge_group</span> <span class="o">=</span> <span class="p">[</span><span class="n">edge</span><span class="p">]</span> <span class="o">+</span> <span class="n">connected_edges</span>
+    <span class="n">voronoi_edge_points</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">v</span>
+        <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">edge_group</span>
+        <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">e</span><span class="o">.</span><span class="n">positions</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">i</span> <span class="o">/</span> <span class="n">voronoi_point_count</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">voronoi_point_count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span>
+        <span class="p">)</span>
+    <span class="p">]</span>
+    <span class="n">numpy_style_pnts</span> <span class="o">=</span> <span class="p">[[</span><span class="n">p</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">Y</span><span class="p">]</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">voronoi_edge_points</span><span class="p">]</span>
+    <span class="n">voronoi_vertices</span> <span class="o">=</span> <span class="p">[</span><span class="n">Vector</span><span class="p">(</span><span class="o">*</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">Voronoi</span><span class="p">(</span><span class="n">numpy_style_pnts</span><span class="p">)</span><span class="o">.</span><span class="n">vertices</span><span class="p">]</span>
+
+    <span class="c1">#</span>
+    <span class="c1"># Refine the largest empty circle center estimate by averaging the best</span>
+    <span class="c1"># three candidates.  The minimum distance between the edges and this</span>
+    <span class="c1"># center is the circle radius.</span>
+    <span class="n">best_three</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="s2">&quot;inf&quot;</span><span class="p">),</span> <span class="nb">int</span><span class="p">()),</span>
+        <span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="s2">&quot;inf&quot;</span><span class="p">),</span> <span class="nb">int</span><span class="p">()),</span>
+        <span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="s2">&quot;inf&quot;</span><span class="p">),</span> <span class="nb">int</span><span class="p">()),</span>
+    <span class="p">]</span>
+
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">voronoi_vertices</span><span class="p">):</span>
+        <span class="n">distances</span> <span class="o">=</span> <span class="p">[</span><span class="n">edge_group</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">distance_to</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
+        <span class="n">avg_distance</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">distances</span><span class="p">)</span> <span class="o">/</span> <span class="mi">3</span>
+        <span class="n">differences</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">dist</span> <span class="o">-</span> <span class="n">avg_distance</span><span class="p">)</span> <span class="k">for</span> <span class="n">dist</span> <span class="ow">in</span> <span class="n">distances</span><span class="p">)</span>
+
+        <span class="c1"># Check if this delta is among the three smallest and update best_three if so</span>
+        <span class="c1"># Compare with the largest delta in the best three</span>
+        <span class="k">if</span> <span class="n">differences</span> <span class="o">&lt;</span> <span class="n">best_three</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]:</span>
+            <span class="c1"># Replace the last element with the new one</span>
+            <span class="n">best_three</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">differences</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+            <span class="c1"># Sort the list to keep the smallest deltas first</span>
+            <span class="n">best_three</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+    <span class="c1"># Extract the indices of the best three and average them</span>
+    <span class="n">best_indices</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">best_three</span><span class="p">]</span>
+    <span class="n">voronoi_circle_center</span><span class="p">:</span> <span class="n">Vector</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="nb">sum</span><span class="p">((</span><span class="n">voronoi_vertices</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">best_indices</span><span class="p">),</span> <span class="n">Vector</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span> <span class="o">/</span> <span class="mf">3.0</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Determine where the connected edges intersect with the largest empty circle</span>
+    <span class="n">connected_edges_end_points</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">e</span><span class="o">.</span><span class="n">distance_to_with_closest_points</span><span class="p">(</span><span class="n">voronoi_circle_center</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">connected_edges</span>
+    <span class="p">]</span>
+    <span class="n">middle_edge_arc_point</span> <span class="o">=</span> <span class="n">edge</span><span class="o">.</span><span class="n">distance_to_with_closest_points</span><span class="p">(</span><span class="n">voronoi_circle_center</span><span class="p">)[</span>
+        <span class="mi">1</span>
+    <span class="p">]</span>
+    <span class="k">if</span> <span class="n">invert</span><span class="p">:</span>
+        <span class="n">middle_edge_arc_point</span> <span class="o">=</span> <span class="n">voronoi_circle_center</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">middle_edge_arc_point</span>
+    <span class="n">connected_edges_end_params</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">e</span><span class="o">.</span><span class="n">param_at_point</span><span class="p">(</span><span class="n">connected_edges_end_points</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">e</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">connected_edges</span><span class="p">)</span>
+    <span class="p">]</span>
+    <span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="n">connected_edges_end_params</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="mf">0.0</span> <span class="o">&lt;</span> <span class="n">param</span> <span class="o">&lt;</span> <span class="mf">1.0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Invalid geometry to create the end arc&quot;</span><span class="p">)</span>
+
+    <span class="n">common_vertex_points</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">Vector</span><span class="p">(</span><span class="n">topo_explore_common_vertex</span><span class="p">(</span><span class="n">edge</span><span class="p">,</span> <span class="n">e</span><span class="p">))</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">connected_edges</span>
+    <span class="p">]</span>
+    <span class="n">common_vertex_params</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">e</span><span class="o">.</span><span class="n">param_at_point</span><span class="p">(</span><span class="n">common_vertex_points</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">e</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">connected_edges</span><span class="p">)</span>
+    <span class="p">]</span>
+
+    <span class="c1"># Trim the connected edges to end at the closest points to the circle center</span>
+    <span class="n">trimmed_connected_edges</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">e</span><span class="o">.</span><span class="n">trim</span><span class="p">(</span><span class="o">*</span><span class="nb">sorted</span><span class="p">([</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">common_vertex_params</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">connected_edges_end_params</span><span class="p">[</span><span class="n">i</span><span class="p">]]))</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">e</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">connected_edges</span><span class="p">)</span>
+    <span class="p">]</span>
+    <span class="c1"># Record the position of the newly trimmed connected edges to build the arc</span>
+    <span class="c1"># accurately</span>
+    <span class="n">trimmed_end_points</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span>
+            <span class="n">trimmed_connected_edges</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">position_at</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+            <span class="o">-</span> <span class="n">connected_edges</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">position_at</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">length</span> <span class="o">&lt;</span> <span class="n">TOLERANCE</span><span class="p">:</span>
+            <span class="n">trimmed_end_points</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">trimmed_connected_edges</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">position_at</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">trimmed_end_points</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">trimmed_connected_edges</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">position_at</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+
+    <span class="c1"># Generate the new circular edge</span>
+    <span class="n">new_arc</span> <span class="o">=</span> <span class="n">Edge</span><span class="o">.</span><span class="n">make_three_point_arc</span><span class="p">(</span>
+        <span class="n">trimmed_end_points</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+        <span class="n">middle_edge_arc_point</span><span class="p">,</span>
+        <span class="n">trimmed_end_points</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Recover other edges</span>
+    <span class="k">if</span> <span class="n">edge</span><span class="o">.</span><span class="n">topo_parent</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">other_edges</span><span class="p">:</span> <span class="n">ShapeList</span><span class="p">[</span><span class="n">Edge</span><span class="p">]</span> <span class="o">=</span> <span class="n">ShapeList</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">other_edges</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">edge</span><span class="o">.</span><span class="n">topo_parent</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span>
+            <span class="o">-</span> <span class="n">topo_explore_connected_edges</span><span class="p">(</span><span class="n">edge</span><span class="p">)</span>
+            <span class="o">-</span> <span class="n">ShapeList</span><span class="p">([</span><span class="n">edge</span><span class="p">])</span>
+        <span class="p">)</span>
+
+    <span class="c1"># Rebuild the face</span>
+    <span class="c1"># Note that the longest wire must be the perimeter and others holes</span>
+    <span class="n">face_wires</span> <span class="o">=</span> <span class="n">Wire</span><span class="o">.</span><span class="n">combine</span><span class="p">(</span>
+        <span class="n">trimmed_connected_edges</span> <span class="o">+</span> <span class="p">[</span><span class="n">new_arc</span><span class="p">]</span> <span class="o">+</span> <span class="n">other_edges</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="n">SortBy</span><span class="o">.</span><span class="n">LENGTH</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">pending_face</span> <span class="o">=</span> <span class="n">Face</span><span class="p">(</span><span class="n">face_wires</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">face_wires</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+
+    <span class="k">if</span> <span class="n">context</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">context</span><span class="o">.</span><span class="n">_add_to_context</span><span class="p">(</span><span class="n">pending_face</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">)</span>
+        <span class="n">context</span><span class="o">.</span><span class="n">pending_edges</span> <span class="o">=</span> <span class="n">ShapeList</span><span class="p">()</span>
+
+    <span class="c1"># return Sketch(Compound([pending_face]).wrapped)</span>
+    <span class="k">return</span> <span class="n">Sketch</span><span class="p">([</span><span class="n">pending_face</span><span class="p">]),</span> <span class="n">new_arc</span><span class="o">.</span><span class="n">arc_center</span><span class="p">,</span> <span class="n">new_arc</span><span class="o">.</span><span class="n">radius</span></div>
+
+
+
+<div class="viewcode-block" id="make_face">
+<a class="viewcode-back" href="../operations.html#operations_sketch.make_face">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">make_face</span><span class="p">(</span>
+    <span class="n">edges</span><span class="p">:</span> <span class="n">Edge</span> <span class="o">|</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Edge</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">mode</span><span class="p">:</span> <span class="n">Mode</span> <span class="o">=</span> <span class="n">Mode</span><span class="o">.</span><span class="n">ADD</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Sketch</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Sketch Operation: make_face</span>
+
+<span class="sd">    Create a face from the given perimeter edges.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        edges (Edge): sequence of perimeter edges. Defaults to all</span>
+<span class="sd">            sketch pending edges.</span>
+<span class="sd">        mode (Mode, optional): combination mode. Defaults to Mode.ADD.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">context</span><span class="p">:</span> <span class="n">BuildSketch</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="n">BuildSketch</span><span class="o">.</span><span class="n">_get_context</span><span class="p">(</span><span class="s2">&quot;make_face&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">edges</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">outer_edges</span> <span class="o">=</span> <span class="n">flatten_sequence</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">context</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">outer_edges</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">pending_edges</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;No objects to create a face&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">outer_edges</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;No objects to create a hull&quot;</span><span class="p">)</span>
+    <span class="n">validate_inputs</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="s2">&quot;make_face&quot;</span><span class="p">,</span> <span class="n">outer_edges</span><span class="p">)</span>
+
+    <span class="n">pending_face</span> <span class="o">=</span> <span class="n">Face</span><span class="p">(</span><span class="n">Wire</span><span class="o">.</span><span class="n">combine</span><span class="p">(</span><span class="n">outer_edges</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">if</span> <span class="n">pending_face</span><span class="o">.</span><span class="n">normal_at</span><span class="p">()</span><span class="o">.</span><span class="n">Z</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>  <span class="c1"># flip up-side-down faces</span>
+        <span class="n">pending_face</span> <span class="o">=</span> <span class="o">-</span><span class="n">pending_face</span>
+
+    <span class="k">if</span> <span class="n">context</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">context</span><span class="o">.</span><span class="n">_add_to_context</span><span class="p">(</span><span class="n">pending_face</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">)</span>
+        <span class="n">context</span><span class="o">.</span><span class="n">pending_edges</span> <span class="o">=</span> <span class="n">ShapeList</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">Sketch</span><span class="p">(</span><span class="n">Compound</span><span class="p">([</span><span class="n">pending_face</span><span class="p">])</span><span class="o">.</span><span class="n">wrapped</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="make_hull">
+<a class="viewcode-back" href="../operations.html#operations_sketch.make_hull">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">make_hull</span><span class="p">(</span>
+    <span class="n">edges</span><span class="p">:</span> <span class="n">Edge</span> <span class="o">|</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Edge</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">mode</span><span class="p">:</span> <span class="n">Mode</span> <span class="o">=</span> <span class="n">Mode</span><span class="o">.</span><span class="n">ADD</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Sketch</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Sketch Operation: make_hull</span>
+
+<span class="sd">    Create a face from the convex hull of the given edges</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        edges (Edge, optional): sequence of edges to hull. Defaults to all</span>
+<span class="sd">            sketch pending edges.</span>
+<span class="sd">        mode (Mode, optional): combination mode. Defaults to Mode.ADD.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">context</span><span class="p">:</span> <span class="n">BuildSketch</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="n">BuildSketch</span><span class="o">.</span><span class="n">_get_context</span><span class="p">(</span><span class="s2">&quot;make_hull&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">edges</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">hull_edges</span> <span class="o">=</span> <span class="n">flatten_sequence</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">context</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">hull_edges</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">pending_edges</span>
+        <span class="k">if</span> <span class="n">context</span><span class="o">.</span><span class="n">sketch_local</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">hull_edges</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">context</span><span class="o">.</span><span class="n">sketch_local</span><span class="o">.</span><span class="n">edges</span><span class="p">())</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;No objects to create a hull&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">hull_edges</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;No objects to create a hull&quot;</span><span class="p">)</span>
+
+    <span class="n">validate_inputs</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="s2">&quot;make_hull&quot;</span><span class="p">,</span> <span class="n">hull_edges</span><span class="p">)</span>
+
+    <span class="n">pending_face</span> <span class="o">=</span> <span class="n">Face</span><span class="p">(</span><span class="n">Wire</span><span class="o">.</span><span class="n">make_convex_hull</span><span class="p">(</span><span class="n">hull_edges</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">pending_face</span><span class="o">.</span><span class="n">normal_at</span><span class="p">()</span><span class="o">.</span><span class="n">Z</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>  <span class="c1"># flip up-side-down faces</span>
+        <span class="n">pending_face</span> <span class="o">=</span> <span class="o">-</span><span class="n">pending_face</span>
+
+    <span class="k">if</span> <span class="n">context</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">context</span><span class="o">.</span><span class="n">_add_to_context</span><span class="p">(</span><span class="n">pending_face</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">)</span>
+        <span class="n">context</span><span class="o">.</span><span class="n">pending_edges</span> <span class="o">=</span> <span class="n">ShapeList</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">Sketch</span><span class="p">(</span><span class="n">Compound</span><span class="p">([</span><span class="n">pending_face</span><span class="p">])</span><span class="o">.</span><span class="n">wrapped</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="trace">
+<a class="viewcode-back" href="../operations.html#operations_sketch.trace">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">trace</span><span class="p">(</span>
+    <span class="n">lines</span><span class="p">:</span> <span class="n">Curve</span> <span class="o">|</span> <span class="n">Edge</span> <span class="o">|</span> <span class="n">Wire</span> <span class="o">|</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Curve</span> <span class="o">|</span> <span class="n">Edge</span> <span class="o">|</span> <span class="n">Wire</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">line_width</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="n">mode</span><span class="p">:</span> <span class="n">Mode</span> <span class="o">=</span> <span class="n">Mode</span><span class="o">.</span><span class="n">ADD</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Sketch</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Sketch Operation: trace</span>
+
+<span class="sd">    Convert edges, wires or pending edges into faces by sweeping a perpendicular line along them.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        lines (Curve | Edge | Wire | Iterable[Curve | Edge | Wire]], optional): lines to</span>
+<span class="sd">            trace. Defaults to sketch pending edges.</span>
+<span class="sd">        line_width (float, optional): Defaults to 1.</span>
+<span class="sd">        mode (Mode, optional): combination mode. Defaults to Mode.ADD.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: No objects to trace</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Sketch: Traced lines</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">context</span><span class="p">:</span> <span class="n">BuildSketch</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="n">BuildSketch</span><span class="o">.</span><span class="n">_get_context</span><span class="p">(</span><span class="s2">&quot;trace&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">lines</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">trace_lines</span> <span class="o">=</span> <span class="n">flatten_sequence</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+        <span class="n">trace_edges</span> <span class="o">=</span> <span class="p">[</span><span class="n">e</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">trace_lines</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">l</span><span class="o">.</span><span class="n">edges</span><span class="p">()]</span>
+    <span class="k">elif</span> <span class="n">context</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">trace_edges</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">pending_edges</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;No objects to trace&quot;</span><span class="p">)</span>
+
+    <span class="n">new_faces</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Face</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">edge</span> <span class="ow">in</span> <span class="n">trace_edges</span><span class="p">:</span>
+        <span class="n">trace_pen</span> <span class="o">=</span> <span class="n">edge</span><span class="o">.</span><span class="n">perpendicular_line</span><span class="p">(</span><span class="n">line_width</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">new_faces</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">Face</span><span class="o">.</span><span class="n">sweep</span><span class="p">(</span><span class="n">trace_pen</span><span class="p">,</span> <span class="n">edge</span><span class="p">)</span><span class="o">.</span><span class="n">faces</span><span class="p">())</span>
+    <span class="k">if</span> <span class="n">context</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">context</span><span class="o">.</span><span class="n">_add_to_context</span><span class="p">(</span><span class="o">*</span><span class="n">new_faces</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">)</span>
+        <span class="n">context</span><span class="o">.</span><span class="n">pending_edges</span> <span class="o">=</span> <span class="n">ShapeList</span><span class="p">()</span>
+
+    <span class="c1"># pylint: disable=no-value-for-parameter</span>
+    <span class="n">combined_faces</span> <span class="o">=</span> <span class="n">Face</span><span class="o">.</span><span class="n">fuse</span><span class="p">(</span><span class="o">*</span><span class="n">new_faces</span><span class="p">)</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">new_faces</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">else</span> <span class="n">new_faces</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">Sketch</span><span class="p">(</span><span class="n">combined_faces</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">combined_faces</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span>
+        <span class="k">else</span> <span class="n">Sketch</span><span class="p">(</span><span class="n">combined_faces</span><span class="o">.</span><span class="n">wrapped</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Gumyr.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

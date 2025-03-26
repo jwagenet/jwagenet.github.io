@@ -1,0 +1,459 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Overview &mdash; build123d 0.9.2.dev40+gb1f0eed documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster.custom.css?v=7bc2f056" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster.bundle.min.css?v=37217874" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-shadow.min.css?v=6227e517" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-punk.min.css?v=94669e23" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-noir.min.css?v=21a39f42" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-light.min.css?v=a18b2449" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-borderless.min.css?v=dbff53e4" />
+      <link rel="stylesheet" type="text/css" href="_static/css/micromodal.css?v=d7bf34ee" />
+      <link rel="stylesheet" type="text/css" href="_static/css/sphinx_rtd_theme.css?v=3234e928" />
+      <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=c97902b4"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=f281be69"></script>
+      <script src="_static/js/hoverxref.js?v=6ff7264e"></script>
+      <script src="_static/js/tooltipster.bundle.min.js?v=18bf091b"></script>
+      <script src="_static/js/micromodal.min.js?v=04d6302d"></script>
+      <script src="_static/design-tabs.js?v=f930bc37"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Introduction" href="introduction.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            build123d
+              <img src="_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts.html">Key Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts_builder.html">Key Concepts (builder mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts_algebra.html">Key Concepts (algebra mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="moving_objects.html">Moving Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OpenSCAD.html">Transitioning from OpenSCAD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introductory_examples.html">Introductory Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="selectors_operators.html">Selectors and Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operations.html">Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="builders.html">Builders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="joints.html">Joints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assemblies.html">Assemblies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tips.html">Tips, Best Practices and FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="import_export.html">Import/Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cheat_sheet.html">Cheat Sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="external.html">External Tools and Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="builder_api_reference.html">Builder Common API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="direct_api_reference.html">Direct API Reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">build123d</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Overview</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <img alt="build123d logo" class="align-center" src="_images/logo-banner.svg" />
+<p>Build123d is a python-based, parametric, boundary representation (BREP) modeling
+framework for 2D and 3D CAD. It’s built on the Open Cascade geometric kernel and
+allows for the creation of complex models using a simple and intuitive python
+syntax. Build123d can be used to create models for 3D printing, CNC machining,
+laser cutting, and other manufacturing processes.  Models can be exported to a
+wide variety of popular CAD tools such as FreeCAD and SolidWorks.</p>
+<p>Build123d could be considered as an evolution of
+<a class="reference external" href="https://cadquery.readthedocs.io/en/latest/index.html">CadQuery</a> where the
+somewhat restrictive Fluent API (method chaining) is replaced with stateful
+context managers - i.e. <cite>with</cite> blocks - thus enabling the full python toolbox:
+for loops, references to objects, object sorting and filtering, etc.</p>
+<p>Note that this documentation is available in
+<a class="reference external" href="https://build123d.readthedocs.io/_/downloads/en/latest/pdf/">pdf</a> and
+<a class="reference external" href="https://build123d.readthedocs.io/_/downloads/en/latest/epub/">epub</a> formats
+for reference while offline.</p>
+<section id="overview">
+<h1>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h1>
+<p>build123d uses the standard python context manager - i.e. the <code class="docutils literal notranslate"><span class="pre">with</span></code> statement often used when
+working with files - as a builder of the object under construction. Once the object is complete
+it can be extracted from the builders and used in other ways: for example exported as a STEP
+file or used in an Assembly.  There are three builders available:</p>
+<ul class="simple">
+<li><p><strong>BuildLine</strong>: a builder of one dimensional objects - those with the property
+of length but not of area or volume - typically used
+to create complex lines used in sketches or paths.</p></li>
+<li><p><strong>BuildSketch</strong>: a builder of planar two dimensional objects - those with the property
+of area but not of volume - typically used to create 2D drawings that are extruded into 3D parts.</p></li>
+<li><p><strong>BuildPart</strong>: a builder of three dimensional objects - those with the property of volume -
+used to create individual parts.</p></li>
+</ul>
+<p>The three builders work together in a hierarchy as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">BuildPart</span><span class="p">()</span> <span class="k">as</span> <span class="n">my_part</span><span class="p">:</span>
+    <span class="o">...</span>
+    <span class="k">with</span> <span class="n">BuildSketch</span><span class="p">()</span> <span class="k">as</span> <span class="n">my_sketch</span><span class="p">:</span>
+        <span class="o">...</span>
+        <span class="k">with</span> <span class="n">BuildLine</span><span class="p">()</span> <span class="k">as</span> <span class="n">my_line</span><span class="p">:</span>
+            <span class="o">...</span>
+        <span class="o">...</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">my_line</span></code> will be added to <code class="docutils literal notranslate"><span class="pre">my_sketch</span></code> once the line is complete and <code class="docutils literal notranslate"><span class="pre">my_sketch</span></code> will be
+added to <code class="docutils literal notranslate"><span class="pre">my_part</span></code> once the sketch is complete.</p>
+<p>As an example, consider the design of a tea cup:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">build123d</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ocp_vscode</span><span class="w"> </span><span class="kn">import</span> <span class="n">show</span>
+
+<span class="n">wall_thickness</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">MM</span>
+<span class="n">fillet_radius</span> <span class="o">=</span> <span class="n">wall_thickness</span> <span class="o">*</span> <span class="mf">0.49</span>
+
+<span class="k">with</span> <span class="n">BuildPart</span><span class="p">()</span> <span class="k">as</span> <span class="n">tea_cup</span><span class="p">:</span>
+    <span class="c1"># Create the bowl of the cup as a revolved cross section</span>
+    <span class="k">with</span> <span class="n">BuildSketch</span><span class="p">(</span><span class="n">Plane</span><span class="o">.</span><span class="n">XZ</span><span class="p">)</span> <span class="k">as</span> <span class="n">bowl_section</span><span class="p">:</span>
+        <span class="k">with</span> <span class="n">BuildLine</span><span class="p">():</span>
+            <span class="c1"># Start &amp; end points with control tangents</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="n">Spline</span><span class="p">(</span>
+                <span class="p">(</span><span class="mi">30</span> <span class="o">*</span> <span class="n">MM</span><span class="p">,</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">MM</span><span class="p">),</span>
+                <span class="p">(</span><span class="mi">69</span> <span class="o">*</span> <span class="n">MM</span><span class="p">,</span> <span class="mi">105</span> <span class="o">*</span> <span class="n">MM</span><span class="p">),</span>
+                <span class="n">tangents</span><span class="o">=</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.7</span><span class="p">,</span> <span class="mi">1</span><span class="p">)),</span>
+                <span class="n">tangent_scalars</span><span class="o">=</span><span class="p">(</span><span class="mf">1.75</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+            <span class="p">)</span>
+            <span class="c1"># Lines to finish creating ½ the bowl shape</span>
+            <span class="n">Polyline</span><span class="p">(</span><span class="n">s</span> <span class="o">@</span> <span class="mi">0</span><span class="p">,</span> <span class="n">s</span> <span class="o">@</span> <span class="mi">0</span> <span class="o">+</span> <span class="p">(</span><span class="mi">10</span> <span class="o">*</span> <span class="n">MM</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span> <span class="o">*</span> <span class="n">MM</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="n">s</span> <span class="o">@</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">Y</span><span class="p">),</span> <span class="n">s</span> <span class="o">@</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">make_face</span><span class="p">()</span>  <span class="c1"># Create a filled 2D shape</span>
+    <span class="n">revolve</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="n">Axis</span><span class="o">.</span><span class="n">Z</span><span class="p">)</span>
+    <span class="c1"># Hollow out the bowl with openings on the top and bottom</span>
+    <span class="n">offset</span><span class="p">(</span><span class="n">amount</span><span class="o">=-</span><span class="n">wall_thickness</span><span class="p">,</span> <span class="n">openings</span><span class="o">=</span><span class="n">tea_cup</span><span class="o">.</span><span class="n">faces</span><span class="p">()</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="n">GeomType</span><span class="o">.</span><span class="n">PLANE</span><span class="p">))</span>
+    <span class="c1"># Add a bottom to the bowl</span>
+    <span class="k">with</span> <span class="n">Locations</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="n">s</span> <span class="o">@</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">Y</span><span class="p">)):</span>
+        <span class="n">Cylinder</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="p">(</span><span class="n">s</span> <span class="o">@</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">wall_thickness</span><span class="p">)</span>
+    <span class="c1"># Smooth out all the edges</span>
+    <span class="n">fillet</span><span class="p">(</span><span class="n">tea_cup</span><span class="o">.</span><span class="n">edges</span><span class="p">(),</span> <span class="n">radius</span><span class="o">=</span><span class="n">fillet_radius</span><span class="p">)</span>
+
+    <span class="c1"># Determine where the handle contacts the bowl</span>
+    <span class="n">handle_intersections</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">tea_cup</span><span class="o">.</span><span class="n">part</span><span class="o">.</span><span class="n">find_intersection_points</span><span class="p">(</span>
+            <span class="n">Axis</span><span class="p">(</span><span class="n">origin</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">vertical_offset</span><span class="p">),</span> <span class="n">direction</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+        <span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">vertical_offset</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">35</span> <span class="o">*</span> <span class="n">MM</span><span class="p">,</span> <span class="mi">80</span> <span class="o">*</span> <span class="n">MM</span><span class="p">]</span>
+    <span class="p">]</span>
+    <span class="c1"># Create a path for handle creation</span>
+    <span class="k">with</span> <span class="n">BuildLine</span><span class="p">(</span><span class="n">Plane</span><span class="o">.</span><span class="n">XZ</span><span class="p">)</span> <span class="k">as</span> <span class="n">handle_path</span><span class="p">:</span>
+        <span class="n">Spline</span><span class="p">(</span>
+            <span class="n">handle_intersections</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="p">(</span><span class="n">wall_thickness</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+            <span class="n">handle_intersections</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="mi">35</span> <span class="o">*</span> <span class="n">MM</span><span class="p">,</span> <span class="mi">30</span> <span class="o">*</span> <span class="n">MM</span><span class="p">),</span>
+            <span class="n">handle_intersections</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="mi">40</span> <span class="o">*</span> <span class="n">MM</span><span class="p">,</span> <span class="mi">60</span> <span class="o">*</span> <span class="n">MM</span><span class="p">),</span>
+            <span class="n">handle_intersections</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="p">(</span><span class="n">wall_thickness</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+            <span class="n">tangents</span><span class="o">=</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mf">1.25</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)),</span>
+        <span class="p">)</span>
+    <span class="c1"># Align the cross section to the beginning of the path</span>
+    <span class="k">with</span> <span class="n">BuildSketch</span><span class="p">(</span><span class="n">handle_path</span><span class="o">.</span><span class="n">line</span> <span class="o">^</span> <span class="mi">0</span><span class="p">)</span> <span class="k">as</span> <span class="n">handle_cross_section</span><span class="p">:</span>
+        <span class="n">RectangleRounded</span><span class="p">(</span><span class="n">wall_thickness</span><span class="p">,</span> <span class="mi">8</span> <span class="o">*</span> <span class="n">MM</span><span class="p">,</span> <span class="n">fillet_radius</span><span class="p">)</span>
+    <span class="n">sweep</span><span class="p">()</span>  <span class="c1"># Sweep handle cross section along path</span>
+
+<span class="k">assert</span> <span class="nb">abs</span><span class="p">(</span><span class="n">tea_cup</span><span class="o">.</span><span class="n">part</span><span class="o">.</span><span class="n">volume</span> <span class="o">-</span> <span class="mi">130326</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">1</span>
+
+<span class="n">show</span><span class="p">(</span><span class="n">tea_cup</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;tea cup&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+<model-viewer poster="_images/tea_cup.png" src="_static/tea_cup.glb" alt="A tea cup modelled in build123d" auto-rotate camera-controls style="width: 100%; height: 50vh;"></model-viewer><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There is a <a class="reference external" href="https://discord.com/invite/Bj9AQPsCfx">Discord</a> server (shared with CadQuery) where
+you can ask for help in the build123d channel.</p>
+</div>
+</section>
+<section id="table-of-contents">
+<h1>Table Of Contents<a class="headerlink" href="#table-of-contents" title="Link to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#key-aspects">Key Aspects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#advantages-over-cadquery">Advantages Over CadQuery</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#install-build123d-from-github">Install build123d from GitHub:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#development-install-of-build123d">Development install of build123d:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#test-your-build123d-installation">Test your build123d installation:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#adding-a-nicer-gui">Adding a nicer GUI</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts.html">Key Concepts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="key_concepts.html#topology">Topology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="key_concepts.html#location">Location</a></li>
+<li class="toctree-l2"><a class="reference internal" href="key_concepts.html#selectors">Selectors</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts_builder.html">Key Concepts (builder mode)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="key_concepts_builder.html#understanding-the-builder-paradigm">Understanding the Builder Paradigm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="key_concepts_builder.html#builders">Builders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="key_concepts_builder.html#implicit-builder-instance-variables">Implicit Builder Instance Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="key_concepts_builder.html#workplanes">Workplanes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="key_concepts_builder.html#locations-context">Locations Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="key_concepts_builder.html#operation-inputs">Operation Inputs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="key_concepts_builder.html#combination-modes">Combination Modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="key_concepts_builder.html#using-locations-rotating-objects">Using Locations &amp; Rotating Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="key_concepts_builder.html#builder-s-pending-objects">Builder’s Pending Objects</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts_algebra.html">Key Concepts (algebra mode)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="key_concepts_algebra.html#object-arithmetic">Object arithmetic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="key_concepts_algebra.html#placement-arithmetic">Placement arithmetic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="key_concepts_algebra.html#combing-both-concepts">Combing both concepts</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="moving_objects.html">Moving Objects</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="moving_objects.html#builder-mode">Builder Mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="moving_objects.html#algebra-mode">Algebra Mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="moving_objects.html#direct-manipulation-methods">Direct Manipulation Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="OpenSCAD.html">Transitioning from OpenSCAD</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="OpenSCAD.html#why-transition-to-build123d">Why Transition to build123d?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OpenSCAD.html#moving-beyond-constructive-solid-geometry-csg">Moving Beyond Constructive Solid Geometry (CSG)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OpenSCAD.html#using-a-more-traditional-cad-design-workflow">Using a More Traditional CAD Design Workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OpenSCAD.html#tips-for-transitioning">Tips for Transitioning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OpenSCAD.html#conclusion">Conclusion</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="introductory_examples.html">Introductory Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="introductory_examples.html#simple-rectangular-plate">1. Simple Rectangular Plate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introductory_examples.html#plate-with-hole">2. Plate with Hole</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introductory_examples.html#an-extruded-prismatic-solid">3. An extruded prismatic solid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introductory_examples.html#building-profiles-using-lines-and-arcs">4. Building Profiles using lines and arcs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introductory_examples.html#moving-the-current-working-point">5. Moving the current working point</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introductory_examples.html#using-point-lists">6. Using Point Lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introductory_examples.html#polygons">7. Polygons</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introductory_examples.html#polylines">8. Polylines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introductory_examples.html#selectors-fillets-and-chamfers">9. Selectors, Fillets, and Chamfers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introductory_examples.html#select-last-and-hole">10. Select Last and Hole</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introductory_examples.html#use-a-face-as-a-plane-for-buildsketch-and-introduce-gridlocations">11. Use a face as a plane for BuildSketch and introduce GridLocations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introductory_examples.html#defining-an-edge-with-a-spline">12. Defining an Edge with a Spline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introductory_examples.html#counterboreholes-countersinkholes-and-polarlocations">13. CounterBoreHoles, CounterSinkHoles and PolarLocations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introductory_examples.html#position-on-a-line-with-and-introduce-sweep">14. Position on a line with ‘&#64;’, ‘%’ and introduce Sweep</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introductory_examples.html#mirroring-symmetric-geometry">15. Mirroring Symmetric Geometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introductory_examples.html#mirroring-3d-objects">16. Mirroring 3D Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introductory_examples.html#mirroring-from-faces">17. Mirroring From Faces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introductory_examples.html#creating-workplanes-on-faces">18. Creating Workplanes on Faces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introductory_examples.html#locating-a-workplane-on-a-vertex">19. Locating a workplane on a vertex</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introductory_examples.html#offset-sketch-workplane">20. Offset Sketch Workplane</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introductory_examples.html#create-a-workplanes-in-the-center-of-another-shape">21. Create a Workplanes in the center of another shape</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introductory_examples.html#rotated-workplanes">22. Rotated Workplanes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introductory_examples.html#revolve">23. Revolve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introductory_examples.html#loft">24. Loft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introductory_examples.html#offset-sketch">25. Offset Sketch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introductory_examples.html#offset-part-to-create-thin-features">26. Offset Part To Create Thin features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introductory_examples.html#splitting-an-object">27. Splitting an Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introductory_examples.html#locating-features-based-on-faces">28. Locating features based on Faces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introductory_examples.html#the-classic-occ-bottle">29. The Classic OCC Bottle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introductory_examples.html#bezier-curve">30. Bezier Curve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introductory_examples.html#nesting-locations">31. Nesting Locations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introductory_examples.html#python-for-loop">32. Python For-Loop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introductory_examples.html#python-function-and-for-loop">33. Python Function and For-Loop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introductory_examples.html#embossed-and-debossed-text">34. Embossed and Debossed Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introductory_examples.html#slots">35. Slots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introductory_examples.html#extrude-until">36. Extrude Until</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_design.html">Designing a Part in build123d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_selectors.html">Selector Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_lego.html">Lego Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_joints.html">Joint Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples_1.html">The build123d Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tttt.html">Too Tall Toby (TTT) Tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_surface_modeling.html">Surface Modeling</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="objects.html">Objects</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="objects.html#align">Align</a></li>
+<li class="toctree-l2"><a class="reference internal" href="objects.html#mode">Mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="objects.html#d-objects">1D Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="objects.html#id1">2D Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="objects.html#id3">3D Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="objects.html#custom-objects">Custom Objects</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="selectors_operators.html">Selectors and Operators</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="selectors_operators.html#selectors">Selectors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selectors_operators.html#operators">Operators</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="operations.html">Operations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="operations.html#reference">Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="builders.html">Builders</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="build_line.html">BuildLine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_sketch.html">BuildSketch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_part.html">BuildPart</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="joints.html">Joints</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="joints.html#rigid-joint">Rigid Joint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="joints.html#revolute-joint">Revolute Joint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="joints.html#linear-joint">Linear Joint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="joints.html#cylindrical-joint">Cylindrical Joint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="joints.html#ball-joint">Ball Joint</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="assemblies.html">Assemblies</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="assemblies.html#assigning-labels">Assigning Labels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="assemblies.html#create-the-assembly-compound">Create the Assembly Compound</a></li>
+<li class="toctree-l2"><a class="reference internal" href="assemblies.html#shallow-vs-deep-copies-of-shapes">Shallow vs. Deep Copies of Shapes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="assemblies.html#shapes-are-anytree-nodes">Shapes are Anytree Nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="assemblies.html#iterating-over-compounds">Iterating Over Compounds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="assemblies.html#id1">pack</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tips.html">Tips, Best Practices and FAQ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tips.html#can-t-get-there-from-here">Can’t Get There from Here</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tips.html#d-before-3d">2D before 3D</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tips.html#delay-chamfers-and-fillets">Delay Chamfers and Fillets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tips.html#parameterize">Parameterize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tips.html#use-shallow-copies">Use Shallow Copies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tips.html#object-selection">Object Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tips.html#build123d-cadquery-integration">Build123d - CadQuery Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tips.html#self-intersection">Self Intersection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tips.html#packing-objects-on-a-plane">Packing Objects on a Plane</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tips.html#isnt-from-build123d-import-bad-practice">Isn’t <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">build123d</span> <span class="pre">import</span> <span class="pre">*</span></code> bad practice?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tips.html#why-doesn-t-buildsketch-plane-xz-work">Why doesn’t BuildSketch(Plane.XZ) work?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tips.html#why-is-buildline-not-working-as-expected-within-the-scope-of-buildsketch">Why is BuildLine not working as expected within the scope of BuildSketch?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tips.html#don-t-builders-inherit-workplane-coordinate-systems-when-nested">Don’t Builders inherit workplane/coordinate systems when nested</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="import_export.html">Import/Export</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="import_export.html#file-formats">File Formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="import_export.html#d-exporters">2D Exporters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="import_export.html#module-exporters3d">3D Exporters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="import_export.html#module-importers">2D Importers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="import_export.html#id2">3D Importers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html">Advanced Topics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="algebra_performance.html">Performance considerations in algebra mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="location_arithmetic.html">Location arithmetic for algebra mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="algebra_definition.html">Algebraic definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="center.html">CAD Object Centers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debugging_logging.html">Debugging &amp; Logging</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cheat_sheet.html">Cheat Sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="external.html">External Tools and Libraries</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="external.html#editors-viewers">Editors &amp; Viewers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="external.html#part-libraries">Part Libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="external.html#tools">Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="builder_api_reference.html">Builder Common API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="builder_api_reference.html#selector-methods">Selector Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="builder_api_reference.html#module-build_enums">Enums</a></li>
+<li class="toctree-l2"><a class="reference internal" href="builder_api_reference.html#locations">Locations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="direct_api_reference.html">Direct API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="direct_api_reference.html#geometric-objects">Geometric Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="direct_api_reference.html#topological-objects">Topological Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="direct_api_reference.html#import-export">Import/Export</a></li>
+<li class="toctree-l2"><a class="reference internal" href="direct_api_reference.html#joint-object">Joint Object</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<section id="indices-and-tables">
+<h2>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="introduction.html" class="btn btn-neutral float-right" title="Introduction" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Gumyr.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

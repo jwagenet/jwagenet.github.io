@@ -1,0 +1,871 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Builder Common API Reference &mdash; build123d 0.9.2.dev40+gb1f0eed documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster.custom.css?v=7bc2f056" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster.bundle.min.css?v=37217874" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-shadow.min.css?v=6227e517" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-punk.min.css?v=94669e23" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-noir.min.css?v=21a39f42" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-light.min.css?v=a18b2449" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-borderless.min.css?v=dbff53e4" />
+      <link rel="stylesheet" type="text/css" href="_static/css/micromodal.css?v=d7bf34ee" />
+      <link rel="stylesheet" type="text/css" href="_static/css/sphinx_rtd_theme.css?v=3234e928" />
+      <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=c97902b4"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=f281be69"></script>
+      <script src="_static/js/hoverxref.js?v=6ff7264e"></script>
+      <script src="_static/js/tooltipster.bundle.min.js?v=18bf091b"></script>
+      <script src="_static/js/micromodal.min.js?v=04d6302d"></script>
+      <script src="_static/design-tabs.js?v=f930bc37"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Direct API Reference" href="direct_api_reference.html" />
+    <link rel="prev" title="External Tools and Libraries" href="external.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            build123d
+              <img src="_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts.html">Key Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts_builder.html">Key Concepts (builder mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts_algebra.html">Key Concepts (algebra mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="moving_objects.html">Moving Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OpenSCAD.html">Transitioning from OpenSCAD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introductory_examples.html">Introductory Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="selectors_operators.html">Selectors and Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operations.html">Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="builders.html">Builders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="joints.html">Joints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assemblies.html">Assemblies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tips.html">Tips, Best Practices and FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="import_export.html">Import/Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cheat_sheet.html">Cheat Sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="external.html">External Tools and Libraries</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Builder Common API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#selector-methods">Selector Methods</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#build_common.Builder.vertices"><code class="docutils literal notranslate"><span class="pre">Builder.vertices()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build_common.Builder.faces"><code class="docutils literal notranslate"><span class="pre">Builder.faces()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build_common.Builder.edges"><code class="docutils literal notranslate"><span class="pre">Builder.edges()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build_common.Builder.wires"><code class="docutils literal notranslate"><span class="pre">Builder.wires()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build_common.Builder.solids"><code class="docutils literal notranslate"><span class="pre">Builder.solids()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-build_enums">Enums</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#build_enums.Align"><code class="docutils literal notranslate"><span class="pre">Align</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#build_enums.Align.CENTER"><code class="docutils literal notranslate"><span class="pre">Align.CENTER</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_enums.Align.MAX"><code class="docutils literal notranslate"><span class="pre">Align.MAX</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_enums.Align.MIN"><code class="docutils literal notranslate"><span class="pre">Align.MIN</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_enums.Align.NONE"><code class="docutils literal notranslate"><span class="pre">Align.NONE</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#build_enums.CenterOf"><code class="docutils literal notranslate"><span class="pre">CenterOf</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#build_enums.CenterOf.BOUNDING_BOX"><code class="docutils literal notranslate"><span class="pre">CenterOf.BOUNDING_BOX</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_enums.CenterOf.GEOMETRY"><code class="docutils literal notranslate"><span class="pre">CenterOf.GEOMETRY</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_enums.CenterOf.MASS"><code class="docutils literal notranslate"><span class="pre">CenterOf.MASS</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#build_enums.FontStyle"><code class="docutils literal notranslate"><span class="pre">FontStyle</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#build_enums.FontStyle.BOLD"><code class="docutils literal notranslate"><span class="pre">FontStyle.BOLD</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_enums.FontStyle.ITALIC"><code class="docutils literal notranslate"><span class="pre">FontStyle.ITALIC</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_enums.FontStyle.REGULAR"><code class="docutils literal notranslate"><span class="pre">FontStyle.REGULAR</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#build_enums.GeomType"><code class="docutils literal notranslate"><span class="pre">GeomType</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#build_enums.GeomType.BEZIER"><code class="docutils literal notranslate"><span class="pre">GeomType.BEZIER</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_enums.GeomType.BSPLINE"><code class="docutils literal notranslate"><span class="pre">GeomType.BSPLINE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_enums.GeomType.CIRCLE"><code class="docutils literal notranslate"><span class="pre">GeomType.CIRCLE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_enums.GeomType.CONE"><code class="docutils literal notranslate"><span class="pre">GeomType.CONE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_enums.GeomType.CYLINDER"><code class="docutils literal notranslate"><span class="pre">GeomType.CYLINDER</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_enums.GeomType.ELLIPSE"><code class="docutils literal notranslate"><span class="pre">GeomType.ELLIPSE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_enums.GeomType.EXTRUSION"><code class="docutils literal notranslate"><span class="pre">GeomType.EXTRUSION</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_enums.GeomType.HYPERBOLA"><code class="docutils literal notranslate"><span class="pre">GeomType.HYPERBOLA</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_enums.GeomType.LINE"><code class="docutils literal notranslate"><span class="pre">GeomType.LINE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_enums.GeomType.OFFSET"><code class="docutils literal notranslate"><span class="pre">GeomType.OFFSET</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_enums.GeomType.OTHER"><code class="docutils literal notranslate"><span class="pre">GeomType.OTHER</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_enums.GeomType.PARABOLA"><code class="docutils literal notranslate"><span class="pre">GeomType.PARABOLA</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_enums.GeomType.PLANE"><code class="docutils literal notranslate"><span class="pre">GeomType.PLANE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_enums.GeomType.REVOLUTION"><code class="docutils literal notranslate"><span class="pre">GeomType.REVOLUTION</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_enums.GeomType.SPHERE"><code class="docutils literal notranslate"><span class="pre">GeomType.SPHERE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_enums.GeomType.TORUS"><code class="docutils literal notranslate"><span class="pre">GeomType.TORUS</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#build_enums.Keep"><code class="docutils literal notranslate"><span class="pre">Keep</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#build_enums.Keep.ALL"><code class="docutils literal notranslate"><span class="pre">Keep.ALL</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_enums.Keep.BOTH"><code class="docutils literal notranslate"><span class="pre">Keep.BOTH</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_enums.Keep.BOTTOM"><code class="docutils literal notranslate"><span class="pre">Keep.BOTTOM</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_enums.Keep.INSIDE"><code class="docutils literal notranslate"><span class="pre">Keep.INSIDE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_enums.Keep.OUTSIDE"><code class="docutils literal notranslate"><span class="pre">Keep.OUTSIDE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_enums.Keep.TOP"><code class="docutils literal notranslate"><span class="pre">Keep.TOP</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#build_enums.Kind"><code class="docutils literal notranslate"><span class="pre">Kind</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#build_enums.Kind.ARC"><code class="docutils literal notranslate"><span class="pre">Kind.ARC</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_enums.Kind.INTERSECTION"><code class="docutils literal notranslate"><span class="pre">Kind.INTERSECTION</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_enums.Kind.TANGENT"><code class="docutils literal notranslate"><span class="pre">Kind.TANGENT</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#build_enums.Mode"><code class="docutils literal notranslate"><span class="pre">Mode</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#build_enums.Mode.ADD"><code class="docutils literal notranslate"><span class="pre">Mode.ADD</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_enums.Mode.INTERSECT"><code class="docutils literal notranslate"><span class="pre">Mode.INTERSECT</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_enums.Mode.PRIVATE"><code class="docutils literal notranslate"><span class="pre">Mode.PRIVATE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_enums.Mode.REPLACE"><code class="docutils literal notranslate"><span class="pre">Mode.REPLACE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_enums.Mode.SUBTRACT"><code class="docutils literal notranslate"><span class="pre">Mode.SUBTRACT</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#build_enums.Select"><code class="docutils literal notranslate"><span class="pre">Select</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#build_enums.Select.ALL"><code class="docutils literal notranslate"><span class="pre">Select.ALL</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_enums.Select.LAST"><code class="docutils literal notranslate"><span class="pre">Select.LAST</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_enums.Select.NEW"><code class="docutils literal notranslate"><span class="pre">Select.NEW</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#build_enums.SortBy"><code class="docutils literal notranslate"><span class="pre">SortBy</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#build_enums.SortBy.AREA"><code class="docutils literal notranslate"><span class="pre">SortBy.AREA</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_enums.SortBy.DISTANCE"><code class="docutils literal notranslate"><span class="pre">SortBy.DISTANCE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_enums.SortBy.LENGTH"><code class="docutils literal notranslate"><span class="pre">SortBy.LENGTH</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_enums.SortBy.RADIUS"><code class="docutils literal notranslate"><span class="pre">SortBy.RADIUS</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_enums.SortBy.VOLUME"><code class="docutils literal notranslate"><span class="pre">SortBy.VOLUME</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#build_enums.Transition"><code class="docutils literal notranslate"><span class="pre">Transition</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#build_enums.Transition.RIGHT"><code class="docutils literal notranslate"><span class="pre">Transition.RIGHT</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_enums.Transition.ROUND"><code class="docutils literal notranslate"><span class="pre">Transition.ROUND</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_enums.Transition.TRANSFORMED"><code class="docutils literal notranslate"><span class="pre">Transition.TRANSFORMED</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#build_enums.Until"><code class="docutils literal notranslate"><span class="pre">Until</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#build_enums.Until.FIRST"><code class="docutils literal notranslate"><span class="pre">Until.FIRST</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_enums.Until.LAST"><code class="docutils literal notranslate"><span class="pre">Until.LAST</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_enums.Until.NEXT"><code class="docutils literal notranslate"><span class="pre">Until.NEXT</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_enums.Until.PREVIOUS"><code class="docutils literal notranslate"><span class="pre">Until.PREVIOUS</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#locations">Locations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#build_common.Locations"><code class="docutils literal notranslate"><span class="pre">Locations</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#build_common.Locations.local_locations"><code class="docutils literal notranslate"><span class="pre">Locations.local_locations</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#build_common.GridLocations"><code class="docutils literal notranslate"><span class="pre">GridLocations</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#build_common.GridLocations.local_locations"><code class="docutils literal notranslate"><span class="pre">GridLocations.local_locations</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_common.GridLocations.max"><code class="docutils literal notranslate"><span class="pre">GridLocations.max</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_common.GridLocations.min"><code class="docutils literal notranslate"><span class="pre">GridLocations.min</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build_common.GridLocations.size"><code class="docutils literal notranslate"><span class="pre">GridLocations.size</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#build_common.HexLocations"><code class="docutils literal notranslate"><span class="pre">HexLocations</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#build_common.HexLocations.local_locations"><code class="docutils literal notranslate"><span class="pre">HexLocations.local_locations</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#build_common.PolarLocations"><code class="docutils literal notranslate"><span class="pre">PolarLocations</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#build_common.PolarLocations.local_locations"><code class="docutils literal notranslate"><span class="pre">PolarLocations.local_locations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="direct_api_reference.html">Direct API Reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">build123d</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Builder Common API Reference</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/builder_api_reference.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="builder-common-api-reference">
+<span id="builder-api-reference"></span><h1>Builder Common API Reference<a class="headerlink" href="#builder-common-api-reference" title="Link to this heading"></a></h1>
+<p>The following are common to all the builders.</p>
+<section id="selector-methods">
+<h2>Selector Methods<a class="headerlink" href="#selector-methods" title="Link to this heading"></a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="build_common.Builder.vertices">
+<span class="sig-prename descclassname"><span class="pre">Builder.</span></span><span class="sig-name descname"><span class="pre">vertices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">select:</span> <span class="pre">~build123d.build_enums.Select</span> <span class="pre">=</span> <span class="pre">&lt;Select.ALL&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ShapeList</span><span class="p"><span class="pre">[</span></span><span class="pre">Vertex</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/build_common.html#Builder.vertices"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_common.Builder.vertices" title="Link to this definition"></a></dt>
+<dd><p>Return Vertices</p>
+<p>Return either all or the vertices created during the last operation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>select</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="#build_enums.Select" title="build_enums.Select"><em>Select</em></a><em>, </em><em>optional</em>) – Vertex selector. Defaults to Select.ALL.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Vertices extracted</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.ShapeList" title="topology.ShapeList"><em>ShapeList</em></a>[<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Vertex" title="topology.Vertex"><em>Vertex</em></a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="build_common.Builder.faces">
+<span class="sig-prename descclassname"><span class="pre">Builder.</span></span><span class="sig-name descname"><span class="pre">faces</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">select:</span> <span class="pre">~build123d.build_enums.Select</span> <span class="pre">=</span> <span class="pre">&lt;Select.ALL&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ShapeList</span><span class="p"><span class="pre">[</span></span><span class="pre">Face</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/build_common.html#Builder.faces"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_common.Builder.faces" title="Link to this definition"></a></dt>
+<dd><p>Return Faces</p>
+<p>Return either all or the faces created during the last operation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>select</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="#build_enums.Select" title="build_enums.Select"><em>Select</em></a><em>, </em><em>optional</em>) – Face selector. Defaults to Select.ALL.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Faces extracted</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.ShapeList" title="topology.ShapeList"><em>ShapeList</em></a>[<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Face" title="topology.Face"><em>Face</em></a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="build_common.Builder.edges">
+<span class="sig-prename descclassname"><span class="pre">Builder.</span></span><span class="sig-name descname"><span class="pre">edges</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">select:</span> <span class="pre">~build123d.build_enums.Select</span> <span class="pre">=</span> <span class="pre">&lt;Select.ALL&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ShapeList</span><span class="p"><span class="pre">[</span></span><span class="pre">Edge</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/build_common.html#Builder.edges"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_common.Builder.edges" title="Link to this definition"></a></dt>
+<dd><p>Return Edges</p>
+<p>Return either all or the edges created during the last operation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>select</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="#build_enums.Select" title="build_enums.Select"><em>Select</em></a><em>, </em><em>optional</em>) – Edge selector. Defaults to Select.ALL.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Edges extracted</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.ShapeList" title="topology.ShapeList"><em>ShapeList</em></a>[<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Edge" title="topology.Edge"><em>Edge</em></a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="build_common.Builder.wires">
+<span class="sig-prename descclassname"><span class="pre">Builder.</span></span><span class="sig-name descname"><span class="pre">wires</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">select:</span> <span class="pre">~build123d.build_enums.Select</span> <span class="pre">=</span> <span class="pre">&lt;Select.ALL&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ShapeList</span><span class="p"><span class="pre">[</span></span><span class="pre">Wire</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/build_common.html#Builder.wires"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_common.Builder.wires" title="Link to this definition"></a></dt>
+<dd><p>Return Wires</p>
+<p>Return either all or the wires created during the last operation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>select</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="#build_enums.Select" title="build_enums.Select"><em>Select</em></a><em>, </em><em>optional</em>) – Wire selector. Defaults to Select.ALL.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Wires extracted</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.ShapeList" title="topology.ShapeList"><em>ShapeList</em></a>[<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Wire" title="topology.Wire"><em>Wire</em></a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="build_common.Builder.solids">
+<span class="sig-prename descclassname"><span class="pre">Builder.</span></span><span class="sig-name descname"><span class="pre">solids</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">select:</span> <span class="pre">~build123d.build_enums.Select</span> <span class="pre">=</span> <span class="pre">&lt;Select.ALL&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ShapeList</span><span class="p"><span class="pre">[</span></span><span class="pre">Solid</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/build_common.html#Builder.solids"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_common.Builder.solids" title="Link to this definition"></a></dt>
+<dd><p>Return Solids</p>
+<p>Return either all or the solids created during the last operation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>select</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="#build_enums.Select" title="build_enums.Select"><em>Select</em></a><em>, </em><em>optional</em>) – Solid selector. Defaults to Select.ALL.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Solids extracted</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.ShapeList" title="topology.ShapeList"><em>ShapeList</em></a>[<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Solid" title="topology.Solid"><em>Solid</em></a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-build_enums">
+<span id="enums"></span><h2>Enums<a class="headerlink" href="#module-build_enums" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="build_enums.Align">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Align</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qualname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/build_enums.html#Align"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_enums.Align" title="Link to this definition"></a></dt>
+<dd><p>Align object about Axis</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_enums.Align.CENTER">
+<span class="sig-name descname"><span class="pre">CENTER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#build_enums.Align.CENTER" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_enums.Align.MAX">
+<span class="sig-name descname"><span class="pre">MAX</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#build_enums.Align.MAX" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_enums.Align.MIN">
+<span class="sig-name descname"><span class="pre">MIN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#build_enums.Align.MIN" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_enums.Align.NONE">
+<span class="sig-name descname"><span class="pre">NONE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#build_enums.Align.NONE" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="build_enums.CenterOf">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CenterOf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qualname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/build_enums.html#CenterOf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_enums.CenterOf" title="Link to this definition"></a></dt>
+<dd><p>Center Options</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_enums.CenterOf.BOUNDING_BOX">
+<span class="sig-name descname"><span class="pre">BOUNDING_BOX</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#build_enums.CenterOf.BOUNDING_BOX" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_enums.CenterOf.GEOMETRY">
+<span class="sig-name descname"><span class="pre">GEOMETRY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#build_enums.CenterOf.GEOMETRY" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_enums.CenterOf.MASS">
+<span class="sig-name descname"><span class="pre">MASS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#build_enums.CenterOf.MASS" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="build_enums.FontStyle">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">FontStyle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qualname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/build_enums.html#FontStyle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_enums.FontStyle" title="Link to this definition"></a></dt>
+<dd><p>Text Font Styles</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_enums.FontStyle.BOLD">
+<span class="sig-name descname"><span class="pre">BOLD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#build_enums.FontStyle.BOLD" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_enums.FontStyle.ITALIC">
+<span class="sig-name descname"><span class="pre">ITALIC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#build_enums.FontStyle.ITALIC" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_enums.FontStyle.REGULAR">
+<span class="sig-name descname"><span class="pre">REGULAR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#build_enums.FontStyle.REGULAR" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="build_enums.GeomType">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GeomType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qualname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/build_enums.html#GeomType"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_enums.GeomType" title="Link to this definition"></a></dt>
+<dd><p>CAD geometry object type</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_enums.GeomType.BEZIER">
+<span class="sig-name descname"><span class="pre">BEZIER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">6</span></em><a class="headerlink" href="#build_enums.GeomType.BEZIER" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_enums.GeomType.BSPLINE">
+<span class="sig-name descname"><span class="pre">BSPLINE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">7</span></em><a class="headerlink" href="#build_enums.GeomType.BSPLINE" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_enums.GeomType.CIRCLE">
+<span class="sig-name descname"><span class="pre">CIRCLE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">12</span></em><a class="headerlink" href="#build_enums.GeomType.CIRCLE" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_enums.GeomType.CONE">
+<span class="sig-name descname"><span class="pre">CONE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#build_enums.GeomType.CONE" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_enums.GeomType.CYLINDER">
+<span class="sig-name descname"><span class="pre">CYLINDER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#build_enums.GeomType.CYLINDER" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_enums.GeomType.ELLIPSE">
+<span class="sig-name descname"><span class="pre">ELLIPSE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">13</span></em><a class="headerlink" href="#build_enums.GeomType.ELLIPSE" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_enums.GeomType.EXTRUSION">
+<span class="sig-name descname"><span class="pre">EXTRUSION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">9</span></em><a class="headerlink" href="#build_enums.GeomType.EXTRUSION" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_enums.GeomType.HYPERBOLA">
+<span class="sig-name descname"><span class="pre">HYPERBOLA</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">14</span></em><a class="headerlink" href="#build_enums.GeomType.HYPERBOLA" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_enums.GeomType.LINE">
+<span class="sig-name descname"><span class="pre">LINE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">11</span></em><a class="headerlink" href="#build_enums.GeomType.LINE" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_enums.GeomType.OFFSET">
+<span class="sig-name descname"><span class="pre">OFFSET</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">10</span></em><a class="headerlink" href="#build_enums.GeomType.OFFSET" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_enums.GeomType.OTHER">
+<span class="sig-name descname"><span class="pre">OTHER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">16</span></em><a class="headerlink" href="#build_enums.GeomType.OTHER" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_enums.GeomType.PARABOLA">
+<span class="sig-name descname"><span class="pre">PARABOLA</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">15</span></em><a class="headerlink" href="#build_enums.GeomType.PARABOLA" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_enums.GeomType.PLANE">
+<span class="sig-name descname"><span class="pre">PLANE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#build_enums.GeomType.PLANE" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_enums.GeomType.REVOLUTION">
+<span class="sig-name descname"><span class="pre">REVOLUTION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">8</span></em><a class="headerlink" href="#build_enums.GeomType.REVOLUTION" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_enums.GeomType.SPHERE">
+<span class="sig-name descname"><span class="pre">SPHERE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#build_enums.GeomType.SPHERE" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_enums.GeomType.TORUS">
+<span class="sig-name descname"><span class="pre">TORUS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#build_enums.GeomType.TORUS" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="build_enums.Keep">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Keep</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qualname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/build_enums.html#Keep"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_enums.Keep" title="Link to this definition"></a></dt>
+<dd><p>Split options</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_enums.Keep.ALL">
+<span class="sig-name descname"><span class="pre">ALL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#build_enums.Keep.ALL" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_enums.Keep.BOTH">
+<span class="sig-name descname"><span class="pre">BOTH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#build_enums.Keep.BOTH" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_enums.Keep.BOTTOM">
+<span class="sig-name descname"><span class="pre">BOTTOM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#build_enums.Keep.BOTTOM" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_enums.Keep.INSIDE">
+<span class="sig-name descname"><span class="pre">INSIDE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#build_enums.Keep.INSIDE" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_enums.Keep.OUTSIDE">
+<span class="sig-name descname"><span class="pre">OUTSIDE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#build_enums.Keep.OUTSIDE" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_enums.Keep.TOP">
+<span class="sig-name descname"><span class="pre">TOP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">6</span></em><a class="headerlink" href="#build_enums.Keep.TOP" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="build_enums.Kind">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Kind</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qualname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/build_enums.html#Kind"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_enums.Kind" title="Link to this definition"></a></dt>
+<dd><p>Offset corner transition</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_enums.Kind.ARC">
+<span class="sig-name descname"><span class="pre">ARC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#build_enums.Kind.ARC" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_enums.Kind.INTERSECTION">
+<span class="sig-name descname"><span class="pre">INTERSECTION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#build_enums.Kind.INTERSECTION" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_enums.Kind.TANGENT">
+<span class="sig-name descname"><span class="pre">TANGENT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#build_enums.Kind.TANGENT" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="build_enums.Mode">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Mode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qualname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/build_enums.html#Mode"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_enums.Mode" title="Link to this definition"></a></dt>
+<dd><p>Combination Mode</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_enums.Mode.ADD">
+<span class="sig-name descname"><span class="pre">ADD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#build_enums.Mode.ADD" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_enums.Mode.INTERSECT">
+<span class="sig-name descname"><span class="pre">INTERSECT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#build_enums.Mode.INTERSECT" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_enums.Mode.PRIVATE">
+<span class="sig-name descname"><span class="pre">PRIVATE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#build_enums.Mode.PRIVATE" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_enums.Mode.REPLACE">
+<span class="sig-name descname"><span class="pre">REPLACE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#build_enums.Mode.REPLACE" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_enums.Mode.SUBTRACT">
+<span class="sig-name descname"><span class="pre">SUBTRACT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#build_enums.Mode.SUBTRACT" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="build_enums.Select">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Select</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qualname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/build_enums.html#Select"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_enums.Select" title="Link to this definition"></a></dt>
+<dd><p>Selector scope - all, last operation or new objects</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_enums.Select.ALL">
+<span class="sig-name descname"><span class="pre">ALL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#build_enums.Select.ALL" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_enums.Select.LAST">
+<span class="sig-name descname"><span class="pre">LAST</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#build_enums.Select.LAST" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_enums.Select.NEW">
+<span class="sig-name descname"><span class="pre">NEW</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#build_enums.Select.NEW" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="build_enums.SortBy">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SortBy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qualname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/build_enums.html#SortBy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_enums.SortBy" title="Link to this definition"></a></dt>
+<dd><p>Sorting criteria</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_enums.SortBy.AREA">
+<span class="sig-name descname"><span class="pre">AREA</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#build_enums.SortBy.AREA" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_enums.SortBy.DISTANCE">
+<span class="sig-name descname"><span class="pre">DISTANCE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#build_enums.SortBy.DISTANCE" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_enums.SortBy.LENGTH">
+<span class="sig-name descname"><span class="pre">LENGTH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#build_enums.SortBy.LENGTH" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_enums.SortBy.RADIUS">
+<span class="sig-name descname"><span class="pre">RADIUS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#build_enums.SortBy.RADIUS" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_enums.SortBy.VOLUME">
+<span class="sig-name descname"><span class="pre">VOLUME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#build_enums.SortBy.VOLUME" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="build_enums.Transition">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Transition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qualname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/build_enums.html#Transition"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_enums.Transition" title="Link to this definition"></a></dt>
+<dd><p>Sweep discontinuity handling option</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_enums.Transition.RIGHT">
+<span class="sig-name descname"><span class="pre">RIGHT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#build_enums.Transition.RIGHT" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_enums.Transition.ROUND">
+<span class="sig-name descname"><span class="pre">ROUND</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#build_enums.Transition.ROUND" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_enums.Transition.TRANSFORMED">
+<span class="sig-name descname"><span class="pre">TRANSFORMED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#build_enums.Transition.TRANSFORMED" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="build_enums.Until">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Until</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qualname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/build_enums.html#Until"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_enums.Until" title="Link to this definition"></a></dt>
+<dd><p>Extrude limit</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_enums.Until.FIRST">
+<span class="sig-name descname"><span class="pre">FIRST</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#build_enums.Until.FIRST" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_enums.Until.LAST">
+<span class="sig-name descname"><span class="pre">LAST</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#build_enums.Until.LAST" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_enums.Until.NEXT">
+<span class="sig-name descname"><span class="pre">NEXT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#build_enums.Until.NEXT" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_enums.Until.PREVIOUS">
+<span class="sig-name descname"><span class="pre">PREVIOUS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#build_enums.Until.PREVIOUS" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="locations">
+<h2>Locations<a class="headerlink" href="#locations" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="build_common.Locations">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Locations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">pts</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Vector</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Vertex</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Location</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Face</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Plane</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Axis</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">Vector</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Vertex</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Location</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Face</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Plane</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Axis</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/build_common.html#Locations"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_common.Locations" title="Link to this definition"></a></dt>
+<dd><p>Location Context: Push Points</p>
+<p>Creates a context of locations for Part or Sketch</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>pts</strong> (<em>Union</em><em>[</em><em>VectorLike</em><em>, </em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Vertex" title="topology.Vertex"><em>Vertex</em></a><em>, </em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#geometry.Location" title="geometry.Location"><em>Location</em></a><em>, </em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Face" title="topology.Face"><em>Face</em></a><em>, </em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#geometry.Plane" title="geometry.Plane"><em>Plane</em></a><em>, </em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#geometry.Axis" title="geometry.Axis"><em>Axis</em></a><em>] or </em><em>iterable</em><em> of </em><em>same</em>) – sequence of points to push</p>
+</dd>
+<dt class="field-even">Variables<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>local_locations</strong> (<em>list{Location}</em>) – locations relative to workplane</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_common.Locations.local_locations">
+<span class="sig-name descname"><span class="pre">local_locations</span></span><a class="headerlink" href="#build_common.Locations.local_locations" title="Link to this definition"></a></dt>
+<dd><p>values independent of workplanes</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="build_common.GridLocations">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GridLocations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x_spacing:</span> <span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_spacing:</span> <span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_count:</span> <span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_count:</span> <span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">align:</span> <span class="pre">~build123d.build_enums.Align</span> <span class="pre">|</span> <span class="pre">tuple[~build123d.build_enums.Align</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">~build123d.build_enums.Align]</span> <span class="pre">=</span> <span class="pre">(&lt;Align.CENTER&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;Align.CENTER&gt;)</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/build_common.html#GridLocations"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_common.GridLocations" title="Link to this definition"></a></dt>
+<dd><p>Location Context: Rectangular Array</p>
+<p>Creates a context of rectangular array of locations for Part or Sketch</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x_spacing</strong> (<em>float</em>) – horizontal spacing</p></li>
+<li><p><strong>y_spacing</strong> (<em>float</em>) – vertical spacing</p></li>
+<li><p><strong>x_count</strong> (<em>int</em>) – number of horizontal points</p></li>
+<li><p><strong>y_count</strong> (<em>int</em>) – number of vertical points</p></li>
+<li><p><strong>align</strong> (<em>Union</em><em>[</em><a class="hxr-hoverxref hxr-tooltip reference internal" href="#build_enums.Align" title="build_enums.Align"><em>Align</em></a><em>, </em><em>tuple</em><em>[</em><a class="hxr-hoverxref hxr-tooltip reference internal" href="#build_enums.Align" title="build_enums.Align"><em>Align</em></a><em>, </em><a class="hxr-hoverxref hxr-tooltip reference internal" href="#build_enums.Align" title="build_enums.Align"><em>Align</em></a><em>]</em><em>]</em><em>, </em><em>optional</em>) – align min, center, or max of object.
+Defaults to (Align.CENTER, Align.CENTER).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Variables<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>x_spacing</strong> (<em>float</em>) – horizontal spacing</p></li>
+<li><p><strong>y_spacing</strong> (<em>float</em>) – vertical spacing</p></li>
+<li><p><strong>x_count</strong> (<em>int</em>) – number of horizontal points</p></li>
+<li><p><strong>y_count</strong> (<em>int</em>) – number of vertical points</p></li>
+<li><p><strong>align</strong> (<em>Union</em><em>[</em><a class="hxr-hoverxref hxr-tooltip reference internal" href="#build_enums.Align" title="build_enums.Align"><em>Align</em></a><em>, </em><em>tuple</em><em>[</em><a class="hxr-hoverxref hxr-tooltip reference internal" href="#build_enums.Align" title="build_enums.Align"><em>Align</em></a><em>, </em><a class="hxr-hoverxref hxr-tooltip reference internal" href="#build_enums.Align" title="build_enums.Align"><em>Align</em></a><em>]</em><em>]</em>) – align min, center, or max of object.</p></li>
+<li><p><strong>local_locations</strong> (<em>list{Location}</em>) – locations relative to workplane</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – Either x or y count must be greater than or equal to one.</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_common.GridLocations.local_locations">
+<span class="sig-name descname"><span class="pre">local_locations</span></span><a class="headerlink" href="#build_common.GridLocations.local_locations" title="Link to this definition"></a></dt>
+<dd><p>values independent of workplanes</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_common.GridLocations.max">
+<span class="sig-name descname"><span class="pre">max</span></span><a class="headerlink" href="#build_common.GridLocations.max" title="Link to this definition"></a></dt>
+<dd><p>top right corner</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_common.GridLocations.min">
+<span class="sig-name descname"><span class="pre">min</span></span><a class="headerlink" href="#build_common.GridLocations.min" title="Link to this definition"></a></dt>
+<dd><p>bottom left corner</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_common.GridLocations.size">
+<span class="sig-name descname"><span class="pre">size</span></span><a class="headerlink" href="#build_common.GridLocations.size" title="Link to this definition"></a></dt>
+<dd><p>size of the grid</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="build_common.HexLocations">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">HexLocations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">radius:</span> <span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_count:</span> <span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_count:</span> <span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">major_radius:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">align:</span> <span class="pre">~build123d.build_enums.Align</span> <span class="pre">|</span> <span class="pre">tuple[~build123d.build_enums.Align</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">~build123d.build_enums.Align]</span> <span class="pre">=</span> <span class="pre">(&lt;Align.CENTER&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;Align.CENTER&gt;)</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/build_common.html#HexLocations"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_common.HexLocations" title="Link to this definition"></a></dt>
+<dd><p>Location Context: Hex Array</p>
+<p>Creates a context of hexagon array of locations for Part or Sketch. When creating
+hex locations for an array of circles, set <cite>radius</cite> to the radius of the circle
+plus one half the spacing between the circles.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>radius</strong> (<em>float</em>) – distance from origin to vertices (major), or
+optionally from the origin to side (minor or apothem)
+with major_radius = False</p></li>
+<li><p><strong>x_count</strong> (<em>int</em>) – number of points ( &gt; 0 )</p></li>
+<li><p><strong>y_count</strong> (<em>int</em>) – number of points ( &gt; 0 )</p></li>
+<li><p><strong>major_radius</strong> (<em>bool</em>) – If True the radius is the major radius, else the
+radius is the minor radius (also known as inscribed radius).
+Defaults to False.</p></li>
+<li><p><strong>align</strong> (<em>Union</em><em>[</em><a class="hxr-hoverxref hxr-tooltip reference internal" href="#build_enums.Align" title="build_enums.Align"><em>Align</em></a><em>, </em><em>tuple</em><em>[</em><a class="hxr-hoverxref hxr-tooltip reference internal" href="#build_enums.Align" title="build_enums.Align"><em>Align</em></a><em>, </em><a class="hxr-hoverxref hxr-tooltip reference internal" href="#build_enums.Align" title="build_enums.Align"><em>Align</em></a><em>]</em><em>]</em><em>, </em><em>optional</em>) – align min, center, or max of object.
+Defaults to (Align.CENTER, Align.CENTER).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Variables<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>radius</strong> (<em>float</em>) – distance from origin to vertices (major), or
+optionally from the origin to side (minor or apothem)
+with major_radius = False</p></li>
+<li><p><strong>apothem</strong> (<em>float</em>) – radius of the inscribed circle, also known as minor radius</p></li>
+<li><p><strong>x_count</strong> (<em>int</em>) – number of points ( &gt; 0 )</p></li>
+<li><p><strong>y_count</strong> (<em>int</em>) – number of points ( &gt; 0 )</p></li>
+<li><p><strong>major_radius</strong> (<em>bool</em>) – If True the radius is the major radius, else the
+radius is the minor radius (also known as inscribed radius).</p></li>
+<li><p><strong>align</strong> (<em>Union</em><em>[</em><a class="hxr-hoverxref hxr-tooltip reference internal" href="#build_enums.Align" title="build_enums.Align"><em>Align</em></a><em>, </em><em>tuple</em><em>[</em><a class="hxr-hoverxref hxr-tooltip reference internal" href="#build_enums.Align" title="build_enums.Align"><em>Align</em></a><em>, </em><a class="hxr-hoverxref hxr-tooltip reference internal" href="#build_enums.Align" title="build_enums.Align"><em>Align</em></a><em>]</em><em>]</em>) – align min, center, or max of object.</p></li>
+<li><p><strong>diagonal</strong> (<em>float</em>) – major radius</p></li>
+<li><p><strong>local_locations</strong> (<em>list{Location}</em>) – locations relative to workplane</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – Spacing and count must be &gt; 0</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_common.HexLocations.local_locations">
+<span class="sig-name descname"><span class="pre">local_locations</span></span><a class="headerlink" href="#build_common.HexLocations.local_locations" title="Link to this definition"></a></dt>
+<dd><p>values independent of workplanes</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="build_common.PolarLocations">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PolarLocations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">radius</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">count</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_angle</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angular_range</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">360.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rotate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">endpoint</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/build_common.html#PolarLocations"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_common.PolarLocations" title="Link to this definition"></a></dt>
+<dd><p>Location Context: Polar Array</p>
+<p>Creates a context of polar array of locations for Part or Sketch</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>radius</strong> (<em>float</em>) – array radius</p></li>
+<li><p><strong>count</strong> (<em>int</em>) – Number of points to push</p></li>
+<li><p><strong>start_angle</strong> (<em>float</em><em>, </em><em>optional</em>) – angle to first point from +ve X axis. Defaults to 0.0.</p></li>
+<li><p><strong>angular_range</strong> (<em>float</em><em>, </em><em>optional</em>) – magnitude of array from start angle. Defaults to 360.0.</p></li>
+<li><p><strong>rotate</strong> (<em>bool</em><em>, </em><em>optional</em>) – Align locations with arc tangents. Defaults to True.</p></li>
+<li><p><strong>endpoint</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, <cite>start_angle</cite> + <cite>angular_range</cite> is the last sample.
+Otherwise, it is not included. Defaults to False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Variables<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>local_locations</strong> (<em>list{Location}</em>) – locations relative to workplane</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – Count must be greater than or equal to 1</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="build_common.PolarLocations.local_locations">
+<span class="sig-name descname"><span class="pre">local_locations</span></span><a class="headerlink" href="#build_common.PolarLocations.local_locations" title="Link to this definition"></a></dt>
+<dd><p>values independent of workplanes</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="external.html" class="btn btn-neutral float-left" title="External Tools and Libraries" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="direct_api_reference.html" class="btn btn-neutral float-right" title="Direct API Reference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Gumyr.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

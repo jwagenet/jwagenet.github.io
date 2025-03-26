@@ -1,0 +1,970 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>drafting &mdash; build123d 0.9.2.dev40+gb1f0eed documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster.custom.css?v=7bc2f056" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster.bundle.min.css?v=37217874" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-shadow.min.css?v=6227e517" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-punk.min.css?v=94669e23" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-noir.min.css?v=21a39f42" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-light.min.css?v=a18b2449" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-borderless.min.css?v=dbff53e4" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/micromodal.css?v=d7bf34ee" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/sphinx_rtd_theme.css?v=3234e928" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c97902b4"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+      <script src="../_static/js/hoverxref.js?v=6ff7264e"></script>
+      <script src="../_static/js/tooltipster.bundle.min.js?v=18bf091b"></script>
+      <script src="../_static/js/micromodal.min.js?v=04d6302d"></script>
+      <script src="../_static/design-tabs.js?v=f930bc37"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            build123d
+              <img src="../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../key_concepts.html">Key Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../key_concepts_builder.html">Key Concepts (builder mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../key_concepts_algebra.html">Key Concepts (algebra mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../moving_objects.html">Moving Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../OpenSCAD.html">Transitioning from OpenSCAD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introductory_examples.html">Introductory Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../selectors_operators.html">Selectors and Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operations.html">Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../builders.html">Builders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../joints.html">Joints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assemblies.html">Assemblies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tips.html">Tips, Best Practices and FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../import_export.html">Import/Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cheat_sheet.html">Cheat Sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../external.html">External Tools and Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../builder_api_reference.html">Builder Common API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../direct_api_reference.html">Direct API Reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">build123d</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Module code</a></li>
+      <li class="breadcrumb-item active">drafting</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for drafting</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Drafting Objects</span>
+
+<span class="sd">name: drafting.py</span>
+<span class="sd">by:   Gumyr</span>
+<span class="sd">date: September 16th 2023</span>
+
+<span class="sd">desc:</span>
+<span class="sd">    This python module contains objects using in building technical drawings as Sketches.</span>
+
+<span class="sd">license:</span>
+
+<span class="sd">    Copyright 2022 Gumyr</span>
+
+<span class="sd">    Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span>
+<span class="sd">    you may not use this file except in compliance with the License.</span>
+<span class="sd">    You may obtain a copy of the License at</span>
+
+<span class="sd">        http://www.apache.org/licenses/LICENSE-2.0</span>
+
+<span class="sd">    Unless required by applicable law or agreed to in writing, software</span>
+<span class="sd">    distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span>
+<span class="sd">    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
+<span class="sd">    See the License for the specific language governing permissions and</span>
+<span class="sd">    limitations under the License.</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">date</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">copysign</span><span class="p">,</span> <span class="n">floor</span><span class="p">,</span> <span class="n">gcd</span><span class="p">,</span> <span class="n">log2</span><span class="p">,</span> <span class="n">pi</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">cast</span><span class="p">,</span> <span class="n">ClassVar</span><span class="p">,</span> <span class="n">TypeAlias</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">Iterable</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">build123d.build_common</span><span class="w"> </span><span class="kn">import</span> <span class="n">IN</span><span class="p">,</span> <span class="n">MM</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">build123d.build_enums</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">Align</span><span class="p">,</span>
+    <span class="n">FontStyle</span><span class="p">,</span>
+    <span class="n">GeomType</span><span class="p">,</span>
+    <span class="n">HeadType</span><span class="p">,</span>
+    <span class="n">Mode</span><span class="p">,</span>
+    <span class="n">NumberDisplay</span><span class="p">,</span>
+    <span class="n">PageSize</span><span class="p">,</span>
+    <span class="n">Side</span><span class="p">,</span>
+    <span class="n">Unit</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">build123d.build_line</span><span class="w"> </span><span class="kn">import</span> <span class="n">BuildLine</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">build123d.build_sketch</span><span class="w"> </span><span class="kn">import</span> <span class="n">BuildSketch</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">build123d.geometry</span><span class="w"> </span><span class="kn">import</span> <span class="n">Axis</span><span class="p">,</span> <span class="n">Location</span><span class="p">,</span> <span class="n">Plane</span><span class="p">,</span> <span class="n">Pos</span><span class="p">,</span> <span class="n">Vector</span><span class="p">,</span> <span class="n">VectorLike</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">build123d.objects_curve</span><span class="w"> </span><span class="kn">import</span> <span class="n">Line</span><span class="p">,</span> <span class="n">TangentArc</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">build123d.objects_sketch</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseSketchObject</span><span class="p">,</span> <span class="n">Polygon</span><span class="p">,</span> <span class="n">Text</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">build123d.operations_generic</span><span class="w"> </span><span class="kn">import</span> <span class="n">fillet</span><span class="p">,</span> <span class="n">mirror</span><span class="p">,</span> <span class="n">sweep</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">build123d.operations_sketch</span><span class="w"> </span><span class="kn">import</span> <span class="n">make_face</span><span class="p">,</span> <span class="n">trace</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">build123d.topology</span><span class="w"> </span><span class="kn">import</span> <span class="n">Compound</span><span class="p">,</span> <span class="n">Curve</span><span class="p">,</span> <span class="n">Edge</span><span class="p">,</span> <span class="n">Sketch</span><span class="p">,</span> <span class="n">Vertex</span><span class="p">,</span> <span class="n">Wire</span>
+
+
+<div class="viewcode-block" id="ArrowHead">
+<a class="viewcode-back" href="../objects.html#drafting.ArrowHead">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">ArrowHead</span><span class="p">(</span><span class="n">BaseSketchObject</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Sketch Object: ArrowHead</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        size (float): tip to tail length</span>
+<span class="sd">        head_type (HeadType, optional): arrow head shape. Defaults to HeadType.CURVED.</span>
+<span class="sd">        rotation (float, optional): rotation in degrees. Defaults to 0.</span>
+<span class="sd">        mode (Mode, optional): combination mode. Defaults to Mode.ADD.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_applies_to</span> <span class="o">=</span> <span class="p">[</span><span class="n">BuildSketch</span><span class="o">.</span><span class="n">_tag</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">size</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">head_type</span><span class="p">:</span> <span class="n">HeadType</span> <span class="o">=</span> <span class="n">HeadType</span><span class="o">.</span><span class="n">CURVED</span><span class="p">,</span>
+        <span class="n">rotation</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="n">mode</span><span class="p">:</span> <span class="n">Mode</span> <span class="o">=</span> <span class="n">Mode</span><span class="o">.</span><span class="n">ADD</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="k">with</span> <span class="n">BuildSketch</span><span class="p">()</span> <span class="k">as</span> <span class="n">arrow_head</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">head_type</span> <span class="o">==</span> <span class="n">HeadType</span><span class="o">.</span><span class="n">CURVED</span><span class="p">:</span>
+                <span class="k">with</span> <span class="n">BuildLine</span><span class="p">():</span>
+                    <span class="n">side</span> <span class="o">=</span> <span class="n">TangentArc</span><span class="p">(</span>
+                        <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="n">size</span><span class="p">,</span> <span class="n">size</span> <span class="o">/</span> <span class="mi">3</span><span class="p">),</span> <span class="n">tangent</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="n">size</span><span class="p">,</span> <span class="n">size</span> <span class="o">/</span> <span class="mi">6</span><span class="p">)</span>
+                    <span class="p">)</span>
+                    <span class="n">Line</span><span class="p">(</span><span class="n">side</span> <span class="o">@</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="o">-</span><span class="mi">7</span> <span class="o">*</span> <span class="n">size</span> <span class="o">/</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+                    <span class="n">mirror</span><span class="p">(</span><span class="n">about</span><span class="o">=</span><span class="n">Plane</span><span class="o">.</span><span class="n">XZ</span><span class="p">)</span>
+                <span class="n">make_face</span><span class="p">()</span>
+            <span class="k">elif</span> <span class="n">head_type</span> <span class="o">==</span> <span class="n">HeadType</span><span class="o">.</span><span class="n">STRAIGHT</span><span class="p">:</span>
+                <span class="n">Polygon</span><span class="p">((</span><span class="o">-</span><span class="n">size</span><span class="p">,</span> <span class="n">size</span> <span class="o">/</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="n">size</span><span class="p">,</span> <span class="o">-</span><span class="n">size</span> <span class="o">/</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">align</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">head_type</span> <span class="o">==</span> <span class="n">HeadType</span><span class="o">.</span><span class="n">FILLETED</span><span class="p">:</span>
+                <span class="n">ArrowHead</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">head_type</span><span class="o">=</span><span class="n">HeadType</span><span class="o">.</span><span class="n">CURVED</span><span class="p">)</span>
+                <span class="n">fillet</span><span class="p">(</span>
+                    <span class="n">arrow_head</span><span class="o">.</span><span class="n">vertices</span><span class="p">()</span><span class="o">.</span><span class="n">filter_by_position</span><span class="p">(</span>
+                        <span class="n">Axis</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span> <span class="o">*</span> <span class="n">size</span><span class="p">,</span> <span class="o">-</span><span class="n">size</span> <span class="o">/</span> <span class="mi">5</span>
+                    <span class="p">),</span>
+                    <span class="n">radius</span><span class="o">=</span><span class="n">size</span> <span class="o">/</span> <span class="mi">20</span><span class="p">,</span>
+                <span class="p">)</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">arrow_head</span><span class="o">.</span><span class="n">sketch</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="n">rotation</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="Arrow">
+<a class="viewcode-back" href="../objects.html#drafting.Arrow">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Arrow</span><span class="p">(</span><span class="n">BaseSketchObject</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Sketch Object: Arrow with shaft</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        arrow_size (float): arrow head tip to tail length</span>
+<span class="sd">        shaft_path (Edge |  Wire): line describing the shaft shape</span>
+<span class="sd">        shaft_width (float): line width of shaft</span>
+<span class="sd">        head_at_start (bool, optional): Defaults to True.</span>
+<span class="sd">        head_type (HeadType, optional): arrow head shape. Defaults to HeadType.CURVED.</span>
+<span class="sd">        mode (Mode, optional): _description_. Defaults to Mode.ADD.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_applies_to</span> <span class="o">=</span> <span class="p">[</span><span class="n">BuildSketch</span><span class="o">.</span><span class="n">_tag</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">arrow_size</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">shaft_path</span><span class="p">:</span> <span class="n">Edge</span> <span class="o">|</span> <span class="n">Wire</span><span class="p">,</span>
+        <span class="n">shaft_width</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">head_at_start</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="n">head_type</span><span class="p">:</span> <span class="n">HeadType</span> <span class="o">=</span> <span class="n">HeadType</span><span class="o">.</span><span class="n">CURVED</span><span class="p">,</span>
+        <span class="n">mode</span><span class="p">:</span> <span class="n">Mode</span> <span class="o">=</span> <span class="n">Mode</span><span class="o">.</span><span class="n">ADD</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="n">angle</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">shaft_path</span><span class="o">.</span><span class="n">tangent_angle_at</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">180</span>
+            <span class="k">if</span> <span class="n">head_at_start</span>
+            <span class="k">else</span> <span class="n">shaft_path</span><span class="o">.</span><span class="n">tangent_angle_at</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="c1"># Create the arrow head</span>
+        <span class="n">arrow_head</span> <span class="o">=</span> <span class="n">ArrowHead</span><span class="p">(</span>
+            <span class="n">size</span><span class="o">=</span><span class="n">arrow_size</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="n">angle</span><span class="p">,</span> <span class="n">head_type</span><span class="o">=</span><span class="n">head_type</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">Mode</span><span class="o">.</span><span class="n">PRIVATE</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">moved</span><span class="p">(</span><span class="n">Location</span><span class="p">(</span><span class="n">shaft_path</span><span class="o">.</span><span class="n">position_at</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="ow">not</span> <span class="n">head_at_start</span><span class="p">))))</span>
+
+        <span class="c1"># Trim the path so the tip of the arrow isn&#39;t lost</span>
+        <span class="n">trim_amount</span> <span class="o">=</span> <span class="p">(</span><span class="n">arrow_size</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="n">shaft_path</span><span class="o">.</span><span class="n">length</span>
+        <span class="k">if</span> <span class="n">head_at_start</span><span class="p">:</span>
+            <span class="n">shaft_path</span> <span class="o">=</span> <span class="n">shaft_path</span><span class="o">.</span><span class="n">trim</span><span class="p">(</span><span class="n">trim_amount</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">shaft_path</span> <span class="o">=</span> <span class="n">shaft_path</span><span class="o">.</span><span class="n">trim</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span> <span class="o">-</span> <span class="n">trim_amount</span><span class="p">)</span>
+
+        <span class="c1"># Create a perpendicular line to sweep the tail path</span>
+        <span class="n">shaft_pen</span> <span class="o">=</span> <span class="n">shaft_path</span><span class="o">.</span><span class="n">perpendicular_line</span><span class="p">(</span><span class="n">shaft_width</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">shaft</span> <span class="o">=</span> <span class="n">sweep</span><span class="p">(</span><span class="n">shaft_pen</span><span class="p">,</span> <span class="n">shaft_path</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">Mode</span><span class="o">.</span><span class="n">PRIVATE</span><span class="p">)</span>
+
+        <span class="n">arrow</span> <span class="o">=</span> <span class="n">cast</span><span class="p">(</span><span class="n">Compound</span><span class="p">,</span> <span class="n">arrow_head</span><span class="o">.</span><span class="n">fuse</span><span class="p">(</span><span class="n">shaft</span><span class="p">))</span><span class="o">.</span><span class="n">clean</span><span class="p">()</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">arrow</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">)</span></div>
+
+
+
+<span class="n">PointLike</span><span class="p">:</span> <span class="n">TypeAlias</span> <span class="o">=</span> <span class="n">Vector</span> <span class="o">|</span> <span class="n">Vertex</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span>
+<span class="sd">&quot;&quot;&quot;General type for points in 3D space&quot;&quot;&quot;</span>
+<span class="n">PathDescriptor</span><span class="p">:</span> <span class="n">TypeAlias</span> <span class="o">=</span> <span class="n">Wire</span> <span class="o">|</span> <span class="n">Edge</span> <span class="o">|</span> <span class="nb">list</span><span class="p">[</span><span class="n">PointLike</span><span class="p">]</span>
+<span class="sd">&quot;&quot;&quot;General type for a path in 3D space&quot;&quot;&quot;</span>
+
+
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Draft</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Draft</span>
+
+<span class="sd">    Documenting build123d designs with dimension and extension lines as well as callouts.</span>
+
+
+<span class="sd">    Args:</span>
+<span class="sd">        font_size (float): size of the text in dimension lines and callouts. Defaults to 5.0.</span>
+<span class="sd">        font (str): font to use for text. Defaults to &quot;Arial&quot;.</span>
+<span class="sd">        font_style: text style. Defaults to FontStyle.REGULAR.</span>
+<span class="sd">        head_type (HeadType, optional): arrow head shape. Defaults to HeadType.CURVED.</span>
+<span class="sd">        arrow_length (float): arrow head length. Defaults to 3.0.</span>
+<span class="sd">        line_width (float): thickness of all lines. Defaults to 0.5.</span>
+<span class="sd">        pad_around_text (float): amount of padding around text. Defaults to 2.0.</span>
+<span class="sd">        unit (Unit): measurement unit. Defaults to Unit.MM.</span>
+<span class="sd">        number_display (NumberDisplay): numbers as decimal or fractions.</span>
+<span class="sd">            Default to NumberDisplay.DECIMAL.</span>
+<span class="sd">        display_units (bool): control the display of units with numbers. Defaults to True.</span>
+<span class="sd">        decimal_precision (int): number of decimal places when displaying numbers. Defaults to 2.</span>
+<span class="sd">        fractional_precision (int): maximum fraction denominator - must be a factor of 2.</span>
+<span class="sd">            Defaults to 64.</span>
+<span class="sd">        extension_gap (float): gap between the point and start of extension line in extension_line.</span>
+<span class="sd">            Defaults to 2.0.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># pylint: disable=too-many-instance-attributes</span>
+
+    <span class="c1"># Class Attributes</span>
+    <span class="n">unit_LUT</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="nb">dict</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="kc">True</span><span class="p">:</span> <span class="s2">&quot;mm&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">:</span> <span class="s1">&#39;&quot;&#39;</span><span class="p">}</span>
+
+    <span class="n">font_size</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">5.0</span>
+    <span class="n">font</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Arial&quot;</span>
+    <span class="n">font_style</span><span class="p">:</span> <span class="n">FontStyle</span> <span class="o">=</span> <span class="n">FontStyle</span><span class="o">.</span><span class="n">REGULAR</span>
+    <span class="n">head_type</span><span class="p">:</span> <span class="n">HeadType</span> <span class="o">=</span> <span class="n">HeadType</span><span class="o">.</span><span class="n">CURVED</span>
+    <span class="n">arrow_length</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">3.0</span>
+    <span class="n">line_width</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.5</span>
+    <span class="n">pad_around_text</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">2.0</span>
+    <span class="n">unit</span><span class="p">:</span> <span class="n">Unit</span> <span class="o">=</span> <span class="n">Unit</span><span class="o">.</span><span class="n">MM</span>
+    <span class="n">number_display</span><span class="p">:</span> <span class="n">NumberDisplay</span> <span class="o">=</span> <span class="n">NumberDisplay</span><span class="o">.</span><span class="n">DECIMAL</span>
+    <span class="n">display_units</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">decimal_precision</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">fractional_precision</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">64</span>
+    <span class="n">extension_gap</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">2.0</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_metric</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Are metric units being used&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">unit</span> <span class="ow">in</span> <span class="p">[</span><span class="n">Unit</span><span class="o">.</span><span class="n">MM</span><span class="p">,</span> <span class="n">Unit</span><span class="o">.</span><span class="n">CM</span><span class="p">,</span> <span class="n">Unit</span><span class="o">.</span><span class="n">M</span><span class="p">,</span> <span class="n">Unit</span><span class="o">.</span><span class="n">MC</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">__post_init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Validate inputs&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">log2</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fractional_precision</span><span class="p">)</span><span class="o">.</span><span class="n">is_integer</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;fractional_precision values must be a factor of 2 not </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">fractional_precision</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_round_to_str</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">number</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Round a float but remove decimal if appropriate and convert to str&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">number</span><span class="p">,</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">decimal_precision</span><span class="p">)</span><span class="si">:</span><span class="s2">.</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">decimal_precision</span><span class="si">}</span><span class="s2">f</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">decimal_precision</span> <span class="o">&gt;</span> <span class="mi">0</span>
+            <span class="k">else</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">decimal_precision</span><span class="p">)))</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_number_with_units</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">number</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">tolerance</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">display_units</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Convert a raw number to a unit of measurement string based on the class settings&quot;&quot;&quot;</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="nf">simplify_fraction</span><span class="p">(</span><span class="n">numerator</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">denominator</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]:</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;Mathematically simplify a fraction given a numerator and denominator&quot;&quot;&quot;</span>
+            <span class="n">greatest_common_denominator</span> <span class="o">=</span> <span class="n">gcd</span><span class="p">(</span><span class="n">numerator</span><span class="p">,</span> <span class="n">denominator</span><span class="p">)</span>
+            <span class="k">return</span> <span class="p">(</span>
+                <span class="nb">int</span><span class="p">(</span><span class="n">numerator</span> <span class="o">/</span> <span class="n">greatest_common_denominator</span><span class="p">),</span>
+                <span class="nb">int</span><span class="p">(</span><span class="n">denominator</span> <span class="o">/</span> <span class="n">greatest_common_denominator</span><span class="p">),</span>
+            <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">display_units</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">tolerance</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">qualified_display_units</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">display_units</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">qualified_display_units</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">qualified_display_units</span> <span class="o">=</span> <span class="n">display_units</span>
+
+        <span class="n">unit_str</span> <span class="o">=</span> <span class="n">Draft</span><span class="o">.</span><span class="n">unit_LUT</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">is_metric</span><span class="p">]</span> <span class="k">if</span> <span class="n">qualified_display_units</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">tolerance</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">tolerance_str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">tolerance</span><span class="p">,</span> <span class="nb">float</span><span class="p">):</span>
+            <span class="n">tolerance_str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot; ±</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_number_with_units</span><span class="p">(</span><span class="n">tolerance</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">tolerance_str</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot; +</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_number_with_units</span><span class="p">(</span><span class="n">tolerance</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">display_units</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="sa">f</span><span class="s2">&quot; -</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_number_with_units</span><span class="p">(</span><span class="n">tolerance</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_metric</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">number_display</span> <span class="o">==</span> <span class="n">NumberDisplay</span><span class="o">.</span><span class="n">DECIMAL</span><span class="p">:</span>
+            <span class="n">unit_lut</span> <span class="o">=</span> <span class="p">{</span><span class="kc">True</span><span class="p">:</span> <span class="n">MM</span><span class="p">,</span> <span class="kc">False</span><span class="p">:</span> <span class="n">IN</span><span class="p">}</span>
+            <span class="n">measurement</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_round_to_str</span><span class="p">(</span><span class="n">number</span> <span class="o">/</span> <span class="n">unit_lut</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">is_metric</span><span class="p">])</span>
+            <span class="n">return_value</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">measurement</span><span class="si">}{</span><span class="n">unit_str</span><span class="si">}{</span><span class="n">tolerance_str</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">whole_part</span> <span class="o">=</span> <span class="n">floor</span><span class="p">(</span><span class="n">number</span> <span class="o">/</span> <span class="n">IN</span><span class="p">)</span>
+            <span class="p">(</span><span class="n">numerator</span><span class="p">,</span> <span class="n">denominator</span><span class="p">)</span> <span class="o">=</span> <span class="n">simplify_fraction</span><span class="p">(</span>
+                <span class="nb">round</span><span class="p">((</span><span class="n">number</span> <span class="o">/</span> <span class="n">IN</span> <span class="o">-</span> <span class="n">whole_part</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">fractional_precision</span><span class="p">),</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">fractional_precision</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="k">if</span> <span class="n">whole_part</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">return_value</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">numerator</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">denominator</span><span class="si">}{</span><span class="n">unit_str</span><span class="si">}{</span><span class="n">tolerance_str</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">return_value</span> <span class="o">=</span> <span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">whole_part</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">numerator</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">denominator</span><span class="si">}{</span><span class="n">unit_str</span><span class="si">}{</span><span class="n">tolerance_str</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">return_value</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_process_path</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="n">PathDescriptor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Edge</span> <span class="o">|</span> <span class="n">Wire</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Convert a PathDescriptor into a Edge/Wire&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="p">(</span><span class="n">Edge</span><span class="p">,</span> <span class="n">Wire</span><span class="p">)):</span>
+            <span class="n">processed_path</span> <span class="o">=</span> <span class="n">path</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">):</span>
+            <span class="n">pnts</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="n">Vector</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">to_tuple</span><span class="p">())</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">Vertex</span><span class="p">)</span> <span class="k">else</span> <span class="n">Vector</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">path</span>
+            <span class="p">]</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">pnts</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="n">processed_path</span> <span class="o">=</span> <span class="n">Edge</span><span class="o">.</span><span class="n">make_line</span><span class="p">(</span><span class="o">*</span><span class="n">pnts</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">processed_path</span> <span class="o">=</span> <span class="n">Wire</span><span class="o">.</span><span class="n">make_polygon</span><span class="p">(</span><span class="n">pnts</span><span class="p">,</span> <span class="n">close</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Unsupported patch descriptor&quot;</span><span class="p">)</span>
+        <span class="c1"># processed_path = Plane.XY.to_local_coords(processed_path)</span>
+
+        <span class="k">return</span> <span class="n">processed_path</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_label_to_str</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">label</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">line_wire</span><span class="p">:</span> <span class="n">Wire</span><span class="p">,</span>
+        <span class="n">label_angle</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+        <span class="n">tolerance</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create the str to use as the label text&quot;&quot;&quot;</span>
+        <span class="n">line_length</span> <span class="o">=</span> <span class="n">line_wire</span><span class="o">.</span><span class="n">length</span>
+        <span class="k">if</span> <span class="n">label</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">label_str</span> <span class="o">=</span> <span class="n">label</span>
+        <span class="k">elif</span> <span class="n">label_angle</span><span class="p">:</span>
+            <span class="n">arc_edges</span> <span class="o">=</span> <span class="n">line_wire</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="n">GeomType</span><span class="o">.</span><span class="n">CIRCLE</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">arc_edges</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="s2">&quot;label_angle requested but the path is not part of a circle&quot;</span>
+                <span class="p">)</span>
+            <span class="n">arc_edge</span> <span class="o">=</span> <span class="n">arc_edges</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">arc_size</span> <span class="o">=</span> <span class="mi">360</span> <span class="o">*</span> <span class="n">line_length</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">*</span> <span class="n">arc_edge</span><span class="o">.</span><span class="n">radius</span><span class="p">)</span>
+            <span class="n">label_str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_round_to_str</span><span class="p">(</span><span class="n">arc_size</span><span class="p">)</span><span class="si">}</span><span class="s2">°&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">label_str</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_number_with_units</span><span class="p">(</span><span class="n">line_length</span><span class="p">,</span> <span class="n">tolerance</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">label_str</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_sketch_location</span><span class="p">(</span>
+        <span class="n">path</span><span class="p">:</span> <span class="n">Edge</span> <span class="o">|</span> <span class="n">Wire</span><span class="p">,</span> <span class="n">u_value</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">flip</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Location</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Given a path on Plane.XY, determine the Location for object placement&quot;&quot;&quot;</span>
+        <span class="n">angle</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">tangent_angle_at</span><span class="p">(</span><span class="n">u_value</span><span class="p">)</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">flip</span><span class="p">)</span> <span class="o">*</span> <span class="mi">180</span>
+        <span class="k">return</span> <span class="n">Location</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">position_at</span><span class="p">(</span><span class="n">u_value</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">angle</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="DimensionLine">
+<a class="viewcode-back" href="../objects.html#drafting.DimensionLine">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">DimensionLine</span><span class="p">(</span><span class="n">BaseSketchObject</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Sketch Object: DimensionLine</span>
+
+<span class="sd">    Create a dimension line typically for internal measurements.</span>
+<span class="sd">    Typically used for (but not restricted to) inside dimensions, a dimension line often</span>
+<span class="sd">    as arrows on either side of a dimension or label.</span>
+
+<span class="sd">    There are three options depending on the size of the text and length</span>
+<span class="sd">    of the dimension line:</span>
+<span class="sd">    Type 1) The label and arrows fit within the length of the path</span>
+<span class="sd">    Type 2) The text fit within the path and the arrows go outside</span>
+<span class="sd">    Type 3) Neither the text nor the arrows fit within the path</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        path (PathDescriptor): a very general type of input used to describe the path the</span>
+<span class="sd">            dimension line will follow.</span>
+<span class="sd">        draft (Draft): instance of Draft dataclass</span>
+<span class="sd">        sketch (Sketch): the Sketch being created to check for possible overlaps. In builder</span>
+<span class="sd">            mode the active Sketch will be used if None is provided.</span>
+<span class="sd">        label (str, optional): a text string which will replace the length (or</span>
+<span class="sd">            arc length) that would otherwise be extracted from the provided path. Providing</span>
+<span class="sd">            a label is useful when illustrating a parameterized input where the name of an</span>
+<span class="sd">            argument is desired not an actual measurement. Defaults to None.</span>
+<span class="sd">        arrows (tuple[bool, bool], optional): a pair of boolean values controlling the placement</span>
+<span class="sd">            of the start and end arrows. Defaults to (True, True).</span>
+<span class="sd">        tolerance (float | tuple[float, float], optional): an optional tolerance</span>
+<span class="sd">            value to add to the extracted length value. If a single tolerance value is provided</span>
+<span class="sd">            it is shown as ± the provided value while a pair of values are shown as</span>
+<span class="sd">            separate + and - values. Defaults to None.</span>
+<span class="sd">        label_angle (bool, optional): a flag indicating that instead of an extracted length value,</span>
+<span class="sd">            the size of the circular arc extracted from the path should be displayed in degrees.</span>
+<span class="sd">        mode (Mode, optional): combination mode. Defaults to Mode.ADD.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: Only 2 points allowed for dimension lines</span>
+<span class="sd">        ValueError: No output - no arrows selected</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">path</span><span class="p">:</span> <span class="n">PathDescriptor</span><span class="p">,</span>
+        <span class="n">draft</span><span class="p">:</span> <span class="n">Draft</span><span class="p">,</span>
+        <span class="n">sketch</span><span class="p">:</span> <span class="n">Sketch</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">label</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">arrows</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">bool</span><span class="p">,</span> <span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span>
+        <span class="n">tolerance</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">label_angle</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">mode</span><span class="p">:</span> <span class="n">Mode</span> <span class="o">=</span> <span class="n">Mode</span><span class="o">.</span><span class="n">ADD</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="c1"># pylint: disable=too-many-locals</span>
+
+        <span class="n">context</span> <span class="o">=</span> <span class="n">BuildSketch</span><span class="o">.</span><span class="n">_get_context</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">sketch</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="p">(</span><span class="n">context</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">context</span><span class="o">.</span><span class="n">sketch</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="n">sketch</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">sketch</span>
+
+        <span class="c1"># Create a wire modelling the path of the dimension lines from a variety of input types</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Only two points are allowed for dimension lines&quot;</span><span class="p">)</span>
+        <span class="n">path_obj</span> <span class="o">=</span> <span class="n">Draft</span><span class="o">.</span><span class="n">_process_path</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>  <span class="c1"># Edge or Wire</span>
+        <span class="n">path_length</span> <span class="o">=</span> <span class="n">path_obj</span><span class="o">.</span><span class="n">length</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">dimension</span> <span class="o">=</span> <span class="n">path_length</span>  <span class="c1">#: length of the dimension</span>
+
+        <span class="c1"># Generate the label</span>
+        <span class="n">label_str</span> <span class="o">=</span> <span class="n">draft</span><span class="o">.</span><span class="n">_label_to_str</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="n">path_obj</span><span class="p">,</span> <span class="n">label_angle</span><span class="p">,</span> <span class="n">tolerance</span><span class="p">)</span>
+        <span class="n">label_shape</span> <span class="o">=</span> <span class="n">Text</span><span class="p">(</span>
+            <span class="n">txt</span><span class="o">=</span><span class="n">label_str</span><span class="p">,</span>
+            <span class="n">font_size</span><span class="o">=</span><span class="n">draft</span><span class="o">.</span><span class="n">font_size</span><span class="p">,</span>
+            <span class="n">font</span><span class="o">=</span><span class="n">draft</span><span class="o">.</span><span class="n">font</span><span class="p">,</span>
+            <span class="n">font_style</span><span class="o">=</span><span class="n">draft</span><span class="o">.</span><span class="n">font_style</span><span class="p">,</span>
+            <span class="n">align</span><span class="o">=</span><span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">,</span>
+            <span class="n">mode</span><span class="o">=</span><span class="n">Mode</span><span class="o">.</span><span class="n">PRIVATE</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">label_length</span> <span class="o">=</span> <span class="n">label_shape</span><span class="o">.</span><span class="n">bounding_box</span><span class="p">()</span><span class="o">.</span><span class="n">size</span><span class="o">.</span><span class="n">X</span>
+
+        <span class="c1"># Calculate the arrow shaft length for up to three types</span>
+        <span class="k">if</span> <span class="n">arrows</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;No output - no arrows selected&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">label_length</span> <span class="o">+</span> <span class="n">arrows</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span> <span class="o">*</span> <span class="n">draft</span><span class="o">.</span><span class="n">arrow_length</span> <span class="o">&lt;</span> <span class="n">path_length</span><span class="p">:</span>
+            <span class="n">shaft_length</span> <span class="o">=</span> <span class="p">(</span><span class="n">path_length</span> <span class="o">-</span> <span class="n">label_length</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">draft</span><span class="o">.</span><span class="n">pad_around_text</span>
+            <span class="n">shaft_pair</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="n">path_obj</span><span class="o">.</span><span class="n">trim</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">shaft_length</span> <span class="o">/</span> <span class="n">path_length</span><span class="p">),</span>
+                <span class="n">path_obj</span><span class="o">.</span><span class="n">trim</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">shaft_length</span> <span class="o">/</span> <span class="n">path_length</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span>
+            <span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">shaft_length</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">draft</span><span class="o">.</span><span class="n">arrow_length</span>
+            <span class="n">shaft_pair</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="n">Edge</span><span class="o">.</span><span class="n">make_line</span><span class="p">(</span>
+                    <span class="n">path_obj</span> <span class="o">@</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="n">path_obj</span> <span class="o">@</span> <span class="mi">0</span> <span class="o">-</span> <span class="p">(</span><span class="n">path_obj</span> <span class="o">%</span> <span class="mi">0</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">draft</span><span class="o">.</span><span class="n">arrow_length</span><span class="p">,</span>
+                <span class="p">),</span>
+                <span class="n">Edge</span><span class="o">.</span><span class="n">make_line</span><span class="p">(</span>
+                    <span class="n">path_obj</span> <span class="o">@</span> <span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="n">path_obj</span> <span class="o">%</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">draft</span><span class="o">.</span><span class="n">arrow_length</span><span class="p">,</span>
+                    <span class="n">path_obj</span> <span class="o">@</span> <span class="mi">1</span><span class="p">,</span>
+                <span class="p">),</span>
+            <span class="p">]</span>
+
+        <span class="n">arrow_shapes</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">shaft</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">shaft_pair</span><span class="p">):</span>
+            <span class="n">flip_head</span> <span class="o">=</span> <span class="p">(</span><span class="n">shaft</span><span class="o">.</span><span class="n">position_at</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">!=</span> <span class="n">path_obj</span><span class="o">.</span><span class="n">position_at</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="o">==</span> <span class="nb">bool</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+            <span class="n">arrow_shapes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="n">Arrow</span><span class="p">(</span>
+                    <span class="n">draft</span><span class="o">.</span><span class="n">arrow_length</span><span class="p">,</span>
+                    <span class="n">shaft</span><span class="p">,</span>
+                    <span class="n">draft</span><span class="o">.</span><span class="n">line_width</span><span class="p">,</span>
+                    <span class="n">flip_head</span><span class="p">,</span>
+                    <span class="n">draft</span><span class="o">.</span><span class="n">head_type</span><span class="p">,</span>
+                    <span class="n">mode</span><span class="o">=</span><span class="n">Mode</span><span class="o">.</span><span class="n">PRIVATE</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+        <span class="c1"># Calculate the possible locations for the label</span>
+        <span class="n">overage</span> <span class="o">=</span> <span class="n">shaft_length</span> <span class="o">+</span> <span class="n">draft</span><span class="o">.</span><span class="n">pad_around_text</span> <span class="o">+</span> <span class="n">label_length</span> <span class="o">/</span> <span class="mi">2</span>
+        <span class="n">label_u_values</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="n">overage</span> <span class="o">/</span> <span class="n">path_length</span><span class="p">,</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">overage</span> <span class="o">/</span> <span class="n">path_length</span><span class="p">]</span>
+
+        <span class="n">d_lines</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">u_value</span> <span class="ow">in</span> <span class="n">label_u_values</span><span class="p">:</span>
+            <span class="n">select_arrow_shapes</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="n">arrow_shape</span>
+                <span class="k">for</span> <span class="n">add_arrow</span><span class="p">,</span> <span class="n">arrow_shape</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">arrows</span><span class="p">,</span> <span class="n">arrow_shapes</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">add_arrow</span>
+            <span class="p">]</span>
+            <span class="n">d_line</span> <span class="o">=</span> <span class="n">Sketch</span><span class="p">(</span><span class="n">select_arrow_shapes</span><span class="p">)</span>
+            <span class="n">flip_label</span> <span class="o">=</span> <span class="n">path_obj</span><span class="o">.</span><span class="n">tangent_at</span><span class="p">(</span><span class="n">u_value</span><span class="p">)</span><span class="o">.</span><span class="n">get_angle</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span> <span class="o">&gt;=</span> <span class="mi">180</span>
+            <span class="n">loc</span> <span class="o">=</span> <span class="n">Draft</span><span class="o">.</span><span class="n">_sketch_location</span><span class="p">(</span><span class="n">path_obj</span><span class="p">,</span> <span class="n">u_value</span><span class="p">,</span> <span class="n">flip_label</span><span class="p">)</span>
+            <span class="n">placed_label</span> <span class="o">=</span> <span class="n">label_shape</span><span class="o">.</span><span class="n">located</span><span class="p">(</span><span class="n">loc</span><span class="p">)</span>
+            <span class="n">self_intersection</span> <span class="o">=</span> <span class="n">cast</span><span class="p">(</span>
+                <span class="n">Sketch</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span> <span class="n">Sketch</span><span class="o">.</span><span class="n">intersect</span><span class="p">(</span><span class="n">d_line</span><span class="p">,</span> <span class="n">placed_label</span><span class="p">)</span>
+            <span class="p">)</span>
+            <span class="k">if</span> <span class="n">self_intersection</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">self_intersection_area</span> <span class="o">=</span> <span class="mf">0.0</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">self_intersection_area</span> <span class="o">=</span> <span class="n">self_intersection</span><span class="o">.</span><span class="n">area</span>
+            <span class="n">d_line</span> <span class="o">+=</span> <span class="n">placed_label</span>
+            <span class="n">bbox_size</span> <span class="o">=</span> <span class="n">d_line</span><span class="o">.</span><span class="n">bounding_box</span><span class="p">()</span><span class="o">.</span><span class="n">size</span>
+
+            <span class="c1"># Minimize size while avoiding intersections</span>
+            <span class="k">if</span> <span class="n">sketch</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">common_area</span> <span class="o">=</span> <span class="mf">0.0</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">line_intersection</span> <span class="o">=</span> <span class="n">cast</span><span class="p">(</span>
+                    <span class="n">Sketch</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span> <span class="n">Sketch</span><span class="o">.</span><span class="n">intersect</span><span class="p">(</span><span class="n">d_line</span><span class="p">,</span> <span class="n">sketch</span><span class="p">)</span>
+                <span class="p">)</span>
+                <span class="k">if</span> <span class="n">line_intersection</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">common_area</span> <span class="o">=</span> <span class="mf">0.0</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">common_area</span> <span class="o">=</span> <span class="n">line_intersection</span><span class="o">.</span><span class="n">area</span>
+            <span class="n">common_area</span> <span class="o">+=</span> <span class="n">self_intersection_area</span>
+            <span class="n">score</span> <span class="o">=</span> <span class="p">(</span><span class="n">d_line</span><span class="o">.</span><span class="n">area</span> <span class="o">-</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">common_area</span><span class="p">)</span> <span class="o">/</span> <span class="n">bbox_size</span><span class="o">.</span><span class="n">X</span>
+            <span class="n">d_lines</span><span class="p">[</span><span class="n">d_line</span><span class="p">]</span> <span class="o">=</span> <span class="n">score</span>
+
+        <span class="c1"># Sort by score to find the best option</span>
+        <span class="n">sorted_d_lines</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">d_lines</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">obj</span><span class="o">=</span><span class="n">sorted_d_lines</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="ExtensionLine">
+<a class="viewcode-back" href="../objects.html#drafting.ExtensionLine">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">ExtensionLine</span><span class="p">(</span><span class="n">BaseSketchObject</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Sketch Object: Extension Line</span>
+
+<span class="sd">    Create a dimension line with two lines extending outward from the part to dimension.</span>
+<span class="sd">    Typically used for (but not restricted to) outside dimensions, with a pair of lines</span>
+<span class="sd">    extending from the edge of a part to a dimension line.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        border (PathDescriptor): a very general type of input defining the object to</span>
+<span class="sd">            be dimensioned. Typically this value would be extracted from the part but is</span>
+<span class="sd">            not restricted to this use.</span>
+<span class="sd">        offset (float): a distance to displace the dimension line from the edge of the object</span>
+<span class="sd">        draft (Draft): instance of Draft dataclass</span>
+<span class="sd">        label (str, optional): a text string which will replace the length (or arc length)</span>
+<span class="sd">            that would otherwise be extracted from the provided path. Providing a label is</span>
+<span class="sd">            useful when illustrating a parameterized input where the name of an argument</span>
+<span class="sd">            is desired not an actual measurement. Defaults to None.</span>
+<span class="sd">        arrows (tuple[bool, bool], optional): a pair of boolean values controlling the placement</span>
+<span class="sd">            of the start and end arrows. Defaults to (True, True).</span>
+<span class="sd">        tolerance (float | tuple[float, float], optional): an optional tolerance</span>
+<span class="sd">            value to add to the extracted length value. If a single tolerance value is provided</span>
+<span class="sd">            it is shown as ± the provided value while a pair of values are shown as</span>
+<span class="sd">            separate + and - values. Defaults to None.</span>
+<span class="sd">        label_angle (bool, optional): a flag indicating that instead of an extracted length</span>
+<span class="sd">            value, the size of the circular arc extracted from the path should be displayed</span>
+<span class="sd">            in degrees. Defaults to False.</span>
+<span class="sd">        project_line (Vector, optional): Vector line which to project dimension against.</span>
+<span class="sd">            Defaults to None.</span>
+<span class="sd">        mode (Mode, optional): combination mode. Defaults to Mode.ADD.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">border</span><span class="p">:</span> <span class="n">PathDescriptor</span><span class="p">,</span>
+        <span class="n">offset</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">draft</span><span class="p">:</span> <span class="n">Draft</span><span class="p">,</span>
+        <span class="n">sketch</span><span class="p">:</span> <span class="n">Sketch</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">label</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">arrows</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">bool</span><span class="p">,</span> <span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span>
+        <span class="n">tolerance</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">label_angle</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">project_line</span><span class="p">:</span> <span class="n">VectorLike</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">mode</span><span class="p">:</span> <span class="n">Mode</span> <span class="o">=</span> <span class="n">Mode</span><span class="o">.</span><span class="n">ADD</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="c1"># pylint: disable=too-many-locals</span>
+
+        <span class="n">context</span> <span class="o">=</span> <span class="n">BuildSketch</span><span class="o">.</span><span class="n">_get_context</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">sketch</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="p">(</span><span class="n">context</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">context</span><span class="o">.</span><span class="n">sketch</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="n">sketch</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">sketch</span>
+        <span class="k">if</span> <span class="n">project_line</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;project_line is currently unsupported&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Create a wire modelling the path of the dimension lines from a variety of input types</span>
+        <span class="n">object_to_measure</span> <span class="o">=</span> <span class="n">Draft</span><span class="o">.</span><span class="n">_process_path</span><span class="p">(</span><span class="n">border</span><span class="p">)</span>
+
+        <span class="n">side_lut</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="n">Side</span><span class="o">.</span><span class="n">RIGHT</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span> <span class="n">Side</span><span class="o">.</span><span class="n">LEFT</span><span class="p">}</span>
+
+        <span class="k">if</span> <span class="n">offset</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;A dimension line should be used if offset is 0&quot;</span><span class="p">)</span>
+        <span class="n">dimension_path</span> <span class="o">=</span> <span class="n">object_to_measure</span><span class="o">.</span><span class="n">offset_2d</span><span class="p">(</span>
+            <span class="n">distance</span><span class="o">=</span><span class="n">offset</span><span class="p">,</span> <span class="n">side</span><span class="o">=</span><span class="n">side_lut</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">copysign</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">offset</span><span class="p">))],</span> <span class="n">closed</span><span class="o">=</span><span class="kc">False</span>
+        <span class="p">)</span>
+        <span class="n">dimension_label_str</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">label</span>
+            <span class="k">if</span> <span class="n">label</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+            <span class="k">else</span> <span class="n">draft</span><span class="o">.</span><span class="n">_label_to_str</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="n">object_to_measure</span><span class="p">,</span> <span class="n">label_angle</span><span class="p">,</span> <span class="n">tolerance</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">extension_lines</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">Edge</span><span class="o">.</span><span class="n">make_line</span><span class="p">(</span>
+                <span class="n">object_to_measure</span><span class="o">.</span><span class="n">position_at</span><span class="p">(</span><span class="n">e</span><span class="p">),</span> <span class="n">dimension_path</span><span class="o">.</span><span class="n">position_at</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+            <span class="p">)</span>
+            <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="p">]</span>
+        <span class="c1"># If the dimension path was created backwards, flip the extension lines</span>
+        <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">extension_lines</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">length</span> <span class="o">-</span> <span class="nb">abs</span><span class="p">(</span><span class="n">offset</span><span class="p">))</span> <span class="o">&gt;</span> <span class="mf">1e-4</span><span class="p">:</span>
+            <span class="n">extension_lines</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="n">Edge</span><span class="o">.</span><span class="n">make_line</span><span class="p">(</span>
+                    <span class="n">object_to_measure</span><span class="o">.</span><span class="n">position_at</span><span class="p">(</span><span class="n">e</span><span class="p">),</span> <span class="n">dimension_path</span><span class="o">.</span><span class="n">position_at</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">e</span><span class="p">)</span>
+                <span class="p">)</span>
+                <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+            <span class="p">]</span>
+
+        <span class="c1"># Move the extension lines away from the object</span>
+        <span class="n">extension_lines</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">extension_line</span><span class="o">.</span><span class="n">moved</span><span class="p">(</span>
+                <span class="n">Location</span><span class="p">(</span><span class="n">extension_line</span><span class="o">.</span><span class="n">tangent_at</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">*</span> <span class="n">draft</span><span class="o">.</span><span class="n">extension_gap</span><span class="p">)</span>
+            <span class="p">)</span>
+            <span class="k">for</span> <span class="n">extension_line</span> <span class="ow">in</span> <span class="n">extension_lines</span>
+        <span class="p">]</span>
+
+        <span class="c1"># Build the extension line sketch</span>
+        <span class="n">e_lines</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">extension_line</span> <span class="ow">in</span> <span class="n">extension_lines</span><span class="p">:</span>
+            <span class="n">line_pen</span> <span class="o">=</span> <span class="n">extension_line</span><span class="o">.</span><span class="n">perpendicular_line</span><span class="p">(</span><span class="n">draft</span><span class="o">.</span><span class="n">line_width</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="n">e_line_shape</span> <span class="o">=</span> <span class="n">sweep</span><span class="p">(</span><span class="n">line_pen</span><span class="p">,</span> <span class="n">extension_line</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">Mode</span><span class="o">.</span><span class="n">PRIVATE</span><span class="p">)</span>
+            <span class="n">e_lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">e_line_shape</span><span class="p">)</span>
+        <span class="n">d_line</span> <span class="o">=</span> <span class="n">DimensionLine</span><span class="p">(</span>
+            <span class="n">dimension_path</span><span class="p">,</span>
+            <span class="n">draft</span><span class="p">,</span>
+            <span class="n">sketch</span><span class="p">,</span>
+            <span class="n">dimension_label_str</span><span class="p">,</span>
+            <span class="n">arrows</span><span class="p">,</span>
+            <span class="n">tolerance</span><span class="p">,</span>
+            <span class="n">label_angle</span><span class="p">,</span>
+            <span class="n">mode</span><span class="o">=</span><span class="n">Mode</span><span class="o">.</span><span class="n">PRIVATE</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dimension</span> <span class="o">=</span> <span class="n">d_line</span><span class="o">.</span><span class="n">dimension</span>  <span class="c1">#: length of the dimension</span>
+
+        <span class="n">e_line_sketch</span> <span class="o">=</span> <span class="n">Sketch</span><span class="p">(</span><span class="n">children</span><span class="o">=</span><span class="n">e_lines</span> <span class="o">+</span> <span class="n">d_line</span><span class="o">.</span><span class="n">faces</span><span class="p">())</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">obj</span><span class="o">=</span><span class="n">e_line_sketch</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="TechnicalDrawing">
+<a class="viewcode-back" href="../objects.html#drafting.TechnicalDrawing">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">TechnicalDrawing</span><span class="p">(</span><span class="n">BaseSketchObject</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Sketch Object: TechnicalDrawing</span>
+
+<span class="sd">    The border of a technical drawing with external frame and text box.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        designed_by (str, optional): Defaults to &quot;build123d&quot;.</span>
+<span class="sd">        design_date (date, optional): Defaults to date.today().</span>
+<span class="sd">        page_size (PageSize, optional): Defaults to PageSize.A4.</span>
+<span class="sd">        title (str, optional): drawing title. Defaults to &quot;Title&quot;.</span>
+<span class="sd">        sub_title (str, optional): drawing sub title. Defaults to &quot;Sub Title&quot;.</span>
+<span class="sd">        drawing_number (str, optional): Defaults to &quot;B3D-1&quot;.</span>
+<span class="sd">        sheet_number (int, optional): Defaults to None.</span>
+<span class="sd">        drawing_scale (float, optional): displays as 1:value. Defaults to 1.0.</span>
+<span class="sd">        nominal_text_size (float, optional): size of title text. Defaults to 10.0.</span>
+<span class="sd">        line_width (float, optional): Defaults to 0.5.</span>
+<span class="sd">        mode (Mode, optional): combination mode. Defaults to Mode.ADD.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">page_sizes</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">PageSize</span><span class="o">.</span><span class="n">A0</span><span class="p">:</span> <span class="p">(</span><span class="mi">1189</span> <span class="o">*</span> <span class="n">MM</span><span class="p">,</span> <span class="mi">841</span> <span class="o">*</span> <span class="n">MM</span><span class="p">),</span>
+        <span class="n">PageSize</span><span class="o">.</span><span class="n">A1</span><span class="p">:</span> <span class="p">(</span><span class="mi">841</span> <span class="o">*</span> <span class="n">MM</span><span class="p">,</span> <span class="mi">594</span> <span class="o">*</span> <span class="n">MM</span><span class="p">),</span>
+        <span class="n">PageSize</span><span class="o">.</span><span class="n">A2</span><span class="p">:</span> <span class="p">(</span><span class="mi">594</span> <span class="o">*</span> <span class="n">MM</span><span class="p">,</span> <span class="mi">420</span> <span class="o">*</span> <span class="n">MM</span><span class="p">),</span>
+        <span class="n">PageSize</span><span class="o">.</span><span class="n">A3</span><span class="p">:</span> <span class="p">(</span><span class="mi">420</span> <span class="o">*</span> <span class="n">MM</span><span class="p">,</span> <span class="mi">297</span> <span class="o">*</span> <span class="n">MM</span><span class="p">),</span>
+        <span class="n">PageSize</span><span class="o">.</span><span class="n">A4</span><span class="p">:</span> <span class="p">(</span><span class="mi">297</span> <span class="o">*</span> <span class="n">MM</span><span class="p">,</span> <span class="mi">210</span> <span class="o">*</span> <span class="n">MM</span><span class="p">),</span>
+        <span class="n">PageSize</span><span class="o">.</span><span class="n">A5</span><span class="p">:</span> <span class="p">(</span><span class="mi">210</span> <span class="o">*</span> <span class="n">MM</span><span class="p">,</span> <span class="mf">148.5</span> <span class="o">*</span> <span class="n">MM</span><span class="p">),</span>
+        <span class="n">PageSize</span><span class="o">.</span><span class="n">A6</span><span class="p">:</span> <span class="p">(</span><span class="mf">148.5</span> <span class="o">*</span> <span class="n">MM</span><span class="p">,</span> <span class="mi">105</span> <span class="o">*</span> <span class="n">MM</span><span class="p">),</span>
+        <span class="n">PageSize</span><span class="o">.</span><span class="n">A7</span><span class="p">:</span> <span class="p">(</span><span class="mi">105</span> <span class="o">*</span> <span class="n">MM</span><span class="p">,</span> <span class="mi">74</span> <span class="o">*</span> <span class="n">MM</span><span class="p">),</span>
+        <span class="n">PageSize</span><span class="o">.</span><span class="n">A8</span><span class="p">:</span> <span class="p">(</span><span class="mi">74</span> <span class="o">*</span> <span class="n">MM</span><span class="p">,</span> <span class="mi">52</span> <span class="o">*</span> <span class="n">MM</span><span class="p">),</span>
+        <span class="n">PageSize</span><span class="o">.</span><span class="n">A9</span><span class="p">:</span> <span class="p">(</span><span class="mi">52</span> <span class="o">*</span> <span class="n">MM</span><span class="p">,</span> <span class="mi">37</span> <span class="o">*</span> <span class="n">MM</span><span class="p">),</span>
+        <span class="n">PageSize</span><span class="o">.</span><span class="n">A10</span><span class="p">:</span> <span class="p">(</span><span class="mi">37</span> <span class="o">*</span> <span class="n">MM</span><span class="p">,</span> <span class="mi">26</span> <span class="o">*</span> <span class="n">MM</span><span class="p">),</span>
+        <span class="n">PageSize</span><span class="o">.</span><span class="n">LETTER</span><span class="p">:</span> <span class="p">(</span><span class="mi">11</span> <span class="o">*</span> <span class="n">IN</span><span class="p">,</span> <span class="mf">8.5</span> <span class="o">*</span> <span class="n">IN</span><span class="p">),</span>
+        <span class="n">PageSize</span><span class="o">.</span><span class="n">LEGAL</span><span class="p">:</span> <span class="p">(</span><span class="mi">14</span> <span class="o">*</span> <span class="n">IN</span><span class="p">,</span> <span class="mf">8.5</span> <span class="o">*</span> <span class="n">IN</span><span class="p">),</span>
+        <span class="n">PageSize</span><span class="o">.</span><span class="n">LEDGER</span><span class="p">:</span> <span class="p">(</span><span class="mi">17</span> <span class="o">*</span> <span class="n">IN</span><span class="p">,</span> <span class="mi">11</span> <span class="o">*</span> <span class="n">IN</span><span class="p">),</span>
+    <span class="p">}</span>
+    <span class="n">margin</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">MM</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">designed_by</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;build123d&quot;</span><span class="p">,</span>
+        <span class="n">design_date</span><span class="p">:</span> <span class="n">date</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">page_size</span><span class="p">:</span> <span class="n">PageSize</span> <span class="o">=</span> <span class="n">PageSize</span><span class="o">.</span><span class="n">A4</span><span class="p">,</span>
+        <span class="n">title</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Title&quot;</span><span class="p">,</span>
+        <span class="n">sub_title</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Sub Title&quot;</span><span class="p">,</span>
+        <span class="n">drawing_number</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;B3D-1&quot;</span><span class="p">,</span>
+        <span class="n">sheet_number</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">drawing_scale</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span>
+        <span class="n">nominal_text_size</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">10.0</span><span class="p">,</span>
+        <span class="n">line_width</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span>
+        <span class="n">mode</span><span class="p">:</span> <span class="n">Mode</span> <span class="o">=</span> <span class="n">Mode</span><span class="o">.</span><span class="n">ADD</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="c1"># pylint: disable=too-many-locals</span>
+
+        <span class="k">if</span> <span class="n">design_date</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">design_date</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
+
+        <span class="n">page_dim</span> <span class="o">=</span> <span class="n">TechnicalDrawing</span><span class="o">.</span><span class="n">page_sizes</span><span class="p">[</span><span class="n">page_size</span><span class="p">]</span>
+        <span class="c1"># Frame</span>
+        <span class="n">frame_width</span> <span class="o">=</span> <span class="n">page_dim</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">TechnicalDrawing</span><span class="o">.</span><span class="n">margin</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">nominal_text_size</span>
+        <span class="n">frame_height</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">frame_width</span> <span class="o">/</span> <span class="mi">3</span>
+        <span class="n">frame_wire</span> <span class="o">=</span> <span class="n">Wire</span><span class="o">.</span><span class="n">make_polygon</span><span class="p">(</span>
+            <span class="p">[</span>
+                <span class="p">(</span><span class="o">-</span><span class="n">frame_width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">frame_height</span> <span class="o">/</span> <span class="mi">2</span><span class="p">),</span>
+                <span class="p">(</span><span class="n">frame_width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">frame_height</span> <span class="o">/</span> <span class="mi">2</span><span class="p">),</span>
+                <span class="p">(</span><span class="n">frame_width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="n">frame_height</span> <span class="o">/</span> <span class="mi">2</span><span class="p">),</span>
+                <span class="p">(</span><span class="o">-</span><span class="n">frame_width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="n">frame_height</span> <span class="o">/</span> <span class="mi">2</span><span class="p">),</span>
+            <span class="p">],</span>
+        <span class="p">)</span>
+        <span class="n">frame</span> <span class="o">=</span> <span class="n">trace</span><span class="p">(</span><span class="n">frame_wire</span><span class="p">,</span> <span class="n">line_width</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">Mode</span><span class="o">.</span><span class="n">PRIVATE</span><span class="p">)</span>
+        <span class="c1"># Ticks</span>
+        <span class="n">tick_lines</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">16</span><span class="p">]:</span>  <span class="c1"># corners</span>
+                <span class="k">continue</span>
+            <span class="n">u_value</span> <span class="o">=</span> <span class="n">i</span> <span class="o">/</span> <span class="mi">20</span>
+            <span class="n">pos</span> <span class="o">=</span> <span class="n">frame_wire</span><span class="o">.</span><span class="n">position_at</span><span class="p">(</span><span class="n">u_value</span><span class="p">)</span>
+            <span class="n">tick_lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="n">Edge</span><span class="o">.</span><span class="n">make_line</span><span class="p">(</span>
+                    <span class="n">pos</span><span class="p">,</span>
+                    <span class="n">pos</span>
+                    <span class="o">+</span> <span class="n">Vector</span><span class="p">(</span><span class="n">nominal_text_size</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span>
+                        <span class="n">Axis</span><span class="o">.</span><span class="n">Z</span><span class="p">,</span> <span class="n">frame_wire</span><span class="o">.</span><span class="n">tangent_angle_at</span><span class="p">(</span><span class="n">u_value</span><span class="p">)</span> <span class="o">+</span> <span class="mi">90</span>
+                    <span class="p">),</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+        <span class="n">ticks</span> <span class="o">=</span> <span class="n">trace</span><span class="p">(</span><span class="n">tick_lines</span><span class="p">,</span> <span class="n">line_width</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">Mode</span><span class="o">.</span><span class="n">PRIVATE</span><span class="p">)</span>
+        <span class="c1"># Numbers</span>
+        <span class="n">grid_labels</span> <span class="o">=</span> <span class="n">Sketch</span><span class="p">()</span>
+        <span class="n">y_centers</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="o">-</span><span class="mi">3</span> <span class="o">/</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="mi">3</span> <span class="o">/</span> <span class="mi">8</span><span class="p">}</span>
+        <span class="k">for</span> <span class="n">label</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">x_index</span> <span class="ow">in</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">]:</span>
+                <span class="n">grid_labels</span> <span class="o">+=</span> <span class="n">Pos</span><span class="p">(</span>
+                    <span class="n">x_index</span> <span class="o">*</span> <span class="p">(</span><span class="n">frame_width</span> <span class="o">+</span> <span class="mf">1.5</span> <span class="o">*</span> <span class="n">nominal_text_size</span><span class="p">),</span>
+                    <span class="n">y_centers</span><span class="p">[</span><span class="n">label</span><span class="p">]</span> <span class="o">*</span> <span class="n">frame_height</span><span class="p">,</span>
+                <span class="p">)</span> <span class="o">*</span> <span class="n">Sketch</span><span class="p">(</span>
+                    <span class="n">Compound</span><span class="o">.</span><span class="n">make_text</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">label</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">nominal_text_size</span><span class="p">)</span><span class="o">.</span><span class="n">wrapped</span>
+                <span class="p">)</span>
+
+        <span class="c1"># Letters</span>
+        <span class="n">x_centers</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="mi">0</span><span class="p">:</span> <span class="o">-</span><span class="mi">5</span> <span class="o">/</span> <span class="mi">12</span><span class="p">,</span>
+            <span class="mi">1</span><span class="p">:</span> <span class="o">-</span><span class="mi">3</span> <span class="o">/</span> <span class="mi">12</span><span class="p">,</span>
+            <span class="mi">2</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">12</span><span class="p">,</span>
+            <span class="mi">3</span><span class="p">:</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">12</span><span class="p">,</span>
+            <span class="mi">4</span><span class="p">:</span> <span class="mi">3</span> <span class="o">/</span> <span class="mi">12</span><span class="p">,</span>
+            <span class="mi">5</span><span class="p">:</span> <span class="mi">5</span> <span class="o">/</span> <span class="mi">12</span><span class="p">,</span>
+        <span class="p">}</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">grid_label</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="s2">&quot;F&quot;</span><span class="p">,</span> <span class="s2">&quot;E&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;A&quot;</span><span class="p">]):</span>
+            <span class="k">for</span> <span class="n">y_index</span> <span class="ow">in</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">]:</span>
+                <span class="n">grid_labels</span> <span class="o">+=</span> <span class="n">Pos</span><span class="p">(</span>
+                    <span class="n">x_centers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">frame_width</span><span class="p">,</span>
+                    <span class="n">y_index</span> <span class="o">*</span> <span class="p">(</span><span class="n">frame_height</span> <span class="o">+</span> <span class="mf">1.5</span> <span class="o">*</span> <span class="n">nominal_text_size</span><span class="p">),</span>
+                <span class="p">)</span> <span class="o">*</span> <span class="n">Sketch</span><span class="p">(</span><span class="n">Compound</span><span class="o">.</span><span class="n">make_text</span><span class="p">(</span><span class="n">grid_label</span><span class="p">,</span> <span class="n">nominal_text_size</span><span class="p">)</span><span class="o">.</span><span class="n">wrapped</span><span class="p">)</span>
+
+        <span class="c1"># Text Box Frame</span>
+        <span class="n">bf_pnt1</span> <span class="o">=</span> <span class="n">frame_wire</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="n">Axis</span><span class="o">.</span><span class="n">Y</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">@</span> <span class="mf">0.5</span>
+        <span class="n">bf_pnt2</span> <span class="o">=</span> <span class="n">frame_wire</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="n">Axis</span><span class="o">.</span><span class="n">X</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">@</span> <span class="mf">0.75</span>
+        <span class="n">box_frame_curve</span> <span class="o">=</span> <span class="n">Wire</span><span class="o">.</span><span class="n">make_polygon</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">bf_pnt1</span><span class="p">,</span> <span class="p">(</span><span class="n">bf_pnt1</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="n">bf_pnt2</span><span class="o">.</span><span class="n">Y</span><span class="p">),</span> <span class="n">bf_pnt2</span><span class="p">],</span> <span class="n">close</span><span class="o">=</span><span class="kc">False</span>
+        <span class="p">)</span>
+        <span class="n">bf_pnt3</span> <span class="o">=</span> <span class="n">box_frame_curve</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="n">Axis</span><span class="o">.</span><span class="n">X</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">@</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
+        <span class="n">bf_pnt4</span> <span class="o">=</span> <span class="n">box_frame_curve</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="n">Axis</span><span class="o">.</span><span class="n">X</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">@</span> <span class="p">(</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
+        <span class="n">box_frame_curve</span> <span class="o">=</span> <span class="n">Curve</span><span class="p">()</span> <span class="o">+</span> <span class="p">[</span>
+            <span class="n">box_frame_curve</span><span class="p">,</span>
+            <span class="n">Edge</span><span class="o">.</span><span class="n">make_line</span><span class="p">(</span><span class="n">bf_pnt3</span><span class="p">,</span> <span class="p">(</span><span class="n">bf_pnt2</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="n">bf_pnt3</span><span class="o">.</span><span class="n">Y</span><span class="p">)),</span>
+        <span class="p">]</span>
+        <span class="n">box_frame_curve</span> <span class="o">+=</span> <span class="n">Edge</span><span class="o">.</span><span class="n">make_line</span><span class="p">(</span><span class="n">bf_pnt4</span><span class="p">,</span> <span class="p">(</span><span class="n">bf_pnt2</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="n">bf_pnt4</span><span class="o">.</span><span class="n">Y</span><span class="p">))</span>
+        <span class="n">bf_pnt5</span> <span class="o">=</span> <span class="n">box_frame_curve</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="n">Axis</span><span class="o">.</span><span class="n">Y</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">@</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
+        <span class="n">bf_pnt6</span> <span class="o">=</span> <span class="n">box_frame_curve</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="n">Axis</span><span class="o">.</span><span class="n">Y</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">@</span> <span class="p">(</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
+        <span class="n">box_frame_curve</span> <span class="o">+=</span> <span class="n">Edge</span><span class="o">.</span><span class="n">make_line</span><span class="p">(</span><span class="n">bf_pnt5</span><span class="p">,</span> <span class="p">(</span><span class="n">bf_pnt5</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="n">bf_pnt1</span><span class="o">.</span><span class="n">Y</span><span class="p">))</span>
+        <span class="n">start</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">(</span><span class="n">bf_pnt6</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="n">bf_pnt1</span><span class="o">.</span><span class="n">Y</span><span class="p">)</span>
+        <span class="n">box_frame_curve</span> <span class="o">+=</span> <span class="n">Edge</span><span class="o">.</span><span class="n">make_line</span><span class="p">(</span>
+            <span class="n">start</span><span class="p">,</span> <span class="n">start</span> <span class="o">+</span> <span class="n">Vector</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="n">bf_pnt2</span><span class="o">.</span><span class="n">Y</span> <span class="o">-</span> <span class="n">bf_pnt1</span><span class="o">.</span><span class="n">Y</span><span class="p">)</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">box_frame</span> <span class="o">=</span> <span class="n">trace</span><span class="p">(</span><span class="n">box_frame_curve</span><span class="p">,</span> <span class="n">line_width</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">Mode</span><span class="o">.</span><span class="n">PRIVATE</span><span class="p">)</span>
+        <span class="c1"># Text</span>
+        <span class="n">labels</span> <span class="o">=</span> <span class="n">Sketch</span><span class="p">()</span>
+        <span class="n">t_base_line1</span> <span class="o">=</span> <span class="n">Edge</span><span class="o">.</span><span class="n">make_line</span><span class="p">(</span><span class="n">bf_pnt1</span><span class="p">,</span> <span class="p">(</span><span class="n">bf_pnt1</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="n">bf_pnt2</span><span class="o">.</span><span class="n">Y</span><span class="p">))</span><span class="o">.</span><span class="n">moved</span><span class="p">(</span>
+            <span class="n">Location</span><span class="p">((</span><span class="n">nominal_text_size</span> <span class="o">/</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+        <span class="p">)</span>
+        <span class="n">t_base_line2</span> <span class="o">=</span> <span class="n">t_base_line1</span><span class="o">.</span><span class="n">moved</span><span class="p">(</span><span class="n">Location</span><span class="p">((</span><span class="n">frame_width</span> <span class="o">/</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">)))</span>
+        <span class="n">t_base_line3</span> <span class="o">=</span> <span class="n">t_base_line1</span><span class="o">.</span><span class="n">moved</span><span class="p">(</span><span class="n">Location</span><span class="p">((</span><span class="mi">2</span> <span class="o">*</span> <span class="n">frame_width</span> <span class="o">/</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">)))</span>
+        <span class="n">labels</span> <span class="o">+=</span> <span class="n">Pos</span><span class="p">(</span><span class="n">t_base_line1</span> <span class="o">@</span> <span class="p">(</span><span class="mi">11</span> <span class="o">/</span> <span class="mi">12</span><span class="p">))</span> <span class="o">*</span> <span class="n">Sketch</span><span class="p">(</span>
+            <span class="n">Compound</span><span class="o">.</span><span class="n">make_text</span><span class="p">(</span>
+                <span class="s2">&quot;DESIGNED BY:&quot;</span><span class="p">,</span> <span class="n">nominal_text_size</span> <span class="o">/</span> <span class="mi">3</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="p">(</span><span class="n">Align</span><span class="o">.</span><span class="n">MIN</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">)</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">wrapped</span>
+        <span class="p">)</span>
+        <span class="n">labels</span> <span class="o">+=</span> <span class="n">Pos</span><span class="p">(</span><span class="n">t_base_line1</span> <span class="o">@</span> <span class="p">(</span><span class="mi">9</span> <span class="o">/</span> <span class="mi">12</span><span class="p">))</span> <span class="o">*</span> <span class="n">Sketch</span><span class="p">(</span>
+            <span class="n">Compound</span><span class="o">.</span><span class="n">make_text</span><span class="p">(</span>
+                <span class="n">designed_by</span><span class="p">,</span> <span class="n">nominal_text_size</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="p">(</span><span class="n">Align</span><span class="o">.</span><span class="n">MIN</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">)</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">wrapped</span>
+        <span class="p">)</span>
+        <span class="n">labels</span> <span class="o">+=</span> <span class="n">Pos</span><span class="p">(</span><span class="n">t_base_line1</span> <span class="o">@</span> <span class="p">(</span><span class="mi">7</span> <span class="o">/</span> <span class="mi">12</span><span class="p">))</span> <span class="o">*</span> <span class="n">Sketch</span><span class="p">(</span>
+            <span class="n">Compound</span><span class="o">.</span><span class="n">make_text</span><span class="p">(</span>
+                <span class="s2">&quot;DATE:&quot;</span><span class="p">,</span> <span class="n">nominal_text_size</span> <span class="o">/</span> <span class="mi">3</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="p">(</span><span class="n">Align</span><span class="o">.</span><span class="n">MIN</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">)</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">wrapped</span>
+        <span class="p">)</span>
+        <span class="n">labels</span> <span class="o">+=</span> <span class="n">Pos</span><span class="p">(</span><span class="n">t_base_line1</span> <span class="o">@</span> <span class="p">(</span><span class="mi">5</span> <span class="o">/</span> <span class="mi">12</span><span class="p">))</span> <span class="o">*</span> <span class="n">Sketch</span><span class="p">(</span>
+            <span class="n">Compound</span><span class="o">.</span><span class="n">make_text</span><span class="p">(</span>
+                <span class="n">design_date</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(),</span>
+                <span class="n">nominal_text_size</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span>
+                <span class="n">align</span><span class="o">=</span><span class="p">(</span><span class="n">Align</span><span class="o">.</span><span class="n">MIN</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">),</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">wrapped</span>
+        <span class="p">)</span>
+        <span class="n">labels</span> <span class="o">+=</span> <span class="n">Pos</span><span class="p">(</span><span class="n">t_base_line1</span> <span class="o">@</span> <span class="p">(</span><span class="mi">3</span> <span class="o">/</span> <span class="mi">12</span><span class="p">))</span> <span class="o">*</span> <span class="n">Sketch</span><span class="p">(</span>
+            <span class="n">Compound</span><span class="o">.</span><span class="n">make_text</span><span class="p">(</span>
+                <span class="s2">&quot;SCALE:&quot;</span><span class="p">,</span> <span class="n">nominal_text_size</span> <span class="o">/</span> <span class="mi">3</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="p">(</span><span class="n">Align</span><span class="o">.</span><span class="n">MIN</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">)</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">wrapped</span>
+        <span class="p">)</span>
+        <span class="n">labels</span> <span class="o">+=</span> <span class="n">Pos</span><span class="p">(</span><span class="n">t_base_line1</span> <span class="o">@</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">12</span><span class="p">))</span> <span class="o">*</span> <span class="n">Sketch</span><span class="p">(</span>
+            <span class="n">Compound</span><span class="o">.</span><span class="n">make_text</span><span class="p">(</span>
+                <span class="s2">&quot;1:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">drawing_scale</span><span class="p">),</span>
+                <span class="n">nominal_text_size</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span>
+                <span class="n">align</span><span class="o">=</span><span class="p">(</span><span class="n">Align</span><span class="o">.</span><span class="n">MIN</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">),</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">wrapped</span>
+        <span class="p">)</span>
+        <span class="n">labels</span> <span class="o">+=</span> <span class="n">Pos</span><span class="p">(</span><span class="n">t_base_line2</span> <span class="o">@</span> <span class="p">(</span><span class="mi">10</span> <span class="o">/</span> <span class="mi">12</span><span class="p">))</span> <span class="o">*</span> <span class="n">Sketch</span><span class="p">(</span>
+            <span class="n">Compound</span><span class="o">.</span><span class="n">make_text</span><span class="p">(</span>
+                <span class="n">title</span><span class="p">,</span> <span class="n">nominal_text_size</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="p">(</span><span class="n">Align</span><span class="o">.</span><span class="n">MIN</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">)</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">wrapped</span>
+        <span class="p">)</span>
+        <span class="n">labels</span> <span class="o">+=</span> <span class="n">Pos</span><span class="p">(</span><span class="n">t_base_line2</span> <span class="o">@</span> <span class="p">(</span><span class="mi">6</span> <span class="o">/</span> <span class="mi">12</span><span class="p">))</span> <span class="o">*</span> <span class="n">Sketch</span><span class="p">(</span>
+            <span class="n">Compound</span><span class="o">.</span><span class="n">make_text</span><span class="p">(</span>
+                <span class="n">sub_title</span><span class="p">,</span> <span class="n">nominal_text_size</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="p">(</span><span class="n">Align</span><span class="o">.</span><span class="n">MIN</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">)</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">wrapped</span>
+        <span class="p">)</span>
+        <span class="n">labels</span> <span class="o">+=</span> <span class="n">Pos</span><span class="p">(</span><span class="n">t_base_line2</span> <span class="o">@</span> <span class="p">(</span><span class="mi">3</span> <span class="o">/</span> <span class="mi">12</span><span class="p">))</span> <span class="o">*</span> <span class="n">Sketch</span><span class="p">(</span>
+            <span class="n">Compound</span><span class="o">.</span><span class="n">make_text</span><span class="p">(</span>
+                <span class="s2">&quot;DRAWING NUMBER:&quot;</span><span class="p">,</span>
+                <span class="n">nominal_text_size</span> <span class="o">/</span> <span class="mi">3</span><span class="p">,</span>
+                <span class="n">align</span><span class="o">=</span><span class="p">(</span><span class="n">Align</span><span class="o">.</span><span class="n">MIN</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">),</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">wrapped</span>
+        <span class="p">)</span>
+        <span class="n">labels</span> <span class="o">+=</span> <span class="n">Pos</span><span class="p">(</span><span class="n">t_base_line2</span> <span class="o">@</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">12</span><span class="p">))</span> <span class="o">*</span> <span class="n">Sketch</span><span class="p">(</span>
+            <span class="n">Compound</span><span class="o">.</span><span class="n">make_text</span><span class="p">(</span>
+                <span class="n">drawing_number</span><span class="p">,</span> <span class="n">nominal_text_size</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="p">(</span><span class="n">Align</span><span class="o">.</span><span class="n">MIN</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">)</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">wrapped</span>
+        <span class="p">)</span>
+        <span class="n">labels</span> <span class="o">+=</span> <span class="n">Pos</span><span class="p">(</span><span class="n">t_base_line3</span> <span class="o">@</span> <span class="p">(</span><span class="mi">3</span> <span class="o">/</span> <span class="mi">12</span><span class="p">))</span> <span class="o">*</span> <span class="n">Sketch</span><span class="p">(</span>
+            <span class="n">Compound</span><span class="o">.</span><span class="n">make_text</span><span class="p">(</span>
+                <span class="s2">&quot;SHEET:&quot;</span><span class="p">,</span> <span class="n">nominal_text_size</span> <span class="o">/</span> <span class="mi">3</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="p">(</span><span class="n">Align</span><span class="o">.</span><span class="n">MIN</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">)</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">wrapped</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">sheet_number</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">labels</span> <span class="o">+=</span> <span class="n">Pos</span><span class="p">(</span><span class="n">t_base_line3</span> <span class="o">@</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">12</span><span class="p">))</span> <span class="o">*</span> <span class="n">Sketch</span><span class="p">(</span>
+                <span class="n">Compound</span><span class="o">.</span><span class="n">make_text</span><span class="p">(</span>
+                    <span class="nb">str</span><span class="p">(</span><span class="n">sheet_number</span><span class="p">),</span>
+                    <span class="n">nominal_text_size</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span>
+                    <span class="n">align</span><span class="o">=</span><span class="p">(</span><span class="n">Align</span><span class="o">.</span><span class="n">MIN</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">),</span>
+                <span class="p">)</span><span class="o">.</span><span class="n">wrapped</span>
+            <span class="p">)</span>
+
+        <span class="n">technical_drawing</span> <span class="o">=</span> <span class="n">Compound</span><span class="p">(</span>
+            <span class="n">children</span><span class="o">=</span><span class="p">[</span><span class="n">frame</span><span class="p">,</span> <span class="n">ticks</span><span class="p">,</span> <span class="n">grid_labels</span><span class="p">,</span> <span class="n">box_frame</span><span class="p">,</span> <span class="n">labels</span><span class="p">]</span>
+        <span class="p">)</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">obj</span><span class="o">=</span><span class="n">technical_drawing</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">)</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Gumyr.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

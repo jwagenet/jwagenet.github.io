@@ -1,0 +1,1240 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>objects_curve &mdash; build123d 0.9.2.dev40+gb1f0eed documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster.custom.css?v=7bc2f056" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster.bundle.min.css?v=37217874" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-shadow.min.css?v=6227e517" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-punk.min.css?v=94669e23" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-noir.min.css?v=21a39f42" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-light.min.css?v=a18b2449" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-borderless.min.css?v=dbff53e4" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/micromodal.css?v=d7bf34ee" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/sphinx_rtd_theme.css?v=3234e928" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c97902b4"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+      <script src="../_static/js/hoverxref.js?v=6ff7264e"></script>
+      <script src="../_static/js/tooltipster.bundle.min.js?v=18bf091b"></script>
+      <script src="../_static/js/micromodal.min.js?v=04d6302d"></script>
+      <script src="../_static/design-tabs.js?v=f930bc37"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            build123d
+              <img src="../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../key_concepts.html">Key Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../key_concepts_builder.html">Key Concepts (builder mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../key_concepts_algebra.html">Key Concepts (algebra mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../moving_objects.html">Moving Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../OpenSCAD.html">Transitioning from OpenSCAD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introductory_examples.html">Introductory Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../selectors_operators.html">Selectors and Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operations.html">Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../builders.html">Builders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../joints.html">Joints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assemblies.html">Assemblies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tips.html">Tips, Best Practices and FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../import_export.html">Import/Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cheat_sheet.html">Cheat Sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../external.html">External Tools and Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../builder_api_reference.html">Builder Common API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../direct_api_reference.html">Direct API Reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">build123d</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Module code</a></li>
+      <li class="breadcrumb-item active">objects_curve</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for objects_curve</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Curve Objects</span>
+
+<span class="sd">name: objects_curve.py</span>
+<span class="sd">by:   Gumyr</span>
+<span class="sd">date: March 22nd 2023</span>
+
+<span class="sd">desc:</span>
+<span class="sd">    This python module contains objects (classes) that create 1D Curves.</span>
+
+<span class="sd">license:</span>
+
+<span class="sd">    Copyright 2023 Gumyr</span>
+
+<span class="sd">    Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span>
+<span class="sd">    you may not use this file except in compliance with the License.</span>
+<span class="sd">    You may obtain a copy of the License at</span>
+
+<span class="sd">        http://www.apache.org/licenses/LICENSE-2.0</span>
+
+<span class="sd">    Unless required by applicable law or agreed to in writing, software</span>
+<span class="sd">    distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span>
+<span class="sd">    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
+<span class="sd">    See the License for the specific language governing permissions and</span>
+<span class="sd">    limitations under the License.</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">copy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">copy_module</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">copysign</span><span class="p">,</span> <span class="n">cos</span><span class="p">,</span> <span class="n">radians</span><span class="p">,</span> <span class="n">sin</span><span class="p">,</span> <span class="n">sqrt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.optimize</span><span class="w"> </span><span class="kn">import</span> <span class="n">minimize</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">Iterable</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">build123d.build_common</span><span class="w"> </span><span class="kn">import</span> <span class="n">WorkplaneList</span><span class="p">,</span> <span class="n">flatten_sequence</span><span class="p">,</span> <span class="n">validate_inputs</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">build123d.build_enums</span><span class="w"> </span><span class="kn">import</span> <span class="n">AngularDirection</span><span class="p">,</span> <span class="n">GeomType</span><span class="p">,</span> <span class="n">Keep</span><span class="p">,</span> <span class="n">LengthMode</span><span class="p">,</span> <span class="n">Mode</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">build123d.build_line</span><span class="w"> </span><span class="kn">import</span> <span class="n">BuildLine</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">build123d.geometry</span><span class="w"> </span><span class="kn">import</span> <span class="n">Axis</span><span class="p">,</span> <span class="n">Plane</span><span class="p">,</span> <span class="n">Vector</span><span class="p">,</span> <span class="n">VectorLike</span><span class="p">,</span> <span class="n">TOLERANCE</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">build123d.topology</span><span class="w"> </span><span class="kn">import</span> <span class="n">Edge</span><span class="p">,</span> <span class="n">Face</span><span class="p">,</span> <span class="n">Wire</span><span class="p">,</span> <span class="n">Curve</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_add_curve_to_context</span><span class="p">(</span><span class="n">curve</span><span class="p">,</span> <span class="n">mode</span><span class="p">:</span> <span class="n">Mode</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Helper function to add a curve to the context.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        curve (Wire | Edge): curve to add to the context (either a Wire or an Edge)</span>
+<span class="sd">        mode (Mode): combination mode</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">context</span><span class="p">:</span> <span class="n">BuildLine</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="n">BuildLine</span><span class="o">.</span><span class="n">_get_context</span><span class="p">(</span><span class="n">log</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">context</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">BuildLine</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">curve</span><span class="p">,</span> <span class="n">Wire</span><span class="p">):</span>
+            <span class="n">context</span><span class="o">.</span><span class="n">_add_to_context</span><span class="p">(</span><span class="o">*</span><span class="n">curve</span><span class="o">.</span><span class="n">edges</span><span class="p">(),</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">curve</span><span class="p">,</span> <span class="n">Edge</span><span class="p">):</span>
+            <span class="n">context</span><span class="o">.</span><span class="n">_add_to_context</span><span class="p">(</span><span class="n">curve</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="BaseLineObject">
+<a class="viewcode-back" href="../objects.html#objects_curve.BaseLineObject">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">BaseLineObject</span><span class="p">(</span><span class="n">Wire</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;BaseLineObject specialized for Wire.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        curve (Wire): wire to create</span>
+<span class="sd">        mode (Mode, optional): combination mode. Defaults to Mode.ADD</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_applies_to</span> <span class="o">=</span> <span class="p">[</span><span class="n">BuildLine</span><span class="o">.</span><span class="n">_tag</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">curve</span><span class="p">:</span> <span class="n">Wire</span><span class="p">,</span> <span class="n">mode</span><span class="p">:</span> <span class="n">Mode</span> <span class="o">=</span> <span class="n">Mode</span><span class="o">.</span><span class="n">ADD</span><span class="p">):</span>
+        <span class="c1"># Use the helper function to handle adding the curve to the context</span>
+        <span class="n">_add_curve_to_context</span><span class="p">(</span><span class="n">curve</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">curve</span><span class="o">.</span><span class="n">wrapped</span><span class="p">)</span></div>
+
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">BaseEdgeObject</span><span class="p">(</span><span class="n">Edge</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;BaseEdgeObject specialized for Edge.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        curve (Edge): edge to create</span>
+<span class="sd">        mode (Mode, optional): combination mode. Defaults to Mode.ADD</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_applies_to</span> <span class="o">=</span> <span class="p">[</span><span class="n">BuildLine</span><span class="o">.</span><span class="n">_tag</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">curve</span><span class="p">:</span> <span class="n">Edge</span><span class="p">,</span> <span class="n">mode</span><span class="p">:</span> <span class="n">Mode</span> <span class="o">=</span> <span class="n">Mode</span><span class="o">.</span><span class="n">ADD</span><span class="p">):</span>
+        <span class="c1"># Use the helper function to handle adding the curve to the context</span>
+        <span class="n">_add_curve_to_context</span><span class="p">(</span><span class="n">curve</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">curve</span><span class="o">.</span><span class="n">wrapped</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="Bezier">
+<a class="viewcode-back" href="../objects.html#objects_curve.Bezier">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Bezier</span><span class="p">(</span><span class="n">BaseEdgeObject</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Line Object: Bezier Curve</span>
+
+<span class="sd">    Create a non-rational bezier curve defined by a sequence of points and include optional</span>
+<span class="sd">    weights to create a rational bezier curve. The number of weights must match the number</span>
+<span class="sd">    of control points.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        cntl_pnts (sequence[VectorLike]): points defining the curve</span>
+<span class="sd">        weights (list[float], optional): control point weights. Defaults to None</span>
+<span class="sd">        mode (Mode, optional): combination mode. Defaults to Mode.ADD</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_applies_to</span> <span class="o">=</span> <span class="p">[</span><span class="n">BuildLine</span><span class="o">.</span><span class="n">_tag</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="o">*</span><span class="n">cntl_pnts</span><span class="p">:</span> <span class="n">VectorLike</span><span class="p">,</span>
+        <span class="n">weights</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">mode</span><span class="p">:</span> <span class="n">Mode</span> <span class="o">=</span> <span class="n">Mode</span><span class="o">.</span><span class="n">ADD</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="n">context</span><span class="p">:</span> <span class="n">BuildLine</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="n">BuildLine</span><span class="o">.</span><span class="n">_get_context</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">validate_inputs</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+
+        <span class="n">cntl_pnt_list</span> <span class="o">=</span> <span class="n">flatten_sequence</span><span class="p">(</span><span class="o">*</span><span class="n">cntl_pnts</span><span class="p">)</span>
+        <span class="n">polls</span> <span class="o">=</span> <span class="n">WorkplaneList</span><span class="o">.</span><span class="n">localize</span><span class="p">(</span><span class="o">*</span><span class="n">cntl_pnt_list</span><span class="p">)</span>
+        <span class="n">curve</span> <span class="o">=</span> <span class="n">Edge</span><span class="o">.</span><span class="n">make_bezier</span><span class="p">(</span><span class="o">*</span><span class="n">polls</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">weights</span><span class="p">)</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">curve</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="CenterArc">
+<a class="viewcode-back" href="../objects.html#objects_curve.CenterArc">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">CenterArc</span><span class="p">(</span><span class="n">BaseEdgeObject</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Line Object: Center Arc</span>
+
+<span class="sd">    Create a circular arc defined by a center point and radius.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        center (VectorLike): center point of arc</span>
+<span class="sd">        radius (float): arc radius</span>
+<span class="sd">        start_angle (float): arc starting angle from x-axis</span>
+<span class="sd">        arc_size (float): angular size of arc</span>
+<span class="sd">        mode (Mode, optional): combination mode. Defaults to Mode.ADD</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_applies_to</span> <span class="o">=</span> <span class="p">[</span><span class="n">BuildLine</span><span class="o">.</span><span class="n">_tag</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">center</span><span class="p">:</span> <span class="n">VectorLike</span><span class="p">,</span>
+        <span class="n">radius</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">start_angle</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">arc_size</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">mode</span><span class="p">:</span> <span class="n">Mode</span> <span class="o">=</span> <span class="n">Mode</span><span class="o">.</span><span class="n">ADD</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="n">context</span><span class="p">:</span> <span class="n">BuildLine</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="n">BuildLine</span><span class="o">.</span><span class="n">_get_context</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">validate_inputs</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+
+        <span class="n">center_point</span> <span class="o">=</span> <span class="n">WorkplaneList</span><span class="o">.</span><span class="n">localize</span><span class="p">(</span><span class="n">center</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">context</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">circle_workplane</span> <span class="o">=</span> <span class="n">Plane</span><span class="o">.</span><span class="n">XY</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">circle_workplane</span> <span class="o">=</span> <span class="n">copy_module</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span>
+                <span class="n">WorkplaneList</span><span class="o">.</span><span class="n">_get_context</span><span class="p">()</span><span class="o">.</span><span class="n">workplanes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="p">)</span>
+        <span class="n">circle_workplane</span><span class="o">.</span><span class="n">origin</span> <span class="o">=</span> <span class="n">center_point</span>
+        <span class="n">arc_direction</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">AngularDirection</span><span class="o">.</span><span class="n">COUNTER_CLOCKWISE</span>
+            <span class="k">if</span> <span class="n">arc_size</span> <span class="o">&gt;</span> <span class="mi">0</span>
+            <span class="k">else</span> <span class="n">AngularDirection</span><span class="o">.</span><span class="n">CLOCKWISE</span>
+        <span class="p">)</span>
+        <span class="n">arc_size</span> <span class="o">=</span> <span class="p">(</span><span class="n">arc_size</span> <span class="o">+</span> <span class="mf">360.0</span><span class="p">)</span> <span class="o">%</span> <span class="mf">360.0</span>
+        <span class="n">end_angle</span> <span class="o">=</span> <span class="n">start_angle</span> <span class="o">+</span> <span class="n">arc_size</span>
+        <span class="n">start_angle</span> <span class="o">=</span> <span class="n">end_angle</span> <span class="k">if</span> <span class="n">arc_size</span> <span class="o">==</span> <span class="mf">360.0</span> <span class="k">else</span> <span class="n">start_angle</span>
+        <span class="n">arc</span> <span class="o">=</span> <span class="n">Edge</span><span class="o">.</span><span class="n">make_circle</span><span class="p">(</span>
+            <span class="n">radius</span><span class="p">,</span>
+            <span class="n">circle_workplane</span><span class="p">,</span>
+            <span class="n">start_angle</span><span class="o">=</span><span class="n">start_angle</span><span class="p">,</span>
+            <span class="n">end_angle</span><span class="o">=</span><span class="n">end_angle</span><span class="p">,</span>
+            <span class="n">angular_direction</span><span class="o">=</span><span class="n">arc_direction</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">arc</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="DoubleTangentArc">
+<a class="viewcode-back" href="../objects.html#objects_curve.DoubleTangentArc">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">DoubleTangentArc</span><span class="p">(</span><span class="n">BaseEdgeObject</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Line Object: Double Tangent Arc</span>
+
+<span class="sd">    Create a circular arc defined by a point/tangent pair and another line find a tangent to.</span>
+
+<span class="sd">    The arc specified with TOP or BOTTOM depends on the geometry and isn&#39;t predictable.</span>
+
+<span class="sd">    Contains a solver.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        pnt (VectorLike): start point</span>
+<span class="sd">        tangent (VectorLike): tangent at start point</span>
+<span class="sd">        other (Curve | Edge | Wire): line object to tangent</span>
+<span class="sd">        keep (Keep, optional): specify which arc if more than one, TOP or BOTTOM.</span>
+<span class="sd">            Defaults to Keep.TOP</span>
+<span class="sd">        mode (Mode, optional): combination mode. Defaults to Mode.ADD</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        RunTimeError: no double tangent arcs found</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_applies_to</span> <span class="o">=</span> <span class="p">[</span><span class="n">BuildLine</span><span class="o">.</span><span class="n">_tag</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">pnt</span><span class="p">:</span> <span class="n">VectorLike</span><span class="p">,</span>
+        <span class="n">tangent</span><span class="p">:</span> <span class="n">VectorLike</span><span class="p">,</span>
+        <span class="n">other</span><span class="p">:</span> <span class="n">Curve</span> <span class="o">|</span> <span class="n">Edge</span> <span class="o">|</span> <span class="n">Wire</span><span class="p">,</span>
+        <span class="n">keep</span><span class="p">:</span> <span class="n">Keep</span> <span class="o">=</span> <span class="n">Keep</span><span class="o">.</span><span class="n">TOP</span><span class="p">,</span>
+        <span class="n">mode</span><span class="p">:</span> <span class="n">Mode</span> <span class="o">=</span> <span class="n">Mode</span><span class="o">.</span><span class="n">ADD</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="n">context</span><span class="p">:</span> <span class="n">BuildLine</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="n">BuildLine</span><span class="o">.</span><span class="n">_get_context</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">validate_inputs</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">keep</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="n">Keep</span><span class="o">.</span><span class="n">TOP</span><span class="p">,</span> <span class="n">Keep</span><span class="o">.</span><span class="n">BOTTOM</span><span class="p">]:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Only the TOP or BOTTOM options are supported not </span><span class="si">{</span><span class="n">keep</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="n">arc_pt</span> <span class="o">=</span> <span class="n">WorkplaneList</span><span class="o">.</span><span class="n">localize</span><span class="p">(</span><span class="n">pnt</span><span class="p">)</span>
+        <span class="n">arc_tangent</span> <span class="o">=</span> <span class="n">WorkplaneList</span><span class="o">.</span><span class="n">localize</span><span class="p">(</span><span class="n">tangent</span><span class="p">)</span><span class="o">.</span><span class="n">normalized</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">WorkplaneList</span><span class="o">.</span><span class="n">_get_context</span><span class="p">()</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">workplane</span> <span class="o">=</span> <span class="n">WorkplaneList</span><span class="o">.</span><span class="n">_get_context</span><span class="p">()</span><span class="o">.</span><span class="n">workplanes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">workplane</span> <span class="o">=</span> <span class="n">Edge</span><span class="o">.</span><span class="n">make_line</span><span class="p">(</span><span class="n">arc_pt</span><span class="p">,</span> <span class="n">arc_pt</span> <span class="o">+</span> <span class="n">arc_tangent</span><span class="p">)</span><span class="o">.</span><span class="n">common_plane</span><span class="p">(</span>
+                <span class="o">*</span><span class="n">other</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span>
+            <span class="p">)</span>
+            <span class="k">if</span> <span class="n">workplane</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;DoubleTangentArc only works on a single plane&quot;</span><span class="p">)</span>
+            <span class="n">workplane</span> <span class="o">=</span> <span class="o">-</span><span class="n">workplane</span>  <span class="c1"># Flip to help with TOP/BOTTOM</span>
+        <span class="n">rotation_axis</span> <span class="o">=</span> <span class="n">Axis</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">workplane</span><span class="o">.</span><span class="n">z_dir</span><span class="p">)</span>
+        <span class="c1"># Protect against massive circles that are effectively straight lines</span>
+        <span class="n">max_size</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">other</span><span class="o">.</span><span class="n">bounding_box</span><span class="p">()</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">arc_pt</span><span class="p">)</span><span class="o">.</span><span class="n">diagonal</span>
+
+        <span class="c1"># Function to be minimized - note radius is a numpy array</span>
+        <span class="k">def</span><span class="w"> </span><span class="nf">func</span><span class="p">(</span><span class="n">radius</span><span class="p">,</span> <span class="n">perpendicular_bisector</span><span class="p">):</span>
+            <span class="n">center</span> <span class="o">=</span> <span class="n">arc_pt</span> <span class="o">+</span> <span class="n">perpendicular_bisector</span> <span class="o">*</span> <span class="n">radius</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">separation</span> <span class="o">=</span> <span class="n">other</span><span class="o">.</span><span class="n">distance_to</span><span class="p">(</span><span class="n">center</span><span class="p">)</span>
+            <span class="k">return</span> <span class="nb">abs</span><span class="p">(</span><span class="n">separation</span> <span class="o">-</span> <span class="n">radius</span><span class="p">)</span>
+
+        <span class="c1"># Minimize the function using bounds and the tolerance value</span>
+        <span class="n">arc_centers</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">angle</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">90</span><span class="p">,</span> <span class="o">-</span><span class="mi">90</span><span class="p">]:</span>
+            <span class="n">perpendicular_bisector</span> <span class="o">=</span> <span class="n">arc_tangent</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">rotation_axis</span><span class="p">,</span> <span class="n">angle</span><span class="p">)</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span>
+                <span class="n">func</span><span class="p">,</span>
+                <span class="n">x0</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
+                <span class="n">args</span><span class="o">=</span><span class="n">perpendicular_bisector</span><span class="p">,</span>
+                <span class="n">method</span><span class="o">=</span><span class="s2">&quot;Nelder-Mead&quot;</span><span class="p">,</span>
+                <span class="n">bounds</span><span class="o">=</span><span class="p">[(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">max_size</span><span class="p">)],</span>
+                <span class="n">tol</span><span class="o">=</span><span class="n">TOLERANCE</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="n">arc_radius</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">arc_center</span> <span class="o">=</span> <span class="n">arc_pt</span> <span class="o">+</span> <span class="n">perpendicular_bisector</span> <span class="o">*</span> <span class="n">arc_radius</span>
+
+            <span class="c1"># Check for matching tangents</span>
+            <span class="n">circle</span> <span class="o">=</span> <span class="n">Edge</span><span class="o">.</span><span class="n">make_circle</span><span class="p">(</span>
+                <span class="n">arc_radius</span><span class="p">,</span> <span class="n">Plane</span><span class="p">(</span><span class="n">arc_center</span><span class="p">,</span> <span class="n">z_dir</span><span class="o">=</span><span class="n">rotation_axis</span><span class="o">.</span><span class="n">direction</span><span class="p">)</span>
+            <span class="p">)</span>
+            <span class="n">dist</span><span class="p">,</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span> <span class="o">=</span> <span class="n">other</span><span class="o">.</span><span class="n">distance_to_with_closest_points</span><span class="p">(</span><span class="n">circle</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">dist</span> <span class="o">&gt;</span> <span class="n">TOLERANCE</span><span class="p">:</span>  <span class="c1"># If they aren&#39;t touching</span>
+                <span class="k">continue</span>
+            <span class="n">other_axis</span> <span class="o">=</span> <span class="n">Axis</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">tangent_at</span><span class="p">(</span><span class="n">p1</span><span class="p">))</span>
+            <span class="n">circle_axis</span> <span class="o">=</span> <span class="n">Axis</span><span class="p">(</span><span class="n">p2</span><span class="p">,</span> <span class="n">circle</span><span class="o">.</span><span class="n">tangent_at</span><span class="p">(</span><span class="n">p2</span><span class="p">))</span>
+            <span class="k">if</span> <span class="n">other_axis</span><span class="o">.</span><span class="n">is_parallel</span><span class="p">(</span><span class="n">circle_axis</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">):</span>
+                <span class="n">arc_centers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">arc_center</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">arc_centers</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;No double tangent arcs found&quot;</span><span class="p">)</span>
+
+        <span class="c1"># If there are multiple solutions, select the desired one</span>
+        <span class="k">if</span> <span class="n">keep</span> <span class="o">==</span> <span class="n">Keep</span><span class="o">.</span><span class="n">TOP</span><span class="p">:</span>
+            <span class="n">arc_centers</span> <span class="o">=</span> <span class="n">arc_centers</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="n">keep</span> <span class="o">==</span> <span class="n">Keep</span><span class="o">.</span><span class="n">BOTTOM</span><span class="p">:</span>
+            <span class="n">arc_centers</span> <span class="o">=</span> <span class="n">arc_centers</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">:]</span>
+
+        <span class="k">with</span> <span class="n">BuildLine</span><span class="p">()</span> <span class="k">as</span> <span class="n">double</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">center</span> <span class="ow">in</span> <span class="n">arc_centers</span><span class="p">:</span>
+                <span class="n">_</span><span class="p">,</span> <span class="n">p1</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">other</span><span class="o">.</span><span class="n">distance_to_with_closest_points</span><span class="p">(</span><span class="n">center</span><span class="p">)</span>
+                <span class="n">TangentArc</span><span class="p">(</span><span class="n">arc_pt</span><span class="p">,</span> <span class="n">p1</span><span class="p">,</span> <span class="n">tangent</span><span class="o">=</span><span class="n">arc_tangent</span><span class="p">)</span>
+
+        <span class="n">double_edge</span> <span class="o">=</span> <span class="n">double</span><span class="o">.</span><span class="n">edge</span><span class="p">()</span>
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">double_edge</span><span class="p">,</span> <span class="n">Edge</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">double_edge</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">)</span></div>
+
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">EllipticalStartArc</span><span class="p">(</span><span class="n">BaseEdgeObject</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Line Object: Elliptical Start Arc</span>
+
+<span class="sd">    Create an elliptical arc defined by a start point, end point, x- and y- radii.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        start (VectorLike): start point</span>
+<span class="sd">        end (VectorLike): end point</span>
+<span class="sd">        x_radius (float): x radius of the ellipse (along the x-axis of plane)</span>
+<span class="sd">        y_radius (float): y radius of the ellipse (along the y-axis of plane)</span>
+<span class="sd">        rotation (float, optional): the angle from the x-axis of the plane to the x-axis</span>
+<span class="sd">            of the ellipse. Defaults to 0.0</span>
+<span class="sd">        large_arc (bool, optional): True if the arc spans greater than 180 degrees.</span>
+<span class="sd">            Defaults to True</span>
+<span class="sd">        sweep_flag (bool, optional): False if the line joining center to arc sweeps through</span>
+<span class="sd">            decreasing angles, or True if it sweeps through increasing angles. Defaults to True</span>
+<span class="sd">        plane (Plane, optional): base plane. Defaults to Plane.XY</span>
+<span class="sd">        mode (Mode, optional): combination mode. Defaults to Mode.ADD</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_applies_to</span> <span class="o">=</span> <span class="p">[</span><span class="n">BuildLine</span><span class="o">.</span><span class="n">_tag</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">start</span><span class="p">:</span> <span class="n">VectorLike</span><span class="p">,</span>
+        <span class="n">end</span><span class="p">:</span> <span class="n">VectorLike</span><span class="p">,</span>
+        <span class="n">x_radius</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">y_radius</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">rotation</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>
+        <span class="n">large_arc</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">sweep_flag</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="n">plane</span><span class="p">:</span> <span class="n">Plane</span> <span class="o">=</span> <span class="n">Plane</span><span class="o">.</span><span class="n">XY</span><span class="p">,</span>
+        <span class="n">mode</span><span class="p">:</span> <span class="n">Mode</span> <span class="o">=</span> <span class="n">Mode</span><span class="o">.</span><span class="n">ADD</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="c1"># Debugging incomplete</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Implementation incomplete&quot;</span><span class="p">)</span>
+
+        <span class="c1"># context: BuildLine | None = BuildLine._get_context(self)</span>
+        <span class="c1"># context.validate_inputs(self)</span>
+
+        <span class="c1"># # Calculate the ellipse parameters based on the SVG implementation here:</span>
+        <span class="c1"># #   https://www.w3.org/TR/SVG/implnote.html#ArcImplementationNotes</span>
+
+        <span class="c1"># self.start_pnt = Vector(start)</span>
+        <span class="c1"># self.end_pnt = Vector(end)</span>
+        <span class="c1"># # Eq. 5.1</span>
+        <span class="c1"># self.mid_prime: Vector = ((self.start_pnt - self.end_pnt) * 0.5).rotate(</span>
+        <span class="c1">#     Axis.Z, -rotation</span>
+        <span class="c1"># )</span>
+
+        <span class="c1"># # Eq. 5.2</span>
+        <span class="c1"># self.center_scalar = (-1 if large_arc == sweep_flag else 1) * sqrt(</span>
+        <span class="c1">#     (</span>
+        <span class="c1">#         x_radius**2 * y_radius**2</span>
+        <span class="c1">#         - x_radius**2 * (self.mid_prime.Y**2)</span>
+        <span class="c1">#         - y_radius**2 * (self.mid_prime.X**2)</span>
+        <span class="c1">#     )</span>
+        <span class="c1">#     / (</span>
+        <span class="c1">#         x_radius**2 * (self.mid_prime.Y**2)</span>
+        <span class="c1">#         + y_radius**2 * (self.mid_prime.X**2)</span>
+        <span class="c1">#     )</span>
+        <span class="c1"># )</span>
+        <span class="c1"># self.center_prime = (</span>
+        <span class="c1">#     Vector(</span>
+        <span class="c1">#         x_radius * self.mid_prime.Y / y_radius,</span>
+        <span class="c1">#         -y_radius * self.mid_prime.X / x_radius,</span>
+        <span class="c1">#     )</span>
+        <span class="c1">#     * self.center_scalar</span>
+        <span class="c1"># )</span>
+
+        <span class="c1"># # Eq. 5.3</span>
+        <span class="c1"># self.center_pnt: Vector = self.center_prime.rotate(Axis.Z, rotation) + (</span>
+        <span class="c1">#     ((self.start_pnt + self.end_pnt) * 0.5)</span>
+        <span class="c1"># )</span>
+
+        <span class="c1"># plane.set_origin2d(self.center_pnt.X, self.center_pnt.Y)</span>
+        <span class="c1"># plane = plane.rotated((0, 0, rotation))</span>
+        <span class="c1"># self.start_angle = (</span>
+        <span class="c1">#     plane.x_dir.get_signed_angle(self.start_pnt - self.center_pnt, plane.z_dir)</span>
+        <span class="c1">#     + 360</span>
+        <span class="c1"># ) % 360</span>
+        <span class="c1"># self.end_angle = (</span>
+        <span class="c1">#     plane.x_dir.get_signed_angle(self.end_pnt - self.center_pnt, plane.z_dir)</span>
+        <span class="c1">#     + 360</span>
+        <span class="c1"># ) % 360</span>
+        <span class="c1"># self.angular_direction = (</span>
+        <span class="c1">#     AngularDirection.COUNTER_CLOCKWISE</span>
+        <span class="c1">#     if self.start_angle &gt; self.end_angle</span>
+        <span class="c1">#     else AngularDirection.CLOCKWISE</span>
+        <span class="c1"># )</span>
+
+        <span class="c1"># curve = Edge.make_ellipse(</span>
+        <span class="c1">#     x_radius=x_radius,</span>
+        <span class="c1">#     y_radius=y_radius,</span>
+        <span class="c1">#     plane=plane,</span>
+        <span class="c1">#     start_angle=self.start_angle,</span>
+        <span class="c1">#     end_angle=self.end_angle,</span>
+        <span class="c1">#     angular_direction=self.angular_direction,</span>
+        <span class="c1"># )</span>
+
+        <span class="c1"># context._add_to_context(curve, mode=mode)</span>
+        <span class="c1"># super().__init__(curve.wrapped)</span>
+
+        <span class="c1"># context: BuildLine | None = BuildLine._get_context(self)</span>
+
+
+<div class="viewcode-block" id="EllipticalCenterArc">
+<a class="viewcode-back" href="../objects.html#objects_curve.EllipticalCenterArc">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">EllipticalCenterArc</span><span class="p">(</span><span class="n">BaseEdgeObject</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Line Object: Elliptical Center Arc</span>
+
+<span class="sd">    Create an elliptical arc defined by a center point, x- and y- radii.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        center (VectorLike): ellipse center</span>
+<span class="sd">        x_radius (float): x radius of the ellipse (along the x-axis of plane)</span>
+<span class="sd">        y_radius (float): y radius of the ellipse (along the y-axis of plane)</span>
+<span class="sd">        start_angle (float, optional): arc start angle from x-axis.</span>
+<span class="sd">            Defaults to 0.0</span>
+<span class="sd">        end_angle (float, optional): arc end angle from x-axis.</span>
+<span class="sd">            Defaults to 90.0</span>
+<span class="sd">        rotation (float, optional): angle to rotate arc. Defaults to 0.0</span>
+<span class="sd">        angular_direction (AngularDirection, optional): arc direction.</span>
+<span class="sd">            Defaults to AngularDirection.COUNTER_CLOCKWISE</span>
+<span class="sd">        plane (Plane, optional): base plane. Defaults to Plane.XY</span>
+<span class="sd">        mode (Mode, optional): combination mode. Defaults to Mode.ADD</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_applies_to</span> <span class="o">=</span> <span class="p">[</span><span class="n">BuildLine</span><span class="o">.</span><span class="n">_tag</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">center</span><span class="p">:</span> <span class="n">VectorLike</span><span class="p">,</span>
+        <span class="n">x_radius</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">y_radius</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">start_angle</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>
+        <span class="n">end_angle</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">90.0</span><span class="p">,</span>
+        <span class="n">rotation</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>
+        <span class="n">angular_direction</span><span class="p">:</span> <span class="n">AngularDirection</span> <span class="o">=</span> <span class="n">AngularDirection</span><span class="o">.</span><span class="n">COUNTER_CLOCKWISE</span><span class="p">,</span>
+        <span class="n">mode</span><span class="p">:</span> <span class="n">Mode</span> <span class="o">=</span> <span class="n">Mode</span><span class="o">.</span><span class="n">ADD</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="n">context</span><span class="p">:</span> <span class="n">BuildLine</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="n">BuildLine</span><span class="o">.</span><span class="n">_get_context</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">validate_inputs</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+
+        <span class="n">center_pnt</span> <span class="o">=</span> <span class="n">WorkplaneList</span><span class="o">.</span><span class="n">localize</span><span class="p">(</span><span class="n">center</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">context</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">ellipse_workplane</span> <span class="o">=</span> <span class="n">Plane</span><span class="o">.</span><span class="n">XY</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">ellipse_workplane</span> <span class="o">=</span> <span class="n">copy_module</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span>
+                <span class="n">WorkplaneList</span><span class="o">.</span><span class="n">_get_context</span><span class="p">()</span><span class="o">.</span><span class="n">workplanes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="p">)</span>
+        <span class="n">ellipse_workplane</span><span class="o">.</span><span class="n">origin</span> <span class="o">=</span> <span class="n">center_pnt</span>
+        <span class="n">curve</span> <span class="o">=</span> <span class="n">Edge</span><span class="o">.</span><span class="n">make_ellipse</span><span class="p">(</span>
+            <span class="n">x_radius</span><span class="o">=</span><span class="n">x_radius</span><span class="p">,</span>
+            <span class="n">y_radius</span><span class="o">=</span><span class="n">y_radius</span><span class="p">,</span>
+            <span class="n">plane</span><span class="o">=</span><span class="n">ellipse_workplane</span><span class="p">,</span>
+            <span class="n">start_angle</span><span class="o">=</span><span class="n">start_angle</span><span class="p">,</span>
+            <span class="n">end_angle</span><span class="o">=</span><span class="n">end_angle</span><span class="p">,</span>
+            <span class="n">angular_direction</span><span class="o">=</span><span class="n">angular_direction</span><span class="p">,</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span>
+            <span class="n">Axis</span><span class="p">(</span><span class="n">ellipse_workplane</span><span class="o">.</span><span class="n">origin</span><span class="p">,</span> <span class="n">ellipse_workplane</span><span class="o">.</span><span class="n">z_dir</span><span class="o">.</span><span class="n">to_dir</span><span class="p">()),</span> <span class="n">rotation</span>
+        <span class="p">)</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">curve</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="Helix">
+<a class="viewcode-back" href="../objects.html#objects_curve.Helix">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Helix</span><span class="p">(</span><span class="n">BaseEdgeObject</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Line Object: Helix</span>
+
+<span class="sd">    Create a helix defined by pitch, height, and radius. The helix may have a taper</span>
+<span class="sd">    defined by cone_angle.</span>
+
+
+<span class="sd">    Args:</span>
+<span class="sd">        pitch (float): distance between loops</span>
+<span class="sd">        height (float): helix height</span>
+<span class="sd">        radius (float): helix radius</span>
+<span class="sd">        center (VectorLike, optional): center point. Defaults to (0, 0, 0).</span>
+<span class="sd">        direction (VectorLike, optional): direction of central axis. Defaults to (0, 0, 1).</span>
+<span class="sd">        cone_angle (float, optional): conical angle from direction.</span>
+<span class="sd">            Defaults to 0</span>
+<span class="sd">        lefthand (bool, optional): left handed helix. Defaults to False</span>
+<span class="sd">        mode (Mode, optional): combination mode. Defaults to Mode.ADD</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_applies_to</span> <span class="o">=</span> <span class="p">[</span><span class="n">BuildLine</span><span class="o">.</span><span class="n">_tag</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">pitch</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">height</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">radius</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">center</span><span class="p">:</span> <span class="n">VectorLike</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+        <span class="n">direction</span><span class="p">:</span> <span class="n">VectorLike</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+        <span class="n">cone_angle</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="n">lefthand</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">mode</span><span class="p">:</span> <span class="n">Mode</span> <span class="o">=</span> <span class="n">Mode</span><span class="o">.</span><span class="n">ADD</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="n">context</span><span class="p">:</span> <span class="n">BuildLine</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="n">BuildLine</span><span class="o">.</span><span class="n">_get_context</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">validate_inputs</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+
+        <span class="n">center_pnt</span> <span class="o">=</span> <span class="n">WorkplaneList</span><span class="o">.</span><span class="n">localize</span><span class="p">(</span><span class="n">center</span><span class="p">)</span>
+        <span class="n">helix</span> <span class="o">=</span> <span class="n">Edge</span><span class="o">.</span><span class="n">make_helix</span><span class="p">(</span>
+            <span class="n">pitch</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">radius</span><span class="p">,</span> <span class="n">center_pnt</span><span class="p">,</span> <span class="n">direction</span><span class="p">,</span> <span class="n">cone_angle</span><span class="p">,</span> <span class="n">lefthand</span>
+        <span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">helix</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="FilletPolyline">
+<a class="viewcode-back" href="../objects.html#objects_curve.FilletPolyline">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">FilletPolyline</span><span class="p">(</span><span class="n">BaseLineObject</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Line Object: Fillet Polyline</span>
+
+<span class="sd">    Create a sequence of straight lines defined by successive points that are filleted</span>
+<span class="sd">    to a given radius.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        pts (VectorLike | Iterable[VectorLike]): sequence of two or more points</span>
+<span class="sd">        radius (float): fillet radius</span>
+<span class="sd">        close (bool, optional): close end points with extra Edge and corner fillets.</span>
+<span class="sd">            Defaults to False</span>
+<span class="sd">        mode (Mode, optional): combination mode. Defaults to Mode.ADD</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: Two or more points not provided</span>
+<span class="sd">        ValueError: radius must be positive</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_applies_to</span> <span class="o">=</span> <span class="p">[</span><span class="n">BuildLine</span><span class="o">.</span><span class="n">_tag</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="o">*</span><span class="n">pts</span><span class="p">:</span> <span class="n">VectorLike</span> <span class="o">|</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">VectorLike</span><span class="p">],</span>
+        <span class="n">radius</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">close</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">mode</span><span class="p">:</span> <span class="n">Mode</span> <span class="o">=</span> <span class="n">Mode</span><span class="o">.</span><span class="n">ADD</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="n">context</span><span class="p">:</span> <span class="n">BuildLine</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="n">BuildLine</span><span class="o">.</span><span class="n">_get_context</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">validate_inputs</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+
+        <span class="n">points</span> <span class="o">=</span> <span class="n">flatten_sequence</span><span class="p">(</span><span class="o">*</span><span class="n">pts</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;FilletPolyline requires two or more pts&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">radius</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;radius must be positive&quot;</span><span class="p">)</span>
+
+        <span class="n">lines_pts</span> <span class="o">=</span> <span class="n">WorkplaneList</span><span class="o">.</span><span class="n">localize</span><span class="p">(</span><span class="o">*</span><span class="n">points</span><span class="p">)</span>
+
+        <span class="c1"># Create the polyline</span>
+        <span class="n">new_edges</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">Edge</span><span class="o">.</span><span class="n">make_line</span><span class="p">(</span><span class="n">lines_pts</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">lines_pts</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lines_pts</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="p">]</span>
+        <span class="k">if</span> <span class="n">close</span> <span class="ow">and</span> <span class="p">(</span><span class="n">new_edges</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">@</span> <span class="mi">0</span> <span class="o">-</span> <span class="n">new_edges</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">@</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">length</span> <span class="o">&gt;</span> <span class="mf">1e-5</span><span class="p">:</span>
+            <span class="n">new_edges</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Edge</span><span class="o">.</span><span class="n">make_line</span><span class="p">(</span><span class="n">new_edges</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">@</span> <span class="mi">1</span><span class="p">,</span> <span class="n">new_edges</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">@</span> <span class="mi">0</span><span class="p">))</span>
+        <span class="n">wire_of_lines</span> <span class="o">=</span> <span class="n">Wire</span><span class="p">(</span><span class="n">new_edges</span><span class="p">)</span>
+
+        <span class="c1"># Create a list of vertices from wire_of_lines in the same order as</span>
+        <span class="c1"># the original points so the resulting fillet edges are ordered</span>
+        <span class="n">ordered_vertices</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">pnts</span> <span class="ow">in</span> <span class="n">lines_pts</span><span class="p">:</span>
+            <span class="n">distance</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="n">v</span><span class="p">:</span> <span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="n">pnts</span><span class="p">)</span> <span class="o">-</span> <span class="n">Vector</span><span class="p">(</span><span class="o">*</span><span class="n">v</span><span class="p">))</span><span class="o">.</span><span class="n">length</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">wire_of_lines</span><span class="o">.</span><span class="n">vertices</span><span class="p">()</span>
+            <span class="p">}</span>
+            <span class="n">ordered_vertices</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">distance</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+
+        <span class="c1"># Fillet the corners</span>
+
+        <span class="c1"># Create a map of vertices to edges containing that vertex</span>
+        <span class="n">vertex_to_edges</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="n">v</span><span class="p">:</span> <span class="p">[</span><span class="n">e</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">wire_of_lines</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span> <span class="k">if</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">e</span><span class="o">.</span><span class="n">vertices</span><span class="p">()]</span>
+            <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">ordered_vertices</span>
+        <span class="p">}</span>
+
+        <span class="c1"># For each corner vertex create a new fillet Edge</span>
+        <span class="n">fillets</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">vertex</span><span class="p">,</span> <span class="n">edges</span> <span class="ow">in</span> <span class="n">vertex_to_edges</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="n">other_vertices</span> <span class="o">=</span> <span class="p">{</span><span class="n">ve</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">edges</span> <span class="k">for</span> <span class="n">ve</span> <span class="ow">in</span> <span class="n">e</span><span class="o">.</span><span class="n">vertices</span><span class="p">()</span> <span class="k">if</span> <span class="n">ve</span> <span class="o">!=</span> <span class="n">vertex</span><span class="p">}</span>
+            <span class="n">third_edge</span> <span class="o">=</span> <span class="n">Edge</span><span class="o">.</span><span class="n">make_line</span><span class="p">(</span><span class="o">*</span><span class="p">[</span><span class="n">v</span><span class="o">.</span><span class="n">to_tuple</span><span class="p">()</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">other_vertices</span><span class="p">])</span>
+            <span class="n">fillet_face</span> <span class="o">=</span> <span class="n">Face</span><span class="p">(</span><span class="n">Wire</span><span class="p">(</span><span class="n">edges</span> <span class="o">+</span> <span class="p">[</span><span class="n">third_edge</span><span class="p">]))</span><span class="o">.</span><span class="n">fillet_2d</span><span class="p">(</span><span class="n">radius</span><span class="p">,</span> <span class="p">[</span><span class="n">vertex</span><span class="p">])</span>
+            <span class="n">fillets</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fillet_face</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="n">GeomType</span><span class="o">.</span><span class="n">CIRCLE</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+
+        <span class="c1"># Create the Edges that join the fillets</span>
+        <span class="k">if</span> <span class="n">close</span><span class="p">:</span>
+            <span class="n">interior_edges</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="n">Edge</span><span class="o">.</span><span class="n">make_line</span><span class="p">(</span><span class="n">fillets</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">@</span> <span class="mi">1</span><span class="p">,</span> <span class="n">fillets</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">@</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">fillets</span><span class="p">))</span>
+            <span class="p">]</span>
+            <span class="n">end_edges</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">interior_edges</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="n">Edge</span><span class="o">.</span><span class="n">make_line</span><span class="p">(</span><span class="n">fillets</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">@</span> <span class="mi">1</span><span class="p">,</span> <span class="n">f</span> <span class="o">@</span> <span class="mi">0</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">f</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">fillets</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+            <span class="p">]</span>
+            <span class="n">end_edges</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="n">Edge</span><span class="o">.</span><span class="n">make_line</span><span class="p">(</span><span class="n">wire_of_lines</span> <span class="o">@</span> <span class="mi">0</span><span class="p">,</span> <span class="n">fillets</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">@</span> <span class="mi">0</span><span class="p">),</span>
+                <span class="n">Edge</span><span class="o">.</span><span class="n">make_line</span><span class="p">(</span><span class="n">fillets</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">@</span> <span class="mi">1</span><span class="p">,</span> <span class="n">wire_of_lines</span> <span class="o">@</span> <span class="mi">1</span><span class="p">),</span>
+            <span class="p">]</span>
+
+        <span class="n">new_wire</span> <span class="o">=</span> <span class="n">Wire</span><span class="p">(</span><span class="n">end_edges</span> <span class="o">+</span> <span class="n">interior_edges</span> <span class="o">+</span> <span class="n">fillets</span><span class="p">)</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">new_wire</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="JernArc">
+<a class="viewcode-back" href="../objects.html#objects_curve.JernArc">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">JernArc</span><span class="p">(</span><span class="n">BaseEdgeObject</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Line Object: Jern Arc</span>
+
+<span class="sd">    Create a circular arc defined by a start point/tangent pair, radius and arc size.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        start (VectorLike): start point</span>
+<span class="sd">        tangent (VectorLike): tangent at start point</span>
+<span class="sd">        radius (float): arc radius</span>
+<span class="sd">        arc_size (float): angular size of arc (negative to change direction)</span>
+<span class="sd">        mode (Mode, optional): combination mode. Defaults to Mode.ADD</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        start (Vector): start point</span>
+<span class="sd">        end_of_arc (Vector): end point of arc</span>
+<span class="sd">        center_point (Vector): center of arc</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_applies_to</span> <span class="o">=</span> <span class="p">[</span><span class="n">BuildLine</span><span class="o">.</span><span class="n">_tag</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">start</span><span class="p">:</span> <span class="n">VectorLike</span><span class="p">,</span>
+        <span class="n">tangent</span><span class="p">:</span> <span class="n">VectorLike</span><span class="p">,</span>
+        <span class="n">radius</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">arc_size</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">mode</span><span class="p">:</span> <span class="n">Mode</span> <span class="o">=</span> <span class="n">Mode</span><span class="o">.</span><span class="n">ADD</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="n">context</span><span class="p">:</span> <span class="n">BuildLine</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="n">BuildLine</span><span class="o">.</span><span class="n">_get_context</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">validate_inputs</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+
+        <span class="n">start</span> <span class="o">=</span> <span class="n">WorkplaneList</span><span class="o">.</span><span class="n">localize</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">start</span> <span class="o">=</span> <span class="n">start</span>
+        <span class="k">if</span> <span class="n">context</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">jern_workplane</span> <span class="o">=</span> <span class="n">Plane</span><span class="o">.</span><span class="n">XY</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">jern_workplane</span> <span class="o">=</span> <span class="n">copy_module</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span>
+                <span class="n">WorkplaneList</span><span class="o">.</span><span class="n">_get_context</span><span class="p">()</span><span class="o">.</span><span class="n">workplanes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="p">)</span>
+        <span class="n">jern_workplane</span><span class="o">.</span><span class="n">origin</span> <span class="o">=</span> <span class="n">start</span>
+        <span class="n">start_tangent</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">(</span><span class="n">tangent</span><span class="p">)</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span>
+            <span class="n">jern_workplane</span><span class="o">.</span><span class="n">reverse_transform</span><span class="p">,</span> <span class="n">is_direction</span><span class="o">=</span><span class="kc">True</span>
+        <span class="p">)</span>
+
+        <span class="n">arc_direction</span> <span class="o">=</span> <span class="n">copysign</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">arc_size</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">center_point</span> <span class="o">=</span> <span class="n">start</span> <span class="o">+</span> <span class="n">start_tangent</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span>
+            <span class="n">Axis</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">jern_workplane</span><span class="o">.</span><span class="n">z_dir</span><span class="p">),</span> <span class="n">arc_direction</span> <span class="o">*</span> <span class="mi">90</span>
+        <span class="p">)</span> <span class="o">*</span> <span class="nb">abs</span><span class="p">(</span><span class="n">radius</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">end_of_arc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">center_point</span> <span class="o">+</span> <span class="p">(</span><span class="n">start</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">center_point</span><span class="p">)</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span>
+            <span class="n">Axis</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">jern_workplane</span><span class="o">.</span><span class="n">z_dir</span><span class="p">),</span> <span class="n">arc_size</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">arc_size</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">360</span><span class="p">:</span>
+            <span class="n">circle_plane</span> <span class="o">=</span> <span class="n">copy_module</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">jern_workplane</span><span class="p">)</span>
+            <span class="n">circle_plane</span><span class="o">.</span><span class="n">origin</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">center_point</span>
+            <span class="n">circle_plane</span><span class="o">.</span><span class="n">x_dir</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">start</span> <span class="o">-</span> <span class="n">circle_plane</span><span class="o">.</span><span class="n">origin</span>
+            <span class="n">arc</span> <span class="o">=</span> <span class="n">Edge</span><span class="o">.</span><span class="n">make_circle</span><span class="p">(</span><span class="n">radius</span><span class="p">,</span> <span class="n">circle_plane</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">arc</span> <span class="o">=</span> <span class="n">Edge</span><span class="o">.</span><span class="n">make_tangent_arc</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">start_tangent</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">end_of_arc</span><span class="p">)</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">arc</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="Line">
+<a class="viewcode-back" href="../objects.html#objects_curve.Line">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Line</span><span class="p">(</span><span class="n">BaseEdgeObject</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Line Object: Line</span>
+
+<span class="sd">    Create a straight line defined by two points.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        pts (VectorLike | Iterable[VectorLike]): sequence of two points</span>
+<span class="sd">        mode (Mode, optional): combination mode. Defaults to Mode.ADD</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: Two point not provided</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_applies_to</span> <span class="o">=</span> <span class="p">[</span><span class="n">BuildLine</span><span class="o">.</span><span class="n">_tag</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">pts</span><span class="p">:</span> <span class="n">VectorLike</span> <span class="o">|</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">VectorLike</span><span class="p">],</span> <span class="n">mode</span><span class="p">:</span> <span class="n">Mode</span> <span class="o">=</span> <span class="n">Mode</span><span class="o">.</span><span class="n">ADD</span><span class="p">):</span>
+        <span class="n">points</span> <span class="o">=</span> <span class="n">flatten_sequence</span><span class="p">(</span><span class="o">*</span><span class="n">pts</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Line requires two pts&quot;</span><span class="p">)</span>
+
+        <span class="n">context</span><span class="p">:</span> <span class="n">BuildLine</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="n">BuildLine</span><span class="o">.</span><span class="n">_get_context</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">validate_inputs</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+
+        <span class="n">points_localized</span> <span class="o">=</span> <span class="n">WorkplaneList</span><span class="o">.</span><span class="n">localize</span><span class="p">(</span><span class="o">*</span><span class="n">points</span><span class="p">)</span>
+
+        <span class="n">lines_pts</span> <span class="o">=</span> <span class="p">[</span><span class="n">Vector</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">points_localized</span><span class="p">]</span>
+
+        <span class="n">new_edge</span> <span class="o">=</span> <span class="n">Edge</span><span class="o">.</span><span class="n">make_line</span><span class="p">(</span><span class="n">lines_pts</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">lines_pts</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">new_edge</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="IntersectingLine">
+<a class="viewcode-back" href="../objects.html#objects_curve.IntersectingLine">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">IntersectingLine</span><span class="p">(</span><span class="n">BaseEdgeObject</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Intersecting Line Object: Line</span>
+
+<span class="sd">    Create a straight line defined by a point/direction pair and another line to intersect.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        start (VectorLike): start point</span>
+<span class="sd">        direction (VectorLike): direction to make line</span>
+<span class="sd">        other (Edge): line object to intersect</span>
+<span class="sd">        mode (Mode, optional): combination mode. Defaults to Mode.ADD</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_applies_to</span> <span class="o">=</span> <span class="p">[</span><span class="n">BuildLine</span><span class="o">.</span><span class="n">_tag</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">start</span><span class="p">:</span> <span class="n">VectorLike</span><span class="p">,</span>
+        <span class="n">direction</span><span class="p">:</span> <span class="n">VectorLike</span><span class="p">,</span>
+        <span class="n">other</span><span class="p">:</span> <span class="n">Curve</span> <span class="o">|</span> <span class="n">Edge</span> <span class="o">|</span> <span class="n">Wire</span><span class="p">,</span>
+        <span class="n">mode</span><span class="p">:</span> <span class="n">Mode</span> <span class="o">=</span> <span class="n">Mode</span><span class="o">.</span><span class="n">ADD</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="n">context</span><span class="p">:</span> <span class="n">BuildLine</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="n">BuildLine</span><span class="o">.</span><span class="n">_get_context</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">validate_inputs</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+
+        <span class="n">start</span> <span class="o">=</span> <span class="n">WorkplaneList</span><span class="o">.</span><span class="n">localize</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
+        <span class="n">direction</span> <span class="o">=</span> <span class="n">WorkplaneList</span><span class="o">.</span><span class="n">localize</span><span class="p">(</span><span class="n">direction</span><span class="p">)</span><span class="o">.</span><span class="n">normalized</span><span class="p">()</span>
+        <span class="n">axis</span> <span class="o">=</span> <span class="n">Axis</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">direction</span><span class="p">)</span>
+
+        <span class="n">intersection_pnts</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">i</span> <span class="k">for</span> <span class="n">edge</span> <span class="ow">in</span> <span class="n">other</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">edge</span><span class="o">.</span><span class="n">find_intersection_points</span><span class="p">(</span><span class="n">axis</span><span class="p">)</span>
+        <span class="p">]</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">intersection_pnts</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;No intersections found&quot;</span><span class="p">)</span>
+
+        <span class="n">distances</span> <span class="o">=</span> <span class="p">[(</span><span class="n">start</span> <span class="o">-</span> <span class="n">p</span><span class="p">)</span><span class="o">.</span><span class="n">length</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">intersection_pnts</span><span class="p">]</span>
+        <span class="n">length</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">distances</span><span class="p">)</span>
+        <span class="n">new_edge</span> <span class="o">=</span> <span class="n">Edge</span><span class="o">.</span><span class="n">make_line</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">start</span> <span class="o">+</span> <span class="n">direction</span> <span class="o">*</span> <span class="n">length</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">new_edge</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="PolarLine">
+<a class="viewcode-back" href="../objects.html#objects_curve.PolarLine">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">PolarLine</span><span class="p">(</span><span class="n">BaseEdgeObject</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Line Object: Polar Line</span>
+
+<span class="sd">    Create a straight line defined by a start point, length, and angle.</span>
+<span class="sd">    The length can specify the DIAGONAL, HORIZONTAL, or VERTICAL component of the triangle</span>
+<span class="sd">    defined by the angle.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        start (VectorLike): start point</span>
+<span class="sd">        length (float): line length</span>
+<span class="sd">        angle (float, optional): angle from the local x-axis</span>
+<span class="sd">        direction (VectorLike, optional): vector direction to determine angle</span>
+<span class="sd">        length_mode (LengthMode, optional): how length defines the line.</span>
+<span class="sd">            Defaults to LengthMode.DIAGONAL</span>
+<span class="sd">        mode (Mode, optional): combination mode. Defaults to Mode.ADD</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: Either angle or direction must be provided</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_applies_to</span> <span class="o">=</span> <span class="p">[</span><span class="n">BuildLine</span><span class="o">.</span><span class="n">_tag</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">start</span><span class="p">:</span> <span class="n">VectorLike</span><span class="p">,</span>
+        <span class="n">length</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">angle</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">direction</span><span class="p">:</span> <span class="n">VectorLike</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">length_mode</span><span class="p">:</span> <span class="n">LengthMode</span> <span class="o">=</span> <span class="n">LengthMode</span><span class="o">.</span><span class="n">DIAGONAL</span><span class="p">,</span>
+        <span class="n">mode</span><span class="p">:</span> <span class="n">Mode</span> <span class="o">=</span> <span class="n">Mode</span><span class="o">.</span><span class="n">ADD</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="n">context</span><span class="p">:</span> <span class="n">BuildLine</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="n">BuildLine</span><span class="o">.</span><span class="n">_get_context</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">validate_inputs</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+
+        <span class="n">start</span> <span class="o">=</span> <span class="n">WorkplaneList</span><span class="o">.</span><span class="n">localize</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">context</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">polar_workplane</span> <span class="o">=</span> <span class="n">Plane</span><span class="o">.</span><span class="n">XY</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">polar_workplane</span> <span class="o">=</span> <span class="n">copy_module</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span>
+                <span class="n">WorkplaneList</span><span class="o">.</span><span class="n">_get_context</span><span class="p">()</span><span class="o">.</span><span class="n">workplanes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">direction</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">direction_localized</span> <span class="o">=</span> <span class="n">WorkplaneList</span><span class="o">.</span><span class="n">localize</span><span class="p">(</span><span class="n">direction</span><span class="p">)</span><span class="o">.</span><span class="n">normalized</span><span class="p">()</span>
+            <span class="n">angle</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">get_angle</span><span class="p">(</span><span class="n">direction_localized</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">angle</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">direction_localized</span> <span class="o">=</span> <span class="n">polar_workplane</span><span class="o">.</span><span class="n">x_dir</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span>
+                <span class="n">Axis</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">polar_workplane</span><span class="o">.</span><span class="n">z_dir</span><span class="p">),</span>
+                <span class="n">angle</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Either angle or direction must be provided&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">length_mode</span> <span class="o">==</span> <span class="n">LengthMode</span><span class="o">.</span><span class="n">DIAGONAL</span><span class="p">:</span>
+            <span class="n">length_vector</span> <span class="o">=</span> <span class="n">direction_localized</span> <span class="o">*</span> <span class="n">length</span>
+        <span class="k">elif</span> <span class="n">length_mode</span> <span class="o">==</span> <span class="n">LengthMode</span><span class="o">.</span><span class="n">HORIZONTAL</span><span class="p">:</span>
+            <span class="n">length_vector</span> <span class="o">=</span> <span class="n">direction_localized</span> <span class="o">*</span> <span class="p">(</span><span class="n">length</span> <span class="o">/</span> <span class="n">cos</span><span class="p">(</span><span class="n">radians</span><span class="p">(</span><span class="n">angle</span><span class="p">)))</span>
+        <span class="k">elif</span> <span class="n">length_mode</span> <span class="o">==</span> <span class="n">LengthMode</span><span class="o">.</span><span class="n">VERTICAL</span><span class="p">:</span>
+            <span class="n">length_vector</span> <span class="o">=</span> <span class="n">direction_localized</span> <span class="o">*</span> <span class="p">(</span><span class="n">length</span> <span class="o">/</span> <span class="n">sin</span><span class="p">(</span><span class="n">radians</span><span class="p">(</span><span class="n">angle</span><span class="p">)))</span>
+
+        <span class="n">new_edge</span> <span class="o">=</span> <span class="n">Edge</span><span class="o">.</span><span class="n">make_line</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">start</span> <span class="o">+</span> <span class="n">length_vector</span><span class="p">)</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">new_edge</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="Polyline">
+<a class="viewcode-back" href="../objects.html#objects_curve.Polyline">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Polyline</span><span class="p">(</span><span class="n">BaseLineObject</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Line Object: Polyline</span>
+
+<span class="sd">    Create a sequence of straight lines defined by successive points.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        pts (VectorLike | Iterable[VectorLike]): sequence of two or more points</span>
+<span class="sd">        close (bool, optional): close by generating an extra Edge. Defaults to False</span>
+<span class="sd">        mode (Mode, optional): combination mode. Defaults to Mode.ADD</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: Two or more points not provided</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_applies_to</span> <span class="o">=</span> <span class="p">[</span><span class="n">BuildLine</span><span class="o">.</span><span class="n">_tag</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="o">*</span><span class="n">pts</span><span class="p">:</span> <span class="n">VectorLike</span> <span class="o">|</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">VectorLike</span><span class="p">],</span>
+        <span class="n">close</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">mode</span><span class="p">:</span> <span class="n">Mode</span> <span class="o">=</span> <span class="n">Mode</span><span class="o">.</span><span class="n">ADD</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="n">context</span><span class="p">:</span> <span class="n">BuildLine</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="n">BuildLine</span><span class="o">.</span><span class="n">_get_context</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">validate_inputs</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+
+        <span class="n">points</span> <span class="o">=</span> <span class="n">flatten_sequence</span><span class="p">(</span><span class="o">*</span><span class="n">pts</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Polyline requires two or more pts&quot;</span><span class="p">)</span>
+
+        <span class="n">lines_pts</span> <span class="o">=</span> <span class="n">WorkplaneList</span><span class="o">.</span><span class="n">localize</span><span class="p">(</span><span class="o">*</span><span class="n">points</span><span class="p">)</span>
+
+        <span class="n">new_edges</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">Edge</span><span class="o">.</span><span class="n">make_line</span><span class="p">(</span><span class="n">lines_pts</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">lines_pts</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lines_pts</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="p">]</span>
+        <span class="k">if</span> <span class="n">close</span> <span class="ow">and</span> <span class="p">(</span><span class="n">new_edges</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">@</span> <span class="mi">0</span> <span class="o">-</span> <span class="n">new_edges</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">@</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">length</span> <span class="o">&gt;</span> <span class="mf">1e-5</span><span class="p">:</span>
+            <span class="n">new_edges</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Edge</span><span class="o">.</span><span class="n">make_line</span><span class="p">(</span><span class="n">new_edges</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">@</span> <span class="mi">1</span><span class="p">,</span> <span class="n">new_edges</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">@</span> <span class="mi">0</span><span class="p">))</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">Wire</span><span class="o">.</span><span class="n">combine</span><span class="p">(</span><span class="n">new_edges</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="RadiusArc">
+<a class="viewcode-back" href="../objects.html#objects_curve.RadiusArc">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">RadiusArc</span><span class="p">(</span><span class="n">BaseEdgeObject</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Line Object: Radius Arc</span>
+
+<span class="sd">    Create a circular arc defined by two points and a radius.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        start_point (VectorLike): start point</span>
+<span class="sd">        end_point (VectorLike): end point</span>
+<span class="sd">        radius (float): arc radius</span>
+<span class="sd">        short_sagitta (bool): If True selects the short sagitta (height of arc from</span>
+<span class="sd">            chord), else the long sagitta crossing the center. Defaults to True</span>
+<span class="sd">        mode (Mode, optional): combination mode. Defaults to Mode.ADD</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: Insufficient radius to connect end points</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_applies_to</span> <span class="o">=</span> <span class="p">[</span><span class="n">BuildLine</span><span class="o">.</span><span class="n">_tag</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">start_point</span><span class="p">:</span> <span class="n">VectorLike</span><span class="p">,</span>
+        <span class="n">end_point</span><span class="p">:</span> <span class="n">VectorLike</span><span class="p">,</span>
+        <span class="n">radius</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">short_sagitta</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="n">mode</span><span class="p">:</span> <span class="n">Mode</span> <span class="o">=</span> <span class="n">Mode</span><span class="o">.</span><span class="n">ADD</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="n">context</span><span class="p">:</span> <span class="n">BuildLine</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="n">BuildLine</span><span class="o">.</span><span class="n">_get_context</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">validate_inputs</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+
+        <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">WorkplaneList</span><span class="o">.</span><span class="n">localize</span><span class="p">(</span><span class="n">start_point</span><span class="p">,</span> <span class="n">end_point</span><span class="p">)</span>
+        <span class="c1"># Calculate the sagitta from the radius</span>
+        <span class="n">length</span> <span class="o">=</span> <span class="n">end</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">start</span><span class="p">)</span><span class="o">.</span><span class="n">length</span> <span class="o">/</span> <span class="mf">2.0</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">short_sagitta</span><span class="p">:</span>
+                <span class="n">sagitta</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">radius</span><span class="p">)</span> <span class="o">-</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">radius</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">length</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">sagitta</span> <span class="o">=</span> <span class="o">-</span><span class="nb">abs</span><span class="p">(</span><span class="n">radius</span><span class="p">)</span> <span class="o">-</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">radius</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">length</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">exception</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;Arc radius is not large enough to reach the end point.&quot;</span>
+            <span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">exception</span>
+
+        <span class="c1"># Return a sagitta arc</span>
+        <span class="k">if</span> <span class="n">radius</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">arc</span> <span class="o">=</span> <span class="n">SagittaArc</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">sagitta</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">Mode</span><span class="o">.</span><span class="n">PRIVATE</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">arc</span> <span class="o">=</span> <span class="n">SagittaArc</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="o">-</span><span class="n">sagitta</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">Mode</span><span class="o">.</span><span class="n">PRIVATE</span><span class="p">)</span>
+
+        <span class="n">arc_edge</span> <span class="o">=</span> <span class="n">arc</span><span class="o">.</span><span class="n">edge</span><span class="p">()</span>
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">arc_edge</span><span class="p">,</span> <span class="n">Edge</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">arc_edge</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="SagittaArc">
+<a class="viewcode-back" href="../objects.html#objects_curve.SagittaArc">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">SagittaArc</span><span class="p">(</span><span class="n">BaseEdgeObject</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Line Object: Sagitta Arc</span>
+
+<span class="sd">    Create a circular arc defined by two points and the sagitta (height of the arc from chord).</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        start_point (VectorLike): start point</span>
+<span class="sd">        end_point (VectorLike): end point</span>
+<span class="sd">        sagitta (float): arc height from chord between points</span>
+<span class="sd">        mode (Mode, optional): combination mode. Defaults to Mode.ADD</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_applies_to</span> <span class="o">=</span> <span class="p">[</span><span class="n">BuildLine</span><span class="o">.</span><span class="n">_tag</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">start_point</span><span class="p">:</span> <span class="n">VectorLike</span><span class="p">,</span>
+        <span class="n">end_point</span><span class="p">:</span> <span class="n">VectorLike</span><span class="p">,</span>
+        <span class="n">sagitta</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">mode</span><span class="p">:</span> <span class="n">Mode</span> <span class="o">=</span> <span class="n">Mode</span><span class="o">.</span><span class="n">ADD</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="n">context</span><span class="p">:</span> <span class="n">BuildLine</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="n">BuildLine</span><span class="o">.</span><span class="n">_get_context</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">validate_inputs</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+
+        <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">WorkplaneList</span><span class="o">.</span><span class="n">localize</span><span class="p">(</span><span class="n">start_point</span><span class="p">,</span> <span class="n">end_point</span><span class="p">)</span>
+        <span class="n">mid_point</span> <span class="o">=</span> <span class="p">(</span><span class="n">end</span> <span class="o">+</span> <span class="n">start</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.5</span>
+        <span class="k">if</span> <span class="n">context</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">sagitta_workplane</span> <span class="o">=</span> <span class="n">Plane</span><span class="o">.</span><span class="n">XY</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">sagitta_workplane</span> <span class="o">=</span> <span class="n">copy_module</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span>
+                <span class="n">WorkplaneList</span><span class="o">.</span><span class="n">_get_context</span><span class="p">()</span><span class="o">.</span><span class="n">workplanes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="p">)</span>
+        <span class="n">sagitta_vector</span><span class="p">:</span> <span class="n">Vector</span> <span class="o">=</span> <span class="p">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span><span class="o">.</span><span class="n">normalized</span><span class="p">()</span> <span class="o">*</span> <span class="nb">abs</span><span class="p">(</span><span class="n">sagitta</span><span class="p">)</span>
+        <span class="n">sagitta_vector</span> <span class="o">=</span> <span class="n">sagitta_vector</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span>
+            <span class="n">Axis</span><span class="p">(</span><span class="n">sagitta_workplane</span><span class="o">.</span><span class="n">origin</span><span class="p">,</span> <span class="n">sagitta_workplane</span><span class="o">.</span><span class="n">z_dir</span><span class="p">),</span>
+            <span class="mi">90</span> <span class="k">if</span> <span class="n">sagitta</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="o">-</span><span class="mi">90</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="n">sag_point</span> <span class="o">=</span> <span class="n">mid_point</span> <span class="o">+</span> <span class="n">sagitta_vector</span>
+
+        <span class="n">arc</span> <span class="o">=</span> <span class="n">ThreePointArc</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">sag_point</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">Mode</span><span class="o">.</span><span class="n">PRIVATE</span><span class="p">)</span>
+        <span class="n">arc_edge</span> <span class="o">=</span> <span class="n">arc</span><span class="o">.</span><span class="n">edge</span><span class="p">()</span>
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">arc_edge</span><span class="p">,</span> <span class="n">Edge</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">arc_edge</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="Spline">
+<a class="viewcode-back" href="../objects.html#objects_curve.Spline">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Spline</span><span class="p">(</span><span class="n">BaseEdgeObject</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Line Object: Spline</span>
+
+<span class="sd">    Create a spline defined by a sequence of points, optionally constrained by tangents.</span>
+<span class="sd">    Tangents and tangent scalars must have length of 2 for only the end points or a length</span>
+<span class="sd">    of the number of points.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        pts (VectorLike | Iterable[VectorLike]): sequence of two or more points</span>
+<span class="sd">        tangents (Iterable[VectorLike], optional): tangent directions. Defaults to None</span>
+<span class="sd">        tangent_scalars (Iterable[float], optional): tangent scales. Defaults to None</span>
+<span class="sd">        periodic (bool, optional): make the spline periodic (closed). Defaults to False</span>
+<span class="sd">        mode (Mode, optional): combination mode. Defaults to Mode.ADD</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_applies_to</span> <span class="o">=</span> <span class="p">[</span><span class="n">BuildLine</span><span class="o">.</span><span class="n">_tag</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="o">*</span><span class="n">pts</span><span class="p">:</span> <span class="n">VectorLike</span> <span class="o">|</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">VectorLike</span><span class="p">],</span>
+        <span class="n">tangents</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">VectorLike</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">tangent_scalars</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">periodic</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">mode</span><span class="p">:</span> <span class="n">Mode</span> <span class="o">=</span> <span class="n">Mode</span><span class="o">.</span><span class="n">ADD</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="n">points</span> <span class="o">=</span> <span class="n">flatten_sequence</span><span class="p">(</span><span class="o">*</span><span class="n">pts</span><span class="p">)</span>
+        <span class="n">context</span><span class="p">:</span> <span class="n">BuildLine</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="n">BuildLine</span><span class="o">.</span><span class="n">_get_context</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">validate_inputs</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+
+        <span class="n">spline_pts</span> <span class="o">=</span> <span class="n">WorkplaneList</span><span class="o">.</span><span class="n">localize</span><span class="p">(</span><span class="o">*</span><span class="n">points</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">tangents</span><span class="p">:</span>
+            <span class="n">spline_tangents</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="n">WorkplaneList</span><span class="o">.</span><span class="n">localize</span><span class="p">(</span><span class="n">tangent</span><span class="p">)</span><span class="o">.</span><span class="n">normalized</span><span class="p">()</span> <span class="k">for</span> <span class="n">tangent</span> <span class="ow">in</span> <span class="n">tangents</span>
+            <span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">spline_tangents</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="k">if</span> <span class="n">tangents</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">tangent_scalars</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">scalars</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">tangents</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">scalars</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">tangent_scalars</span><span class="p">)</span> <span class="k">if</span> <span class="n">tangent_scalars</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="p">[]</span>
+
+        <span class="n">spline</span> <span class="o">=</span> <span class="n">Edge</span><span class="o">.</span><span class="n">make_spline</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">p</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">Vector</span><span class="p">)</span> <span class="k">else</span> <span class="n">Vector</span><span class="p">(</span><span class="o">*</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">spline_pts</span><span class="p">],</span>
+            <span class="n">tangents</span><span class="o">=</span><span class="p">(</span>
+                <span class="p">[</span>
+                    <span class="n">t</span> <span class="o">*</span> <span class="n">s</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">Vector</span><span class="p">)</span> <span class="k">else</span> <span class="n">Vector</span><span class="p">(</span><span class="o">*</span><span class="n">t</span><span class="p">)</span> <span class="o">*</span> <span class="n">s</span>
+                    <span class="k">for</span> <span class="n">t</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">spline_tangents</span><span class="p">,</span> <span class="n">scalars</span><span class="p">)</span>
+                <span class="p">]</span>
+                <span class="k">if</span> <span class="n">spline_tangents</span>
+                <span class="k">else</span> <span class="kc">None</span>
+            <span class="p">),</span>
+            <span class="n">periodic</span><span class="o">=</span><span class="n">periodic</span><span class="p">,</span>
+            <span class="n">scale</span><span class="o">=</span><span class="n">tangent_scalars</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">spline</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="TangentArc">
+<a class="viewcode-back" href="../objects.html#objects_curve.TangentArc">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">TangentArc</span><span class="p">(</span><span class="n">BaseEdgeObject</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Line Object: Tangent Arc</span>
+
+<span class="sd">    Create a circular arc defined by two points and a tangent.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        pts (VectorLike | Iterable[VectorLike]): sequence of two points</span>
+<span class="sd">        tangent (VectorLike): tangent to constrain arc</span>
+<span class="sd">        tangent_from_first (bool, optional): apply tangent to first point. Applying</span>
+<span class="sd">            tangent to end point will flip the orientation of the arc. Defaults to True</span>
+<span class="sd">        mode (Mode, optional): combination mode. Defaults to Mode.ADD</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: Two points are required</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_applies_to</span> <span class="o">=</span> <span class="p">[</span><span class="n">BuildLine</span><span class="o">.</span><span class="n">_tag</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="o">*</span><span class="n">pts</span><span class="p">:</span> <span class="n">VectorLike</span> <span class="o">|</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">VectorLike</span><span class="p">],</span>
+        <span class="n">tangent</span><span class="p">:</span> <span class="n">VectorLike</span><span class="p">,</span>
+        <span class="n">tangent_from_first</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="n">mode</span><span class="p">:</span> <span class="n">Mode</span> <span class="o">=</span> <span class="n">Mode</span><span class="o">.</span><span class="n">ADD</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="n">points</span> <span class="o">=</span> <span class="n">flatten_sequence</span><span class="p">(</span><span class="o">*</span><span class="n">pts</span><span class="p">)</span>
+        <span class="n">context</span><span class="p">:</span> <span class="n">BuildLine</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="n">BuildLine</span><span class="o">.</span><span class="n">_get_context</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">validate_inputs</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;tangent_arc requires two points&quot;</span><span class="p">)</span>
+        <span class="n">arc_pts</span> <span class="o">=</span> <span class="n">WorkplaneList</span><span class="o">.</span><span class="n">localize</span><span class="p">(</span><span class="o">*</span><span class="n">points</span><span class="p">)</span>
+        <span class="n">arc_tangent</span> <span class="o">=</span> <span class="n">WorkplaneList</span><span class="o">.</span><span class="n">localize</span><span class="p">(</span><span class="n">tangent</span><span class="p">)</span><span class="o">.</span><span class="n">normalized</span><span class="p">()</span>
+
+        <span class="n">point_indices</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="k">if</span> <span class="n">tangent_from_first</span> <span class="k">else</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">arc</span> <span class="o">=</span> <span class="n">Edge</span><span class="o">.</span><span class="n">make_tangent_arc</span><span class="p">(</span>
+            <span class="n">arc_pts</span><span class="p">[</span><span class="n">point_indices</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="n">arc_tangent</span><span class="p">,</span> <span class="n">arc_pts</span><span class="p">[</span><span class="n">point_indices</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
+        <span class="p">)</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">arc</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="ThreePointArc">
+<a class="viewcode-back" href="../objects.html#objects_curve.ThreePointArc">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">ThreePointArc</span><span class="p">(</span><span class="n">BaseEdgeObject</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Line Object: Three Point Arc</span>
+
+<span class="sd">    Create a circular arc defined by three points.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        pts (VectorLike | Iterable[VectorLike]): sequence of three points</span>
+<span class="sd">        mode (Mode, optional): combination mode. Defaults to Mode.ADD</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: Three points must be provided</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_applies_to</span> <span class="o">=</span> <span class="p">[</span><span class="n">BuildLine</span><span class="o">.</span><span class="n">_tag</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">pts</span><span class="p">:</span> <span class="n">VectorLike</span> <span class="o">|</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">VectorLike</span><span class="p">],</span> <span class="n">mode</span><span class="p">:</span> <span class="n">Mode</span> <span class="o">=</span> <span class="n">Mode</span><span class="o">.</span><span class="n">ADD</span><span class="p">):</span>
+        <span class="n">context</span><span class="p">:</span> <span class="n">BuildLine</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="n">BuildLine</span><span class="o">.</span><span class="n">_get_context</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">validate_inputs</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+
+        <span class="n">points</span> <span class="o">=</span> <span class="n">flatten_sequence</span><span class="p">(</span><span class="o">*</span><span class="n">pts</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;ThreePointArc requires three points&quot;</span><span class="p">)</span>
+        <span class="n">points_localized</span> <span class="o">=</span> <span class="n">WorkplaneList</span><span class="o">.</span><span class="n">localize</span><span class="p">(</span><span class="o">*</span><span class="n">points</span><span class="p">)</span>
+        <span class="n">arc</span> <span class="o">=</span> <span class="n">Edge</span><span class="o">.</span><span class="n">make_three_point_arc</span><span class="p">(</span><span class="o">*</span><span class="n">points_localized</span><span class="p">)</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">arc</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">)</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Gumyr.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

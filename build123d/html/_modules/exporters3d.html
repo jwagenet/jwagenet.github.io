@@ -1,0 +1,516 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>exporters3d &mdash; build123d 0.9.2.dev40+gb1f0eed documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster.custom.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster.bundle.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-shadow.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-punk.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-noir.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-light.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-borderless.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/micromodal.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/sphinx_rtd_theme.css?v=3234e928" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c97902b4"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+      <script src="../_static/js/hoverxref.js"></script>
+      <script src="../_static/js/tooltipster.bundle.min.js"></script>
+      <script src="../_static/js/micromodal.min.js"></script>
+      <script src="../_static/design-tabs.js?v=f930bc37"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            build123d
+              <img src="../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../key_concepts.html">Key Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../key_concepts_builder.html">Key Concepts (builder mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../key_concepts_algebra.html">Key Concepts (algebra mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../moving_objects.html">Moving Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../OpenSCAD.html">Transitioning from OpenSCAD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introductory_examples.html">Introductory Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../selectors_operators.html">Selectors and Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operations.html">Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../builders.html">Builders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../joints.html">Joints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assemblies.html">Assemblies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tips.html">Tips, Best Practices and FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../import_export.html">Import/Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cheat_sheet.html">Cheat Sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../external.html">External Tools and Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../builder_api_reference.html">Builder Common API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../direct_api_reference.html">Direct API Reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">build123d</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Module code</a></li>
+      <li class="breadcrumb-item active">exporters3d</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for exporters3d</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">build123d 3D Exporters</span>
+
+<span class="sd">name: exporters3d.py</span>
+<span class="sd">by:   Gumyr</span>
+<span class="sd">date: March 6th, 2024</span>
+
+<span class="sd">desc:</span>
+<span class="sd">    Exporters for 3D models such as STEP.</span>
+
+<span class="sd">license:</span>
+
+<span class="sd">    Copyright 2024 Gumyr</span>
+
+<span class="sd">    Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span>
+<span class="sd">    you may not use this file except in compliance with the License.</span>
+<span class="sd">    You may obtain a copy of the License at</span>
+
+<span class="sd">        http://www.apache.org/licenses/LICENSE-2.0</span>
+
+<span class="sd">    Unless required by applicable law or agreed to in writing, software</span>
+<span class="sd">    distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span>
+<span class="sd">    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
+<span class="sd">    See the License for the specific language governing permissions and</span>
+<span class="sd">    limitations under the License.</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c1"># pylint has trouble with the OCP imports</span>
+<span class="c1"># pylint: disable=no-name-in-module, import-error</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">io</span><span class="w"> </span><span class="kn">import</span> <span class="n">BytesIO</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">os</span><span class="w"> </span><span class="kn">import</span> <span class="n">PathLike</span><span class="p">,</span> <span class="n">fsdecode</span><span class="p">,</span> <span class="n">fspath</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Union</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">OCP.TopAbs</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ta</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">anytree</span><span class="w"> </span><span class="kn">import</span> <span class="n">PreOrderIter</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.APIHeaderSection</span><span class="w"> </span><span class="kn">import</span> <span class="n">APIHeaderSection_MakeHeader</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.BRepMesh</span><span class="w"> </span><span class="kn">import</span> <span class="n">BRepMesh_IncrementalMesh</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.BRepTools</span><span class="w"> </span><span class="kn">import</span> <span class="n">BRepTools</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.IFSelect</span><span class="w"> </span><span class="kn">import</span> <span class="n">IFSelect_ReturnStatus</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.IGESControl</span><span class="w"> </span><span class="kn">import</span> <span class="n">IGESControl_Controller</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.Interface</span><span class="w"> </span><span class="kn">import</span> <span class="n">Interface_Static</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.Message</span><span class="w"> </span><span class="kn">import</span> <span class="n">Message</span><span class="p">,</span> <span class="n">Message_Gravity</span><span class="p">,</span> <span class="n">Message_ProgressRange</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.RWGltf</span><span class="w"> </span><span class="kn">import</span> <span class="n">RWGltf_CafWriter</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.STEPCAFControl</span><span class="w"> </span><span class="kn">import</span> <span class="n">STEPCAFControl_Controller</span><span class="p">,</span> <span class="n">STEPCAFControl_Writer</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.STEPControl</span><span class="w"> </span><span class="kn">import</span> <span class="n">STEPControl_Controller</span><span class="p">,</span> <span class="n">STEPControl_StepModelType</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.StlAPI</span><span class="w"> </span><span class="kn">import</span> <span class="n">StlAPI_Writer</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.TCollection</span><span class="w"> </span><span class="kn">import</span> <span class="n">TCollection_AsciiString</span><span class="p">,</span> <span class="n">TCollection_ExtendedString</span><span class="p">,</span> <span class="n">TCollection_HAsciiString</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.TColStd</span><span class="w"> </span><span class="kn">import</span> <span class="n">TColStd_IndexedDataMapOfStringString</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.TDataStd</span><span class="w"> </span><span class="kn">import</span> <span class="n">TDataStd_Name</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.TDF</span><span class="w"> </span><span class="kn">import</span> <span class="n">TDF_Label</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.TDocStd</span><span class="w"> </span><span class="kn">import</span> <span class="n">TDocStd_Document</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.TopExp</span><span class="w"> </span><span class="kn">import</span> <span class="n">TopExp_Explorer</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.XCAFApp</span><span class="w"> </span><span class="kn">import</span> <span class="n">XCAFApp_Application</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.XCAFDoc</span><span class="w"> </span><span class="kn">import</span> <span class="n">XCAFDoc_ColorType</span><span class="p">,</span> <span class="n">XCAFDoc_DocumentTool</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.XSControl</span><span class="w"> </span><span class="kn">import</span> <span class="n">XSControl_WorkSession</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">build123d.build_common</span><span class="w"> </span><span class="kn">import</span> <span class="n">UNITS_PER_METER</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">build123d.build_enums</span><span class="w"> </span><span class="kn">import</span> <span class="n">PrecisionMode</span><span class="p">,</span> <span class="n">Unit</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">build123d.geometry</span><span class="w"> </span><span class="kn">import</span> <span class="n">Location</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">build123d.topology</span><span class="w"> </span><span class="kn">import</span> <span class="n">Compound</span><span class="p">,</span> <span class="n">Curve</span><span class="p">,</span> <span class="n">Part</span><span class="p">,</span> <span class="n">Shape</span><span class="p">,</span> <span class="n">Sketch</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_create_xde</span><span class="p">(</span><span class="n">to_export</span><span class="p">:</span> <span class="n">Shape</span><span class="p">,</span> <span class="n">unit</span><span class="p">:</span> <span class="n">Unit</span> <span class="o">=</span> <span class="n">Unit</span><span class="o">.</span><span class="n">MM</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TDocStd_Document</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;create_xde</span>
+
+<span class="sd">    An OpenCASCADE Technology (OCCT) XDE (eXtended Data Exchange) document is a</span>
+<span class="sd">    sophisticated framework designed for comprehensive CAD data management,</span>
+<span class="sd">    facilitating not just the geometric modeling of shapes but also the handling</span>
+<span class="sd">    of associated metadata, such as material properties, color, layering, and</span>
+<span class="sd">    annotations. This integrated environment supports the organization and</span>
+<span class="sd">    manipulation of complex assemblies and parts, enabling users to navigate,</span>
+<span class="sd">    edit, and query both the structure and attributes of CAD models. XDE&#39;s</span>
+<span class="sd">    architecture is particularly beneficial for applications requiring detailed</span>
+<span class="sd">    interoperability between different CAD systems, offering robust tools for</span>
+<span class="sd">    data exchange, visualization, and modification while preserving the integrity</span>
+<span class="sd">    and attributes of the CAD data across various stages of product development.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        to_export (Shape): object or assembly</span>
+<span class="sd">        unit (Unit, optional): shape units. Defaults to Unit.MM.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        TDocStd_Document: XDE document</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Create the XCAF document</span>
+    <span class="n">doc</span> <span class="o">=</span> <span class="n">TDocStd_Document</span><span class="p">(</span><span class="n">TCollection_ExtendedString</span><span class="p">(</span><span class="s2">&quot;XmlOcaf&quot;</span><span class="p">))</span>
+
+    <span class="c1"># Initialize the XCAF application</span>
+    <span class="n">application</span> <span class="o">=</span> <span class="n">XCAFApp_Application</span><span class="o">.</span><span class="n">GetApplication_s</span><span class="p">()</span>
+
+    <span class="c1"># Create and initialize a new document</span>
+    <span class="n">application</span><span class="o">.</span><span class="n">NewDocument</span><span class="p">(</span><span class="n">TCollection_ExtendedString</span><span class="p">(</span><span class="s2">&quot;MDTV-XCAF&quot;</span><span class="p">),</span> <span class="n">doc</span><span class="p">)</span>
+    <span class="n">application</span><span class="o">.</span><span class="n">InitDocument</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
+
+    <span class="n">XCAFDoc_DocumentTool</span><span class="o">.</span><span class="n">SetLengthUnit_s</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">UNITS_PER_METER</span><span class="p">[</span><span class="n">unit</span><span class="p">])</span>
+
+    <span class="c1"># Get the tools for handling shapes &amp; colors section of the XCAF document.</span>
+    <span class="n">shape_tool</span> <span class="o">=</span> <span class="n">XCAFDoc_DocumentTool</span><span class="o">.</span><span class="n">ShapeTool_s</span><span class="p">(</span><span class="n">doc</span><span class="o">.</span><span class="n">Main</span><span class="p">())</span>
+    <span class="n">color_tool</span> <span class="o">=</span> <span class="n">XCAFDoc_DocumentTool</span><span class="o">.</span><span class="n">ColorTool_s</span><span class="p">(</span><span class="n">doc</span><span class="o">.</span><span class="n">Main</span><span class="p">())</span>
+    <span class="c1"># shape_tool.SetAutoNaming_s(True)</span>
+
+    <span class="c1"># Add all the shapes in the b3d object either as a single object or assembly</span>
+    <span class="n">is_assembly</span> <span class="o">=</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">to_export</span><span class="p">,</span> <span class="n">Compound</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">to_export</span><span class="o">.</span><span class="n">children</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span>
+    <span class="n">_root_label</span> <span class="o">=</span> <span class="n">shape_tool</span><span class="o">.</span><span class="n">AddShape</span><span class="p">(</span><span class="n">to_export</span><span class="o">.</span><span class="n">wrapped</span><span class="p">,</span> <span class="n">is_assembly</span><span class="p">)</span>
+
+    <span class="c1"># Add names and color info</span>
+    <span class="n">node</span><span class="p">:</span> <span class="n">Shape</span>
+    <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">PreOrderIter</span><span class="p">(</span><span class="n">to_export</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">node</span><span class="o">.</span><span class="n">label</span> <span class="ow">and</span> <span class="n">node</span><span class="o">.</span><span class="n">color</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">continue</span>  <span class="c1"># skip if there is nothing to set</span>
+
+        <span class="n">node_label</span><span class="p">:</span> <span class="n">TDF_Label</span> <span class="o">=</span> <span class="n">shape_tool</span><span class="o">.</span><span class="n">FindShape</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">wrapped</span><span class="p">,</span> <span class="n">findInstance</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+        <span class="c1"># For Part, Sketch and Curve objects color needs to be applied to the wrapped</span>
+        <span class="c1"># object not just the Compound wrapper</span>
+        <span class="n">sub_node_labels</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">Compound</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">node</span><span class="o">.</span><span class="n">children</span><span class="p">:</span>
+            <span class="n">sub_nodes</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">Part</span><span class="p">):</span>
+                <span class="n">explorer</span> <span class="o">=</span> <span class="n">TopExp_Explorer</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">wrapped</span><span class="p">,</span> <span class="n">ta</span><span class="o">.</span><span class="n">TopAbs_SOLID</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">Sketch</span><span class="p">):</span>
+                <span class="n">explorer</span> <span class="o">=</span> <span class="n">TopExp_Explorer</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">wrapped</span><span class="p">,</span> <span class="n">ta</span><span class="o">.</span><span class="n">TopAbs_FACE</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">Curve</span><span class="p">):</span>
+                <span class="n">explorer</span> <span class="o">=</span> <span class="n">TopExp_Explorer</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">wrapped</span><span class="p">,</span> <span class="n">ta</span><span class="o">.</span><span class="n">TopAbs_EDGE</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;Unknown Compound type, color not set&quot;</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+                <span class="n">explorer</span> <span class="o">=</span> <span class="n">TopExp_Explorer</span><span class="p">()</span>  <span class="c1"># don&#39;t know what to look for</span>
+
+            <span class="k">while</span> <span class="n">explorer</span><span class="o">.</span><span class="n">More</span><span class="p">():</span>
+                <span class="n">sub_nodes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">explorer</span><span class="o">.</span><span class="n">Current</span><span class="p">())</span>
+                <span class="n">explorer</span><span class="o">.</span><span class="n">Next</span><span class="p">()</span>
+
+            <span class="n">sub_node_labels</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="n">shape_tool</span><span class="o">.</span><span class="n">FindShape</span><span class="p">(</span><span class="n">sub_node</span><span class="p">,</span> <span class="n">findInstance</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">sub_node</span> <span class="ow">in</span> <span class="n">sub_nodes</span>
+            <span class="p">]</span>
+        <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">label</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">node_label</span><span class="o">.</span><span class="n">IsNull</span><span class="p">():</span>
+            <span class="n">TDataStd_Name</span><span class="o">.</span><span class="n">Set_s</span><span class="p">(</span><span class="n">node_label</span><span class="p">,</span> <span class="n">TCollection_ExtendedString</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">label</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">color</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">label</span> <span class="ow">in</span> <span class="p">[</span><span class="n">node_label</span><span class="p">]</span> <span class="o">+</span> <span class="n">sub_node_labels</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">label</span><span class="o">.</span><span class="n">IsNull</span><span class="p">():</span>
+                    <span class="k">continue</span>  <span class="c1"># Only valid labels can be set</span>
+                <span class="n">color_tool</span><span class="o">.</span><span class="n">SetColor</span><span class="p">(</span>
+                    <span class="n">label</span><span class="p">,</span> <span class="n">node</span><span class="o">.</span><span class="n">color</span><span class="o">.</span><span class="n">wrapped</span><span class="p">,</span> <span class="n">XCAFDoc_ColorType</span><span class="o">.</span><span class="n">XCAFDoc_ColorSurf</span>
+                <span class="p">)</span>
+
+    <span class="n">shape_tool</span><span class="o">.</span><span class="n">UpdateAssemblies</span><span class="p">()</span>
+
+    <span class="c1"># print(f&quot;Is document valid: {XCAFDoc_DocumentTool.IsXCAFDocument_s(doc)}&quot;)</span>
+
+    <span class="k">return</span> <span class="n">doc</span>
+
+
+<div class="viewcode-block" id="export_brep">
+<a class="viewcode-back" href="../import_export.html#exporters3d.export_brep">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">export_brep</span><span class="p">(</span>
+    <span class="n">to_export</span><span class="p">:</span> <span class="n">Shape</span><span class="p">,</span>
+    <span class="n">file_path</span><span class="p">:</span> <span class="n">PathLike</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">bytes</span> <span class="o">|</span> <span class="n">BytesIO</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Export this shape to a BREP file</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        to_export (Shape): object or assembly</span>
+<span class="sd">        file_path: Union[PathLike, str, bytes, BytesIO]: brep file path or memory buffer</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        bool: write status</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">BytesIO</span><span class="p">):</span>
+        <span class="n">file_path</span> <span class="o">=</span> <span class="n">fsdecode</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+
+    <span class="n">return_value</span> <span class="o">=</span> <span class="n">BRepTools</span><span class="o">.</span><span class="n">Write_s</span><span class="p">(</span><span class="n">to_export</span><span class="o">.</span><span class="n">wrapped</span><span class="p">,</span> <span class="n">file_path</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="kc">True</span> <span class="k">if</span> <span class="n">return_value</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">return_value</span></div>
+
+
+
+<div class="viewcode-block" id="export_gltf">
+<a class="viewcode-back" href="../import_export.html#exporters3d.export_gltf">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">export_gltf</span><span class="p">(</span>
+    <span class="n">to_export</span><span class="p">:</span> <span class="n">Shape</span><span class="p">,</span>
+    <span class="n">file_path</span><span class="p">:</span> <span class="n">PathLike</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">bytes</span><span class="p">,</span>
+    <span class="n">unit</span><span class="p">:</span> <span class="n">Unit</span> <span class="o">=</span> <span class="n">Unit</span><span class="o">.</span><span class="n">MM</span><span class="p">,</span>
+    <span class="n">binary</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">linear_deflection</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.001</span><span class="p">,</span>
+    <span class="n">angular_deflection</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;export_gltf</span>
+
+<span class="sd">    The glTF (GL Transmission Format) specification primarily focuses on the efficient</span>
+<span class="sd">    transmission and loading of 3D models as a compact, binary format that is directly</span>
+<span class="sd">    renderable by graphics APIs like WebGL, OpenGL, and Vulkan. It&#39;s designed to store</span>
+<span class="sd">    detailed 3D model data, including meshes (vertices, normals, textures, etc.),</span>
+<span class="sd">    animations, materials, and scene hierarchy, among other aspects.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        to_export (Shape): object or assembly</span>
+<span class="sd">        file_path (Union[PathLike, str, bytes]): glTF file path</span>
+<span class="sd">        unit (Unit, optional): shape units. Defaults to Unit.MM.</span>
+<span class="sd">        binary (bool, optional): output format. Defaults to False.</span>
+<span class="sd">        linear_deflection (float, optional): A linear deflection setting which limits</span>
+<span class="sd">            the distance between a curve and its tessellation. Setting this value too</span>
+<span class="sd">            low will result in large meshes that can consume computing resources. Setting</span>
+<span class="sd">            the value too high can result in meshes with a level of detail that is too</span>
+<span class="sd">            low. The default is a good starting point for a range of cases.</span>
+<span class="sd">            Defaults to 1e-3.</span>
+<span class="sd">        angular_deflection (float, optional): Angular deflection setting which limits</span>
+<span class="sd">            the angle between subsequent segments in a polyline. Defaults to 0.1.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        RuntimeError: Failed to write glTF file</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        bool: write status</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Map from OCCT&#39;s right-handed +Z up coordinate system to glTF&#39;s right-handed +Y</span>
+    <span class="c1"># up coordinate system</span>
+    <span class="c1"># https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html#coordinate-system-and-units</span>
+    <span class="k">if</span> <span class="n">to_export</span><span class="o">.</span><span class="n">location</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Shape must have a location to export to glTF&quot;</span><span class="p">)</span>
+    <span class="n">original_location</span> <span class="o">=</span> <span class="n">to_export</span><span class="o">.</span><span class="n">location</span>
+    <span class="n">to_export</span><span class="o">.</span><span class="n">location</span> <span class="o">*=</span> <span class="n">Location</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="o">-</span><span class="mi">90</span><span class="p">)</span>
+
+    <span class="c1"># Tessellate the object(s)</span>
+    <span class="n">node</span><span class="p">:</span> <span class="n">Shape</span>
+    <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">PreOrderIter</span><span class="p">(</span><span class="n">to_export</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">wrapped</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">node</span><span class="o">.</span><span class="n">mesh</span><span class="p">(</span><span class="n">linear_deflection</span><span class="p">,</span> <span class="n">angular_deflection</span><span class="p">)</span>
+
+    <span class="c1"># Create the XCAF document</span>
+    <span class="n">doc</span><span class="p">:</span> <span class="n">TDocStd_Document</span> <span class="o">=</span> <span class="n">_create_xde</span><span class="p">(</span><span class="n">to_export</span><span class="p">,</span> <span class="n">unit</span><span class="p">)</span>
+
+    <span class="c1"># Write the glTF file</span>
+    <span class="n">writer</span> <span class="o">=</span> <span class="n">RWGltf_CafWriter</span><span class="p">(</span>
+        <span class="n">theFile</span><span class="o">=</span><span class="n">TCollection_AsciiString</span><span class="p">(</span><span class="n">fsdecode</span><span class="p">(</span><span class="n">file_path</span><span class="p">)),</span> <span class="n">theIsBinary</span><span class="o">=</span><span class="n">binary</span>
+    <span class="p">)</span>
+    <span class="n">writer</span><span class="o">.</span><span class="n">SetParallel</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">index_map</span> <span class="o">=</span> <span class="n">TColStd_IndexedDataMapOfStringString</span><span class="p">()</span>
+    <span class="n">progress</span> <span class="o">=</span> <span class="n">Message_ProgressRange</span><span class="p">()</span>
+
+    <span class="n">messenger</span> <span class="o">=</span> <span class="n">Message</span><span class="o">.</span><span class="n">DefaultMessenger_s</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">printer</span> <span class="ow">in</span> <span class="n">messenger</span><span class="o">.</span><span class="n">Printers</span><span class="p">():</span>
+        <span class="n">printer</span><span class="o">.</span><span class="n">SetTraceLevel</span><span class="p">(</span><span class="n">Message_Gravity</span><span class="p">(</span><span class="n">Message_Gravity</span><span class="o">.</span><span class="n">Message_Fail</span><span class="p">))</span>
+
+    <span class="n">status</span> <span class="o">=</span> <span class="n">writer</span><span class="o">.</span><span class="n">Perform</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">index_map</span><span class="p">,</span> <span class="n">progress</span><span class="p">)</span>
+
+    <span class="c1"># Reset tessellation</span>
+    <span class="n">BRepTools</span><span class="o">.</span><span class="n">Clean_s</span><span class="p">(</span><span class="n">to_export</span><span class="o">.</span><span class="n">wrapped</span><span class="p">)</span>
+
+    <span class="c1"># Reset original orientation</span>
+    <span class="n">to_export</span><span class="o">.</span><span class="n">location</span> <span class="o">=</span> <span class="n">original_location</span>
+
+    <span class="c1"># if not status:</span>
+    <span class="c1">#     raise RuntimeError(&quot;Failed to write glTF file&quot;)</span>
+
+    <span class="k">return</span> <span class="n">status</span></div>
+
+
+
+<div class="viewcode-block" id="export_step">
+<a class="viewcode-back" href="../import_export.html#exporters3d.export_step">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">export_step</span><span class="p">(</span>
+    <span class="n">to_export</span><span class="p">:</span> <span class="n">Shape</span><span class="p">,</span>
+    <span class="n">file_path</span><span class="p">:</span> <span class="n">PathLike</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">bytes</span><span class="p">,</span>
+    <span class="n">unit</span><span class="p">:</span> <span class="n">Unit</span> <span class="o">=</span> <span class="n">Unit</span><span class="o">.</span><span class="n">MM</span><span class="p">,</span>
+    <span class="n">write_pcurves</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">precision_mode</span><span class="p">:</span> <span class="n">PrecisionMode</span> <span class="o">=</span> <span class="n">PrecisionMode</span><span class="o">.</span><span class="n">AVERAGE</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;export_step</span>
+
+<span class="sd">    Export a build123d Shape or assembly with color and label attributes.</span>
+<span class="sd">    Note that if the color of a node in an assembly isn&#39;t set, it will be</span>
+<span class="sd">    assigned the color of its nearest ancestor.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        to_export (Shape): object or assembly</span>
+<span class="sd">        file_path (Union[PathLike, str, bytes]): step file path</span>
+<span class="sd">        unit (Unit, optional): shape units. Defaults to Unit.MM.</span>
+<span class="sd">        write_pcurves (bool, optional): write parametric curves to the STEP file.</span>
+<span class="sd">            Defaults to True.</span>
+<span class="sd">        precision_mode (PrecisionMode, optional): geometric data precision.</span>
+<span class="sd">            Defaults to PrecisionMode.AVERAGE.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        RuntimeError: Unknown Compound type</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        bool: success</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Create the XCAF document</span>
+    <span class="n">doc</span> <span class="o">=</span> <span class="n">_create_xde</span><span class="p">(</span><span class="n">to_export</span><span class="p">,</span> <span class="n">unit</span><span class="p">)</span>
+
+    <span class="c1"># Disable writing OCCT info to console</span>
+    <span class="n">messenger</span> <span class="o">=</span> <span class="n">Message</span><span class="o">.</span><span class="n">DefaultMessenger_s</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">printer</span> <span class="ow">in</span> <span class="n">messenger</span><span class="o">.</span><span class="n">Printers</span><span class="p">():</span>
+        <span class="n">printer</span><span class="o">.</span><span class="n">SetTraceLevel</span><span class="p">(</span><span class="n">Message_Gravity</span><span class="p">(</span><span class="n">Message_Gravity</span><span class="o">.</span><span class="n">Message_Fail</span><span class="p">))</span>
+
+    <span class="n">session</span> <span class="o">=</span> <span class="n">XSControl_WorkSession</span><span class="p">()</span>
+    <span class="n">writer</span> <span class="o">=</span> <span class="n">STEPCAFControl_Writer</span><span class="p">(</span><span class="n">session</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+    <span class="n">writer</span><span class="o">.</span><span class="n">SetColorMode</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">writer</span><span class="o">.</span><span class="n">SetLayerMode</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">writer</span><span class="o">.</span><span class="n">SetNameMode</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">header</span> <span class="o">=</span> <span class="n">APIHeaderSection_MakeHeader</span><span class="p">(</span><span class="n">writer</span><span class="o">.</span><span class="n">Writer</span><span class="p">()</span><span class="o">.</span><span class="n">Model</span><span class="p">())</span>
+    <span class="k">if</span> <span class="n">to_export</span><span class="o">.</span><span class="n">label</span><span class="p">:</span>
+        <span class="n">header</span><span class="o">.</span><span class="n">SetName</span><span class="p">(</span><span class="n">TCollection_HAsciiString</span><span class="p">(</span><span class="n">to_export</span><span class="o">.</span><span class="n">label</span><span class="p">))</span>
+    <span class="c1"># consider using e.g. the non *Value versions instead</span>
+    <span class="c1"># header.SetAuthorValue(1, TCollection_HAsciiString(&quot;Volker&quot;));</span>
+    <span class="c1"># header.SetOrganizationValue(1, TCollection_HAsciiString(&quot;myCompanyName&quot;));</span>
+    <span class="n">header</span><span class="o">.</span><span class="n">SetOriginatingSystem</span><span class="p">(</span><span class="n">TCollection_HAsciiString</span><span class="p">(</span><span class="s2">&quot;build123d&quot;</span><span class="p">))</span>
+    <span class="c1"># header.SetDescriptionValue(1, TCollection_HAsciiString(&quot;myApplication Model&quot;));</span>
+
+    <span class="n">STEPCAFControl_Controller</span><span class="o">.</span><span class="n">Init_s</span><span class="p">()</span>
+    <span class="n">STEPControl_Controller</span><span class="o">.</span><span class="n">Init_s</span><span class="p">()</span>
+    <span class="n">IGESControl_Controller</span><span class="o">.</span><span class="n">Init_s</span><span class="p">()</span>
+    <span class="n">Interface_Static</span><span class="o">.</span><span class="n">SetIVal_s</span><span class="p">(</span><span class="s2">&quot;write.surfacecurve.mode&quot;</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">write_pcurves</span><span class="p">))</span>
+    <span class="n">Interface_Static</span><span class="o">.</span><span class="n">SetIVal_s</span><span class="p">(</span><span class="s2">&quot;write.precision.mode&quot;</span><span class="p">,</span> <span class="n">precision_mode</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+    <span class="n">writer</span><span class="o">.</span><span class="n">Transfer</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">STEPControl_StepModelType</span><span class="o">.</span><span class="n">STEPControl_AsIs</span><span class="p">)</span>
+
+    <span class="n">status</span> <span class="o">=</span> <span class="n">writer</span><span class="o">.</span><span class="n">Write</span><span class="p">(</span><span class="n">fspath</span><span class="p">(</span><span class="n">file_path</span><span class="p">))</span> <span class="o">==</span> <span class="n">IFSelect_ReturnStatus</span><span class="o">.</span><span class="n">IFSelect_RetDone</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">status</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Failed to write STEP file&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">status</span></div>
+
+
+
+<div class="viewcode-block" id="export_stl">
+<a class="viewcode-back" href="../import_export.html#exporters3d.export_stl">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">export_stl</span><span class="p">(</span>
+    <span class="n">to_export</span><span class="p">:</span> <span class="n">Shape</span><span class="p">,</span>
+    <span class="n">file_path</span><span class="p">:</span> <span class="n">PathLike</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">bytes</span><span class="p">,</span>
+    <span class="n">tolerance</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1e-3</span><span class="p">,</span>
+    <span class="n">angular_tolerance</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span>
+    <span class="n">ascii_format</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Export STL</span>
+
+<span class="sd">    Exports a shape to a specified STL file.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        to_export (Shape): object or assembly</span>
+<span class="sd">        file_path (str): The path and file name to write the STL output to.</span>
+<span class="sd">        tolerance (float, optional): A linear deflection setting which limits the distance</span>
+<span class="sd">            between a curve and its tessellation. Setting this value too low will result in</span>
+<span class="sd">            large meshes that can consume computing resources. Setting the value too high can</span>
+<span class="sd">            result in meshes with a level of detail that is too low. The default is a good</span>
+<span class="sd">            starting point for a range of cases. Defaults to 1e-3.</span>
+<span class="sd">        angular_tolerance (float, optional): Angular deflection setting which limits the angle</span>
+<span class="sd">            between subsequent segments in a polyline. Defaults to 0.1.</span>
+<span class="sd">        ascii_format (bool, optional): Export the file as ASCII (True) or binary (False)</span>
+<span class="sd">            STL format. Defaults to False (binary).</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        bool: Success</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">mesh</span> <span class="o">=</span> <span class="n">BRepMesh_IncrementalMesh</span><span class="p">(</span>
+        <span class="n">to_export</span><span class="o">.</span><span class="n">wrapped</span><span class="p">,</span> <span class="n">tolerance</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">angular_tolerance</span><span class="p">,</span> <span class="kc">True</span>
+    <span class="p">)</span>
+    <span class="n">mesh</span><span class="o">.</span><span class="n">Perform</span><span class="p">()</span>
+
+    <span class="n">writer</span> <span class="o">=</span> <span class="n">StlAPI_Writer</span><span class="p">()</span>
+
+    <span class="n">writer</span><span class="o">.</span><span class="n">ASCIIMode</span> <span class="o">=</span> <span class="n">ascii_format</span>
+
+    <span class="n">file_path</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">writer</span><span class="o">.</span><span class="n">Write</span><span class="p">(</span><span class="n">to_export</span><span class="o">.</span><span class="n">wrapped</span><span class="p">,</span> <span class="n">file_path</span><span class="p">)</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Gumyr.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

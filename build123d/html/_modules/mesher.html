@@ -1,0 +1,721 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>mesher &mdash; build123d 0.9.2.dev40+gb1f0eed documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster.custom.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster.bundle.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-shadow.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-punk.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-noir.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-light.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-borderless.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/micromodal.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/sphinx_rtd_theme.css?v=3234e928" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c97902b4"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+      <script src="../_static/js/hoverxref.js"></script>
+      <script src="../_static/js/tooltipster.bundle.min.js"></script>
+      <script src="../_static/js/micromodal.min.js"></script>
+      <script src="../_static/design-tabs.js?v=f930bc37"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            build123d
+              <img src="../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../key_concepts.html">Key Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../key_concepts_builder.html">Key Concepts (builder mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../key_concepts_algebra.html">Key Concepts (algebra mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../moving_objects.html">Moving Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../OpenSCAD.html">Transitioning from OpenSCAD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introductory_examples.html">Introductory Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../selectors_operators.html">Selectors and Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operations.html">Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../builders.html">Builders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../joints.html">Joints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assemblies.html">Assemblies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tips.html">Tips, Best Practices and FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../import_export.html">Import/Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cheat_sheet.html">Cheat Sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../external.html">External Tools and Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../builder_api_reference.html">Builder Common API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../direct_api_reference.html">Direct API Reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">build123d</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Module code</a></li>
+      <li class="breadcrumb-item active">mesher</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for mesher</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">build123d exporter/import for 3MF and STL</span>
+
+<span class="sd">name: mesher.py</span>
+<span class="sd">by:   Gumyr</span>
+<span class="sd">date: Aug 9th 2023</span>
+
+<span class="sd">desc:</span>
+<span class="sd">    This module provides the Mesher class that implements exporting and importing</span>
+<span class="sd">    both 3MF and STL mesh files.  It uses the 3MF Consortium&#39;s Lib3MF library</span>
+<span class="sd">    (see https://github.com/3MFConsortium/lib3mf).</span>
+
+<span class="sd">    Creating a 3MF object involves constructing a valid 3D model conforming to</span>
+<span class="sd">    the 3MF specification. The resource hierarchy represents the various</span>
+<span class="sd">    components that make up a 3MF object. The main components required to create</span>
+<span class="sd">    a 3MF object are:</span>
+
+<span class="sd">        Wrapper: The wrapper is the highest-level component representing the</span>
+<span class="sd">    entire 3MF model. It serves as a container for all other resources and</span>
+<span class="sd">    provides access to the complete 3D model. The wrapper is the starting point</span>
+<span class="sd">    for creating and managing the 3MF model.</span>
+
+<span class="sd">        Model: The model is a core component that contains the geometric and</span>
+<span class="sd">    non-geometric resources of the 3D object. It represents the actual 3D</span>
+<span class="sd">    content, including geometry, materials, colors, textures, and other model</span>
+<span class="sd">    information.</span>
+
+<span class="sd">        Resources: Within the model, various resources are used to define</span>
+<span class="sd">    different aspects of the 3D object. Some essential resources are:</span>
+
+<span class="sd">        a. Mesh: The mesh resource defines the geometry of the 3D object. It</span>
+<span class="sd">    contains a collection of vertices, triangles, and other geometric</span>
+<span class="sd">    information that describes the shape.</span>
+
+<span class="sd">        b. Components: Components allow you to define complex structures by</span>
+<span class="sd">    combining multiple meshes together. They are useful for hierarchical</span>
+<span class="sd">    assemblies and instances.</span>
+
+<span class="sd">        c. Materials: Materials define the appearance properties of the</span>
+<span class="sd">    surfaces, such as color, texture, or surface finish.</span>
+
+<span class="sd">        d. Textures: Textures are images applied to the surfaces of the 3D</span>
+<span class="sd">    object to add detail and realism.</span>
+
+<span class="sd">        e. Colors: Colors represent color information used in the 3D model,</span>
+<span class="sd">    which can be applied to vertices or faces.</span>
+
+<span class="sd">        Build Items: Build items are the instances of resources used in the 3D</span>
+<span class="sd">    model. They specify the usage of resources within the model. For example, a</span>
+<span class="sd">    build item can refer to a specific mesh, material, and transformation to</span>
+<span class="sd">    represent an instance of an object.</span>
+
+<span class="sd">        Metadata: Metadata provides additional information about the model, such</span>
+<span class="sd">    as author, creation date, and custom properties.</span>
+
+<span class="sd">        Attachments: Attachments can include additional files or data associated</span>
+<span class="sd">    with the 3MF object, such as texture images or other external resources.</span>
+
+<span class="sd">    When creating a 3MF object, you typically start with the wrapper and then</span>
+<span class="sd">    create or import the necessary resources, such as meshes, materials, and</span>
+<span class="sd">    textures, to define the 3D content. You then organize the model using build</span>
+<span class="sd">    items, specifying how the resources are used in the scene. Additionally, you</span>
+<span class="sd">    can add metadata and attachments as needed to complete the 3MF object.</span>
+
+<span class="sd">license:</span>
+
+<span class="sd">    Copyright 2023 Gumyr</span>
+
+<span class="sd">    Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span>
+<span class="sd">    you may not use this file except in compliance with the License.</span>
+<span class="sd">    You may obtain a copy of the License at</span>
+
+<span class="sd">        http://www.apache.org/licenses/LICENSE-2.0</span>
+
+<span class="sd">    Unless required by applicable law or agreed to in writing, software</span>
+<span class="sd">    distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span>
+<span class="sd">    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
+<span class="sd">    See the License for the specific language governing permissions and</span>
+<span class="sd">    limitations under the License.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c1"># pylint has trouble with the OCP imports</span>
+<span class="c1"># pylint: disable=no-name-in-module, import-error</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">copy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">copy_module</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ctypes</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">os</span><span class="w"> </span><span class="kn">import</span> <span class="n">PathLike</span><span class="p">,</span> <span class="n">fsdecode</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Union</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">uuid</span><span class="w"> </span><span class="kn">import</span> <span class="n">UUID</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">Iterable</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">OCP.TopAbs</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ta</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.BRep</span><span class="w"> </span><span class="kn">import</span> <span class="n">BRep_Tool</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.BRepBuilderAPI</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">BRepBuilderAPI_MakeFace</span><span class="p">,</span>
+    <span class="n">BRepBuilderAPI_MakePolygon</span><span class="p">,</span>
+    <span class="n">BRepBuilderAPI_MakeSolid</span><span class="p">,</span>
+    <span class="n">BRepBuilderAPI_Sewing</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.BRepGProp</span><span class="w"> </span><span class="kn">import</span> <span class="n">BRepGProp</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.BRepMesh</span><span class="w"> </span><span class="kn">import</span> <span class="n">BRepMesh_IncrementalMesh</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.gp</span><span class="w"> </span><span class="kn">import</span> <span class="n">gp_Pnt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.GProp</span><span class="w"> </span><span class="kn">import</span> <span class="n">GProp_GProps</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.TopAbs</span><span class="w"> </span><span class="kn">import</span> <span class="n">TopAbs_ShapeEnum</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.TopExp</span><span class="w"> </span><span class="kn">import</span> <span class="n">TopExp_Explorer</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.TopLoc</span><span class="w"> </span><span class="kn">import</span> <span class="n">TopLoc_Location</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.TopoDS</span><span class="w"> </span><span class="kn">import</span> <span class="n">TopoDS_Compound</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">lib3mf</span><span class="w"> </span><span class="kn">import</span> <span class="n">Lib3MF</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">build123d.build_enums</span><span class="w"> </span><span class="kn">import</span> <span class="n">MeshType</span><span class="p">,</span> <span class="n">Unit</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">build123d.geometry</span><span class="w"> </span><span class="kn">import</span> <span class="n">TOLERANCE</span><span class="p">,</span> <span class="n">Color</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">build123d.topology</span><span class="w"> </span><span class="kn">import</span> <span class="n">Compound</span><span class="p">,</span> <span class="n">Shape</span><span class="p">,</span> <span class="n">Shell</span><span class="p">,</span> <span class="n">Solid</span><span class="p">,</span> <span class="n">downcast</span>
+
+
+<div class="viewcode-block" id="Mesher">
+<a class="viewcode-back" href="../import_export.html#mesher.Mesher">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Mesher</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Mesher</span>
+
+<span class="sd">    Tool for exporting and importing meshed objects stored in 3MF or STL files.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        unit (Unit, optional): model units. Defaults to Unit.MM.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Translate b3d Units to Lib3MF ModelUnits</span>
+    <span class="n">_map_b3d_to_3mf_unit</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">Unit</span><span class="o">.</span><span class="n">MC</span><span class="p">:</span> <span class="n">Lib3MF</span><span class="o">.</span><span class="n">ModelUnit</span><span class="o">.</span><span class="n">MicroMeter</span><span class="p">,</span>
+        <span class="n">Unit</span><span class="o">.</span><span class="n">MM</span><span class="p">:</span> <span class="n">Lib3MF</span><span class="o">.</span><span class="n">ModelUnit</span><span class="o">.</span><span class="n">MilliMeter</span><span class="p">,</span>
+        <span class="n">Unit</span><span class="o">.</span><span class="n">CM</span><span class="p">:</span> <span class="n">Lib3MF</span><span class="o">.</span><span class="n">ModelUnit</span><span class="o">.</span><span class="n">CentiMeter</span><span class="p">,</span>
+        <span class="n">Unit</span><span class="o">.</span><span class="n">IN</span><span class="p">:</span> <span class="n">Lib3MF</span><span class="o">.</span><span class="n">ModelUnit</span><span class="o">.</span><span class="n">Inch</span><span class="p">,</span>
+        <span class="n">Unit</span><span class="o">.</span><span class="n">FT</span><span class="p">:</span> <span class="n">Lib3MF</span><span class="o">.</span><span class="n">ModelUnit</span><span class="o">.</span><span class="n">Foot</span><span class="p">,</span>
+        <span class="n">Unit</span><span class="o">.</span><span class="n">M</span><span class="p">:</span> <span class="n">Lib3MF</span><span class="o">.</span><span class="n">ModelUnit</span><span class="o">.</span><span class="n">Meter</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="c1"># Translate Lib3MF ModelUnits to b3d Units</span>
+    <span class="n">_map_3mf_to_b3d_unit</span> <span class="o">=</span> <span class="p">{</span><span class="n">v</span><span class="p">:</span> <span class="n">k</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">_map_b3d_to_3mf_unit</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+
+    <span class="c1"># Translate b3d MeshTypes to 3MF ObjectType</span>
+    <span class="n">_map_b3d_mesh_type_3mf</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">MeshType</span><span class="o">.</span><span class="n">OTHER</span><span class="p">:</span> <span class="n">Lib3MF</span><span class="o">.</span><span class="n">ObjectType</span><span class="o">.</span><span class="n">Other</span><span class="p">,</span>
+        <span class="n">MeshType</span><span class="o">.</span><span class="n">MODEL</span><span class="p">:</span> <span class="n">Lib3MF</span><span class="o">.</span><span class="n">ObjectType</span><span class="o">.</span><span class="n">Model</span><span class="p">,</span>
+        <span class="n">MeshType</span><span class="o">.</span><span class="n">SUPPORT</span><span class="p">:</span> <span class="n">Lib3MF</span><span class="o">.</span><span class="n">ObjectType</span><span class="o">.</span><span class="n">Support</span><span class="p">,</span>
+        <span class="n">MeshType</span><span class="o">.</span><span class="n">SOLIDSUPPORT</span><span class="p">:</span> <span class="n">Lib3MF</span><span class="o">.</span><span class="n">ObjectType</span><span class="o">.</span><span class="n">SolidSupport</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="c1"># Translate 3MF ObjectType to b3d MeshTypess</span>
+    <span class="n">_map_3mf_to_b3d_mesh_type</span> <span class="o">=</span> <span class="p">{</span><span class="n">v</span><span class="p">:</span> <span class="n">k</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">_map_b3d_mesh_type_3mf</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unit</span><span class="p">:</span> <span class="n">Unit</span> <span class="o">=</span> <span class="n">Unit</span><span class="o">.</span><span class="n">MM</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">unit</span> <span class="o">=</span> <span class="n">unit</span>
+        <span class="n">libpath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">Lib3MF</span><span class="o">.</span><span class="vm">__file__</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wrapper</span> <span class="o">=</span> <span class="n">Lib3MF</span><span class="o">.</span><span class="n">Wrapper</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">libpath</span><span class="p">,</span> <span class="s2">&quot;lib3mf&quot;</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">wrapper</span><span class="o">.</span><span class="n">CreateModel</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">SetUnit</span><span class="p">(</span><span class="n">Mesher</span><span class="o">.</span><span class="n">_map_b3d_to_3mf_unit</span><span class="p">[</span><span class="n">unit</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">meshes</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Lib3MF</span><span class="o">.</span><span class="n">MeshObject</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">model_unit</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Unit</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Unit used in the model&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">unit</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">triangle_counts</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Number of triangles in each of the model&#39;s meshes&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">m</span><span class="o">.</span><span class="n">GetTriangleCount</span><span class="p">()</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">meshes</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">vertex_counts</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Number of vertices in each of the models&#39;s meshes&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">m</span><span class="o">.</span><span class="n">GetVertexCount</span><span class="p">()</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">meshes</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">mesh_count</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Number of meshes in the model&quot;&quot;&quot;</span>
+        <span class="n">mesh_iterator</span><span class="p">:</span> <span class="n">Lib3MF</span><span class="o">.</span><span class="n">MeshObjectIterator</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">GetMeshObjects</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">mesh_iterator</span><span class="o">.</span><span class="n">Count</span><span class="p">()</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">library_version</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;3MF Consortium Lib#MF version&quot;&quot;&quot;</span>
+        <span class="n">major</span><span class="p">,</span> <span class="n">minor</span><span class="p">,</span> <span class="n">micro</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">wrapper</span><span class="o">.</span><span class="n">GetLibraryVersion</span><span class="p">()</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">major</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="n">minor</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="n">micro</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<div class="viewcode-block" id="Mesher.add_meta_data">
+<a class="viewcode-back" href="../import_export.html#mesher.Mesher.add_meta_data">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">add_meta_data</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">name_space</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">value</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">metadata_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">must_preserve</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;add_meta_data</span>
+
+<span class="sd">        Add meta data to the models</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            name_space (str): categorizer of different metadata entries</span>
+<span class="sd">            name (str): metadata label</span>
+<span class="sd">            value (str): metadata content</span>
+<span class="sd">            metadata_type (str): metadata type</span>
+<span class="sd">            must_preserve (bool): metadata must not be removed if unused</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Get an existing meta data group if there is one</span>
+        <span class="n">mdg</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">GetMetaDataGroup</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">mdg</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="c1"># Create a components object to attach the meta data group</span>
+            <span class="n">components</span><span class="p">:</span> <span class="n">Lib3MF</span><span class="o">.</span><span class="n">ComponentsObject</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">AddComponentsObject</span><span class="p">()</span>
+            <span class="n">mdg</span> <span class="o">=</span> <span class="n">components</span><span class="o">.</span><span class="n">GetMetaDataGroup</span><span class="p">()</span>
+
+        <span class="c1"># Add the meta data</span>
+        <span class="n">mdg</span><span class="o">.</span><span class="n">AddMetaData</span><span class="p">(</span><span class="n">name_space</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">metadata_type</span><span class="p">,</span> <span class="n">must_preserve</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Mesher.add_code_to_metadata">
+<a class="viewcode-back" href="../import_export.html#mesher.Mesher.add_code_to_metadata">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">add_code_to_metadata</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add the code calling this method to the 3MF metadata with the custom</span>
+<span class="sd">        name space `build123d`, name equal to the base file name and the type</span>
+<span class="sd">        as `python`&quot;&quot;&quot;</span>
+        <span class="n">caller_file</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">_getframe</span><span class="p">()</span><span class="o">.</span><span class="n">f_back</span><span class="o">.</span><span class="n">f_code</span><span class="o">.</span><span class="n">co_filename</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">caller_file</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">code_file</span><span class="p">:</span>
+            <span class="n">source_code</span> <span class="o">=</span> <span class="n">code_file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>  <span class="c1"># read whole file to a string</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_meta_data</span><span class="p">(</span>
+            <span class="n">name_space</span><span class="o">=</span><span class="s2">&quot;build123d&quot;</span><span class="p">,</span>
+            <span class="n">name</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">caller_file</span><span class="p">),</span>
+            <span class="n">value</span><span class="o">=</span><span class="n">source_code</span><span class="p">,</span>
+            <span class="n">metadata_type</span><span class="o">=</span><span class="s2">&quot;python&quot;</span><span class="p">,</span>
+            <span class="n">must_preserve</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Mesher.get_meta_data">
+<a class="viewcode-back" href="../import_export.html#mesher.Mesher.get_meta_data">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_meta_data</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Retrieve all of the metadata&quot;&quot;&quot;</span>
+        <span class="n">meta_data_group</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">GetMetaDataGroup</span><span class="p">()</span>
+        <span class="n">meta_data_contents</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">meta_data_group</span><span class="o">.</span><span class="n">GetMetaDataCount</span><span class="p">()):</span>
+            <span class="n">meta_data</span> <span class="o">=</span> <span class="n">meta_data_group</span><span class="o">.</span><span class="n">GetMetaData</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+            <span class="n">meta_data_dict</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="n">meta_data_dict</span><span class="p">[</span><span class="s2">&quot;name_space&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">meta_data</span><span class="o">.</span><span class="n">GetNameSpace</span><span class="p">()</span>
+            <span class="n">meta_data_dict</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">meta_data</span><span class="o">.</span><span class="n">GetName</span><span class="p">()</span>
+            <span class="n">meta_data_dict</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">meta_data</span><span class="o">.</span><span class="n">GetType</span><span class="p">()</span>
+            <span class="n">meta_data_dict</span><span class="p">[</span><span class="s2">&quot;value&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">meta_data</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
+            <span class="n">meta_data_contents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">meta_data_dict</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">meta_data_contents</span></div>
+
+
+<div class="viewcode-block" id="Mesher.get_meta_data_by_key">
+<a class="viewcode-back" href="../import_export.html#mesher.Mesher.get_meta_data_by_key">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_meta_data_by_key</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name_space</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Retrieve the metadata value and type for the provided name space and name&quot;&quot;&quot;</span>
+        <span class="n">meta_data_group</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">GetMetaDataGroup</span><span class="p">()</span>
+        <span class="n">meta_data_contents</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">meta_data</span> <span class="o">=</span> <span class="n">meta_data_group</span><span class="o">.</span><span class="n">GetMetaDataByKey</span><span class="p">(</span><span class="n">name_space</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+        <span class="n">meta_data_contents</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">meta_data</span><span class="o">.</span><span class="n">GetType</span><span class="p">()</span>
+        <span class="n">meta_data_contents</span><span class="p">[</span><span class="s2">&quot;value&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">meta_data</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">meta_data_contents</span></div>
+
+
+<div class="viewcode-block" id="Mesher.get_mesh_properties">
+<a class="viewcode-back" href="../import_export.html#mesher.Mesher.get_mesh_properties">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_mesh_properties</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Retrieve the properties from all the meshes&quot;&quot;&quot;</span>
+        <span class="n">properties</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">mesh</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">meshes</span><span class="p">:</span>
+            <span class="n">property_dict</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="n">property_dict</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">GetName</span><span class="p">()</span>
+            <span class="n">property_dict</span><span class="p">[</span><span class="s2">&quot;part_number&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">GetPartNumber</span><span class="p">()</span>
+            <span class="n">type_3mf</span> <span class="o">=</span> <span class="n">Lib3MF</span><span class="o">.</span><span class="n">ObjectType</span><span class="p">(</span><span class="n">mesh</span><span class="o">.</span><span class="n">GetType</span><span class="p">())</span>
+            <span class="n">property_dict</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Mesher</span><span class="o">.</span><span class="n">_map_3mf_to_b3d_mesh_type</span><span class="p">[</span><span class="n">type_3mf</span><span class="p">]</span><span class="o">.</span><span class="n">name</span>
+            <span class="n">_uuid_valid</span><span class="p">,</span> <span class="n">uuid_value</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">GetUUID</span><span class="p">()</span>
+            <span class="n">property_dict</span><span class="p">[</span><span class="s2">&quot;uuid&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">uuid_value</span>  <span class="c1"># are bad values possible?</span>
+            <span class="n">properties</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">property_dict</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">properties</span></div>
+
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_mesh_shape</span><span class="p">(</span>
+        <span class="n">ocp_mesh</span><span class="p">:</span> <span class="n">Shape</span><span class="p">,</span>
+        <span class="n">linear_deflection</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">angular_deflection</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Mesh the shape into vertices and triangles&quot;&quot;&quot;</span>
+        <span class="n">loc</span> <span class="o">=</span> <span class="n">TopLoc_Location</span><span class="p">()</span>  <span class="c1"># Face locations</span>
+        <span class="n">BRepMesh_IncrementalMesh</span><span class="p">(</span>
+            <span class="n">theShape</span><span class="o">=</span><span class="n">ocp_mesh</span><span class="o">.</span><span class="n">wrapped</span><span class="p">,</span>
+            <span class="n">theLinDeflection</span><span class="o">=</span><span class="n">linear_deflection</span><span class="p">,</span>
+            <span class="n">isRelative</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">theAngDeflection</span><span class="o">=</span><span class="n">angular_deflection</span><span class="p">,</span>
+            <span class="n">isInParallel</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="n">ocp_mesh_vertices</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">triangles</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">offset</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">facet</span> <span class="ow">in</span> <span class="n">ocp_mesh</span><span class="o">.</span><span class="n">faces</span><span class="p">():</span>
+            <span class="c1"># Triangulate the face</span>
+            <span class="n">poly_triangulation</span> <span class="o">=</span> <span class="n">BRep_Tool</span><span class="o">.</span><span class="n">Triangulation_s</span><span class="p">(</span><span class="n">facet</span><span class="o">.</span><span class="n">wrapped</span><span class="p">,</span> <span class="n">loc</span><span class="p">)</span>
+            <span class="n">trsf</span> <span class="o">=</span> <span class="n">loc</span><span class="o">.</span><span class="n">Transformation</span><span class="p">()</span>
+            <span class="c1"># Store the vertices in the triangulated face</span>
+            <span class="n">node_count</span> <span class="o">=</span> <span class="n">poly_triangulation</span><span class="o">.</span><span class="n">NbNodes</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">node_count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+                <span class="n">gp_pnt</span> <span class="o">=</span> <span class="n">poly_triangulation</span><span class="o">.</span><span class="n">Node</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">Transformed</span><span class="p">(</span><span class="n">trsf</span><span class="p">)</span>
+                <span class="n">pnt</span> <span class="o">=</span> <span class="p">(</span><span class="n">gp_pnt</span><span class="o">.</span><span class="n">X</span><span class="p">(),</span> <span class="n">gp_pnt</span><span class="o">.</span><span class="n">Y</span><span class="p">(),</span> <span class="n">gp_pnt</span><span class="o">.</span><span class="n">Z</span><span class="p">())</span>
+                <span class="n">ocp_mesh_vertices</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pnt</span><span class="p">)</span>
+
+            <span class="c1"># Store the triangles from the triangulated faces</span>
+            <span class="k">if</span> <span class="n">facet</span><span class="o">.</span><span class="n">wrapped</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="n">facet_reversed</span> <span class="o">=</span> <span class="n">facet</span><span class="o">.</span><span class="n">wrapped</span><span class="o">.</span><span class="n">Orientation</span><span class="p">()</span> <span class="o">==</span> <span class="n">ta</span><span class="o">.</span><span class="n">TopAbs_REVERSED</span>
+            <span class="n">order</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="k">if</span> <span class="n">facet_reversed</span> <span class="k">else</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">tri</span> <span class="ow">in</span> <span class="n">poly_triangulation</span><span class="o">.</span><span class="n">Triangles</span><span class="p">():</span>
+                <span class="n">triangles</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">tri</span><span class="o">.</span><span class="n">Value</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="n">offset</span> <span class="o">-</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">order</span><span class="p">])</span>
+            <span class="n">offset</span> <span class="o">+=</span> <span class="n">node_count</span>
+        <span class="k">return</span> <span class="n">ocp_mesh_vertices</span><span class="p">,</span> <span class="n">triangles</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_create_3mf_mesh</span><span class="p">(</span>
+        <span class="n">ocp_mesh_vertices</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]],</span>
+        <span class="n">triangles</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]],</span>
+    <span class="p">):</span>
+        <span class="c1"># Round off the vertices to avoid vertices within tolerance being</span>
+        <span class="c1"># considered as different vertices</span>
+        <span class="n">digits</span> <span class="o">=</span> <span class="o">-</span><span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">TOLERANCE</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="mi">1</span><span class="p">))</span>
+        
+        <span class="c1"># Create vertex to index mapping directly</span>
+        <span class="n">vertex_to_idx</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">next_idx</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">vert_table</span> <span class="o">=</span> <span class="p">{}</span>
+        
+        <span class="c1"># First pass - create mapping</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">ocp_mesh_vertices</span><span class="p">):</span>
+            <span class="n">key</span> <span class="o">=</span> <span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">digits</span><span class="p">),</span> <span class="nb">round</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">digits</span><span class="p">),</span> <span class="nb">round</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">digits</span><span class="p">))</span>
+            <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">vertex_to_idx</span><span class="p">:</span>
+                <span class="n">vertex_to_idx</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">next_idx</span>
+                <span class="n">next_idx</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">vert_table</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">vertex_to_idx</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+        
+        <span class="c1"># Create vertices array in one shot</span>
+        <span class="n">vertices_3mf</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">Lib3MF</span><span class="o">.</span><span class="n">Position</span><span class="p">((</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_float</span> <span class="o">*</span> <span class="mi">3</span><span class="p">)(</span><span class="o">*</span><span class="n">v</span><span class="p">))</span>
+            <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">vertex_to_idx</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+        <span class="p">]</span>
+        
+        <span class="c1"># Pre-allocate triangles array and process in bulk</span>
+        <span class="n">c_uint3</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_uint</span> <span class="o">*</span> <span class="mi">3</span>
+        <span class="n">triangles_3mf</span> <span class="o">=</span> <span class="p">[]</span>
+        
+        <span class="c1"># Process triangles in bulk</span>
+        <span class="k">for</span> <span class="n">tri</span> <span class="ow">in</span> <span class="n">triangles</span><span class="p">:</span>
+            <span class="c1"># Map indices directly without list comprehension</span>
+            <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">tri</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">tri</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">tri</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+            <span class="n">mapped_a</span> <span class="o">=</span> <span class="n">vert_table</span><span class="p">[</span><span class="n">a</span><span class="p">]</span>
+            <span class="n">mapped_b</span> <span class="o">=</span> <span class="n">vert_table</span><span class="p">[</span><span class="n">b</span><span class="p">]</span>
+            <span class="n">mapped_c</span> <span class="o">=</span> <span class="n">vert_table</span><span class="p">[</span><span class="n">c</span><span class="p">]</span>
+            
+            <span class="c1"># Quick degenerate check without set creation</span>
+            <span class="k">if</span> <span class="n">mapped_a</span> <span class="o">!=</span> <span class="n">mapped_b</span> <span class="ow">and</span> <span class="n">mapped_b</span> <span class="o">!=</span> <span class="n">mapped_c</span> <span class="ow">and</span> <span class="n">mapped_c</span> <span class="o">!=</span> <span class="n">mapped_a</span><span class="p">:</span>
+                <span class="n">triangles_3mf</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Lib3MF</span><span class="o">.</span><span class="n">Triangle</span><span class="p">(</span><span class="n">c_uint3</span><span class="p">(</span><span class="n">mapped_a</span><span class="p">,</span> <span class="n">mapped_b</span><span class="p">,</span> <span class="n">mapped_c</span><span class="p">)))</span>
+        
+        <span class="k">return</span> <span class="p">(</span><span class="n">vertices_3mf</span><span class="p">,</span> <span class="n">triangles_3mf</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_add_color</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">b3d_shape</span><span class="p">:</span> <span class="n">Shape</span><span class="p">,</span> <span class="n">mesh_3mf</span><span class="p">:</span> <span class="n">Lib3MF</span><span class="o">.</span><span class="n">MeshObject</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Transfer color info from shape to mesh&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">b3d_shape</span><span class="o">.</span><span class="n">color</span><span class="p">:</span>
+            <span class="n">base_material_group</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">AddBaseMaterialGroup</span><span class="p">()</span>
+            <span class="n">color_lib3mf</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">wrapper</span><span class="o">.</span><span class="n">FloatRGBAToColor</span><span class="p">(</span><span class="o">*</span><span class="nb">tuple</span><span class="p">(</span><span class="n">b3d_shape</span><span class="o">.</span><span class="n">color</span><span class="p">))</span>
+            <span class="n">base_material_id</span> <span class="o">=</span> <span class="n">base_material_group</span><span class="o">.</span><span class="n">AddMaterial</span><span class="p">(</span>
+                <span class="n">Name</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">b3d_shape</span><span class="o">.</span><span class="n">color</span><span class="p">),</span> <span class="n">DisplayColor</span><span class="o">=</span><span class="n">color_lib3mf</span>
+            <span class="p">)</span>
+            <span class="n">mesh_3mf</span><span class="o">.</span><span class="n">SetObjectLevelProperty</span><span class="p">(</span>
+                <span class="n">base_material_group</span><span class="o">.</span><span class="n">GetResourceID</span><span class="p">(),</span> <span class="n">base_material_id</span>
+            <span class="p">)</span>
+
+<div class="viewcode-block" id="Mesher.add_shape">
+<a class="viewcode-back" href="../import_export.html#mesher.Mesher.add_shape">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">add_shape</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">shape</span><span class="p">:</span> <span class="n">Shape</span> <span class="o">|</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Shape</span><span class="p">],</span>
+        <span class="n">linear_deflection</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.001</span><span class="p">,</span>
+        <span class="n">angular_deflection</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span>
+        <span class="n">mesh_type</span><span class="p">:</span> <span class="n">MeshType</span> <span class="o">=</span> <span class="n">MeshType</span><span class="o">.</span><span class="n">MODEL</span><span class="p">,</span>
+        <span class="n">part_number</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">uuid_value</span><span class="p">:</span> <span class="n">UUID</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;add_shape</span>
+
+<span class="sd">        Add a shape to the 3MF/STL file.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            shape (Union[Shape, Iterable[Shape]]): build123d object</span>
+<span class="sd">            linear_deflection (float, optional): mesh control for edges. Defaults to 0.001.</span>
+<span class="sd">            angular_deflection (float, optional): mesh control for non-planar surfaces.</span>
+<span class="sd">                Defaults to 0.1.</span>
+<span class="sd">            mesh_type (MeshType, optional): 3D printing use of mesh. Defaults to MeshType.MODEL.</span>
+<span class="sd">            part_number (str, optional): part #. Defaults to None.</span>
+<span class="sd">            uuid_value (uuid, optional): value from uuid package. Defaults to None.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            RuntimeError: 3mf mesh is invalid</span>
+<span class="sd">            Warning: Degenerate shape skipped</span>
+<span class="sd">            Warning: 3mf mesh is not manifold</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">shapes</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">input_shape</span> <span class="ow">in</span> <span class="n">shape</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">)</span> <span class="k">else</span> <span class="p">[</span><span class="n">shape</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">input_shape</span><span class="p">,</span> <span class="n">Compound</span><span class="p">):</span>
+                <span class="n">shapes</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">input_shape</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">shapes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">input_shape</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">b3d_shape</span> <span class="ow">in</span> <span class="n">shapes</span><span class="p">:</span>
+            <span class="c1"># Create a 3MF mesh object</span>
+            <span class="n">mesh_3mf</span><span class="p">:</span> <span class="n">Lib3MF</span><span class="o">.</span><span class="n">MeshObject</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">AddMeshObject</span><span class="p">()</span>
+
+            <span class="c1"># Mesh the shape</span>
+            <span class="n">ocp_mesh_vertices</span><span class="p">,</span> <span class="n">triangles</span> <span class="o">=</span> <span class="n">Mesher</span><span class="o">.</span><span class="n">_mesh_shape</span><span class="p">(</span>
+                <span class="n">copy_module</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">b3d_shape</span><span class="p">),</span>
+                <span class="n">linear_deflection</span><span class="p">,</span>
+                <span class="n">angular_deflection</span><span class="p">,</span>
+            <span class="p">)</span>
+
+            <span class="c1"># Skip invalid meshes</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">ocp_mesh_vertices</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">3</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">triangles</span><span class="p">:</span>
+                <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Degenerate shape </span><span class="si">{</span><span class="n">b3d_shape</span><span class="si">}</span><span class="s2"> - skipped&quot;</span><span class="p">,</span>
+                    <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                <span class="p">)</span>
+                <span class="k">continue</span>
+
+            <span class="c1"># Create 3mf mesh inputs</span>
+            <span class="n">vertices_3mf</span><span class="p">,</span> <span class="n">triangles_3mf</span> <span class="o">=</span> <span class="n">Mesher</span><span class="o">.</span><span class="n">_create_3mf_mesh</span><span class="p">(</span>
+                <span class="n">ocp_mesh_vertices</span><span class="p">,</span> <span class="n">triangles</span>
+            <span class="p">)</span>
+
+            <span class="c1"># Build the mesh</span>
+            <span class="n">mesh_3mf</span><span class="o">.</span><span class="n">SetGeometry</span><span class="p">(</span><span class="n">vertices_3mf</span><span class="p">,</span> <span class="n">triangles_3mf</span><span class="p">)</span>
+
+            <span class="c1"># Add the mesh properties</span>
+            <span class="n">mesh_3mf</span><span class="o">.</span><span class="n">SetType</span><span class="p">(</span><span class="n">Mesher</span><span class="o">.</span><span class="n">_map_b3d_mesh_type_3mf</span><span class="p">[</span><span class="n">mesh_type</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">b3d_shape</span><span class="o">.</span><span class="n">label</span><span class="p">:</span>
+                <span class="n">mesh_3mf</span><span class="o">.</span><span class="n">SetName</span><span class="p">(</span><span class="n">b3d_shape</span><span class="o">.</span><span class="n">label</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">part_number</span><span class="p">:</span>
+                <span class="n">mesh_3mf</span><span class="o">.</span><span class="n">SetPartNumber</span><span class="p">(</span><span class="n">part_number</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">uuid_value</span><span class="p">:</span>
+                <span class="n">mesh_3mf</span><span class="o">.</span><span class="n">SetUUID</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">uuid_value</span><span class="p">))</span>
+            <span class="c1"># mesh_3mf.SetAttachmentAsThumbnail</span>
+            <span class="c1"># mesh_3mf.SetPackagePart</span>
+
+            <span class="c1"># Add color</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_add_color</span><span class="p">(</span><span class="n">b3d_shape</span><span class="p">,</span> <span class="n">mesh_3mf</span><span class="p">)</span>
+
+            <span class="c1"># Check mesh</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">mesh_3mf</span><span class="o">.</span><span class="n">IsValid</span><span class="p">():</span>
+                <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;3mf mesh is invalid&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">mesh_3mf</span><span class="o">.</span><span class="n">IsManifoldAndOriented</span><span class="p">():</span>
+                <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;3mf mesh is not manifold&quot;</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+            <span class="c1"># Add mesh to model</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">meshes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mesh_3mf</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">AddBuildItem</span><span class="p">(</span><span class="n">mesh_3mf</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">wrapper</span><span class="o">.</span><span class="n">GetIdentityTransform</span><span class="p">())</span>
+
+            <span class="c1"># Not sure is this is required...</span>
+            <span class="n">components</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">AddComponentsObject</span><span class="p">()</span>
+            <span class="n">components</span><span class="o">.</span><span class="n">AddComponent</span><span class="p">(</span><span class="n">mesh_3mf</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">wrapper</span><span class="o">.</span><span class="n">GetIdentityTransform</span><span class="p">())</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_get_shape</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mesh_3mf</span><span class="p">:</span> <span class="n">Lib3MF</span><span class="o">.</span><span class="n">MeshObject</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Shape</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Build build123d object from lib3mf mesh&quot;&quot;&quot;</span>
+        <span class="c1"># Extract all the vertices</span>
+        <span class="n">gp_pnts</span> <span class="o">=</span> <span class="p">[</span><span class="n">gp_Pnt</span><span class="p">(</span><span class="o">*</span><span class="n">p</span><span class="o">.</span><span class="n">Coordinates</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">mesh_3mf</span><span class="o">.</span><span class="n">GetVertices</span><span class="p">()]</span>
+
+        <span class="c1"># Extract all the triangle and create a Shell from generated Faces</span>
+        <span class="n">shell_builder</span> <span class="o">=</span> <span class="n">BRepBuilderAPI_Sewing</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">mesh_3mf</span><span class="o">.</span><span class="n">GetTriangleCount</span><span class="p">()):</span>
+            <span class="c1"># Extract the vertex indices for this triangle</span>
+            <span class="n">tri_indices</span> <span class="o">=</span> <span class="n">mesh_3mf</span><span class="o">.</span><span class="n">GetTriangle</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">Indices</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+            <span class="c1"># Convert to a list of gp_Pnt</span>
+            <span class="n">ocp_vertices</span> <span class="o">=</span> <span class="p">[</span><span class="n">gp_pnts</span><span class="p">[</span><span class="n">tri_indices</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
+            <span class="c1"># Create the triangular face using the polygon</span>
+            <span class="n">polygon_builder</span> <span class="o">=</span> <span class="n">BRepBuilderAPI_MakePolygon</span><span class="p">(</span><span class="o">*</span><span class="n">ocp_vertices</span><span class="p">,</span> <span class="n">Close</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">face_builder</span> <span class="o">=</span> <span class="n">BRepBuilderAPI_MakeFace</span><span class="p">(</span><span class="n">polygon_builder</span><span class="o">.</span><span class="n">Wire</span><span class="p">())</span>
+            <span class="n">facet</span> <span class="o">=</span> <span class="n">face_builder</span><span class="o">.</span><span class="n">Face</span><span class="p">()</span>
+            <span class="n">facet_properties</span> <span class="o">=</span> <span class="n">GProp_GProps</span><span class="p">()</span>
+            <span class="n">BRepGProp</span><span class="o">.</span><span class="n">SurfaceProperties_s</span><span class="p">(</span><span class="n">facet</span><span class="p">,</span> <span class="n">facet_properties</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">facet_properties</span><span class="o">.</span><span class="n">Mass</span><span class="p">()</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>  <span class="c1"># Area==0 is an invalid facet</span>
+                <span class="n">shell_builder</span><span class="o">.</span><span class="n">Add</span><span class="p">(</span><span class="n">facet</span><span class="p">)</span>
+
+        <span class="c1"># Create the Shell(s) - if the object has voids there will be multiple</span>
+        <span class="n">shell_builder</span><span class="o">.</span><span class="n">Perform</span><span class="p">()</span>
+        <span class="n">occ_sewed_shape</span> <span class="o">=</span> <span class="n">downcast</span><span class="p">(</span><span class="n">shell_builder</span><span class="o">.</span><span class="n">SewedShape</span><span class="p">())</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">occ_sewed_shape</span><span class="p">,</span> <span class="n">TopoDS_Compound</span><span class="p">):</span>
+            <span class="n">occ_shells</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="n">explorer</span> <span class="o">=</span> <span class="n">TopExp_Explorer</span><span class="p">(</span><span class="n">occ_sewed_shape</span><span class="p">,</span> <span class="n">TopAbs_ShapeEnum</span><span class="o">.</span><span class="n">TopAbs_SHELL</span><span class="p">)</span>
+            <span class="k">while</span> <span class="n">explorer</span><span class="o">.</span><span class="n">More</span><span class="p">():</span>
+                <span class="n">occ_shells</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">downcast</span><span class="p">(</span><span class="n">explorer</span><span class="o">.</span><span class="n">Current</span><span class="p">()))</span>
+                <span class="n">explorer</span><span class="o">.</span><span class="n">Next</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">occ_shells</span> <span class="o">=</span> <span class="p">[</span><span class="n">occ_sewed_shape</span><span class="p">]</span>
+
+        <span class="c1"># Create a solid if manifold</span>
+        <span class="n">shape_obj</span> <span class="o">=</span> <span class="n">Shell</span><span class="p">(</span><span class="n">occ_sewed_shape</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">shape_obj</span><span class="o">.</span><span class="n">is_manifold</span><span class="p">:</span>
+            <span class="n">solid_builder</span> <span class="o">=</span> <span class="n">BRepBuilderAPI_MakeSolid</span><span class="p">(</span><span class="o">*</span><span class="n">occ_shells</span><span class="p">)</span>
+            <span class="n">shape_obj</span> <span class="o">=</span> <span class="n">Solid</span><span class="p">(</span><span class="n">solid_builder</span><span class="o">.</span><span class="n">Solid</span><span class="p">())</span>
+
+        <span class="k">return</span> <span class="n">shape_obj</span>
+
+<div class="viewcode-block" id="Mesher.read">
+<a class="viewcode-back" href="../import_export.html#mesher.Mesher.read">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">read</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_name</span><span class="p">:</span> <span class="n">PathLike</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">bytes</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Shape</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;read</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            file_name Union[PathLike, str, bytes]: file path</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            ValueError: Unknown file format - must be 3mf or stl</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            list[Shape]: build123d shapes extracted from mesh file</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">file_name</span> <span class="o">=</span> <span class="n">fsdecode</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
+        <span class="n">_</span><span class="p">,</span> <span class="n">input_file_extension</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">input_file_extension</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;.3mf&quot;</span><span class="p">,</span> <span class="s2">&quot;.stl&quot;</span><span class="p">]:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unknown file format </span><span class="si">{</span><span class="n">input_file_extension</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">reader</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">QueryReader</span><span class="p">(</span><span class="n">input_file_extension</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+        <span class="n">reader</span><span class="o">.</span><span class="n">ReadFromFile</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">unit</span> <span class="o">=</span> <span class="n">Mesher</span><span class="o">.</span><span class="n">_map_3mf_to_b3d_unit</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">GetUnit</span><span class="p">()]</span>
+
+        <span class="c1"># Extract 3MF meshes and translate to OCP meshes</span>
+        <span class="n">mesh_iterator</span><span class="p">:</span> <span class="n">Lib3MF</span><span class="o">.</span><span class="n">MeshObjectIterator</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">GetMeshObjects</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">_i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">mesh_iterator</span><span class="o">.</span><span class="n">Count</span><span class="p">()):</span>
+            <span class="n">mesh_iterator</span><span class="o">.</span><span class="n">MoveNext</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">meshes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mesh_iterator</span><span class="o">.</span><span class="n">GetCurrentMeshObject</span><span class="p">())</span>
+        <span class="n">shapes</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">mesh</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">meshes</span><span class="p">:</span>
+            <span class="n">shape</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_shape</span><span class="p">(</span><span class="n">mesh</span><span class="p">)</span>
+            <span class="n">shape</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">GetName</span><span class="p">()</span>
+            <span class="c1"># Extract color</span>
+            <span class="c1"># TODO: check tuple 3rd value means material found</span>
+            <span class="n">base_mat_id</span><span class="p">,</span> <span class="n">color_index</span><span class="p">,</span> <span class="n">material_enabled</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">GetObjectLevelProperty</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">material_enabled</span><span class="p">:</span>
+                <span class="n">base_mat</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">GetBaseMaterialGroupByID</span><span class="p">(</span><span class="n">base_mat_id</span><span class="p">)</span>
+                <span class="n">base_mat_color</span><span class="p">:</span> <span class="n">Lib3MF</span><span class="o">.</span><span class="n">Color</span> <span class="o">=</span> <span class="n">base_mat</span><span class="o">.</span><span class="n">GetDisplayColor</span><span class="p">(</span><span class="n">color_index</span><span class="p">)</span>
+                <span class="n">color</span><span class="p">:</span> <span class="nb">tuple</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">wrapper</span><span class="o">.</span><span class="n">ColorToFloatRGBA</span><span class="p">(</span>
+                    <span class="n">base_mat_color</span>
+                <span class="p">)</span>  <span class="c1"># RGBA float</span>
+                <span class="n">shape</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">Color</span><span class="p">(</span><span class="o">*</span><span class="n">color</span><span class="p">)</span>
+            <span class="n">shapes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">shapes</span></div>
+
+
+<div class="viewcode-block" id="Mesher.write">
+<a class="viewcode-back" href="../import_export.html#mesher.Mesher.write">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">write</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_name</span><span class="p">:</span> <span class="n">PathLike</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">bytes</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;write</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            file_name Union[Pathlike, str, bytes]: file path</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            ValueError: Unknown file format - must be 3mf or stl</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">file_name</span> <span class="o">=</span> <span class="n">fsdecode</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
+        <span class="n">_</span><span class="p">,</span> <span class="n">output_file_extension</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">output_file_extension</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;.3mf&quot;</span><span class="p">,</span> <span class="s2">&quot;.stl&quot;</span><span class="p">]:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unknown file format </span><span class="si">{</span><span class="n">output_file_extension</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">writer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">QueryWriter</span><span class="p">(</span><span class="n">output_file_extension</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+        <span class="n">writer</span><span class="o">.</span><span class="n">WriteToFile</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span></div>
+</div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Gumyr.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

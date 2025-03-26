@@ -1,0 +1,233 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Algebraic definition &mdash; build123d 0.9.2.dev40+gb1f0eed documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster.custom.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster.bundle.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-shadow.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-punk.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-noir.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-light.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-borderless.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/micromodal.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/sphinx_rtd_theme.css?v=3234e928" />
+      <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=c97902b4"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=f281be69"></script>
+      <script src="_static/js/hoverxref.js"></script>
+      <script src="_static/js/tooltipster.bundle.min.js"></script>
+      <script src="_static/js/micromodal.min.js"></script>
+      <script src="_static/design-tabs.js?v=f930bc37"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="CAD Object Centers" href="center.html" />
+    <link rel="prev" title="Location arithmetic for algebra mode" href="location_arithmetic.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            build123d
+              <img src="_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts.html">Key Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts_builder.html">Key Concepts (builder mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts_algebra.html">Key Concepts (algebra mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="moving_objects.html">Moving Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OpenSCAD.html">Transitioning from OpenSCAD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introductory_examples.html">Introductory Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="selectors_operators.html">Selectors and Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operations.html">Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="builders.html">Builders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="joints.html">Joints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assemblies.html">Assemblies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tips.html">Tips, Best Practices and FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="import_export.html">Import/Export</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="advanced.html">Advanced Topics</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="algebra_performance.html">Performance considerations in algebra mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="location_arithmetic.html">Location arithmetic for algebra mode</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Algebraic definition</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#objects-and-arithmetic">Objects and arithmetic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#locations-planes-and-location-arithmetic">Locations, planes and location arithmetic</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="center.html">CAD Object Centers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debugging_logging.html">Debugging &amp; Logging</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cheat_sheet.html">Cheat Sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="external.html">External Tools and Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="builder_api_reference.html">Builder Common API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="direct_api_reference.html">Direct API Reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">build123d</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="advanced.html">Advanced Topics</a></li>
+      <li class="breadcrumb-item active">Algebraic definition</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/algebra_definition.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="algebraic-definition">
+<span id="algebra-definition"></span><h1>Algebraic definition<a class="headerlink" href="#algebraic-definition" title="Link to this heading"></a></h1>
+<section id="objects-and-arithmetic">
+<h2>Objects and arithmetic<a class="headerlink" href="#objects-and-arithmetic" title="Link to this heading"></a></h2>
+<p><strong>Set definitions:</strong></p>
+<p><span class="math notranslate nohighlight">\(C^3\)</span> is the set of all <code class="docutils literal notranslate"><span class="pre">Part</span></code> objects <code class="docutils literal notranslate"><span class="pre">p</span></code> with <code class="docutils literal notranslate"><span class="pre">p._dim</span> <span class="pre">=</span> <span class="pre">3</span></code></p>
+<p><span class="math notranslate nohighlight">\(C^2\)</span> is the set of all <code class="docutils literal notranslate"><span class="pre">Sketch</span></code> objects <code class="docutils literal notranslate"><span class="pre">s</span></code> with <code class="docutils literal notranslate"><span class="pre">s._dim</span> <span class="pre">=</span> <span class="pre">2</span></code></p>
+<p><span class="math notranslate nohighlight">\(C^1\)</span> is the set of all <code class="docutils literal notranslate"><span class="pre">Curve</span></code> objects <code class="docutils literal notranslate"><span class="pre">c</span></code> with <code class="docutils literal notranslate"><span class="pre">c._dim</span> <span class="pre">=</span> <span class="pre">1</span></code></p>
+<p><strong>Neutral elements:</strong></p>
+<p><span class="math notranslate nohighlight">\(c^3_0\)</span> is the empty <code class="docutils literal notranslate"><span class="pre">Part</span></code> object <code class="docutils literal notranslate"><span class="pre">p0</span> <span class="pre">=</span> <span class="pre">Part()</span></code> with <code class="docutils literal notranslate"><span class="pre">p0._dim</span> <span class="pre">=</span> <span class="pre">3</span></code> and <code class="docutils literal notranslate"><span class="pre">p0.wrapped</span> <span class="pre">=</span> <span class="pre">None</span></code></p>
+<p><span class="math notranslate nohighlight">\(c^2_0\)</span> is the empty <code class="docutils literal notranslate"><span class="pre">Sketch</span></code> object <code class="docutils literal notranslate"><span class="pre">s0</span> <span class="pre">=</span> <span class="pre">Sketch()</span></code> with <code class="docutils literal notranslate"><span class="pre">s0._dim</span> <span class="pre">=</span> <span class="pre">2</span></code> and <code class="docutils literal notranslate"><span class="pre">s0.wrapped</span> <span class="pre">=</span> <span class="pre">None</span></code></p>
+<p><span class="math notranslate nohighlight">\(c^1_0\)</span> is the empty <code class="docutils literal notranslate"><span class="pre">Curve</span></code> object <code class="docutils literal notranslate"><span class="pre">c0</span> <span class="pre">=</span> <span class="pre">Curve()</span></code> with <code class="docutils literal notranslate"><span class="pre">c0._dim</span> <span class="pre">=</span> <span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">c0.wrapped</span> <span class="pre">=</span> <span class="pre">None</span></code></p>
+<p><strong>Sets of predefined basic shapes:</strong></p>
+<p><span class="math notranslate nohighlight">\(B^3 := \lbrace\)</span> <code class="docutils literal notranslate"><span class="pre">Part</span></code>, <code class="docutils literal notranslate"><span class="pre">Box</span></code>, <code class="docutils literal notranslate"><span class="pre">Cylinder</span></code>, <code class="docutils literal notranslate"><span class="pre">Cone</span></code>, <code class="docutils literal notranslate"><span class="pre">Sphere</span></code>, <code class="docutils literal notranslate"><span class="pre">Torus</span></code>, <code class="docutils literal notranslate"><span class="pre">Wedge</span></code>, <code class="docutils literal notranslate"><span class="pre">Hole</span></code>, <code class="docutils literal notranslate"><span class="pre">CounterBoreHole</span></code>, <code class="docutils literal notranslate"><span class="pre">CounterSinkHole</span></code> <span class="math notranslate nohighlight">\(\rbrace\)</span></p>
+<p><span class="math notranslate nohighlight">\(B^2 := \lbrace\)</span> <code class="docutils literal notranslate"><span class="pre">Sketch</span></code>, <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code>, <code class="docutils literal notranslate"><span class="pre">Circle</span></code>, <code class="docutils literal notranslate"><span class="pre">Ellipse</span></code>, <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code>, <code class="docutils literal notranslate"><span class="pre">Polygon</span></code>, <code class="docutils literal notranslate"><span class="pre">RegularPolygon</span></code>, <code class="docutils literal notranslate"><span class="pre">Text</span></code>, <code class="docutils literal notranslate"><span class="pre">Trapezoid</span></code>, <code class="docutils literal notranslate"><span class="pre">SlotArc</span></code>, <code class="docutils literal notranslate"><span class="pre">SlotCenterPoint</span></code>, <code class="docutils literal notranslate"><span class="pre">SlotCenterToCenter</span></code>, <code class="docutils literal notranslate"><span class="pre">SlotOverall</span></code> <span class="math notranslate nohighlight">\(\rbrace\)</span></p>
+<p><span class="math notranslate nohighlight">\(B^1 := \lbrace\)</span> <code class="docutils literal notranslate"><span class="pre">Curve</span></code>, <code class="docutils literal notranslate"><span class="pre">Bezier</span></code>, <code class="docutils literal notranslate"><span class="pre">FilletPolyline</span></code>, <code class="docutils literal notranslate"><span class="pre">PolarLine</span></code>, <code class="docutils literal notranslate"><span class="pre">Polyline</span></code>, <code class="docutils literal notranslate"><span class="pre">Spline</span></code>, <code class="docutils literal notranslate"><span class="pre">Helix</span></code>, <code class="docutils literal notranslate"><span class="pre">CenterArc</span></code>, <code class="docutils literal notranslate"><span class="pre">EllipticalCenterArc</span></code>, <code class="docutils literal notranslate"><span class="pre">RadiusArc</span></code>, <code class="docutils literal notranslate"><span class="pre">SagittaArc</span></code>, <code class="docutils literal notranslate"><span class="pre">TangentArc</span></code>, <code class="docutils literal notranslate"><span class="pre">ThreePointArc</span></code>, <code class="docutils literal notranslate"><span class="pre">JernArc</span></code> <span class="math notranslate nohighlight">\(\rbrace\)</span></p>
+<p>with <span class="math notranslate nohighlight">\(B^3 \subset C^3, B^2 \subset C^2\)</span> and <span class="math notranslate nohighlight">\(B^1 \subset C^1\)</span></p>
+<p><strong>Operations:</strong></p>
+<p><span class="math notranslate nohighlight">\(+: C^n \times C^n \rightarrow C^n\)</span> with <span class="math notranslate nohighlight">\((a,b) \mapsto a + b\)</span>,  <span class="math notranslate nohighlight">\(\;\)</span> for <span class="math notranslate nohighlight">\(n=1,2,3\)</span></p>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(\; a + b :=\)</span> <code class="docutils literal notranslate"><span class="pre">a.fuse(b)</span></code> for each operation</p>
+</div></blockquote>
+<p><span class="math notranslate nohighlight">\(-: C^n \rightarrow C^n\)</span> with <span class="math notranslate nohighlight">\(a \mapsto -a\)</span>,  <span class="math notranslate nohighlight">\(\;\)</span> for <span class="math notranslate nohighlight">\(n=1,2,3\)</span></p>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(\; b + (-a) :=\)</span> <code class="docutils literal notranslate"><span class="pre">b.cut(a)</span></code> for each operation (implicit definition)</p>
+</div></blockquote>
+<p><span class="math notranslate nohighlight">\(\&amp;: C^n \times C^n \rightarrow C^n\)</span> with <span class="math notranslate nohighlight">\((a,b) \mapsto a \; \&amp; \; b\)</span>,  <span class="math notranslate nohighlight">\(\;\)</span> for <span class="math notranslate nohighlight">\(n=2,3\)</span></p>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(\; a \; \&amp; \; b :=\)</span> <code class="docutils literal notranslate"><span class="pre">a.intersect(b)</span></code> for each operation</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\&amp;\)</span> is not defined for <span class="math notranslate nohighlight">\(n=1\)</span> in build123d</p></li>
+<li><p>The following relationship holds: <span class="math notranslate nohighlight">\(a \; \&amp; \; b = (a + b) + -(a + (-b)) + -(b + (-a))\)</span></p></li>
+</ul>
+</div></blockquote>
+<p><strong>Abelian groups</strong></p>
+<p><span class="math notranslate nohighlight">\(( C^n, \; c^n_0, \; +, \; -)\)</span> <span class="math notranslate nohighlight">\(\;\)</span>  are abelian groups for <span class="math notranslate nohighlight">\(n=1,2,3\)</span>.</p>
+<ul class="simple">
+<li><p>The implementation <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">-</span> <span class="pre">b</span> <span class="pre">=</span> <span class="pre">a.cut(b)</span></code> needs to be read as <span class="math notranslate nohighlight">\(a + (-b)\)</span> since the group does not have a binary <code class="docutils literal notranslate"><span class="pre">-</span></code> operation. As such, <span class="math notranslate nohighlight">\(a - (b - c) = a + -(b + -c)) \ne a - b + c\)</span></p></li>
+<li><p>This definition also includes that neither <code class="docutils literal notranslate"><span class="pre">-</span></code> nor <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> are commutative.</p></li>
+</ul>
+</section>
+<section id="locations-planes-and-location-arithmetic">
+<h2>Locations, planes and location arithmetic<a class="headerlink" href="#locations-planes-and-location-arithmetic" title="Link to this heading"></a></h2>
+<p><strong>Set definitions:</strong></p>
+<p><span class="math notranslate nohighlight">\(L  := \lbrace\)</span> <code class="docutils literal notranslate"><span class="pre">Location((x,</span> <span class="pre">y,</span> <span class="pre">z),</span> <span class="pre">(a,</span> <span class="pre">b,</span> <span class="pre">c))</span></code> <span class="math notranslate nohighlight">\(: x,y,z \in R \land a,b,c \in R \rbrace\;\)</span></p>
+<blockquote>
+<div><p>with <span class="math notranslate nohighlight">\(a,b,c\)</span> being angles in degrees.</p>
+</div></blockquote>
+<p><span class="math notranslate nohighlight">\(P  := \lbrace\)</span> <code class="docutils literal notranslate"><span class="pre">Plane(o,</span> <span class="pre">x,</span> <span class="pre">z)</span></code> <span class="math notranslate nohighlight">\(: o,x,z ∈ R^3 \land \|x\| = \|z\| = 1\rbrace\)</span></p>
+<blockquote>
+<div><p>with <code class="docutils literal notranslate"><span class="pre">o</span></code> being the origin and <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">z</span></code> the x- and z-direction of the plane.</p>
+</div></blockquote>
+<p>Neutral element: <span class="math notranslate nohighlight">\(\; l_0 \in L\)</span>: <code class="docutils literal notranslate"><span class="pre">Location()</span></code></p>
+<p><strong>Operations:</strong></p>
+<p><span class="math notranslate nohighlight">\(*: L \times L \rightarrow L\)</span> with <span class="math notranslate nohighlight">\((l_1,l_2) \mapsto l_1 * l_2\)</span></p>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(\; l_1 * l_2 :=\)</span>  <code class="docutils literal notranslate"><span class="pre">l1</span> <span class="pre">*</span> <span class="pre">l2</span></code> (multiply two locations)</p>
+</div></blockquote>
+<p><span class="math notranslate nohighlight">\(*: P \times L \rightarrow P\)</span> with <span class="math notranslate nohighlight">\((p,l) \mapsto p * l\)</span></p>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(\; p * l :=\)</span> <code class="docutils literal notranslate"><span class="pre">Plane(p.location</span> <span class="pre">*</span> <span class="pre">l)</span></code> (move plane <span class="math notranslate nohighlight">\(p \in P\)</span> to location <span class="math notranslate nohighlight">\(l \in L\)</span>)</p>
+</div></blockquote>
+<p>Inverse element: <span class="math notranslate nohighlight">\(\; l^{-1} \in L\)</span>: <code class="docutils literal notranslate"><span class="pre">l.inverse()</span></code></p>
+<p><strong>Placing objects onto planes</strong></p>
+<p><span class="math notranslate nohighlight">\(*: P \times C^n  \rightarrow C^n \;\)</span>  with <span class="math notranslate nohighlight">\((p,c) \mapsto p * c\)</span>,  <span class="math notranslate nohighlight">\(\;\)</span> for <span class="math notranslate nohighlight">\(n=1,2,3\)</span></p>
+<blockquote>
+<div><p>Locate an object <span class="math notranslate nohighlight">\(c \in C^n\)</span> onto plane <span class="math notranslate nohighlight">\(p \in P\)</span>, i.e. <code class="docutils literal notranslate"><span class="pre">c.moved(p.location)</span></code></p>
+</div></blockquote>
+<p><strong>Placing objects at locations</strong></p>
+<p><span class="math notranslate nohighlight">\(*: L \times C^n  \rightarrow C^n \;\)</span>  with <span class="math notranslate nohighlight">\((l,c) \mapsto l * c\)</span>,  <span class="math notranslate nohighlight">\(\;\)</span> for <span class="math notranslate nohighlight">\(n=1,2,3\)</span></p>
+<blockquote>
+<div><p>Locate an object <span class="math notranslate nohighlight">\(c \in C^n\)</span> at location <span class="math notranslate nohighlight">\(l \in L\)</span>, i.e. <code class="docutils literal notranslate"><span class="pre">c.moved(l)</span></code></p>
+</div></blockquote>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="location_arithmetic.html" class="btn btn-neutral float-left" title="Location arithmetic for algebra mode" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="center.html" class="btn btn-neutral float-right" title="CAD Object Centers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Gumyr.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

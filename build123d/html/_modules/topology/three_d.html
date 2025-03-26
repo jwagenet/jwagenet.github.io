@@ -1,0 +1,1624 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>topology.three_d &mdash; build123d 0.9.2.dev40+gb1f0eed documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/tooltipster.custom.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/tooltipster.bundle.min.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/tooltipster-sideTip-shadow.min.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/tooltipster-sideTip-punk.min.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/tooltipster-sideTip-noir.min.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/tooltipster-sideTip-light.min.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/tooltipster-sideTip-borderless.min.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/micromodal.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/sphinx_rtd_theme.css?v=3234e928" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=c97902b4"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=f281be69"></script>
+      <script src="../../_static/js/hoverxref.js"></script>
+      <script src="../../_static/js/tooltipster.bundle.min.js"></script>
+      <script src="../../_static/js/micromodal.min.js"></script>
+      <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            build123d
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../key_concepts.html">Key Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../key_concepts_builder.html">Key Concepts (builder mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../key_concepts_algebra.html">Key Concepts (algebra mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../moving_objects.html">Moving Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../OpenSCAD.html">Transitioning from OpenSCAD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../introductory_examples.html">Introductory Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../selectors_operators.html">Selectors and Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../operations.html">Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../builders.html">Builders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../joints.html">Joints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../assemblies.html">Assemblies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tips.html">Tips, Best Practices and FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../import_export.html">Import/Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cheat_sheet.html">Cheat Sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../external.html">External Tools and Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../builder_api_reference.html">Builder Common API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../direct_api_reference.html">Direct API Reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">build123d</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">topology.three_d</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for topology.three_d</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">build123d topology</span>
+
+<span class="sd">name: three_d.py</span>
+<span class="sd">by:   Gumyr</span>
+<span class="sd">date: January 07, 2025</span>
+
+<span class="sd">desc:</span>
+
+<span class="sd">This module defines the `Solid` class and associated methods for creating, manipulating, and</span>
+<span class="sd">querying three-dimensional solid geometries in the build123d CAD system. It provides powerful tools</span>
+<span class="sd">for constructing complex 3D models, including operations such as extrusion, sweeping, filleting,</span>
+<span class="sd">chamfering, and Boolean operations. The module integrates with OpenCascade to leverage its robust</span>
+<span class="sd">geometric kernel for precise 3D modeling.</span>
+
+<span class="sd">Key Features:</span>
+<span class="sd">- **Solid Class**:</span>
+<span class="sd">  - Represents closed, bounded 3D shapes with methods for volume calculation, bounding box</span>
+<span class="sd">    computation, and validity checks.</span>
+<span class="sd">  - Includes constructors for primitive solids (e.g., box, cylinder, cone, torus) and advanced</span>
+<span class="sd">    operations like lofting, revolving, and sweeping profiles along paths.</span>
+
+<span class="sd">- **Mixin3D**:</span>
+<span class="sd">  - Adds shared methods for operations like filleting, chamfering, splitting, and hollowing solids.</span>
+<span class="sd">  - Supports advanced workflows such as finding maximum fillet radii and extruding with rotation or</span>
+<span class="sd">    taper.</span>
+
+<span class="sd">- **Boolean Operations**:</span>
+<span class="sd">  - Provides utilities for union, subtraction, and intersection of solids.</span>
+
+<span class="sd">- **Thickening and Offsetting**:</span>
+<span class="sd">  - Allows transformation of faces or shells into solids through thickening.</span>
+
+<span class="sd">This module is essential for generating and manipulating complex 3D geometries in the build123d</span>
+<span class="sd">library, offering a comprehensive API for CAD modeling.</span>
+
+<span class="sd">license:</span>
+
+<span class="sd">    Copyright 2025 Gumyr</span>
+
+<span class="sd">    Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span>
+<span class="sd">    you may not use this file except in compliance with the License.</span>
+<span class="sd">    You may obtain a copy of the License at</span>
+
+<span class="sd">        http://www.apache.org/licenses/LICENSE-2.0</span>
+
+<span class="sd">    Unless required by applicable law or agreed to in writing, software</span>
+<span class="sd">    distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span>
+<span class="sd">    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
+<span class="sd">    See the License for the specific language governing permissions and</span>
+<span class="sd">    limitations under the License.</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">platform</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">radians</span><span class="p">,</span> <span class="n">cos</span><span class="p">,</span> <span class="n">tan</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Union</span><span class="p">,</span> <span class="n">TYPE_CHECKING</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">Iterable</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">OCP.TopAbs</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ta</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.BRepAlgoAPI</span><span class="w"> </span><span class="kn">import</span> <span class="n">BRepAlgoAPI_Cut</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.BRepBuilderAPI</span><span class="w"> </span><span class="kn">import</span> <span class="n">BRepBuilderAPI_MakeSolid</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.BRepClass3d</span><span class="w"> </span><span class="kn">import</span> <span class="n">BRepClass3d_SolidClassifier</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.BRepFeat</span><span class="w"> </span><span class="kn">import</span> <span class="n">BRepFeat_MakeDPrism</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.BRepFilletAPI</span><span class="w"> </span><span class="kn">import</span> <span class="n">BRepFilletAPI_MakeChamfer</span><span class="p">,</span> <span class="n">BRepFilletAPI_MakeFillet</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.BRepOffset</span><span class="w"> </span><span class="kn">import</span> <span class="n">BRepOffset_MakeOffset</span><span class="p">,</span> <span class="n">BRepOffset_Skin</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.BRepOffsetAPI</span><span class="w"> </span><span class="kn">import</span> <span class="n">BRepOffsetAPI_MakePipeShell</span><span class="p">,</span> <span class="n">BRepOffsetAPI_MakeThickSolid</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.BRepPrimAPI</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">BRepPrimAPI_MakeBox</span><span class="p">,</span>
+    <span class="n">BRepPrimAPI_MakeCone</span><span class="p">,</span>
+    <span class="n">BRepPrimAPI_MakeCylinder</span><span class="p">,</span>
+    <span class="n">BRepPrimAPI_MakeRevol</span><span class="p">,</span>
+    <span class="n">BRepPrimAPI_MakeSphere</span><span class="p">,</span>
+    <span class="n">BRepPrimAPI_MakeTorus</span><span class="p">,</span>
+    <span class="n">BRepPrimAPI_MakeWedge</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.GProp</span><span class="w"> </span><span class="kn">import</span> <span class="n">GProp_GProps</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.GeomAbs</span><span class="w"> </span><span class="kn">import</span> <span class="n">GeomAbs_Intersection</span><span class="p">,</span> <span class="n">GeomAbs_JoinType</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.LocOpe</span><span class="w"> </span><span class="kn">import</span> <span class="n">LocOpe_DPrism</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.ShapeFix</span><span class="w"> </span><span class="kn">import</span> <span class="n">ShapeFix_Solid</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.Standard</span><span class="w"> </span><span class="kn">import</span> <span class="n">Standard_Failure</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.StdFail</span><span class="w"> </span><span class="kn">import</span> <span class="n">StdFail_NotDone</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.TopExp</span><span class="w"> </span><span class="kn">import</span> <span class="n">TopExp</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.TopTools</span><span class="w"> </span><span class="kn">import</span> <span class="n">TopTools_IndexedDataMapOfShapeListOfShape</span><span class="p">,</span> <span class="n">TopTools_ListOfShape</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.TopoDS</span><span class="w"> </span><span class="kn">import</span> <span class="n">TopoDS</span><span class="p">,</span> <span class="n">TopoDS_Face</span><span class="p">,</span> <span class="n">TopoDS_Shape</span><span class="p">,</span> <span class="n">TopoDS_Solid</span><span class="p">,</span> <span class="n">TopoDS_Wire</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.gp</span><span class="w"> </span><span class="kn">import</span> <span class="n">gp_Ax2</span><span class="p">,</span> <span class="n">gp_Pnt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">build123d.build_enums</span><span class="w"> </span><span class="kn">import</span> <span class="n">CenterOf</span><span class="p">,</span> <span class="n">Kind</span><span class="p">,</span> <span class="n">Transition</span><span class="p">,</span> <span class="n">Until</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">build123d.geometry</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">DEG2RAD</span><span class="p">,</span>
+    <span class="n">Axis</span><span class="p">,</span>
+    <span class="n">BoundBox</span><span class="p">,</span>
+    <span class="n">Color</span><span class="p">,</span>
+    <span class="n">Location</span><span class="p">,</span>
+    <span class="n">OrientedBoundBox</span><span class="p">,</span>
+    <span class="n">Plane</span><span class="p">,</span>
+    <span class="n">Vector</span><span class="p">,</span>
+    <span class="n">VectorLike</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing_extensions</span><span class="w"> </span><span class="kn">import</span> <span class="n">Self</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">.one_d</span><span class="w"> </span><span class="kn">import</span> <span class="n">Edge</span><span class="p">,</span> <span class="n">Wire</span><span class="p">,</span> <span class="n">Mixin1D</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.shape_core</span><span class="w"> </span><span class="kn">import</span> <span class="n">Shape</span><span class="p">,</span> <span class="n">ShapeList</span><span class="p">,</span> <span class="n">Joint</span><span class="p">,</span> <span class="n">downcast</span><span class="p">,</span> <span class="n">shapetype</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.two_d</span><span class="w"> </span><span class="kn">import</span> <span class="n">sort_wires_by_build_order</span><span class="p">,</span> <span class="n">Mixin2D</span><span class="p">,</span> <span class="n">Face</span><span class="p">,</span> <span class="n">Shell</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.utils</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">_extrude_topods_shape</span><span class="p">,</span>
+    <span class="n">find_max_dimension</span><span class="p">,</span>
+    <span class="n">_make_loft</span><span class="p">,</span>
+    <span class="n">_make_topods_compound_from_shapes</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.zero_d</span><span class="w"> </span><span class="kn">import</span> <span class="n">Vertex</span>
+
+
+<span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>  <span class="c1"># pragma: no cover</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">.composite</span><span class="w"> </span><span class="kn">import</span> <span class="n">Compound</span><span class="p">,</span> <span class="n">Curve</span><span class="p">,</span> <span class="n">Sketch</span><span class="p">,</span> <span class="n">Part</span>  <span class="c1"># pylint: disable=R0801</span>
+
+
+<div class="viewcode-block" id="Mixin3D">
+<a class="viewcode-back" href="../../direct_api_reference.html#topology.Mixin3D">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Mixin3D</span><span class="p">(</span><span class="n">Shape</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Additional methods to add to 3D Shape classes&quot;&quot;&quot;</span>
+
+    <span class="n">project_to_viewport</span> <span class="o">=</span> <span class="n">Mixin1D</span><span class="o">.</span><span class="n">project_to_viewport</span>
+    <span class="n">split</span> <span class="o">=</span> <span class="n">Mixin1D</span><span class="o">.</span><span class="n">split</span>
+    <span class="n">find_intersection_points</span> <span class="o">=</span> <span class="n">Mixin2D</span><span class="o">.</span><span class="n">find_intersection_points</span>
+
+    <span class="n">vertices</span> <span class="o">=</span> <span class="n">Mixin1D</span><span class="o">.</span><span class="n">vertices</span>
+    <span class="n">vertex</span> <span class="o">=</span> <span class="n">Mixin1D</span><span class="o">.</span><span class="n">vertex</span>
+    <span class="n">edges</span> <span class="o">=</span> <span class="n">Mixin1D</span><span class="o">.</span><span class="n">edges</span>
+    <span class="n">edge</span> <span class="o">=</span> <span class="n">Mixin1D</span><span class="o">.</span><span class="n">edge</span>
+    <span class="n">wires</span> <span class="o">=</span> <span class="n">Mixin1D</span><span class="o">.</span><span class="n">wires</span>
+    <span class="n">wire</span> <span class="o">=</span> <span class="n">Mixin1D</span><span class="o">.</span><span class="n">wire</span>
+    <span class="n">faces</span> <span class="o">=</span> <span class="n">Mixin2D</span><span class="o">.</span><span class="n">faces</span>
+    <span class="n">face</span> <span class="o">=</span> <span class="n">Mixin2D</span><span class="o">.</span><span class="n">face</span>
+    <span class="n">shells</span> <span class="o">=</span> <span class="n">Mixin2D</span><span class="o">.</span><span class="n">shells</span>
+    <span class="n">shell</span> <span class="o">=</span> <span class="n">Mixin2D</span><span class="o">.</span><span class="n">shell</span>
+    <span class="c1"># ---- Properties ----</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_dim</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Dimension of Solids&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="mi">3</span>
+
+    <span class="c1"># ---- Class Methods ----</span>
+
+<div class="viewcode-block" id="Mixin3D.cast">
+<a class="viewcode-back" href="../../direct_api_reference.html#topology.Mixin3D.cast">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">cast</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">obj</span><span class="p">:</span> <span class="n">TopoDS_Shape</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Self</span><span class="p">:</span>
+        <span class="s2">&quot;Returns the right type of wrapper, given a OCCT object&quot;</span>
+
+        <span class="c1"># define the shape lookup table for casting</span>
+        <span class="n">constructor_lut</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="n">ta</span><span class="o">.</span><span class="n">TopAbs_VERTEX</span><span class="p">:</span> <span class="n">Vertex</span><span class="p">,</span>
+            <span class="n">ta</span><span class="o">.</span><span class="n">TopAbs_EDGE</span><span class="p">:</span> <span class="n">Edge</span><span class="p">,</span>
+            <span class="n">ta</span><span class="o">.</span><span class="n">TopAbs_WIRE</span><span class="p">:</span> <span class="n">Wire</span><span class="p">,</span>
+            <span class="n">ta</span><span class="o">.</span><span class="n">TopAbs_FACE</span><span class="p">:</span> <span class="n">Face</span><span class="p">,</span>
+            <span class="n">ta</span><span class="o">.</span><span class="n">TopAbs_SHELL</span><span class="p">:</span> <span class="n">Shell</span><span class="p">,</span>
+            <span class="n">ta</span><span class="o">.</span><span class="n">TopAbs_SOLID</span><span class="p">:</span> <span class="n">Solid</span><span class="p">,</span>
+        <span class="p">}</span>
+
+        <span class="n">shape_type</span> <span class="o">=</span> <span class="n">shapetype</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+        <span class="c1"># NB downcast is needed to handle TopoDS_Shape types</span>
+        <span class="k">return</span> <span class="n">constructor_lut</span><span class="p">[</span><span class="n">shape_type</span><span class="p">](</span><span class="n">downcast</span><span class="p">(</span><span class="n">obj</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="Mixin3D.extrude">
+<a class="viewcode-back" href="../../direct_api_reference.html#topology.Mixin3D.extrude">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extrude</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span> <span class="n">obj</span><span class="p">:</span> <span class="n">Shape</span><span class="p">,</span> <span class="n">direction</span><span class="p">:</span> <span class="n">VectorLike</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Edge</span> <span class="o">|</span> <span class="n">Face</span> <span class="o">|</span> <span class="n">Shell</span> <span class="o">|</span> <span class="n">Solid</span> <span class="o">|</span> <span class="n">Compound</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Unused - only here because Mixin1D is a subclass of Shape&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">NotImplemented</span></div>
+
+
+    <span class="c1"># ---- Instance Methods ----</span>
+
+<div class="viewcode-block" id="Mixin3D.center">
+<a class="viewcode-back" href="../../direct_api_reference.html#topology.Mixin3D.center">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">center</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">center_of</span><span class="p">:</span> <span class="n">CenterOf</span> <span class="o">=</span> <span class="n">CenterOf</span><span class="o">.</span><span class="n">MASS</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Vector</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return center of object</span>
+
+<span class="sd">        Find center of object</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            center_of (CenterOf, optional): center option. Defaults to CenterOf.MASS.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            ValueError: Center of GEOMETRY is not supported for this object</span>
+<span class="sd">            NotImplementedError: Unable to calculate center of mass of this object</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Vector: center</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">center_of</span> <span class="o">==</span> <span class="n">CenterOf</span><span class="o">.</span><span class="n">GEOMETRY</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Center of GEOMETRY is not supported for this object&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">center_of</span> <span class="o">==</span> <span class="n">CenterOf</span><span class="o">.</span><span class="n">MASS</span><span class="p">:</span>
+            <span class="n">properties</span> <span class="o">=</span> <span class="n">GProp_GProps</span><span class="p">()</span>
+            <span class="n">calc_function</span> <span class="o">=</span> <span class="n">Shape</span><span class="o">.</span><span class="n">shape_properties_LUT</span><span class="p">[</span><span class="n">shapetype</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wrapped</span><span class="p">)]</span>
+            <span class="n">calc_function</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wrapped</span><span class="p">,</span> <span class="n">properties</span><span class="p">)</span>
+            <span class="n">middle</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">(</span><span class="n">properties</span><span class="o">.</span><span class="n">CentreOfMass</span><span class="p">())</span>
+        <span class="k">elif</span> <span class="n">center_of</span> <span class="o">==</span> <span class="n">CenterOf</span><span class="o">.</span><span class="n">BOUNDING_BOX</span><span class="p">:</span>
+            <span class="n">middle</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bounding_box</span><span class="p">()</span><span class="o">.</span><span class="n">center</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">middle</span></div>
+
+
+<div class="viewcode-block" id="Mixin3D.chamfer">
+<a class="viewcode-back" href="../../direct_api_reference.html#topology.Mixin3D.chamfer">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">chamfer</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">length</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">length2</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">edge_list</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Edge</span><span class="p">],</span>
+        <span class="n">face</span><span class="p">:</span> <span class="n">Face</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Self</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Chamfer</span>
+
+<span class="sd">        Chamfers the specified edges of this solid.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            length (float): length &gt; 0, the length (length) of the chamfer</span>
+<span class="sd">            length2 (Optional[float]): length2 &gt; 0, optional parameter for asymmetrical</span>
+<span class="sd">                chamfer. Should be `None` if not required.</span>
+<span class="sd">            edge_list (Iterable[Edge]): a list of Edge objects, which must belong to</span>
+<span class="sd">                this solid</span>
+<span class="sd">            face (Face, optional): identifies the side where length is measured. The edge(s)</span>
+<span class="sd">                must be part of the face</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Self:  Chamfered solid</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">edge_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">edge_list</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">face</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">edge</span> <span class="k">for</span> <span class="n">edge</span> <span class="ow">in</span> <span class="n">edge_list</span> <span class="k">if</span> <span class="n">edge</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">face</span><span class="o">.</span><span class="n">edges</span><span class="p">()):</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Some edges are not part of the face&quot;</span><span class="p">)</span>
+
+        <span class="n">native_edges</span> <span class="o">=</span> <span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">wrapped</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">edge_list</span><span class="p">]</span>
+
+        <span class="c1"># make a edge --&gt; faces mapping</span>
+        <span class="n">edge_face_map</span> <span class="o">=</span> <span class="n">TopTools_IndexedDataMapOfShapeListOfShape</span><span class="p">()</span>
+        <span class="n">TopExp</span><span class="o">.</span><span class="n">MapShapesAndAncestors_s</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">wrapped</span><span class="p">,</span> <span class="n">ta</span><span class="o">.</span><span class="n">TopAbs_EDGE</span><span class="p">,</span> <span class="n">ta</span><span class="o">.</span><span class="n">TopAbs_FACE</span><span class="p">,</span> <span class="n">edge_face_map</span>
+        <span class="p">)</span>
+
+        <span class="c1"># note: we prefer &#39;length&#39; word to &#39;radius&#39; as opposed to FreeCAD&#39;s API</span>
+        <span class="n">chamfer_builder</span> <span class="o">=</span> <span class="n">BRepFilletAPI_MakeChamfer</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wrapped</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">length2</span><span class="p">:</span>
+            <span class="n">distance1</span> <span class="o">=</span> <span class="n">length</span>
+            <span class="n">distance2</span> <span class="o">=</span> <span class="n">length2</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">distance1</span> <span class="o">=</span> <span class="n">length</span>
+            <span class="n">distance2</span> <span class="o">=</span> <span class="n">length</span>
+
+        <span class="k">for</span> <span class="n">native_edge</span> <span class="ow">in</span> <span class="n">native_edges</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">face</span><span class="p">:</span>
+                <span class="n">topo_face</span> <span class="o">=</span> <span class="n">face</span><span class="o">.</span><span class="n">wrapped</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">topo_face</span> <span class="o">=</span> <span class="n">edge_face_map</span><span class="o">.</span><span class="n">FindFromKey</span><span class="p">(</span><span class="n">native_edge</span><span class="p">)</span><span class="o">.</span><span class="n">First</span><span class="p">()</span>
+
+            <span class="n">chamfer_builder</span><span class="o">.</span><span class="n">Add</span><span class="p">(</span>
+                <span class="n">distance1</span><span class="p">,</span> <span class="n">distance2</span><span class="p">,</span> <span class="n">native_edge</span><span class="p">,</span> <span class="n">TopoDS</span><span class="o">.</span><span class="n">Face_s</span><span class="p">(</span><span class="n">topo_face</span><span class="p">)</span>
+            <span class="p">)</span>  <span class="c1"># NB: edge_face_map return a generic TopoDS_Shape</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">new_shape</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="n">chamfer_builder</span><span class="o">.</span><span class="n">Shape</span><span class="p">())</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">new_shape</span><span class="o">.</span><span class="n">is_valid</span><span class="p">():</span>
+                <span class="k">raise</span> <span class="n">Standard_Failure</span>
+        <span class="k">except</span> <span class="p">(</span><span class="n">StdFail_NotDone</span><span class="p">,</span> <span class="n">Standard_Failure</span><span class="p">)</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;Failed creating a chamfer, try a smaller length value(s)&quot;</span>
+            <span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">err</span>
+
+        <span class="k">return</span> <span class="n">new_shape</span></div>
+
+
+<div class="viewcode-block" id="Mixin3D.dprism">
+<a class="viewcode-back" href="../../direct_api_reference.html#topology.Mixin3D.dprism">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">dprism</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">basis</span><span class="p">:</span> <span class="n">Face</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">bounds</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Face</span> <span class="o">|</span> <span class="n">Wire</span><span class="p">],</span>
+        <span class="n">depth</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">taper</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="n">up_to_face</span><span class="p">:</span> <span class="n">Face</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">thru_all</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="n">additive</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Solid</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;dprism</span>
+
+<span class="sd">        Make a prismatic feature (additive or subtractive)</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            basis (Optional[Face]): face to perform the operation on</span>
+<span class="sd">            bounds (list[Union[Face,Wire]]): list of profiles</span>
+<span class="sd">            depth (float, optional): depth of the cut or extrusion. Defaults to None.</span>
+<span class="sd">            taper (float, optional): in degrees. Defaults to 0.</span>
+<span class="sd">            up_to_face (Face, optional): a face to extrude until. Defaults to None.</span>
+<span class="sd">            thru_all (bool, optional): cut thru_all. Defaults to True.</span>
+<span class="sd">            additive (bool, optional): Defaults to True.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Solid: prismatic feature</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">bounds</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">Wire</span><span class="p">):</span>
+            <span class="n">sorted_profiles</span> <span class="o">=</span> <span class="n">sort_wires_by_build_order</span><span class="p">(</span><span class="n">bounds</span><span class="p">)</span>
+            <span class="n">faces</span> <span class="o">=</span> <span class="p">[</span><span class="n">Face</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">sorted_profiles</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">faces</span> <span class="o">=</span> <span class="n">bounds</span>
+
+        <span class="n">shape</span><span class="p">:</span> <span class="n">TopoDS_Shape</span> <span class="o">|</span> <span class="n">TopoDS_Solid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">wrapped</span>
+        <span class="k">for</span> <span class="n">face</span> <span class="ow">in</span> <span class="n">faces</span><span class="p">:</span>
+            <span class="n">feat</span> <span class="o">=</span> <span class="n">BRepFeat_MakeDPrism</span><span class="p">(</span>
+                <span class="n">shape</span><span class="p">,</span>
+                <span class="n">face</span><span class="o">.</span><span class="n">wrapped</span><span class="p">,</span>
+                <span class="n">basis</span><span class="o">.</span><span class="n">wrapped</span> <span class="k">if</span> <span class="n">basis</span> <span class="k">else</span> <span class="n">TopoDS_Face</span><span class="p">(),</span>
+                <span class="n">taper</span> <span class="o">*</span> <span class="n">DEG2RAD</span><span class="p">,</span>
+                <span class="n">additive</span><span class="p">,</span>
+                <span class="kc">False</span><span class="p">,</span>
+            <span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">up_to_face</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">feat</span><span class="o">.</span><span class="n">Perform</span><span class="p">(</span><span class="n">up_to_face</span><span class="o">.</span><span class="n">wrapped</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">thru_all</span> <span class="ow">or</span> <span class="n">depth</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">feat</span><span class="o">.</span><span class="n">PerformThruAll</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">feat</span><span class="o">.</span><span class="n">Perform</span><span class="p">(</span><span class="n">depth</span><span class="p">)</span>
+
+            <span class="n">shape</span> <span class="o">=</span> <span class="n">feat</span><span class="o">.</span><span class="n">Shape</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Mixin3D.fillet">
+<a class="viewcode-back" href="../../direct_api_reference.html#topology.Mixin3D.fillet">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">fillet</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">radius</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">edge_list</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Edge</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Self</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Fillet</span>
+
+<span class="sd">        Fillets the specified edges of this solid.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            radius (float): float &gt; 0, the radius of the fillet</span>
+<span class="sd">            edge_list (Iterable[Edge]): a list of Edge objects, which must belong to this solid</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Any: Filleted solid</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">native_edges</span> <span class="o">=</span> <span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">wrapped</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">edge_list</span><span class="p">]</span>
+
+        <span class="n">fillet_builder</span> <span class="o">=</span> <span class="n">BRepFilletAPI_MakeFillet</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wrapped</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">native_edge</span> <span class="ow">in</span> <span class="n">native_edges</span><span class="p">:</span>
+            <span class="n">fillet_builder</span><span class="o">.</span><span class="n">Add</span><span class="p">(</span><span class="n">radius</span><span class="p">,</span> <span class="n">native_edge</span><span class="p">)</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">new_shape</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="n">fillet_builder</span><span class="o">.</span><span class="n">Shape</span><span class="p">())</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">new_shape</span><span class="o">.</span><span class="n">is_valid</span><span class="p">():</span>
+                <span class="k">raise</span> <span class="n">Standard_Failure</span>
+        <span class="k">except</span> <span class="p">(</span><span class="n">StdFail_NotDone</span><span class="p">,</span> <span class="n">Standard_Failure</span><span class="p">)</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Failed creating a fillet with radius of </span><span class="si">{</span><span class="n">radius</span><span class="si">}</span><span class="s2">, try a smaller value&quot;</span>
+                <span class="sa">f</span><span class="s2">&quot; or use max_fillet() to find the largest valid fillet radius&quot;</span>
+            <span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">err</span>
+
+        <span class="k">return</span> <span class="n">new_shape</span></div>
+
+
+<div class="viewcode-block" id="Mixin3D.hollow">
+<a class="viewcode-back" href="../../direct_api_reference.html#topology.Mixin3D.hollow">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">hollow</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">faces</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Face</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">thickness</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">tolerance</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0001</span><span class="p">,</span>
+        <span class="n">kind</span><span class="p">:</span> <span class="n">Kind</span> <span class="o">=</span> <span class="n">Kind</span><span class="o">.</span><span class="n">ARC</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Solid</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Hollow</span>
+
+<span class="sd">        Return the outer shelled solid of self.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            faces (Optional[Iterable[Face]]): faces to be removed,</span>
+<span class="sd">            which must be part of the solid. Can be an empty list.</span>
+<span class="sd">            thickness (float): shell thickness - positive shells outwards, negative</span>
+<span class="sd">                shells inwards.</span>
+<span class="sd">            tolerance (float, optional): modelling tolerance of the method. Defaults to 0.0001.</span>
+<span class="sd">            kind (Kind, optional): intersection type. Defaults to Kind.ARC.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            ValueError: Kind.TANGENT not supported</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Solid: A hollow solid.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">faces</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">faces</span><span class="p">)</span> <span class="k">if</span> <span class="n">faces</span> <span class="k">else</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="n">kind</span> <span class="o">==</span> <span class="n">Kind</span><span class="o">.</span><span class="n">TANGENT</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Kind.TANGENT not supported&quot;</span><span class="p">)</span>
+
+        <span class="n">kind_dict</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="n">Kind</span><span class="o">.</span><span class="n">ARC</span><span class="p">:</span> <span class="n">GeomAbs_JoinType</span><span class="o">.</span><span class="n">GeomAbs_Arc</span><span class="p">,</span>
+            <span class="n">Kind</span><span class="o">.</span><span class="n">INTERSECTION</span><span class="p">:</span> <span class="n">GeomAbs_JoinType</span><span class="o">.</span><span class="n">GeomAbs_Intersection</span><span class="p">,</span>
+        <span class="p">}</span>
+
+        <span class="n">occ_faces_list</span> <span class="o">=</span> <span class="n">TopTools_ListOfShape</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">face</span> <span class="ow">in</span> <span class="n">faces</span><span class="p">:</span>
+            <span class="n">occ_faces_list</span><span class="o">.</span><span class="n">Append</span><span class="p">(</span><span class="n">face</span><span class="o">.</span><span class="n">wrapped</span><span class="p">)</span>
+
+        <span class="n">shell_builder</span> <span class="o">=</span> <span class="n">BRepOffsetAPI_MakeThickSolid</span><span class="p">()</span>
+        <span class="n">shell_builder</span><span class="o">.</span><span class="n">MakeThickSolidByJoin</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">wrapped</span><span class="p">,</span>
+            <span class="n">occ_faces_list</span><span class="p">,</span>
+            <span class="n">thickness</span><span class="p">,</span>
+            <span class="n">tolerance</span><span class="p">,</span>
+            <span class="n">Intersection</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">Join</span><span class="o">=</span><span class="n">kind_dict</span><span class="p">[</span><span class="n">kind</span><span class="p">],</span>
+        <span class="p">)</span>
+        <span class="n">shell_builder</span><span class="o">.</span><span class="n">Build</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">faces</span><span class="p">:</span>
+            <span class="n">return_value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">shell_builder</span><span class="o">.</span><span class="n">Shape</span><span class="p">())</span>
+
+        <span class="k">else</span><span class="p">:</span>  <span class="c1"># if no faces provided a watertight solid will be constructed</span>
+            <span class="n">shell1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">shell_builder</span><span class="o">.</span><span class="n">Shape</span><span class="p">())</span><span class="o">.</span><span class="n">shells</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">wrapped</span>
+            <span class="n">shell2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">shells</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">wrapped</span>
+
+            <span class="c1"># s1 can be outer or inner shell depending on the thickness sign</span>
+            <span class="k">if</span> <span class="n">thickness</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">sol</span> <span class="o">=</span> <span class="n">BRepBuilderAPI_MakeSolid</span><span class="p">(</span><span class="n">shell1</span><span class="p">,</span> <span class="n">shell2</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">sol</span> <span class="o">=</span> <span class="n">BRepBuilderAPI_MakeSolid</span><span class="p">(</span><span class="n">shell2</span><span class="p">,</span> <span class="n">shell1</span><span class="p">)</span>
+
+            <span class="c1"># fix needed for the orientations</span>
+            <span class="n">return_value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">Shape</span><span class="p">())</span><span class="o">.</span><span class="n">fix</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="n">return_value</span></div>
+
+
+<div class="viewcode-block" id="Mixin3D.is_inside">
+<a class="viewcode-back" href="../../direct_api_reference.html#topology.Mixin3D.is_inside">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_inside</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">point</span><span class="p">:</span> <span class="n">VectorLike</span><span class="p">,</span> <span class="n">tolerance</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1.0e-6</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns whether or not the point is inside a solid or compound</span>
+<span class="sd">        object within the specified tolerance.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">          point: tuple or Vector representing 3D point to be tested</span>
+<span class="sd">          tolerance: tolerance for inside determination, default=1.0e-6</span>
+<span class="sd">          point: VectorLike:</span>
+<span class="sd">          tolerance: float:  (Default value = 1.0e-6)</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">          bool indicating whether or not point is within solid</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">solid_classifier</span> <span class="o">=</span> <span class="n">BRepClass3d_SolidClassifier</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wrapped</span><span class="p">)</span>
+        <span class="n">solid_classifier</span><span class="o">.</span><span class="n">Perform</span><span class="p">(</span><span class="n">gp_Pnt</span><span class="p">(</span><span class="o">*</span><span class="n">Vector</span><span class="p">(</span><span class="n">point</span><span class="p">)</span><span class="o">.</span><span class="n">to_tuple</span><span class="p">()),</span> <span class="n">tolerance</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">solid_classifier</span><span class="o">.</span><span class="n">State</span><span class="p">()</span> <span class="o">==</span> <span class="n">ta</span><span class="o">.</span><span class="n">TopAbs_IN</span> <span class="ow">or</span> <span class="n">solid_classifier</span><span class="o">.</span><span class="n">IsOnAFace</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="Mixin3D.max_fillet">
+<a class="viewcode-back" href="../../direct_api_reference.html#topology.Mixin3D.max_fillet">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">max_fillet</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">edge_list</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Edge</span><span class="p">],</span>
+        <span class="n">tolerance</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
+        <span class="n">max_iterations</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Find Maximum Fillet Size</span>
+
+<span class="sd">        Find the largest fillet radius for the given Shape and edges with a</span>
+<span class="sd">        recursive binary search.</span>
+
+<span class="sd">        Example:</span>
+
+<span class="sd">              max_fillet_radius = my_shape.max_fillet(shape_edges)</span>
+<span class="sd">              max_fillet_radius = my_shape.max_fillet(shape_edges, tolerance=0.5, max_iterations=8)</span>
+
+
+<span class="sd">        Args:</span>
+<span class="sd">            edge_list (Iterable[Edge]): a sequence of Edge objects, which must belong to this solid</span>
+<span class="sd">            tolerance (float, optional): maximum error from actual value. Defaults to 0.1.</span>
+<span class="sd">            max_iterations (int, optional): maximum number of recursive iterations. Defaults to 10.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            RuntimeError: failed to find the max value</span>
+<span class="sd">            ValueError: the provided Shape is invalid</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: maximum fillet radius</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="nf">__max_fillet</span><span class="p">(</span><span class="n">window_min</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">window_max</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">current_iteration</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+            <span class="n">window_mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">window_min</span> <span class="o">+</span> <span class="n">window_max</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+
+            <span class="k">if</span> <span class="n">current_iteration</span> <span class="o">==</span> <span class="n">max_iterations</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Failed to find the max value within </span><span class="si">{</span><span class="n">tolerance</span><span class="si">}</span><span class="s2"> in </span><span class="si">{</span><span class="n">max_iterations</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="p">)</span>
+
+            <span class="n">fillet_builder</span> <span class="o">=</span> <span class="n">BRepFilletAPI_MakeFillet</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wrapped</span><span class="p">)</span>
+
+            <span class="k">for</span> <span class="n">native_edge</span> <span class="ow">in</span> <span class="n">native_edges</span><span class="p">:</span>
+                <span class="n">fillet_builder</span><span class="o">.</span><span class="n">Add</span><span class="p">(</span><span class="n">window_mid</span><span class="p">,</span> <span class="n">native_edge</span><span class="p">)</span>
+
+            <span class="c1"># Do these numbers work? - if not try with the smaller window</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">new_shape</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="n">fillet_builder</span><span class="o">.</span><span class="n">Shape</span><span class="p">())</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">new_shape</span><span class="o">.</span><span class="n">is_valid</span><span class="p">():</span>
+                    <span class="k">raise</span> <span class="n">fillet_exception</span>
+            <span class="k">except</span> <span class="n">fillet_exception</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">__max_fillet</span><span class="p">(</span><span class="n">window_min</span><span class="p">,</span> <span class="n">window_mid</span><span class="p">,</span> <span class="n">current_iteration</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+            <span class="c1"># These numbers work, are they close enough? - if not try larger window</span>
+            <span class="k">if</span> <span class="n">window_mid</span> <span class="o">-</span> <span class="n">window_min</span> <span class="o">&lt;=</span> <span class="n">tolerance</span><span class="p">:</span>
+                <span class="n">return_value</span> <span class="o">=</span> <span class="n">window_mid</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">return_value</span> <span class="o">=</span> <span class="n">__max_fillet</span><span class="p">(</span>
+                    <span class="n">window_mid</span><span class="p">,</span> <span class="n">window_max</span><span class="p">,</span> <span class="n">current_iteration</span> <span class="o">+</span> <span class="mi">1</span>
+                <span class="p">)</span>
+            <span class="k">return</span> <span class="n">return_value</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_valid</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Invalid Shape&quot;</span><span class="p">)</span>
+
+        <span class="n">native_edges</span> <span class="o">=</span> <span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">wrapped</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">edge_list</span><span class="p">]</span>
+
+        <span class="c1"># Unfortunately, MacOS doesn&#39;t support the StdFail_NotDone exception so platform</span>
+        <span class="c1"># specific exceptions are required.</span>
+        <span class="k">if</span> <span class="n">platform</span><span class="o">.</span><span class="n">system</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;Darwin&quot;</span><span class="p">:</span>
+            <span class="n">fillet_exception</span> <span class="o">=</span> <span class="n">Standard_Failure</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">fillet_exception</span> <span class="o">=</span> <span class="n">StdFail_NotDone</span>
+
+        <span class="n">max_radius</span> <span class="o">=</span> <span class="n">__max_fillet</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">bounding_box</span><span class="p">()</span><span class="o">.</span><span class="n">diagonal</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">max_radius</span></div>
+
+
+<div class="viewcode-block" id="Mixin3D.offset_3d">
+<a class="viewcode-back" href="../../direct_api_reference.html#topology.Mixin3D.offset_3d">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">offset_3d</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">openings</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Face</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">thickness</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">tolerance</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0001</span><span class="p">,</span>
+        <span class="n">kind</span><span class="p">:</span> <span class="n">Kind</span> <span class="o">=</span> <span class="n">Kind</span><span class="o">.</span><span class="n">ARC</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Solid</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Shell</span>
+
+<span class="sd">        Make an offset solid of self.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            openings (Optional[Iterable[Face]]): faces to be removed,</span>
+<span class="sd">                which must be part of the solid. Can be an empty list.</span>
+<span class="sd">            thickness (float): offset amount - positive offset outwards, negative inwards</span>
+<span class="sd">            tolerance (float, optional): modelling tolerance of the method. Defaults to 0.0001.</span>
+<span class="sd">            kind (Kind, optional): intersection type. Defaults to Kind.ARC.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            ValueError: Kind.TANGENT not supported</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Solid: A shelled solid.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">openings</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">openings</span><span class="p">)</span> <span class="k">if</span> <span class="n">openings</span> <span class="k">else</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="n">kind</span> <span class="o">==</span> <span class="n">Kind</span><span class="o">.</span><span class="n">TANGENT</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Kind.TANGENT not supported&quot;</span><span class="p">)</span>
+
+        <span class="n">kind_dict</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="n">Kind</span><span class="o">.</span><span class="n">ARC</span><span class="p">:</span> <span class="n">GeomAbs_JoinType</span><span class="o">.</span><span class="n">GeomAbs_Arc</span><span class="p">,</span>
+            <span class="n">Kind</span><span class="o">.</span><span class="n">INTERSECTION</span><span class="p">:</span> <span class="n">GeomAbs_JoinType</span><span class="o">.</span><span class="n">GeomAbs_Intersection</span><span class="p">,</span>
+            <span class="n">Kind</span><span class="o">.</span><span class="n">TANGENT</span><span class="p">:</span> <span class="n">GeomAbs_JoinType</span><span class="o">.</span><span class="n">GeomAbs_Tangent</span><span class="p">,</span>
+        <span class="p">}</span>
+
+        <span class="n">occ_faces_list</span> <span class="o">=</span> <span class="n">TopTools_ListOfShape</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">face</span> <span class="ow">in</span> <span class="n">openings</span><span class="p">:</span>
+            <span class="n">occ_faces_list</span><span class="o">.</span><span class="n">Append</span><span class="p">(</span><span class="n">face</span><span class="o">.</span><span class="n">wrapped</span><span class="p">)</span>
+
+        <span class="n">offset_builder</span> <span class="o">=</span> <span class="n">BRepOffsetAPI_MakeThickSolid</span><span class="p">()</span>
+        <span class="n">offset_builder</span><span class="o">.</span><span class="n">MakeThickSolidByJoin</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">wrapped</span><span class="p">,</span>
+            <span class="n">occ_faces_list</span><span class="p">,</span>
+            <span class="n">thickness</span><span class="p">,</span>
+            <span class="n">tolerance</span><span class="p">,</span>
+            <span class="n">Intersection</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">RemoveIntEdges</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">Join</span><span class="o">=</span><span class="n">kind_dict</span><span class="p">[</span><span class="n">kind</span><span class="p">],</span>
+        <span class="p">)</span>
+        <span class="n">offset_builder</span><span class="o">.</span><span class="n">Build</span><span class="p">()</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">offset_occt_solid</span> <span class="o">=</span> <span class="n">offset_builder</span><span class="o">.</span><span class="n">Shape</span><span class="p">()</span>
+        <span class="k">except</span> <span class="p">(</span><span class="n">StdFail_NotDone</span><span class="p">,</span> <span class="n">Standard_Failure</span><span class="p">)</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
+                <span class="s2">&quot;offset Error, an alternative kind may resolve this error&quot;</span>
+            <span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">err</span>
+
+        <span class="n">offset_solid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">offset_occt_solid</span><span class="p">)</span>
+        <span class="k">assert</span> <span class="n">offset_solid</span><span class="o">.</span><span class="n">wrapped</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+
+        <span class="c1"># The Solid can be inverted, if so reverse</span>
+        <span class="k">if</span> <span class="n">offset_solid</span><span class="o">.</span><span class="n">volume</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">offset_solid</span><span class="o">.</span><span class="n">wrapped</span><span class="o">.</span><span class="n">Reverse</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="n">offset_solid</span></div>
+
+
+<div class="viewcode-block" id="Mixin3D.solid">
+<a class="viewcode-back" href="../../direct_api_reference.html#topology.Mixin3D.solid">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">solid</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Solid</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the Solid&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">Shape</span><span class="o">.</span><span class="n">get_single_shape</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;Solid&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Mixin3D.solids">
+<a class="viewcode-back" href="../../direct_api_reference.html#topology.Mixin3D.solids">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">solids</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ShapeList</span><span class="p">[</span><span class="n">Solid</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;solids - all the solids in this Shape&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">Shape</span><span class="o">.</span><span class="n">get_shape_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;Solid&quot;</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="Solid">
+<a class="viewcode-back" href="../../direct_api_reference.html#topology.Solid">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Solid</span><span class="p">(</span><span class="n">Mixin3D</span><span class="p">,</span> <span class="n">Shape</span><span class="p">[</span><span class="n">TopoDS_Solid</span><span class="p">]):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A Solid in build123d represents a three-dimensional solid geometry</span>
+<span class="sd">    in a topological structure. A solid is a closed and bounded volume, enclosing</span>
+<span class="sd">    a region in 3D space. It comprises faces, edges, and vertices connected in a</span>
+<span class="sd">    well-defined manner. Solid modeling operations, such as Boolean</span>
+<span class="sd">    operations (union, intersection, and difference), are often performed on</span>
+<span class="sd">    Solid objects to create or modify complex geometries.&quot;&quot;&quot;</span>
+
+    <span class="n">order</span> <span class="o">=</span> <span class="mf">3.0</span>
+    <span class="c1"># ---- Constructor ----</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">obj</span><span class="p">:</span> <span class="n">TopoDS_Solid</span> <span class="o">|</span> <span class="n">Shell</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">label</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="n">color</span><span class="p">:</span> <span class="n">Color</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">material</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="n">joints</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Joint</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">parent</span><span class="p">:</span> <span class="n">Compound</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Build a solid from an OCCT TopoDS_Shape/TopoDS_Solid</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            obj (TopoDS_Shape | Shell, optional): OCCT Solid or Shell.</span>
+<span class="sd">            label (str, optional): Defaults to &#39;&#39;.</span>
+<span class="sd">            color (Color, optional): Defaults to None.</span>
+<span class="sd">            material (str, optional): tag for external tools. Defaults to &#39;&#39;.</span>
+<span class="sd">            joints (dict[str, Joint], optional): names joints. Defaults to None.</span>
+<span class="sd">            parent (Compound, optional): assembly parent. Defaults to None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">Shell</span><span class="p">):</span>
+            <span class="n">obj</span> <span class="o">=</span> <span class="n">Solid</span><span class="o">.</span><span class="n">_make_solid</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">obj</span><span class="o">=</span><span class="n">obj</span><span class="p">,</span>
+            <span class="c1"># label=&quot;&quot; if label is None else label,</span>
+            <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">,</span>
+            <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span>
+            <span class="n">parent</span><span class="o">=</span><span class="n">parent</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">material</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="k">if</span> <span class="n">material</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">material</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">joints</span> <span class="o">=</span> <span class="p">{}</span> <span class="k">if</span> <span class="n">joints</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">joints</span>
+
+    <span class="c1"># ---- Properties ----</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">volume</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;volume - the volume of this Solid&quot;&quot;&quot;</span>
+        <span class="c1"># when density == 1, mass == volume</span>
+        <span class="k">return</span> <span class="n">Shape</span><span class="o">.</span><span class="n">compute_mass</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+    <span class="c1"># ---- Class Methods ----</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_make_solid</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">shell</span><span class="p">:</span> <span class="n">Shell</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TopoDS_Solid</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create a Solid object from the surface shell&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">ShapeFix_Solid</span><span class="p">()</span><span class="o">.</span><span class="n">SolidFromShell</span><span class="p">(</span><span class="n">shell</span><span class="o">.</span><span class="n">wrapped</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_set_sweep_mode</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span>
+        <span class="n">builder</span><span class="p">:</span> <span class="n">BRepOffsetAPI_MakePipeShell</span><span class="p">,</span>
+        <span class="n">path</span><span class="p">:</span> <span class="n">Wire</span> <span class="o">|</span> <span class="n">Edge</span><span class="p">,</span>
+        <span class="n">binormal</span><span class="p">:</span> <span class="n">Vector</span> <span class="o">|</span> <span class="n">Wire</span> <span class="o">|</span> <span class="n">Edge</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="n">rotate</span> <span class="o">=</span> <span class="kc">False</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">binormal</span><span class="p">,</span> <span class="n">Vector</span><span class="p">):</span>
+            <span class="n">coordinate_system</span> <span class="o">=</span> <span class="n">gp_Ax2</span><span class="p">()</span>
+            <span class="n">coordinate_system</span><span class="o">.</span><span class="n">SetLocation</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">start_point</span><span class="p">()</span><span class="o">.</span><span class="n">to_pnt</span><span class="p">())</span>
+            <span class="n">coordinate_system</span><span class="o">.</span><span class="n">SetDirection</span><span class="p">(</span><span class="n">binormal</span><span class="o">.</span><span class="n">to_dir</span><span class="p">())</span>
+            <span class="n">builder</span><span class="o">.</span><span class="n">SetMode</span><span class="p">(</span><span class="n">coordinate_system</span><span class="p">)</span>
+            <span class="n">rotate</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">binormal</span><span class="p">,</span> <span class="p">(</span><span class="n">Wire</span><span class="p">,</span> <span class="n">Edge</span><span class="p">)):</span>
+            <span class="n">builder</span><span class="o">.</span><span class="n">SetMode</span><span class="p">(</span><span class="n">binormal</span><span class="o">.</span><span class="n">to_wire</span><span class="p">()</span><span class="o">.</span><span class="n">wrapped</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">rotate</span>
+
+<div class="viewcode-block" id="Solid.extrude">
+<a class="viewcode-back" href="../../direct_api_reference.html#topology.Solid.extrude">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extrude</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">obj</span><span class="p">:</span> <span class="n">Face</span><span class="p">,</span> <span class="n">direction</span><span class="p">:</span> <span class="n">VectorLike</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Solid</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;extrude</span>
+
+<span class="sd">        Extrude a Face into a Solid.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            direction (VectorLike): direction and magnitude of extrusion</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            ValueError: Unsupported class</span>
+<span class="sd">            RuntimeError: Generated invalid result</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Edge: extruded shape</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">Solid</span><span class="p">(</span><span class="n">TopoDS</span><span class="o">.</span><span class="n">Solid_s</span><span class="p">(</span><span class="n">_extrude_topods_shape</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">wrapped</span><span class="p">,</span> <span class="n">direction</span><span class="p">)))</span></div>
+
+
+<div class="viewcode-block" id="Solid.extrude_linear_with_rotation">
+<a class="viewcode-back" href="../../direct_api_reference.html#topology.Solid.extrude_linear_with_rotation">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extrude_linear_with_rotation</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span>
+        <span class="n">section</span><span class="p">:</span> <span class="n">Face</span> <span class="o">|</span> <span class="n">Wire</span><span class="p">,</span>
+        <span class="n">center</span><span class="p">:</span> <span class="n">VectorLike</span><span class="p">,</span>
+        <span class="n">normal</span><span class="p">:</span> <span class="n">VectorLike</span><span class="p">,</span>
+        <span class="n">angle</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">inner_wires</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Wire</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Solid</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Extrude with Rotation</span>
+
+<span class="sd">        Creates a &#39;twisted prism&#39; by extruding, while simultaneously rotating around the</span>
+<span class="sd">        extrusion vector.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            section (Union[Face,Wire]): cross section</span>
+<span class="sd">            vec_center (VectorLike): the center point about which to rotate</span>
+<span class="sd">            vec_normal (VectorLike): a vector along which to extrude the wires</span>
+<span class="sd">            angle (float): the angle to rotate through while extruding</span>
+<span class="sd">            inner_wires (list[Wire], optional): holes - only used if section is of type Wire.</span>
+<span class="sd">                Defaults to None.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Solid: extruded object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Though the signature may appear to be similar enough to extrude to merit</span>
+        <span class="c1"># combining them, the construction methods used here are different enough that they</span>
+        <span class="c1"># should be separate.</span>
+
+        <span class="c1"># At a high level, the steps followed are:</span>
+        <span class="c1"># (1) accept a set of wires</span>
+        <span class="c1"># (2) create another set of wires like this one, but which are transformed and rotated</span>
+        <span class="c1"># (3) create a ruledSurface between the sets of wires</span>
+        <span class="c1"># (4) create a shell and compute the resulting object</span>
+
+        <span class="n">inner_wires</span> <span class="o">=</span> <span class="n">inner_wires</span> <span class="k">if</span> <span class="n">inner_wires</span> <span class="k">else</span> <span class="p">[]</span>
+        <span class="n">center</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">(</span><span class="n">center</span><span class="p">)</span>
+        <span class="n">normal</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">(</span><span class="n">normal</span><span class="p">)</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="nf">extrude_aux_spine</span><span class="p">(</span>
+            <span class="n">wire</span><span class="p">:</span> <span class="n">TopoDS_Wire</span><span class="p">,</span> <span class="n">spine</span><span class="p">:</span> <span class="n">TopoDS_Wire</span><span class="p">,</span> <span class="n">aux_spine</span><span class="p">:</span> <span class="n">TopoDS_Wire</span>
+        <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TopoDS_Shape</span><span class="p">:</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;Helper function&quot;&quot;&quot;</span>
+            <span class="n">extrude_builder</span> <span class="o">=</span> <span class="n">BRepOffsetAPI_MakePipeShell</span><span class="p">(</span><span class="n">spine</span><span class="p">)</span>
+            <span class="n">extrude_builder</span><span class="o">.</span><span class="n">SetMode</span><span class="p">(</span><span class="n">aux_spine</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>  <span class="c1"># auxiliary spine</span>
+            <span class="n">extrude_builder</span><span class="o">.</span><span class="n">Add</span><span class="p">(</span><span class="n">wire</span><span class="p">)</span>
+            <span class="n">extrude_builder</span><span class="o">.</span><span class="n">Build</span><span class="p">()</span>
+            <span class="n">extrude_builder</span><span class="o">.</span><span class="n">MakeSolid</span><span class="p">()</span>
+            <span class="k">return</span> <span class="n">extrude_builder</span><span class="o">.</span><span class="n">Shape</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">section</span><span class="p">,</span> <span class="n">Face</span><span class="p">):</span>
+            <span class="n">outer_wire</span> <span class="o">=</span> <span class="n">section</span><span class="o">.</span><span class="n">outer_wire</span><span class="p">()</span>
+            <span class="n">inner_wires</span> <span class="o">=</span> <span class="n">section</span><span class="o">.</span><span class="n">inner_wires</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">outer_wire</span> <span class="o">=</span> <span class="n">section</span>
+
+        <span class="c1"># make straight spine</span>
+        <span class="n">straight_spine_e</span> <span class="o">=</span> <span class="n">Edge</span><span class="o">.</span><span class="n">make_line</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="n">center</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">normal</span><span class="p">))</span>
+        <span class="n">straight_spine_w</span> <span class="o">=</span> <span class="n">Wire</span><span class="o">.</span><span class="n">combine</span><span class="p">([</span><span class="n">straight_spine_e</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">wrapped</span>
+
+        <span class="c1"># make an auxiliary spine</span>
+        <span class="n">pitch</span> <span class="o">=</span> <span class="mf">360.0</span> <span class="o">/</span> <span class="n">angle</span> <span class="o">*</span> <span class="n">normal</span><span class="o">.</span><span class="n">length</span>
+        <span class="n">aux_spine_w</span> <span class="o">=</span> <span class="n">Wire</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">Edge</span><span class="o">.</span><span class="n">make_helix</span><span class="p">(</span><span class="n">pitch</span><span class="p">,</span> <span class="n">normal</span><span class="o">.</span><span class="n">length</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="n">center</span><span class="p">,</span> <span class="n">normal</span><span class="o">=</span><span class="n">normal</span><span class="p">)]</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">wrapped</span>
+
+        <span class="c1"># extrude the outer wire</span>
+        <span class="n">outer_solid</span> <span class="o">=</span> <span class="n">extrude_aux_spine</span><span class="p">(</span>
+            <span class="n">outer_wire</span><span class="o">.</span><span class="n">wrapped</span><span class="p">,</span> <span class="n">straight_spine_w</span><span class="p">,</span> <span class="n">aux_spine_w</span>
+        <span class="p">)</span>
+
+        <span class="c1"># extrude inner wires</span>
+        <span class="n">inner_solids</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">extrude_aux_spine</span><span class="p">(</span><span class="n">w</span><span class="o">.</span><span class="n">wrapped</span><span class="p">,</span> <span class="n">straight_spine_w</span><span class="p">,</span> <span class="n">aux_spine_w</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">inner_wires</span>
+        <span class="p">]</span>
+
+        <span class="c1"># combine the inner solids into compound</span>
+        <span class="n">inner_comp</span> <span class="o">=</span> <span class="n">_make_topods_compound_from_shapes</span><span class="p">(</span><span class="n">inner_solids</span><span class="p">)</span>
+
+        <span class="c1"># subtract from the outer solid</span>
+        <span class="k">return</span> <span class="n">Solid</span><span class="p">(</span><span class="n">BRepAlgoAPI_Cut</span><span class="p">(</span><span class="n">outer_solid</span><span class="p">,</span> <span class="n">inner_comp</span><span class="p">)</span><span class="o">.</span><span class="n">Shape</span><span class="p">())</span></div>
+
+
+<div class="viewcode-block" id="Solid.extrude_taper">
+<a class="viewcode-back" href="../../direct_api_reference.html#topology.Solid.extrude_taper">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extrude_taper</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span> <span class="n">profile</span><span class="p">:</span> <span class="n">Face</span><span class="p">,</span> <span class="n">direction</span><span class="p">:</span> <span class="n">VectorLike</span><span class="p">,</span> <span class="n">taper</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">flip_inner</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Solid</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Extrude a cross section with a taper</span>
+
+<span class="sd">        Extrude a cross section into a prismatic solid in the provided direction.</span>
+
+<span class="sd">        Note that two difference algorithms are used. If direction aligns with</span>
+<span class="sd">        the profile normal (which must be positive), the taper is positive and the profile</span>
+<span class="sd">        contains no holes the OCP LocOpe_DPrism algorithm is used as it generates the most</span>
+<span class="sd">        accurate results. Otherwise, a loft is created between the profile and the profile</span>
+<span class="sd">        with a 2D offset set at the appropriate direction.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            section (Face]): cross section</span>
+<span class="sd">            normal (VectorLike): a vector along which to extrude the wires. The length</span>
+<span class="sd">                of the vector controls the length of the extrusion.</span>
+<span class="sd">            taper (float): taper angle in degrees.</span>
+<span class="sd">            flip_inner (bool, optional): outer and inner geometry have opposite tapers to</span>
+<span class="sd">                allow for part extraction when injection molding.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Solid: extruded cross section</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># pylint: disable=too-many-locals</span>
+        <span class="n">direction</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">(</span><span class="n">direction</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="p">(</span>
+            <span class="n">direction</span><span class="o">.</span><span class="n">normalized</span><span class="p">()</span> <span class="o">==</span> <span class="n">profile</span><span class="o">.</span><span class="n">normal_at</span><span class="p">()</span>
+            <span class="ow">and</span> <span class="n">Plane</span><span class="p">(</span><span class="n">profile</span><span class="p">)</span><span class="o">.</span><span class="n">z_dir</span><span class="o">.</span><span class="n">Z</span> <span class="o">&gt;</span> <span class="mi">0</span>
+            <span class="ow">and</span> <span class="n">taper</span> <span class="o">&gt;</span> <span class="mi">0</span>
+            <span class="ow">and</span> <span class="ow">not</span> <span class="n">profile</span><span class="o">.</span><span class="n">inner_wires</span><span class="p">()</span>
+        <span class="p">):</span>
+            <span class="n">prism_builder</span> <span class="o">=</span> <span class="n">LocOpe_DPrism</span><span class="p">(</span>
+                <span class="n">profile</span><span class="o">.</span><span class="n">wrapped</span><span class="p">,</span>
+                <span class="n">direction</span><span class="o">.</span><span class="n">length</span> <span class="o">/</span> <span class="n">cos</span><span class="p">(</span><span class="n">radians</span><span class="p">(</span><span class="n">taper</span><span class="p">)),</span>
+                <span class="n">radians</span><span class="p">(</span><span class="n">taper</span><span class="p">),</span>
+            <span class="p">)</span>
+            <span class="n">new_solid</span> <span class="o">=</span> <span class="n">Solid</span><span class="p">(</span><span class="n">prism_builder</span><span class="o">.</span><span class="n">Shape</span><span class="p">())</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># Determine the offset to get the taper</span>
+            <span class="n">offset_amt</span> <span class="o">=</span> <span class="o">-</span><span class="n">direction</span><span class="o">.</span><span class="n">length</span> <span class="o">*</span> <span class="n">tan</span><span class="p">(</span><span class="n">radians</span><span class="p">(</span><span class="n">taper</span><span class="p">))</span>
+
+            <span class="n">outer</span> <span class="o">=</span> <span class="n">profile</span><span class="o">.</span><span class="n">outer_wire</span><span class="p">()</span>
+            <span class="n">local_outer</span><span class="p">:</span> <span class="n">Wire</span> <span class="o">=</span> <span class="n">Plane</span><span class="p">(</span><span class="n">profile</span><span class="p">)</span><span class="o">.</span><span class="n">to_local_coords</span><span class="p">(</span><span class="n">outer</span><span class="p">)</span>
+            <span class="n">local_taper_outer</span> <span class="o">=</span> <span class="n">local_outer</span><span class="o">.</span><span class="n">offset_2d</span><span class="p">(</span>
+                <span class="n">offset_amt</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="n">Kind</span><span class="o">.</span><span class="n">INTERSECTION</span>
+            <span class="p">)</span>
+            <span class="n">taper_outer</span> <span class="o">=</span> <span class="n">Plane</span><span class="p">(</span><span class="n">profile</span><span class="p">)</span><span class="o">.</span><span class="n">from_local_coords</span><span class="p">(</span><span class="n">local_taper_outer</span><span class="p">)</span>
+            <span class="n">taper_outer</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">Location</span><span class="p">(</span><span class="n">direction</span><span class="p">))</span>
+
+            <span class="n">profile_wires</span> <span class="o">=</span> <span class="p">[</span><span class="n">profile</span><span class="o">.</span><span class="n">outer_wire</span><span class="p">()]</span> <span class="o">+</span> <span class="n">profile</span><span class="o">.</span><span class="n">inner_wires</span><span class="p">()</span>
+
+            <span class="n">taper_wires</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">wire</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">profile_wires</span><span class="p">):</span>
+                <span class="n">flip</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">flip_inner</span> <span class="k">else</span> <span class="mi">1</span>
+                <span class="n">local</span><span class="p">:</span> <span class="n">Wire</span> <span class="o">=</span> <span class="n">Plane</span><span class="p">(</span><span class="n">profile</span><span class="p">)</span><span class="o">.</span><span class="n">to_local_coords</span><span class="p">(</span><span class="n">wire</span><span class="p">)</span>
+                <span class="n">local_taper</span> <span class="o">=</span> <span class="n">local</span><span class="o">.</span><span class="n">offset_2d</span><span class="p">(</span><span class="n">flip</span> <span class="o">*</span> <span class="n">offset_amt</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="n">Kind</span><span class="o">.</span><span class="n">INTERSECTION</span><span class="p">)</span>
+                <span class="n">taper_wire</span><span class="p">:</span> <span class="n">Wire</span> <span class="o">=</span> <span class="n">Plane</span><span class="p">(</span><span class="n">profile</span><span class="p">)</span><span class="o">.</span><span class="n">from_local_coords</span><span class="p">(</span><span class="n">local_taper</span><span class="p">)</span>
+                <span class="n">taper_wire</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">Location</span><span class="p">(</span><span class="n">direction</span><span class="p">))</span>
+                <span class="n">taper_wires</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">taper_wire</span><span class="p">)</span>
+
+            <span class="n">solids</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="n">Solid</span><span class="o">.</span><span class="n">make_loft</span><span class="p">([</span><span class="n">p</span><span class="p">,</span> <span class="n">t</span><span class="p">])</span> <span class="k">for</span> <span class="n">p</span><span class="p">,</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">profile_wires</span><span class="p">,</span> <span class="n">taper_wires</span><span class="p">)</span>
+            <span class="p">]</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">solids</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">complex_solid</span> <span class="o">=</span> <span class="n">solids</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="o">*</span><span class="n">solids</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+                <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">complex_solid</span><span class="p">,</span> <span class="n">Solid</span><span class="p">)</span>  <span class="c1"># Can&#39;t be a list</span>
+                <span class="n">new_solid</span> <span class="o">=</span> <span class="n">complex_solid</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">new_solid</span> <span class="o">=</span> <span class="n">solids</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="k">return</span> <span class="n">new_solid</span></div>
+
+
+<div class="viewcode-block" id="Solid.extrude_until">
+<a class="viewcode-back" href="../../direct_api_reference.html#topology.Solid.extrude_until">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extrude_until</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span>
+        <span class="n">section</span><span class="p">:</span> <span class="n">Face</span><span class="p">,</span>
+        <span class="n">target_object</span><span class="p">:</span> <span class="n">Compound</span> <span class="o">|</span> <span class="n">Solid</span><span class="p">,</span>
+        <span class="n">direction</span><span class="p">:</span> <span class="n">VectorLike</span><span class="p">,</span>
+        <span class="n">until</span><span class="p">:</span> <span class="n">Until</span> <span class="o">=</span> <span class="n">Until</span><span class="o">.</span><span class="n">NEXT</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Compound</span> <span class="o">|</span> <span class="n">Solid</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;extrude_until</span>
+
+<span class="sd">        Extrude section in provided direction until it encounters either the</span>
+<span class="sd">        NEXT or LAST surface of target_object. Note that the bounding surface</span>
+<span class="sd">        must be larger than the extruded face where they contact.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            section (Face): Face to extrude</span>
+<span class="sd">            target_object (Union[Compound, Solid]): object to limit extrusion</span>
+<span class="sd">            direction (VectorLike): extrusion direction</span>
+<span class="sd">            until (Until, optional): surface to limit extrusion. Defaults to Until.NEXT.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            ValueError: provided face does not intersect target_object</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Union[Compound, Solid]: extruded Face</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">direction</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">(</span><span class="n">direction</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">until</span> <span class="ow">in</span> <span class="p">[</span><span class="n">Until</span><span class="o">.</span><span class="n">PREVIOUS</span><span class="p">,</span> <span class="n">Until</span><span class="o">.</span><span class="n">FIRST</span><span class="p">]:</span>
+            <span class="n">direction</span> <span class="o">*=</span> <span class="o">-</span><span class="mi">1</span>
+            <span class="n">until</span> <span class="o">=</span> <span class="n">Until</span><span class="o">.</span><span class="n">NEXT</span> <span class="k">if</span> <span class="n">until</span> <span class="o">==</span> <span class="n">Until</span><span class="o">.</span><span class="n">PREVIOUS</span> <span class="k">else</span> <span class="n">Until</span><span class="o">.</span><span class="n">LAST</span>
+
+        <span class="n">max_dimension</span> <span class="o">=</span> <span class="n">find_max_dimension</span><span class="p">([</span><span class="n">section</span><span class="p">,</span> <span class="n">target_object</span><span class="p">])</span>
+        <span class="n">clipping_direction</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">direction</span> <span class="o">*</span> <span class="n">max_dimension</span>
+            <span class="k">if</span> <span class="n">until</span> <span class="o">==</span> <span class="n">Until</span><span class="o">.</span><span class="n">NEXT</span>
+            <span class="k">else</span> <span class="o">-</span><span class="n">direction</span> <span class="o">*</span> <span class="n">max_dimension</span>
+        <span class="p">)</span>
+        <span class="n">direction_axis</span> <span class="o">=</span> <span class="n">Axis</span><span class="p">(</span><span class="n">section</span><span class="o">.</span><span class="n">center</span><span class="p">(),</span> <span class="n">clipping_direction</span><span class="p">)</span>
+        <span class="c1"># Create a linear extrusion to start</span>
+        <span class="n">extrusion</span> <span class="o">=</span> <span class="n">Solid</span><span class="o">.</span><span class="n">extrude</span><span class="p">(</span><span class="n">section</span><span class="p">,</span> <span class="n">direction</span> <span class="o">*</span> <span class="n">max_dimension</span><span class="p">)</span>
+
+        <span class="c1"># Project section onto the shape to generate faces that will clip the extrusion</span>
+        <span class="c1"># and exclude the planar faces normal to the direction of extrusion and these</span>
+        <span class="c1"># will have no volume when extruded</span>
+        <span class="n">faces</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">face</span> <span class="ow">in</span> <span class="n">section</span><span class="o">.</span><span class="n">project_to_shape</span><span class="p">(</span><span class="n">target_object</span><span class="p">,</span> <span class="n">direction</span><span class="p">):</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">face</span><span class="p">,</span> <span class="n">Face</span><span class="p">):</span>
+                <span class="n">faces</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">face</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">faces</span> <span class="o">+=</span> <span class="n">face</span><span class="o">.</span><span class="n">faces</span><span class="p">()</span>
+
+        <span class="n">clip_faces</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">f</span>
+            <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">faces</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">is_planar</span> <span class="ow">and</span> <span class="n">f</span><span class="o">.</span><span class="n">normal_at</span><span class="p">()</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">direction</span><span class="p">)</span> <span class="o">==</span> <span class="mf">0.0</span><span class="p">)</span>
+        <span class="p">]</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">clip_faces</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;provided face does not intersect target_object&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Create the objects that will clip the linear extrusion</span>
+        <span class="n">clipping_objects</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">Solid</span><span class="o">.</span><span class="n">extrude</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">clipping_direction</span><span class="p">)</span><span class="o">.</span><span class="n">fix</span><span class="p">()</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">clip_faces</span>
+        <span class="p">]</span>
+        <span class="n">clipping_objects</span> <span class="o">=</span> <span class="p">[</span><span class="n">o</span> <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="n">clipping_objects</span> <span class="k">if</span> <span class="n">o</span><span class="o">.</span><span class="n">volume</span> <span class="o">&gt;</span> <span class="mf">1e-9</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">until</span> <span class="o">==</span> <span class="n">Until</span><span class="o">.</span><span class="n">NEXT</span><span class="p">:</span>
+            <span class="n">trimmed_extrusion</span> <span class="o">=</span> <span class="n">extrusion</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">target_object</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">trimmed_extrusion</span><span class="p">,</span> <span class="n">ShapeList</span><span class="p">):</span>
+                <span class="n">closest_extrusion</span> <span class="o">=</span> <span class="n">trimmed_extrusion</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="n">direction_axis</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">closest_extrusion</span> <span class="o">=</span> <span class="n">trimmed_extrusion</span>
+            <span class="k">for</span> <span class="n">clipping_object</span> <span class="ow">in</span> <span class="n">clipping_objects</span><span class="p">:</span>
+                <span class="c1"># It&#39;s possible for clipping faces to self intersect when they are extruded</span>
+                <span class="c1"># thus they could be non manifold which results failed boolean operations</span>
+                <span class="c1">#  - so skip these objects</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">extrusion_shapes</span> <span class="o">=</span> <span class="n">closest_extrusion</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">clipping_object</span><span class="p">)</span>
+                <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+                        <span class="s2">&quot;clipping error - extrusion may be incorrect&quot;</span><span class="p">,</span>
+                        <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                    <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">base_part</span> <span class="o">=</span> <span class="n">extrusion</span><span class="o">.</span><span class="n">intersect</span><span class="p">(</span><span class="n">target_object</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">base_part</span><span class="p">,</span> <span class="n">ShapeList</span><span class="p">):</span>
+                <span class="n">extrusion_parts</span> <span class="o">=</span> <span class="n">base_part</span>
+            <span class="k">elif</span> <span class="n">base_part</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">extrusion_parts</span> <span class="o">=</span> <span class="n">ShapeList</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">extrusion_parts</span> <span class="o">=</span> <span class="n">ShapeList</span><span class="p">([</span><span class="n">base_part</span><span class="p">])</span>
+            <span class="k">for</span> <span class="n">clipping_object</span> <span class="ow">in</span> <span class="n">clipping_objects</span><span class="p">:</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">clipped_extrusion</span> <span class="o">=</span> <span class="n">extrusion</span><span class="o">.</span><span class="n">intersect</span><span class="p">(</span><span class="n">clipping_object</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">clipped_extrusion</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                        <span class="n">extrusion_parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                            <span class="n">clipped_extrusion</span><span class="o">.</span><span class="n">solids</span><span class="p">()</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="n">direction_axis</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+                        <span class="p">)</span>
+                <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+                        <span class="s2">&quot;clipping error - extrusion may be incorrect&quot;</span><span class="p">,</span>
+                        <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                    <span class="p">)</span>
+            <span class="n">extrusion_shapes</span> <span class="o">=</span> <span class="n">Solid</span><span class="o">.</span><span class="n">fuse</span><span class="p">(</span><span class="o">*</span><span class="n">extrusion_parts</span><span class="p">)</span>
+
+        <span class="n">result</span> <span class="o">=</span> <span class="n">extrusion_shapes</span><span class="o">.</span><span class="n">solids</span><span class="p">()</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="n">direction_axis</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="k">return</span> <span class="n">result</span></div>
+
+
+<div class="viewcode-block" id="Solid.from_bounding_box">
+<a class="viewcode-back" href="../../direct_api_reference.html#topology.Solid.from_bounding_box">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_bounding_box</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">bbox</span><span class="p">:</span> <span class="n">BoundBox</span> <span class="o">|</span> <span class="n">OrientedBoundBox</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Solid</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;A box of the same dimensions and location&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">bbox</span><span class="p">,</span> <span class="n">BoundBox</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">Solid</span><span class="o">.</span><span class="n">make_box</span><span class="p">(</span><span class="o">*</span><span class="n">bbox</span><span class="o">.</span><span class="n">size</span><span class="p">)</span><span class="o">.</span><span class="n">locate</span><span class="p">(</span><span class="n">Location</span><span class="p">(</span><span class="n">bbox</span><span class="o">.</span><span class="n">min</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">moved_plane</span><span class="p">:</span> <span class="n">Plane</span> <span class="o">=</span> <span class="n">Plane</span><span class="p">(</span><span class="n">Location</span><span class="p">(</span><span class="o">-</span><span class="n">bbox</span><span class="o">.</span><span class="n">size</span> <span class="o">/</span> <span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">bbox</span><span class="o">.</span><span class="n">location</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">Solid</span><span class="o">.</span><span class="n">make_box</span><span class="p">(</span>
+                <span class="n">bbox</span><span class="o">.</span><span class="n">size</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="n">bbox</span><span class="o">.</span><span class="n">size</span><span class="o">.</span><span class="n">Y</span><span class="p">,</span> <span class="n">bbox</span><span class="o">.</span><span class="n">size</span><span class="o">.</span><span class="n">Z</span><span class="p">,</span> <span class="n">plane</span><span class="o">=</span><span class="n">moved_plane</span>
+            <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Solid.make_box">
+<a class="viewcode-back" href="../../direct_api_reference.html#topology.Solid.make_box">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">make_box</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span> <span class="n">length</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">width</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">height</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">plane</span><span class="p">:</span> <span class="n">Plane</span> <span class="o">=</span> <span class="n">Plane</span><span class="o">.</span><span class="n">XY</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Solid</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;make box</span>
+
+<span class="sd">        Make a box at the origin of plane extending in positive direction of each axis.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            length (float):</span>
+<span class="sd">            width (float):</span>
+<span class="sd">            height (float):</span>
+<span class="sd">            plane (Plane, optional): base plane. Defaults to Plane.XY.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Solid: Box</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
+            <span class="n">BRepPrimAPI_MakeBox</span><span class="p">(</span>
+                <span class="n">plane</span><span class="o">.</span><span class="n">to_gp_ax2</span><span class="p">(),</span>
+                <span class="n">length</span><span class="p">,</span>
+                <span class="n">width</span><span class="p">,</span>
+                <span class="n">height</span><span class="p">,</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">Shape</span><span class="p">()</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Solid.make_cone">
+<a class="viewcode-back" href="../../direct_api_reference.html#topology.Solid.make_cone">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">make_cone</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span>
+        <span class="n">base_radius</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">top_radius</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">height</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">plane</span><span class="p">:</span> <span class="n">Plane</span> <span class="o">=</span> <span class="n">Plane</span><span class="o">.</span><span class="n">XY</span><span class="p">,</span>
+        <span class="n">angle</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">360</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Solid</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;make cone</span>
+
+<span class="sd">        Make a cone with given radii and height</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            base_radius (float):</span>
+<span class="sd">            top_radius (float):</span>
+<span class="sd">            height (float):</span>
+<span class="sd">            plane (Plane): base plane. Defaults to Plane.XY.</span>
+<span class="sd">            angle (float, optional): arc size. Defaults to 360.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Solid: Full or partial cone</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
+            <span class="n">BRepPrimAPI_MakeCone</span><span class="p">(</span>
+                <span class="n">plane</span><span class="o">.</span><span class="n">to_gp_ax2</span><span class="p">(),</span>
+                <span class="n">base_radius</span><span class="p">,</span>
+                <span class="n">top_radius</span><span class="p">,</span>
+                <span class="n">height</span><span class="p">,</span>
+                <span class="n">angle</span> <span class="o">*</span> <span class="n">DEG2RAD</span><span class="p">,</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">Shape</span><span class="p">()</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Solid.make_cylinder">
+<a class="viewcode-back" href="../../direct_api_reference.html#topology.Solid.make_cylinder">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">make_cylinder</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span>
+        <span class="n">radius</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">height</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">plane</span><span class="p">:</span> <span class="n">Plane</span> <span class="o">=</span> <span class="n">Plane</span><span class="o">.</span><span class="n">XY</span><span class="p">,</span>
+        <span class="n">angle</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">360</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Solid</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;make cylinder</span>
+
+<span class="sd">        Make a cylinder with a given radius and height with the base center on plane origin.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            radius (float):</span>
+<span class="sd">            height (float):</span>
+<span class="sd">            plane (Plane): base plane. Defaults to Plane.XY.</span>
+<span class="sd">            angle (float, optional): arc size. Defaults to 360.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Solid: Full or partial cylinder</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
+            <span class="n">BRepPrimAPI_MakeCylinder</span><span class="p">(</span>
+                <span class="n">plane</span><span class="o">.</span><span class="n">to_gp_ax2</span><span class="p">(),</span>
+                <span class="n">radius</span><span class="p">,</span>
+                <span class="n">height</span><span class="p">,</span>
+                <span class="n">angle</span> <span class="o">*</span> <span class="n">DEG2RAD</span><span class="p">,</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">Shape</span><span class="p">()</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Solid.make_loft">
+<a class="viewcode-back" href="../../direct_api_reference.html#topology.Solid.make_loft">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">make_loft</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">objs</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Vertex</span> <span class="o">|</span> <span class="n">Wire</span><span class="p">],</span> <span class="n">ruled</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Solid</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;make loft</span>
+
+<span class="sd">        Makes a loft from a list of wires and vertices. Vertices can appear only at the</span>
+<span class="sd">        beginning or end of the list, but cannot appear consecutively within the list</span>
+<span class="sd">        nor between wires.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            objs (list[Vertex, Wire]): wire perimeters or vertices</span>
+<span class="sd">            ruled (bool, optional): stepped or smooth. Defaults to False (smooth).</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            ValueError: Too few wires</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Solid: Lofted object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">_make_loft</span><span class="p">(</span><span class="n">objs</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">ruled</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="Solid.make_sphere">
+<a class="viewcode-back" href="../../direct_api_reference.html#topology.Solid.make_sphere">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">make_sphere</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span>
+        <span class="n">radius</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">plane</span><span class="p">:</span> <span class="n">Plane</span> <span class="o">=</span> <span class="n">Plane</span><span class="o">.</span><span class="n">XY</span><span class="p">,</span>
+        <span class="n">angle1</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="o">-</span><span class="mi">90</span><span class="p">,</span>
+        <span class="n">angle2</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">90</span><span class="p">,</span>
+        <span class="n">angle3</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">360</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Solid</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Sphere</span>
+
+<span class="sd">        Make a full or partial sphere - with a given radius center on the origin or plane.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            radius (float):</span>
+<span class="sd">            plane (Plane): base plane. Defaults to Plane.XY.</span>
+<span class="sd">            angle1 (float, optional): Defaults to -90.</span>
+<span class="sd">            angle2 (float, optional): Defaults to 90.</span>
+<span class="sd">            angle3 (float, optional): Defaults to 360.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Solid: sphere</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
+            <span class="n">BRepPrimAPI_MakeSphere</span><span class="p">(</span>
+                <span class="n">plane</span><span class="o">.</span><span class="n">to_gp_ax2</span><span class="p">(),</span>
+                <span class="n">radius</span><span class="p">,</span>
+                <span class="n">angle1</span> <span class="o">*</span> <span class="n">DEG2RAD</span><span class="p">,</span>
+                <span class="n">angle2</span> <span class="o">*</span> <span class="n">DEG2RAD</span><span class="p">,</span>
+                <span class="n">angle3</span> <span class="o">*</span> <span class="n">DEG2RAD</span><span class="p">,</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">Shape</span><span class="p">()</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Solid.make_torus">
+<a class="viewcode-back" href="../../direct_api_reference.html#topology.Solid.make_torus">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">make_torus</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span>
+        <span class="n">major_radius</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">minor_radius</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">plane</span><span class="p">:</span> <span class="n">Plane</span> <span class="o">=</span> <span class="n">Plane</span><span class="o">.</span><span class="n">XY</span><span class="p">,</span>
+        <span class="n">start_angle</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="n">end_angle</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">360</span><span class="p">,</span>
+        <span class="n">major_angle</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">360</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Solid</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;make torus</span>
+
+<span class="sd">        Make a torus with a given radii and angles</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            major_radius (float):</span>
+<span class="sd">            minor_radius (float):</span>
+<span class="sd">            plane (Plane): base plane. Defaults to Plane.XY.</span>
+<span class="sd">            start_angle (float, optional): start major arc. Defaults to 0.</span>
+<span class="sd">            end_angle (float, optional): end major arc. Defaults to 360.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Solid: Full or partial torus</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
+            <span class="n">BRepPrimAPI_MakeTorus</span><span class="p">(</span>
+                <span class="n">plane</span><span class="o">.</span><span class="n">to_gp_ax2</span><span class="p">(),</span>
+                <span class="n">major_radius</span><span class="p">,</span>
+                <span class="n">minor_radius</span><span class="p">,</span>
+                <span class="n">start_angle</span> <span class="o">*</span> <span class="n">DEG2RAD</span><span class="p">,</span>
+                <span class="n">end_angle</span> <span class="o">*</span> <span class="n">DEG2RAD</span><span class="p">,</span>
+                <span class="n">major_angle</span> <span class="o">*</span> <span class="n">DEG2RAD</span><span class="p">,</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">Shape</span><span class="p">()</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Solid.make_wedge">
+<a class="viewcode-back" href="../../direct_api_reference.html#topology.Solid.make_wedge">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">make_wedge</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span>
+        <span class="n">delta_x</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">delta_y</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">delta_z</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">min_x</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">min_z</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">max_x</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">max_z</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">plane</span><span class="p">:</span> <span class="n">Plane</span> <span class="o">=</span> <span class="n">Plane</span><span class="o">.</span><span class="n">XY</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Solid</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Make a wedge</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            delta_x (float):</span>
+<span class="sd">            delta_y (float):</span>
+<span class="sd">            delta_z (float):</span>
+<span class="sd">            min_x (float):</span>
+<span class="sd">            min_z (float):</span>
+<span class="sd">            max_x (float):</span>
+<span class="sd">            max_z (float):</span>
+<span class="sd">            plane (Plane): base plane. Defaults to Plane.XY.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Solid: wedge</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
+            <span class="n">BRepPrimAPI_MakeWedge</span><span class="p">(</span>
+                <span class="n">plane</span><span class="o">.</span><span class="n">to_gp_ax2</span><span class="p">(),</span>
+                <span class="n">delta_x</span><span class="p">,</span>
+                <span class="n">delta_y</span><span class="p">,</span>
+                <span class="n">delta_z</span><span class="p">,</span>
+                <span class="n">min_x</span><span class="p">,</span>
+                <span class="n">min_z</span><span class="p">,</span>
+                <span class="n">max_x</span><span class="p">,</span>
+                <span class="n">max_z</span><span class="p">,</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">Solid</span><span class="p">()</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Solid.revolve">
+<a class="viewcode-back" href="../../direct_api_reference.html#topology.Solid.revolve">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">revolve</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span>
+        <span class="n">section</span><span class="p">:</span> <span class="n">Face</span> <span class="o">|</span> <span class="n">Wire</span><span class="p">,</span>
+        <span class="n">angle</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">axis</span><span class="p">:</span> <span class="n">Axis</span><span class="p">,</span>
+        <span class="n">inner_wires</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Wire</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Solid</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Revolve</span>
+
+<span class="sd">        Revolve a cross section about the given Axis by the given angle.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            section (Union[Face,Wire]): cross section</span>
+<span class="sd">            angle (float): the angle to revolve through</span>
+<span class="sd">            axis (Axis): rotation Axis</span>
+<span class="sd">            inner_wires (list[Wire], optional): holes - only used if section is of type Wire.</span>
+<span class="sd">                Defaults to [].</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Solid: the revolved cross section</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">inner_wires</span> <span class="o">=</span> <span class="n">inner_wires</span> <span class="k">if</span> <span class="n">inner_wires</span> <span class="k">else</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">section</span><span class="p">,</span> <span class="n">Wire</span><span class="p">):</span>
+            <span class="n">section_face</span> <span class="o">=</span> <span class="n">Face</span><span class="p">(</span><span class="n">section</span><span class="p">,</span> <span class="n">inner_wires</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">section_face</span> <span class="o">=</span> <span class="n">section</span>
+
+        <span class="n">revol_builder</span> <span class="o">=</span> <span class="n">BRepPrimAPI_MakeRevol</span><span class="p">(</span>
+            <span class="n">section_face</span><span class="o">.</span><span class="n">wrapped</span><span class="p">,</span>
+            <span class="n">axis</span><span class="o">.</span><span class="n">wrapped</span><span class="p">,</span>
+            <span class="n">angle</span> <span class="o">*</span> <span class="n">DEG2RAD</span><span class="p">,</span>
+            <span class="kc">True</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">revol_builder</span><span class="o">.</span><span class="n">Shape</span><span class="p">())</span></div>
+
+
+<div class="viewcode-block" id="Solid.sweep">
+<a class="viewcode-back" href="../../direct_api_reference.html#topology.Solid.sweep">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">sweep</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span>
+        <span class="n">section</span><span class="p">:</span> <span class="n">Face</span> <span class="o">|</span> <span class="n">Wire</span><span class="p">,</span>
+        <span class="n">path</span><span class="p">:</span> <span class="n">Wire</span> <span class="o">|</span> <span class="n">Edge</span><span class="p">,</span>
+        <span class="n">inner_wires</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Wire</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">make_solid</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="n">is_frenet</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">mode</span><span class="p">:</span> <span class="n">Vector</span> <span class="o">|</span> <span class="n">Wire</span> <span class="o">|</span> <span class="n">Edge</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">transition</span><span class="p">:</span> <span class="n">Transition</span> <span class="o">=</span> <span class="n">Transition</span><span class="o">.</span><span class="n">TRANSFORMED</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Solid</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Sweep</span>
+
+<span class="sd">        Sweep the given cross section into a prismatic solid along the provided path</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            section (Union[Face, Wire]): cross section to sweep</span>
+<span class="sd">            path (Union[Wire, Edge]): sweep path</span>
+<span class="sd">            inner_wires (list[Wire]): holes - only used if section is a wire</span>
+<span class="sd">            make_solid (bool, optional): return Solid or Shell. Defaults to True.</span>
+<span class="sd">            is_frenet (bool, optional): Frenet mode. Defaults to False.</span>
+<span class="sd">            mode (Union[Vector, Wire, Edge, None], optional): additional sweep</span>
+<span class="sd">                mode parameters. Defaults to None.</span>
+<span class="sd">            transition (Transition, optional): handling of profile orientation at C1 path</span>
+<span class="sd">                discontinuities. Defaults to Transition.TRANSFORMED.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Solid: the swept cross section</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">section</span><span class="p">,</span> <span class="n">Face</span><span class="p">):</span>
+            <span class="n">outer_wire</span> <span class="o">=</span> <span class="n">section</span><span class="o">.</span><span class="n">outer_wire</span><span class="p">()</span>
+            <span class="n">inner_wires</span> <span class="o">=</span> <span class="n">section</span><span class="o">.</span><span class="n">inner_wires</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">outer_wire</span> <span class="o">=</span> <span class="n">section</span>
+            <span class="n">inner_wires</span> <span class="o">=</span> <span class="n">inner_wires</span> <span class="k">if</span> <span class="n">inner_wires</span> <span class="k">else</span> <span class="p">[]</span>
+
+        <span class="n">shapes</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">wire</span> <span class="ow">in</span> <span class="p">[</span><span class="n">outer_wire</span><span class="p">]</span> <span class="o">+</span> <span class="n">inner_wires</span><span class="p">:</span>
+            <span class="n">builder</span> <span class="o">=</span> <span class="n">BRepOffsetAPI_MakePipeShell</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">to_wire</span><span class="p">()</span><span class="o">.</span><span class="n">wrapped</span><span class="p">)</span>
+
+            <span class="n">rotate</span> <span class="o">=</span> <span class="kc">False</span>
+
+            <span class="c1"># handle sweep mode</span>
+            <span class="k">if</span> <span class="n">mode</span><span class="p">:</span>
+                <span class="n">rotate</span> <span class="o">=</span> <span class="n">Solid</span><span class="o">.</span><span class="n">_set_sweep_mode</span><span class="p">(</span><span class="n">builder</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">builder</span><span class="o">.</span><span class="n">SetMode</span><span class="p">(</span><span class="n">is_frenet</span><span class="p">)</span>
+
+            <span class="n">builder</span><span class="o">.</span><span class="n">SetTransitionMode</span><span class="p">(</span><span class="n">Shape</span><span class="o">.</span><span class="n">_transModeDict</span><span class="p">[</span><span class="n">transition</span><span class="p">])</span>
+
+            <span class="n">builder</span><span class="o">.</span><span class="n">Add</span><span class="p">(</span><span class="n">wire</span><span class="o">.</span><span class="n">wrapped</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="n">rotate</span><span class="p">)</span>
+
+            <span class="n">builder</span><span class="o">.</span><span class="n">Build</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">make_solid</span><span class="p">:</span>
+                <span class="n">builder</span><span class="o">.</span><span class="n">MakeSolid</span><span class="p">()</span>
+
+            <span class="n">shapes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Mixin3D</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">builder</span><span class="o">.</span><span class="n">Shape</span><span class="p">()))</span>
+
+        <span class="n">outer_shape</span><span class="p">,</span> <span class="n">inner_shapes</span> <span class="o">=</span> <span class="n">shapes</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">shapes</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+
+        <span class="k">if</span> <span class="n">inner_shapes</span><span class="p">:</span>
+            <span class="n">hollow_outer_shape</span> <span class="o">=</span> <span class="n">outer_shape</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="o">*</span><span class="n">inner_shapes</span><span class="p">)</span>
+            <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">hollow_outer_shape</span><span class="p">,</span> <span class="n">Solid</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">hollow_outer_shape</span>
+
+        <span class="k">return</span> <span class="n">outer_shape</span></div>
+
+
+<div class="viewcode-block" id="Solid.sweep_multi">
+<a class="viewcode-back" href="../../direct_api_reference.html#topology.Solid.sweep_multi">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">sweep_multi</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span>
+        <span class="n">profiles</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Wire</span> <span class="o">|</span> <span class="n">Face</span><span class="p">],</span>
+        <span class="n">path</span><span class="p">:</span> <span class="n">Wire</span> <span class="o">|</span> <span class="n">Edge</span><span class="p">,</span>
+        <span class="n">make_solid</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="n">is_frenet</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">binormal</span><span class="p">:</span> <span class="n">Vector</span> <span class="o">|</span> <span class="n">Wire</span> <span class="o">|</span> <span class="n">Edge</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Solid</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Multi section sweep</span>
+
+<span class="sd">        Sweep through a sequence of profiles following a path.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            profiles (Iterable[Union[Wire, Face]]): list of profiles</span>
+<span class="sd">            path (Union[Wire, Edge]): The wire to sweep the face resulting from the wires over</span>
+<span class="sd">            make_solid (bool, optional): Solid or Shell. Defaults to True.</span>
+<span class="sd">            is_frenet (bool, optional): Select frenet mode. Defaults to False.</span>
+<span class="sd">            binormal (Union[Vector, Wire, Edge, None], optional): additional sweep mode parameters.</span>
+<span class="sd">                Defaults to None.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Solid: swept object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">path_as_wire</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">to_wire</span><span class="p">()</span><span class="o">.</span><span class="n">wrapped</span>
+
+        <span class="n">builder</span> <span class="o">=</span> <span class="n">BRepOffsetAPI_MakePipeShell</span><span class="p">(</span><span class="n">path_as_wire</span><span class="p">)</span>
+
+        <span class="n">translate</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">rotate</span> <span class="o">=</span> <span class="kc">False</span>
+
+        <span class="k">if</span> <span class="n">binormal</span><span class="p">:</span>
+            <span class="n">rotate</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_set_sweep_mode</span><span class="p">(</span><span class="n">builder</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">binormal</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">builder</span><span class="o">.</span><span class="n">SetMode</span><span class="p">(</span><span class="n">is_frenet</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">profile</span> <span class="ow">in</span> <span class="n">profiles</span><span class="p">:</span>
+            <span class="n">path_as_wire</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="n">profile</span><span class="o">.</span><span class="n">wrapped</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">profile</span><span class="p">,</span> <span class="n">Wire</span><span class="p">)</span>
+                <span class="k">else</span> <span class="n">profile</span><span class="o">.</span><span class="n">outer_wire</span><span class="p">()</span><span class="o">.</span><span class="n">wrapped</span>
+            <span class="p">)</span>
+            <span class="n">builder</span><span class="o">.</span><span class="n">Add</span><span class="p">(</span><span class="n">path_as_wire</span><span class="p">,</span> <span class="n">translate</span><span class="p">,</span> <span class="n">rotate</span><span class="p">)</span>
+
+        <span class="n">builder</span><span class="o">.</span><span class="n">Build</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">make_solid</span><span class="p">:</span>
+            <span class="n">builder</span><span class="o">.</span><span class="n">MakeSolid</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">builder</span><span class="o">.</span><span class="n">Shape</span><span class="p">())</span></div>
+
+
+<div class="viewcode-block" id="Solid.thicken">
+<a class="viewcode-back" href="../../direct_api_reference.html#topology.Solid.thicken">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">thicken</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span>
+        <span class="n">surface</span><span class="p">:</span> <span class="n">Face</span> <span class="o">|</span> <span class="n">Shell</span><span class="p">,</span>
+        <span class="n">depth</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">normal_override</span><span class="p">:</span> <span class="n">VectorLike</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Solid</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Thicken Face or Shell</span>
+
+<span class="sd">        Create a solid from a potentially non planar face or shell by thickening along</span>
+<span class="sd">        the normals.</span>
+
+<span class="sd">        .. image:: thickenFace.png</span>
+
+<span class="sd">        Non-planar faces are thickened both towards and away from the center of the sphere.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            depth (float): Amount to thicken face(s), can be positive or negative.</span>
+<span class="sd">            normal_override (Vector, optional): Face only. The normal_override vector can be</span>
+<span class="sd">                used to indicate which way is &#39;up&#39;, potentially flipping the face normal</span>
+<span class="sd">                direction such that many faces with different normals all go in the same</span>
+<span class="sd">                direction (direction need only be +/- 90 degrees from the face normal).</span>
+<span class="sd">                Defaults to None.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            RuntimeError: Opencascade internal failures</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Solid: The resulting Solid object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Check to see if the normal needs to be flipped</span>
+        <span class="n">adjusted_depth</span> <span class="o">=</span> <span class="n">depth</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">surface</span><span class="p">,</span> <span class="n">Face</span><span class="p">)</span> <span class="ow">and</span> <span class="n">normal_override</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">surface_center</span> <span class="o">=</span> <span class="n">surface</span><span class="o">.</span><span class="n">center</span><span class="p">()</span>
+            <span class="n">surface_normal</span> <span class="o">=</span> <span class="n">surface</span><span class="o">.</span><span class="n">normal_at</span><span class="p">(</span><span class="n">surface_center</span><span class="p">)</span><span class="o">.</span><span class="n">normalized</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">surface_normal</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="n">normal_override</span><span class="p">)</span><span class="o">.</span><span class="n">normalized</span><span class="p">())</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">adjusted_depth</span> <span class="o">=</span> <span class="o">-</span><span class="n">depth</span>
+
+        <span class="n">offset_builder</span> <span class="o">=</span> <span class="n">BRepOffset_MakeOffset</span><span class="p">()</span>
+        <span class="n">offset_builder</span><span class="o">.</span><span class="n">Initialize</span><span class="p">(</span>
+            <span class="n">surface</span><span class="o">.</span><span class="n">wrapped</span><span class="p">,</span>
+            <span class="n">Offset</span><span class="o">=</span><span class="n">adjusted_depth</span><span class="p">,</span>
+            <span class="n">Tol</span><span class="o">=</span><span class="mf">1.0e-5</span><span class="p">,</span>
+            <span class="n">Mode</span><span class="o">=</span><span class="n">BRepOffset_Skin</span><span class="p">,</span>
+            <span class="c1"># BRepOffset_RectoVerso - which describes the offset of a given surface shell along both</span>
+            <span class="c1"># sides of the surface but doesn&#39;t seem to work</span>
+            <span class="n">Intersection</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">SelfInter</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="n">Join</span><span class="o">=</span><span class="n">GeomAbs_Intersection</span><span class="p">,</span>  <span class="c1"># Could be GeomAbs_Arc,GeomAbs_Tangent,GeomAbs_Intersection</span>
+            <span class="n">Thickening</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">RemoveIntEdges</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">offset_builder</span><span class="o">.</span><span class="n">MakeOffsetShape</span><span class="p">()</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">Solid</span><span class="p">(</span><span class="n">offset_builder</span><span class="o">.</span><span class="n">Shape</span><span class="p">())</span>
+        <span class="k">except</span> <span class="n">StdFail_NotDone</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Error applying thicken to given surface&quot;</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">err</span>
+
+        <span class="k">return</span> <span class="n">result</span></div>
+</div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Gumyr.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

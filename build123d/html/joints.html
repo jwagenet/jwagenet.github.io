@@ -1,0 +1,893 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Joints &mdash; build123d 0.9.2.dev40+gb1f0eed documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster.custom.css?v=7bc2f056" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster.bundle.min.css?v=37217874" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-shadow.min.css?v=6227e517" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-punk.min.css?v=94669e23" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-noir.min.css?v=21a39f42" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-light.min.css?v=a18b2449" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-borderless.min.css?v=dbff53e4" />
+      <link rel="stylesheet" type="text/css" href="_static/css/micromodal.css?v=d7bf34ee" />
+      <link rel="stylesheet" type="text/css" href="_static/css/sphinx_rtd_theme.css?v=3234e928" />
+      <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=c97902b4"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=f281be69"></script>
+      <script src="_static/js/hoverxref.js?v=6ff7264e"></script>
+      <script src="_static/js/tooltipster.bundle.min.js?v=18bf091b"></script>
+      <script src="_static/js/micromodal.min.js?v=04d6302d"></script>
+      <script src="_static/design-tabs.js?v=f930bc37"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Assemblies" href="assemblies.html" />
+    <link rel="prev" title="BuildPart" href="build_part.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            build123d
+              <img src="_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts.html">Key Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts_builder.html">Key Concepts (builder mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts_algebra.html">Key Concepts (algebra mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="moving_objects.html">Moving Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OpenSCAD.html">Transitioning from OpenSCAD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introductory_examples.html">Introductory Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="selectors_operators.html">Selectors and Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operations.html">Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="builders.html">Builders</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Joints</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#rigid-joint">Rigid Joint</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#joints.RigidJoint"><code class="docutils literal notranslate"><span class="pre">RigidJoint</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#joints.RigidJoint.connect_to"><code class="docutils literal notranslate"><span class="pre">RigidJoint.connect_to()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#joints.RigidJoint.location"><code class="docutils literal notranslate"><span class="pre">RigidJoint.location</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#joints.RigidJoint.relative_to"><code class="docutils literal notranslate"><span class="pre">RigidJoint.relative_to()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#joints.RigidJoint.symbol"><code class="docutils literal notranslate"><span class="pre">RigidJoint.symbol</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#revolute-joint">Revolute Joint</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#joints.RevoluteJoint"><code class="docutils literal notranslate"><span class="pre">RevoluteJoint</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#joints.RevoluteJoint.connect_to"><code class="docutils literal notranslate"><span class="pre">RevoluteJoint.connect_to()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#joints.RevoluteJoint.location"><code class="docutils literal notranslate"><span class="pre">RevoluteJoint.location</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#joints.RevoluteJoint.relative_to"><code class="docutils literal notranslate"><span class="pre">RevoluteJoint.relative_to()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#joints.RevoluteJoint.symbol"><code class="docutils literal notranslate"><span class="pre">RevoluteJoint.symbol</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#linear-joint">Linear Joint</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#joints.LinearJoint"><code class="docutils literal notranslate"><span class="pre">LinearJoint</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#joints.LinearJoint.connect_to"><code class="docutils literal notranslate"><span class="pre">LinearJoint.connect_to()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#joints.LinearJoint.location"><code class="docutils literal notranslate"><span class="pre">LinearJoint.location</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#joints.LinearJoint.relative_to"><code class="docutils literal notranslate"><span class="pre">LinearJoint.relative_to()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#joints.LinearJoint.symbol"><code class="docutils literal notranslate"><span class="pre">LinearJoint.symbol</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#cylindrical-joint">Cylindrical Joint</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#joints.CylindricalJoint"><code class="docutils literal notranslate"><span class="pre">CylindricalJoint</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#joints.CylindricalJoint.connect_to"><code class="docutils literal notranslate"><span class="pre">CylindricalJoint.connect_to()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#joints.CylindricalJoint.location"><code class="docutils literal notranslate"><span class="pre">CylindricalJoint.location</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#joints.CylindricalJoint.relative_to"><code class="docutils literal notranslate"><span class="pre">CylindricalJoint.relative_to()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#joints.CylindricalJoint.symbol"><code class="docutils literal notranslate"><span class="pre">CylindricalJoint.symbol</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ball-joint">Ball Joint</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#joints.BallJoint"><code class="docutils literal notranslate"><span class="pre">BallJoint</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#joints.BallJoint.connect_to"><code class="docutils literal notranslate"><span class="pre">BallJoint.connect_to()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#joints.BallJoint.location"><code class="docutils literal notranslate"><span class="pre">BallJoint.location</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#joints.BallJoint.relative_to"><code class="docutils literal notranslate"><span class="pre">BallJoint.relative_to()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#joints.BallJoint.symbol"><code class="docutils literal notranslate"><span class="pre">BallJoint.symbol</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="assemblies.html">Assemblies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tips.html">Tips, Best Practices and FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="import_export.html">Import/Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cheat_sheet.html">Cheat Sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="external.html">External Tools and Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="builder_api_reference.html">Builder Common API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="direct_api_reference.html">Direct API Reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">build123d</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Joints</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/joints.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="joints">
+<span id="id1"></span><h1>Joints<a class="headerlink" href="#joints" title="Link to this heading"></a></h1>
+<p><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Joint" title="topology.Joint"><code class="xref py py-class docutils literal notranslate"><span class="pre">Joint</span></code></a>’s enable Solid and Compound objects to be arranged
+relative to each other in an intuitive manner - with the same degree of motion
+that is found with the equivalent physical joints.  <a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Joint" title="topology.Joint"><code class="xref py py-class docutils literal notranslate"><span class="pre">Joint</span></code></a>’s always work
+in pairs - a <a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Joint" title="topology.Joint"><code class="xref py py-class docutils literal notranslate"><span class="pre">Joint</span></code></a> can only be connected to another <a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Joint" title="topology.Joint"><code class="xref py py-class docutils literal notranslate"><span class="pre">Joint</span></code></a> as follows:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Joint" title="topology.Joint"><code class="xref py py-class docutils literal notranslate"><span class="pre">Joint</span></code></a></p></th>
+<th class="head"><p>connect_to</p></th>
+<th class="head"><p>Example</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="#joints.BallJoint" title="joints.BallJoint"><code class="xref py py-class docutils literal notranslate"><span class="pre">BallJoint</span></code></a></p></td>
+<td><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="#joints.RigidJoint" title="joints.RigidJoint"><code class="xref py py-class docutils literal notranslate"><span class="pre">RigidJoint</span></code></a></p></td>
+<td><p>Gimbal</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="#joints.CylindricalJoint" title="joints.CylindricalJoint"><code class="xref py py-class docutils literal notranslate"><span class="pre">CylindricalJoint</span></code></a></p></td>
+<td><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="#joints.RigidJoint" title="joints.RigidJoint"><code class="xref py py-class docutils literal notranslate"><span class="pre">RigidJoint</span></code></a></p></td>
+<td><p>Screw</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="#joints.LinearJoint" title="joints.LinearJoint"><code class="xref py py-class docutils literal notranslate"><span class="pre">LinearJoint</span></code></a></p></td>
+<td><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="#joints.RigidJoint" title="joints.RigidJoint"><code class="xref py py-class docutils literal notranslate"><span class="pre">RigidJoint</span></code></a>, <a class="hxr-hoverxref hxr-tooltip reference internal" href="#joints.RevoluteJoint" title="joints.RevoluteJoint"><code class="xref py py-class docutils literal notranslate"><span class="pre">RevoluteJoint</span></code></a></p></td>
+<td><p>Slider or Pin Slot</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="#joints.RevoluteJoint" title="joints.RevoluteJoint"><code class="xref py py-class docutils literal notranslate"><span class="pre">RevoluteJoint</span></code></a></p></td>
+<td><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="#joints.RigidJoint" title="joints.RigidJoint"><code class="xref py py-class docutils literal notranslate"><span class="pre">RigidJoint</span></code></a></p></td>
+<td><p>Hinge</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="#joints.RigidJoint" title="joints.RigidJoint"><code class="xref py py-class docutils literal notranslate"><span class="pre">RigidJoint</span></code></a></p></td>
+<td><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="#joints.RigidJoint" title="joints.RigidJoint"><code class="xref py py-class docutils literal notranslate"><span class="pre">RigidJoint</span></code></a></p></td>
+<td><p>Fixed</p></td>
+</tr>
+</tbody>
+</table>
+<p>Objects may have many joints bound to them each with an identifying label. All <a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Joint" title="topology.Joint"><code class="xref py py-class docutils literal notranslate"><span class="pre">Joint</span></code></a>
+objects have a <code class="docutils literal notranslate"><span class="pre">symbol</span></code> property that can be displayed to help visualize
+their position and orientation (the <a class="reference external" href="https://github.com/bernhard-42/vscode-ocp-cad-viewer">ocp-vscode</a> viewer
+has built-in support for displaying joints).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If joints are created within the scope of a <a class="hxr-hoverxref hxr-tooltip reference internal" href="build_part.html#build_part.BuildPart" title="build_part.BuildPart"><code class="xref py py-class docutils literal notranslate"><span class="pre">BuildPart</span></code></a> builder, the <code class="docutils literal notranslate"><span class="pre">to_part</span></code>
+parameter need not be specified as the builder will, on exit, automatically transfer the joints created in its
+scope to the part created.</p>
+</div>
+<p>The following sections provide more detail on the available joints and describes how they are used.</p>
+<section id="rigid-joint">
+<span id="module-joints"></span><h2>Rigid Joint<a class="headerlink" href="#rigid-joint" title="Link to this heading"></a></h2>
+<p>A rigid joint positions two components relative to each another with no freedom of movement. When a
+<a class="hxr-hoverxref hxr-tooltip reference internal" href="#joints.RigidJoint" title="joints.RigidJoint"><code class="xref py py-class docutils literal notranslate"><span class="pre">RigidJoint</span></code></a> is instantiated it’s assigned a <code class="docutils literal notranslate"><span class="pre">label</span></code>, a part to bind to (<code class="docutils literal notranslate"><span class="pre">to_part</span></code>),
+and a <code class="docutils literal notranslate"><span class="pre">joint_location</span></code> which defines both the position and orientation of the joint (see
+<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#geometry.Location" title="geometry.Location"><code class="xref py py-class docutils literal notranslate"><span class="pre">Location</span></code></a>) - as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">RigidJoint</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;outlet&quot;</span><span class="p">,</span> <span class="n">to_part</span><span class="o">=</span><span class="n">pipe</span><span class="p">,</span> <span class="n">joint_location</span><span class="o">=</span><span class="n">path</span><span class="o">.</span><span class="n">location_at</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Once a joint is bound to a part this way, the <a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Joint.connect_to" title="topology.Joint.connect_to"><code class="xref py py-meth docutils literal notranslate"><span class="pre">connect_to()</span></code></a> method can be used to
+repositioning another part relative to <code class="docutils literal notranslate"><span class="pre">self</span></code> which stay fixed - as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pipe</span><span class="o">.</span><span class="n">joints</span><span class="p">[</span><span class="s2">&quot;outlet&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">connect_to</span><span class="p">(</span><span class="n">flange_outlet</span><span class="o">.</span><span class="n">joints</span><span class="p">[</span><span class="s2">&quot;pipe&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Within a part all of the joint labels must be unique.</p>
+</div>
+<p>The <a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Joint.connect_to" title="topology.Joint.connect_to"><code class="xref py py-meth docutils literal notranslate"><span class="pre">connect_to()</span></code></a> method only does a one time re-position of a part and does not
+bind them in any way; however, putting them into an <a class="reference internal" href="assemblies.html#assembly"><span class="std std-ref">Assemblies</span></a> will maintain there relative locations
+as will combining parts with boolean operations or within a <a class="hxr-hoverxref hxr-tooltip reference internal" href="build_part.html#build_part.BuildPart" title="build_part.BuildPart"><code class="xref py py-class docutils literal notranslate"><span class="pre">BuildPart</span></code></a> context.</p>
+<p>As a example of creating parts with joints and connecting them together, consider the following code where
+flanges are attached to the ends of a curved pipe:</p>
+<img alt="_images/rigid_joints_pipe.png" src="_images/rigid_joints_pipe.png" />
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">copy</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">build123d</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bd_warehouse.flange</span><span class="w"> </span><span class="kn">import</span> <span class="n">WeldNeckFlange</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bd_warehouse.pipe</span><span class="w"> </span><span class="kn">import</span> <span class="n">PipeSection</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ocp_vscode</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">flange_inlet</span> <span class="o">=</span> <span class="n">WeldNeckFlange</span><span class="p">(</span><span class="n">nps</span><span class="o">=</span><span class="s2">&quot;10&quot;</span><span class="p">,</span> <span class="n">flange_class</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+<span class="n">flange_outlet</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">flange_inlet</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="n">BuildPart</span><span class="p">()</span> <span class="k">as</span> <span class="n">pipe_builder</span><span class="p">:</span>
+    <span class="c1"># Create the pipe</span>
+    <span class="k">with</span> <span class="n">BuildLine</span><span class="p">():</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">TangentArc</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">FT</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span> <span class="o">*</span> <span class="n">FT</span><span class="p">),</span> <span class="n">tangent</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="k">with</span> <span class="n">BuildSketch</span><span class="p">(</span><span class="n">Plane</span><span class="p">(</span><span class="n">origin</span><span class="o">=</span><span class="n">path</span> <span class="o">@</span> <span class="mi">0</span><span class="p">,</span> <span class="n">z_dir</span><span class="o">=</span><span class="n">path</span> <span class="o">%</span> <span class="mi">0</span><span class="p">)):</span>
+        <span class="n">PipeSection</span><span class="p">(</span><span class="s2">&quot;10&quot;</span><span class="p">,</span> <span class="n">material</span><span class="o">=</span><span class="s2">&quot;stainless&quot;</span><span class="p">,</span> <span class="n">identifier</span><span class="o">=</span><span class="s2">&quot;40S&quot;</span><span class="p">)</span>
+    <span class="n">sweep</span><span class="p">()</span>
+
+    <span class="c1"># Add the joints</span>
+<span class="hll">    <span class="n">RigidJoint</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;inlet&quot;</span><span class="p">,</span> <span class="n">joint_location</span><span class="o">=-</span><span class="n">path</span><span class="o">.</span><span class="n">location_at</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+</span><span class="hll">    <span class="n">RigidJoint</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;outlet&quot;</span><span class="p">,</span> <span class="n">joint_location</span><span class="o">=</span><span class="n">path</span><span class="o">.</span><span class="n">location_at</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+</span>
+<span class="c1"># Place the flanges at the ends of the pipe</span>
+<span class="hll"><span class="n">pipe_builder</span><span class="o">.</span><span class="n">part</span><span class="o">.</span><span class="n">joints</span><span class="p">[</span><span class="s2">&quot;inlet&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">connect_to</span><span class="p">(</span><span class="n">flange_inlet</span><span class="o">.</span><span class="n">joints</span><span class="p">[</span><span class="s2">&quot;pipe&quot;</span><span class="p">])</span>
+</span><span class="hll"><span class="n">pipe_builder</span><span class="o">.</span><span class="n">part</span><span class="o">.</span><span class="n">joints</span><span class="p">[</span><span class="s2">&quot;outlet&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">connect_to</span><span class="p">(</span><span class="n">flange_outlet</span><span class="o">.</span><span class="n">joints</span><span class="p">[</span><span class="s2">&quot;pipe&quot;</span><span class="p">])</span>
+</span>
+<span class="n">show</span><span class="p">(</span><span class="n">pipe_builder</span><span class="p">,</span> <span class="n">flange_inlet</span><span class="p">,</span> <span class="n">flange_outlet</span><span class="p">,</span> <span class="n">render_joints</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Note how the locations of the joints are determined by the <a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Mixin1D.location_at" title="topology.Mixin1D.location_at"><code class="xref py py-meth docutils literal notranslate"><span class="pre">location_at()</span></code></a> method
+and how the <code class="docutils literal notranslate"><span class="pre">-</span></code> negate operator is used to reverse the direction of the location without changing its
+poosition.  Also note that the <code class="docutils literal notranslate"><span class="pre">WeldNeckFlange</span></code> class predefines two joints, one at the pipe end and
+one at the face end - both of which are shown in the above image (generated by ocp-vscode with the
+<code class="docutils literal notranslate"><span class="pre">render_joints=True</span></code> flag set in the <code class="docutils literal notranslate"><span class="pre">show</span></code> function).</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="joints.RigidJoint">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">RigidJoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_part</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Solid</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Compound</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">joint_location</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Location</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/joints.html#RigidJoint"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#joints.RigidJoint" title="Link to this definition"></a></dt>
+<dd><p>A rigid joint fixes two components to one another.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>label</strong> (<em>str</em>) – joint label</p></li>
+<li><p><strong>to_part</strong> (<em>Union</em><em>[</em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Solid" title="topology.Solid"><em>Solid</em></a><em>, </em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Compound" title="topology.Compound"><em>Compound</em></a><em>]</em><em>, </em><em>optional</em>) – object to attach joint to</p></li>
+<li><p><strong>joint_location</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#geometry.Location" title="geometry.Location"><em>Location</em></a>) – global location of joint</p></li>
+</ul>
+</dd>
+<dt class="field-even">Variables<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>relative_location</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#geometry.Location" title="geometry.Location"><em>Location</em></a>) – joint location relative to bound object</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="joints.RigidJoint.connect_to">
+<span class="sig-name descname"><span class="pre">connect_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="hxr-hoverxref hxr-tooltip reference internal" href="#joints.BallJoint" title="joints.BallJoint"><span class="pre">BallJoint</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angles</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Rotation</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/joints.html#RigidJoint.connect_to"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#joints.RigidJoint.connect_to" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">connect_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="hxr-hoverxref hxr-tooltip reference internal" href="#joints.CylindricalJoint" title="joints.CylindricalJoint"><span class="pre">CylindricalJoint</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">connect_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="hxr-hoverxref hxr-tooltip reference internal" href="#joints.LinearJoint" title="joints.LinearJoint"><span class="pre">LinearJoint</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">connect_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="hxr-hoverxref hxr-tooltip reference internal" href="#joints.RevoluteJoint" title="joints.RevoluteJoint"><span class="pre">RevoluteJoint</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">connect_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="hxr-hoverxref hxr-tooltip reference internal" href="#joints.RigidJoint" title="joints.RigidJoint"><span class="pre">RigidJoint</span></a></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Connect the RigidJoint to another Joint</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>other</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Joint" title="topology.Joint"><em>Joint</em></a>) – joint to connect to</p></li>
+<li><p><strong>angle</strong> (<em>float</em><em>, </em><em>optional</em>) – angle in degrees. Defaults to range min.</p></li>
+<li><p><strong>angles</strong> (<em>RotationLike</em><em>, </em><em>optional</em>) – angles about axes in degrees. Defaults to
+range minimums.</p></li>
+<li><p><strong>position</strong> (<em>float</em><em>, </em><em>optional</em>) – linear position. Defaults to linear range min.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="joints.RigidJoint.location">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">location</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Location</span></em><a class="headerlink" href="#joints.RigidJoint.location" title="Link to this definition"></a></dt>
+<dd><p>Location of joint</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="joints.RigidJoint.relative_to">
+<span class="sig-name descname"><span class="pre">relative_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="hxr-hoverxref hxr-tooltip reference internal" href="#joints.BallJoint" title="joints.BallJoint"><span class="pre">BallJoint</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angles</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Rotation</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/joints.html#RigidJoint.relative_to"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#joints.RigidJoint.relative_to" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">relative_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="hxr-hoverxref hxr-tooltip reference internal" href="#joints.CylindricalJoint" title="joints.CylindricalJoint"><span class="pre">CylindricalJoint</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">relative_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="hxr-hoverxref hxr-tooltip reference internal" href="#joints.LinearJoint" title="joints.LinearJoint"><span class="pre">LinearJoint</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">relative_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="hxr-hoverxref hxr-tooltip reference internal" href="#joints.RevoluteJoint" title="joints.RevoluteJoint"><span class="pre">RevoluteJoint</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">relative_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="hxr-hoverxref hxr-tooltip reference internal" href="#joints.RigidJoint" title="joints.RigidJoint"><span class="pre">RigidJoint</span></a></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Relative location of RigidJoint to another Joint</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>other</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="#joints.RigidJoint" title="joints.RigidJoint"><em>RigidJoint</em></a>) – relative to joint</p></li>
+<li><p><strong>angle</strong> (<em>float</em><em>, </em><em>optional</em>) – angle in degrees. Defaults to range min.</p></li>
+<li><p><strong>angles</strong> (<em>RotationLike</em><em>, </em><em>optional</em>) – angles about axes in degrees. Defaults to
+range minimums.</p></li>
+<li><p><strong>position</strong> (<em>float</em><em>, </em><em>optional</em>) – linear position. Defaults to linear range min.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>TypeError</strong> – other must be of a type in: BallJoint, CylindricalJoint,
+    LinearJoint, RevoluteJoint, RigidJoint.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="joints.RigidJoint.symbol">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">symbol</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Compound</span></em><a class="headerlink" href="#joints.RigidJoint.symbol" title="Link to this definition"></a></dt>
+<dd><p>A CAD symbol (XYZ indicator) as bound to part</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="revolute-joint">
+<h2>Revolute Joint<a class="headerlink" href="#revolute-joint" title="Link to this heading"></a></h2>
+<p>Component rotates around axis like a hinge. The <a class="reference internal" href="tutorial_joints.html#joint-tutorial"><span class="std std-ref">Joint Tutorial</span></a> covers Revolute Joints in detail.</p>
+<p>During instantiation of a <a class="hxr-hoverxref hxr-tooltip reference internal" href="#joints.RevoluteJoint" title="joints.RevoluteJoint"><code class="xref py py-class docutils literal notranslate"><span class="pre">RevoluteJoint</span></code></a> there are three parameters not present with
+Rigid Joints: <code class="docutils literal notranslate"><span class="pre">axis</span></code>, <code class="docutils literal notranslate"><span class="pre">angle_reference</span></code>, and <code class="docutils literal notranslate"><span class="pre">range</span></code> that allow the circular motion to be fully
+defined.</p>
+<p>When <a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Joint.connect_to" title="topology.Joint.connect_to"><code class="xref py py-meth docutils literal notranslate"><span class="pre">connect_to()</span></code></a> with a Revolute Joint, an extra <code class="docutils literal notranslate"><span class="pre">angle</span></code> parameter is present
+which allows one to change the relative position of joined parts by changing a single value.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="joints.RevoluteJoint">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">RevoluteJoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_part</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Solid</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Compound</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Axis</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">((0.0,</span> <span class="pre">0.0,</span> <span class="pre">0.0),</span> <span class="pre">(0.0,</span> <span class="pre">0.0,</span> <span class="pre">1.0))</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle_reference</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Vector</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angular_range</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">(0,</span> <span class="pre">360)</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/joints.html#RevoluteJoint"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#joints.RevoluteJoint" title="Link to this definition"></a></dt>
+<dd><p>Component rotates around axis like a hinge.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>label</strong> (<em>str</em>) – joint label</p></li>
+<li><p><strong>to_part</strong> (<em>Union</em><em>[</em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Solid" title="topology.Solid"><em>Solid</em></a><em>, </em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Compound" title="topology.Compound"><em>Compound</em></a><em>]</em><em>, </em><em>optional</em>) – object to attach joint to</p></li>
+<li><p><strong>axis</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#geometry.Axis" title="geometry.Axis"><em>Axis</em></a>) – axis of rotation</p></li>
+<li><p><strong>angle_reference</strong> (<em>VectorLike</em><em>, </em><em>optional</em>) – direction normal to axis defining where
+angles will be measured from. Defaults to None.</p></li>
+<li><p><strong>range</strong> (<em>tuple</em><em>[</em><em>float</em><em>, </em><em>float</em><em>]</em><em>, </em><em>optional</em>) – (min,max) angle of joint. Defaults to (0, 360).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Variables<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>angle</strong> (<em>float</em>) – angle of joint</p></li>
+<li><p><strong>angle_reference</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#geometry.Vector" title="geometry.Vector"><em>Vector</em></a>) – reference for angular positions</p></li>
+<li><p><strong>angular_range</strong> (<em>tuple</em><em>[</em><em>float</em><em>,</em><em>float</em><em>]</em>) – min and max angular position of joint</p></li>
+<li><p><strong>relative_axis</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#geometry.Axis" title="geometry.Axis"><em>Axis</em></a>) – joint axis relative to bound part</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – angle_reference must be normal to axis</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="joints.RevoluteJoint.connect_to">
+<span class="sig-name descname"><span class="pre">connect_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="hxr-hoverxref hxr-tooltip reference internal" href="#joints.RigidJoint" title="joints.RigidJoint"><span class="pre">RigidJoint</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/joints.html#RevoluteJoint.connect_to"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#joints.RevoluteJoint.connect_to" title="Link to this definition"></a></dt>
+<dd><p>Connect RevoluteJoint and RigidJoint</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>other</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="#joints.RigidJoint" title="joints.RigidJoint"><em>RigidJoint</em></a>) – relative to joint</p></li>
+<li><p><strong>angle</strong> (<em>float</em><em>, </em><em>optional</em>) – angle in degrees. Defaults to range min.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>other must of type RigidJoint
+ValueError: angle out of range</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>TypeError</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="joints.RevoluteJoint.location">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">location</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Location</span></em><a class="headerlink" href="#joints.RevoluteJoint.location" title="Link to this definition"></a></dt>
+<dd><p>Location of joint</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="joints.RevoluteJoint.relative_to">
+<span class="sig-name descname"><span class="pre">relative_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="hxr-hoverxref hxr-tooltip reference internal" href="#joints.RigidJoint" title="joints.RigidJoint"><span class="pre">RigidJoint</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/joints.html#RevoluteJoint.relative_to"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#joints.RevoluteJoint.relative_to" title="Link to this definition"></a></dt>
+<dd><p>Relative location of RevoluteJoint to RigidJoint</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>other</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="#joints.RigidJoint" title="joints.RigidJoint"><em>RigidJoint</em></a>) – relative to joint</p></li>
+<li><p><strong>angle</strong> (<em>float</em><em>, </em><em>optional</em>) – angle in degrees. Defaults to range min.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>TypeError</strong> – other must of type RigidJoint</p></li>
+<li><p><strong>ValueError</strong> – angle out of range</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="joints.RevoluteJoint.symbol">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">symbol</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Compound</span></em><a class="headerlink" href="#joints.RevoluteJoint.symbol" title="Link to this definition"></a></dt>
+<dd><p>A CAD symbol representing the axis of rotation as bound to part</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="linear-joint">
+<h2>Linear Joint<a class="headerlink" href="#linear-joint" title="Link to this heading"></a></h2>
+<p>Component moves along a single axis as with a sliding latch shown here:</p>
+<img alt="_images/joint-latch-slide.png" src="_images/joint-latch-slide.png" />
+<p>The code to generate these components follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">build123d</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ocp_vscode</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+
+<span class="k">with</span> <span class="n">BuildPart</span><span class="p">()</span> <span class="k">as</span> <span class="n">latch</span><span class="p">:</span>
+    <span class="c1"># Basic box shape to start with filleted corners</span>
+    <span class="n">Box</span><span class="p">(</span><span class="mi">70</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">14</span><span class="p">)</span>
+    <span class="n">end</span> <span class="o">=</span> <span class="n">latch</span><span class="o">.</span><span class="n">faces</span><span class="p">()</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="n">Axis</span><span class="o">.</span><span class="n">X</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># save the end with the hole</span>
+    <span class="n">fillet</span><span class="p">(</span><span class="n">latch</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="n">Axis</span><span class="o">.</span><span class="n">Z</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">fillet</span><span class="p">(</span><span class="n">latch</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="n">Axis</span><span class="o">.</span><span class="n">Z</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="c1"># Make screw tabs</span>
+    <span class="k">with</span> <span class="n">BuildSketch</span><span class="p">(</span><span class="n">latch</span><span class="o">.</span><span class="n">faces</span><span class="p">()</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="n">Axis</span><span class="o">.</span><span class="n">Z</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span> <span class="k">as</span> <span class="n">l4</span><span class="p">:</span>
+        <span class="k">with</span> <span class="n">Locations</span><span class="p">((</span><span class="o">-</span><span class="mi">30</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">0</span><span class="p">)):</span>
+            <span class="n">SlotOverall</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+        <span class="n">Rectangle</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+        <span class="n">fillet</span><span class="p">(</span><span class="n">l4</span><span class="o">.</span><span class="n">vertices</span><span class="p">(</span><span class="n">Select</span><span class="o">.</span><span class="n">LAST</span><span class="p">),</span> <span class="n">radius</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">extrude</span><span class="p">(</span><span class="n">amount</span><span class="o">=-</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">with</span> <span class="n">GridLocations</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+        <span class="n">Hole</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="c1"># Create the hole from the end saved previously</span>
+    <span class="k">with</span> <span class="n">BuildSketch</span><span class="p">(</span><span class="n">end</span><span class="p">)</span> <span class="k">as</span> <span class="n">slide_hole</span><span class="p">:</span>
+        <span class="n">add</span><span class="p">(</span><span class="n">end</span><span class="p">)</span>
+        <span class="n">offset</span><span class="p">(</span><span class="n">amount</span><span class="o">=-</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">fillet</span><span class="p">(</span><span class="n">slide_hole</span><span class="o">.</span><span class="n">vertices</span><span class="p">(),</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">extrude</span><span class="p">(</span><span class="n">amount</span><span class="o">=-</span><span class="mi">68</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">Mode</span><span class="o">.</span><span class="n">SUBTRACT</span><span class="p">)</span>
+    <span class="c1"># Slot for the handle to slide in</span>
+    <span class="k">with</span> <span class="n">BuildSketch</span><span class="p">(</span><span class="n">latch</span><span class="o">.</span><span class="n">faces</span><span class="p">()</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="n">Axis</span><span class="o">.</span><span class="n">Z</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]):</span>
+        <span class="n">SlotOverall</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+    <span class="n">extrude</span><span class="p">(</span><span class="n">amount</span><span class="o">=-</span><span class="mi">2</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">Mode</span><span class="o">.</span><span class="n">SUBTRACT</span><span class="p">)</span>
+    <span class="c1"># The slider will move align the x axis 12mm in each direction</span>
+<span class="hll">    <span class="n">LinearJoint</span><span class="p">(</span><span class="s2">&quot;latch&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">Axis</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="n">linear_range</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
+</span>
+<span class="k">with</span> <span class="n">BuildPart</span><span class="p">()</span> <span class="k">as</span> <span class="n">slide</span><span class="p">:</span>
+    <span class="c1"># The slide will be a little smaller than the hole</span>
+    <span class="k">with</span> <span class="n">BuildSketch</span><span class="p">()</span> <span class="k">as</span> <span class="n">s1</span><span class="p">:</span>
+        <span class="n">add</span><span class="p">(</span><span class="n">slide_hole</span><span class="o">.</span><span class="n">sketch</span><span class="p">)</span>
+        <span class="n">offset</span><span class="p">(</span><span class="n">amount</span><span class="o">=-</span><span class="mf">0.25</span><span class="p">)</span>
+    <span class="c1"># The extrusions aren&#39;t symmetric</span>
+    <span class="n">extrude</span><span class="p">(</span><span class="n">amount</span><span class="o">=</span><span class="mi">46</span><span class="p">)</span>
+    <span class="n">extrude</span><span class="p">(</span><span class="n">slide</span><span class="o">.</span><span class="n">faces</span><span class="p">()</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="n">Axis</span><span class="o">.</span><span class="n">Z</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="n">amount</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+    <span class="c1"># Round off the ends</span>
+    <span class="n">fillet</span><span class="p">(</span><span class="n">slide</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="n">Axis</span><span class="o">.</span><span class="n">Z</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">fillet</span><span class="p">(</span><span class="n">slide</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="n">Axis</span><span class="o">.</span><span class="n">Z</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="c1"># Create the knob</span>
+    <span class="k">with</span> <span class="n">BuildSketch</span><span class="p">()</span> <span class="k">as</span> <span class="n">s2</span><span class="p">:</span>
+        <span class="k">with</span> <span class="n">Locations</span><span class="p">((</span><span class="mi">12</span><span class="p">,</span> <span class="mi">0</span><span class="p">)):</span>
+            <span class="n">SlotOverall</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+        <span class="n">Rectangle</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="p">(</span><span class="n">Align</span><span class="o">.</span><span class="n">MIN</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">))</span>
+        <span class="n">fillet</span><span class="p">(</span><span class="n">s2</span><span class="o">.</span><span class="n">vertices</span><span class="p">(</span><span class="n">Select</span><span class="o">.</span><span class="n">LAST</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">split</span><span class="p">(</span><span class="n">bisect_by</span><span class="o">=</span><span class="n">Plane</span><span class="o">.</span><span class="n">XZ</span><span class="p">)</span>
+    <span class="n">revolve</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="n">Axis</span><span class="o">.</span><span class="n">X</span><span class="p">)</span>
+    <span class="c1"># Align the joint to Plane.ZY flipped</span>
+<span class="hll">    <span class="n">RigidJoint</span><span class="p">(</span><span class="s2">&quot;slide&quot;</span><span class="p">,</span> <span class="n">joint_location</span><span class="o">=</span><span class="n">Location</span><span class="p">(</span><span class="o">-</span><span class="n">Plane</span><span class="o">.</span><span class="n">ZY</span><span class="p">))</span>
+</span>
+<span class="c1"># Position the slide in the latch: -12 &gt;= position &lt;= 12</span>
+<span class="hll"><span class="n">latch</span><span class="o">.</span><span class="n">part</span><span class="o">.</span><span class="n">joints</span><span class="p">[</span><span class="s2">&quot;latch&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">connect_to</span><span class="p">(</span><span class="n">slide</span><span class="o">.</span><span class="n">part</span><span class="o">.</span><span class="n">joints</span><span class="p">[</span><span class="s2">&quot;slide&quot;</span><span class="p">],</span> <span class="n">position</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+</span>
+<span class="c1"># show(latch.part, render_joints=True)</span>
+<span class="c1"># show(slide.part, render_joints=True)</span>
+<span class="n">show</span><span class="p">(</span><span class="n">latch</span><span class="o">.</span><span class="n">part</span><span class="p">,</span> <span class="n">slide</span><span class="o">.</span><span class="n">part</span><span class="p">,</span> <span class="n">render_joints</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="_images/joint-latch.png"><img alt="_images/joint-latch.png" src="_images/joint-latch.png" style="width: 65%;" />
+</a>
+<a class="reference internal image-reference" href="_images/joint-slide.png"><img alt="_images/joint-slide.png" src="_images/joint-slide.png" style="width: 27.5%;" />
+</a>
+<p>Note how the slide is constructed in a different orientation than the direction of motion. The
+three highlighted lines of code show how the joints are created and connected together:</p>
+<ul class="simple">
+<li><p>The <a class="hxr-hoverxref hxr-tooltip reference internal" href="#joints.LinearJoint" title="joints.LinearJoint"><code class="xref py py-class docutils literal notranslate"><span class="pre">LinearJoint</span></code></a> has an axis and limits of movement</p></li>
+<li><p>The <a class="hxr-hoverxref hxr-tooltip reference internal" href="#joints.RigidJoint" title="joints.RigidJoint"><code class="xref py py-class docutils literal notranslate"><span class="pre">RigidJoint</span></code></a> has a single location, orientated such that the knob will ultimately be “up”</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">connect_to</span></code> specifies a position that must be within the predefined limits.</p></li>
+</ul>
+<p>The slider can be moved back and forth by just changing the <code class="docutils literal notranslate"><span class="pre">position</span></code> value.  Values outside
+of the limits will raise an exception.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="joints.LinearJoint">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">LinearJoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_part</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Solid</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Compound</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Axis</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">((0.0,</span> <span class="pre">0.0,</span> <span class="pre">0.0),</span> <span class="pre">(0.0,</span> <span class="pre">0.0,</span> <span class="pre">1.0))</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">linear_range</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">(0,</span> <span class="pre">inf)</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/joints.html#LinearJoint"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#joints.LinearJoint" title="Link to this definition"></a></dt>
+<dd><p>Component moves along a single axis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>label</strong> (<em>str</em>) – joint label</p></li>
+<li><p><strong>to_part</strong> (<em>Union</em><em>[</em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Solid" title="topology.Solid"><em>Solid</em></a><em>, </em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Compound" title="topology.Compound"><em>Compound</em></a><em>]</em><em>, </em><em>optional</em>) – object to attach joint to</p></li>
+<li><p><strong>axis</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#geometry.Axis" title="geometry.Axis"><em>Axis</em></a>) – axis of linear motion</p></li>
+<li><p><strong>range</strong> (<em>tuple</em><em>[</em><em>float</em><em>, </em><em>float</em><em>]</em><em>, </em><em>optional</em>) – (min,max) position of joint.
+Defaults to (0, inf).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Variables<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>axis</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#geometry.Axis" title="geometry.Axis"><em>Axis</em></a>) – joint axis</p></li>
+<li><p><strong>angle</strong> (<em>float</em>) – angle of joint</p></li>
+<li><p><strong>linear_range</strong> (<em>tuple</em><em>[</em><em>float</em><em>,</em><em>float</em><em>]</em>) – min and max positional values</p></li>
+<li><p><strong>position</strong> (<em>float</em>) – joint position</p></li>
+<li><p><strong>relative_axis</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#geometry.Axis" title="geometry.Axis"><em>Axis</em></a>) – joint axis relative to bound part</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="joints.LinearJoint.connect_to">
+<span class="sig-name descname"><span class="pre">connect_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="hxr-hoverxref hxr-tooltip reference internal" href="#joints.RevoluteJoint" title="joints.RevoluteJoint"><span class="pre">RevoluteJoint</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/joints.html#LinearJoint.connect_to"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#joints.LinearJoint.connect_to" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">connect_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="hxr-hoverxref hxr-tooltip reference internal" href="#joints.RigidJoint" title="joints.RigidJoint"><span class="pre">RigidJoint</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Connect LinearJoint to another Joint</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>other</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Joint" title="topology.Joint"><em>Joint</em></a>) – joint to connect to</p></li>
+<li><p><strong>angle</strong> (<em>float</em><em>, </em><em>optional</em>) – angle in degrees. Defaults to range min.</p></li>
+<li><p><strong>position</strong> (<em>float</em><em>, </em><em>optional</em>) – linear position. Defaults to linear range min.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>TypeError</strong> – other must be of type RevoluteJoint or RigidJoint</p></li>
+<li><p><strong>ValueError</strong> – position out of range</p></li>
+<li><p><strong>ValueError</strong> – angle out of range</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="joints.LinearJoint.location">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">location</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Location</span></em><a class="headerlink" href="#joints.LinearJoint.location" title="Link to this definition"></a></dt>
+<dd><p>Location of joint</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="joints.LinearJoint.relative_to">
+<span class="sig-name descname"><span class="pre">relative_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="hxr-hoverxref hxr-tooltip reference internal" href="#joints.RigidJoint" title="joints.RigidJoint"><span class="pre">RigidJoint</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/joints.html#LinearJoint.relative_to"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#joints.LinearJoint.relative_to" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">relative_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="hxr-hoverxref hxr-tooltip reference internal" href="#joints.RevoluteJoint" title="joints.RevoluteJoint"><span class="pre">RevoluteJoint</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Relative location of LinearJoint to RevoluteJoint or RigidJoint</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>other</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Joint" title="topology.Joint"><em>Joint</em></a>) – joint to connect to</p></li>
+<li><p><strong>angle</strong> (<em>float</em><em>, </em><em>optional</em>) – angle in degrees. Defaults to range min.</p></li>
+<li><p><strong>position</strong> (<em>float</em><em>, </em><em>optional</em>) – linear position. Defaults to linear range min.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>TypeError</strong> – other must be of type RevoluteJoint or RigidJoint</p></li>
+<li><p><strong>ValueError</strong> – position out of range</p></li>
+<li><p><strong>ValueError</strong> – angle out of range</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="joints.LinearJoint.symbol">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">symbol</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Compound</span></em><a class="headerlink" href="#joints.LinearJoint.symbol" title="Link to this definition"></a></dt>
+<dd><p>A CAD symbol of the linear axis positioned relative to_part</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="cylindrical-joint">
+<h2>Cylindrical Joint<a class="headerlink" href="#cylindrical-joint" title="Link to this heading"></a></h2>
+<p>A <a class="hxr-hoverxref hxr-tooltip reference internal" href="#joints.CylindricalJoint" title="joints.CylindricalJoint"><code class="xref py py-class docutils literal notranslate"><span class="pre">CylindricalJoint</span></code></a> allows a component to rotate around and moves along a single axis
+like a screw combining the functionality of a <a class="hxr-hoverxref hxr-tooltip reference internal" href="#joints.LinearJoint" title="joints.LinearJoint"><code class="xref py py-class docutils literal notranslate"><span class="pre">LinearJoint</span></code></a> and a
+<a class="hxr-hoverxref hxr-tooltip reference internal" href="#joints.RevoluteJoint" title="joints.RevoluteJoint"><code class="xref py py-class docutils literal notranslate"><span class="pre">RevoluteJoint</span></code></a> joint.  The <code class="docutils literal notranslate"><span class="pre">connect_to</span></code> for these joints have both <code class="docutils literal notranslate"><span class="pre">position</span></code> and
+<code class="docutils literal notranslate"><span class="pre">angle</span></code> parameters as shown below extracted from the joint tutorial.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="joints.CylindricalJoint">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CylindricalJoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_part</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Solid</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Compound</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Axis</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">((0.0,</span> <span class="pre">0.0,</span> <span class="pre">0.0),</span> <span class="pre">(0.0,</span> <span class="pre">0.0,</span> <span class="pre">1.0))</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle_reference</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Vector</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">linear_range</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">(0,</span> <span class="pre">inf)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angular_range</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">(0,</span> <span class="pre">360)</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/joints.html#CylindricalJoint"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#joints.CylindricalJoint" title="Link to this definition"></a></dt>
+<dd><p>Component rotates around and moves along a single axis like a screw.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>label</strong> (<em>str</em>) – joint label</p></li>
+<li><p><strong>to_part</strong> (<em>Union</em><em>[</em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Solid" title="topology.Solid"><em>Solid</em></a><em>, </em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Compound" title="topology.Compound"><em>Compound</em></a><em>]</em><em>, </em><em>optional</em>) – object to attach joint to</p></li>
+<li><p><strong>axis</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#geometry.Axis" title="geometry.Axis"><em>Axis</em></a>) – axis of rotation and linear motion</p></li>
+<li><p><strong>angle_reference</strong> (<em>VectorLike</em><em>, </em><em>optional</em>) – direction normal to axis defining where
+angles will be measured from. Defaults to None.</p></li>
+<li><p><strong>linear_range</strong> (<em>tuple</em><em>[</em><em>float</em><em>, </em><em>float</em><em>]</em><em>, </em><em>optional</em>) – (min,max) position of joint.
+Defaults to (0, inf).</p></li>
+<li><p><strong>angular_range</strong> (<em>tuple</em><em>[</em><em>float</em><em>, </em><em>float</em><em>]</em><em>, </em><em>optional</em>) – (min,max) angle of joint.
+Defaults to (0, 360).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Variables<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>axis</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#geometry.Axis" title="geometry.Axis"><em>Axis</em></a>) – joint axis</p></li>
+<li><p><strong>linear_position</strong> (<em>float</em>) – linear joint position</p></li>
+<li><p><strong>rotational_position</strong> (<em>float</em>) – revolute joint angle in degrees</p></li>
+<li><p><strong>angle_reference</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#geometry.Vector" title="geometry.Vector"><em>Vector</em></a>) – reference for angular positions</p></li>
+<li><p><strong>angular_range</strong> (<em>tuple</em><em>[</em><em>float</em><em>,</em><em>float</em><em>]</em>) – min and max angular position of joint</p></li>
+<li><p><strong>linear_range</strong> (<em>tuple</em><em>[</em><em>float</em><em>,</em><em>float</em><em>]</em>) – min and max positional values</p></li>
+<li><p><strong>relative_axis</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#geometry.Axis" title="geometry.Axis"><em>Axis</em></a>) – joint axis relative to bound part</p></li>
+<li><p><strong>position</strong> (<em>float</em>) – joint position</p></li>
+<li><p><strong>angle</strong> (<em>float</em>) – angle of joint</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – angle_reference must be normal to axis</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="joints.CylindricalJoint.connect_to">
+<span class="sig-name descname"><span class="pre">connect_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="hxr-hoverxref hxr-tooltip reference internal" href="#joints.RigidJoint" title="joints.RigidJoint"><span class="pre">RigidJoint</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/joints.html#CylindricalJoint.connect_to"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#joints.CylindricalJoint.connect_to" title="Link to this definition"></a></dt>
+<dd><p>Connect CylindricalJoint and RigidJoint”</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>other</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Joint" title="topology.Joint"><em>Joint</em></a>) – joint to connect to</p></li>
+<li><p><strong>position</strong> (<em>float</em><em>, </em><em>optional</em>) – linear position. Defaults to linear range min.</p></li>
+<li><p><strong>angle</strong> (<em>float</em><em>, </em><em>optional</em>) – angle in degrees. Defaults to range min.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>TypeError</strong> – other must be of type RigidJoint</p></li>
+<li><p><strong>ValueError</strong> – position out of range</p></li>
+<li><p><strong>ValueError</strong> – angle out of range</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="joints.CylindricalJoint.location">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">location</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Location</span></em><a class="headerlink" href="#joints.CylindricalJoint.location" title="Link to this definition"></a></dt>
+<dd><p>Location of joint</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="joints.CylindricalJoint.relative_to">
+<span class="sig-name descname"><span class="pre">relative_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="hxr-hoverxref hxr-tooltip reference internal" href="#joints.RigidJoint" title="joints.RigidJoint"><span class="pre">RigidJoint</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/joints.html#CylindricalJoint.relative_to"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#joints.CylindricalJoint.relative_to" title="Link to this definition"></a></dt>
+<dd><p>Relative location of CylindricalJoint to RigidJoint</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>other</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Joint" title="topology.Joint"><em>Joint</em></a>) – joint to connect to</p></li>
+<li><p><strong>position</strong> (<em>float</em><em>, </em><em>optional</em>) – linear position. Defaults to linear range min.</p></li>
+<li><p><strong>angle</strong> (<em>float</em><em>, </em><em>optional</em>) – angle in degrees. Defaults to range min.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>TypeError</strong> – other must be of type RigidJoint</p></li>
+<li><p><strong>ValueError</strong> – position out of range</p></li>
+<li><p><strong>ValueError</strong> – angle out of range</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="joints.CylindricalJoint.symbol">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">symbol</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Compound</span></em><a class="headerlink" href="#joints.CylindricalJoint.symbol" title="Link to this definition"></a></dt>
+<dd><p>A CAD symbol representing the cylindrical axis as bound to part</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="ball-joint">
+<h2>Ball Joint<a class="headerlink" href="#ball-joint" title="Link to this heading"></a></h2>
+<p>A component rotates around all 3 axes using a gimbal system (3 nested rotations). A <a class="hxr-hoverxref hxr-tooltip reference internal" href="#joints.BallJoint" title="joints.BallJoint"><code class="xref py py-class docutils literal notranslate"><span class="pre">BallJoint</span></code></a>
+is found within a rod end as shown here:</p>
+<img alt="_images/rod_end.png" src="_images/rod_end.png" />
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">build123d</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bd_warehouse.thread</span><span class="w"> </span><span class="kn">import</span> <span class="n">IsoThread</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ocp_vscode</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+
+<span class="c1"># Create the thread so the min radius is available below</span>
+<span class="n">thread</span> <span class="o">=</span> <span class="n">IsoThread</span><span class="p">(</span>
+    <span class="n">major_diameter</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">pitch</span><span class="o">=</span><span class="mf">1.25</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">end_finishes</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;fade&quot;</span><span class="p">,</span> <span class="s2">&quot;raw&quot;</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">inner_radius</span> <span class="o">=</span> <span class="mf">15.89</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="n">inner_gap</span> <span class="o">=</span> <span class="mf">0.2</span>
+
+<span class="k">with</span> <span class="n">BuildPart</span><span class="p">()</span> <span class="k">as</span> <span class="n">rod_end</span><span class="p">:</span>
+    <span class="c1"># Create the outer shape</span>
+    <span class="k">with</span> <span class="n">BuildSketch</span><span class="p">():</span>
+        <span class="n">Circle</span><span class="p">(</span><span class="mf">22.25</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="k">with</span> <span class="n">Locations</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">12</span><span class="p">)):</span>
+            <span class="n">Rectangle</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">make_hull</span><span class="p">()</span>
+        <span class="n">split</span><span class="p">(</span><span class="n">bisect_by</span><span class="o">=</span><span class="n">Plane</span><span class="o">.</span><span class="n">YZ</span><span class="p">)</span>
+    <span class="n">revolve</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="n">Axis</span><span class="o">.</span><span class="n">Y</span><span class="p">)</span>
+    <span class="c1"># Refine the shape</span>
+    <span class="k">with</span> <span class="n">BuildSketch</span><span class="p">(</span><span class="n">Plane</span><span class="o">.</span><span class="n">YZ</span><span class="p">)</span> <span class="k">as</span> <span class="n">s2</span><span class="p">:</span>
+        <span class="n">Rectangle</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="p">(</span><span class="n">Align</span><span class="o">.</span><span class="n">MIN</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">))</span>
+        <span class="n">Rectangle</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="p">(</span><span class="n">Align</span><span class="o">.</span><span class="n">MIN</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">))</span>
+        <span class="n">chamfer</span><span class="p">(</span><span class="n">s2</span><span class="o">.</span><span class="n">vertices</span><span class="p">(),</span> <span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">revolve</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="n">Axis</span><span class="o">.</span><span class="n">Z</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">Mode</span><span class="o">.</span><span class="n">INTERSECT</span><span class="p">)</span>
+    <span class="c1"># Add the screw shaft</span>
+    <span class="n">Cylinder</span><span class="p">(</span>
+        <span class="n">thread</span><span class="o">.</span><span class="n">min_radius</span><span class="p">,</span>
+        <span class="mi">30</span><span class="p">,</span>
+        <span class="n">rotation</span><span class="o">=</span><span class="p">(</span><span class="mi">90</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+        <span class="n">align</span><span class="o">=</span><span class="p">(</span><span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">MIN</span><span class="p">),</span>
+    <span class="p">)</span>
+    <span class="c1"># Cutout the ball socket</span>
+    <span class="n">Sphere</span><span class="p">(</span><span class="n">inner_radius</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">Mode</span><span class="o">.</span><span class="n">SUBTRACT</span><span class="p">)</span>
+    <span class="c1"># Add thread</span>
+    <span class="k">with</span> <span class="n">Locations</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">30</span><span class="p">,</span> <span class="mi">0</span><span class="p">)):</span>
+        <span class="n">add</span><span class="p">(</span><span class="n">thread</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="c1"># Create the ball joint</span>
+<span class="hll">    <span class="n">BallJoint</span><span class="p">(</span>
+</span><span class="hll">        <span class="s2">&quot;socket&quot;</span><span class="p">,</span>
+</span><span class="hll">        <span class="n">joint_location</span><span class="o">=</span><span class="n">Location</span><span class="p">(),</span>
+</span><span class="hll">        <span class="n">angular_range</span><span class="o">=</span><span class="p">((</span><span class="o">-</span><span class="mi">14</span><span class="p">,</span> <span class="mi">14</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">14</span><span class="p">,</span> <span class="mi">14</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">360</span><span class="p">)),</span>
+</span><span class="hll">    <span class="p">)</span>
+</span>
+<span class="k">with</span> <span class="n">BuildPart</span><span class="p">()</span> <span class="k">as</span> <span class="n">ball</span><span class="p">:</span>
+    <span class="n">Sphere</span><span class="p">(</span><span class="n">inner_radius</span> <span class="o">-</span> <span class="n">inner_gap</span><span class="p">)</span>
+    <span class="n">Box</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">Mode</span><span class="o">.</span><span class="n">INTERSECT</span><span class="p">)</span>
+    <span class="n">Hole</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">ball</span><span class="o">.</span><span class="n">part</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">Color</span><span class="p">(</span><span class="s2">&quot;aliceblue&quot;</span><span class="p">)</span>
+<span class="hll">    <span class="n">RigidJoint</span><span class="p">(</span><span class="s2">&quot;ball&quot;</span><span class="p">,</span> <span class="n">joint_location</span><span class="o">=</span><span class="n">Location</span><span class="p">())</span>
+</span>
+<span class="hll"><span class="n">rod_end</span><span class="o">.</span><span class="n">part</span><span class="o">.</span><span class="n">joints</span><span class="p">[</span><span class="s2">&quot;socket&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">connect_to</span><span class="p">(</span><span class="n">ball</span><span class="o">.</span><span class="n">part</span><span class="o">.</span><span class="n">joints</span><span class="p">[</span><span class="s2">&quot;ball&quot;</span><span class="p">],</span> <span class="n">angles</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+</span>
+<span class="n">show</span><span class="p">(</span><span class="n">rod_end</span><span class="o">.</span><span class="n">part</span><span class="p">,</span> <span class="n">ball</span><span class="o">.</span><span class="n">part</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Note how limits are defined during the instantiation of the ball joint when ensures that the pin or bolt
+within the rod end does not interfere with the rod end itself. The <code class="docutils literal notranslate"><span class="pre">connect_to</span></code> sets the three angles
+(only two are significant in this example).</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="joints.BallJoint">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BallJoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_part</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Solid</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Compound</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">joint_location</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Location</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angular_range</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">((0,</span> <span class="pre">360),</span> <span class="pre">(0,</span> <span class="pre">360),</span> <span class="pre">(0,</span> <span class="pre">360))</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle_reference</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Plane</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Plane(o=(0.00,</span> <span class="pre">0.00,</span> <span class="pre">0.00),</span> <span class="pre">x=(1.00,</span> <span class="pre">0.00,</span> <span class="pre">0.00),</span> <span class="pre">z=(0.00,</span> <span class="pre">0.00,</span> <span class="pre">1.00))</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/joints.html#BallJoint"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#joints.BallJoint" title="Link to this definition"></a></dt>
+<dd><p>A component rotates around all 3 axes using a gimbal system (3 nested rotations).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>label</strong> (<em>str</em>) – joint label</p></li>
+<li><p><strong>to_part</strong> (<em>Union</em><em>[</em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Solid" title="topology.Solid"><em>Solid</em></a><em>, </em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Compound" title="topology.Compound"><em>Compound</em></a><em>]</em><em>, </em><em>optional</em>) – object to attach joint to</p></li>
+<li><p><strong>joint_location</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#geometry.Location" title="geometry.Location"><em>Location</em></a>) – global location of joint</p></li>
+<li><p><strong>angular_range</strong> – (tuple[ tuple[float, float], tuple[float, float], tuple[float, float] ], optional):
+X, Y, Z angle (min, max) pairs. Defaults to ((0, 360), (0, 360), (0, 360)).</p></li>
+<li><p><strong>angle_reference</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#geometry.Plane" title="geometry.Plane"><em>Plane</em></a><em>, </em><em>optional</em>) – plane relative to part defining zero degrees of
+rotation. Defaults to Plane.XY.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Variables<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>relative_location</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#geometry.Location" title="geometry.Location"><em>Location</em></a>) – joint location relative to bound part</p></li>
+<li><p><strong>angular_range</strong> – (tuple[ tuple[float, float], tuple[float, float], tuple[float, float] ]):
+X, Y, Z angle (min, max) pairs.</p></li>
+<li><p><strong>angle_reference</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#geometry.Plane" title="geometry.Plane"><em>Plane</em></a>) – plane relative to part defining zero degrees of</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="joints.BallJoint.connect_to">
+<span class="sig-name descname"><span class="pre">connect_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="hxr-hoverxref hxr-tooltip reference internal" href="#joints.RigidJoint" title="joints.RigidJoint"><span class="pre">RigidJoint</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angles</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Rotation</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/joints.html#BallJoint.connect_to"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#joints.BallJoint.connect_to" title="Link to this definition"></a></dt>
+<dd><p>Connect BallJoint and RigidJoint</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>other</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="#joints.RigidJoint" title="joints.RigidJoint"><em>RigidJoint</em></a>) – joint to connect to</p></li>
+<li><p><strong>angles</strong> (<em>RotationLike</em><em>, </em><em>optional</em>) – angles about axes in degrees. Defaults to
+range minimums.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>TypeError</strong> – invalid other joint type</p></li>
+<li><p><strong>ValueError</strong> – angles out of range</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="joints.BallJoint.location">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">location</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Location</span></em><a class="headerlink" href="#joints.BallJoint.location" title="Link to this definition"></a></dt>
+<dd><p>Location of joint</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="joints.BallJoint.relative_to">
+<span class="sig-name descname"><span class="pre">relative_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="hxr-hoverxref hxr-tooltip reference internal" href="#joints.RigidJoint" title="joints.RigidJoint"><span class="pre">RigidJoint</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angles</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Rotation</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/joints.html#BallJoint.relative_to"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#joints.BallJoint.relative_to" title="Link to this definition"></a></dt>
+<dd><p>relative_to - BallJoint</p>
+<p>Return the relative location from this joint to the RigidJoint of another object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>other</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="#joints.RigidJoint" title="joints.RigidJoint"><em>RigidJoint</em></a>) – joint to connect to</p></li>
+<li><p><strong>angles</strong> (<em>RotationLike</em><em>, </em><em>optional</em>) – angles about axes in degrees. Defaults to
+range minimums.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>TypeError</strong> – invalid other joint type</p></li>
+<li><p><strong>ValueError</strong> – angles out of range</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="joints.BallJoint.symbol">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">symbol</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Compound</span></em><a class="headerlink" href="#joints.BallJoint.symbol" title="Link to this definition"></a></dt>
+<dd><p>A CAD symbol representing joint as bound to part</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="build_part.html" class="btn btn-neutral float-left" title="BuildPart" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="assemblies.html" class="btn btn-neutral float-right" title="Assemblies" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Gumyr.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

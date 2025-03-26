@@ -1,0 +1,286 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quick Reference &mdash; build123d 0.9.2.dev40+gb1f0eed documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster.custom.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster.bundle.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-shadow.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-punk.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-noir.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-light.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-borderless.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/micromodal.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/sphinx_rtd_theme.css?v=3234e928" />
+      <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=c97902b4"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=f281be69"></script>
+      <script src="_static/js/hoverxref.js"></script>
+      <script src="_static/js/tooltipster.bundle.min.js"></script>
+      <script src="_static/js/micromodal.min.js"></script>
+      <script src="_static/design-tabs.js?v=f930bc37"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            build123d
+              <img src="_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts.html">Key Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts_builder.html">Key Concepts (builder mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts_algebra.html">Key Concepts (algebra mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="moving_objects.html">Moving Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OpenSCAD.html">Transitioning from OpenSCAD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introductory_examples.html">Introductory Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="selectors_operators.html">Selectors and Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operations.html">Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="builders.html">Builders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="joints.html">Joints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assemblies.html">Assemblies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tips.html">Tips, Best Practices and FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="import_export.html">Import/Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cheat_sheet.html">Cheat Sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="external.html">External Tools and Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="builder_api_reference.html">Builder Common API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="direct_api_reference.html">Direct API Reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">build123d</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Quick Reference</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/selectors.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <p>When using a GUI based CAD system the user will often click on a feature to select
+it for some operation. How does a user “click” when CAD is done entirely in code?
+Selectors are recipes for how to isolate a feature from a design using python
+filter and sorting methods typically implemented as a set of custom python
+operations.</p>
+<section id="quick-reference">
+<h1>Quick Reference<a class="headerlink" href="#quick-reference" title="Link to this heading"></a></h1>
+<p>The following tables describes the build123d selectors:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Selector</p></th>
+<th class="head"><p>Applicability</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Example</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>vertices()</p></td>
+<td><p>BuildLine, BuildSketch, BuildPart</p></td>
+<td><p>Vertex extraction</p></td>
+<td><p><cite>part.vertices()</cite></p></td>
+</tr>
+<tr class="row-odd"><td><p>edges()</p></td>
+<td><p>BuildLine, BuildSketch, BuildPart</p></td>
+<td><p>Edge extraction</p></td>
+<td><p><cite>part.edges()</cite></p></td>
+</tr>
+<tr class="row-even"><td><p>wires()</p></td>
+<td><p>BuildLine, BuildSketch, BuildPart</p></td>
+<td><p>Wire extraction</p></td>
+<td><p><cite>part.wires()</cite></p></td>
+</tr>
+<tr class="row-odd"><td><p>faces()</p></td>
+<td><p>BuildSketch, BuildPart</p></td>
+<td><p>Face extraction</p></td>
+<td><p><cite>part.faces()</cite></p></td>
+</tr>
+<tr class="row-even"><td><p>solids()</p></td>
+<td><p>BuildPart</p></td>
+<td><p>Solid extraction</p></td>
+<td><p><cite>part.solids()</cite></p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default" id="selector-operators">
+<thead>
+<tr class="row-odd"><th class="head"><p>Operator</p></th>
+<th class="head"><p>Operand</p></th>
+<th class="head"><p>Method</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Example</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>&gt;</p></td>
+<td><p>SortBy, Axis</p></td>
+<td><p>sort_by</p></td>
+<td><p>Sort ShapeList by operand</p></td>
+<td><p><cite>part.vertices() &gt; Axis.Z</cite></p></td>
+</tr>
+<tr class="row-odd"><td><p>&lt;</p></td>
+<td><p>SortBy, Axis</p></td>
+<td><p>sort_by</p></td>
+<td><p>Reverse sort ShapeList by operand</p></td>
+<td><p><cite>part.faces() &lt; Axis.Z</cite></p></td>
+</tr>
+<tr class="row-even"><td><p>&gt;&gt;</p></td>
+<td><p>SortBy, Axis</p></td>
+<td><p>group_by</p></td>
+<td><p>Group ShapeList by operand and return last value</p></td>
+<td><p><cite>part.solids() &gt;&gt; Axis.X</cite></p></td>
+</tr>
+<tr class="row-odd"><td><p>&lt;&lt;</p></td>
+<td><p>SortBy, Axis</p></td>
+<td><p>group_by</p></td>
+<td><p>Group ShapeList by operand and return first value</p></td>
+<td><p><cite>part.faces() &lt;&lt; Axis.Y</cite></p></td>
+</tr>
+<tr class="row-even"><td><p>|</p></td>
+<td><p>Axis, Plane, GeomType</p></td>
+<td><p>filter_by</p></td>
+<td><p>Filter and sort ShapeList by Axis, Plane, or GeomType</p></td>
+<td><p><cite>part.faces() | Axis.Z</cite></p></td>
+</tr>
+<tr class="row-odd"><td><p>[]</p></td>
+<td></td>
+<td></td>
+<td><p>Standard python list indexing and slicing</p></td>
+<td><p><cite>part.faces()[-2:]</cite></p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>Axis</p></td>
+<td><p>filter_by_position</p></td>
+<td><p>Filter ShapeList by Axis &amp; mix / max values</p></td>
+<td><p><cite>part.faces()..filter_by_position(Axis.Z, 1, 2, inclusive=(False, True))</cite></p></td>
+</tr>
+</tbody>
+</table>
+<p>The operand types are: Axis, Plane, SortBy, and GeomType. An Axis is a base object with an origin and a
+direction with several predefined values such as <code class="docutils literal notranslate"><span class="pre">Axis.X</span></code>, <code class="docutils literal notranslate"><span class="pre">Axis.Y</span></code>, and <code class="docutils literal notranslate"><span class="pre">Axis.Z</span></code>; however,
+any Axis could be used as an operand (e.g. <code class="docutils literal notranslate"><span class="pre">Axis((1,2,3),(0.5,0,-0.5))</span></code> is valid) - see
+<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#geometry.Axis" title="geometry.Axis"><code class="xref py py-class docutils literal notranslate"><span class="pre">Axis</span></code></a> for a complete description.
+A Plane is a coordinate system defined by an origin, x_dir (X direction), y_dir (Y direction), and
+z_dir (Z direction). See <a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#geometry.Plane" title="geometry.Plane"><code class="xref py py-class docutils literal notranslate"><span class="pre">Plane</span></code></a> for a complete description.
+Filtering by a Plane will return faces/edges parallel to it.
+SortBy and GeomType are python
+Enum class described here:</p>
+<dl class="simple">
+<dt><a class="hxr-hoverxref hxr-tooltip reference internal" href="builder_api_reference.html#build_enums.GeomType" title="build_enums.GeomType"><code class="xref py py-class docutils literal notranslate"><span class="pre">GeomType</span></code></a></dt><dd><p>BEZIER, BSPLINE, CIRCLE, CONE, CYLINDER, ELLIPSE, EXTRUSION, HYPERBOLA, LINE, OFFSET, OTHER,
+PARABOLA, PLANE, REVOLUTION, SPHERE, TORUS</p>
+</dd>
+<dt><a class="hxr-hoverxref hxr-tooltip reference internal" href="builder_api_reference.html#build_enums.SortBy" title="build_enums.SortBy"><code class="xref py py-class docutils literal notranslate"><span class="pre">SortBy</span></code></a></dt><dd><p>LENGTH, RADIUS, AREA, VOLUME, DISTANCE</p>
+</dd>
+</dl>
+</section>
+<section id="shapelist-class">
+<h1>ShapeList Class<a class="headerlink" href="#shapelist-class" title="Link to this heading"></a></h1>
+<p>The builders include methods to extract Edges, Faces, Solids, Vertices, or Wires from the objects
+they are building. All of these methods return objects of a subclass of <cite>list</cite>, a <a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.ShapeList" title="topology.ShapeList"><code class="xref py py-class docutils literal notranslate"><span class="pre">ShapeList</span></code></a> with
+custom filtering and sorting methods and operations as follows.</p>
+</section>
+<section id="custom-sorting-and-filtering">
+<h1>Custom Sorting and Filtering<a class="headerlink" href="#custom-sorting-and-filtering" title="Link to this heading"></a></h1>
+<p>It is important to note that standard list methods such as <cite>sorted</cite> or <cite>filtered</cite> can
+be used to easily build complex selectors beyond what is available with the predefined
+sorts and filters. Here is an example of a custom filters:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">BuildSketch</span><span class="p">()</span> <span class="k">as</span> <span class="n">din</span><span class="p">:</span>
+    <span class="o">...</span>
+    <span class="n">outside_vertices</span> <span class="o">=</span> <span class="nb">filter</span><span class="p">(</span>
+        <span class="k">lambda</span> <span class="n">v</span><span class="p">:</span> <span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">Y</span> <span class="o">==</span> <span class="mf">0.0</span> <span class="ow">or</span> <span class="n">v</span><span class="o">.</span><span class="n">Y</span> <span class="o">==</span> <span class="n">height</span><span class="p">)</span>
+        <span class="ow">and</span> <span class="o">-</span><span class="n">overall_width</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">&lt;</span> <span class="n">v</span><span class="o">.</span><span class="n">X</span> <span class="o">&lt;</span> <span class="n">overall_width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="n">din</span><span class="o">.</span><span class="n">vertices</span><span class="p">(),</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+<p>The <a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.ShapeList.filter_by" title="topology.ShapeList.filter_by"><code class="xref py py-meth docutils literal notranslate"><span class="pre">filter_by()</span></code></a> method can take lambda expressions as part of a
+fluent chain of operations which enables integration of custom filters into a larger change of
+selectors as shown in this example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">obj</span> <span class="o">=</span> <span class="n">Box</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">Cylinder</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">faces_with_holes</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">faces</span><span class="p">()</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="n">f</span><span class="o">.</span><span class="n">inner_wires</span><span class="p">())</span>
+</pre></div>
+</div>
+<img alt="_images/custom_selector.png" src="_images/custom_selector.png" />
+<p>Here the two faces with “inner_wires” (i.e. holes) have been selected independent of orientation.</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Gumyr.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

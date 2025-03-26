@@ -1,0 +1,394 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Assemblies &mdash; build123d 0.9.2.dev40+gb1f0eed documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster.custom.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster.bundle.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-shadow.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-punk.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-noir.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-light.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-borderless.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/micromodal.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/sphinx_rtd_theme.css?v=3234e928" />
+      <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=c97902b4"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=f281be69"></script>
+      <script src="_static/js/hoverxref.js"></script>
+      <script src="_static/js/tooltipster.bundle.min.js"></script>
+      <script src="_static/js/micromodal.min.js"></script>
+      <script src="_static/design-tabs.js?v=f930bc37"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Tips, Best Practices and FAQ" href="tips.html" />
+    <link rel="prev" title="Joints" href="joints.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            build123d
+              <img src="_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts.html">Key Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts_builder.html">Key Concepts (builder mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts_algebra.html">Key Concepts (algebra mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="moving_objects.html">Moving Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OpenSCAD.html">Transitioning from OpenSCAD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introductory_examples.html">Introductory Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="selectors_operators.html">Selectors and Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operations.html">Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="builders.html">Builders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="joints.html">Joints</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Assemblies</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#assigning-labels">Assigning Labels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-the-assembly-compound">Create the Assembly Compound</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#shallow-vs-deep-copies-of-shapes">Shallow vs. Deep Copies of Shapes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#shapes-are-anytree-nodes">Shapes are Anytree Nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#iterating-over-compounds">Iterating Over Compounds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">pack</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pack.pack"><code class="docutils literal notranslate"><span class="pre">pack()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#detailed-description">Detailed Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#usage-note">Usage Note</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-usage">Example Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tip">Tip</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tips.html">Tips, Best Practices and FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="import_export.html">Import/Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cheat_sheet.html">Cheat Sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="external.html">External Tools and Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="builder_api_reference.html">Builder Common API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="direct_api_reference.html">Direct API Reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">build123d</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Assemblies</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/assemblies.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="assemblies">
+<span id="assembly"></span><h1>Assemblies<a class="headerlink" href="#assemblies" title="Link to this heading"></a></h1>
+<p>Most CAD designs consist of more than one part which are naturally arranged in
+some type of assembly. Once parts have been assembled in a <a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Compound" title="topology.Compound"><code class="xref py py-class docutils literal notranslate"><span class="pre">Compound</span></code></a> object
+they can be treated as a unit - i.e. <a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Shape.moved" title="topology.Shape.moved"><code class="xref py py-meth docutils literal notranslate"><span class="pre">moved()</span></code></a> or exported.</p>
+<p>To create an assembly in build123d, one needs to
+create a tree of parts by simply assigning either a <a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Compound" title="topology.Compound"><code class="xref py py-class docutils literal notranslate"><span class="pre">Compound</span></code></a> object’s <code class="docutils literal notranslate"><span class="pre">parent</span></code> or
+<code class="docutils literal notranslate"><span class="pre">children</span></code> attributes. To illustrate the process, we’ll extend the
+<a class="reference internal" href="tutorial_joints.html#joint-tutorial"><span class="std std-ref">Joint Tutorial</span></a>.</p>
+<section id="assigning-labels">
+<h2>Assigning Labels<a class="headerlink" href="#assigning-labels" title="Link to this heading"></a></h2>
+<p>In order keep track of objects one can assign a <code class="docutils literal notranslate"><span class="pre">label</span></code> to all <a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Shape" title="topology.Shape"><code class="xref py py-class docutils literal notranslate"><span class="pre">Shape</span></code></a> objects.
+Here we’ll assign labels to all of the components that will be part of the box
+assembly:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">box</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;box&quot;</span>
+<span class="n">lid</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;lid&quot;</span>
+<span class="n">hinge_outer</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;outer hinge&quot;</span>
+<span class="n">hinge_inner</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;inner hinge&quot;</span>
+<span class="n">m6_screw</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;M6 screw&quot;</span>
+
+</pre></div>
+</div>
+<p>The labels are just strings with no further limitations (they don’t have to be unique
+within the assembly).</p>
+</section>
+<section id="create-the-assembly-compound">
+<h2>Create the Assembly Compound<a class="headerlink" href="#create-the-assembly-compound" title="Link to this heading"></a></h2>
+<p>Creation of the assembly is done by simply creating a <a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Compound" title="topology.Compound"><code class="xref py py-class docutils literal notranslate"><span class="pre">Compound</span></code></a> object and assigning
+appropriate <code class="docutils literal notranslate"><span class="pre">parent</span></code> and <code class="docutils literal notranslate"><span class="pre">children</span></code> attributes as shown here:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">box_assembly</span> <span class="o">=</span> <span class="n">Compound</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;assembly&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span><span class="n">box</span><span class="p">,</span> <span class="n">lid</span><span class="p">,</span> <span class="n">hinge_inner</span><span class="p">,</span> <span class="n">hinge_outer</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>To display the topology of an assembly <a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Compound" title="topology.Compound"><code class="xref py py-class docutils literal notranslate"><span class="pre">Compound</span></code></a>, the <a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Shape.show_topology" title="topology.Shape.show_topology"><code class="xref py py-meth docutils literal notranslate"><span class="pre">show_topology()</span></code></a>
+method can be used as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">box_assembly</span><span class="o">.</span><span class="n">show_topology</span><span class="p">())</span>
+
+</pre></div>
+</div>
+<p>which results in:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>assembly        Compound at 0x7fc8ee235760, Location(p=(0, 0, 0), o=(-0, 0, -0))
+├── box         Compound at 0x7fc8ee2188b0, Location(p=(0, 0, 50), o=(-0, 0, -0))
+├── lid         Compound at 0x7fc8ee228460, Location(p=(-26, 0, 181), o=(-180, 30, -0))
+├── inner hinge Hinge    at 0x7fc9292c3f70, Location(p=(-119, 60, 122), o=(90, 0, -150))
+└── outer hinge Hinge    at 0x7fc9292c3f40, Location(p=(-150, 60, 50), o=(90, 0, 90))
+</pre></div>
+</div>
+<p>To add to an assembly <a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Compound" title="topology.Compound"><code class="xref py py-class docutils literal notranslate"><span class="pre">Compound</span></code></a> one can change either <code class="docutils literal notranslate"><span class="pre">children</span></code> or <code class="docutils literal notranslate"><span class="pre">parent</span></code> attributes.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">m6_screw</span><span class="o">.</span><span class="n">parent</span> <span class="o">=</span> <span class="n">box_assembly</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">box_assembly</span><span class="o">.</span><span class="n">show_topology</span><span class="p">())</span>
+
+</pre></div>
+</div>
+<p>and now the screw is part of the assembly.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>assembly        Compound at 0x7fc8ee235760, Location(p=(0, 0, 0), o=(-0, 0, -0))
+├── box         Compound at 0x7fc8ee2188b0, Location(p=(0, 0, 50), o=(-0, 0, -0))
+├── lid         Compound at 0x7fc8ee228460, Location(p=(-26, 0, 181), o=(-180, 30, -0))
+├── inner hinge Hinge    at 0x7fc9292c3f70, Location(p=(-119, 60, 122), o=(90, 0, -150))
+├── outer hinge Hinge    at 0x7fc9292c3f40, Location(p=(-150, 60, 50), o=(90, 0, 90))
+└── M6 screw    Compound at 0x7fc8ee235310, Location(p=(-157, -40, 70), o=(-0, -90, -60))
+</pre></div>
+</div>
+</section>
+<section id="shallow-vs-deep-copies-of-shapes">
+<span id="shallow-copy"></span><h2>Shallow vs. Deep Copies of Shapes<a class="headerlink" href="#shallow-vs-deep-copies-of-shapes" title="Link to this heading"></a></h2>
+<p>Build123d supports the standard python <code class="docutils literal notranslate"><span class="pre">copy</span></code> module which provides two different types of
+copy operations <code class="docutils literal notranslate"><span class="pre">copy.copy()</span></code> and <code class="docutils literal notranslate"><span class="pre">copy.deepcopy()</span></code>.</p>
+<p>Build123d’s implementation of <code class="docutils literal notranslate"><span class="pre">deepcopy()</span></code> for the <a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Shape" title="topology.Shape"><code class="xref py py-class docutils literal notranslate"><span class="pre">Shape</span></code></a> class (e.g. <code class="docutils literal notranslate"><span class="pre">Solid</span></code>, <code class="docutils literal notranslate"><span class="pre">Face</span></code>, etc.)
+does just that, creates a complete copy of the original  all the way down to the CAD object.
+<code class="docutils literal notranslate"><span class="pre">deepcopy</span></code> is therefore suited to the case where the copy will be subsequently modified to
+become its own unique item.</p>
+<p>However, when building an assembly a common use case is to include many instances of an
+object, each one identical but in a different location. This is where <code class="docutils literal notranslate"><span class="pre">copy.copy()</span></code> is
+very useful as it copies all of the <a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Shape" title="topology.Shape"><code class="xref py py-class docutils literal notranslate"><span class="pre">Shape</span></code></a> except for the actual CAD object
+which instead is a reference to the original (OpenCascade refers this as a <code class="docutils literal notranslate"><span class="pre">TShape</span></code>). As
+it’s a reference any changes to the original will be seen in all of the shallow copies.</p>
+<p>Consider this example where 100 screws are added to an assembly:</p>
+<img alt="_images/reference_assembly.svg" class="align-center" src="_images/reference_assembly.svg" />
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">screw</span> <span class="o">=</span> <span class="n">import_step</span><span class="p">(</span><span class="s2">&quot;M6-1x12-countersunk-screw.step&quot;</span><span class="p">)</span>
+<span class="n">locs</span> <span class="o">=</span> <span class="n">HexLocations</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">local_locations</span>
+
+<span class="n">screw_copies</span> <span class="o">=</span> <span class="p">[</span><span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">screw</span><span class="p">)</span><span class="o">.</span><span class="n">locate</span><span class="p">(</span><span class="n">loc</span><span class="p">)</span> <span class="k">for</span> <span class="n">loc</span> <span class="ow">in</span> <span class="n">locs</span><span class="p">]</span>
+<span class="n">copy_assembly</span> <span class="o">=</span> <span class="n">Compound</span><span class="p">(</span><span class="n">children</span><span class="o">=</span><span class="n">screw_copies</span><span class="p">)</span>
+<span class="n">export_step</span><span class="p">(</span><span class="n">copy_assembly</span><span class="p">,</span> <span class="s2">&quot;copy_assembly.step&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>which takes about 5 seconds to run (on an older computer) and produces
+a file of size 51938 KB. However, if a shallow copy is used instead:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">screw</span> <span class="o">=</span> <span class="n">import_step</span><span class="p">(</span><span class="s2">&quot;M6-1x12-countersunk-screw.step&quot;</span><span class="p">)</span>
+<span class="n">locs</span> <span class="o">=</span> <span class="n">HexLocations</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">local_locations</span>
+
+<span class="n">screw_references</span> <span class="o">=</span> <span class="p">[</span><span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">screw</span><span class="p">)</span><span class="o">.</span><span class="n">locate</span><span class="p">(</span><span class="n">loc</span><span class="p">)</span> <span class="k">for</span> <span class="n">loc</span> <span class="ow">in</span> <span class="n">locs</span><span class="p">]</span>
+<span class="n">reference_assembly</span> <span class="o">=</span> <span class="n">Compound</span><span class="p">(</span><span class="n">children</span><span class="o">=</span><span class="n">screw_references</span><span class="p">)</span>
+<span class="n">export_step</span><span class="p">(</span><span class="n">reference_assembly</span><span class="p">,</span> <span class="s2">&quot;reference_assembly.step&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>this takes about ¼ second and produces a file of size 550 KB - just over
+1% of the size of the <code class="docutils literal notranslate"><span class="pre">deepcopy()</span></code> version and only 12% larger than the
+screw’s step file.</p>
+<p>Using <code class="docutils literal notranslate"><span class="pre">copy.copy()</span></code> to create references to the original CAD object
+for assemblies can substantially reduce the time and resources used
+to create and store that assembly.</p>
+</section>
+<section id="shapes-are-anytree-nodes">
+<h2>Shapes are Anytree Nodes<a class="headerlink" href="#shapes-are-anytree-nodes" title="Link to this heading"></a></h2>
+<p>The build123d assembly constructs are built using the python
+<a class="reference external" href="https://anytree.readthedocs.io/en/latest/">anytree</a> package by making the build123d
+<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Shape" title="topology.Shape"><code class="xref py py-class docutils literal notranslate"><span class="pre">Shape</span></code></a> class a sub-class of anytree’s <code class="docutils literal notranslate"><span class="pre">NodeMixin</span></code> class. Doing so
+adds the following attributes to <a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Shape" title="topology.Shape"><code class="xref py py-class docutils literal notranslate"><span class="pre">Shape</span></code></a>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">parent</span></code> - Parent Node. On set, the node is detached from any previous parent node and attached to the new node.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">children</span></code> - Tuple of all child nodes.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">path</span></code> - Path of this <code class="docutils literal notranslate"><span class="pre">Node</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">iter_path_reverse</span></code> - Iterate up the tree from the current node.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ancestors</span></code> - All parent nodes and their parent nodes.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">descendants</span></code> - All child nodes and all their child nodes.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">root</span></code> - Tree Root Node.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">siblings</span></code> - Tuple of nodes with the same parent.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">leaves</span></code> - Tuple of all leaf nodes.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">is_leaf</span></code> - <code class="docutils literal notranslate"><span class="pre">Node</span></code> has no children (External Node).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">is_root</span></code> - <code class="docutils literal notranslate"><span class="pre">Node</span></code> is tree root.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">height</span></code> - Number of edges on the longest path to a leaf <code class="docutils literal notranslate"><span class="pre">Node</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">depth</span></code> - Number of edges to the root <code class="docutils literal notranslate"><span class="pre">Node</span></code>.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Changing the <code class="docutils literal notranslate"><span class="pre">children</span></code> attribute</p>
+<p>Any iterator can be assigned to the <code class="docutils literal notranslate"><span class="pre">children</span></code> attribute but subsequently the children
+are stored as immutable <code class="docutils literal notranslate"><span class="pre">tuple</span></code> objects.  To add a child to an existing <a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Compound" title="topology.Compound"><code class="xref py py-class docutils literal notranslate"><span class="pre">Compound</span></code></a>
+object, the <code class="docutils literal notranslate"><span class="pre">children</span></code> attribute will have to be reassigned.</p>
+</div>
+</section>
+<section id="iterating-over-compounds">
+<span id="pack"></span><h2>Iterating Over Compounds<a class="headerlink" href="#iterating-over-compounds" title="Link to this heading"></a></h2>
+<p>As Compounds are containers for shapes, build123d can iterate over these as required.
+Complex nested assemblies (compounds within compounds) do not need to be looped over with recursive functions.
+In the example below, the variable total_volume holds the sum of all the volumes in each solid in an assembly.
+Compare this to assembly3_volume which only results in the volume of the top level part.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># [import]</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">build123d</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ocp_vscode</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+
+<span class="c1"># Each assembly has a box and the previous assembly.</span>
+<span class="n">assembly1</span> <span class="o">=</span> <span class="n">Compound</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Assembly1&#39;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span><span class="n">Box</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),])</span>
+<span class="n">assembly2</span> <span class="o">=</span> <span class="n">Compound</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Assembly2&#39;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span><span class="n">assembly1</span><span class="p">,</span> <span class="n">Box</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)])</span>
+<span class="n">assembly3</span> <span class="o">=</span> <span class="n">Compound</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Assembly3&#39;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span><span class="n">assembly2</span><span class="p">,</span> <span class="n">Box</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)])</span>
+<span class="n">total_volume</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">part</span><span class="o">.</span><span class="n">volume</span> <span class="k">for</span> <span class="n">part</span> <span class="ow">in</span> <span class="n">assembly3</span><span class="o">.</span><span class="n">solids</span><span class="p">())</span> <span class="c1"># 3</span>
+<span class="n">assembly3_volume</span> <span class="o">=</span> <span class="n">assembly3</span><span class="o">.</span><span class="n">volume</span> <span class="c1"># 1</span>
+</pre></div>
+</div>
+</section>
+<section id="id1">
+<h2>pack<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p>The  <a class="hxr-hoverxref hxr-tooltip reference internal" href="#pack.pack" title="pack.pack"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pack.pack()</span></code></a> function arranges objects in a compact, non-overlapping layout within a square(ish) 2D area. It is designed to minimize the space between objects while ensuring that no two objects overlap.</p>
+<dl class="py function" id="module-pack">
+<dt class="sig sig-object py" id="pack.pack">
+<span class="sig-name descname"><span class="pre">pack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">objects</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Collection</span><span class="p"><span class="pre">[</span></span><span class="pre">Shape</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">padding</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">align_z</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Collection</span><span class="p"><span class="pre">[</span></span><span class="pre">Shape</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/pack.html#pack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pack.pack" title="Link to this definition"></a></dt>
+<dd><p>Pack objects in a squarish area in Plane.XY.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>objects</strong> (<em>Collection</em><em>[</em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Shape" title="topology.Shape"><em>Shape</em></a><em>]</em>) – objects to arrange</p></li>
+<li><p><strong>padding</strong> (<em>float</em>) – space between objects</p></li>
+<li><p><strong>align_z</strong> (<em>bool</em><em>, </em><em>optional</em>) – align shape bottoms to Plane.XY. Defaults to False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>rearranged objects</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>Collection</em>[<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Shape" title="topology.Shape"><em>Shape</em></a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<section id="detailed-description">
+<h3>Detailed Description<a class="headerlink" href="#detailed-description" title="Link to this heading"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">pack</span></code> function uses a bin-packing algorithm to efficiently place objects within a 2D plane, ensuring that there is no overlap and that the space between objects is minimized. This is particularly useful in scenarios where spatial efficiency is crucial, such as layout design and object arrangement in constrained spaces.</p>
+<p>The function begins by calculating the bounding boxes for each object, including the specified padding. It then uses a helper function <code class="docutils literal notranslate"><span class="pre">_pack2d</span></code> to determine the optimal positions for each object within the 2D plane. The positions are then translated back to the original objects, ensuring that they are arranged without overlapping.</p>
+</section>
+<section id="usage-note">
+<h3>Usage Note<a class="headerlink" href="#usage-note" title="Link to this heading"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">align_z</span></code> parameter is especially useful when creating print-plates for 3D printing. By aligning the bottoms of the shapes to the same XY plane, you ensure that the objects are perfectly positioned for slicing software, which will no longer need to perform this alignment for you. This can streamline the process and improve the accuracy of the print setup.</p>
+</section>
+<section id="example-usage">
+<h3>Example Usage<a class="headerlink" href="#example-usage" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># [import]</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">build123d</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ocp_vscode</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+
+
+<span class="c1"># [initial space]</span>
+<span class="n">b1</span> <span class="o">=</span> <span class="n">Box</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="p">(</span><span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">MIN</span><span class="p">))</span>
+<span class="n">b2</span> <span class="o">=</span> <span class="n">Box</span><span class="p">(</span><span class="mi">54</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="p">(</span><span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">MAX</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="n">Mode</span><span class="o">.</span><span class="n">SUBTRACT</span><span class="p">)</span>
+<span class="n">b3</span> <span class="o">=</span> <span class="n">Box</span><span class="p">(</span><span class="mi">34</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="p">(</span><span class="n">Align</span><span class="o">.</span><span class="n">MIN</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">MIN</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="n">Mode</span><span class="o">.</span><span class="n">SUBTRACT</span><span class="p">)</span>
+<span class="n">b4</span> <span class="o">=</span> <span class="n">Box</span><span class="p">(</span><span class="mi">24</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="p">(</span><span class="n">Align</span><span class="o">.</span><span class="n">MAX</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">MAX</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="n">Mode</span><span class="o">.</span><span class="n">SUBTRACT</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="_images/pack_demo_initial_state.svg" class="align-center" src="_images/pack_demo_initial_state.svg" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># [pack 2D]</span>
+
+<span class="n">xy_pack</span> <span class="o">=</span> <span class="n">pack</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">b1</span><span class="p">,</span> <span class="n">b2</span><span class="p">,</span> <span class="n">b3</span><span class="p">,</span> <span class="n">b4</span><span class="p">],</span>
+    <span class="n">padding</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+    <span class="n">align_z</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<img alt="_images/pack_demo_packed_xy.svg" class="align-center" src="_images/pack_demo_packed_xy.svg" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># [Pack and align_z]</span>
+
+<span class="n">z_pack</span> <span class="o">=</span> <span class="n">pack</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">b1</span><span class="p">,</span> <span class="n">b2</span><span class="p">,</span> <span class="n">b3</span><span class="p">,</span> <span class="n">b4</span><span class="p">],</span>
+    <span class="n">padding</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+    <span class="n">align_z</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<img alt="_images/pack_demo_packed_z.svg" class="align-center" src="_images/pack_demo_packed_z.svg" />
+</section>
+<section id="tip">
+<h3>Tip<a class="headerlink" href="#tip" title="Link to this heading"></a></h3>
+<p>If you place the arranged objects into a <code class="docutils literal notranslate"><span class="pre">Compound</span></code>, you can easily determine their bounding box and check whether the objects fit on your print bed.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># [bounding box]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Compound</span><span class="p">(</span><span class="n">xy_pack</span><span class="p">)</span><span class="o">.</span><span class="n">bounding_box</span><span class="p">())</span>
+<span class="c1"># bbox: 0.0 &lt;= x &lt;= 159.0, 0.0 &lt;= y &lt;= 129.0, -54.0 &lt;= z &lt;= 100.0</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">Compound</span><span class="p">(</span><span class="n">z_pack</span><span class="p">)</span><span class="o">.</span><span class="n">bounding_box</span><span class="p">())</span>
+<span class="c1"># bbox: 0.0 &lt;= x &lt;= 159.0, 0.0 &lt;= y &lt;= 129.0, 0.0 &lt;= z &lt;= 100.0</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="joints.html" class="btn btn-neutral float-left" title="Joints" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tips.html" class="btn btn-neutral float-right" title="Tips, Best Practices and FAQ" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Gumyr.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

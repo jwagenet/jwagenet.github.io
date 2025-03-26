@@ -1,0 +1,381 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tips, Best Practices and FAQ &mdash; build123d 0.9.2.dev40+gb1f0eed documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster.custom.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster.bundle.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-shadow.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-punk.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-noir.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-light.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-borderless.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/micromodal.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/sphinx_rtd_theme.css?v=3234e928" />
+      <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=c97902b4"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=f281be69"></script>
+      <script src="_static/js/hoverxref.js"></script>
+      <script src="_static/js/tooltipster.bundle.min.js"></script>
+      <script src="_static/js/micromodal.min.js"></script>
+      <script src="_static/design-tabs.js?v=f930bc37"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Import/Export" href="import_export.html" />
+    <link rel="prev" title="Assemblies" href="assemblies.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            build123d
+              <img src="_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts.html">Key Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts_builder.html">Key Concepts (builder mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts_algebra.html">Key Concepts (algebra mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="moving_objects.html">Moving Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OpenSCAD.html">Transitioning from OpenSCAD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introductory_examples.html">Introductory Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="selectors_operators.html">Selectors and Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operations.html">Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="builders.html">Builders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="joints.html">Joints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assemblies.html">Assemblies</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Tips, Best Practices and FAQ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#can-t-get-there-from-here">Can’t Get There from Here</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#d-before-3d">2D before 3D</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#delay-chamfers-and-fillets">Delay Chamfers and Fillets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#parameterize">Parameterize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#use-shallow-copies">Use Shallow Copies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#object-selection">Object Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#build123d-cadquery-integration">Build123d - CadQuery Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#self-intersection">Self Intersection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#packing-objects-on-a-plane">Packing Objects on a Plane</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#isnt-from-build123d-import-bad-practice">Isn’t <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">build123d</span> <span class="pre">import</span> <span class="pre">*</span></code> bad practice?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#why-doesn-t-buildsketch-plane-xz-work">Why doesn’t BuildSketch(Plane.XZ) work?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#why-is-buildline-not-working-as-expected-within-the-scope-of-buildsketch">Why is BuildLine not working as expected within the scope of BuildSketch?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#don-t-builders-inherit-workplane-coordinate-systems-when-nested">Don’t Builders inherit workplane/coordinate systems when nested</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="import_export.html">Import/Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cheat_sheet.html">Cheat Sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="external.html">External Tools and Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="builder_api_reference.html">Builder Common API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="direct_api_reference.html">Direct API Reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">build123d</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Tips, Best Practices and FAQ</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/tips.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="tips-best-practices-and-faq">
+<h1>Tips, Best Practices and FAQ<a class="headerlink" href="#tips-best-practices-and-faq" title="Link to this heading"></a></h1>
+<p>Although there are countless ways to create objects with build123d, experience
+has proven that certain techniques can assist designers in achieving their goals
+with the greatest efficiency. The following is a description of these techniques.</p>
+<section id="can-t-get-there-from-here">
+<h2>Can’t Get There from Here<a class="headerlink" href="#can-t-get-there-from-here" title="Link to this heading"></a></h2>
+<p>Unfortunately, it’s a reality that not all parts described using build123d can be
+successfully constructed by the underlying CAD core. Designers may have to
+explore different design approaches to get the OpenCascade CAD core to successfully
+build the target object. For instance, if a multi-section <a class="hxr-hoverxref hxr-tooltip reference internal" href="operations.html#operations_generic.sweep" title="operations_generic.sweep"><code class="xref py py-func docutils literal notranslate"><span class="pre">sweep()</span></code></a>
+operation fails, a <a class="hxr-hoverxref hxr-tooltip reference internal" href="operations.html#operations_part.loft" title="operations_part.loft"><code class="xref py py-func docutils literal notranslate"><span class="pre">loft()</span></code></a> operation may be a viable alternative
+in certain situations. It’s crucial to remember that CAD is a complex field and
+patience may be required to achieve the desired results.</p>
+</section>
+<section id="d-before-3d">
+<h2>2D before 3D<a class="headerlink" href="#d-before-3d" title="Link to this heading"></a></h2>
+<p>When creating complex 3D objects, it is generally best to start with 2D work before
+moving on to 3D. This is because 3D structures are much more intricate, and 3D operations
+can be slower and more prone to failure. For designers who come from a Constructive Solid
+Geometry (CSG) background, such as OpenSCAD, this approach may seem counterintuitive. On
+the other hand, designers from a GUI BREP CAD background, like Fusion 360 or SolidWorks,
+may find this approach more natural.</p>
+<p>In practice, this means that 3D objects are often created by applying operations like
+<a class="hxr-hoverxref hxr-tooltip reference internal" href="operations.html#operations_part.extrude" title="operations_part.extrude"><code class="xref py py-func docutils literal notranslate"><span class="pre">extrude()</span></code></a> or <a class="hxr-hoverxref hxr-tooltip reference internal" href="operations.html#operations_part.revolve" title="operations_part.revolve"><code class="xref py py-func docutils literal notranslate"><span class="pre">revolve()</span></code></a> to 2D sketches, as shown below:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">BuildPart</span><span class="p">()</span> <span class="k">as</span> <span class="n">my_part</span><span class="p">:</span>
+    <span class="k">with</span> <span class="n">BuildSketch</span><span class="p">()</span> <span class="k">as</span> <span class="n">part_profile</span><span class="p">:</span>
+        <span class="o">...</span>
+    <span class="n">extrude</span><span class="p">(</span><span class="n">amount</span><span class="o">=</span><span class="n">some_distance</span><span class="p">)</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<p>With this structure <code class="docutils literal notranslate"><span class="pre">part_profile</span></code> may have many objects that are combined and
+modified by operations like <a class="hxr-hoverxref hxr-tooltip reference internal" href="operations.html#operations_generic.fillet" title="operations_generic.fillet"><code class="xref py py-func docutils literal notranslate"><span class="pre">fillet()</span></code></a> before being extruded
+to a 3D shape.</p>
+</section>
+<section id="delay-chamfers-and-fillets">
+<h2>Delay Chamfers and Fillets<a class="headerlink" href="#delay-chamfers-and-fillets" title="Link to this heading"></a></h2>
+<p>Chamfers and fillets can add complexity to a design by transforming simple vertices
+or edges into arcs or non-planar faces. This can significantly increase the complexity
+of the design. To avoid unnecessary processing costs and potential errors caused by a
+needlessly complicated design, it’s recommended to perform these operations towards
+the end of the object’s design. This is especially true for 3D shapes, as it is
+sometimes necessary to fillet or chamfer in the 2D design phase. Luckily, these
+2D fillets and chamfers are less likely to fail than their 3D counterparts.</p>
+</section>
+<section id="parameterize">
+<h2>Parameterize<a class="headerlink" href="#parameterize" title="Link to this heading"></a></h2>
+<p>One of the most powerful features of build123d is the ability to design fully
+parameterized parts. While it may be faster to use a GUI CAD package for the
+initial iteration of a part, subsequent iterations can prove frustratingly
+difficult. By using variables for critical dimensions and deriving other dimensions
+from these key variables, not only can a single part be created, but a whole set
+of parts can be readily available. When inevitable change requests arise, a simple
+parameter adjustment may be all that’s required to make necessary modifications.</p>
+</section>
+<section id="use-shallow-copies">
+<h2>Use Shallow Copies<a class="headerlink" href="#use-shallow-copies" title="Link to this heading"></a></h2>
+<p>As discussed in the Assembly section, a <a class="reference internal" href="assemblies.html#shallow-copy"><span class="std std-ref">shallow copy</span></a> of parts that
+are repeated in your design can make a huge difference in performance and usability of
+your end design.  Objects like fasteners, bearings, chain links, etc. could be duplicated
+tens or even hundreds of times otherwise. Use shallow copies where possible but keep in
+mind that if one instance of the object changes all will change.</p>
+</section>
+<section id="object-selection">
+<h2>Object Selection<a class="headerlink" href="#object-selection" title="Link to this heading"></a></h2>
+<p>When selecting features in a design it’s sometimes easier to select an object from
+higher up in the topology first, then select the object from there.  For example let’s
+consider a plate with four chamfered holes like this:</p>
+<img alt="_images/plate.svg" class="align-center" src="_images/plate.svg" />
+<p>When selecting edges to be chamfered one might first select the face that these edges
+belong to then select the edges as shown here:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">build123d</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">svg_opts</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;pixel_scale&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;show_axes&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;show_hidden&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
+
+<span class="n">length</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">thickness</span> <span class="o">=</span> <span class="mf">80.0</span><span class="p">,</span> <span class="mf">60.0</span><span class="p">,</span> <span class="mf">10.0</span>
+<span class="n">hole_dia</span> <span class="o">=</span> <span class="mf">6.0</span>
+
+<span class="k">with</span> <span class="n">BuildPart</span><span class="p">()</span> <span class="k">as</span> <span class="n">plate</span><span class="p">:</span>
+    <span class="n">Box</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">thickness</span><span class="p">)</span>
+    <span class="k">with</span> <span class="n">GridLocations</span><span class="p">(</span><span class="n">length</span> <span class="o">-</span> <span class="mi">20</span><span class="p">,</span> <span class="n">width</span> <span class="o">-</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+        <span class="n">Hole</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="n">hole_dia</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">top_face</span><span class="p">:</span> <span class="n">Face</span> <span class="o">=</span> <span class="n">plate</span><span class="o">.</span><span class="n">faces</span><span class="p">()</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="n">Axis</span><span class="o">.</span><span class="n">Z</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">hole_edges</span> <span class="o">=</span> <span class="n">top_face</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="n">GeomType</span><span class="o">.</span><span class="n">CIRCLE</span><span class="p">)</span>
+    <span class="n">chamfer</span><span class="p">(</span><span class="n">hole_edges</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="build123d-cadquery-integration">
+<h2>Build123d - CadQuery Integration<a class="headerlink" href="#build123d-cadquery-integration" title="Link to this heading"></a></h2>
+<p>As both <a class="reference external" href="https://cadquery.readthedocs.io/en/latest/index.html">CadQuery</a> and <strong>build123d</strong> use
+a common OpenCascade Python wrapper (<a class="reference external" href="https://github.com/CadQuery/OCP">OCP</a>) it’s possible to
+interchange objects both from CadQuery to build123d and vice-versa by transferring the <code class="docutils literal notranslate"><span class="pre">wrapped</span></code>
+objects as follows (first from CadQuery to build123d):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">build123d</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">b3d</span>
+<span class="n">b3d_solid</span> <span class="o">=</span> <span class="n">b3d</span><span class="o">.</span><span class="n">Solid</span><span class="o">.</span><span class="n">make_box</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="o">...</span> <span class="n">some</span> <span class="n">cadquery</span> <span class="n">stuff</span> <span class="o">...</span>
+
+<span class="n">b3d_solid</span><span class="o">.</span><span class="n">wrapped</span> <span class="o">=</span> <span class="n">cq_solid</span><span class="o">.</span><span class="n">wrapped</span>
+</pre></div>
+</div>
+<p>Secondly, from build123d to CadQuery as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">build123d</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">b3d</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">cadquery</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">cq</span>
+
+<span class="k">with</span> <span class="n">b3d</span><span class="o">.</span><span class="n">BuildPart</span><span class="p">()</span> <span class="k">as</span> <span class="n">b123d_box</span><span class="p">:</span>
+    <span class="n">b3d</span><span class="o">.</span><span class="n">Box</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="n">cq_solid</span> <span class="o">=</span> <span class="n">cq</span><span class="o">.</span><span class="n">Solid</span><span class="o">.</span><span class="n">makeBox</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">cq_solid</span><span class="o">.</span><span class="n">wrapped</span> <span class="o">=</span> <span class="n">b123d_box</span><span class="o">.</span><span class="n">part</span><span class="o">.</span><span class="n">solid</span><span class="p">()</span><span class="o">.</span><span class="n">wrapped</span>
+</pre></div>
+</div>
+</section>
+<section id="self-intersection">
+<h2>Self Intersection<a class="headerlink" href="#self-intersection" title="Link to this heading"></a></h2>
+<p>Avoid creating objects that intersect themselves - even if at a single vertex - as these topologies
+will almost certainly be invalid (even if <a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Shape.is_valid" title="topology.Shape.is_valid"><code class="xref py py-meth docutils literal notranslate"><span class="pre">is_valid()</span></code></a> reports a <code class="docutils literal notranslate"><span class="pre">True</span></code> value).
+An example of where this may arise is with the thread of a screw (or any helical shape) where after
+one complete revolution the part may contact itself. One is likely be more successful if the part
+is split into multiple sections - say 180° of a helix - which are then stored in an assembly.</p>
+</section>
+<section class="clearfix" id="packing-objects-on-a-plane">
+<h2>Packing Objects on a Plane<a class="headerlink" href="#packing-objects-on-a-plane" title="Link to this heading"></a></h2>
+<p>When designing independent shapes it’s common to place each at or near
+the global origin, which can make it tricky to visualize many shapes at
+once. <a class="hxr-hoverxref hxr-tooltip reference internal" href="assemblies.html#pack.pack" title="pack.pack"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pack.pack()</span></code></a> will translate the <a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Shape" title="topology.Shape"><code class="xref py py-class docutils literal notranslate"><span class="pre">Shape</span></code></a>’s passed to it so
+that they don’t overlap, with an optional padding/spacing.  Here’s the
+result of packing a bunch of overlapping boxes (left) using some
+padding (right):</p>
+<a class="reference internal image-reference" href="_images/packed_boxes_input.svg"><img alt="_images/packed_boxes_input.svg" class="align-left" src="_images/packed_boxes_input.svg" style="width: 200px;" />
+</a>
+<img alt="_images/packed_boxes_output.svg" class="align-right" src="_images/packed_boxes_output.svg" />
+<p>By default, the original Z value of all objects packed using the <a class="hxr-hoverxref hxr-tooltip reference internal" href="assemblies.html#pack.pack" title="pack.pack"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pack.pack()</span></code></a> function is preserved.
+If you want to align all objects so that they are “placed” on the zero Z coordinate, the <a class="hxr-hoverxref hxr-tooltip reference internal" href="assemblies.html#module-pack" title="pack"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pack()</span></code></a>
+function has an <cite>align_z</cite> argument. When set to <cite>True</cite>, this will align all objects.</p>
+<p>This can be useful, for example, when preparing print setups for 3D printing, giving you full control
+over this alignment so you don’t have to leave it to the slicer.</p>
+</section>
+<section id="isnt-from-build123d-import-bad-practice">
+<span id="are-glob-imports-bad-practice"></span><h2>Isn’t <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">build123d</span> <span class="pre">import</span> <span class="pre">*</span></code> bad practice?<a class="headerlink" href="#isnt-from-build123d-import-bad-practice" title="Link to this heading"></a></h2>
+<p>Glob imports like <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">build123d</span> <span class="pre">import</span> <span class="pre">*</span></code> are generally frowned upon when writing software, and for
+good reason. They pollute the global namespace, cause confusing collisions, and are not future-proof, as
+future changes to the library being imported could collide with other names. It would be much safer to do
+something like <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">build123d</span> <span class="pre">as</span> <span class="pre">bd</span></code> and then reference every item with, for example, <code class="docutils literal notranslate"><span class="pre">bd.BuildPart()</span></code>.
+If your goal is to integrate build123d into a larger piece of software, which many people work on, or where
+long-term maintainability is a priority, using this approach is definitely a good idea! Why then, are
+glob imports so often used in build123d code and official examples?</p>
+<p>build123d is most commonly used not as a library within a larger application, but as a <a class="reference external" href="https://en.wikipedia.org/wiki/Domain-specific_language">Domain-Specific Language</a>
+which, together with something like the OCP CAD Viewer, acts as the user interface for a CAD application.
+Writing build123d often involves live coding in a REPL or typing in editors with limited space due to
+the rest of the CAD GUI taking up screen space. Scripts are usually centred around build123d usage, with
+usage of other libraries being limited enough that naming conflicts are easily avoided. In this context,
+it’s entirely reasonable to prioritise developer ergonomics over “correctness” by making build123d’s primitives
+available in the global namespace.</p>
+</section>
+<section id="why-doesn-t-buildsketch-plane-xz-work">
+<h2>Why doesn’t BuildSketch(Plane.XZ) work?<a class="headerlink" href="#why-doesn-t-buildsketch-plane-xz-work" title="Link to this heading"></a></h2>
+<p>When creating a sketch not on the default <code class="docutils literal notranslate"><span class="pre">Plane.XY</span></code> users may expect that they are drawing directly
+on the workplane / coordinate system provided.  For example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">BuildSketch</span><span class="p">(</span><span class="n">Plane</span><span class="o">.</span><span class="n">XZ</span><span class="p">)</span> <span class="k">as</span> <span class="n">vertical_sketch</span><span class="p">:</span>
+    <span class="n">Rectangle</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">with</span> <span class="n">Locations</span><span class="p">(</span><span class="n">vertices</span><span class="p">()</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="n">Axis</span><span class="o">.</span><span class="n">X</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="n">Axis</span><span class="o">.</span><span class="n">Z</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]):</span>
+        <span class="n">Circle</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="_images/vertical_sketch.png" src="_images/vertical_sketch.png" />
+<p>In this case the circle is not positioned in the top right as one would expect; in-fact, the position
+of the circle randomly switches between the bottom and top corner.</p>
+<p>This is because all sketches are created on a local <code class="docutils literal notranslate"><span class="pre">Plane.XY</span></code> independent of where they will be
+ultimately placed; therefore, the <code class="docutils literal notranslate"><span class="pre">sort_by(Axis.Z)</span></code> is sorting two points that have a Z value of
+zero as they are located on <code class="docutils literal notranslate"><span class="pre">Plane.XY</span></code> and effectively return a random point.</p>
+<p>Why does <code class="docutils literal notranslate"><span class="pre">BuildSketch</span></code> work this way? Consider an example where the user wants to work on a
+plane not aligned with any Axis, as follows (this is often done when creating a sketch on a <code class="docutils literal notranslate"><span class="pre">Face</span></code>
+of a 3D part but is simulated here by rotating a <code class="docutils literal notranslate"><span class="pre">Plane</span></code>):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">BuildSketch</span><span class="p">(</span><span class="n">Plane</span><span class="o">.</span><span class="n">YZ</span><span class="o">.</span><span class="n">rotated</span><span class="p">((</span><span class="mi">123</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">6</span><span class="p">)))</span> <span class="k">as</span> <span class="n">custom_plane</span><span class="p">:</span>
+    <span class="n">Rectangle</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="n">Align</span><span class="o">.</span><span class="n">MIN</span><span class="p">)</span>
+    <span class="k">with</span> <span class="n">Locations</span><span class="p">(</span><span class="n">vertices</span><span class="p">()</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="n">Axis</span><span class="o">.</span><span class="n">X</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="n">Axis</span><span class="o">.</span><span class="n">Y</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]):</span>
+        <span class="n">Circle</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="_images/sketch_on_custom_plane.png" src="_images/sketch_on_custom_plane.png" />
+<p>Here one can see both <code class="docutils literal notranslate"><span class="pre">sketch_local</span></code> (with the light fill on <code class="docutils literal notranslate"><span class="pre">Plane.XY</span></code>) and the <code class="docutils literal notranslate"><span class="pre">sketch</span></code>
+(with the darker fill) placed on the user provided workplane. As the selectors work off global
+coordinates, selection of the “top right” of this sketch would be quite challenging and would
+likely change if the sketch was ever moved as could happen if the 3D part changed.  For an
+example of sketching on a 3D part, see <a class="reference internal" href="build_sketch.html#sketching-on-other-planes"><span class="std std-ref">Sketching on other Planes</span></a>.</p>
+</section>
+<section id="why-is-buildline-not-working-as-expected-within-the-scope-of-buildsketch">
+<h2>Why is BuildLine not working as expected within the scope of BuildSketch?<a class="headerlink" href="#why-is-buildline-not-working-as-expected-within-the-scope-of-buildsketch" title="Link to this heading"></a></h2>
+<p>As described above, all sketching is done on a local <code class="docutils literal notranslate"><span class="pre">Plane.XY</span></code>; however, the following
+is a common issue:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">BuildSketch</span><span class="p">()</span> <span class="k">as</span> <span class="n">sketch</span><span class="p">:</span>
+    <span class="k">with</span> <span class="n">BuildLine</span><span class="p">(</span><span class="n">Plane</span><span class="o">.</span><span class="n">XZ</span><span class="p">):</span>
+        <span class="n">Polyline</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+    <span class="n">make_face</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Here <code class="docutils literal notranslate"><span class="pre">BuildLine</span></code> is within the scope of <code class="docutils literal notranslate"><span class="pre">BuildSketch</span></code>; therefore, all of the
+drawing should be done on <code class="docutils literal notranslate"><span class="pre">Plane.XY</span></code>; however, the user has specified <code class="docutils literal notranslate"><span class="pre">Plane.XZ</span></code>
+when creating the <code class="docutils literal notranslate"><span class="pre">BuildLine</span></code> instance. Although this isn’t absolutely incorrect
+it’s almost certainly not what the user intended.  Here the face created by <code class="docutils literal notranslate"><span class="pre">make_face</span></code> will
+be reoriented to <code class="docutils literal notranslate"><span class="pre">Plane.XY</span></code> as all sketching must be done on that plane. This reorienting
+of objects to <code class="docutils literal notranslate"><span class="pre">Plane.XY</span></code> allows a user to <code class="docutils literal notranslate"><span class="pre">add</span></code> content from other sources to the
+sketch without having to manually re-orient the object.</p>
+<p>Unless there is a good reason and the user understands how the <code class="docutils literal notranslate"><span class="pre">BuildLine</span></code> object will be
+reoriented, all <code class="docutils literal notranslate"><span class="pre">BuildLine</span></code> instances within the scope of <code class="docutils literal notranslate"><span class="pre">BuildSketch</span></code> should be done
+on the default <code class="docutils literal notranslate"><span class="pre">Plane.XY</span></code>.</p>
+</section>
+<section id="don-t-builders-inherit-workplane-coordinate-systems-when-nested">
+<h2>Don’t Builders inherit workplane/coordinate systems when nested<a class="headerlink" href="#don-t-builders-inherit-workplane-coordinate-systems-when-nested" title="Link to this heading"></a></h2>
+<p>Some users expect that nested Builders will inherit the workplane or coordinate system from
+their parent Builder - this is not true.  When a Builder is instantiated, a workplane is either
+provided by the user or it defaults to <code class="docutils literal notranslate"><span class="pre">Plane.XY</span></code>. Having Builders inherent coordinate systems
+from their parents could result in confusion when they are nested as well as change their
+behaviour depending on which scope they are in. Inheriting coordinate systems isn’t necessarily
+incorrect, it was considered for build123d but ultimately the simple static approach was taken.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="assemblies.html" class="btn btn-neutral float-left" title="Assemblies" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="import_export.html" class="btn btn-neutral float-right" title="Import/Export" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Gumyr.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,558 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>importers &mdash; build123d 0.9.2.dev40+gb1f0eed documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster.custom.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster.bundle.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-shadow.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-punk.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-noir.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-light.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-borderless.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/micromodal.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/sphinx_rtd_theme.css?v=3234e928" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c97902b4"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+      <script src="../_static/js/hoverxref.js"></script>
+      <script src="../_static/js/tooltipster.bundle.min.js"></script>
+      <script src="../_static/js/micromodal.min.js"></script>
+      <script src="../_static/design-tabs.js?v=f930bc37"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            build123d
+              <img src="../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../key_concepts.html">Key Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../key_concepts_builder.html">Key Concepts (builder mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../key_concepts_algebra.html">Key Concepts (algebra mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../moving_objects.html">Moving Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../OpenSCAD.html">Transitioning from OpenSCAD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introductory_examples.html">Introductory Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../selectors_operators.html">Selectors and Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operations.html">Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../builders.html">Builders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../joints.html">Joints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assemblies.html">Assemblies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tips.html">Tips, Best Practices and FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../import_export.html">Import/Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cheat_sheet.html">Cheat Sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../external.html">External Tools and Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../builder_api_reference.html">Builder Common API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../direct_api_reference.html">Direct API Reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">build123d</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Module code</a></li>
+      <li class="breadcrumb-item active">importers</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for importers</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">build123d imports</span>
+
+<span class="sd">name: importers.py</span>
+<span class="sd">by:   Gumyr</span>
+<span class="sd">date: March 1st, 2023</span>
+
+<span class="sd">desc:</span>
+<span class="sd">    This python module contains importers from multiple file formats.</span>
+
+<span class="sd">license:</span>
+
+<span class="sd">    Copyright 2022 Gumyr</span>
+
+<span class="sd">    Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span>
+<span class="sd">    you may not use this file except in compliance with the License.</span>
+<span class="sd">    You may obtain a copy of the License at</span>
+
+<span class="sd">        http://www.apache.org/licenses/LICENSE-2.0</span>
+
+<span class="sd">    Unless required by applicable law or agreed to in writing, software</span>
+<span class="sd">    distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span>
+<span class="sd">    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
+<span class="sd">    See the License for the specific language governing permissions and</span>
+<span class="sd">    limitations under the License.</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c1"># pylint has trouble with the OCP imports</span>
+<span class="c1"># pylint: disable=no-name-in-module, import-error</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">os</span><span class="w"> </span><span class="kn">import</span> <span class="n">PathLike</span><span class="p">,</span> <span class="n">fsdecode</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">unicodedata</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">degrees</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Literal</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">TextIO</span><span class="p">,</span> <span class="n">Union</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.BRep</span><span class="w"> </span><span class="kn">import</span> <span class="n">BRep_Builder</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.BRepGProp</span><span class="w"> </span><span class="kn">import</span> <span class="n">BRepGProp</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.BRepTools</span><span class="w"> </span><span class="kn">import</span> <span class="n">BRepTools</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.GProp</span><span class="w"> </span><span class="kn">import</span> <span class="n">GProp_GProps</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.Quantity</span><span class="w"> </span><span class="kn">import</span> <span class="n">Quantity_ColorRGBA</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.RWStl</span><span class="w"> </span><span class="kn">import</span> <span class="n">RWStl</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.STEPCAFControl</span><span class="w"> </span><span class="kn">import</span> <span class="n">STEPCAFControl_Reader</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.TCollection</span><span class="w"> </span><span class="kn">import</span> <span class="n">TCollection_AsciiString</span><span class="p">,</span> <span class="n">TCollection_ExtendedString</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.TDataStd</span><span class="w"> </span><span class="kn">import</span> <span class="n">TDataStd_Name</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.TDF</span><span class="w"> </span><span class="kn">import</span> <span class="n">TDF_Label</span><span class="p">,</span> <span class="n">TDF_LabelSequence</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.TDocStd</span><span class="w"> </span><span class="kn">import</span> <span class="n">TDocStd_Document</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.TopAbs</span><span class="w"> </span><span class="kn">import</span> <span class="n">TopAbs_FACE</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.TopExp</span><span class="w"> </span><span class="kn">import</span> <span class="n">TopExp_Explorer</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.TopoDS</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">TopoDS_Compound</span><span class="p">,</span>
+    <span class="n">TopoDS_Edge</span><span class="p">,</span>
+    <span class="n">TopoDS_Face</span><span class="p">,</span>
+    <span class="n">TopoDS_Shape</span><span class="p">,</span>
+    <span class="n">TopoDS_Shell</span><span class="p">,</span>
+    <span class="n">TopoDS_Solid</span><span class="p">,</span>
+    <span class="n">TopoDS_Vertex</span><span class="p">,</span>
+    <span class="n">TopoDS_Wire</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.XCAFDoc</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">XCAFDoc_ColorCurv</span><span class="p">,</span>
+    <span class="n">XCAFDoc_ColorGen</span><span class="p">,</span>
+    <span class="n">XCAFDoc_ColorSurf</span><span class="p">,</span>
+    <span class="n">XCAFDoc_DocumentTool</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ocpsvg</span><span class="w"> </span><span class="kn">import</span> <span class="n">ColorAndLabel</span><span class="p">,</span> <span class="n">import_svg_document</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">svgpathtools</span><span class="w"> </span><span class="kn">import</span> <span class="n">svg2paths</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">build123d.build_enums</span><span class="w"> </span><span class="kn">import</span> <span class="n">Align</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">build123d.geometry</span><span class="w"> </span><span class="kn">import</span> <span class="n">Color</span><span class="p">,</span> <span class="n">Location</span><span class="p">,</span> <span class="n">Vector</span><span class="p">,</span> <span class="n">to_align_offset</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">build123d.topology</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">Compound</span><span class="p">,</span>
+    <span class="n">Edge</span><span class="p">,</span>
+    <span class="n">Face</span><span class="p">,</span>
+    <span class="n">Shape</span><span class="p">,</span>
+    <span class="n">ShapeList</span><span class="p">,</span>
+    <span class="n">Shell</span><span class="p">,</span>
+    <span class="n">Solid</span><span class="p">,</span>
+    <span class="n">Vertex</span><span class="p">,</span>
+    <span class="n">Wire</span><span class="p">,</span>
+    <span class="n">downcast</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">topods_lut</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">TopoDS_Compound</span><span class="p">:</span> <span class="n">Compound</span><span class="p">,</span>
+    <span class="n">TopoDS_Edge</span><span class="p">:</span> <span class="n">Edge</span><span class="p">,</span>
+    <span class="n">TopoDS_Face</span><span class="p">:</span> <span class="n">Face</span><span class="p">,</span>
+    <span class="n">TopoDS_Shell</span><span class="p">:</span> <span class="n">Shell</span><span class="p">,</span>
+    <span class="n">TopoDS_Solid</span><span class="p">:</span> <span class="n">Solid</span><span class="p">,</span>
+    <span class="n">TopoDS_Vertex</span><span class="p">:</span> <span class="n">Vertex</span><span class="p">,</span>
+    <span class="n">TopoDS_Wire</span><span class="p">:</span> <span class="n">Wire</span><span class="p">,</span>
+<span class="p">}</span>
+
+
+<div class="viewcode-block" id="import_brep">
+<a class="viewcode-back" href="../import_export.html#importers.import_brep">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">import_brep</span><span class="p">(</span><span class="n">file_name</span><span class="p">:</span> <span class="n">PathLike</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">bytes</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Shape</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Import shape from a BREP file</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        file_name (Union[PathLike, str, bytes]): brep file</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: file not found</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Shape: build123d object</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">shape</span> <span class="o">=</span> <span class="n">TopoDS_Shape</span><span class="p">()</span>
+    <span class="n">builder</span> <span class="o">=</span> <span class="n">BRep_Builder</span><span class="p">()</span>
+
+    <span class="n">file_name_str</span> <span class="o">=</span> <span class="n">fsdecode</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
+    <span class="n">BRepTools</span><span class="o">.</span><span class="n">Read_s</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span> <span class="n">file_name_str</span><span class="p">,</span> <span class="n">builder</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">shape</span><span class="o">.</span><span class="n">IsNull</span><span class="p">():</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Could not import </span><span class="si">{</span><span class="n">file_name_str</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">Compound</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="import_step">
+<a class="viewcode-back" href="../import_export.html#importers.import_step">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">import_step</span><span class="p">(</span><span class="n">filename</span><span class="p">:</span> <span class="n">PathLike</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">bytes</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Compound</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;import_step</span>
+
+<span class="sd">    Extract shapes from a STEP file and return them as a Compound object.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        file_name (Union[PathLike, str, bytes]): file path of STEP file to import</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: can&#39;t open file</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Compound: contents of STEP file</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_name</span><span class="p">(</span><span class="n">label</span><span class="p">:</span> <span class="n">TDF_Label</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Extract name and format&quot;&quot;&quot;</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="n">std_name</span> <span class="o">=</span> <span class="n">TDataStd_Name</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">label</span><span class="o">.</span><span class="n">FindAttribute</span><span class="p">(</span><span class="n">TDataStd_Name</span><span class="o">.</span><span class="n">GetID_s</span><span class="p">(),</span> <span class="n">std_name</span><span class="p">):</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="n">TCollection_AsciiString</span><span class="p">(</span><span class="n">std_name</span><span class="o">.</span><span class="n">Get</span><span class="p">())</span><span class="o">.</span><span class="n">ToCString</span><span class="p">()</span>
+        <span class="c1"># Remove characters that cause ocp_vscode to fail</span>
+        <span class="n">clean_name</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">ch</span> <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">name</span> <span class="k">if</span> <span class="n">unicodedata</span><span class="o">.</span><span class="n">category</span><span class="p">(</span><span class="n">ch</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;C&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">clean_name</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">maketrans</span><span class="p">(</span><span class="s2">&quot; .()&quot;</span><span class="p">,</span> <span class="s2">&quot;____&quot;</span><span class="p">))</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_color</span><span class="p">(</span><span class="n">shape</span><span class="p">:</span> <span class="n">TopoDS_Shape</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Quantity_ColorRGBA</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the color - take that of the largest Face if multiple&quot;&quot;&quot;</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="nf">get_col</span><span class="p">(</span><span class="n">obj</span><span class="p">:</span> <span class="n">TopoDS_Shape</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Quantity_ColorRGBA</span><span class="p">:</span>
+            <span class="n">col</span> <span class="o">=</span> <span class="n">Quantity_ColorRGBA</span><span class="p">()</span>
+            <span class="k">if</span> <span class="p">(</span>
+                <span class="n">color_tool</span><span class="o">.</span><span class="n">GetColor</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">XCAFDoc_ColorCurv</span><span class="p">,</span> <span class="n">col</span><span class="p">)</span>
+                <span class="ow">or</span> <span class="n">color_tool</span><span class="o">.</span><span class="n">GetColor</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">XCAFDoc_ColorGen</span><span class="p">,</span> <span class="n">col</span><span class="p">)</span>
+                <span class="ow">or</span> <span class="n">color_tool</span><span class="o">.</span><span class="n">GetColor</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">XCAFDoc_ColorSurf</span><span class="p">,</span> <span class="n">col</span><span class="p">)</span>
+            <span class="p">):</span>
+                <span class="k">return</span> <span class="n">col</span>
+
+        <span class="n">shape_color</span> <span class="o">=</span> <span class="n">get_col</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span>
+
+        <span class="n">colors</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">face_explorer</span> <span class="o">=</span> <span class="n">TopExp_Explorer</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span> <span class="n">TopAbs_FACE</span><span class="p">)</span>
+        <span class="k">while</span> <span class="n">face_explorer</span><span class="o">.</span><span class="n">More</span><span class="p">():</span>
+            <span class="n">current_face</span> <span class="o">=</span> <span class="n">face_explorer</span><span class="o">.</span><span class="n">Current</span><span class="p">()</span>
+            <span class="n">properties</span> <span class="o">=</span> <span class="n">GProp_GProps</span><span class="p">()</span>
+            <span class="n">BRepGProp</span><span class="o">.</span><span class="n">SurfaceProperties_s</span><span class="p">(</span><span class="n">current_face</span><span class="p">,</span> <span class="n">properties</span><span class="p">)</span>
+            <span class="n">area</span> <span class="o">=</span> <span class="n">properties</span><span class="o">.</span><span class="n">Mass</span><span class="p">()</span>
+            <span class="n">color</span> <span class="o">=</span> <span class="n">get_col</span><span class="p">(</span><span class="n">current_face</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">color</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">colors</span><span class="p">[</span><span class="n">area</span><span class="p">]</span> <span class="o">=</span> <span class="n">color</span>
+            <span class="n">face_explorer</span><span class="o">.</span><span class="n">Next</span><span class="p">()</span>
+
+        <span class="c1"># If there are multiple colors, return the one from the largest face</span>
+        <span class="k">if</span> <span class="n">colors</span><span class="p">:</span>
+            <span class="n">shape_color</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">colors</span><span class="o">.</span><span class="n">items</span><span class="p">())[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+
+        <span class="k">return</span> <span class="n">shape_color</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">build_assembly</span><span class="p">(</span><span class="n">parent_tdf_label</span><span class="p">:</span> <span class="n">TDF_Label</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Shape</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Recursively extract object into an assembly&quot;&quot;&quot;</span>
+        <span class="n">sub_tdf_labels</span> <span class="o">=</span> <span class="n">TDF_LabelSequence</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">parent_tdf_label</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">shape_tool</span><span class="o">.</span><span class="n">GetFreeShapes</span><span class="p">(</span><span class="n">sub_tdf_labels</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">shape_tool</span><span class="o">.</span><span class="n">GetComponents_s</span><span class="p">(</span><span class="n">parent_tdf_label</span><span class="p">,</span> <span class="n">sub_tdf_labels</span><span class="p">)</span>
+
+        <span class="n">sub_shapes</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Shape</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">sub_tdf_labels</span><span class="o">.</span><span class="n">Length</span><span class="p">()):</span>
+            <span class="n">sub_tdf_label</span> <span class="o">=</span> <span class="n">sub_tdf_labels</span><span class="o">.</span><span class="n">Value</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">shape_tool</span><span class="o">.</span><span class="n">IsReference_s</span><span class="p">(</span><span class="n">sub_tdf_label</span><span class="p">):</span>
+                <span class="n">ref_tdf_label</span> <span class="o">=</span> <span class="n">TDF_Label</span><span class="p">()</span>
+                <span class="n">shape_tool</span><span class="o">.</span><span class="n">GetReferredShape_s</span><span class="p">(</span><span class="n">sub_tdf_label</span><span class="p">,</span> <span class="n">ref_tdf_label</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">ref_tdf_label</span> <span class="o">=</span> <span class="n">sub_tdf_label</span>
+
+            <span class="n">sub_topo_shape</span> <span class="o">=</span> <span class="n">downcast</span><span class="p">(</span><span class="n">shape_tool</span><span class="o">.</span><span class="n">GetShape_s</span><span class="p">(</span><span class="n">ref_tdf_label</span><span class="p">))</span>
+            <span class="k">if</span> <span class="n">shape_tool</span><span class="o">.</span><span class="n">IsAssembly_s</span><span class="p">(</span><span class="n">ref_tdf_label</span><span class="p">):</span>
+                <span class="n">sub_shape</span> <span class="o">=</span> <span class="n">Compound</span><span class="p">()</span>
+                <span class="n">sub_shape</span><span class="o">.</span><span class="n">children</span> <span class="o">=</span> <span class="n">build_assembly</span><span class="p">(</span><span class="n">ref_tdf_label</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">sub_shape</span> <span class="o">=</span> <span class="n">topods_lut</span><span class="p">[</span><span class="nb">type</span><span class="p">(</span><span class="n">sub_topo_shape</span><span class="p">)](</span><span class="n">sub_topo_shape</span><span class="p">)</span>
+
+            <span class="n">sub_shape</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">Color</span><span class="p">(</span><span class="n">get_color</span><span class="p">(</span><span class="n">sub_topo_shape</span><span class="p">))</span>
+            <span class="n">sub_shape</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="n">get_name</span><span class="p">(</span><span class="n">ref_tdf_label</span><span class="p">)</span>
+            <span class="n">sub_shape</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">Location</span><span class="p">(</span><span class="n">shape_tool</span><span class="o">.</span><span class="n">GetLocation_s</span><span class="p">(</span><span class="n">sub_tdf_label</span><span class="p">)))</span>
+
+            <span class="n">sub_shapes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sub_shape</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">sub_shapes</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+
+    <span class="n">fmt</span> <span class="o">=</span> <span class="n">TCollection_ExtendedString</span><span class="p">(</span><span class="s2">&quot;XCAF&quot;</span><span class="p">)</span>
+    <span class="n">doc</span> <span class="o">=</span> <span class="n">TDocStd_Document</span><span class="p">(</span><span class="n">fmt</span><span class="p">)</span>
+    <span class="n">shape_tool</span> <span class="o">=</span> <span class="n">XCAFDoc_DocumentTool</span><span class="o">.</span><span class="n">ShapeTool_s</span><span class="p">(</span><span class="n">doc</span><span class="o">.</span><span class="n">Main</span><span class="p">())</span>
+    <span class="n">color_tool</span> <span class="o">=</span> <span class="n">XCAFDoc_DocumentTool</span><span class="o">.</span><span class="n">ColorTool_s</span><span class="p">(</span><span class="n">doc</span><span class="o">.</span><span class="n">Main</span><span class="p">())</span>
+    <span class="n">reader</span> <span class="o">=</span> <span class="n">STEPCAFControl_Reader</span><span class="p">()</span>
+    <span class="n">reader</span><span class="o">.</span><span class="n">SetNameMode</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">reader</span><span class="o">.</span><span class="n">SetColorMode</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">reader</span><span class="o">.</span><span class="n">SetLayerMode</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">reader</span><span class="o">.</span><span class="n">ReadFile</span><span class="p">(</span><span class="n">fsdecode</span><span class="p">(</span><span class="n">filename</span><span class="p">))</span>
+    <span class="n">reader</span><span class="o">.</span><span class="n">Transfer</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
+
+    <span class="n">root</span> <span class="o">=</span> <span class="n">Compound</span><span class="p">()</span>
+    <span class="n">root</span><span class="o">.</span><span class="n">children</span> <span class="o">=</span> <span class="n">build_assembly</span><span class="p">()</span>
+    <span class="c1"># Remove empty Compound wrapper if single free object</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">children</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">root</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">root</span></div>
+
+
+
+<div class="viewcode-block" id="import_stl">
+<a class="viewcode-back" href="../import_export.html#importers.import_stl">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">import_stl</span><span class="p">(</span><span class="n">file_name</span><span class="p">:</span> <span class="n">PathLike</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">bytes</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Face</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;import_stl</span>
+
+<span class="sd">    Extract shape from an STL file and return it as a Face reference object.</span>
+
+<span class="sd">    Note that importing with this method and creating a reference is very fast while</span>
+<span class="sd">    creating an editable model (with Mesher) may take minutes depending on the size</span>
+<span class="sd">    of the STL file.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        file_name (Union[PathLike, str, bytes]): file path of STL file to import</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: Could not import file</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Face: STL model</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Read and return the shape</span>
+    <span class="n">reader</span> <span class="o">=</span> <span class="n">RWStl</span><span class="o">.</span><span class="n">ReadFile_s</span><span class="p">(</span><span class="n">fsdecode</span><span class="p">(</span><span class="n">file_name</span><span class="p">))</span>
+    <span class="n">face</span> <span class="o">=</span> <span class="n">TopoDS_Face</span><span class="p">()</span>
+    <span class="n">BRep_Builder</span><span class="p">()</span><span class="o">.</span><span class="n">MakeFace</span><span class="p">(</span><span class="n">face</span><span class="p">,</span> <span class="n">reader</span><span class="p">)</span>
+    <span class="n">stl_obj</span> <span class="o">=</span> <span class="n">Face</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">face</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">stl_obj</span></div>
+
+
+
+<div class="viewcode-block" id="import_svg_as_buildline_code">
+<a class="viewcode-back" href="../import_export.html#importers.import_svg_as_buildline_code">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">import_svg_as_buildline_code</span><span class="p">(</span>
+    <span class="n">file_name</span><span class="p">:</span> <span class="n">PathLike</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">bytes</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;translate_to_buildline_code</span>
+
+<span class="sd">    Translate the contents of the given svg file into executable build123d/BuildLine code.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        file_name (Union[PathLike, str, bytes]): svg file name</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        tuple[str, str]: code, builder instance name</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">translator</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;Line&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Line&quot;</span><span class="p">,</span> <span class="s2">&quot;start&quot;</span><span class="p">,</span> <span class="s2">&quot;end&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;CubicBezier&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Bezier&quot;</span><span class="p">,</span> <span class="s2">&quot;start&quot;</span><span class="p">,</span> <span class="s2">&quot;control1&quot;</span><span class="p">,</span> <span class="s2">&quot;control2&quot;</span><span class="p">,</span> <span class="s2">&quot;end&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;QuadraticBezier&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Bezier&quot;</span><span class="p">,</span> <span class="s2">&quot;start&quot;</span><span class="p">,</span> <span class="s2">&quot;control&quot;</span><span class="p">,</span> <span class="s2">&quot;end&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;Arc&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;EllipticalCenterArc&quot;</span><span class="p">,</span>
+            <span class="c1"># &quot;EllipticalStartArc&quot;,</span>
+            <span class="s2">&quot;start&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;end&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;radius&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;rotation&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;large_arc&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;sweep&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+    <span class="p">}</span>
+    <span class="n">file_name</span> <span class="o">=</span> <span class="n">fsdecode</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
+    <span class="n">paths_info</span> <span class="o">=</span> <span class="n">svg2paths</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
+    <span class="n">paths</span><span class="p">,</span> <span class="n">_path_attributes</span> <span class="o">=</span> <span class="n">paths_info</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">paths_info</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">builder_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">builder_name</span> <span class="o">=</span> <span class="n">builder_name</span> <span class="k">if</span> <span class="n">builder_name</span><span class="o">.</span><span class="n">isidentifier</span><span class="p">()</span> <span class="k">else</span> <span class="s2">&quot;builder&quot;</span>
+    <span class="n">buildline_code</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;from build123d import *&quot;</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s2">&quot;with BuildLine() as </span><span class="si">{</span><span class="n">builder_name</span><span class="si">}</span><span class="s2">:&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+    <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">paths</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">curve</span> <span class="ow">in</span> <span class="n">path</span><span class="p">:</span>
+            <span class="n">class_name</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="n">curve</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span>
+            <span class="k">if</span> <span class="n">class_name</span> <span class="o">==</span> <span class="s2">&quot;Arc&quot;</span><span class="p">:</span>
+                <span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="n">curve</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s2">&quot;center&quot;</span><span class="p">]]</span>
+                <span class="n">values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">curve</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s2">&quot;radius&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">real</span><span class="p">)</span>
+                <span class="n">values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">curve</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s2">&quot;radius&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">imag</span><span class="p">)</span>
+                <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span>
+                    <span class="p">[</span>
+                        <span class="n">curve</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s2">&quot;theta&quot;</span><span class="p">],</span>
+                        <span class="n">curve</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s2">&quot;theta&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">curve</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s2">&quot;delta&quot;</span><span class="p">],</span>
+                    <span class="p">]</span>
+                <span class="p">)</span>
+                <span class="n">values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
+                <span class="n">values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">end</span><span class="p">)</span>
+                <span class="n">values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">degrees</span><span class="p">(</span><span class="n">curve</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s2">&quot;phi&quot;</span><span class="p">]))</span>
+                <span class="k">if</span> <span class="n">curve</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s2">&quot;delta&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mf">0.0</span><span class="p">:</span>
+                    <span class="n">values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;AngularDirection.CLOCKWISE&quot;</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;AngularDirection.COUNTER_CLOCKWISE&quot;</span><span class="p">)</span>
+
+                <span class="c1"># EllipticalStartArc implementation</span>
+                <span class="c1"># values = [p.__dict__[parm] for parm in translator[class_name][1:3]]</span>
+                <span class="c1"># values.append(p.__dict__[&quot;radius&quot;].real)</span>
+                <span class="c1"># values.append(p.__dict__[&quot;radius&quot;].imag)</span>
+                <span class="c1"># values.extend([p.__dict__[parm] for parm in translator[class_name][4:]])</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="n">curve</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="n">parm</span><span class="p">]</span> <span class="k">for</span> <span class="n">parm</span> <span class="ow">in</span> <span class="n">translator</span><span class="p">[</span><span class="n">class_name</span><span class="p">][</span><span class="mi">1</span><span class="p">:]]</span>
+            <span class="n">values_str</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+                <span class="p">[</span>
+                    <span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{</span><span class="n">v</span><span class="o">.</span><span class="n">real</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">v</span><span class="o">.</span><span class="n">imag</span><span class="si">}</span><span class="s2">)&quot;</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="nb">complex</span><span class="p">)</span> <span class="k">else</span> <span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+                    <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">values</span>
+                <span class="p">]</span>
+            <span class="p">)</span>
+            <span class="n">buildline_code</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    </span><span class="si">{</span><span class="n">translator</span><span class="p">[</span><span class="n">class_name</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">(</span><span class="si">{</span><span class="n">values_str</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">buildline_code</span><span class="p">),</span> <span class="n">builder_name</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="import_svg">
+<a class="viewcode-back" href="../import_export.html#importers.import_svg">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">import_svg</span><span class="p">(</span>
+    <span class="n">svg_file</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span> <span class="o">|</span> <span class="n">TextIO</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">flip_y</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">align</span><span class="p">:</span> <span class="n">Align</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Align</span><span class="p">,</span> <span class="n">Align</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="n">Align</span><span class="o">.</span><span class="n">MIN</span><span class="p">,</span>
+    <span class="n">ignore_visibility</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">label_by</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;class&quot;</span><span class="p">,</span> <span class="s2">&quot;inkscape:label&quot;</span><span class="p">]</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;id&quot;</span><span class="p">,</span>
+    <span class="n">is_inkscape_label</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>  <span class="c1"># TODO remove for `1.0` release</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ShapeList</span><span class="p">[</span><span class="n">Wire</span> <span class="o">|</span> <span class="n">Face</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;import_svg</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        svg_file (Union[str, Path, TextIO]): svg file</span>
+<span class="sd">        flip_y (bool, optional): flip objects to compensate for svg orientation. Defaults to True.</span>
+<span class="sd">        align (Align | tuple[Align, Align] | None, optional): alignment of the SVG&#39;s viewbox,</span>
+<span class="sd">            if None, the viewbox&#39;s origin will be at `(0,0,0)`. Defaults to Align.MIN.</span>
+<span class="sd">        ignore_visibility (bool, optional): Defaults to False.</span>
+<span class="sd">        label_by (str, optional): XML attribute to use for imported shapes&#39; `label` property.</span>
+<span class="sd">            Defaults to &quot;id&quot;.</span>
+<span class="sd">            Use `inkscape:label` to read labels set from Inkscape&#39;s &quot;Layers and Objects&quot; panel.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: unexpected shape type</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        ShapeList[Union[Wire, Face]]: objects contained in svg</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">is_inkscape_label</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># TODO remove for `1.0` release</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;`is_inkscape_label` parameter is deprecated&quot;</span>
+        <span class="k">if</span> <span class="n">is_inkscape_label</span><span class="p">:</span>
+            <span class="n">label_by</span> <span class="o">=</span> <span class="s2">&quot;inkscape:&quot;</span> <span class="o">+</span> <span class="n">label_by</span>
+            <span class="n">msg</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;, use `label_by=</span><span class="si">{</span><span class="n">label_by</span><span class="si">!r}</span><span class="s2">` instead&quot;</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="n">shapes</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">label_by</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span>
+        <span class="sa">r</span><span class="s2">&quot;^inkscape:(.+)&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;{http://www.inkscape.org/namespaces/inkscape}\1&quot;</span><span class="p">,</span> <span class="n">label_by</span>
+    <span class="p">)</span>
+    <span class="n">imported</span> <span class="o">=</span> <span class="n">import_svg_document</span><span class="p">(</span>
+        <span class="n">svg_file</span><span class="p">,</span>
+        <span class="n">flip_y</span><span class="o">=</span><span class="n">flip_y</span><span class="p">,</span>
+        <span class="n">ignore_visibility</span><span class="o">=</span><span class="n">ignore_visibility</span><span class="p">,</span>
+        <span class="n">metadata</span><span class="o">=</span><span class="n">ColorAndLabel</span><span class="o">.</span><span class="n">Label_by</span><span class="p">(</span><span class="n">label_by</span><span class="p">),</span>
+    <span class="p">)</span>
+
+    <span class="n">doc_xy</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">(</span><span class="n">imported</span><span class="o">.</span><span class="n">viewbox</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">imported</span><span class="o">.</span><span class="n">viewbox</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">doc_wh</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">(</span><span class="n">imported</span><span class="o">.</span><span class="n">viewbox</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="n">imported</span><span class="o">.</span><span class="n">viewbox</span><span class="o">.</span><span class="n">height</span><span class="p">)</span>
+    <span class="n">offset</span> <span class="o">=</span> <span class="n">to_align_offset</span><span class="p">(</span><span class="n">doc_xy</span><span class="p">,</span> <span class="n">doc_xy</span> <span class="o">+</span> <span class="n">doc_wh</span><span class="p">,</span> <span class="n">align</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">face_or_wire</span><span class="p">,</span> <span class="n">color_and_label</span> <span class="ow">in</span> <span class="n">imported</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">face_or_wire</span><span class="p">,</span> <span class="n">TopoDS_Wire</span><span class="p">):</span>
+            <span class="n">shape</span> <span class="o">=</span> <span class="n">Wire</span><span class="p">(</span><span class="n">face_or_wire</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">face_or_wire</span><span class="p">,</span> <span class="n">TopoDS_Face</span><span class="p">):</span>
+            <span class="n">shape</span> <span class="o">=</span> <span class="n">Face</span><span class="p">(</span><span class="n">face_or_wire</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>  <span class="c1"># should not happen</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;unexpected shape type: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">face_or_wire</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">offset</span><span class="o">.</span><span class="n">X</span> <span class="o">!=</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">offset</span><span class="o">.</span><span class="n">Y</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>  <span class="c1"># avoid copying if we don&#39;t need to</span>
+            <span class="n">shape</span> <span class="o">=</span> <span class="n">shape</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="n">offset</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">shape</span><span class="o">.</span><span class="n">wrapped</span><span class="p">:</span>
+            <span class="n">shape</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">Color</span><span class="p">(</span><span class="o">*</span><span class="n">color_and_label</span><span class="o">.</span><span class="n">color_for</span><span class="p">(</span><span class="n">shape</span><span class="o">.</span><span class="n">wrapped</span><span class="p">))</span>
+        <span class="n">shape</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="n">color_and_label</span><span class="o">.</span><span class="n">label</span>
+        <span class="n">shapes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">ShapeList</span><span class="p">(</span><span class="n">shapes</span><span class="p">)</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Gumyr.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

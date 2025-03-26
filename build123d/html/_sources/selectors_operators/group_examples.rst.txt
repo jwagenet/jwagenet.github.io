@@ -1,0 +1,85 @@
+#################
+Group Examples
+#################
+
+.. _group_axis:
+
+Axis and Length
+==================
+
+This heatsink component could use fillets on the ends of the fins on the long ends. One
+way to accomplish this might be by filtering by length, sorting by axis, and slicing the
+result knowing how many edges to expect.
+
+.. dropdown:: Setup
+
+    .. literalinclude:: examples/group_axis.py
+        :language: python
+        :lines: 4, 9-17
+
+.. image:: ../assets/selectors_operators/group_axis_without.png
+    :align: center
+
+However, ``group_by`` can be used to first group all the edges by z-axis position and then
+group again by length. In both cases, the last group can be used to select the desired
+edges.
+
+.. literalinclude:: examples/group_axis.py
+    :language: python
+    :lines: 21-22
+
+.. image:: ../assets/selectors_operators/group_axis_with.png
+    :align: center
+
+.. _group_properties_with_keys:
+
+Properties with Keys
+====================
+
+Groups are most selected by list slice, often smallest ``[0]`` or largest ``[-1]``,
+but they can also be selected by key with the ``group`` method if the keys are known.
+Beginning with an incomplete bearing block we are looking to add fillets to the ribs
+and corners. We know the edge lengths so the edges can be grouped by ``Edge.Length`` and
+then the desired groups are selected with the ``group`` method using the lengths as keys.
+
+.. dropdown:: Setup
+
+    .. literalinclude:: examples/group_properties_with_keys.py
+        :language: python
+        :lines: 4, 9-26
+
+.. literalinclude:: examples/group_properties_with_keys.py
+    :language: python
+    :lines: 30, 31
+
+.. image:: ../assets/selectors_operators/group_length_key.png
+    :align: center
+
+Next up is adding alignment pin and counterbore holes after the fillets to make sure
+screw heads sit flush where they overlap the fillet. Once that is done, its time to
+finalize the tight tolerance bearing and pin holes with chamfers to make installation
+easier. We can filter by ``GeomType.CIRCLE`` and group by ``Edge.radius`` to group the
+circular edges. Again, the radii are known, so we can get those groups directly and then
+further specify only the edges the bearings and pins are installed from.
+
+.. dropdown:: Adding holes
+
+    .. literalinclude:: examples/group_properties_with_keys.py
+        :language: python
+        :lines: 35-43
+
+.. literalinclude:: examples/group_properties_with_keys.py
+    :language: python
+    :lines: 47-50
+
+.. image:: ../assets/selectors_operators/group_radius_key.png
+    :align: center
+
+It's worth noting ``group_by`` is not the only way to capture edges with a known property
+value! ``filter_by`` with a lambda expression can be used as well:
+
+.. code-block:: python
+
+    radius_groups = part.edges().filter_by(GeomType.CIRCLE)
+    bearing_edges = radius_groups.filter_by(lambda e: e.radius == 8)
+    pin_edges = radius_groups.filter_by(lambda e: e.radius == 1.5)

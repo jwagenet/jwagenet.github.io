@@ -1,0 +1,341 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Transitioning from OpenSCAD &mdash; build123d 0.9.2.dev40+gb1f0eed documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster.custom.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster.bundle.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-shadow.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-punk.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-noir.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-light.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-borderless.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/micromodal.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/sphinx_rtd_theme.css?v=3234e928" />
+      <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=c97902b4"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=f281be69"></script>
+      <script src="_static/js/hoverxref.js"></script>
+      <script src="_static/js/tooltipster.bundle.min.js"></script>
+      <script src="_static/js/micromodal.min.js"></script>
+      <script src="_static/design-tabs.js?v=f930bc37"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Introductory Examples" href="introductory_examples.html" />
+    <link rel="prev" title="Moving Objects" href="moving_objects.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            build123d
+              <img src="_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts.html">Key Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts_builder.html">Key Concepts (builder mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts_algebra.html">Key Concepts (algebra mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="moving_objects.html">Moving Objects</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Transitioning from OpenSCAD</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#why-transition-to-build123d">Why Transition to build123d?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#moving-beyond-constructive-solid-geometry-csg">Moving Beyond Constructive Solid Geometry (CSG)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#why-transition-away-from-csg">Why Transition Away from CSG?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#using-a-more-traditional-cad-design-workflow">Using a More Traditional CAD Design Workflow</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#refining-the-model">Refining the Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-comparison">Example Comparison</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#tips-for-transitioning">Tips for Transitioning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#conclusion">Conclusion</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="introductory_examples.html">Introductory Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="selectors_operators.html">Selectors and Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operations.html">Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="builders.html">Builders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="joints.html">Joints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assemblies.html">Assemblies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tips.html">Tips, Best Practices and FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="import_export.html">Import/Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cheat_sheet.html">Cheat Sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="external.html">External Tools and Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="builder_api_reference.html">Builder Common API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="direct_api_reference.html">Direct API Reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">build123d</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Transitioning from OpenSCAD</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/OpenSCAD.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="transitioning-from-openscad">
+<h1>Transitioning from OpenSCAD<a class="headerlink" href="#transitioning-from-openscad" title="Link to this heading"></a></h1>
+<p>Welcome to build123d! If you’re familiar with OpenSCAD, you’ll notice key differences in
+how models are constructed. This guide is designed to help you adapt your design approach
+and understand the fundamental differences in modeling philosophies. While OpenSCAD relies
+heavily on Constructive Solid Geometry (CSG) to combine primitive 3D shapes like cubes and
+spheres, build123d encourages a more flexible and efficient workflow based on building
+lower-dimensional objects.</p>
+<section id="why-transition-to-build123d">
+<h2>Why Transition to build123d?<a class="headerlink" href="#why-transition-to-build123d" title="Link to this heading"></a></h2>
+<p>Transitioning to build123d allows you to harness a modern and efficient approach to 3D modeling.
+By starting with lower-dimensional objects and leveraging powerful transformation tools, you can
+create precise, complex designs with ease. This workflow emphasizes modularity and maintainability,
+enabling quick modifications and reducing computational complexity.</p>
+</section>
+<section id="moving-beyond-constructive-solid-geometry-csg">
+<h2>Moving Beyond Constructive Solid Geometry (CSG)<a class="headerlink" href="#moving-beyond-constructive-solid-geometry-csg" title="Link to this heading"></a></h2>
+<p>OpenSCAD’s modeling paradigm heavily relies on Constructive Solid Geometry (CSG) to build
+models by combining and subtracting 3D solids. While build123d supports similar operations,
+its design philosophy encourages a fundamentally different, often more efficient approach:
+starting with lower-dimensional entities like faces and edges and then transforming them
+into solids.</p>
+<section id="why-transition-away-from-csg">
+<h3>Why Transition Away from CSG?<a class="headerlink" href="#why-transition-away-from-csg" title="Link to this heading"></a></h3>
+<p>CSG is a powerful method for creating 3D models, but it has limitations when dealing with
+complex designs. build123d’s approach offers several advantages:</p>
+<ul class="simple">
+<li><p><strong>Simplified Complexity Management</strong>:
+Working with 2D profiles and faces instead of directly manipulating 3D solids simplifies
+your workflow. In large models, the number of operations on solids can grow exponentially,
+making it difficult to manage and debug. Building with 2D profiles helps keep designs
+modular and organized.</p></li>
+<li><p><strong>Improved Robustness</strong>:
+Operations on 2D profiles are inherently less computationally intensive and
+less error-prone than equivalent operations on 3D solids. This robustness ensures smoother
+workflows and reduces the likelihood of failing operations in complex models.</p></li>
+<li><p><strong>Enhanced Efficiency</strong>:
+Constructing models from 2D profiles using operations like <strong>extruding</strong>, <strong>lofting</strong>,
+<strong>sweeping</strong>, or <strong>revolving</strong> is computationally faster. These methods also provide
+greater design flexibility, enabling you to create intricate forms with ease.</p></li>
+<li><p><strong>Better Precision and Control</strong>:
+Starting with 2D profiles allows for more precise geometric control. Constraints, dimensions,
+and relationships between entities can be established more effectively in 2D, ensuring a solid
+foundation for your 3D design.</p></li>
+</ul>
+</section>
+</section>
+<section id="using-a-more-traditional-cad-design-workflow">
+<h2>Using a More Traditional CAD Design Workflow<a class="headerlink" href="#using-a-more-traditional-cad-design-workflow" title="Link to this heading"></a></h2>
+<p>Most industry-standard CAD packages recommend starting with a sketch (a 2D object) and
+transforming it into a 3D model—a design philosophy that is central to build123d.</p>
+<p>In build123d, the design process typically begins with defining the outline of an object.
+This might involve creating a complex 1D object using <strong>BuildLine</strong>, which provides tools
+for constructing intricate wireframe geometries. The next step involves converting these
+1D objects into 2D sketches using <strong>BuildSketch</strong>, which offers a wide range of 2D primitives
+and advanced capabilities, such as:</p>
+<ul class="simple">
+<li><p><strong>make_face</strong>: Converts a 1D <strong>BuildLine</strong> object into a planar 2D face.</p></li>
+<li><p><strong>make_hull</strong>: Generates a convex hull from a 1D <strong>BuildLine</strong> object.</p></li>
+</ul>
+<p>Once a 2D profile is created, it can be transformed into 3D objects in a <strong>BuildPart</strong> context
+using operations such as:</p>
+<ul class="simple">
+<li><p><strong>Extrusion</strong>: Extends a 2D profile along a straight path to create a 3D shape.</p></li>
+<li><p><strong>Revolution</strong>: Rotates a 2D profile around an axis to form a symmetrical 3D object.</p></li>
+<li><p><strong>Lofting</strong>: Connects multiple 2D profiles along a path to create smooth transitions
+between shapes.</p></li>
+<li><p><strong>Sweeping</strong>: Moves a 2D profile along a defined path to create a 3D form.</p></li>
+</ul>
+<section id="refining-the-model">
+<h3>Refining the Model<a class="headerlink" href="#refining-the-model" title="Link to this heading"></a></h3>
+<p>After creating the initial 3D shape, you can refine the model by adding details or making
+modifications using build123d’s advanced features, such as:</p>
+<ul class="simple">
+<li><p><strong>Fillets and Chamfers</strong>: Smooth or bevel edges to enhance the design.</p></li>
+<li><p><strong>Boolean Operations</strong>: Combine, subtract, or intersect 3D shapes to achieve the desired
+geometry.</p></li>
+</ul>
+</section>
+<section id="example-comparison">
+<h3>Example Comparison<a class="headerlink" href="#example-comparison" title="Link to this heading"></a></h3>
+<p>To illustrate the advantages of this approach, compare a simple model in OpenSCAD and
+build123d of a piece of angle iron:</p>
+<p><strong>OpenSCAD Approach</strong></p>
+<div class="highlight-openscad notranslate"><div class="highlight"><pre><span></span><span class="o">$fn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">100</span><span class="p">;</span><span class="w"> </span><span class="c1">// Increase the resolution for smooth fillets</span>
+
+<span class="c1">// Dimensions</span>
+<span class="n">length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">100</span><span class="p">;</span><span class="w">  </span><span class="c1">// 10 cm long</span>
+<span class="n">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">30</span><span class="p">;</span><span class="w">    </span><span class="c1">// 3 cm wide</span>
+<span class="n">thickness</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">4</span><span class="p">;</span><span class="w"> </span><span class="c1">// 4 mm thick</span>
+<span class="n">fillet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">5</span><span class="p">;</span><span class="w">    </span><span class="c1">// 5 mm fillet radius</span>
+<span class="n">delta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.001</span><span class="p">;</span><span class="w"> </span><span class="c1">// a small number</span>
+
+<span class="c1">// Create the angle iron</span>
+<span class="nb">difference</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Outer shape</span>
+<span class="w">    </span><span class="nb">cube</span><span class="p">([</span><span class="n">width</span><span class="p">,</span><span class="w"> </span><span class="n">length</span><span class="p">,</span><span class="w"> </span><span class="n">width</span><span class="p">],</span><span class="w"> </span><span class="n">center</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="l">false</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// Inner shape</span>
+<span class="w">    </span><span class="nb">union</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nb">translate</span><span class="p">([</span><span class="n">thickness</span><span class="o">+</span><span class="n">fillet</span><span class="p">,</span><span class="o">-</span><span class="n">delta</span><span class="p">,</span><span class="n">thickness</span><span class="o">+</span><span class="n">fillet</span><span class="p">])</span>
+<span class="w">            </span><span class="nb">rotate</span><span class="p">([</span><span class="o">-</span><span class="m">90</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">])</span>
+<span class="w">                </span><span class="nb">cylinder</span><span class="p">(</span><span class="n">length</span><span class="o">+</span><span class="m">2</span><span class="o">*</span><span class="n">delta</span><span class="p">,</span><span class="w"> </span><span class="n">fillet</span><span class="p">,</span><span class="n">fillet</span><span class="p">);</span>
+<span class="w">        </span><span class="nb">translate</span><span class="p">([</span><span class="n">thickness</span><span class="p">,</span><span class="o">-</span><span class="n">delta</span><span class="p">,</span><span class="n">thickness</span><span class="o">+</span><span class="n">fillet</span><span class="p">])</span>
+<span class="w">            </span><span class="nb">cube</span><span class="p">([</span><span class="n">width</span><span class="o">-</span><span class="n">thickness</span><span class="p">,</span><span class="n">length</span><span class="o">+</span><span class="m">2</span><span class="o">*</span><span class="n">delta</span><span class="p">,</span><span class="n">width</span><span class="o">-</span><span class="n">fillet</span><span class="p">],</span><span class="n">center</span><span class="o">=</span><span class="l">false</span><span class="p">);</span>
+<span class="w">        </span><span class="nb">translate</span><span class="p">([</span><span class="n">thickness</span><span class="o">+</span><span class="n">fillet</span><span class="p">,</span><span class="o">-</span><span class="n">delta</span><span class="p">,</span><span class="n">thickness</span><span class="p">])</span>
+<span class="w">            </span><span class="nb">cube</span><span class="p">([</span><span class="n">width</span><span class="o">-</span><span class="n">fillet</span><span class="p">,</span><span class="n">length</span><span class="o">+</span><span class="m">2</span><span class="o">*</span><span class="n">delta</span><span class="p">,</span><span class="n">width</span><span class="o">-</span><span class="n">thickness</span><span class="p">],</span><span class="n">center</span><span class="o">=</span><span class="l">false</span><span class="p">);</span>
+
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>build123d Approach</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Builder mode</span>
+<span class="k">with</span> <span class="n">BuildPart</span><span class="p">()</span> <span class="k">as</span> <span class="n">angle_iron</span><span class="p">:</span>
+    <span class="k">with</span> <span class="n">BuildSketch</span><span class="p">()</span> <span class="k">as</span> <span class="n">profile</span><span class="p">:</span>
+        <span class="n">Rectangle</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">CM</span><span class="p">,</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">MM</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="n">Align</span><span class="o">.</span><span class="n">MIN</span><span class="p">)</span>
+        <span class="n">Rectangle</span><span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">MM</span><span class="p">,</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">CM</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="n">Align</span><span class="o">.</span><span class="n">MIN</span><span class="p">)</span>
+    <span class="n">extrude</span><span class="p">(</span><span class="n">amount</span><span class="o">=</span><span class="mi">10</span> <span class="o">*</span> <span class="n">CM</span><span class="p">)</span>
+    <span class="n">fillet</span><span class="p">(</span><span class="n">angle_iron</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="k">lambda</span> <span class="n">e</span><span class="p">:</span> <span class="n">e</span><span class="o">.</span><span class="n">is_interior</span><span class="p">),</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">MM</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Algebra mode</span>
+<span class="n">profile</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">CM</span><span class="p">,</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">MM</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="n">Align</span><span class="o">.</span><span class="n">MIN</span><span class="p">)</span>
+<span class="n">profile</span> <span class="o">+=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">MM</span><span class="p">,</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">CM</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="n">Align</span><span class="o">.</span><span class="n">MIN</span><span class="p">)</span>
+<span class="n">angle_iron</span> <span class="o">=</span> <span class="n">extrude</span><span class="p">(</span><span class="n">profile</span><span class="p">,</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">CM</span><span class="p">)</span>
+<span class="n">angle_iron</span> <span class="o">=</span> <span class="n">fillet</span><span class="p">(</span><span class="n">angle_iron</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="k">lambda</span> <span class="n">e</span><span class="p">:</span> <span class="n">e</span><span class="o">.</span><span class="n">is_interior</span><span class="p">),</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">MM</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="_images/AngleIron.png" src="_images/AngleIron.png" />
+<p>OpenSCAD and build123d offer distinct paradigms for creating 3D models, as demonstrated
+by the angle iron example. OpenSCAD relies on Constructive Solid Geometry (CSG) operations,
+combining and subtracting 3D shapes like cubes and cylinders. Fillets are approximated by
+manually adding high-resolution cylinders, making adjustments cumbersome and less precise.
+This static approach can handle simple models but becomes challenging for complex or iterative designs.</p>
+<p>In contrast, build123d emphasizes a profile-driven workflow. It starts with a 2D sketch,
+defining the geometry’s outline, which is then extruded or otherwise transformed into a
+3D model. Features like fillets are applied dynamically by querying topological elements,
+such as edges, using intuitive filtering methods. This approach ensures precision and
+flexibility, making changes straightforward without the need for manual repositioning or realignment.</p>
+<p>The build123d methodology is computationally efficient, leveraging mathematical precision
+for features like fillets. By separating the design into manageable steps—sketching, extruding,
+and refining—it aligns with traditional CAD practices and enhances readability, modularity,
+and maintainability. Unlike OpenSCAD, build123d’s dynamic querying of topological features
+allows for easy updates and adjustments, making it better suited for modern, complex, and
+iterative design workflows.</p>
+<p>In summary, build123d’s sketch-based paradigm and topological querying capabilities provide
+superior precision, flexibility, and efficiency compared to OpenSCAD’s static, CSG-centric
+approach, making it a better choice for robust and adaptable CAD modeling.</p>
+</section>
+</section>
+<section id="tips-for-transitioning">
+<h2>Tips for Transitioning<a class="headerlink" href="#tips-for-transitioning" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Think in Lower Dimensions</strong>: Begin with 1D curves or 2D sketches as the foundation
+and progressively build upwards into 3D shapes.</p></li>
+<li><p><strong>Leverage Topological References</strong>: Use build123d’s powerful selector system to
+reference features of existing objects for creating new ones. For example, apply
+inside or outside fillets and chamfers to vertices and edges of an existing part
+with precision.</p></li>
+<li><p><strong>Operational Equivalency and Beyond</strong>: Build123d provides equivalents to almost all
+features available in OpenSCAD, with the exception of the 3D <strong>minkowski</strong> operation.
+However, a 2D equivalent, <strong>make_hull</strong>, is available in build123d. Beyond operational
+equivalency, build123d offers a wealth of additional functionality, including advanced
+features like topological queries, dynamic filtering, and robust tools for creating complex
+geometries. By exploring build123d’s extensive operations, you can unlock new possibilities
+and take your designs far beyond the capabilities of OpenSCAD.</p></li>
+<li><p><strong>Explore the Documentation</strong>: Dive into build123d’s comprehensive API documentation
+to unlock its full potential and discover advanced features.</p></li>
+</ul>
+<p>By shifting your design mindset from solid-based CSG to a profile-driven approach, you
+can fully harness build123d’s capabilities to create precise, efficient, and complex models.
+Welcome aboard, and happy designing!</p>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading"></a></h2>
+<p>While OpenSCAD and build123d share the goal of empowering users to create parametric 3D
+models, their approaches differ significantly. Embracing build123d’s workflow of building
+with lower-dimensional objects and applying extrusion, lofting, sweeping, or revolution
+will unlock its full potential and lead to better design outcomes.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="moving_objects.html" class="btn btn-neutral float-left" title="Moving Objects" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="introductory_examples.html" class="btn btn-neutral float-right" title="Introductory Examples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Gumyr.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

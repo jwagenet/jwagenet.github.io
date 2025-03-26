@@ -1,0 +1,298 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>External Tools and Libraries &mdash; build123d 0.9.2.dev40+gb1f0eed documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster.custom.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster.bundle.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-shadow.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-punk.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-noir.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-light.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-borderless.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/micromodal.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/sphinx_rtd_theme.css?v=3234e928" />
+      <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=c97902b4"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=f281be69"></script>
+      <script src="_static/js/hoverxref.js"></script>
+      <script src="_static/js/tooltipster.bundle.min.js"></script>
+      <script src="_static/js/micromodal.min.js"></script>
+      <script src="_static/design-tabs.js?v=f930bc37"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Builder Common API Reference" href="builder_api_reference.html" />
+    <link rel="prev" title="Cheat Sheet" href="cheat_sheet.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            build123d
+              <img src="_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts.html">Key Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts_builder.html">Key Concepts (builder mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts_algebra.html">Key Concepts (algebra mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="moving_objects.html">Moving Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OpenSCAD.html">Transitioning from OpenSCAD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introductory_examples.html">Introductory Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="selectors_operators.html">Selectors and Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operations.html">Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="builders.html">Builders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="joints.html">Joints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assemblies.html">Assemblies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tips.html">Tips, Best Practices and FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="import_export.html">Import/Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cheat_sheet.html">Cheat Sheet</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">External Tools and Libraries</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#editors-viewers">Editors &amp; Viewers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ocp-vscode">ocp-vscode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cq-editor-fork">cq-editor fork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#yet-another-cad-viewer">yet-another-cad-viewer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#partcad-vs-code-extension">PartCAD VS Code extension</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#part-libraries">Part Libraries</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#bd-warehouse">bd_warehouse</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#superellipses-superellipsoids">Superellipses &amp; Superellipsoids</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#public-partcad-repository">Public PartCAD repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gggears-generator">gggears generator</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#tools">Tools</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#blendquery">blendquery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nething">nething</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ocp-freecad-cam">ocp-freecad-cam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#partcad">PartCAD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dl4to4ocp">dl4to4ocp</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="builder_api_reference.html">Builder Common API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="direct_api_reference.html">Direct API Reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">build123d</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">External Tools and Libraries</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/external.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="external-tools-and-libraries">
+<span id="external"></span><h1>External Tools and Libraries<a class="headerlink" href="#external-tools-and-libraries" title="Link to this heading"></a></h1>
+<p>The following sections describe tools and libraries external to build123d
+that extend its functionality.</p>
+<section id="editors-viewers">
+<h2>Editors &amp; Viewers<a class="headerlink" href="#editors-viewers" title="Link to this heading"></a></h2>
+<section id="ocp-vscode">
+<h3>ocp-vscode<a class="headerlink" href="#ocp-vscode" title="Link to this heading"></a></h3>
+<p>A viewer for OCP based Code-CAD (CadQuery, build123d) integrated into
+VS Code.</p>
+<p>See: <a class="reference external" href="https://github.com/bernhard-42/vscode-ocp-cad-viewer">ocp-vscode</a>
+(formerly known as cq_vscode)</p>
+<p>Watch Jern create three build123d designs in realtime with Visual
+Studio Code and the ocp-vscode viewer extension in a timed event from the TooTallToby 2024 Spring Open Tournament:
+<a class="reference external" href="https://www.youtube.com/watch?v=UhUmMInlJic">build123d entry video</a></p>
+</section>
+<section id="cq-editor-fork">
+<h3>cq-editor fork<a class="headerlink" href="#cq-editor-fork" title="Link to this heading"></a></h3>
+<p>GUI editor based on PyQT. This fork has changes from jdegenstein to allow easier use with build123d.</p>
+<p>See: <a class="reference external" href="https://github.com/jdegenstein/jmwright-CQ-Editor">jdegenstein’s fork of cq-editor</a></p>
+</section>
+<section id="yet-another-cad-viewer">
+<h3>yet-another-cad-viewer<a class="headerlink" href="#yet-another-cad-viewer" title="Link to this heading"></a></h3>
+<p>A CAD viewer capable of displaying OCP models (CadQuery/Build123d) in a
+web browser. Mainly intended for deployment of finished models as a static
+website. It also works for developing models with hot reloading, though
+this feature may not be as mature as in ocp-vscode.</p>
+<p>See: <a class="reference external" href="https://github.com/yeicor-3d/yet-another-cad-viewer">yet-another-cad-viewer</a></p>
+</section>
+<section id="partcad-vs-code-extension">
+<h3>PartCAD VS Code extension<a class="headerlink" href="#partcad-vs-code-extension" title="Link to this heading"></a></h3>
+<p>A wrapper around <code class="docutils literal notranslate"><span class="pre">ocp-vscode</span></code> (see above) which requires build123d scripts to be
+packaged using <code class="docutils literal notranslate"><span class="pre">PartCAD</span></code> (see below). While it requires the overhead of maintaining
+the package, it provides some convenience features (such as UI controls to export models)
+as well as functional features (such as UI controls to pass parameters into build123d scripts
+and AI-based generative design tools).</p>
+<p>It’s also the most convenient tool to create new packages and parts. More PDM and PLM features are expected to arrive soon.</p>
+</section>
+</section>
+<section id="part-libraries">
+<h2>Part Libraries<a class="headerlink" href="#part-libraries" title="Link to this heading"></a></h2>
+<section id="bd-warehouse">
+<h3>bd_warehouse<a class="headerlink" href="#bd-warehouse" title="Link to this heading"></a></h3>
+<p>On-demand generation of parametric parts that seamlessly integrate into
+build123d projects.</p>
+<p>Parts available include:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>fastener - Nuts, Screws, Washers and custom holes</p></li>
+<li><p>flange - Standardized parametric flanges</p></li>
+<li><p>pipe - Standardized parametric pipes</p></li>
+<li><p>thread - Parametric helical threads (Iso, Acme, Plastic, etc.)</p></li>
+</ul>
+</div></blockquote>
+<p>See: <a class="reference external" href="https://bd-warehouse.readthedocs.io/en/latest/index.html">bd_warehouse</a></p>
+</section>
+<section id="superellipses-superellipsoids">
+<h3>Superellipses &amp; Superellipsoids<a class="headerlink" href="#superellipses-superellipsoids" title="Link to this heading"></a></h3>
+<p>Superellipses are a more sophisticated alternative to rounded
+rectangles, with smoothly changing curvature. They are flexible
+shapes that can be adjusted by changing the “exponent” to get a
+result that varies between rectangular and elliptical, or from
+square, through squircle, to circle, and beyond…</p>
+<p>Superellipses can be found:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>in typefaces such as Melior, Eurostyle, and Computer Modern</p></li>
+<li><p>as the shape of airliner windows, tables, plates</p></li>
+<li><p>clipping the outline of iOS app icons</p></li>
+</ul>
+</div></blockquote>
+<p>They were named and popularized in the 1950s-1960s by the Danish
+mathematician and poet Piet Hein, who used them in the winning
+design for the Sergels Torg roundabout in Stockholm.</p>
+<p>See: <a class="reference external" href="https://github.com/fanf2/kbd/blob/model-b/keybird42/superellipse.py">Superellipses &amp; Superellipsoids</a></p>
+</section>
+<section id="public-partcad-repository">
+<h3>Public PartCAD repository<a class="headerlink" href="#public-partcad-repository" title="Link to this heading"></a></h3>
+<p>See <a class="reference external" href="https://partcad.org/repository">partcad.org</a> for all the models packaged and published
+using <code class="docutils literal notranslate"><span class="pre">PartCAD</span></code> (see below). This repository contains individual parts,
+as well as large assemblies created using those parts. See
+<a class="reference external" href="https://partcad.org/repository/package/robotics/multimodal/openvmp/robots/don1">the OpenVMP robot</a>
+as an example of an assembly</p>
+</section>
+<section id="gggears-generator">
+<h3>gggears generator<a class="headerlink" href="#gggears-generator" title="Link to this heading"></a></h3>
+<p>A gear generation framework that allows easy creation of a wide range of gears and drives.</p>
+<p>See <a class="reference external" href="https://github.com/GarryBGoode/gggears">gggears</a></p>
+</section>
+</section>
+<section id="tools">
+<h2>Tools<a class="headerlink" href="#tools" title="Link to this heading"></a></h2>
+<section id="blendquery">
+<h3>blendquery<a class="headerlink" href="#blendquery" title="Link to this heading"></a></h3>
+<p>CadQuery and build123d integration for Blender.</p>
+<p>See: <a class="reference external" href="https://github.com/uki-dev/blendquery">blendquery</a></p>
+</section>
+<section id="nething">
+<h3>nething<a class="headerlink" href="#nething" title="Link to this heading"></a></h3>
+<p>3D generative AI for CAD modeling. Now everyone is an engineer. Make your ideas real.</p>
+<p>See: <a class="reference external" href="https://nething.xyz/">nething</a></p>
+<p>Listen to the following podcast which discusses <strong>nething</strong> in detail:
+<a class="reference external" href="https://pod.link/wevolver/episode/74b11c1ff2bfc977adc96e5c7b4cd162">The Next Byte Podcast</a></p>
+</section>
+<section id="ocp-freecad-cam">
+<h3>ocp-freecad-cam<a class="headerlink" href="#ocp-freecad-cam" title="Link to this heading"></a></h3>
+<p>CAM for CadQuery and Build123d by leveraging FreeCAD library. Visualizes in CQ-Editor
+and ocp-cad-viewer. Spiritual successor of <a class="reference external" href="https://github.com/voneiden/cq-cam">cq-cam</a></p>
+<p>See: <a class="reference external" href="https://github.com/voneiden/ocp-freecad-cam">ocp-freecad-cam</a></p>
+</section>
+<section id="partcad">
+<h3>PartCAD<a class="headerlink" href="#partcad" title="Link to this heading"></a></h3>
+<p>A package manager for CAD models. Build123d is the most supported Code-CAD framework,
+but CadQuery and OpenSCAD are also supported. It can be used by build123d designs
+<a class="reference external" href="https://partcad.readthedocs.io/en/latest/use_cases.html#python-build123d">to import parts</a>
+from PartCAD repositories, and to
+<a class="reference external" href="https://partcad.readthedocs.io/en/latest/use_cases.html#publish-packages">publish build123d designs</a>
+to be consumed by others.</p>
+</section>
+<section id="dl4to4ocp">
+<h3>dl4to4ocp<a class="headerlink" href="#dl4to4ocp" title="Link to this heading"></a></h3>
+<p>Library that helps perform <a class="reference external" href="https://en.wikipedia.org/wiki/Topology_optimization">topology optimization</a> on
+your <a class="reference external" href="https://github.com/CadQuery/OCP">OCP</a>-based CAD
+models (<a class="reference external" href="https://github.com/CadQuery/cadquery">CadQuery</a>/<a class="reference external" href="https://github.com/gumyr/build123d">Build123d</a>/…) using
+the <a class="reference external" href="https://github.com/dl4to/dl4to">dl4to</a> library.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="cheat_sheet.html" class="btn btn-neutral float-left" title="Cheat Sheet" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="builder_api_reference.html" class="btn btn-neutral float-right" title="Builder Common API Reference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Gumyr.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

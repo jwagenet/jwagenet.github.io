@@ -1,0 +1,107 @@
+################
+Sort Examples
+################
+
+.. _sort_sortby:
+
+SortBy
+=============
+
+:class:`~build_enums.SortBy` enums are shape property shorthands which work across
+``Shape`` multiple object types. ``SortBy`` is a criteria for both ``sort_by`` and
+``group_by``.
+
+* ``SortBy.LENGTH`` works with ``Edge``, ``Wire``
+* ``SortBy.AREA`` works with ``Face``, ``Solid``
+* ``SortBy.VOLUME`` works with ``Solid``
+* ``SortBy.RADIUS`` works with ``Edge``, ``Face`` with :class:`~build_enums.GeomType` ``CIRCLE``, ``CYLINDER``, ``SPHERE``
+* ``SortBy.DISTANCE`` works ``Vertex``, ``Edge``, ``Wire``, ``Face``, ``Solid``
+
+``SortBy`` is often interchangeable with the specific shape property or can be used with
+``group_by`` as an alternative.
+
+.. dropdown:: Setup
+
+    .. literalinclude:: examples/sort_sortby.py
+        :language: python
+        :lines: 3, 8-13
+
+.. literalinclude:: examples/sort_sortby.py
+    :language: python
+    :lines: 19-22
+
+.. image:: ../assets/selectors_operators/sort_sortby_length.png
+    :align: center
+
+.. literalinclude:: examples/sort_sortby.py
+    :language: python
+    :lines: 24-27
+
+.. image:: ../assets/selectors_operators/sort_sortby_distance.png
+    :align: center
+
+.. _sort_along_wire:
+
+Along Wire
+=============
+
+Vertices selected from and edge or wire might have a useful ordering when created from
+a single object, but when created from multiple objects the ordering not useful. Here,
+when applying incrementing fillet radii to a list of vertices from the face, the
+ordering is random.
+
+.. dropdown:: Setup
+
+    .. literalinclude:: examples/sort_along_wire.py
+        :language: python
+        :lines: 3, 8-12
+
+.. literalinclude:: examples/sort_along_wire.py
+    :language: python
+    :lines: 14-15
+
+.. image:: ../assets/selectors_operators/sort_not_along_wire.png
+    :align: center
+
+The vertices may be sorted along the wire they fall on to create order. Notice the fillet
+radii increase in order.
+
+.. literalinclude:: examples/sort_along_wire.py
+    :language: python
+    :lines: 3, 26-28
+
+.. image:: ../assets/selectors_operators/sort_along_wire.png
+    :align: center
+
+.. _sort_distance_from:
+
+Distance From
+=========================
+
+A ``sort_by_distance`` and be used to sort objects by their distance from another object.
+Here we are sorting the boxes by distance from the origin, using an empty ``Vertex``
+(at the origin) as the other shape to find distance to.
+
+.. dropdown:: Setup
+
+    .. literalinclude:: examples/sort_distance_from.py
+        :language: python
+        :lines: 2-5, 9-13
+
+.. literalinclude:: examples/sort_distance_from.py
+    :language: python
+    :lines: 15-16
+
+.. image:: ../assets/selectors_operators/sort_distance_from_origin.png
+    :align: center
+
+The example can be extended by first sorting the boxes by volume using the ``Solid``
+property `volume` and getting the last (largest) box. The boxes are then sorted by using
+the largest box as the reference to sort distance from.
+
+.. literalinclude:: examples/sort_distance_from.py
+    :language: python
+    :lines: 19-20
+
+.. image:: ../assets/selectors_operators/sort_distance_from_largest.png
+    :align: center

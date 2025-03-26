@@ -1,0 +1,428 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BuildLine &mdash; build123d 0.9.2.dev40+gb1f0eed documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster.custom.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster.bundle.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-shadow.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-punk.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-noir.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-light.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-borderless.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/micromodal.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/sphinx_rtd_theme.css?v=3234e928" />
+      <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=c97902b4"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=f281be69"></script>
+      <script src="_static/js/hoverxref.js"></script>
+      <script src="_static/js/tooltipster.bundle.min.js"></script>
+      <script src="_static/js/micromodal.min.js"></script>
+      <script src="_static/design-tabs.js?v=f930bc37"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="BuildSketch" href="build_sketch.html" />
+    <link rel="prev" title="Builders" href="builders.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            build123d
+              <img src="_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts.html">Key Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts_builder.html">Key Concepts (builder mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts_algebra.html">Key Concepts (algebra mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="moving_objects.html">Moving Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OpenSCAD.html">Transitioning from OpenSCAD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introductory_examples.html">Introductory Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="selectors_operators.html">Selectors and Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operations.html">Operations</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="builders.html">Builders</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">BuildLine</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#basic-functionality">Basic Functionality</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#constraints">Constraints</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#position-at-operator">&#64; <code class="docutils literal notranslate"><span class="pre">position_at</span></code> Operator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tangent-at-operator">% <code class="docutils literal notranslate"><span class="pre">tangent_at</span></code> Operator</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#buildline-to-buildsketch">BuildLine to BuildSketch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#buildline-to-buildpart">BuildLine to BuildPart</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#working-on-other-planes">Working on other Planes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-build_line">Reference</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#build_line.BuildLine"><code class="docutils literal notranslate"><span class="pre">BuildLine</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="build_sketch.html">BuildSketch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_part.html">BuildPart</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="joints.html">Joints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assemblies.html">Assemblies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tips.html">Tips, Best Practices and FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="import_export.html">Import/Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cheat_sheet.html">Cheat Sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="external.html">External Tools and Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="builder_api_reference.html">Builder Common API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="direct_api_reference.html">Direct API Reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">build123d</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="builders.html">Builders</a></li>
+      <li class="breadcrumb-item active">BuildLine</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/build_line.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="buildline">
+<h1>BuildLine<a class="headerlink" href="#buildline" title="Link to this heading"></a></h1>
+<p>BuildLine is a python context manager that is used to create one dimensional
+objects - objects with the property of length but not area - that are typically
+used as part of a BuildSketch sketch or a BuildPart path.</p>
+<p>The complete API for BuildLine is located at the end of this section.</p>
+<section id="basic-functionality">
+<h2>Basic Functionality<a class="headerlink" href="#basic-functionality" title="Link to this heading"></a></h2>
+<p>The following is a simple BuildLine example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">BuildLine</span><span class="p">()</span> <span class="k">as</span> <span class="n">example_1</span><span class="p">:</span>
+    <span class="n">Line</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="n">ThreePointArc</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">with</span></code> statement creates the <code class="docutils literal notranslate"><span class="pre">BuildLine</span></code> context manager with the
+identifier <code class="docutils literal notranslate"><span class="pre">example_1</span></code>. The objects and operations that are within the
+scope (i.e. indented) of this context will contribute towards the object
+being created by the context manager.  For <code class="docutils literal notranslate"><span class="pre">BuildLine</span></code>, this object is
+<code class="docutils literal notranslate"><span class="pre">line</span></code> and it’s referenced as <code class="docutils literal notranslate"><span class="pre">example_1.line</span></code>.</p>
+<p>The first object in this example is a <code class="docutils literal notranslate"><span class="pre">Line</span></code> object which is used to create
+a straight line from coordinates (0,0) to (2,0) on the default XY plane.
+The second object is a <code class="docutils literal notranslate"><span class="pre">ThreePointArc</span></code> that starts and ends at the two
+ends of the line.</p>
+<img alt="_images/buildline_example_1.svg" class="align-center" src="_images/buildline_example_1.svg" />
+</section>
+<section id="constraints">
+<h2>Constraints<a class="headerlink" href="#constraints" title="Link to this heading"></a></h2>
+<p>Building with constraints enables the designer to capture design intent and
+add a high degree of robustness to their designs.  The following sections
+describe creating positional and tangential constraints as well as using
+object attributes to enable this type of design.</p>
+<section id="position-at-operator">
+<h3>&#64; <code class="docutils literal notranslate"><span class="pre">position_at</span></code> Operator<a class="headerlink" href="#position-at-operator" title="Link to this heading"></a></h3>
+<p>In the previous example, the <code class="docutils literal notranslate"><span class="pre">ThreePointArc</span></code> started and ended at the
+two ends of the <code class="docutils literal notranslate"><span class="pre">Line</span></code> but this was done by referring to the same
+point <code class="docutils literal notranslate"><span class="pre">(0,0)</span></code> and <code class="docutils literal notranslate"><span class="pre">(2,0)</span></code>.  This can be improved upon by specifying
+constraints that lock the arc to those two end points, as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">BuildLine</span><span class="p">()</span> <span class="k">as</span> <span class="n">example_2</span><span class="p">:</span>
+    <span class="n">l1</span> <span class="o">=</span> <span class="n">Line</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="n">l2</span> <span class="o">=</span> <span class="n">ThreePointArc</span><span class="p">(</span><span class="n">l1</span> <span class="o">@</span> <span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">l1</span> <span class="o">@</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Here instance variables <code class="docutils literal notranslate"><span class="pre">l1</span></code> and <code class="docutils literal notranslate"><span class="pre">l2</span></code> are assigned to the two BuildLine
+objects and the <code class="docutils literal notranslate"><span class="pre">ThreePointArc</span></code> references the beginning of the straight
+line with <code class="docutils literal notranslate"><span class="pre">l1</span> <span class="pre">&#64;</span> <span class="pre">0</span></code> and the end with <code class="docutils literal notranslate"><span class="pre">l1</span> <span class="pre">&#64;</span> <span class="pre">1</span></code>.  The <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> operator takes
+a float (or integer) parameter between 0 and 1 and determines a position
+at this fractional position along the line’s length.</p>
+<p>This example can be improved on further by calculating the mid-point
+of the arc as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">BuildLine</span><span class="p">()</span> <span class="k">as</span> <span class="n">example_3</span><span class="p">:</span>
+    <span class="n">l1</span> <span class="o">=</span> <span class="n">Line</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="n">l2</span> <span class="o">=</span> <span class="n">ThreePointArc</span><span class="p">(</span><span class="n">l1</span> <span class="o">@</span> <span class="mi">0</span><span class="p">,</span> <span class="n">l1</span> <span class="o">@</span> <span class="mf">0.5</span> <span class="o">+</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">l1</span> <span class="o">@</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Here <code class="docutils literal notranslate"><span class="pre">l1</span> <span class="pre">&#64;</span> <span class="pre">0.5</span></code> finds the center of <code class="docutils literal notranslate"><span class="pre">l1</span></code> while <code class="docutils literal notranslate"><span class="pre">l1</span> <span class="pre">&#64;</span> <span class="pre">0.5</span> <span class="pre">+</span> <span class="pre">(0,</span> <span class="pre">1)</span></code> does
+a vector addition to generate the point <code class="docutils literal notranslate"><span class="pre">(1,1)</span></code>.</p>
+<p>To make the design even more parametric, the height of the arc can be calculated
+from <code class="docutils literal notranslate"><span class="pre">l1</span></code> as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">BuildLine</span><span class="p">()</span> <span class="k">as</span> <span class="n">example_4</span><span class="p">:</span>
+    <span class="n">l1</span> <span class="o">=</span> <span class="n">Line</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="n">l2</span> <span class="o">=</span> <span class="n">ThreePointArc</span><span class="p">(</span><span class="n">l1</span> <span class="o">@</span> <span class="mi">0</span><span class="p">,</span> <span class="n">l1</span> <span class="o">@</span> <span class="mf">0.5</span> <span class="o">+</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">l1</span><span class="o">.</span><span class="n">length</span> <span class="o">/</span> <span class="mi">2</span><span class="p">),</span> <span class="n">l1</span> <span class="o">@</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The arc height is now calculated as <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">l1.length</span> <span class="pre">/</span> <span class="pre">2)</span></code> by using the <code class="docutils literal notranslate"><span class="pre">length</span></code>
+property of <code class="docutils literal notranslate"><span class="pre">Edge</span></code> and <code class="docutils literal notranslate"><span class="pre">Wire</span></code> shapes.  At this point the <code class="docutils literal notranslate"><span class="pre">ThreePointArc</span></code> is
+fully parametric and able to generate the same shape for any horizontal line.</p>
+</section>
+<section id="tangent-at-operator">
+<h3>% <code class="docutils literal notranslate"><span class="pre">tangent_at</span></code> Operator<a class="headerlink" href="#tangent-at-operator" title="Link to this heading"></a></h3>
+<p>The other operator that is commonly used within BuildLine is <code class="docutils literal notranslate"><span class="pre">%</span></code> the tangent at
+operator. Here is another example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">BuildLine</span><span class="p">()</span> <span class="k">as</span> <span class="n">example_5</span><span class="p">:</span>
+    <span class="n">l1</span> <span class="o">=</span> <span class="n">Line</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="n">l2</span> <span class="o">=</span> <span class="n">Line</span><span class="p">(</span><span class="n">l1</span> <span class="o">@</span> <span class="mi">1</span><span class="p">,</span> <span class="n">l1</span> <span class="o">@</span> <span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">l1</span><span class="o">.</span><span class="n">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="n">l3</span> <span class="o">=</span> <span class="n">JernArc</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="n">l2</span> <span class="o">@</span> <span class="mi">1</span><span class="p">,</span> <span class="n">tangent</span><span class="o">=</span><span class="n">l2</span> <span class="o">%</span> <span class="mi">1</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">arc_size</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+    <span class="n">l4</span> <span class="o">=</span> <span class="n">Line</span><span class="p">(</span><span class="n">l3</span> <span class="o">@</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">l2</span><span class="o">.</span><span class="n">length</span> <span class="o">+</span> <span class="n">l3</span><span class="o">.</span><span class="n">radius</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>which generates (note that the circles show line junctions):</p>
+<img alt="_images/buildline_example_5.svg" class="align-center" src="_images/buildline_example_5.svg" />
+<p>The <code class="docutils literal notranslate"><span class="pre">JernArc</span></code> has the following parameters:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">start=l2</span> <span class="pre">&#64;</span> <span class="pre">1</span></code> - start the arc at the end of line <code class="docutils literal notranslate"><span class="pre">l2</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tangent=l2</span> <span class="pre">%</span> <span class="pre">1</span></code> - the tangent of the arc at the start point is equal to the <code class="docutils literal notranslate"><span class="pre">l2</span></code>'s,
+tangent at its end (shown as a dashed line)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">radius=0.5</span></code> - the radius of the arc, and</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">arc_size=90</span></code> the angular size of the arc.</p></li>
+</ul>
+<p>The final line starts at the end of <code class="docutils literal notranslate"><span class="pre">l3</span></code> and ends at a point calculated from the length
+of <code class="docutils literal notranslate"><span class="pre">l2</span></code> and the radius of arc <code class="docutils literal notranslate"><span class="pre">l3</span></code>.</p>
+<p>Building with constraints as shown here will ensure that your designs both fully represent
+design intent and are robust to design changes.</p>
+</section>
+</section>
+<section id="buildline-to-buildsketch">
+<h2>BuildLine to BuildSketch<a class="headerlink" href="#buildline-to-buildsketch" title="Link to this heading"></a></h2>
+<p>As mentioned previously, one of the two primary reasons to create BuildLine objects is to
+use them in BuildSketch.  When a BuildLine context manager exits and is within the scope of a
+BuildSketch context manager it will transfer the generated line to BuildSketch. The BuildSketch
+<a class="hxr-hoverxref hxr-tooltip reference internal" href="operations.html#operations_sketch.make_face" title="operations_sketch.make_face"><code class="xref py py-meth docutils literal notranslate"><span class="pre">make_face()</span></code></a> or <a class="hxr-hoverxref hxr-tooltip reference internal" href="operations.html#operations_sketch.make_hull" title="operations_sketch.make_hull"><code class="xref py py-meth docutils literal notranslate"><span class="pre">make_hull()</span></code></a>  operations are then used
+to transform the line (specifically a list of Edges) into a Face - the native BuildSketch
+objects.</p>
+<p>Here is an example of using BuildLine to create an object that otherwise might be
+difficult to create:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">BuildSketch</span><span class="p">()</span> <span class="k">as</span> <span class="n">example_6</span><span class="p">:</span>
+    <span class="k">with</span> <span class="n">BuildLine</span><span class="p">()</span> <span class="k">as</span> <span class="n">club_outline</span><span class="p">:</span>
+        <span class="n">l0</span> <span class="o">=</span> <span class="n">Line</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">188</span><span class="p">),</span> <span class="p">(</span><span class="mi">76</span><span class="p">,</span> <span class="o">-</span><span class="mi">188</span><span class="p">))</span>
+        <span class="n">b0</span> <span class="o">=</span> <span class="n">Bezier</span><span class="p">(</span><span class="n">l0</span> <span class="o">@</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">61</span><span class="p">,</span> <span class="o">-</span><span class="mi">185</span><span class="p">),</span> <span class="p">(</span><span class="mi">33</span><span class="p">,</span> <span class="o">-</span><span class="mi">173</span><span class="p">),</span> <span class="p">(</span><span class="mi">17</span><span class="p">,</span> <span class="o">-</span><span class="mi">81</span><span class="p">))</span>
+        <span class="n">b1</span> <span class="o">=</span> <span class="n">Bezier</span><span class="p">(</span><span class="n">b0</span> <span class="o">@</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">49</span><span class="p">,</span> <span class="o">-</span><span class="mi">128</span><span class="p">),</span> <span class="p">(</span><span class="mi">146</span><span class="p">,</span> <span class="o">-</span><span class="mi">145</span><span class="p">),</span> <span class="p">(</span><span class="mi">167</span><span class="p">,</span> <span class="o">-</span><span class="mi">67</span><span class="p">))</span>
+        <span class="n">b2</span> <span class="o">=</span> <span class="n">Bezier</span><span class="p">(</span><span class="n">b1</span> <span class="o">@</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">187</span><span class="p">,</span> <span class="mi">9</span><span class="p">),</span> <span class="p">(</span><span class="mi">94</span><span class="p">,</span> <span class="mi">52</span><span class="p">),</span> <span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">18</span><span class="p">))</span>
+        <span class="n">b3</span> <span class="o">=</span> <span class="n">Bezier</span><span class="p">(</span><span class="n">b2</span> <span class="o">@</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">92</span><span class="p">,</span> <span class="mi">57</span><span class="p">),</span> <span class="p">(</span><span class="mi">113</span><span class="p">,</span> <span class="mi">188</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">188</span><span class="p">))</span>
+        <span class="n">mirror</span><span class="p">(</span><span class="n">about</span><span class="o">=</span><span class="n">Plane</span><span class="o">.</span><span class="n">YZ</span><span class="p">)</span>
+    <span class="n">make_face</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>which generates:</p>
+<img alt="_images/buildline_example_6.svg" class="align-center" src="_images/buildline_example_6.svg" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>SVG import to BuildLine</p>
+<p>The BuildLine code used in this example was generated by translating a SVG file
+into BuildLine source code with the <a class="hxr-hoverxref hxr-tooltip reference internal" href="import_export.html#importers.import_svg_as_buildline_code" title="importers.import_svg_as_buildline_code"><code class="xref py py-func docutils literal notranslate"><span class="pre">import_svg_as_buildline_code()</span></code></a>
+function. For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">svg_code</span><span class="p">,</span> <span class="n">builder_name</span> <span class="o">=</span> <span class="n">import_svg_as_buildline_code</span><span class="p">(</span><span class="s2">&quot;club.svg&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>would translate the “club.svg” image file’s paths into BuildLine code much like
+that shown above. From there it’s easy for a user to add constraints or otherwise
+enhance the original image and use it in their design.</p>
+</div>
+</section>
+<section id="buildline-to-buildpart">
+<h2>BuildLine to BuildPart<a class="headerlink" href="#buildline-to-buildpart" title="Link to this heading"></a></h2>
+<p>The other primary reasons to use BuildLine is to create paths for BuildPart
+<a class="hxr-hoverxref hxr-tooltip reference internal" href="operations.html#operations_generic.sweep" title="operations_generic.sweep"><code class="xref py py-meth docutils literal notranslate"><span class="pre">sweep()</span></code></a> operations. Here some curved and straight segments
+define a path:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">BuildPart</span><span class="p">()</span> <span class="k">as</span> <span class="n">example_7</span><span class="p">:</span>
+    <span class="k">with</span> <span class="n">BuildLine</span><span class="p">()</span> <span class="k">as</span> <span class="n">example_7_path</span><span class="p">:</span>
+        <span class="n">l1</span> <span class="o">=</span> <span class="n">RadiusArc</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">l2</span> <span class="o">=</span> <span class="n">Spline</span><span class="p">(</span><span class="n">l1</span> <span class="o">@</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">tangents</span><span class="o">=</span><span class="p">(</span><span class="n">l1</span> <span class="o">%</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)))</span>
+        <span class="n">l3</span> <span class="o">=</span> <span class="n">Line</span><span class="p">(</span><span class="n">l2</span> <span class="o">@</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="k">with</span> <span class="n">BuildSketch</span><span class="p">(</span><span class="n">Plane</span><span class="p">(</span><span class="n">origin</span><span class="o">=</span><span class="n">l1</span> <span class="o">@</span> <span class="mi">0</span><span class="p">,</span> <span class="n">z_dir</span><span class="o">=</span><span class="n">l1</span> <span class="o">%</span> <span class="mi">0</span><span class="p">))</span> <span class="k">as</span> <span class="n">example_7_section</span><span class="p">:</span>
+        <span class="n">Circle</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+    <span class="n">sweep</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>which generates:</p>
+<img alt="_images/buildline_example_7.svg" class="align-center" src="_images/buildline_example_7.svg" />
+<p>There are few things to note from this example:</p>
+<ul class="simple">
+<li><p>The &#64; and % operators are used to create a plane normal to the beginning of the
+path with which to create the circular section used by the sweep operation
+(this plane is not one of the ordinal planes).</p></li>
+<li><p>Both the path generated by BuildLine and the section generated by BuildSketch
+have been transferred to BuildPart when each of them exit.</p></li>
+<li><p>The BuildPart <code class="docutils literal notranslate"><span class="pre">Sweep</span></code> operation is using the path and section previously
+transferred to it (as “pending” objects) as parameters of the sweep. The
+<code class="docutils literal notranslate"><span class="pre">Sweep</span></code> operation “consumes” these pending objects as to not interfere with
+subsequence operations.</p></li>
+</ul>
+</section>
+<section id="working-on-other-planes">
+<h2>Working on other Planes<a class="headerlink" href="#working-on-other-planes" title="Link to this heading"></a></h2>
+<p>So far all of the examples were created on <code class="docutils literal notranslate"><span class="pre">Plane.XY</span></code> - the default plane - which is equivalent
+to global coordinates. Sometimes it’s convenient to work on another plane, especially when
+creating paths for BuildPart <code class="docutils literal notranslate"><span class="pre">Sweep</span></code> operations.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">BuildLine</span><span class="p">(</span><span class="n">Plane</span><span class="o">.</span><span class="n">YZ</span><span class="p">)</span> <span class="k">as</span> <span class="n">example_8</span><span class="p">:</span>
+    <span class="n">l1</span> <span class="o">=</span> <span class="n">Line</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="n">l2</span> <span class="o">=</span> <span class="n">Line</span><span class="p">(</span><span class="n">l1</span> <span class="o">@</span> <span class="mi">1</span><span class="p">,</span> <span class="n">l1</span> <span class="o">@</span> <span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">l1</span><span class="o">.</span><span class="n">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="n">l3</span> <span class="o">=</span> <span class="n">JernArc</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="n">l2</span> <span class="o">@</span> <span class="mi">1</span><span class="p">,</span> <span class="n">tangent</span><span class="o">=</span><span class="n">l2</span> <span class="o">%</span> <span class="mi">1</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">arc_size</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+    <span class="n">l4</span> <span class="o">=</span> <span class="n">Line</span><span class="p">(</span><span class="n">l3</span> <span class="o">@</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">l2</span><span class="o">.</span><span class="n">length</span> <span class="o">+</span> <span class="n">l3</span><span class="o">.</span><span class="n">radius</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>which generates:</p>
+<img alt="_images/buildline_example_8.svg" class="align-center" src="_images/buildline_example_8.svg" />
+<p>Here the BuildLine object is created on <code class="docutils literal notranslate"><span class="pre">Plane.YZ</span></code> just by specifying the working plane
+during BuildLine initialization.</p>
+<p>There are three rules to keep in mind when working with alternate planes in BuildLine:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">BuildLine</span></code> accepts a single <code class="docutils literal notranslate"><span class="pre">Plane</span></code> to work with as opposed to other Builders
+that accept more than one workplane.</p></li>
+<li><p>Values entered as tuples such as <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">2)</span></code> or <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">2,</span> <span class="pre">3)</span></code> will be localized to the
+current workplane.  This rule applies to points and to the use of tuples to modify
+locations calculated with the <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> and <code class="docutils literal notranslate"><span class="pre">%</span></code> operators such as <code class="docutils literal notranslate"><span class="pre">l1</span> <span class="pre">&#64;</span> <span class="pre">1</span> <span class="pre">+</span> <span class="pre">(1,</span> <span class="pre">1)</span></code>.
+For example, if the workplane is <code class="docutils literal notranslate"><span class="pre">Plane.YZ</span></code> the local value of <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">2)</span></code> would
+be converted to <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">1,</span> <span class="pre">2)</span></code> in global coordinates.  Three tuples are converted as
+well - <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">2,</span> <span class="pre">3)</span></code> on <code class="docutils literal notranslate"><span class="pre">Plane.YZ</span></code> would be <code class="docutils literal notranslate"><span class="pre">(3,</span> <span class="pre">1,</span> <span class="pre">2)</span></code> in global coordinates.
+Providing values in local coordinates allows the designer to automate such
+conversions.</p></li>
+<li><p>Values entered using the <code class="docutils literal notranslate"><span class="pre">Vector</span></code> class or those generated by the <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> operator
+are considered global values and are not localized.  For example:
+<code class="docutils literal notranslate"><span class="pre">Line(Vector(1,</span> <span class="pre">2,</span> <span class="pre">3),</span> <span class="pre">Vector(4,</span> <span class="pre">5,</span> <span class="pre">6))</span></code> will generate the same line independent
+of the current workplane. It’s unlikely that users will need to use <code class="docutils literal notranslate"><span class="pre">Vector</span></code>
+values but the option is there.</p></li>
+</ol>
+<p>Finally, BuildLine’s workplane need not be one of the predefined ordinal planes, it
+could be one created from a surface of a BuildPart part that is currently under
+construction.</p>
+</section>
+<section id="module-build_line">
+<span id="reference"></span><h2>Reference<a class="headerlink" href="#module-build_line" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="build_line.BuildLine">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BuildLine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">workplane:</span> <span class="pre">~build123d.topology.two_d.Face</span> <span class="pre">|</span> <span class="pre">~build123d.geometry.Plane</span> <span class="pre">|</span> <span class="pre">~build123d.geometry.Location</span> <span class="pre">=</span> <span class="pre">Plane(o=(0.00</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">0.00</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">0.00)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x=(1.00</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">0.00</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">0.00)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z=(0.00</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">0.00</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">1.00))</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode:</span> <span class="pre">~build123d.build_enums.Mode</span> <span class="pre">=</span> <span class="pre">&lt;Mode.ADD&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/build_line.html#BuildLine"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_line.BuildLine" title="Link to this definition"></a></dt>
+<dd><p>The BuildLine class is a subclass of Builder for building lines (objects
+with length but not area or volume). It has an _obj property that returns
+the current line being built. The class overrides the faces and solids methods
+of Builder since they don’t apply to lines.</p>
+<p>BuildLine only works with a single workplane which is used to convert tuples
+as inputs to global coordinates. For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">BuildLine</span><span class="p">(</span><span class="n">Plane</span><span class="o">.</span><span class="n">YZ</span><span class="p">)</span> <span class="k">as</span> <span class="n">radius_arc</span><span class="p">:</span>
+    <span class="n">RadiusArc</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>creates an arc from global points (0, 1, 2) to (0, 2, 1). Note that points
+entered as Vector(x, y, z) are considered global and are not localized.</p>
+<p>The workplane is also used to define planes parallel to the workplane that
+arcs are created on.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>workplane</strong> (<em>Union</em><em>[</em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Face" title="topology.Face"><em>Face</em></a><em>, </em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#geometry.Plane" title="geometry.Plane"><em>Plane</em></a><em>, </em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#geometry.Location" title="geometry.Location"><em>Location</em></a><em>]</em><em>, </em><em>optional</em>) – plane used when local
+coordinates are used and when creating arcs. Defaults to Plane.XY.</p></li>
+<li><p><strong>mode</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="builder_api_reference.html#build_enums.Mode" title="build_enums.Mode"><em>Mode</em></a><em>, </em><em>optional</em>) – combination mode. Defaults to Mode.ADD.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="build_line.BuildLine.face">
+<span class="sig-name descname"><span class="pre">face</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/build_line.html#BuildLine.face"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_line.BuildLine.face" title="Link to this definition"></a></dt>
+<dd><p>face() not implemented</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="build_line.BuildLine.faces">
+<span class="sig-name descname"><span class="pre">faces</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/build_line.html#BuildLine.faces"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_line.BuildLine.faces" title="Link to this definition"></a></dt>
+<dd><p>faces() not implemented</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="build_line.BuildLine.line">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">line</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Curve</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#build_line.BuildLine.line" title="Link to this definition"></a></dt>
+<dd><p>Get the current line</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="build_line.BuildLine.solid">
+<span class="sig-name descname"><span class="pre">solid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/build_line.html#BuildLine.solid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_line.BuildLine.solid" title="Link to this definition"></a></dt>
+<dd><p>solid() not implemented</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="build_line.BuildLine.solids">
+<span class="sig-name descname"><span class="pre">solids</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/build_line.html#BuildLine.solids"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_line.BuildLine.solids" title="Link to this definition"></a></dt>
+<dd><p>solids() not implemented</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="builders.html" class="btn btn-neutral float-left" title="Builders" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="build_sketch.html" class="btn btn-neutral float-right" title="BuildSketch" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Gumyr.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

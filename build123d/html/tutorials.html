@@ -1,0 +1,255 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tutorials &mdash; build123d 0.9.2.dev40+gb1f0eed documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster.custom.css?v=7bc2f056" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster.bundle.min.css?v=37217874" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-shadow.min.css?v=6227e517" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-punk.min.css?v=94669e23" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-noir.min.css?v=21a39f42" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-light.min.css?v=a18b2449" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-borderless.min.css?v=dbff53e4" />
+      <link rel="stylesheet" type="text/css" href="_static/css/micromodal.css?v=d7bf34ee" />
+      <link rel="stylesheet" type="text/css" href="_static/css/sphinx_rtd_theme.css?v=3234e928" />
+      <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=c97902b4"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=f281be69"></script>
+      <script src="_static/js/hoverxref.js?v=6ff7264e"></script>
+      <script src="_static/js/tooltipster.bundle.min.js?v=18bf091b"></script>
+      <script src="_static/js/micromodal.min.js?v=04d6302d"></script>
+      <script src="_static/design-tabs.js?v=f930bc37"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Designing a Part in build123d" href="tutorial_design.html" />
+    <link rel="prev" title="Introductory Examples" href="introductory_examples.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            build123d
+              <img src="_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts.html">Key Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts_builder.html">Key Concepts (builder mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts_algebra.html">Key Concepts (algebra mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="moving_objects.html">Moving Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OpenSCAD.html">Transitioning from OpenSCAD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introductory_examples.html">Introductory Examples</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_design.html">Designing a Part in build123d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_selectors.html">Selector Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_lego.html">Lego Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_joints.html">Joint Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples_1.html">The build123d Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tttt.html">Too Tall Toby (TTT) Tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_surface_modeling.html">Surface Modeling</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="selectors_operators.html">Selectors and Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operations.html">Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="builders.html">Builders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="joints.html">Joints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assemblies.html">Assemblies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tips.html">Tips, Best Practices and FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="import_export.html">Import/Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cheat_sheet.html">Cheat Sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="external.html">External Tools and Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="builder_api_reference.html">Builder Common API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="direct_api_reference.html">Direct API Reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">build123d</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Tutorials</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/tutorials.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="tutorials">
+<h1>Tutorials<a class="headerlink" href="#tutorials" title="Link to this heading"></a></h1>
+<p>There are several tutorials to help guide uses through the concepts of build123d
+in a step by step way. Working through these tutorials in order is recommended
+as later tutorials build on the concepts introduced in earlier ones.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_design.html">Designing a Part in build123d</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_design.html#step-1-examine-the-part-in-all-three-orientations">Step 1. Examine the Part in All Three Orientations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_design.html#step-2-identify-rotational-symmetries">Step 2. Identify Rotational Symmetries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_design.html#step-3-select-a-convenient-origin">Step 3. Select a Convenient Origin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_design.html#step-4-create-2d-profiles">Step 4. Create 2D Profiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_design.html#step-5-use-extrusion-for-prismatic-features">Step 5. Use Extrusion for Prismatic Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_design.html#step-6-generate-revolved-features">Step 6. Generate Revolved Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_design.html#step-7-combine-sub-parts-intelligently">Step 7. Combine Sub-parts Intelligently</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_design.html#step-8-apply-chamfers-and-fillets">Step 8. Apply Chamfers and Fillets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_design.html#step-9-design-for-assembly">Step 9. Design for Assembly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_design.html#step-10-plan-for-parametric-flexibility">Step 10. Plan for Parametric Flexibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_design.html#step-11-test-fit-and-tolerances">Step 11. Test Fit and Tolerances</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_design.html#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_selectors.html">Selector Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_selectors.html#step-1-setup">Step 1: Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_selectors.html#step-2-create-base-with-buildpart">Step 2: Create Base with BuildPart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_selectors.html#step-3-place-sketch-on-top-of-base">Step 3: Place Sketch on top of base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_selectors.html#step-4-create-hole-shape">Step 4: Create hole shape</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_selectors.html#step-5-create-the-hole">Step 5: Create the hole</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_selectors.html#step-6-fillet-the-top-perimeter-edge">Step 6: Fillet the top perimeter Edge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_selectors.html#conclusion">Conclusion</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_lego.html">Lego Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_lego.html#step-1-setup">Step 1: Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_lego.html#step-2-part-builder">Step 2: Part Builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_lego.html#step-3-sketch-builder">Step 3: Sketch Builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_lego.html#step-4-perimeter-rectangle">Step 4: Perimeter Rectangle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_lego.html#step-5-offset-to-create-walls">Step 5: Offset to Create Walls</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_lego.html#step-6-create-internal-grid">Step 6: Create Internal Grid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_lego.html#step-7-create-ridges">Step 7: Create Ridges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_lego.html#step-8-hollow-circles">Step 8: Hollow Circles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_lego.html#step-9-extruding-sketch-into-walls">Step 9: Extruding Sketch into Walls</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_lego.html#step-10-adding-a-top">Step 10: Adding a Top</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_lego.html#step-11-adding-pips">Step 11: Adding Pips</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_joints.html">Joint Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_joints.html#step-1-setup">Step 1: Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_joints.html#step-2-create-hinge">Step 2: Create Hinge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_joints.html#step-3-add-joints-to-the-hinge-leaf">Step 3: Add Joints to the Hinge Leaf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_joints.html#step-4-create-the-box">Step 4: Create the Box</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_joints.html#step-5-create-the-lid">Step 5: Create the Lid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_joints.html#step-6-import-a-screw-and-bind-a-joint-to-it">Step 6: Import a Screw and bind a Joint to it</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_joints.html#step-7-connect-the-joints-together">Step 7: Connect the Joints together</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_joints.html#conclusion">Conclusion</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples_1.html">The build123d Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples_1.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples_1.html#benchy">Benchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples_1.html#former-build123d-logo">Former build123d Logo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples_1.html#canadian-flag-blowing-in-the-wind">Canadian Flag Blowing in The Wind</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples_1.html#circuit-board-with-holes">Circuit Board With Holes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples_1.html#clock-face">Clock Face</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples_1.html#handle">Handle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples_1.html#heat-exchanger">Heat Exchanger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples_1.html#key-cap">Key Cap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples_1.html#maker-coin">Maker Coin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples_1.html#multi-sketch-loft">Multi-Sketch Loft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples_1.html#peg-board-hook">Peg Board Hook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples_1.html#platonic-solids">Platonic Solids</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples_1.html#playing-cards">Playing Cards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples_1.html#stud-wall">Stud Wall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples_1.html#tea-cup">Tea Cup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples_1.html#vase">Vase</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tttt.html">Too Tall Toby (TTT) Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tttt.html#party-pack-01-01-bearing-bracket">Party Pack 01-01 Bearing Bracket</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tttt.html#party-pack-01-02-post-cap">Party Pack 01-02 Post Cap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tttt.html#party-pack-01-03-c-clamp-base">Party Pack 01-03 C Clamp Base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tttt.html#party-pack-01-04-angle-bracket">Party Pack 01-04 Angle Bracket</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tttt.html#party-pack-01-05-paste-sleeve">Party Pack 01-05 Paste Sleeve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tttt.html#party-pack-01-06-bearing-jig">Party Pack 01-06 Bearing Jig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tttt.html#party-pack-01-07-flanged-hub">Party Pack 01-07 Flanged Hub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tttt.html#party-pack-01-08-tie-plate">Party Pack 01-08 Tie Plate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tttt.html#party-pack-01-09-corner-tie">Party Pack 01-09 Corner Tie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tttt.html#party-pack-01-10-light-cap">Party Pack 01-10 Light Cap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tttt.html#sm-hanger">23-02-02 SM Hanger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tttt.html#t-24-curved-support">23-T-24 Curved Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tttt.html#spo-06-buffer-stand">24-SPO-06 Buffer Stand</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_surface_modeling.html">Surface Modeling</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_surface_modeling.html#summary">Summary</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="introductory_examples.html" class="btn btn-neutral float-left" title="Introductory Examples" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tutorial_design.html" class="btn btn-neutral float-right" title="Designing a Part in build123d" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Gumyr.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

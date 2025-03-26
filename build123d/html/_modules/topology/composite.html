@@ -1,0 +1,982 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>topology.composite &mdash; build123d 0.9.2.dev40+gb1f0eed documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/tooltipster.custom.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/tooltipster.bundle.min.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/tooltipster-sideTip-shadow.min.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/tooltipster-sideTip-punk.min.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/tooltipster-sideTip-noir.min.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/tooltipster-sideTip-light.min.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/tooltipster-sideTip-borderless.min.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/micromodal.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/sphinx_rtd_theme.css?v=3234e928" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=c97902b4"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=f281be69"></script>
+      <script src="../../_static/js/hoverxref.js"></script>
+      <script src="../../_static/js/tooltipster.bundle.min.js"></script>
+      <script src="../../_static/js/micromodal.min.js"></script>
+      <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            build123d
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../key_concepts.html">Key Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../key_concepts_builder.html">Key Concepts (builder mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../key_concepts_algebra.html">Key Concepts (algebra mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../moving_objects.html">Moving Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../OpenSCAD.html">Transitioning from OpenSCAD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../introductory_examples.html">Introductory Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../selectors_operators.html">Selectors and Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../operations.html">Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../builders.html">Builders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../joints.html">Joints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../assemblies.html">Assemblies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tips.html">Tips, Best Practices and FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../import_export.html">Import/Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cheat_sheet.html">Cheat Sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../external.html">External Tools and Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../builder_api_reference.html">Builder Common API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../direct_api_reference.html">Direct API Reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">build123d</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">topology.composite</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for topology.composite</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">build123d topology</span>
+
+<span class="sd">name: composite.py</span>
+<span class="sd">by:   Gumyr</span>
+<span class="sd">date: January 07, 2025</span>
+
+<span class="sd">desc:</span>
+
+<span class="sd">This module defines advanced composite geometric entities for the build123d CAD system. It</span>
+<span class="sd">introduces the `Compound` class as a central concept for managing groups of shapes, alongside</span>
+<span class="sd">specialized subclasses such as `Curve`, `Sketch`, and `Part` for 1D, 2D, and 3D objects,</span>
+<span class="sd">respectively. These classes streamline the construction and manipulation of complex geometric</span>
+<span class="sd">assemblies.</span>
+
+<span class="sd">Key Features:</span>
+<span class="sd">- **Compound Class**:</span>
+<span class="sd">  - Represents a collection of geometric shapes (e.g., vertices, edges, faces, solids) grouped</span>
+<span class="sd">    hierarchically.</span>
+<span class="sd">  - Supports operations like adding, removing, and combining shapes, as well as querying volumes,</span>
+<span class="sd">    centers, and intersections.</span>
+<span class="sd">  - Provides utility methods for unwrapping nested compounds and generating 3D text or coordinate</span>
+<span class="sd">    system triads.</span>
+
+<span class="sd">- **Specialized Subclasses**:</span>
+<span class="sd">  - `Curve`: Handles 1D objects like edges and wires.</span>
+<span class="sd">  - `Sketch`: Focused on 2D objects, such as faces.</span>
+<span class="sd">  - `Part`: Manages 3D solids and assemblies.</span>
+
+<span class="sd">- **Advanced Features**:</span>
+<span class="sd">  - Includes Boolean operations, hierarchy traversal, and bounding box-based intersection detection.</span>
+<span class="sd">  - Supports transformations, child-parent relationships, and dynamic updates.</span>
+
+<span class="sd">This module leverages OpenCascade for robust geometric operations while offering a Pythonic</span>
+<span class="sd">interface for efficient and extensible CAD modeling workflows.</span>
+
+<span class="sd">license:</span>
+
+<span class="sd">    Copyright 2025 Gumyr</span>
+
+<span class="sd">    Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span>
+<span class="sd">    you may not use this file except in compliance with the License.</span>
+<span class="sd">    You may obtain a copy of the License at</span>
+
+<span class="sd">        http://www.apache.org/licenses/LICENSE-2.0</span>
+
+<span class="sd">    Unless required by applicable law or agreed to in writing, software</span>
+<span class="sd">    distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span>
+<span class="sd">    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
+<span class="sd">    See the License for the specific language governing permissions and</span>
+<span class="sd">    limitations under the License.</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">copy</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">itertools</span><span class="w"> </span><span class="kn">import</span> <span class="n">combinations</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Type</span><span class="p">,</span> <span class="n">Union</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">Iterable</span><span class="p">,</span> <span class="n">Iterator</span><span class="p">,</span> <span class="n">Sequence</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">OCP.TopAbs</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ta</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.BRepAlgoAPI</span><span class="w"> </span><span class="kn">import</span> <span class="n">BRepAlgoAPI_Fuse</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.Font</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">Font_FA_Bold</span><span class="p">,</span>
+    <span class="n">Font_FA_Italic</span><span class="p">,</span>
+    <span class="n">Font_FA_Regular</span><span class="p">,</span>
+    <span class="n">Font_FontMgr</span><span class="p">,</span>
+    <span class="n">Font_SystemFont</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.GProp</span><span class="w"> </span><span class="kn">import</span> <span class="n">GProp_GProps</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.NCollection</span><span class="w"> </span><span class="kn">import</span> <span class="n">NCollection_Utf8String</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.StdPrs</span><span class="w"> </span><span class="kn">import</span> <span class="n">StdPrs_BRepTextBuilder</span> <span class="k">as</span> <span class="n">Font_BRepTextBuilder</span><span class="p">,</span> <span class="n">StdPrs_BRepFont</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.TCollection</span><span class="w"> </span><span class="kn">import</span> <span class="n">TCollection_AsciiString</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.TopAbs</span><span class="w"> </span><span class="kn">import</span> <span class="n">TopAbs_ShapeEnum</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OCP.TopoDS</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">TopoDS</span><span class="p">,</span>
+    <span class="n">TopoDS_Builder</span><span class="p">,</span>
+    <span class="n">TopoDS_Compound</span><span class="p">,</span>
+    <span class="n">TopoDS_Iterator</span><span class="p">,</span>
+    <span class="n">TopoDS_Shape</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">anytree</span><span class="w"> </span><span class="kn">import</span> <span class="n">PreOrderIter</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">build123d.build_enums</span><span class="w"> </span><span class="kn">import</span> <span class="n">Align</span><span class="p">,</span> <span class="n">CenterOf</span><span class="p">,</span> <span class="n">FontStyle</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">build123d.geometry</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">TOLERANCE</span><span class="p">,</span>
+    <span class="n">Axis</span><span class="p">,</span>
+    <span class="n">Color</span><span class="p">,</span>
+    <span class="n">Location</span><span class="p">,</span>
+    <span class="n">Plane</span><span class="p">,</span>
+    <span class="n">Vector</span><span class="p">,</span>
+    <span class="n">VectorLike</span><span class="p">,</span>
+    <span class="n">logger</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing_extensions</span><span class="w"> </span><span class="kn">import</span> <span class="n">Self</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">.one_d</span><span class="w"> </span><span class="kn">import</span> <span class="n">Edge</span><span class="p">,</span> <span class="n">Wire</span><span class="p">,</span> <span class="n">Mixin1D</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.shape_core</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">Shape</span><span class="p">,</span>
+    <span class="n">ShapeList</span><span class="p">,</span>
+    <span class="n">SkipClean</span><span class="p">,</span>
+    <span class="n">Joint</span><span class="p">,</span>
+    <span class="n">downcast</span><span class="p">,</span>
+    <span class="n">shapetype</span><span class="p">,</span>
+    <span class="n">topods_dim</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.three_d</span><span class="w"> </span><span class="kn">import</span> <span class="n">Mixin3D</span><span class="p">,</span> <span class="n">Solid</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.two_d</span><span class="w"> </span><span class="kn">import</span> <span class="n">Face</span><span class="p">,</span> <span class="n">Shell</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.utils</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">_extrude_topods_shape</span><span class="p">,</span>
+    <span class="n">_make_topods_compound_from_shapes</span><span class="p">,</span>
+    <span class="n">tuplify</span><span class="p">,</span>
+    <span class="n">unwrapped_shapetype</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.zero_d</span><span class="w"> </span><span class="kn">import</span> <span class="n">Vertex</span>
+
+
+<div class="viewcode-block" id="Compound">
+<a class="viewcode-back" href="../../direct_api_reference.html#topology.Compound">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Compound</span><span class="p">(</span><span class="n">Mixin3D</span><span class="p">,</span> <span class="n">Shape</span><span class="p">[</span><span class="n">TopoDS_Compound</span><span class="p">]):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A Compound in build123d is a topological entity representing a collection of</span>
+<span class="sd">    geometric shapes grouped together within a single structure. It serves as a</span>
+<span class="sd">    container for organizing diverse shapes like edges, faces, or solids. This</span>
+<span class="sd">    hierarchical arrangement facilitates the construction of complex models by</span>
+<span class="sd">    combining simpler shapes. Compound plays a pivotal role in managing the</span>
+<span class="sd">    composition and structure of intricate 3D models in computer-aided design</span>
+<span class="sd">    (CAD) applications, allowing engineers and designers to work with assemblies</span>
+<span class="sd">    of shapes as unified entities for efficient modeling and analysis.&quot;&quot;&quot;</span>
+
+    <span class="n">order</span> <span class="o">=</span> <span class="mf">4.0</span>
+
+    <span class="n">project_to_viewport</span> <span class="o">=</span> <span class="n">Mixin1D</span><span class="o">.</span><span class="n">project_to_viewport</span>
+    <span class="c1"># ---- Constructor ----</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">obj</span><span class="p">:</span> <span class="n">TopoDS_Compound</span> <span class="o">|</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Shape</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">label</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="n">color</span><span class="p">:</span> <span class="n">Color</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">material</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="n">joints</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Joint</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">parent</span><span class="p">:</span> <span class="n">Compound</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">children</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Shape</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Build a Compound from Shapes</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            obj (TopoDS_Compound | Iterable[Shape], optional): OCCT Compound or shapes</span>
+<span class="sd">            label (str, optional): Defaults to &#39;&#39;.</span>
+<span class="sd">            color (Color, optional): Defaults to None.</span>
+<span class="sd">            material (str, optional): tag for external tools. Defaults to &#39;&#39;.</span>
+<span class="sd">            joints (dict[str, Joint], optional): names joints. Defaults to None.</span>
+<span class="sd">            parent (Compound, optional): assembly parent. Defaults to None.</span>
+<span class="sd">            children (Sequence[Shape], optional): assembly children. Defaults to None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">):</span>
+            <span class="n">topods_compound</span> <span class="o">=</span> <span class="n">_make_topods_compound_from_shapes</span><span class="p">(</span>
+                <span class="p">[</span><span class="n">s</span><span class="o">.</span><span class="n">wrapped</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">obj</span><span class="p">]</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">topods_compound</span> <span class="o">=</span> <span class="n">obj</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">obj</span><span class="o">=</span><span class="n">topods_compound</span><span class="p">,</span>
+            <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">,</span>
+            <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span>
+            <span class="n">parent</span><span class="o">=</span><span class="n">parent</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">material</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="k">if</span> <span class="n">material</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">material</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">joints</span> <span class="o">=</span> <span class="p">{}</span> <span class="k">if</span> <span class="n">joints</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">joints</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">children</span> <span class="o">=</span> <span class="p">[]</span> <span class="k">if</span> <span class="n">children</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">children</span>
+
+    <span class="c1"># ---- Properties ----</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_dim</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The dimension of the shapes within the Compound - None if inconsistent&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">topods_dim</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wrapped</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">volume</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;volume - the volume of this Compound&quot;&quot;&quot;</span>
+        <span class="c1"># when density == 1, mass == volume</span>
+        <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">volume</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">get_type</span><span class="p">(</span><span class="n">Solid</span><span class="p">),</span> <span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">get_type</span><span class="p">(</span><span class="n">Shell</span><span class="p">)])</span>
+
+    <span class="c1"># ---- Class Methods ----</span>
+
+<div class="viewcode-block" id="Compound.cast">
+<a class="viewcode-back" href="../../direct_api_reference.html#topology.Compound.cast">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">cast</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span> <span class="n">obj</span><span class="p">:</span> <span class="n">TopoDS_Shape</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Vertex</span> <span class="o">|</span> <span class="n">Edge</span> <span class="o">|</span> <span class="n">Wire</span> <span class="o">|</span> <span class="n">Face</span> <span class="o">|</span> <span class="n">Shell</span> <span class="o">|</span> <span class="n">Solid</span> <span class="o">|</span> <span class="n">Compound</span><span class="p">:</span>
+        <span class="s2">&quot;Returns the right type of wrapper, given a OCCT object&quot;</span>
+
+        <span class="c1"># define the shape lookup table for casting</span>
+        <span class="n">constructor_lut</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="n">ta</span><span class="o">.</span><span class="n">TopAbs_VERTEX</span><span class="p">:</span> <span class="n">Vertex</span><span class="p">,</span>
+            <span class="n">ta</span><span class="o">.</span><span class="n">TopAbs_EDGE</span><span class="p">:</span> <span class="n">Edge</span><span class="p">,</span>
+            <span class="n">ta</span><span class="o">.</span><span class="n">TopAbs_WIRE</span><span class="p">:</span> <span class="n">Wire</span><span class="p">,</span>
+            <span class="n">ta</span><span class="o">.</span><span class="n">TopAbs_FACE</span><span class="p">:</span> <span class="n">Face</span><span class="p">,</span>
+            <span class="n">ta</span><span class="o">.</span><span class="n">TopAbs_SHELL</span><span class="p">:</span> <span class="n">Shell</span><span class="p">,</span>
+            <span class="n">ta</span><span class="o">.</span><span class="n">TopAbs_SOLID</span><span class="p">:</span> <span class="n">Solid</span><span class="p">,</span>
+            <span class="n">ta</span><span class="o">.</span><span class="n">TopAbs_COMPOUND</span><span class="p">:</span> <span class="n">Compound</span><span class="p">,</span>
+            <span class="n">ta</span><span class="o">.</span><span class="n">TopAbs_COMPSOLID</span><span class="p">:</span> <span class="n">Compound</span><span class="p">,</span>
+        <span class="p">}</span>
+
+        <span class="n">shape_type</span> <span class="o">=</span> <span class="n">shapetype</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+        <span class="c1"># NB downcast is needed to handle TopoDS_Shape types</span>
+        <span class="k">return</span> <span class="n">constructor_lut</span><span class="p">[</span><span class="n">shape_type</span><span class="p">](</span><span class="n">downcast</span><span class="p">(</span><span class="n">obj</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="Compound.extrude">
+<a class="viewcode-back" href="../../direct_api_reference.html#topology.Compound.extrude">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extrude</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">obj</span><span class="p">:</span> <span class="n">Shell</span><span class="p">,</span> <span class="n">direction</span><span class="p">:</span> <span class="n">VectorLike</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Compound</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;extrude</span>
+
+<span class="sd">        Extrude a Shell into a Compound.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            direction (VectorLike): direction and magnitude of extrusion</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            ValueError: Unsupported class</span>
+<span class="sd">            RuntimeError: Generated invalid result</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Edge: extruded shape</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">Compound</span><span class="p">(</span>
+            <span class="n">TopoDS</span><span class="o">.</span><span class="n">Compound_s</span><span class="p">(</span><span class="n">_extrude_topods_shape</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">wrapped</span><span class="p">,</span> <span class="n">direction</span><span class="p">))</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Compound.make_text">
+<a class="viewcode-back" href="../../direct_api_reference.html#topology.Compound.make_text">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">make_text</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span>
+        <span class="n">txt</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">font_size</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">font</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Arial&quot;</span><span class="p">,</span>
+        <span class="n">font_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">font_style</span><span class="p">:</span> <span class="n">FontStyle</span> <span class="o">=</span> <span class="n">FontStyle</span><span class="o">.</span><span class="n">REGULAR</span><span class="p">,</span>
+        <span class="n">align</span><span class="p">:</span> <span class="n">Align</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Align</span><span class="p">,</span> <span class="n">Align</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="p">(</span><span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">),</span>
+        <span class="n">position_on_path</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>
+        <span class="n">text_path</span><span class="p">:</span> <span class="n">Edge</span> <span class="o">|</span> <span class="n">Wire</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Compound</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;2D Text that optionally follows a path.</span>
+
+<span class="sd">        The text that is created can be combined as with other sketch features by specifying</span>
+<span class="sd">        a mode or rotated by the given angle.  In addition, edges have been previously created</span>
+<span class="sd">        with arc or segment, the text will follow the path defined by these edges. The start</span>
+<span class="sd">        parameter can be used to shift the text along the path to achieve precise positioning.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            txt: text to be rendered</span>
+<span class="sd">            font_size: size of the font in model units</span>
+<span class="sd">            font: font name</span>
+<span class="sd">            font_path: path to font file</span>
+<span class="sd">            font_style: text style. Defaults to FontStyle.REGULAR.</span>
+<span class="sd">            align (Union[Align, tuple[Align, Align]], optional): align min, center, or max</span>
+<span class="sd">                of object. Defaults to (Align.CENTER, Align.CENTER).</span>
+<span class="sd">            position_on_path: the relative location on path to position the text,</span>
+<span class="sd">                between 0.0 and 1.0. Defaults to 0.0.</span>
+<span class="sd">            text_path: a path for the text to follows. Defaults to None - linear text.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            a Compound object containing multiple Faces representing the text</span>
+
+<span class="sd">        Examples::</span>
+
+<span class="sd">            fox = Compound.make_text(</span>
+<span class="sd">                txt=&quot;The quick brown fox jumped over the lazy dog&quot;,</span>
+<span class="sd">                font_size=10,</span>
+<span class="sd">                position_on_path=0.1,</span>
+<span class="sd">                text_path=jump_edge,</span>
+<span class="sd">            )</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># pylint: disable=too-many-locals</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="nf">position_face</span><span class="p">(</span><span class="n">orig_face</span><span class="p">:</span> <span class="n">Face</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Face</span><span class="p">:</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Reposition a face to the provided path</span>
+
+<span class="sd">            Local coordinates are used to calculate the position of the face</span>
+<span class="sd">            relative to the path. Global coordinates to position the face.</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="k">assert</span> <span class="n">text_path</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+            <span class="n">bbox</span> <span class="o">=</span> <span class="n">orig_face</span><span class="o">.</span><span class="n">bounding_box</span><span class="p">()</span>
+            <span class="n">face_bottom_center</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">((</span><span class="n">bbox</span><span class="o">.</span><span class="n">min</span><span class="o">.</span><span class="n">X</span> <span class="o">+</span> <span class="n">bbox</span><span class="o">.</span><span class="n">max</span><span class="o">.</span><span class="n">X</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="n">relative_position_on_wire</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="n">position_on_path</span> <span class="o">+</span> <span class="n">face_bottom_center</span><span class="o">.</span><span class="n">X</span> <span class="o">/</span> <span class="n">path_length</span>
+            <span class="p">)</span>
+            <span class="n">wire_tangent</span> <span class="o">=</span> <span class="n">text_path</span><span class="o">.</span><span class="n">tangent_at</span><span class="p">(</span><span class="n">relative_position_on_wire</span><span class="p">)</span>
+            <span class="n">wire_angle</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">get_signed_angle</span><span class="p">(</span><span class="n">wire_tangent</span><span class="p">)</span>
+            <span class="n">wire_position</span> <span class="o">=</span> <span class="n">text_path</span><span class="o">.</span><span class="n">position_at</span><span class="p">(</span><span class="n">relative_position_on_wire</span><span class="p">)</span>
+
+            <span class="k">return</span> <span class="n">orig_face</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="n">wire_position</span> <span class="o">-</span> <span class="n">face_bottom_center</span><span class="p">)</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span>
+                <span class="n">Axis</span><span class="p">(</span><span class="n">wire_position</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)),</span>
+                <span class="o">-</span><span class="n">wire_angle</span><span class="p">,</span>
+            <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;linux&quot;</span><span class="p">):</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;FONTCONFIG_FILE&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/etc/fonts/fonts.conf&quot;</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;FONTCONFIG_PATH&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/etc/fonts/&quot;</span>
+
+        <span class="n">font_kind</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="n">FontStyle</span><span class="o">.</span><span class="n">REGULAR</span><span class="p">:</span> <span class="n">Font_FA_Regular</span><span class="p">,</span>
+            <span class="n">FontStyle</span><span class="o">.</span><span class="n">BOLD</span><span class="p">:</span> <span class="n">Font_FA_Bold</span><span class="p">,</span>
+            <span class="n">FontStyle</span><span class="o">.</span><span class="n">ITALIC</span><span class="p">:</span> <span class="n">Font_FA_Italic</span><span class="p">,</span>
+        <span class="p">}[</span><span class="n">font_style</span><span class="p">]</span>
+
+        <span class="n">mgr</span> <span class="o">=</span> <span class="n">Font_FontMgr</span><span class="o">.</span><span class="n">GetInstance_s</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">font_path</span> <span class="ow">and</span> <span class="n">mgr</span><span class="o">.</span><span class="n">CheckFont</span><span class="p">(</span><span class="n">TCollection_AsciiString</span><span class="p">(</span><span class="n">font_path</span><span class="p">)</span><span class="o">.</span><span class="n">ToCString</span><span class="p">()):</span>
+            <span class="n">font_t</span> <span class="o">=</span> <span class="n">Font_SystemFont</span><span class="p">(</span><span class="n">TCollection_AsciiString</span><span class="p">(</span><span class="n">font_path</span><span class="p">))</span>
+            <span class="n">font_t</span><span class="o">.</span><span class="n">SetFontPath</span><span class="p">(</span><span class="n">font_kind</span><span class="p">,</span> <span class="n">TCollection_AsciiString</span><span class="p">(</span><span class="n">font_path</span><span class="p">))</span>
+            <span class="n">mgr</span><span class="o">.</span><span class="n">RegisterFont</span><span class="p">(</span><span class="n">font_t</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">font_t</span> <span class="o">=</span> <span class="n">mgr</span><span class="o">.</span><span class="n">FindFont</span><span class="p">(</span><span class="n">TCollection_AsciiString</span><span class="p">(</span><span class="n">font</span><span class="p">),</span> <span class="n">font_kind</span><span class="p">)</span>
+
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+            <span class="s2">&quot;Creating text with font </span><span class="si">%s</span><span class="s2"> located at </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="n">font_t</span><span class="o">.</span><span class="n">FontName</span><span class="p">()</span><span class="o">.</span><span class="n">ToCString</span><span class="p">(),</span>
+            <span class="n">font_t</span><span class="o">.</span><span class="n">FontPath</span><span class="p">(</span><span class="n">font_kind</span><span class="p">)</span><span class="o">.</span><span class="n">ToCString</span><span class="p">(),</span>
+        <span class="p">)</span>
+
+        <span class="n">builder</span> <span class="o">=</span> <span class="n">Font_BRepTextBuilder</span><span class="p">()</span>
+        <span class="n">font_i</span> <span class="o">=</span> <span class="n">StdPrs_BRepFont</span><span class="p">(</span>
+            <span class="n">NCollection_Utf8String</span><span class="p">(</span><span class="n">font_t</span><span class="o">.</span><span class="n">FontName</span><span class="p">()</span><span class="o">.</span><span class="n">ToCString</span><span class="p">()),</span>
+            <span class="n">font_kind</span><span class="p">,</span>
+            <span class="nb">float</span><span class="p">(</span><span class="n">font_size</span><span class="p">),</span>
+        <span class="p">)</span>
+        <span class="n">text_flat</span> <span class="o">=</span> <span class="n">Compound</span><span class="p">(</span><span class="n">builder</span><span class="o">.</span><span class="n">Perform</span><span class="p">(</span><span class="n">font_i</span><span class="p">,</span> <span class="n">NCollection_Utf8String</span><span class="p">(</span><span class="n">txt</span><span class="p">)))</span>
+
+        <span class="c1"># Align the text from the bounding box</span>
+        <span class="n">align_text</span> <span class="o">=</span> <span class="n">tuplify</span><span class="p">(</span><span class="n">align</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">text_flat</span> <span class="o">=</span> <span class="n">text_flat</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span>
+            <span class="n">Vector</span><span class="p">(</span><span class="o">*</span><span class="n">text_flat</span><span class="o">.</span><span class="n">bounding_box</span><span class="p">()</span><span class="o">.</span><span class="n">to_align_offset</span><span class="p">(</span><span class="n">align_text</span><span class="p">))</span>
+        <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">text_path</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">path_length</span> <span class="o">=</span> <span class="n">text_path</span><span class="o">.</span><span class="n">length</span>
+            <span class="n">text_flat</span> <span class="o">=</span> <span class="n">Compound</span><span class="p">([</span><span class="n">position_face</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">text_flat</span><span class="o">.</span><span class="n">faces</span><span class="p">()])</span>
+
+        <span class="k">return</span> <span class="n">text_flat</span></div>
+
+
+<div class="viewcode-block" id="Compound.make_triad">
+<a class="viewcode-back" href="../../direct_api_reference.html#topology.Compound.make_triad">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">make_triad</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">axes_scale</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Compound</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The coordinate system triad (X, Y, Z axes)&quot;&quot;&quot;</span>
+        <span class="n">x_axis</span> <span class="o">=</span> <span class="n">Edge</span><span class="o">.</span><span class="n">make_line</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="n">axes_scale</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+        <span class="n">y_axis</span> <span class="o">=</span> <span class="n">Edge</span><span class="o">.</span><span class="n">make_line</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">axes_scale</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+        <span class="n">z_axis</span> <span class="o">=</span> <span class="n">Edge</span><span class="o">.</span><span class="n">make_line</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">axes_scale</span><span class="p">))</span>
+        <span class="n">arrow_arc</span> <span class="o">=</span> <span class="n">Edge</span><span class="o">.</span><span class="n">make_spline</span><span class="p">(</span>
+            <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="n">axes_scale</span> <span class="o">/</span> <span class="mi">20</span><span class="p">,</span> <span class="n">axes_scale</span> <span class="o">/</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">0</span><span class="p">)],</span>
+            <span class="p">[(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">)],</span>
+        <span class="p">)</span>
+        <span class="n">arrow</span> <span class="o">=</span> <span class="n">Wire</span><span class="p">([</span><span class="n">arrow_arc</span><span class="p">,</span> <span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">arrow_arc</span><span class="p">)</span><span class="o">.</span><span class="n">mirror</span><span class="p">(</span><span class="n">Plane</span><span class="o">.</span><span class="n">XZ</span><span class="p">)])</span>
+        <span class="n">x_label</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">Compound</span><span class="o">.</span><span class="n">make_text</span><span class="p">(</span>
+                <span class="s2">&quot;X&quot;</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="n">axes_scale</span> <span class="o">/</span> <span class="mi">4</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="p">(</span><span class="n">Align</span><span class="o">.</span><span class="n">MIN</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">)</span>
+            <span class="p">)</span>
+            <span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">Location</span><span class="p">(</span><span class="n">x_axis</span> <span class="o">@</span> <span class="mi">1</span><span class="p">))</span>
+            <span class="o">.</span><span class="n">edges</span><span class="p">()</span>
+        <span class="p">)</span>
+        <span class="n">y_label</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">Compound</span><span class="o">.</span><span class="n">make_text</span><span class="p">(</span>
+                <span class="s2">&quot;Y&quot;</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="n">axes_scale</span> <span class="o">/</span> <span class="mi">4</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="p">(</span><span class="n">Align</span><span class="o">.</span><span class="n">MIN</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">)</span>
+            <span class="p">)</span>
+            <span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">Axis</span><span class="o">.</span><span class="n">Z</span><span class="p">,</span> <span class="mi">90</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">Location</span><span class="p">(</span><span class="n">y_axis</span> <span class="o">@</span> <span class="mi">1</span><span class="p">))</span>
+            <span class="o">.</span><span class="n">edges</span><span class="p">()</span>
+        <span class="p">)</span>
+        <span class="n">z_label</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">Compound</span><span class="o">.</span><span class="n">make_text</span><span class="p">(</span>
+                <span class="s2">&quot;Z&quot;</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="n">axes_scale</span> <span class="o">/</span> <span class="mi">4</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="p">(</span><span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">MIN</span><span class="p">)</span>
+            <span class="p">)</span>
+            <span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">Axis</span><span class="o">.</span><span class="n">Y</span><span class="p">,</span> <span class="mi">90</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">Axis</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="mi">90</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">Location</span><span class="p">(</span><span class="n">z_axis</span> <span class="o">@</span> <span class="mi">1</span><span class="p">))</span>
+            <span class="o">.</span><span class="n">edges</span><span class="p">()</span>
+        <span class="p">)</span>
+        <span class="n">triad</span> <span class="o">=</span> <span class="n">Curve</span><span class="p">(</span>
+            <span class="p">[</span>
+                <span class="n">x_axis</span><span class="p">,</span>
+                <span class="n">y_axis</span><span class="p">,</span>
+                <span class="n">z_axis</span><span class="p">,</span>
+                <span class="n">arrow</span><span class="o">.</span><span class="n">moved</span><span class="p">(</span><span class="n">Location</span><span class="p">(</span><span class="n">x_axis</span> <span class="o">@</span> <span class="mi">1</span><span class="p">)),</span>
+                <span class="n">arrow</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">Axis</span><span class="o">.</span><span class="n">Z</span><span class="p">,</span> <span class="mi">90</span><span class="p">)</span><span class="o">.</span><span class="n">moved</span><span class="p">(</span><span class="n">Location</span><span class="p">(</span><span class="n">y_axis</span> <span class="o">@</span> <span class="mi">1</span><span class="p">)),</span>
+                <span class="n">arrow</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">Axis</span><span class="o">.</span><span class="n">Y</span><span class="p">,</span> <span class="o">-</span><span class="mi">90</span><span class="p">)</span><span class="o">.</span><span class="n">moved</span><span class="p">(</span><span class="n">Location</span><span class="p">(</span><span class="n">z_axis</span> <span class="o">@</span> <span class="mi">1</span><span class="p">)),</span>
+                <span class="o">*</span><span class="n">x_label</span><span class="p">,</span>
+                <span class="o">*</span><span class="n">y_label</span><span class="p">,</span>
+                <span class="o">*</span><span class="n">z_label</span><span class="p">,</span>
+            <span class="p">]</span>
+        <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">triad</span></div>
+
+
+    <span class="c1"># ---- Instance Methods ----</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="kc">None</span> <span class="o">|</span> <span class="n">Shape</span> <span class="o">|</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Shape</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Compound</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Combine other to self `+` operator</span>
+
+<span class="sd">        Note that if all of the objects are connected Edges/Wires the result</span>
+<span class="sd">        will be a Wire, otherwise a Shape.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dim</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">curve</span> <span class="o">=</span> <span class="n">Curve</span><span class="p">()</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">wrapped</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">Curve</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wrapped</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">copy_attributes_to</span><span class="p">(</span><span class="n">curve</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;wrapped&quot;</span><span class="p">,</span> <span class="s2">&quot;_NodeMixin__children&quot;</span><span class="p">])</span>
+            <span class="k">return</span> <span class="n">curve</span> <span class="o">+</span> <span class="n">other</span>
+
+        <span class="n">summands</span><span class="p">:</span> <span class="n">ShapeList</span><span class="p">[</span><span class="n">Shape</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">other</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">summands</span> <span class="o">=</span> <span class="n">ShapeList</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">summands</span> <span class="o">=</span> <span class="n">ShapeList</span><span class="p">(</span>
+                <span class="n">shape</span>
+                <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="p">([</span><span class="n">other</span><span class="p">]</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Shape</span><span class="p">)</span> <span class="k">else</span> <span class="n">other</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">o</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+                <span class="k">for</span> <span class="n">shape</span> <span class="ow">in</span> <span class="n">o</span><span class="o">.</span><span class="n">get_top_level_shapes</span><span class="p">()</span>
+            <span class="p">)</span>
+        <span class="c1"># If there is nothing to add return the original object</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">summands</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span>
+
+        <span class="n">summands</span> <span class="o">=</span> <span class="n">ShapeList</span><span class="p">(</span>
+            <span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_top_level_shapes</span><span class="p">()</span> <span class="o">+</span> <span class="n">summands</span> <span class="k">if</span> <span class="n">s</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+        <span class="p">)</span>
+
+        <span class="c1"># Only fuse the parts if necessary</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">summands</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">result</span><span class="p">:</span> <span class="n">Shape</span> <span class="o">=</span> <span class="n">Compound</span><span class="p">(</span><span class="n">summands</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">fuse_op</span> <span class="o">=</span> <span class="n">BRepAlgoAPI_Fuse</span><span class="p">()</span>
+            <span class="n">fuse_op</span><span class="o">.</span><span class="n">SetFuzzyValue</span><span class="p">(</span><span class="n">TOLERANCE</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">copy_attributes_to</span><span class="p">(</span><span class="n">summands</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;wrapped&quot;</span><span class="p">,</span> <span class="s2">&quot;_NodeMixin__children&quot;</span><span class="p">])</span>
+            <span class="n">bool_result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bool_op</span><span class="p">(</span><span class="n">summands</span><span class="p">[:</span><span class="mi">1</span><span class="p">],</span> <span class="n">summands</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">fuse_op</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">bool_result</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+                <span class="n">result</span> <span class="o">=</span> <span class="n">Compound</span><span class="p">(</span><span class="n">bool_result</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">copy_attributes_to</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;wrapped&quot;</span><span class="p">,</span> <span class="s2">&quot;_NodeMixin__children&quot;</span><span class="p">])</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">result</span> <span class="o">=</span> <span class="n">bool_result</span>
+
+        <span class="k">if</span> <span class="n">SkipClean</span><span class="o">.</span><span class="n">clean</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">clean</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="n">result</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__and__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">Shape</span> <span class="o">|</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Shape</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Compound</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Intersect other to self `&amp;` operator&quot;&quot;&quot;</span>
+        <span class="n">intersection</span> <span class="o">=</span> <span class="n">Shape</span><span class="o">.</span><span class="fm">__and__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span>
+        <span class="n">intersection</span> <span class="o">=</span> <span class="n">Compound</span><span class="p">(</span>
+            <span class="n">intersection</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">intersection</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="k">else</span> <span class="p">[</span><span class="n">intersection</span><span class="p">]</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">copy_attributes_to</span><span class="p">(</span><span class="n">intersection</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;wrapped&quot;</span><span class="p">,</span> <span class="s2">&quot;_NodeMixin__children&quot;</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">intersection</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__bool__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check if empty.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="n">TopoDS_Iterator</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wrapped</span><span class="p">)</span><span class="o">.</span><span class="n">More</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterator</span><span class="p">[</span><span class="n">Shape</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Iterate over subshapes.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">iterator</span> <span class="o">=</span> <span class="n">TopoDS_Iterator</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wrapped</span><span class="p">)</span>
+
+        <span class="k">while</span> <span class="n">iterator</span><span class="o">.</span><span class="n">More</span><span class="p">():</span>
+            <span class="k">yield</span> <span class="n">Compound</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">iterator</span><span class="o">.</span><span class="n">Value</span><span class="p">())</span>
+            <span class="n">iterator</span><span class="o">.</span><span class="n">Next</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the number of subshapes&quot;&quot;&quot;</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">wrapped</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
+                <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">count</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return Compound info as string&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;label&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;children&quot;</span><span class="p">):</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2"> at </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="si">:</span><span class="s2">#x</span><span class="si">}</span><span class="s2">, label(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="si">}</span><span class="s2">), &quot;</span>
+                <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;#children(</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">children</span><span class="p">)</span><span class="si">}</span><span class="s2">)&quot;</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2"> at </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="si">:</span><span class="s2">#x</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="k">return</span> <span class="n">result</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__sub__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="kc">None</span> <span class="o">|</span> <span class="n">Shape</span> <span class="o">|</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Shape</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Compound</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Cut other to self `-` operator&quot;&quot;&quot;</span>
+        <span class="n">difference</span> <span class="o">=</span> <span class="n">Shape</span><span class="o">.</span><span class="fm">__sub__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span>
+        <span class="n">difference</span> <span class="o">=</span> <span class="n">Compound</span><span class="p">(</span>
+            <span class="n">difference</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">difference</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="k">else</span> <span class="p">[</span><span class="n">difference</span><span class="p">]</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">copy_attributes_to</span><span class="p">(</span><span class="n">difference</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;wrapped&quot;</span><span class="p">,</span> <span class="s2">&quot;_NodeMixin__children&quot;</span><span class="p">])</span>
+
+        <span class="k">return</span> <span class="n">difference</span>
+
+<div class="viewcode-block" id="Compound.center">
+<a class="viewcode-back" href="../../direct_api_reference.html#topology.Compound.center">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">center</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">center_of</span><span class="p">:</span> <span class="n">CenterOf</span> <span class="o">=</span> <span class="n">CenterOf</span><span class="o">.</span><span class="n">MASS</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Vector</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return center of object</span>
+
+<span class="sd">        Find center of object</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            center_of (CenterOf, optional): center option. Defaults to CenterOf.MASS.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            ValueError: Center of GEOMETRY is not supported for this object</span>
+<span class="sd">            NotImplementedError: Unable to calculate center of mass of this object</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Vector: center</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">center_of</span> <span class="o">==</span> <span class="n">CenterOf</span><span class="o">.</span><span class="n">GEOMETRY</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Center of GEOMETRY is not supported for this object&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">center_of</span> <span class="o">==</span> <span class="n">CenterOf</span><span class="o">.</span><span class="n">MASS</span><span class="p">:</span>
+            <span class="n">properties</span> <span class="o">=</span> <span class="n">GProp_GProps</span><span class="p">()</span>
+            <span class="n">calc_function</span> <span class="o">=</span> <span class="n">Shape</span><span class="o">.</span><span class="n">shape_properties_LUT</span><span class="p">[</span><span class="n">unwrapped_shapetype</span><span class="p">(</span><span class="bp">self</span><span class="p">)]</span>
+            <span class="k">if</span> <span class="n">calc_function</span><span class="p">:</span>
+                <span class="n">calc_function</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wrapped</span><span class="p">,</span> <span class="n">properties</span><span class="p">)</span>
+                <span class="n">middle</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">(</span><span class="n">properties</span><span class="o">.</span><span class="n">CentreOfMass</span><span class="p">())</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+        <span class="k">elif</span> <span class="n">center_of</span> <span class="o">==</span> <span class="n">CenterOf</span><span class="o">.</span><span class="n">BOUNDING_BOX</span><span class="p">:</span>
+            <span class="n">middle</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bounding_box</span><span class="p">()</span><span class="o">.</span><span class="n">center</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">middle</span></div>
+
+
+<div class="viewcode-block" id="Compound.compound">
+<a class="viewcode-back" href="../../direct_api_reference.html#topology.Compound.compound">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">compound</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Compound</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the Compound&quot;&quot;&quot;</span>
+        <span class="n">shape_list</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">compounds</span><span class="p">()</span>
+        <span class="n">entity_count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">shape_list</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">entity_count</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Found </span><span class="si">{</span><span class="n">entity_count</span><span class="si">}</span><span class="s2"> compounds, returning first&quot;</span><span class="p">,</span>
+                <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="n">shape_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="n">shape_list</span> <span class="k">else</span> <span class="kc">None</span></div>
+
+
+<div class="viewcode-block" id="Compound.compounds">
+<a class="viewcode-back" href="../../direct_api_reference.html#topology.Compound.compounds">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">compounds</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ShapeList</span><span class="p">[</span><span class="n">Compound</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;compounds - all the compounds in this Shape&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">wrapped</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">ShapeList</span><span class="p">()</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wrapped</span><span class="p">,</span> <span class="n">TopoDS_Compound</span><span class="p">):</span>
+            <span class="c1"># pylint: disable=not-an-iterable</span>
+            <span class="n">sub_compounds</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">wrapped</span><span class="p">,</span> <span class="n">TopoDS_Compound</span><span class="p">)]</span>
+            <span class="n">sub_compounds</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">sub_compounds</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">return</span> <span class="n">ShapeList</span><span class="p">(</span><span class="n">sub_compounds</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Compound.do_children_intersect">
+<a class="viewcode-back" href="../../direct_api_reference.html#topology.Compound.do_children_intersect">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">do_children_intersect</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">include_parent</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">tolerance</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1e-5</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">bool</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Shape</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span> <span class="n">Shape</span> <span class="o">|</span> <span class="kc">None</span><span class="p">],</span> <span class="nb">float</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Do Children Intersect</span>
+
+<span class="sd">        Determine if any of the child objects within a Compound/assembly intersect by</span>
+<span class="sd">        intersecting each of the shapes with each other and checking for</span>
+<span class="sd">        a common volume.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            include_parent (bool, optional): check parent for intersections. Defaults to False.</span>
+<span class="sd">            tolerance (float, optional): maximum allowable volume difference. Defaults to 1e-5.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            tuple[bool, tuple[Shape, Shape], float]:</span>
+<span class="sd">                do the object intersect, intersecting objects, volume of intersection</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">children</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Shape</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">PreOrderIter</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">include_parent</span><span class="p">:</span>
+            <span class="n">children</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># remove parent</span>
+        <span class="c1"># children_bbox = [child.bounding_box().to_solid() for child in children]</span>
+        <span class="n">children_bbox</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">Solid</span><span class="o">.</span><span class="n">from_bounding_box</span><span class="p">(</span><span class="n">child</span><span class="o">.</span><span class="n">bounding_box</span><span class="p">())</span> <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">children</span>
+        <span class="p">]</span>
+        <span class="n">child_index_pairs</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="nb">tuple</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">comb</span><span class="p">))</span>
+            <span class="k">for</span> <span class="n">comb</span> <span class="ow">in</span> <span class="n">combinations</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">children</span><span class="p">))),</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="p">]</span>
+        <span class="k">for</span> <span class="n">child_index_pair</span> <span class="ow">in</span> <span class="n">child_index_pairs</span><span class="p">:</span>
+            <span class="c1"># First check for bounding box intersections ..</span>
+            <span class="c1"># .. then confirm with actual object intersections which could be complex</span>
+            <span class="n">bbox_intersection</span> <span class="o">=</span> <span class="n">children_bbox</span><span class="p">[</span><span class="n">child_index_pair</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span><span class="o">.</span><span class="n">intersect</span><span class="p">(</span>
+                <span class="n">children_bbox</span><span class="p">[</span><span class="n">child_index_pair</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
+            <span class="p">)</span>
+            <span class="k">if</span> <span class="n">bbox_intersection</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">obj_intersection</span> <span class="o">=</span> <span class="n">children</span><span class="p">[</span><span class="n">child_index_pair</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span><span class="o">.</span><span class="n">intersect</span><span class="p">(</span>
+                    <span class="n">children</span><span class="p">[</span><span class="n">child_index_pair</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
+                <span class="p">)</span>
+                <span class="k">if</span> <span class="n">obj_intersection</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">common_volume</span> <span class="o">=</span> <span class="p">(</span>
+                        <span class="mf">0.0</span>
+                        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj_intersection</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span>
+                        <span class="k">else</span> <span class="n">obj_intersection</span><span class="o">.</span><span class="n">volume</span>
+                    <span class="p">)</span>
+                    <span class="k">if</span> <span class="n">common_volume</span> <span class="o">&gt;</span> <span class="n">tolerance</span><span class="p">:</span>
+                        <span class="k">return</span> <span class="p">(</span>
+                            <span class="kc">True</span><span class="p">,</span>
+                            <span class="p">(</span>
+                                <span class="n">children</span><span class="p">[</span><span class="n">child_index_pair</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span>
+                                <span class="n">children</span><span class="p">[</span><span class="n">child_index_pair</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span>
+                            <span class="p">),</span>
+                            <span class="n">common_volume</span><span class="p">,</span>
+                        <span class="p">)</span>
+        <span class="k">return</span> <span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span> <span class="mf">0.0</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Compound.get_type">
+<a class="viewcode-back" href="../../direct_api_reference.html#topology.Compound.get_type">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_type</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">obj_type</span><span class="p">:</span> <span class="p">(</span>
+            <span class="nb">type</span><span class="p">[</span><span class="n">Vertex</span><span class="p">]</span>
+            <span class="o">|</span> <span class="nb">type</span><span class="p">[</span><span class="n">Edge</span><span class="p">]</span>
+            <span class="o">|</span> <span class="nb">type</span><span class="p">[</span><span class="n">Face</span><span class="p">]</span>
+            <span class="o">|</span> <span class="nb">type</span><span class="p">[</span><span class="n">Shell</span><span class="p">]</span>
+            <span class="o">|</span> <span class="nb">type</span><span class="p">[</span><span class="n">Solid</span><span class="p">]</span>
+            <span class="o">|</span> <span class="nb">type</span><span class="p">[</span><span class="n">Wire</span><span class="p">]</span>
+        <span class="p">),</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Vertex</span> <span class="o">|</span> <span class="n">Edge</span> <span class="o">|</span> <span class="n">Face</span> <span class="o">|</span> <span class="n">Shell</span> <span class="o">|</span> <span class="n">Solid</span> <span class="o">|</span> <span class="n">Wire</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;get_type</span>
+
+<span class="sd">        Extract the objects of the given type from a Compound. Note that this</span>
+<span class="sd">        isn&#39;t the same as Faces() etc. which will extract Faces from Solids.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            obj_type (Union[Vertex, Edge, Face, Shell, Solid, Wire]): Object types to extract</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            list[Union[Vertex, Edge, Face, Shell, Solid, Wire]]: Extracted objects</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">type_map</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="n">Vertex</span><span class="p">:</span> <span class="n">TopAbs_ShapeEnum</span><span class="o">.</span><span class="n">TopAbs_VERTEX</span><span class="p">,</span>
+            <span class="n">Edge</span><span class="p">:</span> <span class="n">TopAbs_ShapeEnum</span><span class="o">.</span><span class="n">TopAbs_EDGE</span><span class="p">,</span>
+            <span class="n">Face</span><span class="p">:</span> <span class="n">TopAbs_ShapeEnum</span><span class="o">.</span><span class="n">TopAbs_FACE</span><span class="p">,</span>
+            <span class="n">Shell</span><span class="p">:</span> <span class="n">TopAbs_ShapeEnum</span><span class="o">.</span><span class="n">TopAbs_SHELL</span><span class="p">,</span>
+            <span class="n">Solid</span><span class="p">:</span> <span class="n">TopAbs_ShapeEnum</span><span class="o">.</span><span class="n">TopAbs_SOLID</span><span class="p">,</span>
+            <span class="n">Wire</span><span class="p">:</span> <span class="n">TopAbs_ShapeEnum</span><span class="o">.</span><span class="n">TopAbs_WIRE</span><span class="p">,</span>
+            <span class="n">Compound</span><span class="p">:</span> <span class="n">TopAbs_ShapeEnum</span><span class="o">.</span><span class="n">TopAbs_COMPOUND</span><span class="p">,</span>
+        <span class="p">}</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">comp</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">compounds</span><span class="p">():</span>
+            <span class="n">iterator</span> <span class="o">=</span> <span class="n">TopoDS_Iterator</span><span class="p">()</span>
+            <span class="n">iterator</span><span class="o">.</span><span class="n">Initialize</span><span class="p">(</span><span class="n">comp</span><span class="o">.</span><span class="n">wrapped</span><span class="p">)</span>
+            <span class="k">while</span> <span class="n">iterator</span><span class="o">.</span><span class="n">More</span><span class="p">():</span>
+                <span class="n">child</span> <span class="o">=</span> <span class="n">iterator</span><span class="o">.</span><span class="n">Value</span><span class="p">()</span>
+                <span class="k">if</span> <span class="n">child</span><span class="o">.</span><span class="n">ShapeType</span><span class="p">()</span> <span class="o">==</span> <span class="n">type_map</span><span class="p">[</span><span class="n">obj_type</span><span class="p">]:</span>
+                    <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">obj_type</span><span class="p">(</span><span class="n">downcast</span><span class="p">(</span><span class="n">child</span><span class="p">)))</span>
+                <span class="n">iterator</span><span class="o">.</span><span class="n">Next</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="n">results</span></div>
+
+
+<div class="viewcode-block" id="Compound.unwrap">
+<a class="viewcode-back" href="../../direct_api_reference.html#topology.Compound.unwrap">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">unwrap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fully</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Self</span> <span class="o">|</span> <span class="n">Shape</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Strip unnecessary Compound wrappers</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            fully (bool, optional): return base shape without any Compound</span>
+<span class="sd">                wrappers (otherwise one Compound is left). Defaults to True.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Union[Self, Shape]: base shape</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">single_element</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">copy_attributes_to</span><span class="p">(</span><span class="n">single_element</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;wrapped&quot;</span><span class="p">,</span> <span class="s2">&quot;_NodeMixin__children&quot;</span><span class="p">])</span>
+
+            <span class="c1"># If the single element is another Compound, unwrap it recursively</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">single_element</span><span class="p">,</span> <span class="n">Compound</span><span class="p">):</span>
+                <span class="c1"># Unwrap recursively and copy attributes down</span>
+                <span class="n">unwrapped</span> <span class="o">=</span> <span class="n">single_element</span><span class="o">.</span><span class="n">unwrap</span><span class="p">(</span><span class="n">fully</span><span class="p">)</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">fully</span><span class="p">:</span>
+                    <span class="n">unwrapped</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)(</span><span class="n">unwrapped</span><span class="o">.</span><span class="n">wrapped</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">copy_attributes_to</span><span class="p">(</span><span class="n">unwrapped</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;wrapped&quot;</span><span class="p">,</span> <span class="s2">&quot;_NodeMixin__children&quot;</span><span class="p">])</span>
+                <span class="k">return</span> <span class="n">unwrapped</span>
+
+            <span class="k">return</span> <span class="n">single_element</span> <span class="k">if</span> <span class="n">fully</span> <span class="k">else</span> <span class="bp">self</span>
+
+        <span class="c1"># If there are no elements or more than one element, return self</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_post_attach</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parent</span><span class="p">:</span> <span class="n">Compound</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Method call after attaching to `parent`.&quot;&quot;&quot;</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Updated parent of </span><span class="si">%s</span><span class="s2"> to </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="p">,</span> <span class="n">parent</span><span class="o">.</span><span class="n">label</span><span class="p">)</span>
+        <span class="n">parent</span><span class="o">.</span><span class="n">wrapped</span> <span class="o">=</span> <span class="n">_make_topods_compound_from_shapes</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">wrapped</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">parent</span><span class="o">.</span><span class="n">children</span><span class="p">]</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_post_attach_children</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">children</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Shape</span><span class="p">]):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Method call after attaching `children`.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">children</span><span class="p">:</span>
+            <span class="n">kids</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">child</span><span class="o">.</span><span class="n">label</span> <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">children</span><span class="p">])</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Adding children </span><span class="si">%s</span><span class="s2"> to </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">kids</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">wrapped</span> <span class="o">=</span> <span class="n">_make_topods_compound_from_shapes</span><span class="p">(</span>
+                <span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">wrapped</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">children</span><span class="p">]</span>
+            <span class="p">)</span>
+        <span class="c1"># else:</span>
+        <span class="c1">#     logger.debug(&quot;Adding no children to %s&quot;, self.label)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_post_detach</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parent</span><span class="p">:</span> <span class="n">Compound</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Method call after detaching from `parent`.&quot;&quot;&quot;</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Removing parent of </span><span class="si">%s</span><span class="s2"> (</span><span class="si">%s</span><span class="s2">)&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="p">,</span> <span class="n">parent</span><span class="o">.</span><span class="n">label</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">parent</span><span class="o">.</span><span class="n">children</span><span class="p">:</span>
+            <span class="n">parent</span><span class="o">.</span><span class="n">wrapped</span> <span class="o">=</span> <span class="n">_make_topods_compound_from_shapes</span><span class="p">(</span>
+                <span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">wrapped</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">parent</span><span class="o">.</span><span class="n">children</span><span class="p">]</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">parent</span><span class="o">.</span><span class="n">wrapped</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_post_detach_children</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">children</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Method call before detaching `children`.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">children</span><span class="p">:</span>
+            <span class="n">kids</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">child</span><span class="o">.</span><span class="n">label</span> <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">children</span><span class="p">])</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Removing children </span><span class="si">%s</span><span class="s2"> from </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">kids</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">wrapped</span> <span class="o">=</span> <span class="n">_make_topods_compound_from_shapes</span><span class="p">(</span>
+                <span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">wrapped</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">children</span><span class="p">]</span>
+            <span class="p">)</span>
+        <span class="c1"># else:</span>
+        <span class="c1">#     logger.debug(&quot;Removing no children from %s&quot;, self.label)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_pre_attach</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parent</span><span class="p">:</span> <span class="n">Compound</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Method call before attaching to `parent`.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">parent</span><span class="p">,</span> <span class="n">Compound</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;`parent` must be of type Compound&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_pre_attach_children</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">children</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Method call before attaching `children`.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">child</span><span class="p">,</span> <span class="n">Shape</span><span class="p">)</span> <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">children</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Each child must be of type Shape&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_remove</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">shape</span><span class="p">:</span> <span class="n">Shape</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Compound</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return self with the specified shape removed.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">          shape: Shape:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">comp_builder</span> <span class="o">=</span> <span class="n">TopoDS_Builder</span><span class="p">()</span>
+        <span class="n">comp_builder</span><span class="o">.</span><span class="n">Remove</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wrapped</span><span class="p">,</span> <span class="n">shape</span><span class="o">.</span><span class="n">wrapped</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+
+
+<div class="viewcode-block" id="Curve">
+<a class="viewcode-back" href="../../direct_api_reference.html#topology.Curve">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Curve</span><span class="p">(</span><span class="n">Compound</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A Compound containing 1D objects - aka Edges&quot;&quot;&quot;</span>
+
+    <span class="fm">__add__</span> <span class="o">=</span> <span class="n">Mixin1D</span><span class="o">.</span><span class="fm">__add__</span>  <span class="c1"># type: ignore</span>
+    <span class="c1"># ---- Properties ----</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_dim</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+
+    <span class="c1"># ---- Instance Methods ----</span>
+
+<div class="viewcode-block" id="Curve.__matmul__">
+<a class="viewcode-back" href="../../direct_api_reference.html#topology.Curve.__matmul__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__matmul__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">position</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Vector</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Position on curve operator @ - only works if continuous&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">Wire</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">edges</span><span class="p">())</span><span class="o">.</span><span class="n">position_at</span><span class="p">(</span><span class="n">position</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Curve.__mod__">
+<a class="viewcode-back" href="../../direct_api_reference.html#topology.Curve.__mod__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__mod__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">position</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Vector</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Tangent on wire operator % - only works if continuous&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">Wire</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">edges</span><span class="p">())</span><span class="o">.</span><span class="n">tangent_at</span><span class="p">(</span><span class="n">position</span><span class="p">)</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__xor__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">position</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Location</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Location on wire operator ^ - only works if continuous&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">Wire</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">edges</span><span class="p">())</span><span class="o">.</span><span class="n">location_at</span><span class="p">(</span><span class="n">position</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Curve.wires">
+<a class="viewcode-back" href="../../direct_api_reference.html#topology.Curve.wires">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">wires</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ShapeList</span><span class="p">[</span><span class="n">Wire</span><span class="p">]:</span>  <span class="c1"># type: ignore</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;A list of wires created from the edges&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">Wire</span><span class="o">.</span><span class="n">combine</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">edges</span><span class="p">())</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="Sketch">
+<a class="viewcode-back" href="../../direct_api_reference.html#topology.Sketch">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Sketch</span><span class="p">(</span><span class="n">Compound</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A Compound containing 2D objects - aka Faces&quot;&quot;&quot;</span>
+
+    <span class="c1"># ---- Properties ----</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_dim</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">2</span></div>
+
+
+
+<div class="viewcode-block" id="Part">
+<a class="viewcode-back" href="../../direct_api_reference.html#topology.Part">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Part</span><span class="p">(</span><span class="n">Compound</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A Compound containing 3D objects - aka Solids&quot;&quot;&quot;</span>
+
+    <span class="c1"># ---- Properties ----</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_dim</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">3</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Gumyr.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

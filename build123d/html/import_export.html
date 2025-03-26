@@ -1,0 +1,1029 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Import/Export &mdash; build123d 0.9.2.dev40+gb1f0eed documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster.custom.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster.bundle.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-shadow.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-punk.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-noir.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-light.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-borderless.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/micromodal.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/sphinx_rtd_theme.css?v=3234e928" />
+      <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=c97902b4"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=f281be69"></script>
+      <script src="_static/js/hoverxref.js"></script>
+      <script src="_static/js/tooltipster.bundle.min.js"></script>
+      <script src="_static/js/micromodal.min.js"></script>
+      <script src="_static/design-tabs.js?v=f930bc37"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Advanced Topics" href="advanced.html" />
+    <link rel="prev" title="Tips, Best Practices and FAQ" href="tips.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            build123d
+              <img src="_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts.html">Key Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts_builder.html">Key Concepts (builder mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts_algebra.html">Key Concepts (algebra mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="moving_objects.html">Moving Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OpenSCAD.html">Transitioning from OpenSCAD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introductory_examples.html">Introductory Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="selectors_operators.html">Selectors and Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operations.html">Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="builders.html">Builders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="joints.html">Joints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assemblies.html">Assemblies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tips.html">Tips, Best Practices and FAQ</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Import/Export</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#file-formats">File Formats</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#mf">3MF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#brep">BREP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dxf">DXF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gltf">glTF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#stl">STL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step">STEP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#svg">SVG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#d-exporters">2D Exporters</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#d-to-2d-projection">3D to 2D Projection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#linetype">LineType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exportdxf">ExportDXF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exportsvg">ExportSVG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-exporters3d">3D Exporters</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#d-mesh-export">3D Mesh Export</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#mesher.Mesher"><code class="docutils literal notranslate"><span class="pre">Mesher</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-importers">2D Importers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#importers.import_svg"><code class="docutils literal notranslate"><span class="pre">import_svg()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#importers.import_svg_as_buildline_code"><code class="docutils literal notranslate"><span class="pre">import_svg_as_buildline_code()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">3D Importers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#importers.import_brep"><code class="docutils literal notranslate"><span class="pre">import_brep()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#importers.import_step"><code class="docutils literal notranslate"><span class="pre">import_step()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#importers.import_stl"><code class="docutils literal notranslate"><span class="pre">import_stl()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#d-mesh-import">3D Mesh Import</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cheat_sheet.html">Cheat Sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="external.html">External Tools and Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="builder_api_reference.html">Builder Common API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="direct_api_reference.html">Direct API Reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">build123d</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Import/Export</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/import_export.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="import-export">
+<h1>Import/Export<a class="headerlink" href="#import-export" title="Link to this heading"></a></h1>
+<p>Methods and functions specific to exporting and importing build123d objects are defined below.</p>
+<p>For example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">BuildPart</span><span class="p">()</span> <span class="k">as</span> <span class="n">box_builder</span><span class="p">:</span>
+    <span class="n">Box</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">export_step</span><span class="p">(</span><span class="n">box_builder</span><span class="o">.</span><span class="n">part</span><span class="p">,</span> <span class="s2">&quot;box.step&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<section id="file-formats">
+<h2>File Formats<a class="headerlink" href="#file-formats" title="Link to this heading"></a></h2>
+<section id="mf">
+<h3>3MF<a class="headerlink" href="#mf" title="Link to this heading"></a></h3>
+<p>The 3MF (3D Manufacturing Format) file format is a versatile and modern standard
+for representing 3D models used in additive manufacturing, 3D printing, and other
+applications. Developed by the 3MF Consortium, it aims to overcome the limitations
+of traditional 3D file formats by providing a more efficient and feature-rich solution.
+The 3MF format supports various advanced features like color information, texture mapping,
+multi-material definitions, and precise geometry representation, enabling seamless
+communication between design software, 3D printers, and other manufacturing devices.
+Its open and extensible nature makes it an ideal choice for exchanging complex 3D data
+in a compact and interoperable manner.</p>
+</section>
+<section id="brep">
+<h3>BREP<a class="headerlink" href="#brep" title="Link to this heading"></a></h3>
+<p>The BREP (Boundary Representation) file format is a widely used data format in
+computer-aided design (CAD) and computer-aided engineering (CAE) applications.
+BREP represents 3D geometry using topological entities like vertices, edges,
+and faces, along with their connectivity information. It provides a precise
+and comprehensive representation of complex 3D models, making it suitable for
+advanced modeling and analysis tasks. BREP files are widely supported by various
+CAD software, enabling seamless data exchange between different systems. Its ability
+to represent both geometric shapes and their topological relationships makes it a
+fundamental format for storing and sharing detailed 3D models.</p>
+</section>
+<section id="dxf">
+<h3>DXF<a class="headerlink" href="#dxf" title="Link to this heading"></a></h3>
+<p>The DXF (Drawing Exchange Format) file format is a widely used standard for
+representing 2D and 3D drawings, primarily used in computer-aided design (CAD)
+applications. Developed by Autodesk, DXF files store graphical and geometric data,
+such as lines, arcs, circles, and text, as well as information about layers, colors,
+and line weights. Due to its popularity, DXF files can be easily exchanged and
+shared between different CAD software. The format’s simplicity and human-readable
+structure make it a versatile choice for sharing designs, drawings, and models
+across various CAD platforms, facilitating seamless collaboration in engineering
+and architectural projects.</p>
+</section>
+<section id="gltf">
+<h3>glTF<a class="headerlink" href="#gltf" title="Link to this heading"></a></h3>
+<p>The glTF (GL Transmission Format) is a royalty-free specification for the efficient
+transmission and loading of 3D models and scenes by applications. Developed by the
+Khronos Group, glTF is designed as a compact, interoperable format that enables the
+quick display of assets across various platforms and devices. glTF supports a rich
+feature set, including detailed meshes, materials, textures, skeletal animations,
+and more, facilitating complex 3D visualizations. It streamlines the process of
+sharing and deploying 3D content in web applications, game engines, and other
+visualization tools, making it the “JPEG of 3D.” glTF’s versatility and efficiency
+have led to its widespread adoption in the 3D content industry.</p>
+</section>
+<section id="stl">
+<h3>STL<a class="headerlink" href="#stl" title="Link to this heading"></a></h3>
+<p>The STL (STereoLithography) file format is a widely used file format in 3D printing
+and computer-aided design (CAD) applications. It represents 3D geometry using
+triangular facets to approximate the surface of a 3D model. STL files are widely
+supported and can store both the geometry and color information of the model.
+They are used for rapid prototyping and 3D printing, as they provide a simple and
+efficient way to represent complex 3D objects. The format’s popularity stems from
+its ease of use, platform independence, and ability to accurately describe the
+surface of intricate 3D models with a minimal file size.</p>
+</section>
+<section id="step">
+<h3>STEP<a class="headerlink" href="#step" title="Link to this heading"></a></h3>
+<p>The STEP (Standard for the Exchange of Product model data) file format is a widely
+used standard for representing 3D product and manufacturing data in computer-aided
+design (CAD) and computer-aided engineering (CAE) applications. It is an ISO standard
+(ISO 10303) and supports the representation of complex 3D geometry, product structure,
+and metadata. STEP files store information in a neutral and standardized format,
+making them highly interoperable across different CAD/CAM software systems. They
+enable seamless data exchange between various engineering disciplines, facilitating
+collaboration and data integration throughout the entire product development and
+manufacturing process.</p>
+</section>
+<section id="svg">
+<h3>SVG<a class="headerlink" href="#svg" title="Link to this heading"></a></h3>
+<p>The SVG (Scalable Vector Graphics) file format is an XML-based standard used for
+describing 2D vector graphics. It is widely supported and can be displayed in modern
+web browsers, making it suitable for web-based graphics and interactive applications.
+SVG files define shapes, paths, text, and images using mathematical equations,
+allowing for smooth scalability without loss of quality. The format is ideal for
+logos, icons, illustrations, and other graphics that require resolution independence.
+SVG files are also easily editable in text editors or vector graphic software, making
+them a popular choice for designers and developers seeking flexible and versatile graphic
+representation.</p>
+</section>
+</section>
+<section id="d-exporters">
+<h2>2D Exporters<a class="headerlink" href="#d-exporters" title="Link to this heading"></a></h2>
+<p>Exports to DXF (Drawing Exchange Format) and SVG (Scalable Vector Graphics)
+are provided by the 2D Exporters: ExportDXF and ExportSVG classes.</p>
+<p>DXF is a widely used file format for exchanging CAD (Computer-Aided Design)
+data between different software applications. SVG is a widely used vector graphics
+format that is supported by web browsers and various graphic editors.</p>
+<p>The core concept to these classes is the creation of a DXF/SVG document with
+specific properties followed by the addition of layers and shapes to the documents.
+Once all of the layers and shapes have been added, the document can be written
+to a file.</p>
+<section id="d-to-2d-projection">
+<h3>3D to 2D Projection<a class="headerlink" href="#d-to-2d-projection" title="Link to this heading"></a></h3>
+<p>There are a couple ways to generate a 2D drawing of a 3D part:</p>
+<ul class="simple">
+<li><p>Generate a section: The  <a class="hxr-hoverxref hxr-tooltip reference internal" href="operations.html#operations_part.section" title="operations_part.section"><code class="xref py py-func docutils literal notranslate"><span class="pre">section()</span></code></a> operation can be used to
+create a 2D cross section of a 3D part at a given plane.</p></li>
+<li><p>Generate a projection: The <code class="xref py py-meth docutils literal notranslate"><span class="pre">project_to_viewport()</span></code> method can be
+used to create a 2D projection of a 3D scene. Similar to a camera, the <code class="docutils literal notranslate"><span class="pre">viewport_origin</span></code>
+defines the location of camera, the <code class="docutils literal notranslate"><span class="pre">viewport_up</span></code> defines the orientation of the camera,
+and the <code class="docutils literal notranslate"><span class="pre">look_at</span></code> parameter defined where the camera is pointed.  By default,
+<code class="docutils literal notranslate"><span class="pre">viewport_up</span></code> is the positive z axis and <code class="docutils literal notranslate"><span class="pre">look_up</span></code> is the center of the shape.  The
+return value is a tuple of lists of edges, the first the visible edges and the second
+the hidden edges.</p></li>
+</ul>
+<p>Each of these Edges and Faces can be assigned different line color/types and fill colors
+as described below (as <code class="docutils literal notranslate"><span class="pre">project_to_viewport</span></code> only generates Edges, fill doesn’t apply).
+The shapes generated from the above steps are to be added as shapes
+in one of the exporters described below and written as either a DXF or SVG file as shown
+in this example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">view_port_origin</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="o">-</span><span class="mi">50</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+<span class="n">visible</span><span class="p">,</span> <span class="n">hidden</span> <span class="o">=</span> <span class="n">part</span><span class="o">.</span><span class="n">project_to_viewport</span><span class="p">(</span><span class="n">view_port_origin</span><span class="p">)</span>
+<span class="n">max_dimension</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="o">*</span><span class="n">Compound</span><span class="p">(</span><span class="n">children</span><span class="o">=</span><span class="n">visible</span> <span class="o">+</span> <span class="n">hidden</span><span class="p">)</span><span class="o">.</span><span class="n">bounding_box</span><span class="p">()</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+<span class="n">exporter</span> <span class="o">=</span> <span class="n">ExportSVG</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="mi">100</span> <span class="o">/</span> <span class="n">max_dimension</span><span class="p">)</span>
+<span class="n">exporter</span><span class="o">.</span><span class="n">add_layer</span><span class="p">(</span><span class="s2">&quot;Visible&quot;</span><span class="p">)</span>
+<span class="n">exporter</span><span class="o">.</span><span class="n">add_layer</span><span class="p">(</span><span class="s2">&quot;Hidden&quot;</span><span class="p">,</span> <span class="n">line_color</span><span class="o">=</span><span class="p">(</span><span class="mi">99</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">99</span><span class="p">),</span> <span class="n">line_type</span><span class="o">=</span><span class="n">LineType</span><span class="o">.</span><span class="n">ISO_DOT</span><span class="p">)</span>
+<span class="n">exporter</span><span class="o">.</span><span class="n">add_shape</span><span class="p">(</span><span class="n">visible</span><span class="p">,</span> <span class="n">layer</span><span class="o">=</span><span class="s2">&quot;Visible&quot;</span><span class="p">)</span>
+<span class="n">exporter</span><span class="o">.</span><span class="n">add_shape</span><span class="p">(</span><span class="n">hidden</span><span class="p">,</span> <span class="n">layer</span><span class="o">=</span><span class="s2">&quot;Hidden&quot;</span><span class="p">)</span>
+<span class="n">exporter</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;part_projection.svg&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="linetype">
+<h3>LineType<a class="headerlink" href="#linetype" title="Link to this heading"></a></h3>
+<p>ANSI (American National Standards Institute) and ISO (International Organization for
+Standardization) standards both define line types in drawings used in DXF and SVG
+exported drawings:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>ANSI Standards:</dt><dd><ul>
+<li><p>ANSI/ASME Y14.2 - “Line Conventions and Lettering” is the standard that defines
+line types, line weights, and line usage in engineering drawings in the United States.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>ISO Standards:</dt><dd><ul>
+<li><p>ISO 128 - “Technical drawings – General principles of presentation” is the ISO
+standard that covers the general principles of technical drawing presentation,
+including line types and line conventions.</p></li>
+<li><p>ISO 13567 - “Technical product documentation (TPD) – Organization and naming of
+layers for CAD” provides guidelines for the organization and naming of layers in
+Computer-Aided Design (CAD) systems, which may include line type information.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>These standards help ensure consistency and clarity in technical drawings, making it
+easier for engineers, designers, and manufacturers to communicate and interpret the
+information presented in the drawings.</p>
+<p>The line types used by the 2D Exporters are defined by the <code class="xref py py-class docutils literal notranslate"><span class="pre">LineType</span></code>
+Enum and are shown in the following diagram:</p>
+<img alt="_images/line_types.svg" class="align-center" src="_images/line_types.svg" />
+</section>
+<section id="exportdxf">
+<h3>ExportDXF<a class="headerlink" href="#exportdxf" title="Link to this heading"></a></h3>
+<dl class="py class">
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ExportDXF</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">version:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">'AC1027'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit:</span> <span class="pre">~build123d.build_enums.Unit</span> <span class="pre">=</span> <span class="pre">&lt;Unit.MM&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color:</span> <span class="pre">~exporters.ColorIndex</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_weight:</span> <span class="pre">float</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_type:</span> <span class="pre">~exporters.LineType</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/exporters.html#ExportDXF"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>The ExportDXF class provides functionality for exporting 2D shapes to DXF
+(Drawing Exchange Format) format. DXF is a widely used file format for
+exchanging CAD (Computer-Aided Design) data between different software
+applications.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>version</strong> (<em>str</em><em>, </em><em>optional</em>) – The DXF version to use for the output file.
+Defaults to ezdxf.DXF2013.</p></li>
+<li><p><strong>unit</strong> (<em>Unit</em><em>, </em><em>optional</em>) – The unit used for the exported DXF. It should be
+one of the Unit enums: Unit.MC, Unit.MM, Unit.CM,
+Unit.M, Unit.IN, or Unit.FT. Defaults to Unit.MM.</p></li>
+<li><p><strong>color</strong> (<em>Optional</em><em>[</em><em>ColorIndex</em><em>]</em><em>, </em><em>optional</em>) – The default color index for shapes.
+It can be specified as a ColorIndex enum or None.. Defaults to None.</p></li>
+<li><p><strong>line_weight</strong> (<em>Optional</em><em>[</em><em>float</em><em>]</em><em>, </em><em>optional</em>) – The default line weight
+(stroke width) for shapes, in millimeters. . Defaults to None.</p></li>
+<li><p><strong>line_type</strong> (<em>Optional</em><em>[</em><em>LineType</em><em>]</em><em>, </em><em>optional</em>) – e default line type for shapes.
+It should be a LineType enum or None.. Defaults to None.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">exporter</span> <span class="o">=</span> <span class="n">ExportDXF</span><span class="p">(</span><span class="n">unit</span><span class="o">=</span><span class="n">Unit</span><span class="o">.</span><span class="n">MM</span><span class="p">,</span> <span class="n">line_weight</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">exporter</span><span class="o">.</span><span class="n">add_layer</span><span class="p">(</span><span class="s2">&quot;Layer 1&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">ColorIndex</span><span class="o">.</span><span class="n">RED</span><span class="p">,</span> <span class="n">line_type</span><span class="o">=</span><span class="n">LineType</span><span class="o">.</span><span class="n">DASHED</span><span class="p">)</span>
+<span class="n">exporter</span><span class="o">.</span><span class="n">add_shape</span><span class="p">(</span><span class="n">shape_object</span><span class="p">,</span> <span class="n">layer</span><span class="o">=</span><span class="s2">&quot;Layer 1&quot;</span><span class="p">)</span>
+<span class="n">exporter</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;output.dxf&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – unit not supported</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">METRIC_UNITS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{&lt;Unit.CM&gt;,</span> <span class="pre">&lt;Unit.M&gt;,</span> <span class="pre">&lt;Unit.MM&gt;}</span></em></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">add_layer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ColorIndex</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_weight</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">LineType</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Self</span></span></span><a class="reference internal" href="_modules/exporters.html#ExportDXF.add_layer"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Adds a new layer to the DXF export with the given properties.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – The name of the layer definition. Must be unique among all layers.</p></li>
+<li><p><strong>color</strong> (<em>Optional</em><em>[</em><em>ColorIndex</em><em>]</em><em>, </em><em>optional</em>) – The color index for shapes on this layer.
+It can be specified as a ColorIndex enum or None. Defaults to None.</p></li>
+<li><p><strong>line_weight</strong> (<em>Optional</em><em>[</em><em>float</em><em>]</em><em>, </em><em>optional</em>) – The line weight (stroke width) for shapes
+on this layer, in millimeters. Defaults to None.</p></li>
+<li><p><strong>line_type</strong> (<em>Optional</em><em>[</em><em>LineType</em><em>]</em><em>, </em><em>optional</em>) – The line type for shapes on this layer.
+It should be a LineType enum or None. Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>DXF document with additional layer</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>Self</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">add_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shape</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Shape</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">Shape</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Self</span></span></span><a class="reference internal" href="_modules/exporters.html#ExportDXF.add_shape"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Adds a shape to the specified layer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>shape</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Shape" title="topology.Shape"><em>Shape</em></a><em> | </em><em>Iterable</em><em>[</em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Shape" title="topology.Shape"><em>Shape</em></a><em>]</em>) – The shape or collection of shapes to be
+added. It can be a single Shape object or an iterable of Shape objects.</p></li>
+<li><p><strong>layer</strong> (<em>str</em><em>, </em><em>optional</em>) – The name of the layer where the shape will be
+added. If not specified, the default layer will be used. Defaults to “”.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Document with additional shape</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>Self</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PathLike</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bytes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/exporters.html#ExportDXF.write"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Writes the DXF data to the specified file name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>file_name</strong> (<em>PathLike</em><em> |  </em><em>str</em><em> |  </em><em>bytes</em>) – The file name (including path) where
+the DXF data will be written.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="exportsvg">
+<h3>ExportSVG<a class="headerlink" href="#exportsvg" title="Link to this heading"></a></h3>
+<dl class="py class">
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ExportSVG</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit:</span> <span class="pre">~build123d.build_enums.Unit</span> <span class="pre">=</span> <span class="pre">&lt;Unit.MM&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">margin:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fit_to_stroke:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">precision:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">6</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fill_color:</span> <span class="pre">~exporters.ColorIndex</span> <span class="pre">|</span> <span class="pre">~ezdxf.colors.RGB</span> <span class="pre">|</span> <span class="pre">~build123d.geometry.Color</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_color:</span> <span class="pre">~exporters.ColorIndex</span> <span class="pre">|</span> <span class="pre">~ezdxf.colors.RGB</span> <span class="pre">|</span> <span class="pre">~build123d.geometry.Color</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">ColorIndex.BLACK</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_weight:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.09</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_type:</span> <span class="pre">~exporters.LineType</span> <span class="pre">=</span> <span class="pre">LineType.CONTINUOUS</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dot_length:</span> <span class="pre">~exporters.DotLength</span> <span class="pre">|</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">DotLength.INKSCAPE_COMPAT</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/exporters.html#ExportSVG"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>SVG file export functionality.</p>
+<p>The ExportSVG class provides functionality for exporting 2D shapes to SVG
+(Scalable Vector Graphics) format. SVG is a widely used vector graphics format
+that is supported by web browsers and various graphic editors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>unit</strong> (<em>Unit</em><em>, </em><em>optional</em>) – The unit used for the exported SVG. It should be one of
+the Unit enums: Unit.MM, Unit.CM, or Unit.IN. Defaults to
+Unit.MM.</p></li>
+<li><p><strong>scale</strong> (<em>float</em><em>, </em><em>optional</em>) – The scaling factor applied to the exported SVG.
+Defaults to 1.</p></li>
+<li><p><strong>margin</strong> (<em>float</em><em>, </em><em>optional</em>) – The margin added around the exported shapes.
+Defaults to 0.</p></li>
+<li><p><strong>fit_to_stroke</strong> (<em>bool</em><em>, </em><em>optional</em>) – A boolean indicating whether the SVG view box
+should fit the strokes of the shapes. Defaults to True.</p></li>
+<li><p><strong>precision</strong> (<em>int</em><em>, </em><em>optional</em>) – The number of decimal places used for rounding
+coordinates in the SVG. Defaults to 6.</p></li>
+<li><p><strong>fill_color</strong> (<em>ColorIndex</em><em> |  </em><em>RGB</em><em> |  </em><em>None</em><em>, </em><em>optional</em>) – The default fill color
+for shapes. It can be specified as a ColorIndex, an RGB tuple, or None.
+Defaults to None.</p></li>
+<li><p><strong>line_color</strong> (<em>ColorIndex</em><em> |  </em><em>RGB</em><em> |  </em><em>None</em><em>, </em><em>optional</em>) – The default line color for
+shapes. It can be specified as a ColorIndex or an RGB tuple, or None.
+Defaults to Export2D.DEFAULT_COLOR_INDEX.</p></li>
+<li><p><strong>line_weight</strong> (<em>float</em><em>, </em><em>optional</em>) – The default line weight (stroke width) for
+shapes, in millimeters. Defaults to Export2D.DEFAULT_LINE_WEIGHT.</p></li>
+<li><p><strong>line_type</strong> (<em>LineType</em><em>, </em><em>optional</em>) – The default line type for shapes. It should be
+a LineType enum. Defaults to Export2D.DEFAULT_LINE_TYPE.</p></li>
+<li><p><strong>dot_length</strong> (<em>DotLength</em><em> |  </em><em>float</em><em>, </em><em>optional</em>) – The width of rendered dots in a
+Can be either a DotLength enum or a float value in tenths of an inch.
+Defaults to DotLength.INKSCAPE_COMPAT.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">exporter</span> <span class="o">=</span> <span class="n">ExportSVG</span><span class="p">(</span><span class="n">unit</span><span class="o">=</span><span class="n">Unit</span><span class="o">.</span><span class="n">MM</span><span class="p">,</span> <span class="n">line_weight</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">exporter</span><span class="o">.</span><span class="n">add_layer</span><span class="p">(</span><span class="s2">&quot;Layer 1&quot;</span><span class="p">,</span> <span class="n">fill_color</span><span class="o">=</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">))</span>
+<span class="n">exporter</span><span class="o">.</span><span class="n">add_shape</span><span class="p">(</span><span class="n">shape_object</span><span class="p">,</span> <span class="n">layer</span><span class="o">=</span><span class="s2">&quot;Layer 1&quot;</span><span class="p">)</span>
+<span class="n">exporter</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;output.svg&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – Invalid unit.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">add_layer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fill_color</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ColorIndex</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">RGB</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Color</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_color</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ColorIndex</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">RGB</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Color</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">ColorIndex.BLACK</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_weight</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.09</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">LineType</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">LineType.CONTINUOUS</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Self</span></span></span><a class="reference internal" href="_modules/exporters.html#ExportSVG.add_layer"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Adds a new layer to the SVG export with the given properties.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – The name of the layer. Must be unique among all layers.</p></li>
+<li><p><strong>fill_color</strong> (<em>ColorIndex</em><em> |  </em><em>RGB</em><em> |  </em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#geometry.Color" title="geometry.Color"><em>Color</em></a><em> |  </em><em>None</em><em>, </em><em>optional</em>) – The fill color for shapes
+on this layer. It can be specified as a ColorIndex, an RGB tuple,
+a Color, or None.  Defaults to None.</p></li>
+<li><p><strong>line_color</strong> (<em>ColorIndex</em><em> |  </em><em>RGB</em><em> |  </em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#geometry.Color" title="geometry.Color"><em>Color</em></a><em> |  </em><em>None</em><em>, </em><em>optional</em>) – The line color for shapes on
+this layer. It can be specified as a ColorIndex or an RGB tuple,
+a Color, or None.  Defaults to Export2D.DEFAULT_COLOR_INDEX.</p></li>
+<li><p><strong>line_weight</strong> (<em>float</em><em>, </em><em>optional</em>) – The line weight (stroke width) for shapes on
+this layer, in millimeters. Defaults to Export2D.DEFAULT_LINE_WEIGHT.</p></li>
+<li><p><strong>line_type</strong> (<em>LineType</em><em>, </em><em>optional</em>) – The line type for shapes on this layer.
+It should be a LineType enum. Defaults to Export2D.DEFAULT_LINE_TYPE.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – Duplicate layer name</p></li>
+<li><p><strong>ValueError</strong> – Unknown linetype</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Drawing with an additional layer</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>Self</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">add_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shape</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Shape</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">Shape</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reverse_wires</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/exporters.html#ExportSVG.add_shape"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Adds a shape or a collection of shapes to the specified layer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>shape</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Shape" title="topology.Shape"><em>Shape</em></a><em> | </em><em>Iterable</em><em>[</em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Shape" title="topology.Shape"><em>Shape</em></a><em>]</em>) – The shape or collection of shapes to be
+added. It can be a single Shape object or an iterable of Shape objects.</p></li>
+<li><p><strong>layer</strong> (<em>str</em><em>, </em><em>optional</em>) – The name of the layer where the shape(s) will be added.
+Defaults to “”.</p></li>
+<li><p><strong>reverse_wires</strong> (<em>bool</em><em>, </em><em>optional</em>) – A boolean indicating whether the wires of the
+shape(s) should be in reversed direction. Defaults to False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – Undefined layer</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PathLike</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bytes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/exporters.html#ExportSVG.write"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Writes the SVG data to the specified file path.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>path</strong> (<em>PathLike</em><em> |  </em><em>str</em><em> |  </em><em>bytes</em>) – The file path where the SVG data will be written.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+<section id="module-exporters3d">
+<span id="id1"></span><h2>3D Exporters<a class="headerlink" href="#module-exporters3d" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">export_brep</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">to_export</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PathLike</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bytes</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">BytesIO</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/exporters3d.html#export_brep"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Export this shape to a BREP file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>to_export</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Shape" title="topology.Shape"><em>Shape</em></a>) – object or assembly</p></li>
+<li><p><strong>file_path</strong> – Union[PathLike, str, bytes, BytesIO]: brep file path or memory buffer</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>write status</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>bool</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">export_gltf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">to_export:</span> <span class="pre">~build123d.topology.shape_core.Shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_path:</span> <span class="pre">~os.PathLike</span> <span class="pre">|</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">bytes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit:</span> <span class="pre">~build123d.build_enums.Unit</span> <span class="pre">=</span> <span class="pre">&lt;Unit.MM&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">binary:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">linear_deflection:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angular_deflection:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/exporters3d.html#export_gltf"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>The glTF (GL Transmission Format) specification primarily focuses on the efficient
+transmission and loading of 3D models as a compact, binary format that is directly
+renderable by graphics APIs like WebGL, OpenGL, and Vulkan. It’s designed to store
+detailed 3D model data, including meshes (vertices, normals, textures, etc.),
+animations, materials, and scene hierarchy, among other aspects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>to_export</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Shape" title="topology.Shape"><em>Shape</em></a>) – object or assembly</p></li>
+<li><p><strong>file_path</strong> (<em>Union</em><em>[</em><em>PathLike</em><em>, </em><em>str</em><em>, </em><em>bytes</em><em>]</em>) – glTF file path</p></li>
+<li><p><strong>unit</strong> (<em>Unit</em><em>, </em><em>optional</em>) – shape units. Defaults to Unit.MM.</p></li>
+<li><p><strong>binary</strong> (<em>bool</em><em>, </em><em>optional</em>) – output format. Defaults to False.</p></li>
+<li><p><strong>linear_deflection</strong> (<em>float</em><em>, </em><em>optional</em>) – A linear deflection setting which limits
+the distance between a curve and its tessellation. Setting this value too
+low will result in large meshes that can consume computing resources. Setting
+the value too high can result in meshes with a level of detail that is too
+low. The default is a good starting point for a range of cases.
+Defaults to 1e-3.</p></li>
+<li><p><strong>angular_deflection</strong> (<em>float</em><em>, </em><em>optional</em>) – Angular deflection setting which limits
+the angle between subsequent segments in a polyline. Defaults to 0.1.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>RuntimeError</strong> – Failed to write glTF file</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>write status</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>bool</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">export_step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">to_export:</span> <span class="pre">~build123d.topology.shape_core.Shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_path:</span> <span class="pre">~os.PathLike</span> <span class="pre">|</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">bytes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit:</span> <span class="pre">~build123d.build_enums.Unit</span> <span class="pre">=</span> <span class="pre">&lt;Unit.MM&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">write_pcurves:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">precision_mode:</span> <span class="pre">~build123d.build_enums.PrecisionMode</span> <span class="pre">=</span> <span class="pre">&lt;PrecisionMode.AVERAGE&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/exporters3d.html#export_step"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Export a build123d Shape or assembly with color and label attributes.
+Note that if the color of a node in an assembly isn’t set, it will be
+assigned the color of its nearest ancestor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>to_export</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Shape" title="topology.Shape"><em>Shape</em></a>) – object or assembly</p></li>
+<li><p><strong>file_path</strong> (<em>Union</em><em>[</em><em>PathLike</em><em>, </em><em>str</em><em>, </em><em>bytes</em><em>]</em>) – step file path</p></li>
+<li><p><strong>unit</strong> (<em>Unit</em><em>, </em><em>optional</em>) – shape units. Defaults to Unit.MM.</p></li>
+<li><p><strong>write_pcurves</strong> (<em>bool</em><em>, </em><em>optional</em>) – write parametric curves to the STEP file.
+Defaults to True.</p></li>
+<li><p><strong>precision_mode</strong> (<em>PrecisionMode</em><em>, </em><em>optional</em>) – geometric data precision.
+Defaults to PrecisionMode.AVERAGE.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>RuntimeError</strong> – Unknown Compound type</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>success</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>bool</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">export_stl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">to_export</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PathLike</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bytes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tolerance</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angular_tolerance</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ascii_format</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/exporters3d.html#export_stl"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Export STL</p>
+<p>Exports a shape to a specified STL file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>to_export</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Shape" title="topology.Shape"><em>Shape</em></a>) – object or assembly</p></li>
+<li><p><strong>file_path</strong> (<em>str</em>) – The path and file name to write the STL output to.</p></li>
+<li><p><strong>tolerance</strong> (<em>float</em><em>, </em><em>optional</em>) – A linear deflection setting which limits the distance
+between a curve and its tessellation. Setting this value too low will result in
+large meshes that can consume computing resources. Setting the value too high can
+result in meshes with a level of detail that is too low. The default is a good
+starting point for a range of cases. Defaults to 1e-3.</p></li>
+<li><p><strong>angular_tolerance</strong> (<em>float</em><em>, </em><em>optional</em>) – Angular deflection setting which limits the angle
+between subsequent segments in a polyline. Defaults to 0.1.</p></li>
+<li><p><strong>ascii_format</strong> (<em>bool</em><em>, </em><em>optional</em>) – Export the file as ASCII (True) or binary (False)
+STL format. Defaults to False (binary).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Success</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>bool</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<section id="d-mesh-export">
+<h3>3D Mesh Export<a class="headerlink" href="#d-mesh-export" title="Link to this heading"></a></h3>
+<p>Both 3MF and STL export (and import) are provided with the <a class="hxr-hoverxref hxr-tooltip reference internal" href="#mesher.Mesher" title="mesher.Mesher"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mesher</span></code></a> class.
+As mentioned above, the 3MF format it provides is feature-rich and therefore has a slightly
+more complex API than the simple Shape exporters.</p>
+<p>For example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create the shapes and assign attributes</span>
+<span class="n">blue_shape</span> <span class="o">=</span> <span class="n">Solid</span><span class="o">.</span><span class="n">make_cone</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">blue_shape</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">Color</span><span class="p">(</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+<span class="n">blue_shape</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;blue&quot;</span>
+<span class="n">blue_uuid</span> <span class="o">=</span> <span class="n">uuid</span><span class="o">.</span><span class="n">uuid1</span><span class="p">()</span>
+<span class="n">red_shape</span> <span class="o">=</span> <span class="n">Solid</span><span class="o">.</span><span class="n">make_cylinder</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">Location</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">30</span><span class="p">,</span> <span class="mi">0</span><span class="p">)))</span>
+<span class="n">red_shape</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">Color</span><span class="p">(</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+<span class="n">red_shape</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span>
+
+<span class="c1"># Create a Mesher instance as an exporter, add shapes and write</span>
+<span class="n">exporter</span> <span class="o">=</span> <span class="n">Mesher</span><span class="p">()</span>
+<span class="n">exporter</span><span class="o">.</span><span class="n">add_shape</span><span class="p">(</span><span class="n">blue_shape</span><span class="p">,</span> <span class="n">part_number</span><span class="o">=</span><span class="s2">&quot;blue-1234-5&quot;</span><span class="p">,</span> <span class="n">uuid_value</span><span class="o">=</span><span class="n">blue_uuid</span><span class="p">)</span>
+<span class="n">exporter</span><span class="o">.</span><span class="n">add_shape</span><span class="p">(</span><span class="n">red_shape</span><span class="p">)</span>
+<span class="n">exporter</span><span class="o">.</span><span class="n">add_meta_data</span><span class="p">(</span>
+    <span class="n">name_space</span><span class="o">=</span><span class="s2">&quot;custom&quot;</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;test_meta_data&quot;</span><span class="p">,</span>
+    <span class="n">value</span><span class="o">=</span><span class="s2">&quot;hello world&quot;</span><span class="p">,</span>
+    <span class="n">metadata_type</span><span class="o">=</span><span class="s2">&quot;str&quot;</span><span class="p">,</span>
+    <span class="n">must_preserve</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">exporter</span><span class="o">.</span><span class="n">add_code_to_metadata</span><span class="p">()</span>
+<span class="n">exporter</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;example.3mf&quot;</span><span class="p">)</span>
+<span class="n">exporter</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;example.stl&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py class">
+<dt class="sig sig-object py" id="mesher.Mesher">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Mesher</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit:</span> <span class="pre">~build123d.build_enums.Unit</span> <span class="pre">=</span> <span class="pre">&lt;Unit.MM&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mesher.html#Mesher"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mesher.Mesher" title="Link to this definition"></a></dt>
+<dd><p>Tool for exporting and importing meshed objects stored in 3MF or STL files.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>unit</strong> (<em>Unit</em><em>, </em><em>optional</em>) – model units. Defaults to Unit.MM.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="mesher.Mesher.add_code_to_metadata">
+<span class="sig-name descname"><span class="pre">add_code_to_metadata</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mesher.html#Mesher.add_code_to_metadata"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mesher.Mesher.add_code_to_metadata" title="Link to this definition"></a></dt>
+<dd><p>Add the code calling this method to the 3MF metadata with the custom
+name space <cite>build123d</cite>, name equal to the base file name and the type
+as <cite>python</cite></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mesher.Mesher.add_meta_data">
+<span class="sig-name descname"><span class="pre">add_meta_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name_space</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">must_preserve</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mesher.html#Mesher.add_meta_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mesher.Mesher.add_meta_data" title="Link to this definition"></a></dt>
+<dd><p>Add meta data to the models</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name_space</strong> (<em>str</em>) – categorizer of different metadata entries</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – metadata label</p></li>
+<li><p><strong>value</strong> (<em>str</em>) – metadata content</p></li>
+<li><p><strong>metadata_type</strong> (<em>str</em>) – metadata type</p></li>
+<li><p><strong>must_preserve</strong> (<em>bool</em>) – metadata must not be removed if unused</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mesher.Mesher.add_shape">
+<span class="sig-name descname"><span class="pre">add_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">shape:</span> <span class="pre">~build123d.topology.shape_core.Shape</span> <span class="pre">|</span> <span class="pre">~collections.abc.Iterable[~build123d.topology.shape_core.Shape],</span> <span class="pre">linear_deflection:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.001,</span> <span class="pre">angular_deflection:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.1,</span> <span class="pre">mesh_type:</span> <span class="pre">~build123d.build_enums.MeshType</span> <span class="pre">=</span> <span class="pre">&lt;MeshType.MODEL&gt;,</span> <span class="pre">part_number:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">uuid_value:</span> <span class="pre">~uuid.UUID</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mesher.html#Mesher.add_shape"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mesher.Mesher.add_shape" title="Link to this definition"></a></dt>
+<dd><p>Add a shape to the 3MF/STL file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>shape</strong> (<em>Union</em><em>[</em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Shape" title="topology.Shape"><em>Shape</em></a><em>, </em><em>Iterable</em><em>[</em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Shape" title="topology.Shape"><em>Shape</em></a><em>]</em><em>]</em>) – build123d object</p></li>
+<li><p><strong>linear_deflection</strong> (<em>float</em><em>, </em><em>optional</em>) – mesh control for edges. Defaults to 0.001.</p></li>
+<li><p><strong>angular_deflection</strong> (<em>float</em><em>, </em><em>optional</em>) – mesh control for non-planar surfaces.
+Defaults to 0.1.</p></li>
+<li><p><strong>mesh_type</strong> (<em>MeshType</em><em>, </em><em>optional</em>) – 3D printing use of mesh. Defaults to MeshType.MODEL.</p></li>
+<li><p><strong>part_number</strong> (<em>str</em><em>, </em><em>optional</em>) – part #. Defaults to None.</p></li>
+<li><p><strong>uuid_value</strong> (<em>uuid</em><em>, </em><em>optional</em>) – value from uuid package. Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>RuntimeError</strong> – 3mf mesh is invalid</p></li>
+<li><p><strong>Warning</strong> – Degenerate shape skipped</p></li>
+<li><p><strong>Warning</strong> – 3mf mesh is not manifold</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mesher.Mesher.get_mesh_properties">
+<span class="sig-name descname"><span class="pre">get_mesh_properties</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/mesher.html#Mesher.get_mesh_properties"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mesher.Mesher.get_mesh_properties" title="Link to this definition"></a></dt>
+<dd><p>Retrieve the properties from all the meshes</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mesher.Mesher.get_meta_data">
+<span class="sig-name descname"><span class="pre">get_meta_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/mesher.html#Mesher.get_meta_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mesher.Mesher.get_meta_data" title="Link to this definition"></a></dt>
+<dd><p>Retrieve all of the metadata</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mesher.Mesher.get_meta_data_by_key">
+<span class="sig-name descname"><span class="pre">get_meta_data_by_key</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name_space</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="_modules/mesher.html#Mesher.get_meta_data_by_key"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mesher.Mesher.get_meta_data_by_key" title="Link to this definition"></a></dt>
+<dd><p>Retrieve the metadata value and type for the provided name space and name</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mesher.Mesher.library_version">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">library_version</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#mesher.Mesher.library_version" title="Link to this definition"></a></dt>
+<dd><p>3MF Consortium Lib#MF version</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mesher.Mesher.mesh_count">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mesh_count</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#mesher.Mesher.mesh_count" title="Link to this definition"></a></dt>
+<dd><p>Number of meshes in the model</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mesher.Mesher.model_unit">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">model_unit</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Unit</span></em><a class="headerlink" href="#mesher.Mesher.model_unit" title="Link to this definition"></a></dt>
+<dd><p>Unit used in the model</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mesher.Mesher.read">
+<span class="sig-name descname"><span class="pre">read</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PathLike</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bytes</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Shape</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/mesher.html#Mesher.read"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mesher.Mesher.read" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>Union</strong><strong>[</strong><strong>PathLike</strong> (<em>file_name</em>) – file path</p></li>
+<li><p><strong>str</strong> – file path</p></li>
+<li><p><strong>bytes</strong><strong>]</strong> – file path</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – Unknown file format - must be 3mf or stl</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>build123d shapes extracted from mesh file</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>list</em>[<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Shape" title="topology.Shape"><em>Shape</em></a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mesher.Mesher.triangle_counts">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">triangle_counts</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#mesher.Mesher.triangle_counts" title="Link to this definition"></a></dt>
+<dd><p>Number of triangles in each of the model’s meshes</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mesher.Mesher.vertex_counts">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">vertex_counts</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#mesher.Mesher.vertex_counts" title="Link to this definition"></a></dt>
+<dd><p>Number of vertices in each of the models’s meshes</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mesher.Mesher.write">
+<span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PathLike</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bytes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mesher.html#Mesher.write"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mesher.Mesher.write" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>Union</strong><strong>[</strong><strong>Pathlike</strong> (<em>file_name</em>) – file path</p></li>
+<li><p><strong>str</strong> – file path</p></li>
+<li><p><strong>bytes</strong><strong>]</strong> – file path</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – Unknown file format - must be 3mf or stl</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you need to align multiple components for 3D printing, you can use the  <a class="reference internal" href="assemblies.html#pack"><span class="std std-ref">pack()</span></a> function to arrange the objects side by side and align them on the same plane. This ensures that your components are well-organized and ready for the printing process.</p>
+</div>
+</section>
+</section>
+<section id="module-importers">
+<span id="d-importers"></span><h2>2D Importers<a class="headerlink" href="#module-importers" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="importers.import_svg">
+<span class="sig-name descname"><span class="pre">import_svg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">svg_file:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">~pathlib.Path</span> <span class="pre">|</span> <span class="pre">~typing.TextIO</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flip_y:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">align:</span> <span class="pre">~build123d.build_enums.Align</span> <span class="pre">|</span> <span class="pre">tuple[~build123d.build_enums.Align</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">~build123d.build_enums.Align]</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">&lt;Align.MIN&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_visibility:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label_by:</span> <span class="pre">~typing.Literal['id'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">'class'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">'inkscape:label']</span> <span class="pre">|</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">'id'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_inkscape_label:</span> <span class="pre">bool</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ShapeList</span><span class="p"><span class="pre">[</span></span><span class="pre">Wire</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Face</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/importers.html#import_svg"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#importers.import_svg" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>svg_file</strong> (<em>Union</em><em>[</em><em>str</em><em>, </em><em>Path</em><em>, </em><em>TextIO</em><em>]</em>) – svg file</p></li>
+<li><p><strong>flip_y</strong> (<em>bool</em><em>, </em><em>optional</em>) – flip objects to compensate for svg orientation. Defaults to True.</p></li>
+<li><p><strong>align</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="builder_api_reference.html#build_enums.Align" title="build_enums.Align"><em>Align</em></a><em> | </em><em>tuple</em><em>[</em><a class="hxr-hoverxref hxr-tooltip reference internal" href="builder_api_reference.html#build_enums.Align" title="build_enums.Align"><em>Align</em></a><em>, </em><a class="hxr-hoverxref hxr-tooltip reference internal" href="builder_api_reference.html#build_enums.Align" title="build_enums.Align"><em>Align</em></a><em>] </em><em>| </em><em>None</em><em>, </em><em>optional</em>) – alignment of the SVG’s viewbox,
+if None, the viewbox’s origin will be at <cite>(0,0,0)</cite>. Defaults to Align.MIN.</p></li>
+<li><p><strong>ignore_visibility</strong> (<em>bool</em><em>, </em><em>optional</em>) – Defaults to False.</p></li>
+<li><p><strong>label_by</strong> (<em>str</em><em>, </em><em>optional</em>) – XML attribute to use for imported shapes’ <cite>label</cite> property.
+Defaults to “id”.
+Use <cite>inkscape:label</cite> to read labels set from Inkscape’s “Layers and Objects” panel.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – unexpected shape type</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>objects contained in svg</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.ShapeList" title="topology.ShapeList"><em>ShapeList</em></a>[<em>Union</em>[<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Wire" title="topology.Wire"><em>Wire</em></a>, <a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Face" title="topology.Face"><em>Face</em></a>]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="importers.import_svg_as_buildline_code">
+<span class="sig-name descname"><span class="pre">import_svg_as_buildline_code</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PathLike</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bytes</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/importers.html#import_svg_as_buildline_code"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#importers.import_svg_as_buildline_code" title="Link to this definition"></a></dt>
+<dd><p>translate_to_buildline_code</p>
+<p>Translate the contents of the given svg file into executable build123d/BuildLine code.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>file_name</strong> (<em>Union</em><em>[</em><em>PathLike</em><em>, </em><em>str</em><em>, </em><em>bytes</em><em>]</em>) – svg file name</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>code, builder instance name</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>tuple</em>[<em>str</em>, <em>str</em>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="id2">
+<h2>3D Importers<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="importers.import_brep">
+<span class="sig-name descname"><span class="pre">import_brep</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PathLike</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bytes</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Shape</span></span></span><a class="reference internal" href="_modules/importers.html#import_brep"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#importers.import_brep" title="Link to this definition"></a></dt>
+<dd><p>Import shape from a BREP file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>file_name</strong> (<em>Union</em><em>[</em><em>PathLike</em><em>, </em><em>str</em><em>, </em><em>bytes</em><em>]</em>) – brep file</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – file not found</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>build123d object</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Shape" title="topology.Shape"><em>Shape</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="importers.import_step">
+<span class="sig-name descname"><span class="pre">import_step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PathLike</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bytes</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Compound</span></span></span><a class="reference internal" href="_modules/importers.html#import_step"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#importers.import_step" title="Link to this definition"></a></dt>
+<dd><p>Extract shapes from a STEP file and return them as a Compound object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>file_name</strong> (<em>Union</em><em>[</em><em>PathLike</em><em>, </em><em>str</em><em>, </em><em>bytes</em><em>]</em>) – file path of STEP file to import</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – can’t open file</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>contents of STEP file</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Compound" title="topology.Compound"><em>Compound</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="importers.import_stl">
+<span class="sig-name descname"><span class="pre">import_stl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PathLike</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bytes</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Face</span></span></span><a class="reference internal" href="_modules/importers.html#import_stl"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#importers.import_stl" title="Link to this definition"></a></dt>
+<dd><p>Extract shape from an STL file and return it as a Face reference object.</p>
+<p>Note that importing with this method and creating a reference is very fast while
+creating an editable model (with Mesher) may take minutes depending on the size
+of the STL file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>file_name</strong> (<em>Union</em><em>[</em><em>PathLike</em><em>, </em><em>str</em><em>, </em><em>bytes</em><em>]</em>) – file path of STL file to import</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – Could not import file</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>STL model</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Face" title="topology.Face"><em>Face</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<section id="d-mesh-import">
+<h3>3D Mesh Import<a class="headerlink" href="#d-mesh-import" title="Link to this heading"></a></h3>
+<p>Both 3MF and STL import (and export) are provided with the <a class="hxr-hoverxref hxr-tooltip reference internal" href="#mesher.Mesher" title="mesher.Mesher"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mesher</span></code></a> class.</p>
+<p>For example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">importer</span> <span class="o">=</span> <span class="n">Mesher</span><span class="p">()</span>
+<span class="n">cone</span><span class="p">,</span> <span class="n">cyl</span> <span class="o">=</span> <span class="n">importer</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s2">&quot;example.3mf&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">importer</span><span class="o">.</span><span class="n">mesh_count</span><span class="si">=}</span><span class="s2">, </span><span class="si">{</span><span class="n">importer</span><span class="o">.</span><span class="n">vertex_counts</span><span class="si">=}</span><span class="s2">, </span><span class="si">{</span><span class="n">importer</span><span class="o">.</span><span class="n">triangle_counts</span><span class="si">=}</span><span class="s2">&quot;</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Imported model unit: </span><span class="si">{</span><span class="n">importer</span><span class="o">.</span><span class="n">model_unit</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">cone</span><span class="o">.</span><span class="n">label</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">cone</span><span class="o">.</span><span class="n">color</span><span class="o">.</span><span class="n">to_tuple</span><span class="p">()</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">cyl</span><span class="o">.</span><span class="n">label</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">cyl</span><span class="o">.</span><span class="n">color</span><span class="o">.</span><span class="n">to_tuple</span><span class="p">()</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>importer.mesh_count=2, importer.vertex_counts=[66, 52], importer.triangle_counts=[128, 100]
+Imported model unit: Unit.MM
+cone.label=&#39;blue&#39;
+cone.color.to_tuple()=(0.0, 0.0, 1.0, 1.0)
+cyl.label=&#39;red&#39;
+cyl.color.to_tuple()=(1.0, 0.0, 0.0, 1.0)
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="tips.html" class="btn btn-neutral float-left" title="Tips, Best Practices and FAQ" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="advanced.html" class="btn btn-neutral float-right" title="Advanced Topics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Gumyr.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

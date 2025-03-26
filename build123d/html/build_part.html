@@ -1,0 +1,324 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BuildPart &mdash; build123d 0.9.2.dev40+gb1f0eed documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster.custom.css?v=7bc2f056" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster.bundle.min.css?v=37217874" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-shadow.min.css?v=6227e517" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-punk.min.css?v=94669e23" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-noir.min.css?v=21a39f42" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-light.min.css?v=a18b2449" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-borderless.min.css?v=dbff53e4" />
+      <link rel="stylesheet" type="text/css" href="_static/css/micromodal.css?v=d7bf34ee" />
+      <link rel="stylesheet" type="text/css" href="_static/css/sphinx_rtd_theme.css?v=3234e928" />
+      <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=c97902b4"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=f281be69"></script>
+      <script src="_static/js/hoverxref.js?v=6ff7264e"></script>
+      <script src="_static/js/tooltipster.bundle.min.js?v=18bf091b"></script>
+      <script src="_static/js/micromodal.min.js?v=04d6302d"></script>
+      <script src="_static/design-tabs.js?v=f930bc37"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Joints" href="joints.html" />
+    <link rel="prev" title="BuildSketch" href="build_sketch.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            build123d
+              <img src="_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts.html">Key Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts_builder.html">Key Concepts (builder mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts_algebra.html">Key Concepts (algebra mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="moving_objects.html">Moving Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OpenSCAD.html">Transitioning from OpenSCAD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introductory_examples.html">Introductory Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="selectors_operators.html">Selectors and Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operations.html">Operations</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="builders.html">Builders</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="build_line.html">BuildLine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_sketch.html">BuildSketch</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">BuildPart</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#basic-functionality">Basic Functionality</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#implicit-parameters">Implicit Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#units">Units</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-build_part">Reference</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#build_part.BuildPart"><code class="docutils literal notranslate"><span class="pre">BuildPart</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="joints.html">Joints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assemblies.html">Assemblies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tips.html">Tips, Best Practices and FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="import_export.html">Import/Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cheat_sheet.html">Cheat Sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="external.html">External Tools and Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="builder_api_reference.html">Builder Common API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="direct_api_reference.html">Direct API Reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">build123d</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="builders.html">Builders</a></li>
+      <li class="breadcrumb-item active">BuildPart</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/build_part.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="buildpart">
+<h1>BuildPart<a class="headerlink" href="#buildpart" title="Link to this heading"></a></h1>
+<p>BuildPart is a python context manager that is used to create three dimensional
+objects - objects with the property of volume - that are typically
+finished parts.</p>
+<p>The complete API for BuildPart is located at the end of this section.</p>
+<section id="basic-functionality">
+<h2>Basic Functionality<a class="headerlink" href="#basic-functionality" title="Link to this heading"></a></h2>
+<p>The following is a simple BuildPart example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">length</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">thickness</span> <span class="o">=</span> <span class="mf">80.0</span><span class="p">,</span> <span class="mf">60.0</span><span class="p">,</span> <span class="mf">10.0</span>
+<span class="n">center_hole_dia</span> <span class="o">=</span> <span class="mf">22.0</span>
+
+<span class="k">with</span> <span class="n">BuildPart</span><span class="p">()</span> <span class="k">as</span> <span class="n">ex2</span><span class="p">:</span>
+    <span class="n">Box</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">thickness</span><span class="p">)</span>
+    <span class="n">Cylinder</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="n">center_hole_dia</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">thickness</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">Mode</span><span class="o">.</span><span class="n">SUBTRACT</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">with</span></code> statement creates the <code class="docutils literal notranslate"><span class="pre">BuildPart</span></code> context manager with the
+identifier <code class="docutils literal notranslate"><span class="pre">ex2</span></code> (this code is the second of the introductory examples).
+The objects and operations that are within the
+scope (i.e. indented) of this context will contribute towards the object
+being created by the context manager.  For <code class="docutils literal notranslate"><span class="pre">BuildPart</span></code>, this object is
+<code class="docutils literal notranslate"><span class="pre">part</span></code> and it’s referenced as <code class="docutils literal notranslate"><span class="pre">ex2.part</span></code>.</p>
+<p>The first object in this example is a <code class="docutils literal notranslate"><span class="pre">Box</span></code> object which is used to create
+a polyhedron with rectangular faces centered on the default <code class="docutils literal notranslate"><span class="pre">Plane.XY</span></code>.
+The second object is a <code class="docutils literal notranslate"><span class="pre">Cylinder</span></code> that is subtracted from the box as directed
+by the <code class="docutils literal notranslate"><span class="pre">mode=Mode.SUBTRACT</span></code> parameter thus creating a hole.</p>
+<img alt="_images/general_ex2.svg" class="align-center" src="_images/general_ex2.svg" />
+</section>
+<section id="implicit-parameters">
+<h2>Implicit Parameters<a class="headerlink" href="#implicit-parameters" title="Link to this heading"></a></h2>
+<p>The BuildPart context keeps track of pending objects such that they can be used
+implicitly - there are a couple things to consider when deciding how to proceed:</p>
+<ul class="simple">
+<li><p>For sketches, the planes that they were constructed on is maintained in internal
+data structures such that operations like <a class="hxr-hoverxref hxr-tooltip reference internal" href="operations.html#operations_part.extrude" title="operations_part.extrude"><code class="xref py py-func docutils literal notranslate"><span class="pre">extrude()</span></code></a> will
+have a good reference for the extrude direction.  One can pass a Face to extrude
+but it will then be forced to use the normal direction at the center of the Face
+as the extrude direction which unfortunately can be reversed in some circumstances.</p></li>
+<li><p>Implicit parameters save some typing but hide some functionality - users have
+to decide what works best for them.</p></li>
+</ul>
+<p>This tea cup example uses implicit parameters - note the <a class="hxr-hoverxref hxr-tooltip reference internal" href="operations.html#operations_generic.sweep" title="operations_generic.sweep"><code class="xref py py-func docutils literal notranslate"><span class="pre">sweep()</span></code></a>
+operation on the last line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">build123d</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ocp_vscode</span><span class="w"> </span><span class="kn">import</span> <span class="n">show</span>
+
+<span class="n">wall_thickness</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">MM</span>
+<span class="n">fillet_radius</span> <span class="o">=</span> <span class="n">wall_thickness</span> <span class="o">*</span> <span class="mf">0.49</span>
+
+<span class="k">with</span> <span class="n">BuildPart</span><span class="p">()</span> <span class="k">as</span> <span class="n">tea_cup</span><span class="p">:</span>
+    <span class="c1"># Create the bowl of the cup as a revolved cross section</span>
+    <span class="k">with</span> <span class="n">BuildSketch</span><span class="p">(</span><span class="n">Plane</span><span class="o">.</span><span class="n">XZ</span><span class="p">)</span> <span class="k">as</span> <span class="n">bowl_section</span><span class="p">:</span>
+        <span class="k">with</span> <span class="n">BuildLine</span><span class="p">():</span>
+            <span class="c1"># Start &amp; end points with control tangents</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="n">Spline</span><span class="p">(</span>
+                <span class="p">(</span><span class="mi">30</span> <span class="o">*</span> <span class="n">MM</span><span class="p">,</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">MM</span><span class="p">),</span>
+                <span class="p">(</span><span class="mi">69</span> <span class="o">*</span> <span class="n">MM</span><span class="p">,</span> <span class="mi">105</span> <span class="o">*</span> <span class="n">MM</span><span class="p">),</span>
+                <span class="n">tangents</span><span class="o">=</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.7</span><span class="p">,</span> <span class="mi">1</span><span class="p">)),</span>
+                <span class="n">tangent_scalars</span><span class="o">=</span><span class="p">(</span><span class="mf">1.75</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+            <span class="p">)</span>
+            <span class="c1"># Lines to finish creating ½ the bowl shape</span>
+            <span class="n">Polyline</span><span class="p">(</span><span class="n">s</span> <span class="o">@</span> <span class="mi">0</span><span class="p">,</span> <span class="n">s</span> <span class="o">@</span> <span class="mi">0</span> <span class="o">+</span> <span class="p">(</span><span class="mi">10</span> <span class="o">*</span> <span class="n">MM</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span> <span class="o">*</span> <span class="n">MM</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="n">s</span> <span class="o">@</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">Y</span><span class="p">),</span> <span class="n">s</span> <span class="o">@</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">make_face</span><span class="p">()</span>  <span class="c1"># Create a filled 2D shape</span>
+    <span class="n">revolve</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="n">Axis</span><span class="o">.</span><span class="n">Z</span><span class="p">)</span>
+    <span class="c1"># Hollow out the bowl with openings on the top and bottom</span>
+    <span class="n">offset</span><span class="p">(</span><span class="n">amount</span><span class="o">=-</span><span class="n">wall_thickness</span><span class="p">,</span> <span class="n">openings</span><span class="o">=</span><span class="n">tea_cup</span><span class="o">.</span><span class="n">faces</span><span class="p">()</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="n">GeomType</span><span class="o">.</span><span class="n">PLANE</span><span class="p">))</span>
+    <span class="c1"># Add a bottom to the bowl</span>
+    <span class="k">with</span> <span class="n">Locations</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="n">s</span> <span class="o">@</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">Y</span><span class="p">)):</span>
+        <span class="n">Cylinder</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="p">(</span><span class="n">s</span> <span class="o">@</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">wall_thickness</span><span class="p">)</span>
+    <span class="c1"># Smooth out all the edges</span>
+    <span class="n">fillet</span><span class="p">(</span><span class="n">tea_cup</span><span class="o">.</span><span class="n">edges</span><span class="p">(),</span> <span class="n">radius</span><span class="o">=</span><span class="n">fillet_radius</span><span class="p">)</span>
+
+    <span class="c1"># Determine where the handle contacts the bowl</span>
+    <span class="n">handle_intersections</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">tea_cup</span><span class="o">.</span><span class="n">part</span><span class="o">.</span><span class="n">find_intersection_points</span><span class="p">(</span>
+            <span class="n">Axis</span><span class="p">(</span><span class="n">origin</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">vertical_offset</span><span class="p">),</span> <span class="n">direction</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+        <span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">vertical_offset</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">35</span> <span class="o">*</span> <span class="n">MM</span><span class="p">,</span> <span class="mi">80</span> <span class="o">*</span> <span class="n">MM</span><span class="p">]</span>
+    <span class="p">]</span>
+    <span class="c1"># Create a path for handle creation</span>
+    <span class="k">with</span> <span class="n">BuildLine</span><span class="p">(</span><span class="n">Plane</span><span class="o">.</span><span class="n">XZ</span><span class="p">)</span> <span class="k">as</span> <span class="n">handle_path</span><span class="p">:</span>
+        <span class="n">Spline</span><span class="p">(</span>
+            <span class="n">handle_intersections</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="p">(</span><span class="n">wall_thickness</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+            <span class="n">handle_intersections</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="mi">35</span> <span class="o">*</span> <span class="n">MM</span><span class="p">,</span> <span class="mi">30</span> <span class="o">*</span> <span class="n">MM</span><span class="p">),</span>
+            <span class="n">handle_intersections</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="mi">40</span> <span class="o">*</span> <span class="n">MM</span><span class="p">,</span> <span class="mi">60</span> <span class="o">*</span> <span class="n">MM</span><span class="p">),</span>
+            <span class="n">handle_intersections</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="p">(</span><span class="n">wall_thickness</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+            <span class="n">tangents</span><span class="o">=</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mf">1.25</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)),</span>
+        <span class="p">)</span>
+    <span class="c1"># Align the cross section to the beginning of the path</span>
+    <span class="k">with</span> <span class="n">BuildSketch</span><span class="p">(</span><span class="n">handle_path</span><span class="o">.</span><span class="n">line</span> <span class="o">^</span> <span class="mi">0</span><span class="p">)</span> <span class="k">as</span> <span class="n">handle_cross_section</span><span class="p">:</span>
+        <span class="n">RectangleRounded</span><span class="p">(</span><span class="n">wall_thickness</span><span class="p">,</span> <span class="mi">8</span> <span class="o">*</span> <span class="n">MM</span><span class="p">,</span> <span class="n">fillet_radius</span><span class="p">)</span>
+    <span class="n">sweep</span><span class="p">()</span>  <span class="c1"># Sweep handle cross section along path</span>
+
+<span class="hll"><span class="k">assert</span> <span class="nb">abs</span><span class="p">(</span><span class="n">tea_cup</span><span class="o">.</span><span class="n">part</span><span class="o">.</span><span class="n">volume</span> <span class="o">-</span> <span class="mi">130326</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">1</span>
+</span>
+<span class="n">show</span><span class="p">(</span><span class="n">tea_cup</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;tea cup&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p><a class="hxr-hoverxref hxr-tooltip reference internal" href="operations.html#operations_generic.sweep" title="operations_generic.sweep"><code class="xref py py-func docutils literal notranslate"><span class="pre">sweep()</span></code></a> requires a 2D cross section - <code class="docutils literal notranslate"><span class="pre">handle_cross_section</span></code> -
+and a path - <code class="docutils literal notranslate"><span class="pre">handle_path</span></code> - which are both passed implicitly.</p>
+<img alt="_images/tea_cup.png" class="align-center" src="_images/tea_cup.png" />
+</section>
+<section id="units">
+<h2>Units<a class="headerlink" href="#units" title="Link to this heading"></a></h2>
+<p>Parts created with build123d have no inherent units associated with them. However, when
+exporting parts to external formats like <code class="docutils literal notranslate"><span class="pre">STL</span></code> or <code class="docutils literal notranslate"><span class="pre">STEP</span></code> the units are assumed to
+be millimeters (mm).  To be more explicit with units one can use the technique shown
+in the above tea cup example where linear dimensions are followed by <code class="docutils literal notranslate"><span class="pre">*</span> <span class="pre">MM</span></code> which
+multiplies the dimension by the <code class="docutils literal notranslate"><span class="pre">MM</span></code> scaling factor - in this case <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
+<p>The following dimensional constants are pre-defined:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">MM</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">CM</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">MM</span>
+<span class="n">M</span> <span class="o">=</span> <span class="mi">1000</span> <span class="o">*</span> <span class="n">MM</span>
+<span class="n">IN</span> <span class="o">=</span> <span class="mf">25.4</span> <span class="o">*</span> <span class="n">MM</span>
+<span class="n">FT</span> <span class="o">=</span> <span class="mi">12</span> <span class="o">*</span> <span class="n">IN</span>
+<span class="n">THOU</span> <span class="o">=</span> <span class="n">IN</span> <span class="o">/</span> <span class="mi">1000</span>
+</pre></div>
+</div>
+<p>Some export formats like DXF have the ability to explicitly set the units used.</p>
+</section>
+<section id="module-build_part">
+<span id="reference"></span><h2>Reference<a class="headerlink" href="#module-build_part" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="build_part.BuildPart">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BuildPart</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*workplanes:</span> <span class="pre">~build123d.topology.two_d.Face</span> <span class="pre">|</span> <span class="pre">~build123d.geometry.Plane</span> <span class="pre">|</span> <span class="pre">~build123d.geometry.Location</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode:</span> <span class="pre">~build123d.build_enums.Mode</span> <span class="pre">=</span> <span class="pre">&lt;Mode.ADD&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/build_part.html#BuildPart"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#build_part.BuildPart" title="Link to this definition"></a></dt>
+<dd><p>The BuildPart class is another subclass of Builder for building parts
+(objects with the property of volume) from sketches or 3D objects.
+It has an _obj property that returns the current part being built, and
+several pending lists for storing faces, edges, and planes that will be
+integrated into the final part later. The class overrides the _add_to_pending
+method of Builder.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>workplanes</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#geometry.Plane" title="geometry.Plane"><em>Plane</em></a><em>, </em><em>optional</em>) – initial plane to work on. Defaults to Plane.XY.</p></li>
+<li><p><strong>mode</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="builder_api_reference.html#build_enums.Mode" title="build_enums.Mode"><em>Mode</em></a><em>, </em><em>optional</em>) – combination mode. Defaults to Mode.ADD.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="build_part.BuildPart.location">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">location</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Location</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#build_part.BuildPart.location" title="Link to this definition"></a></dt>
+<dd><p>Builder’s location</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="build_part.BuildPart.part">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">part</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Part</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#build_part.BuildPart.part" title="Link to this definition"></a></dt>
+<dd><p>Get the current part</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="build_part.BuildPart.pending_edges_as_wire">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">pending_edges_as_wire</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Wire</span></em><a class="headerlink" href="#build_part.BuildPart.pending_edges_as_wire" title="Link to this definition"></a></dt>
+<dd><p>Return a wire representation of the pending edges</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="build_sketch.html" class="btn btn-neutral float-left" title="BuildSketch" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="joints.html" class="btn btn-neutral float-right" title="Joints" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Gumyr.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,954 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>objects_sketch &mdash; build123d 0.9.2.dev40+gb1f0eed documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster.custom.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster.bundle.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-shadow.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-punk.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-noir.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-light.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/tooltipster-sideTip-borderless.min.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/micromodal.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/sphinx_rtd_theme.css?v=3234e928" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c97902b4"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+      <script src="../_static/js/hoverxref.js"></script>
+      <script src="../_static/js/tooltipster.bundle.min.js"></script>
+      <script src="../_static/js/micromodal.min.js"></script>
+      <script src="../_static/design-tabs.js?v=f930bc37"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            build123d
+              <img src="../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../key_concepts.html">Key Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../key_concepts_builder.html">Key Concepts (builder mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../key_concepts_algebra.html">Key Concepts (algebra mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../moving_objects.html">Moving Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../OpenSCAD.html">Transitioning from OpenSCAD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introductory_examples.html">Introductory Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../selectors_operators.html">Selectors and Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operations.html">Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../builders.html">Builders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../joints.html">Joints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assemblies.html">Assemblies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tips.html">Tips, Best Practices and FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../import_export.html">Import/Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cheat_sheet.html">Cheat Sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../external.html">External Tools and Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../builder_api_reference.html">Builder Common API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../direct_api_reference.html">Direct API Reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">build123d</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Module code</a></li>
+      <li class="breadcrumb-item active">objects_sketch</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for objects_sketch</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Sketch Objects</span>
+
+<span class="sd">name: objects_sketch.py</span>
+<span class="sd">by:   Gumyr</span>
+<span class="sd">date: March 22nd 2023</span>
+
+<span class="sd">desc:</span>
+<span class="sd">    This python module contains objects (classes) that create 2D Sketches.</span>
+
+<span class="sd">license:</span>
+
+<span class="sd">    Copyright 2022 Gumyr</span>
+
+<span class="sd">    Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span>
+<span class="sd">    you may not use this file except in compliance with the License.</span>
+<span class="sd">    You may obtain a copy of the License at</span>
+
+<span class="sd">        http://www.apache.org/licenses/LICENSE-2.0</span>
+
+<span class="sd">    Unless required by applicable law or agreed to in writing, software</span>
+<span class="sd">    distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span>
+<span class="sd">    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
+<span class="sd">    See the License for the specific language governing permissions and</span>
+<span class="sd">    limitations under the License.</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">trianglesolver</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">cos</span><span class="p">,</span> <span class="n">degrees</span><span class="p">,</span> <span class="n">pi</span><span class="p">,</span> <span class="n">radians</span><span class="p">,</span> <span class="n">sin</span><span class="p">,</span> <span class="n">tan</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">cast</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">Iterable</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">build123d.build_common</span><span class="w"> </span><span class="kn">import</span> <span class="n">LocationList</span><span class="p">,</span> <span class="n">flatten_sequence</span><span class="p">,</span> <span class="n">validate_inputs</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">build123d.build_enums</span><span class="w"> </span><span class="kn">import</span> <span class="n">Align</span><span class="p">,</span> <span class="n">FontStyle</span><span class="p">,</span> <span class="n">Mode</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">build123d.build_sketch</span><span class="w"> </span><span class="kn">import</span> <span class="n">BuildSketch</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">build123d.geometry</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">Axis</span><span class="p">,</span>
+    <span class="n">Location</span><span class="p">,</span>
+    <span class="n">Rotation</span><span class="p">,</span>
+    <span class="n">Vector</span><span class="p">,</span>
+    <span class="n">VectorLike</span><span class="p">,</span>
+    <span class="n">to_align_offset</span><span class="p">,</span>
+    <span class="n">TOLERANCE</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">build123d.topology</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">Compound</span><span class="p">,</span>
+    <span class="n">Edge</span><span class="p">,</span>
+    <span class="n">Face</span><span class="p">,</span>
+    <span class="n">ShapeList</span><span class="p">,</span>
+    <span class="n">Sketch</span><span class="p">,</span>
+    <span class="n">Wire</span><span class="p">,</span>
+    <span class="n">tuplify</span><span class="p">,</span>
+    <span class="n">topo_explore_common_vertex</span><span class="p">,</span>
+<span class="p">)</span>
+
+
+<div class="viewcode-block" id="BaseSketchObject">
+<a class="viewcode-back" href="../objects.html#objects_sketch.BaseSketchObject">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">BaseSketchObject</span><span class="p">(</span><span class="n">Sketch</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;BaseSketchObject</span>
+
+<span class="sd">    Base class for all BuildSketch objects</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        face (Face): face to create</span>
+<span class="sd">        rotation (float, optional): angle to rotate object. Defaults to 0</span>
+<span class="sd">        align (Align | tuple[Align, Align], optional): align MIN, CENTER, or MAX of object.</span>
+<span class="sd">            Defaults to None</span>
+<span class="sd">        mode (Mode, optional): combination mode. Defaults to Mode.ADD</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_applies_to</span> <span class="o">=</span> <span class="p">[</span><span class="n">BuildSketch</span><span class="o">.</span><span class="n">_tag</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">obj</span><span class="p">:</span> <span class="n">Compound</span> <span class="o">|</span> <span class="n">Face</span><span class="p">,</span>
+        <span class="n">rotation</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="n">align</span><span class="p">:</span> <span class="n">Align</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Align</span><span class="p">,</span> <span class="n">Align</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">mode</span><span class="p">:</span> <span class="n">Mode</span> <span class="o">=</span> <span class="n">Mode</span><span class="o">.</span><span class="n">ADD</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="k">if</span> <span class="n">align</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">align</span> <span class="o">=</span> <span class="n">tuplify</span><span class="p">(</span><span class="n">align</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+            <span class="n">obj</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">Location</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">bounding_box</span><span class="p">()</span><span class="o">.</span><span class="n">to_align_offset</span><span class="p">(</span><span class="n">align</span><span class="p">)))</span>
+
+        <span class="n">context</span><span class="p">:</span> <span class="n">BuildSketch</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="n">BuildSketch</span><span class="o">.</span><span class="n">_get_context</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">context</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">new_faces</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">moved</span><span class="p">(</span><span class="n">Rotation</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">rotation</span><span class="p">))</span><span class="o">.</span><span class="n">faces</span><span class="p">()</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">rotation</span> <span class="o">=</span> <span class="n">rotation</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">mode</span> <span class="o">=</span> <span class="n">mode</span>
+
+            <span class="n">obj</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">moved</span><span class="p">(</span><span class="n">Rotation</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">rotation</span><span class="p">))</span>
+
+            <span class="n">new_faces</span> <span class="o">=</span> <span class="n">ShapeList</span><span class="p">(</span>
+                <span class="n">face</span><span class="o">.</span><span class="n">moved</span><span class="p">(</span><span class="n">location</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">face</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="n">faces</span><span class="p">()</span>
+                <span class="k">for</span> <span class="n">location</span> <span class="ow">in</span> <span class="n">LocationList</span><span class="o">.</span><span class="n">_get_context</span><span class="p">()</span><span class="o">.</span><span class="n">local_locations</span>
+            <span class="p">)</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">BuildSketch</span><span class="p">):</span>
+                <span class="n">context</span><span class="o">.</span><span class="n">_add_to_context</span><span class="p">(</span><span class="o">*</span><span class="n">new_faces</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">)</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">Compound</span><span class="p">(</span><span class="n">new_faces</span><span class="p">)</span><span class="o">.</span><span class="n">wrapped</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="Circle">
+<a class="viewcode-back" href="../objects.html#objects_sketch.Circle">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Circle</span><span class="p">(</span><span class="n">BaseSketchObject</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Sketch Object: Circle</span>
+
+<span class="sd">    Create a circle defined by radius.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        radius (float): circle radius</span>
+<span class="sd">        align (Align | tuple[Align, Align], optional): align MIN, CENTER, or MAX of object.</span>
+<span class="sd">            Defaults to (Align.CENTER, Align.CENTER)</span>
+<span class="sd">        mode (Mode, optional): combination mode. Defaults to Mode.ADD</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_applies_to</span> <span class="o">=</span> <span class="p">[</span><span class="n">BuildSketch</span><span class="o">.</span><span class="n">_tag</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">radius</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">align</span><span class="p">:</span> <span class="n">Align</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Align</span><span class="p">,</span> <span class="n">Align</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="p">(</span><span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">),</span>
+        <span class="n">mode</span><span class="p">:</span> <span class="n">Mode</span> <span class="o">=</span> <span class="n">Mode</span><span class="o">.</span><span class="n">ADD</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="n">context</span><span class="p">:</span> <span class="n">BuildSketch</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="n">BuildSketch</span><span class="o">.</span><span class="n">_get_context</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">validate_inputs</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">radius</span> <span class="o">=</span> <span class="n">radius</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">align</span> <span class="o">=</span> <span class="n">tuplify</span><span class="p">(</span><span class="n">align</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+        <span class="n">face</span> <span class="o">=</span> <span class="n">Face</span><span class="p">(</span><span class="n">Wire</span><span class="o">.</span><span class="n">make_circle</span><span class="p">(</span><span class="n">radius</span><span class="p">))</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">face</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">align</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="Ellipse">
+<a class="viewcode-back" href="../objects.html#objects_sketch.Ellipse">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Ellipse</span><span class="p">(</span><span class="n">BaseSketchObject</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Sketch Object: Ellipse</span>
+
+<span class="sd">    Create an ellipse defined by x- and y- radii.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        x_radius (float): x radius of the ellipse (along the x-axis of plane)</span>
+<span class="sd">        y_radius (float): y radius of the ellipse (along the y-axis of plane)</span>
+<span class="sd">        rotation (float, optional): angle to rotate object. Defaults to 0</span>
+<span class="sd">        align (Align | tuple[Align, Align], optional): align MIN, CENTER, or MAX of object.</span>
+<span class="sd">            Defaults to (Align.CENTER, Align.CENTER)</span>
+<span class="sd">        mode (Mode, optional): combination mode. Defaults to Mode.ADD</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_applies_to</span> <span class="o">=</span> <span class="p">[</span><span class="n">BuildSketch</span><span class="o">.</span><span class="n">_tag</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">x_radius</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">y_radius</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">rotation</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="n">align</span><span class="p">:</span> <span class="n">Align</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Align</span><span class="p">,</span> <span class="n">Align</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="p">(</span><span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">),</span>
+        <span class="n">mode</span><span class="p">:</span> <span class="n">Mode</span> <span class="o">=</span> <span class="n">Mode</span><span class="o">.</span><span class="n">ADD</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="n">context</span><span class="p">:</span> <span class="n">BuildSketch</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="n">BuildSketch</span><span class="o">.</span><span class="n">_get_context</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">validate_inputs</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">x_radius</span> <span class="o">=</span> <span class="n">x_radius</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y_radius</span> <span class="o">=</span> <span class="n">y_radius</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">align</span> <span class="o">=</span> <span class="n">tuplify</span><span class="p">(</span><span class="n">align</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+        <span class="n">face</span> <span class="o">=</span> <span class="n">Face</span><span class="p">(</span><span class="n">Wire</span><span class="o">.</span><span class="n">make_ellipse</span><span class="p">(</span><span class="n">x_radius</span><span class="p">,</span> <span class="n">y_radius</span><span class="p">))</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">face</span><span class="p">,</span> <span class="n">rotation</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">align</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="Polygon">
+<a class="viewcode-back" href="../objects.html#objects_sketch.Polygon">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Polygon</span><span class="p">(</span><span class="n">BaseSketchObject</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Sketch Object: Polygon</span>
+
+<span class="sd">    Create a polygon defined by given sequence of points.</span>
+
+<span class="sd">    Note: the order of the points defines the resulting normal of the Face in Algebra</span>
+<span class="sd">    mode, where counter-clockwise order creates an upward normal while clockwise order</span>
+<span class="sd">    a downward normal. In Builder mode, the Face is added with an upward normal.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        pts (VectorLike | Iterable[VectorLike]): sequence of points defining the</span>
+<span class="sd">            vertices of the polygon</span>
+<span class="sd">        rotation (float, optional): angle to rotate object. Defaults to 0</span>
+<span class="sd">        align (Align | tuple[Align, Align], optional): align MIN, CENTER, or MAX of object.</span>
+<span class="sd">            Defaults to (Align.CENTER, Align.CENTER)</span>
+<span class="sd">        mode (Mode, optional): combination mode. Defaults to Mode.ADD</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_applies_to</span> <span class="o">=</span> <span class="p">[</span><span class="n">BuildSketch</span><span class="o">.</span><span class="n">_tag</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="o">*</span><span class="n">pts</span><span class="p">:</span> <span class="n">VectorLike</span> <span class="o">|</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">VectorLike</span><span class="p">],</span>
+        <span class="n">rotation</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="n">align</span><span class="p">:</span> <span class="n">Align</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Align</span><span class="p">,</span> <span class="n">Align</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="p">(</span><span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">),</span>
+        <span class="n">mode</span><span class="p">:</span> <span class="n">Mode</span> <span class="o">=</span> <span class="n">Mode</span><span class="o">.</span><span class="n">ADD</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="n">context</span><span class="p">:</span> <span class="n">BuildSketch</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="n">BuildSketch</span><span class="o">.</span><span class="n">_get_context</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">validate_inputs</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+
+        <span class="n">flattened_pts</span> <span class="o">=</span> <span class="n">flatten_sequence</span><span class="p">(</span><span class="o">*</span><span class="n">pts</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pts</span> <span class="o">=</span> <span class="n">flattened_pts</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">align</span> <span class="o">=</span> <span class="n">tuplify</span><span class="p">(</span><span class="n">align</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+        <span class="n">poly_pts</span> <span class="o">=</span> <span class="p">[</span><span class="n">Vector</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pts</span><span class="p">]</span>
+        <span class="n">face</span> <span class="o">=</span> <span class="n">Face</span><span class="p">(</span><span class="n">Wire</span><span class="o">.</span><span class="n">make_polygon</span><span class="p">(</span><span class="n">poly_pts</span><span class="p">))</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">face</span><span class="p">,</span> <span class="n">rotation</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">align</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="Rectangle">
+<a class="viewcode-back" href="../objects.html#objects_sketch.Rectangle">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Rectangle</span><span class="p">(</span><span class="n">BaseSketchObject</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Sketch Object: Rectangle</span>
+
+<span class="sd">    Create a rectangle defined by width and height.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        width (float): rectangle width</span>
+<span class="sd">        height (float): rectangle height</span>
+<span class="sd">        rotation (float, optional): angle to rotate object. Defaults to 0</span>
+<span class="sd">        align (Align | tuple[Align, Align], optional): align MIN, CENTER, or MAX of object.</span>
+<span class="sd">            Defaults to (Align.CENTER, Align.CENTER)</span>
+<span class="sd">        mode (Mode, optional): combination mode. Defaults to Mode.ADD</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_applies_to</span> <span class="o">=</span> <span class="p">[</span><span class="n">BuildSketch</span><span class="o">.</span><span class="n">_tag</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">width</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">height</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">rotation</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="n">align</span><span class="p">:</span> <span class="n">Align</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Align</span><span class="p">,</span> <span class="n">Align</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="p">(</span><span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">),</span>
+        <span class="n">mode</span><span class="p">:</span> <span class="n">Mode</span> <span class="o">=</span> <span class="n">Mode</span><span class="o">.</span><span class="n">ADD</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="n">context</span><span class="p">:</span> <span class="n">BuildSketch</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="n">BuildSketch</span><span class="o">.</span><span class="n">_get_context</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">validate_inputs</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">width</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rectangle_height</span> <span class="o">=</span> <span class="n">height</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">align</span> <span class="o">=</span> <span class="n">tuplify</span><span class="p">(</span><span class="n">align</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+        <span class="n">face</span> <span class="o">=</span> <span class="n">Face</span><span class="o">.</span><span class="n">make_rect</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">face</span><span class="p">,</span> <span class="n">rotation</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">align</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="RectangleRounded">
+<a class="viewcode-back" href="../objects.html#objects_sketch.RectangleRounded">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">RectangleRounded</span><span class="p">(</span><span class="n">BaseSketchObject</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Sketch Object: Rectangle Rounded</span>
+
+<span class="sd">    Create a rectangle defined by width and height with filleted corners.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        width (float): rectangle width</span>
+<span class="sd">        height (float): rectangle height</span>
+<span class="sd">        radius (float): fillet radius</span>
+<span class="sd">        rotation (float, optional): angle to rotate object. Defaults to 0</span>
+<span class="sd">        align (Align | tuple[Align, Align], optional): align MIN, CENTER, or MAX of object.</span>
+<span class="sd">            Defaults to (Align.CENTER, Align.CENTER)</span>
+<span class="sd">        mode (Mode, optional): combination mode. Defaults to Mode.ADD</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_applies_to</span> <span class="o">=</span> <span class="p">[</span><span class="n">BuildSketch</span><span class="o">.</span><span class="n">_tag</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">width</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">height</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">radius</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">rotation</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="n">align</span><span class="p">:</span> <span class="n">Align</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Align</span><span class="p">,</span> <span class="n">Align</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="p">(</span><span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">),</span>
+        <span class="n">mode</span><span class="p">:</span> <span class="n">Mode</span> <span class="o">=</span> <span class="n">Mode</span><span class="o">.</span><span class="n">ADD</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="n">context</span><span class="p">:</span> <span class="n">BuildSketch</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="n">BuildSketch</span><span class="o">.</span><span class="n">_get_context</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">validate_inputs</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">width</span> <span class="o">&lt;=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">radius</span> <span class="ow">or</span> <span class="n">height</span> <span class="o">&lt;=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">radius</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;width and height must be &gt; 2*radius&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">width</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rectangle_height</span> <span class="o">=</span> <span class="n">height</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">radius</span> <span class="o">=</span> <span class="n">radius</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">align</span> <span class="o">=</span> <span class="n">tuplify</span><span class="p">(</span><span class="n">align</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+        <span class="n">face</span> <span class="o">=</span> <span class="n">Face</span><span class="o">.</span><span class="n">make_rect</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+        <span class="n">face</span> <span class="o">=</span> <span class="n">face</span><span class="o">.</span><span class="n">fillet_2d</span><span class="p">(</span><span class="n">radius</span><span class="p">,</span> <span class="n">face</span><span class="o">.</span><span class="n">vertices</span><span class="p">())</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">face</span><span class="p">,</span> <span class="n">rotation</span><span class="p">,</span> <span class="n">align</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="RegularPolygon">
+<a class="viewcode-back" href="../objects.html#objects_sketch.RegularPolygon">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">RegularPolygon</span><span class="p">(</span><span class="n">BaseSketchObject</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Sketch Object: Regular Polygon</span>
+
+<span class="sd">    Create a regular polygon defined by radius and side count. Use major_radius to define whether</span>
+<span class="sd">    the polygon circumscribes (along the vertices) or inscribes (along the sides) the radius circle.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        radius (float): construction radius</span>
+<span class="sd">        side_count (int): number of sides</span>
+<span class="sd">        major_radius (bool): If True the radius is the major radius (circumscribed circle),</span>
+<span class="sd">            else the radius is the minor radius (inscribed circle). Defaults to True</span>
+<span class="sd">        rotation (float, optional): angle to rotate object. Defaults to 0</span>
+<span class="sd">        align (Align | tuple[Align, Align], optional): align MIN, CENTER, or MAX of object.</span>
+<span class="sd">            Defaults to (Align.CENTER, Align.CENTER)</span>
+<span class="sd">        mode (Mode, optional): combination mode. Defaults to Mode.ADD</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_applies_to</span> <span class="o">=</span> <span class="p">[</span><span class="n">BuildSketch</span><span class="o">.</span><span class="n">_tag</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">radius</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">side_count</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+        <span class="n">major_radius</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="n">rotation</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="n">align</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Align</span><span class="p">,</span> <span class="n">Align</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">),</span>
+        <span class="n">mode</span><span class="p">:</span> <span class="n">Mode</span> <span class="o">=</span> <span class="n">Mode</span><span class="o">.</span><span class="n">ADD</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="c1"># pylint: disable=too-many-locals</span>
+        <span class="n">context</span><span class="p">:</span> <span class="n">BuildSketch</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="n">BuildSketch</span><span class="o">.</span><span class="n">_get_context</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">validate_inputs</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">side_count</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;RegularPolygon must have at least three sides, not </span><span class="si">{</span><span class="n">side_count</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">major_radius</span><span class="p">:</span>
+            <span class="n">rad</span> <span class="o">=</span> <span class="n">radius</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">rad</span> <span class="o">=</span> <span class="n">radius</span> <span class="o">/</span> <span class="n">cos</span><span class="p">(</span><span class="n">pi</span> <span class="o">/</span> <span class="n">side_count</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">rad</span>  <span class="c1">#: radius of the circumscribed circle or major radius</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">apothem</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">rad</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span>
+            <span class="n">pi</span> <span class="o">/</span> <span class="n">side_count</span>
+        <span class="p">)</span>  <span class="c1">#: radius of the inscribed circle or minor radius</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">side_count</span> <span class="o">=</span> <span class="n">side_count</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">align</span> <span class="o">=</span> <span class="n">align</span>
+
+        <span class="n">pts</span> <span class="o">=</span> <span class="n">ShapeList</span><span class="p">(</span>
+            <span class="p">[</span>
+                <span class="n">Vector</span><span class="p">(</span>
+                    <span class="n">rad</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">/</span> <span class="n">side_count</span> <span class="o">+</span> <span class="n">radians</span><span class="p">(</span><span class="n">rotation</span><span class="p">)),</span>
+                    <span class="n">rad</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">/</span> <span class="n">side_count</span> <span class="o">+</span> <span class="n">radians</span><span class="p">(</span><span class="n">rotation</span><span class="p">)),</span>
+                <span class="p">)</span>
+                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">side_count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="p">]</span>
+        <span class="p">)</span>
+        <span class="n">pts_sorted</span> <span class="o">=</span> <span class="p">[</span><span class="n">pts</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="n">Axis</span><span class="o">.</span><span class="n">X</span><span class="p">),</span> <span class="n">pts</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="n">Axis</span><span class="o">.</span><span class="n">Y</span><span class="p">)]</span>
+        <span class="c1"># pylint doesn&#39;t recognize that a ShapeList of Vector is valid</span>
+        <span class="c1"># pylint: disable=no-member</span>
+        <span class="n">mins</span> <span class="o">=</span> <span class="p">[</span><span class="n">pts_sorted</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="n">pts_sorted</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">Y</span><span class="p">]</span>
+        <span class="n">maxs</span> <span class="o">=</span> <span class="p">[</span><span class="n">pts_sorted</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="n">pts_sorted</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">Y</span><span class="p">]</span>
+
+        <span class="n">align_offset</span> <span class="o">=</span> <span class="n">to_align_offset</span><span class="p">(</span><span class="n">mins</span><span class="p">,</span> <span class="n">maxs</span><span class="p">,</span> <span class="n">align</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+        <span class="n">pts_ao</span> <span class="o">=</span> <span class="p">[</span><span class="n">point</span> <span class="o">+</span> <span class="n">align_offset</span> <span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">pts</span><span class="p">]</span>
+
+        <span class="n">face</span> <span class="o">=</span> <span class="n">Face</span><span class="p">(</span><span class="n">Wire</span><span class="o">.</span><span class="n">make_polygon</span><span class="p">(</span><span class="n">pts_ao</span><span class="p">))</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">face</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="SlotArc">
+<a class="viewcode-back" href="../objects.html#objects_sketch.SlotArc">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">SlotArc</span><span class="p">(</span><span class="n">BaseSketchObject</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Sketch Object: Slot Arc</span>
+
+<span class="sd">    Create a slot defined by a line and height. May be an arc, stright line, spline, etc.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        arc (Edge | Wire): center line of slot</span>
+<span class="sd">        height (float): diameter of end arcs</span>
+<span class="sd">        rotation (float, optional): angle to rotate object. Defaults to 0</span>
+<span class="sd">        mode (Mode, optional): combination mode. Defaults to Mode.ADD</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_applies_to</span> <span class="o">=</span> <span class="p">[</span><span class="n">BuildSketch</span><span class="o">.</span><span class="n">_tag</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">arc</span><span class="p">:</span> <span class="n">Edge</span> <span class="o">|</span> <span class="n">Wire</span><span class="p">,</span>
+        <span class="n">height</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">rotation</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="n">mode</span><span class="p">:</span> <span class="n">Mode</span> <span class="o">=</span> <span class="n">Mode</span><span class="o">.</span><span class="n">ADD</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="n">context</span><span class="p">:</span> <span class="n">BuildSketch</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="n">BuildSketch</span><span class="o">.</span><span class="n">_get_context</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">validate_inputs</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">arc</span> <span class="o">=</span> <span class="n">arc</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">slot_height</span> <span class="o">=</span> <span class="n">height</span>
+
+        <span class="n">arc</span> <span class="o">=</span> <span class="n">arc</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">arc</span><span class="p">,</span> <span class="n">Wire</span><span class="p">)</span> <span class="k">else</span> <span class="n">Wire</span><span class="p">([</span><span class="n">arc</span><span class="p">])</span>
+        <span class="n">face</span> <span class="o">=</span> <span class="n">Face</span><span class="p">(</span><span class="n">arc</span><span class="o">.</span><span class="n">offset_2d</span><span class="p">(</span><span class="n">height</span> <span class="o">/</span> <span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">Axis</span><span class="o">.</span><span class="n">Z</span><span class="p">,</span> <span class="n">rotation</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">face</span><span class="p">,</span> <span class="n">rotation</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="SlotCenterPoint">
+<a class="viewcode-back" href="../objects.html#objects_sketch.SlotCenterPoint">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">SlotCenterPoint</span><span class="p">(</span><span class="n">BaseSketchObject</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Sketch Object: Slot Center Point</span>
+
+<span class="sd">    Create a slot defined by the center of the slot and the center of one end arc.</span>
+<span class="sd">    The slot will be symmetric about the center point.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        center (VectorLike): center point</span>
+<span class="sd">        point (VectorLike): center of arc point</span>
+<span class="sd">        height (float): diameter of end arcs</span>
+<span class="sd">        rotation (float, optional): angle to rotate object. Defaults to 0</span>
+<span class="sd">        mode (Mode, optional): combination mode. Defaults to Mode.ADD</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_applies_to</span> <span class="o">=</span> <span class="p">[</span><span class="n">BuildSketch</span><span class="o">.</span><span class="n">_tag</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">center</span><span class="p">:</span> <span class="n">VectorLike</span><span class="p">,</span>
+        <span class="n">point</span><span class="p">:</span> <span class="n">VectorLike</span><span class="p">,</span>
+        <span class="n">height</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">rotation</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="n">mode</span><span class="p">:</span> <span class="n">Mode</span> <span class="o">=</span> <span class="n">Mode</span><span class="o">.</span><span class="n">ADD</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="n">context</span><span class="p">:</span> <span class="n">BuildSketch</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="n">BuildSketch</span><span class="o">.</span><span class="n">_get_context</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">validate_inputs</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+
+        <span class="n">center_v</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">(</span><span class="n">center</span><span class="p">)</span>
+        <span class="n">point_v</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">(</span><span class="n">point</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">slot_center</span> <span class="o">=</span> <span class="n">center_v</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">point</span> <span class="o">=</span> <span class="n">point_v</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">slot_height</span> <span class="o">=</span> <span class="n">height</span>
+
+        <span class="n">half_line</span> <span class="o">=</span> <span class="n">point_v</span> <span class="o">-</span> <span class="n">center_v</span>
+
+        <span class="k">if</span> <span class="n">half_line</span><span class="o">.</span><span class="n">length</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">&lt;=</span> <span class="n">height</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Slots must have width &gt; height. &quot;</span>
+                <span class="s2">&quot;Got: {height=} width={half_line.length * 2} (computed)&quot;</span>
+            <span class="p">)</span>
+
+        <span class="n">face</span> <span class="o">=</span> <span class="n">Face</span><span class="p">(</span>
+            <span class="n">Wire</span><span class="o">.</span><span class="n">combine</span><span class="p">(</span>
+                <span class="p">[</span>
+                    <span class="n">Edge</span><span class="o">.</span><span class="n">make_line</span><span class="p">(</span><span class="n">point_v</span><span class="p">,</span> <span class="n">center_v</span><span class="p">),</span>
+                    <span class="n">Edge</span><span class="o">.</span><span class="n">make_line</span><span class="p">(</span><span class="n">center_v</span><span class="p">,</span> <span class="n">center_v</span> <span class="o">-</span> <span class="n">half_line</span><span class="p">),</span>
+                <span class="p">]</span>
+            <span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">offset_2d</span><span class="p">(</span><span class="n">height</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">face</span><span class="p">,</span> <span class="n">rotation</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="SlotCenterToCenter">
+<a class="viewcode-back" href="../objects.html#objects_sketch.SlotCenterToCenter">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">SlotCenterToCenter</span><span class="p">(</span><span class="n">BaseSketchObject</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Sketch Object: Slot Center To Center</span>
+
+<span class="sd">    Create a slot defined by the distance between the centers of the two end arcs.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        center_separation (float): distance between arc centers</span>
+<span class="sd">        height (float): diameter of end arcs</span>
+<span class="sd">        rotation (float, optional): angle to rotate object. Defaults to 0</span>
+<span class="sd">        mode (Mode, optional): combination mode. Defaults to Mode.ADD</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_applies_to</span> <span class="o">=</span> <span class="p">[</span><span class="n">BuildSketch</span><span class="o">.</span><span class="n">_tag</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">center_separation</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">height</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">rotation</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="n">mode</span><span class="p">:</span> <span class="n">Mode</span> <span class="o">=</span> <span class="n">Mode</span><span class="o">.</span><span class="n">ADD</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="k">if</span> <span class="n">center_separation</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Requires center_separation &gt; 0. Got: </span><span class="si">{</span><span class="n">center_separation</span><span class="si">=}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+
+        <span class="n">context</span><span class="p">:</span> <span class="n">BuildSketch</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="n">BuildSketch</span><span class="o">.</span><span class="n">_get_context</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">validate_inputs</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">center_separation</span> <span class="o">=</span> <span class="n">center_separation</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">slot_height</span> <span class="o">=</span> <span class="n">height</span>
+
+        <span class="n">face</span> <span class="o">=</span> <span class="n">Face</span><span class="p">(</span>
+            <span class="n">Wire</span><span class="p">(</span>
+                <span class="p">[</span>
+                    <span class="n">Edge</span><span class="o">.</span><span class="n">make_line</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="n">center_separation</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">Vector</span><span class="p">()),</span>
+                    <span class="n">Edge</span><span class="o">.</span><span class="n">make_line</span><span class="p">(</span><span class="n">Vector</span><span class="p">(),</span> <span class="n">Vector</span><span class="p">(</span><span class="o">+</span><span class="n">center_separation</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)),</span>
+                <span class="p">]</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">offset_2d</span><span class="p">(</span><span class="n">height</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">face</span><span class="p">,</span> <span class="n">rotation</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="SlotOverall">
+<a class="viewcode-back" href="../objects.html#objects_sketch.SlotOverall">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">SlotOverall</span><span class="p">(</span><span class="n">BaseSketchObject</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Sketch Object: Slot Overall</span>
+
+<span class="sd">    Create a slot defined by the overall width and height.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        width (float): overall width of slot</span>
+<span class="sd">        height (float): diameter of end arcs</span>
+<span class="sd">        rotation (float, optional): angle to rotate object. Defaults to 0</span>
+<span class="sd">        align (Align | tuple[Align, Align], optional): align MIN, CENTER, or MAX of object.</span>
+<span class="sd">            Defaults to (Align.CENTER, Align.CENTER)</span>
+<span class="sd">        mode (Mode, optional): combination mode. Defaults to Mode.ADD</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_applies_to</span> <span class="o">=</span> <span class="p">[</span><span class="n">BuildSketch</span><span class="o">.</span><span class="n">_tag</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">width</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">height</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">rotation</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="n">align</span><span class="p">:</span> <span class="n">Align</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Align</span><span class="p">,</span> <span class="n">Align</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="p">(</span><span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">),</span>
+        <span class="n">mode</span><span class="p">:</span> <span class="n">Mode</span> <span class="o">=</span> <span class="n">Mode</span><span class="o">.</span><span class="n">ADD</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="k">if</span> <span class="n">width</span> <span class="o">&lt;=</span> <span class="n">height</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Slot requires that width &gt; height. Got: </span><span class="si">{</span><span class="n">width</span><span class="si">=}</span><span class="s2">, </span><span class="si">{</span><span class="n">height</span><span class="si">=}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+
+        <span class="n">context</span><span class="p">:</span> <span class="n">BuildSketch</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="n">BuildSketch</span><span class="o">.</span><span class="n">_get_context</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">validate_inputs</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">width</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">slot_height</span> <span class="o">=</span> <span class="n">height</span>
+
+        <span class="k">if</span> <span class="n">width</span> <span class="o">!=</span> <span class="n">height</span><span class="p">:</span>
+            <span class="n">face</span> <span class="o">=</span> <span class="n">Face</span><span class="p">(</span>
+                <span class="n">Wire</span><span class="p">(</span>
+                    <span class="p">[</span>
+                        <span class="n">Edge</span><span class="o">.</span><span class="n">make_line</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="n">width</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">height</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">Vector</span><span class="p">()),</span>
+                        <span class="n">Edge</span><span class="o">.</span><span class="n">make_line</span><span class="p">(</span><span class="n">Vector</span><span class="p">(),</span> <span class="n">Vector</span><span class="p">(</span><span class="o">+</span><span class="n">width</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">height</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)),</span>
+                    <span class="p">]</span>
+                <span class="p">)</span><span class="o">.</span><span class="n">offset_2d</span><span class="p">(</span><span class="n">height</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">face</span> <span class="o">=</span> <span class="n">cast</span><span class="p">(</span><span class="n">Face</span><span class="p">,</span> <span class="n">Circle</span><span class="p">(</span><span class="n">width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">)</span><span class="o">.</span><span class="n">face</span><span class="p">())</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">face</span><span class="p">,</span> <span class="n">rotation</span><span class="p">,</span> <span class="n">align</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="Text">
+<a class="viewcode-back" href="../objects.html#objects_sketch.Text">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Text</span><span class="p">(</span><span class="n">BaseSketchObject</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Sketch Object: Text</span>
+
+<span class="sd">    Create text defined by text string and font size.</span>
+<span class="sd">    May have difficulty finding non-system fonts depending on platform and render default.</span>
+<span class="sd">    font_path defines an exact path to a font file and overrides font.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        txt (str): text to render</span>
+<span class="sd">        font_size (float): size of the font in model units</span>
+<span class="sd">        font (str, optional): font name. Defaults to &quot;Arial&quot;</span>
+<span class="sd">        font_path (str, optional): system path to font file. Defaults to None</span>
+<span class="sd">        font_style (Font_Style, optional): font style, REGULAR, BOLD, or ITALIC.</span>
+<span class="sd">            Defaults to Font_Style.REGULAR</span>
+<span class="sd">        align (Align | tuple[Align, Align], optional): align MIN, CENTER, or MAX of object.</span>
+<span class="sd">            Defaults to (Align.CENTER, Align.CENTER)</span>
+<span class="sd">        path (Edge | Wire, optional): path for text to follow. Defaults to None</span>
+<span class="sd">        position_on_path (float, optional): the relative location on path to position the</span>
+<span class="sd">            text, values must be between 0.0 and 1.0. Defaults to 0.0</span>
+<span class="sd">        rotation (float, optional): angle to rotate object. Defaults to 0</span>
+<span class="sd">        mode (Mode, optional): combination mode. Defaults to Mode.ADD</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># pylint: disable=too-many-instance-attributes</span>
+    <span class="n">_applies_to</span> <span class="o">=</span> <span class="p">[</span><span class="n">BuildSketch</span><span class="o">.</span><span class="n">_tag</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">txt</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">font_size</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">font</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Arial&quot;</span><span class="p">,</span>
+        <span class="n">font_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">font_style</span><span class="p">:</span> <span class="n">FontStyle</span> <span class="o">=</span> <span class="n">FontStyle</span><span class="o">.</span><span class="n">REGULAR</span><span class="p">,</span>
+        <span class="n">align</span><span class="p">:</span> <span class="n">Align</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Align</span><span class="p">,</span> <span class="n">Align</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="p">(</span><span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">),</span>
+        <span class="n">path</span><span class="p">:</span> <span class="n">Edge</span> <span class="o">|</span> <span class="n">Wire</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">position_on_path</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>
+        <span class="n">rotation</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>
+        <span class="n">mode</span><span class="p">:</span> <span class="n">Mode</span> <span class="o">=</span> <span class="n">Mode</span><span class="o">.</span><span class="n">ADD</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="n">context</span><span class="p">:</span> <span class="n">BuildSketch</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="n">BuildSketch</span><span class="o">.</span><span class="n">_get_context</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">validate_inputs</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">txt</span> <span class="o">=</span> <span class="n">txt</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">font_size</span> <span class="o">=</span> <span class="n">font_size</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">font</span> <span class="o">=</span> <span class="n">font</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">font_path</span> <span class="o">=</span> <span class="n">font_path</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">font_style</span> <span class="o">=</span> <span class="n">font_style</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">align</span> <span class="o">=</span> <span class="n">align</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">text_path</span> <span class="o">=</span> <span class="n">path</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">position_on_path</span> <span class="o">=</span> <span class="n">position_on_path</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rotation</span> <span class="o">=</span> <span class="n">rotation</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mode</span> <span class="o">=</span> <span class="n">mode</span>
+
+        <span class="n">text_string</span> <span class="o">=</span> <span class="n">Compound</span><span class="o">.</span><span class="n">make_text</span><span class="p">(</span>
+            <span class="n">txt</span><span class="o">=</span><span class="n">txt</span><span class="p">,</span>
+            <span class="n">font_size</span><span class="o">=</span><span class="n">font_size</span><span class="p">,</span>
+            <span class="n">font</span><span class="o">=</span><span class="n">font</span><span class="p">,</span>
+            <span class="n">font_path</span><span class="o">=</span><span class="n">font_path</span><span class="p">,</span>
+            <span class="n">font_style</span><span class="o">=</span><span class="n">font_style</span><span class="p">,</span>
+            <span class="n">align</span><span class="o">=</span><span class="n">align</span><span class="p">,</span>
+            <span class="n">position_on_path</span><span class="o">=</span><span class="n">position_on_path</span><span class="p">,</span>
+            <span class="n">text_path</span><span class="o">=</span><span class="n">path</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">text_string</span><span class="p">,</span> <span class="n">rotation</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="Trapezoid">
+<a class="viewcode-back" href="../objects.html#objects_sketch.Trapezoid">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Trapezoid</span><span class="p">(</span><span class="n">BaseSketchObject</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Sketch Object: Trapezoid</span>
+
+<span class="sd">    Create a trapezoid defined by major width, height, and interior angle(s).</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        width (float): trapezoid major width</span>
+<span class="sd">        height (float): trapezoid height</span>
+<span class="sd">        left_side_angle (float): bottom left interior angle</span>
+<span class="sd">        right_side_angle (float, optional): bottom right interior angle. If not provided,</span>
+<span class="sd">            the trapezoid will be symmetric. Defaults to None</span>
+<span class="sd">        rotation (float, optional): angle to rotate object. Defaults to 0</span>
+<span class="sd">        align (Align | tuple[Align, Align], optional): align MIN, CENTER, or MAX of object.</span>
+<span class="sd">            Defaults to (Align.CENTER, Align.CENTER)</span>
+<span class="sd">        mode (Mode, optional): combination mode. Defaults to Mode.ADD</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: Give angles result in an invalid trapezoid</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_applies_to</span> <span class="o">=</span> <span class="p">[</span><span class="n">BuildSketch</span><span class="o">.</span><span class="n">_tag</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">width</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">height</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">left_side_angle</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">right_side_angle</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">rotation</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="n">align</span><span class="p">:</span> <span class="n">Align</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Align</span><span class="p">,</span> <span class="n">Align</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="p">(</span><span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">),</span>
+        <span class="n">mode</span><span class="p">:</span> <span class="n">Mode</span> <span class="o">=</span> <span class="n">Mode</span><span class="o">.</span><span class="n">ADD</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="n">context</span><span class="p">:</span> <span class="n">BuildSketch</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="n">BuildSketch</span><span class="o">.</span><span class="n">_get_context</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">validate_inputs</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+
+        <span class="n">right_side_angle</span> <span class="o">=</span> <span class="n">left_side_angle</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">right_side_angle</span> <span class="k">else</span> <span class="n">right_side_angle</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">width</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">trapezoid_height</span> <span class="o">=</span> <span class="n">height</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">left_side_angle</span> <span class="o">=</span> <span class="n">left_side_angle</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">right_side_angle</span> <span class="o">=</span> <span class="n">right_side_angle</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">align</span> <span class="o">=</span> <span class="n">tuplify</span><span class="p">(</span><span class="n">align</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+        <span class="c1"># Calculate the reduction of the top on both sides</span>
+        <span class="n">reduction_left</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="mi">0</span> <span class="k">if</span> <span class="n">left_side_angle</span> <span class="o">==</span> <span class="mi">90</span> <span class="k">else</span> <span class="n">height</span> <span class="o">/</span> <span class="n">tan</span><span class="p">(</span><span class="n">radians</span><span class="p">(</span><span class="n">left_side_angle</span><span class="p">))</span>
+        <span class="p">)</span>
+        <span class="n">reduction_right</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="mi">0</span> <span class="k">if</span> <span class="n">right_side_angle</span> <span class="o">==</span> <span class="mi">90</span> <span class="k">else</span> <span class="n">height</span> <span class="o">/</span> <span class="n">tan</span><span class="p">(</span><span class="n">radians</span><span class="p">(</span><span class="n">right_side_angle</span><span class="p">))</span>
+        <span class="p">)</span>
+
+        <span class="n">top_width_left</span> <span class="o">=</span> <span class="n">width</span> <span class="o">/</span> <span class="mi">2</span>
+        <span class="n">top_width_right</span> <span class="o">=</span> <span class="n">width</span> <span class="o">/</span> <span class="mi">2</span>
+        <span class="n">bot_width_left</span> <span class="o">=</span> <span class="n">width</span> <span class="o">/</span> <span class="mi">2</span>
+        <span class="n">bot_width_right</span> <span class="o">=</span> <span class="n">width</span> <span class="o">/</span> <span class="mi">2</span>
+
+        <span class="k">if</span> <span class="n">reduction_left</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">top_width_left</span> <span class="o">-=</span> <span class="n">reduction_left</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">bot_width_left</span> <span class="o">+=</span> <span class="n">reduction_left</span>
+
+        <span class="k">if</span> <span class="n">reduction_right</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">top_width_right</span> <span class="o">-=</span> <span class="n">reduction_right</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">bot_width_right</span> <span class="o">+=</span> <span class="n">reduction_right</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">bot_width_left</span> <span class="o">+</span> <span class="n">bot_width_right</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Trapezoid bottom invalid - change angles&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">top_width_left</span> <span class="o">+</span> <span class="n">top_width_right</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Trapezoid top invalid - change angles&quot;</span><span class="p">)</span>
+
+        <span class="n">pts</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">pts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="n">bot_width_left</span><span class="p">,</span> <span class="o">-</span><span class="n">height</span> <span class="o">/</span> <span class="mi">2</span><span class="p">))</span>
+        <span class="n">pts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="n">bot_width_right</span><span class="p">,</span> <span class="o">-</span><span class="n">height</span> <span class="o">/</span> <span class="mi">2</span><span class="p">))</span>
+        <span class="n">pts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="n">top_width_right</span><span class="p">,</span> <span class="n">height</span> <span class="o">/</span> <span class="mi">2</span><span class="p">))</span>
+        <span class="n">pts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="n">top_width_left</span><span class="p">,</span> <span class="n">height</span> <span class="o">/</span> <span class="mi">2</span><span class="p">))</span>
+        <span class="n">pts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pts</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">face</span> <span class="o">=</span> <span class="n">Face</span><span class="p">(</span><span class="n">Wire</span><span class="o">.</span><span class="n">make_polygon</span><span class="p">(</span><span class="n">pts</span><span class="p">))</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">face</span><span class="p">,</span> <span class="n">rotation</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">align</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="Triangle">
+<a class="viewcode-back" href="../objects.html#objects_sketch.Triangle">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Triangle</span><span class="p">(</span><span class="n">BaseSketchObject</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Sketch Object: Triangle</span>
+
+<span class="sd">    Create a triangle defined by one side length and any of two other side lengths or interior</span>
+<span class="sd">    angles. The interior angles are opposite the side with the same designation</span>
+<span class="sd">    (i.e. side &#39;a&#39; is opposite angle &#39;A&#39;). Side &#39;a&#39; is the bottom side, followed by &#39;b&#39;</span>
+<span class="sd">    on the right, going counter-clockwise.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        a (float, optional): side &#39;a&#39; length. Defaults to None</span>
+<span class="sd">        b (float, optional): side &#39;b&#39; length. Defaults to None</span>
+<span class="sd">        c (float, optional): side &#39;c&#39; length. Defaults to None</span>
+<span class="sd">        A (float, optional): interior angle &#39;A&#39;. Defaults to None</span>
+<span class="sd">        B (float, optional): interior angle &#39;B&#39;. Defaults to None</span>
+<span class="sd">        C (float, optional): interior angle &#39;C&#39;. Defaults to None</span>
+<span class="sd">        rotation (float, optional): angle to rotate object. Defaults to 0</span>
+<span class="sd">        align (Align | tuple[Align, Align], optional): align MIN, CENTER, or MAX of object.</span>
+<span class="sd">            Defaults to None</span>
+<span class="sd">        mode (Mode, optional): combination mode. Defaults to Mode.ADD</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: One length and two other values were not provided</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_applies_to</span> <span class="o">=</span> <span class="p">[</span><span class="n">BuildSketch</span><span class="o">.</span><span class="n">_tag</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">a</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">b</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">c</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">A</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">B</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">C</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">align</span><span class="p">:</span> <span class="n">Align</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Align</span><span class="p">,</span> <span class="n">Align</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">rotation</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="n">mode</span><span class="p">:</span> <span class="n">Mode</span> <span class="o">=</span> <span class="n">Mode</span><span class="o">.</span><span class="n">ADD</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="n">context</span><span class="p">:</span> <span class="n">BuildSketch</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="n">BuildSketch</span><span class="o">.</span><span class="n">_get_context</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">validate_inputs</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="p">[</span><span class="n">v</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">]]</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span> <span class="ow">or</span> <span class="p">[</span>
+            <span class="n">v</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">]</span>
+        <span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;One length and two other values must be provided&quot;</span><span class="p">)</span>
+
+        <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span> <span class="o">=</span> <span class="p">(</span><span class="n">radians</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span> <span class="k">if</span> <span class="n">angle</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span> <span class="k">for</span> <span class="n">angle</span> <span class="ow">in</span> <span class="p">[</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">])</span>
+        <span class="n">ar</span><span class="p">,</span> <span class="n">br</span><span class="p">,</span> <span class="n">cr</span><span class="p">,</span> <span class="n">Ar</span><span class="p">,</span> <span class="n">Br</span><span class="p">,</span> <span class="n">Cr</span> <span class="o">=</span> <span class="n">trianglesolver</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="n">ar</span>  <span class="c1">#: length of side &#39;a&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="n">br</span>  <span class="c1">#: length of side &#39;b&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">c</span> <span class="o">=</span> <span class="n">cr</span>  <span class="c1">#: length of side &#39;c&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">A</span> <span class="o">=</span> <span class="n">degrees</span><span class="p">(</span><span class="n">Ar</span><span class="p">)</span>  <span class="c1">#: interior angle &#39;A&#39; in degrees</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">B</span> <span class="o">=</span> <span class="n">degrees</span><span class="p">(</span><span class="n">Br</span><span class="p">)</span>  <span class="c1">#: interior angle &#39;B&#39; in degrees</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">C</span> <span class="o">=</span> <span class="n">degrees</span><span class="p">(</span><span class="n">Cr</span><span class="p">)</span>  <span class="c1">#: interior angle &#39;C&#39; in degrees</span>
+        <span class="n">triangle</span> <span class="o">=</span> <span class="n">Face</span><span class="p">(</span>
+            <span class="n">Wire</span><span class="o">.</span><span class="n">make_polygon</span><span class="p">(</span>
+                <span class="p">[</span><span class="n">Vector</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">Vector</span><span class="p">(</span><span class="n">ar</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">Vector</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">Axis</span><span class="o">.</span><span class="n">Z</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">B</span><span class="p">)]</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">center_of_geometry</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="nb">sum</span><span class="p">((</span><span class="n">Vector</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">triangle</span><span class="o">.</span><span class="n">vertices</span><span class="p">()),</span> <span class="n">Vector</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span> <span class="o">/</span> <span class="mi">3</span>
+        <span class="p">)</span>
+        <span class="n">triangle</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">Location</span><span class="p">(</span><span class="o">-</span><span class="n">center_of_geometry</span><span class="p">))</span>
+        <span class="n">alignment</span> <span class="o">=</span> <span class="kc">None</span> <span class="k">if</span> <span class="n">align</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">tuplify</span><span class="p">(</span><span class="n">align</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">obj</span><span class="o">=</span><span class="n">triangle</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="n">rotation</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="n">alignment</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">edge_a</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="k">lambda</span> <span class="n">e</span><span class="p">:</span> <span class="nb">abs</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">length</span> <span class="o">-</span> <span class="n">ar</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">TOLERANCE</span><span class="p">)[</span>
+            <span class="mi">0</span>
+        <span class="p">]</span>  <span class="c1">#: edge &#39;a&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">edge_b</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span>
+            <span class="k">lambda</span> <span class="n">e</span><span class="p">:</span> <span class="nb">abs</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">length</span> <span class="o">-</span> <span class="n">br</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">TOLERANCE</span> <span class="ow">and</span> <span class="n">e</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">edge_a</span><span class="p">]</span>
+        <span class="p">)[</span>
+            <span class="mi">0</span>
+        <span class="p">]</span>  <span class="c1">#: edge &#39;b&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">edge_c</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span>
+            <span class="k">lambda</span> <span class="n">e</span><span class="p">:</span> <span class="n">e</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">edge_a</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">edge_b</span><span class="p">]</span>
+        <span class="p">)[</span>
+            <span class="mi">0</span>
+        <span class="p">]</span>  <span class="c1">#: edge &#39;c&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vertex_A</span> <span class="o">=</span> <span class="n">topo_explore_common_vertex</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">edge_b</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">edge_c</span>
+        <span class="p">)</span>  <span class="c1">#: vertex &#39;A&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vertex_B</span> <span class="o">=</span> <span class="n">topo_explore_common_vertex</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">edge_a</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">edge_c</span>
+        <span class="p">)</span>  <span class="c1">#: vertex &#39;B&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vertex_C</span> <span class="o">=</span> <span class="n">topo_explore_common_vertex</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">edge_a</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">edge_b</span>
+        <span class="p">)</span>  <span class="c1">#: vertex &#39;C&#39;</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Gumyr.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

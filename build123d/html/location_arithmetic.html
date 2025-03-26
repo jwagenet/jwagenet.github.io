@@ -1,0 +1,294 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Location arithmetic for algebra mode &mdash; build123d 0.9.2.dev40+gb1f0eed documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster.custom.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster.bundle.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-shadow.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-punk.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-noir.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-light.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-borderless.min.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/micromodal.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/sphinx_rtd_theme.css?v=3234e928" />
+      <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=c97902b4"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=f281be69"></script>
+      <script src="_static/js/hoverxref.js"></script>
+      <script src="_static/js/tooltipster.bundle.min.js"></script>
+      <script src="_static/js/micromodal.min.js"></script>
+      <script src="_static/design-tabs.js?v=f930bc37"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Algebraic definition" href="algebra_definition.html" />
+    <link rel="prev" title="Performance considerations in algebra mode" href="algebra_performance.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            build123d
+              <img src="_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts.html">Key Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts_builder.html">Key Concepts (builder mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts_algebra.html">Key Concepts (algebra mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="moving_objects.html">Moving Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OpenSCAD.html">Transitioning from OpenSCAD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introductory_examples.html">Introductory Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="selectors_operators.html">Selectors and Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operations.html">Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="builders.html">Builders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="joints.html">Joints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assemblies.html">Assemblies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tips.html">Tips, Best Practices and FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="import_export.html">Import/Export</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="advanced.html">Advanced Topics</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="algebra_performance.html">Performance considerations in algebra mode</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Location arithmetic for algebra mode</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#position-a-shape-relative-to-the-xy-plane">Position a shape relative to the XY plane</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#relative-positioning-to-a-plane">Relative positioning to a plane</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="algebra_definition.html">Algebraic definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="center.html">CAD Object Centers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debugging_logging.html">Debugging &amp; Logging</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cheat_sheet.html">Cheat Sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="external.html">External Tools and Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="builder_api_reference.html">Builder Common API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="direct_api_reference.html">Direct API Reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">build123d</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="advanced.html">Advanced Topics</a></li>
+      <li class="breadcrumb-item active">Location arithmetic for algebra mode</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/location_arithmetic.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="location-arithmetic-for-algebra-mode">
+<span id="location-arithmetics"></span><h1>Location arithmetic for algebra mode<a class="headerlink" href="#location-arithmetic-for-algebra-mode" title="Link to this heading"></a></h1>
+<section id="position-a-shape-relative-to-the-xy-plane">
+<h2>Position a shape relative to the XY plane<a class="headerlink" href="#position-a-shape-relative-to-the-xy-plane" title="Link to this heading"></a></h2>
+<p>For the following use the helper function:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">location_symbol</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">l</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Compound</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">Compound</span><span class="o">.</span><span class="n">make_triad</span><span class="p">(</span><span class="n">axes_scale</span><span class="o">=</span><span class="n">l</span><span class="p">)</span><span class="o">.</span><span class="n">locate</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic">
+<li><p><strong>Positioning at a location</strong></p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">loc</span> <span class="o">=</span> <span class="n">Location</span><span class="p">((</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">),</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">))</span>
+
+<span class="n">face</span> <span class="o">=</span> <span class="n">loc</span> <span class="o">*</span> <span class="n">Rectangle</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">show_object</span><span class="p">(</span><span class="n">face</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;face&quot;</span><span class="p">)</span>
+<span class="n">show_object</span><span class="p">(</span><span class="n">location_symbol</span><span class="p">(</span><span class="n">loc</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;location&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="_images/location-example-01.png" src="_images/location-example-01.png" />
+</div></blockquote>
+</li>
+</ol>
+<ol class="arabic" start="2">
+<li><p><strong>Positioning on a plane</strong></p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plane</span> <span class="o">=</span> <span class="n">Plane</span><span class="o">.</span><span class="n">XZ</span>
+
+<span class="n">face</span> <span class="o">=</span> <span class="n">plane</span> <span class="o">*</span> <span class="n">Rectangle</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="n">show_object</span><span class="p">(</span><span class="n">face</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;face&quot;</span><span class="p">)</span>
+<span class="n">show_object</span><span class="p">(</span><span class="n">plane_symbol</span><span class="p">(</span><span class="n">plane</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;plane&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="_images/location-example-07.png" src="_images/location-example-07.png" />
+<p>Note that the <code class="docutils literal notranslate"><span class="pre">x</span></code>-axis and the <code class="docutils literal notranslate"><span class="pre">y</span></code>-axis of the plane are on the <code class="docutils literal notranslate"><span class="pre">x</span></code>-axis and the <code class="docutils literal notranslate"><span class="pre">z</span></code>-axis of the world coordinate system (red and blue axis)</p>
+</div></blockquote>
+</li>
+</ol>
+</section>
+<section id="relative-positioning-to-a-plane">
+<h2>Relative positioning to a plane<a class="headerlink" href="#relative-positioning-to-a-plane" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p><strong>Position an object on a plane relative to the plane</strong></p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">loc</span> <span class="o">=</span> <span class="n">Location</span><span class="p">((</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">),</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">))</span>
+
+<span class="n">face</span> <span class="o">=</span> <span class="n">loc</span> <span class="o">*</span> <span class="n">Rectangle</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">box</span> <span class="o">=</span> <span class="n">Plane</span><span class="p">(</span><span class="n">loc</span><span class="p">)</span> <span class="o">*</span> <span class="n">Pos</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span> <span class="o">*</span> <span class="n">Box</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
+<span class="c1"># box = Plane(face.location) * Pos(0.2, 0.4, 0.1) * Box(0.2, 0.2, 0.2)</span>
+<span class="c1"># box = loc * Pos(0.2, 0.4, 0.1) * Box(0.2, 0.2, 0.2)</span>
+
+<span class="n">show_object</span><span class="p">(</span><span class="n">face</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;face&quot;</span><span class="p">)</span>
+<span class="n">show_object</span><span class="p">(</span><span class="n">location_symbol</span><span class="p">(</span><span class="n">loc</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;location&quot;</span><span class="p">)</span>
+<span class="n">show_object</span><span class="p">(</span><span class="n">box</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;box&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="_images/location-example-02.png" src="_images/location-example-02.png" />
+<p>The <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>, <code class="docutils literal notranslate"><span class="pre">z</span></code> components of <code class="docutils literal notranslate"><span class="pre">Pos(0.2,</span> <span class="pre">0.4,</span> <span class="pre">0.1)</span></code> are relative to the <code class="docutils literal notranslate"><span class="pre">x</span></code>-axis, <code class="docutils literal notranslate"><span class="pre">y</span></code>-axis or
+<code class="docutils literal notranslate"><span class="pre">z</span></code>-axis of the underlying location <code class="docutils literal notranslate"><span class="pre">loc</span></code>.</p>
+<p>Note: <code class="docutils literal notranslate"><span class="pre">Plane(loc)</span> <span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">Plane(face.location)</span> <span class="pre">*</span></code> and <code class="docutils literal notranslate"><span class="pre">loc</span> <span class="pre">*</span></code> are equivalent in this example.</p>
+</div></blockquote>
+</li>
+<li><p><strong>Rotate an object on a plane relative to the plane</strong></p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">loc</span> <span class="o">=</span> <span class="n">Location</span><span class="p">((</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">),</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">))</span>
+
+<span class="n">face</span> <span class="o">=</span> <span class="n">loc</span> <span class="o">*</span> <span class="n">Rectangle</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">box</span> <span class="o">=</span> <span class="n">Plane</span><span class="p">(</span><span class="n">loc</span><span class="p">)</span> <span class="o">*</span> <span class="n">Rot</span><span class="p">(</span><span class="n">z</span><span class="o">=</span><span class="mi">80</span><span class="p">)</span> <span class="o">*</span> <span class="n">Box</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
+
+<span class="n">show_object</span><span class="p">(</span><span class="n">face</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;face&quot;</span><span class="p">)</span>
+<span class="n">show_object</span><span class="p">(</span><span class="n">location_symbol</span><span class="p">(</span><span class="n">loc</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;location&quot;</span><span class="p">)</span>
+<span class="n">show_object</span><span class="p">(</span><span class="n">box</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;box&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="_images/location-example-03.png" src="_images/location-example-03.png" />
+<p>The box is rotated via <code class="docutils literal notranslate"><span class="pre">Rot(z=80)</span></code> around the <code class="docutils literal notranslate"><span class="pre">z</span></code>-axis of the underlying location
+(and not of the z-axis of the world).</p>
+<p>More general:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">loc</span> <span class="o">=</span> <span class="n">Location</span><span class="p">((</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">),</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">))</span>
+
+<span class="n">face</span> <span class="o">=</span> <span class="n">loc</span> <span class="o">*</span> <span class="n">Rectangle</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">box</span> <span class="o">=</span> <span class="n">loc</span> <span class="o">*</span> <span class="n">Rot</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">80</span><span class="p">)</span> <span class="o">*</span> <span class="n">Box</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
+
+<span class="n">show_object</span><span class="p">(</span><span class="n">face</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;face&quot;</span><span class="p">)</span>
+<span class="n">show_object</span><span class="p">(</span><span class="n">location_symbol</span><span class="p">(</span><span class="n">loc</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;location&quot;</span><span class="p">)</span>
+<span class="n">show_object</span><span class="p">(</span><span class="n">box</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;box&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="_images/location-example-04.png" src="_images/location-example-04.png" />
+<p>The box is rotated via <code class="docutils literal notranslate"><span class="pre">Rot(20,</span> <span class="pre">40,</span> <span class="pre">80)</span></code> around all three axes relative to the plane.</p>
+</div></blockquote>
+</li>
+<li><p><strong>Rotate and position an object relative to a location</strong></p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">loc</span> <span class="o">=</span> <span class="n">Location</span><span class="p">((</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">),</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">))</span>
+
+<span class="n">face</span> <span class="o">=</span> <span class="n">loc</span> <span class="o">*</span> <span class="n">Rectangle</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">box</span> <span class="o">=</span> <span class="n">loc</span> <span class="o">*</span>  <span class="n">Rot</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">80</span><span class="p">)</span> <span class="o">*</span> <span class="n">Pos</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span> <span class="o">*</span> <span class="n">Box</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
+
+<span class="n">show_object</span><span class="p">(</span><span class="n">face</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;face&quot;</span><span class="p">)</span>
+<span class="n">show_object</span><span class="p">(</span><span class="n">location_symbol</span><span class="p">(</span><span class="n">loc</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;location&quot;</span><span class="p">)</span>
+<span class="n">show_object</span><span class="p">(</span><span class="n">box</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;box&quot;</span><span class="p">)</span>
+<span class="n">show_object</span><span class="p">(</span><span class="n">location_symbol</span><span class="p">(</span><span class="n">loc</span> <span class="o">*</span>  <span class="n">Rot</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">80</span><span class="p">),</span> <span class="mf">0.5</span><span class="p">),</span> <span class="n">options</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;color&quot;</span><span class="p">:(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">)},</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;local_location&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="_images/location-example-05.png" src="_images/location-example-05.png" />
+<p>The box is positioned via <code class="docutils literal notranslate"><span class="pre">Pos(0.2,</span> <span class="pre">0.4,</span> <span class="pre">0.1)</span></code> relative to the location <code class="docutils literal notranslate"><span class="pre">loc</span> <span class="pre">*</span>&#160; <span class="pre">Rot(20,</span> <span class="pre">40,</span> <span class="pre">80)</span></code></p>
+</div></blockquote>
+</li>
+<li><p><strong>Position and rotate an object relative to a location</strong></p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">loc</span> <span class="o">=</span> <span class="n">Location</span><span class="p">((</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">),</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">))</span>
+
+<span class="n">face</span> <span class="o">=</span> <span class="n">loc</span> <span class="o">*</span> <span class="n">Rectangle</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">box</span> <span class="o">=</span> <span class="n">loc</span> <span class="o">*</span> <span class="n">Pos</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span> <span class="o">*</span> <span class="n">Rot</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">80</span><span class="p">)</span> <span class="o">*</span> <span class="n">Box</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
+
+<span class="n">show_object</span><span class="p">(</span><span class="n">face</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;face&quot;</span><span class="p">)</span>
+<span class="n">show_object</span><span class="p">(</span><span class="n">location_symbol</span><span class="p">(</span><span class="n">loc</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;location&quot;</span><span class="p">)</span>
+<span class="n">show_object</span><span class="p">(</span><span class="n">box</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;box&quot;</span><span class="p">)</span>
+<span class="n">show_object</span><span class="p">(</span><span class="n">location_symbol</span><span class="p">(</span><span class="n">loc</span> <span class="o">*</span> <span class="n">Pos</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">),</span> <span class="mf">0.5</span><span class="p">),</span> <span class="n">options</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;color&quot;</span><span class="p">:(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">)},</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;local_location&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="_images/location-example-06.png" src="_images/location-example-06.png" />
+<p>Note: This is the same as <cite>box = loc * Location((0.2, 0.4, 0.1), (20, 40, 80)) * Box(0.2, 0.2, 0.2)</cite></p>
+</div></blockquote>
+</li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="algebra_performance.html" class="btn btn-neutral float-left" title="Performance considerations in algebra mode" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="algebra_definition.html" class="btn btn-neutral float-right" title="Algebraic definition" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Gumyr.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

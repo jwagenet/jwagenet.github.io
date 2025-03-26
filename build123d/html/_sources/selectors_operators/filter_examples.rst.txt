@@ -1,0 +1,92 @@
+##################
+Filter Examples
+##################
+
+.. _filter_geomtype:
+
+GeomType
+=============
+
+:class:`~build_enums.GeomType` enums are shape type shorthands for ``Edge`` and ``Face``
+objects. They are most helpful for filtering objects for that specific type for further
+operations, and are sometimes necessary e.g. before sorting or filtering by radius.
+``Edge`` and ``Face`` each support a subset of ``GeomType``:
+
+* ``Edge`` can be type ``LINE``, ``CIRCLE``, ``ELLIPSE``, ``HYPERBOLA``, ``PARABOLA``, ``BEZIER``, ``BSPLINE``, ``OFFSET``, ``OTHER``
+* ``Face`` can be type ``PLANE``, ``CYLINDER``, ``CONE``, ``SPHERE``, ``TORUS``, ``BEZIER``, ``BSPLINE``, ``REVOLUTION``, ``EXTRUSION``, ``OFFSET``, ``OTHER``
+
+.. dropdown:: Setup
+
+    .. literalinclude:: examples/filter_geomtype.py
+        :language: python
+        :lines: 3, 8-13
+
+.. literalinclude:: examples/filter_geomtype.py
+    :language: python
+    :lines: 15
+
+.. image:: ../assets/selectors_operators/filter_geomtype_line.png
+    :align: center
+
+.. literalinclude:: examples/filter_geomtype.py
+    :language: python
+    :lines: 17
+
+.. image:: ../assets/selectors_operators/filter_geomtype_cylinder.png
+    :align: center
+
+.. _filter_axis_plane:
+
+Axis and Plane
+=================
+
+Filtering by an Axis will select faces perpendicular to the axis. Likewise filtering by
+Plane will select faces parallel to the plane.
+
+.. dropdown:: Setup
+
+    .. code-block:: python
+
+        from build123d import *
+
+        with BuildPart() as part:
+            Box(1, 1, 1)
+
+.. code-block:: python
+
+    part.faces().filter_by(Axis.Z)
+    part.faces().filter_by(Plane.XY)
+
+.. image:: ../assets/selectors_operators/filter_axisplane.png
+    :align: center
+
+It might be useful to filter by an Axis or Plane in other ways. A lambda can be used to
+accomplish this with feature properties or methods. Here, we are looking for faces where
+the dot product of face normal and either the axis direction or the plane normal is about
+to 0. The result are faces parallel to the axis or perpendicular to the plane.
+
+.. code-block:: python
+
+    part.faces().filter_by(lambda f: abs(f.normal_at().dot(Axis.Z.direction) < 1e-6)
+    part.faces().filter_by(lambda f: abs(f.normal_at().dot(Plane.XY.z_dir)) < 1e-6)
+
+.. image:: ../assets/selectors_operators/filter_dot_axisplane.png
+    :align: center
+
+
+.. _filter_shape_properties:
+
+Shape Properties
+========================
+
+Selected features can be quickly filtered by feature properties. First, we filter by
+interior edges and not interior using the ``Edge`` ``is interior`` property to apply
+different fillets accordingly. Then the ``Face`` ``is_circular_*`` properties are used to
+highlight the resulting fillets.
+
+.. literalinclude:: examples/filter_shape_properties.py
+        :language: python
+        :lines: 3-4, 8-22
+
+.. image:: ../assets/selectors_operators/filter_shape_properties.png
+    :align: center

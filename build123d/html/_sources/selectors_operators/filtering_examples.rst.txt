@@ -1,0 +1,76 @@
+.. _filtering_examples:
+
+##################
+Filtering Examples
+##################
+
+.. _filtering_axis_plane:
+
+Axis and Plane
+=================
+
+Filtering by an Axis will select faces perpendicular to the axis. Likewise filtering by
+Plane will select faces parallel to the plane.
+
+.. dropdown:: Setup
+
+    .. code-block:: python
+
+        from build123d import *
+
+        with BuildPart() as part:
+            Box(1, 1, 1)
+
+.. code-block:: python
+
+    part.faces().filter_by(Axis.Z)
+    part.faces().filter_by(Plane.XY)
+
+.. image:: ../assets/selectors_operators/filter_axisplane.png
+    :align: center
+
+It might be useful to filter by an Axis or Plane in other ways. A lambda can be used to
+accomplish this with feature properties or methods. Here, we are looking for faces where
+the dot product of face normal and either the axis direction or the plane normal is about
+to 0. The result are faces parallel to the axis or perpendicular to the plane.
+
+.. code-block:: python
+
+    part.faces().filter_by(lambda f: abs(f.normal_at().dot(Axis.Z.direction) < 1e-6)
+    part.faces().filter_by(lambda f: abs(f.normal_at().dot(Plane.XY.z_dir)) < 1e-6)
+
+.. image:: ../assets/selectors_operators/filter_dot_axisplane.png
+    :align: center
+
+
+.. _filtering_edge_face_properties:
+
+Edge and Face Properties
+========================
+
+Selected features can be quickly filtered by feature properties. First, we filter by
+interior edges and not interior using the ``Edge`` ``is interior`` property to apply
+different fillets accordingly. Then the ``Face`` ``is_circular_*`` properties are used to
+highlight the resulting fillets.
+
+.. code-block:: python
+
+    from build123d import *
+
+    with BuildPart() as open_box_builder:
+        Box(20, 20, 5)
+        offset(amount=-2, openings=open_box_builder.faces().sort_by(Axis.Z)[-1])
+        inside_edges = open_box_builder.edges().filter_by(Edge.is_interior)
+        fillet(inside_edges, 1.5)
+        outside_edges = open_box_builder.edges().filter_by(Edge.is_interior, reverse=True)
+        fillet(outside_edges, 0.5)
+
+    open_box = open_box_builder.part
+    open_box.color = Color(0xEDAE49)
+    outside_fillets = Compound(open_box.faces().filter_by(Face.is_circular_convex))
+    outside_fillets.color = Color(0xD1495B)
+    inside_fillets = Compound(open_box.faces().filter_by(Face.is_circular_concave))
+    inside_fillets.color = Color(0x00798C)
+
+.. image:: ../assets/selectors_operators/filter_shape_properties.png
+    :align: center

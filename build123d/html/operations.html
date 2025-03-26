@@ -1,0 +1,1182 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Operations &mdash; build123d 0.9.2.dev40+gb1f0eed documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster.custom.css?v=7bc2f056" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster.bundle.min.css?v=37217874" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-shadow.min.css?v=6227e517" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-punk.min.css?v=94669e23" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-noir.min.css?v=21a39f42" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-light.min.css?v=a18b2449" />
+      <link rel="stylesheet" type="text/css" href="_static/css/tooltipster-sideTip-borderless.min.css?v=dbff53e4" />
+      <link rel="stylesheet" type="text/css" href="_static/css/micromodal.css?v=d7bf34ee" />
+      <link rel="stylesheet" type="text/css" href="_static/css/sphinx_rtd_theme.css?v=3234e928" />
+      <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=c97902b4"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=f281be69"></script>
+      <script src="_static/js/hoverxref.js?v=6ff7264e"></script>
+      <script src="_static/js/tooltipster.bundle.min.js?v=18bf091b"></script>
+      <script src="_static/js/micromodal.min.js?v=04d6302d"></script>
+      <script src="_static/design-tabs.js?v=f930bc37"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Builders" href="builders.html" />
+    <link rel="prev" title="Filter Examples" href="selectors_operators/filter_examples.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            build123d
+              <img src="_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts.html">Key Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts_builder.html">Key Concepts (builder mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="key_concepts_algebra.html">Key Concepts (algebra mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="moving_objects.html">Moving Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OpenSCAD.html">Transitioning from OpenSCAD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introductory_examples.html">Introductory Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="selectors_operators.html">Selectors and Operators</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Operations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#reference">Reference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#operations_generic.add"><code class="docutils literal notranslate"><span class="pre">add()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#operations_generic.bounding_box"><code class="docutils literal notranslate"><span class="pre">bounding_box()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#operations_generic.chamfer"><code class="docutils literal notranslate"><span class="pre">chamfer()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#operations_part.extrude"><code class="docutils literal notranslate"><span class="pre">extrude()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#operations_generic.fillet"><code class="docutils literal notranslate"><span class="pre">fillet()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#operations_sketch.full_round"><code class="docutils literal notranslate"><span class="pre">full_round()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#operations_part.loft"><code class="docutils literal notranslate"><span class="pre">loft()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#operations_part.make_brake_formed"><code class="docutils literal notranslate"><span class="pre">make_brake_formed()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#operations_sketch.make_face"><code class="docutils literal notranslate"><span class="pre">make_face()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#operations_sketch.make_hull"><code class="docutils literal notranslate"><span class="pre">make_hull()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#operations_generic.mirror"><code class="docutils literal notranslate"><span class="pre">mirror()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#operations_generic.offset"><code class="docutils literal notranslate"><span class="pre">offset()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#operations_generic.project"><code class="docutils literal notranslate"><span class="pre">project()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#operations_part.project_workplane"><code class="docutils literal notranslate"><span class="pre">project_workplane()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#operations_part.revolve"><code class="docutils literal notranslate"><span class="pre">revolve()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#operations_generic.scale"><code class="docutils literal notranslate"><span class="pre">scale()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#operations_part.section"><code class="docutils literal notranslate"><span class="pre">section()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#operations_generic.split"><code class="docutils literal notranslate"><span class="pre">split()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#operations_generic.sweep"><code class="docutils literal notranslate"><span class="pre">sweep()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#operations_part.thicken"><code class="docutils literal notranslate"><span class="pre">thicken()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#operations_sketch.trace"><code class="docutils literal notranslate"><span class="pre">trace()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build_common.edge"><code class="docutils literal notranslate"><span class="pre">edge()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build_common.edges"><code class="docutils literal notranslate"><span class="pre">edges()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build_common.face"><code class="docutils literal notranslate"><span class="pre">face()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build_common.faces"><code class="docutils literal notranslate"><span class="pre">faces()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build_common.solid"><code class="docutils literal notranslate"><span class="pre">solid()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build_common.solids"><code class="docutils literal notranslate"><span class="pre">solids()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build_common.vertex"><code class="docutils literal notranslate"><span class="pre">vertex()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build_common.vertices"><code class="docutils literal notranslate"><span class="pre">vertices()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build_common.wire"><code class="docutils literal notranslate"><span class="pre">wire()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build_common.wires"><code class="docutils literal notranslate"><span class="pre">wires()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="builders.html">Builders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="joints.html">Joints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assemblies.html">Assemblies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tips.html">Tips, Best Practices and FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="import_export.html">Import/Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html">Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cheat_sheet.html">Cheat Sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="external.html">External Tools and Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="builder_api_reference.html">Builder Common API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="direct_api_reference.html">Direct API Reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">build123d</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Operations</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/operations.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="operations">
+<h1>Operations<a class="headerlink" href="#operations" title="Link to this heading"></a></h1>
+<p>Operations are functions that take objects as inputs and transform them into new objects. For example, a 2D Sketch can be extruded to create a 3D Part. All operations are Python functions which can be applied using both the Algebra and Builder APIs. It’s important to note that objects created by operations are not affected by <code class="docutils literal notranslate"><span class="pre">Locations</span></code>, meaning their position is determined solely by the input objects used in the operation.</p>
+<p>Here are a couple ways to use <a class="hxr-hoverxref hxr-tooltip reference internal" href="#operations_part.extrude" title="operations_part.extrude"><code class="xref py py-func docutils literal notranslate"><span class="pre">extrude()</span></code></a>, in Builder and Algebra mode:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">BuildPart</span><span class="p">()</span> <span class="k">as</span> <span class="n">cylinder</span><span class="p">:</span>
+    <span class="k">with</span> <span class="n">BuildSketch</span><span class="p">():</span>
+        <span class="n">Circle</span><span class="p">(</span><span class="n">radius</span><span class="p">)</span>
+    <span class="n">extrude</span><span class="p">(</span><span class="n">amount</span><span class="o">=</span><span class="n">height</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cylinder</span> <span class="o">=</span> <span class="n">extrude</span><span class="p">(</span><span class="n">Circle</span><span class="p">(</span><span class="n">radius</span><span class="p">),</span> <span class="n">amount</span><span class="o">=</span><span class="n">height</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The following table summarizes all of the available operations. Operations marked as 1D are
+applicable to BuildLine and Algebra Curve, 2D to BuildSketch and Algebra Sketch, 3D to
+BuildPart and Algebra Part.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Operation</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>0D</p></th>
+<th class="head"><p>1D</p></th>
+<th class="head"><p>2D</p></th>
+<th class="head"><p>3D</p></th>
+<th class="head"><p>Example</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="#operations_generic.add" title="operations_generic.add"><code class="xref py py-func docutils literal notranslate"><span class="pre">add()</span></code></a></p></td>
+<td><p>Add object to builder</p></td>
+<td></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p><a class="reference internal" href="introductory_examples.html#ex-16"><span class="std std-ref">16</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="#operations_generic.bounding_box" title="operations_generic.bounding_box"><code class="xref py py-func docutils literal notranslate"><span class="pre">bounding_box()</span></code></a></p></td>
+<td><p>Add bounding box as Shape</p></td>
+<td></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="#operations_generic.chamfer" title="operations_generic.chamfer"><code class="xref py py-func docutils literal notranslate"><span class="pre">chamfer()</span></code></a></p></td>
+<td><p>Bevel Vertex or Edge</p></td>
+<td></td>
+<td></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p><a class="reference internal" href="introductory_examples.html#ex-9"><span class="std std-ref">9</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="#operations_part.extrude" title="operations_part.extrude"><code class="xref py py-func docutils literal notranslate"><span class="pre">extrude()</span></code></a></p></td>
+<td><p>Draw 2D Shape into 3D</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>✓</p></td>
+<td><p><a class="reference internal" href="introductory_examples.html#ex-3"><span class="std std-ref">3</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="#operations_generic.fillet" title="operations_generic.fillet"><code class="xref py py-func docutils literal notranslate"><span class="pre">fillet()</span></code></a></p></td>
+<td><p>Radius Vertex or Edge</p></td>
+<td></td>
+<td></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p><a class="reference internal" href="introductory_examples.html#ex-9"><span class="std std-ref">9</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="#operations_sketch.full_round" title="operations_sketch.full_round"><code class="xref py py-func docutils literal notranslate"><span class="pre">full_round()</span></code></a></p></td>
+<td><p>Round-off Face along given Edge</p></td>
+<td></td>
+<td></td>
+<td><p>✓</p></td>
+<td></td>
+<td><p><a class="reference internal" href="tttt.html#ttt-24-spo-06"><span class="std std-ref">24-SPO-06 Buffer Stand</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="#operations_part.loft" title="operations_part.loft"><code class="xref py py-func docutils literal notranslate"><span class="pre">loft()</span></code></a></p></td>
+<td><p>Create 3D Shape from sections</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>✓</p></td>
+<td><p><a class="reference internal" href="introductory_examples.html#ex-24"><span class="std std-ref">24</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="#operations_part.make_brake_formed" title="operations_part.make_brake_formed"><code class="xref py py-func docutils literal notranslate"><span class="pre">make_brake_formed()</span></code></a></p></td>
+<td><p>Create sheet metal parts</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>✓</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="#operations_sketch.make_face" title="operations_sketch.make_face"><code class="xref py py-func docutils literal notranslate"><span class="pre">make_face()</span></code></a></p></td>
+<td><p>Create a Face from Edges</p></td>
+<td></td>
+<td></td>
+<td><p>✓</p></td>
+<td></td>
+<td><p><a class="reference internal" href="introductory_examples.html#ex-4"><span class="std std-ref">4</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="#operations_sketch.make_hull" title="operations_sketch.make_hull"><code class="xref py py-func docutils literal notranslate"><span class="pre">make_hull()</span></code></a></p></td>
+<td><p>Create Convex Hull from Edges</p></td>
+<td></td>
+<td></td>
+<td><p>✓</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="#operations_generic.mirror" title="operations_generic.mirror"><code class="xref py py-func docutils literal notranslate"><span class="pre">mirror()</span></code></a></p></td>
+<td><p>Mirror about Plane</p></td>
+<td></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p><a class="reference internal" href="introductory_examples.html#ex-15"><span class="std std-ref">15</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="#operations_generic.offset" title="operations_generic.offset"><code class="xref py py-func docutils literal notranslate"><span class="pre">offset()</span></code></a></p></td>
+<td><p>Inset or outset Shape</p></td>
+<td></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p><a class="reference internal" href="introductory_examples.html#ex-25"><span class="std std-ref">25</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="#operations_generic.project" title="operations_generic.project"><code class="xref py py-func docutils literal notranslate"><span class="pre">project()</span></code></a></p></td>
+<td><p>Project points, lines or Faces</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="#operations_part.project_workplane" title="operations_part.project_workplane"><code class="xref py py-func docutils literal notranslate"><span class="pre">project_workplane()</span></code></a></p></td>
+<td><p>Create workplane for projection</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="#operations_part.revolve" title="operations_part.revolve"><code class="xref py py-func docutils literal notranslate"><span class="pre">revolve()</span></code></a></p></td>
+<td><p>Swing 2D Shape about Axis</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>✓</p></td>
+<td><p><a class="reference internal" href="introductory_examples.html#ex-23"><span class="std std-ref">23</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="#operations_generic.scale" title="operations_generic.scale"><code class="xref py py-func docutils literal notranslate"><span class="pre">scale()</span></code></a></p></td>
+<td><p>Change size of Shape</p></td>
+<td></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="#operations_part.section" title="operations_part.section"><code class="xref py py-func docutils literal notranslate"><span class="pre">section()</span></code></a></p></td>
+<td><p>Generate 2D slices from 3D Shape</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>✓</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="#operations_generic.split" title="operations_generic.split"><code class="xref py py-func docutils literal notranslate"><span class="pre">split()</span></code></a></p></td>
+<td><p>Divide object by Plane</p></td>
+<td></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p><a class="reference internal" href="introductory_examples.html#ex-27"><span class="std std-ref">27</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="#operations_generic.sweep" title="operations_generic.sweep"><code class="xref py py-func docutils literal notranslate"><span class="pre">sweep()</span></code></a></p></td>
+<td><p>Extrude 1/2D section(s) along path</p></td>
+<td></td>
+<td></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p><a class="reference internal" href="introductory_examples.html#ex-14"><span class="std std-ref">14</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="#operations_part.thicken" title="operations_part.thicken"><code class="xref py py-func docutils literal notranslate"><span class="pre">thicken()</span></code></a></p></td>
+<td><p>Expand 2D section(s)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>✓</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="#operations_sketch.trace" title="operations_sketch.trace"><code class="xref py py-func docutils literal notranslate"><span class="pre">trace()</span></code></a></p></td>
+<td><p>Convert lines to faces</p></td>
+<td></td>
+<td></td>
+<td><p>✓</p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>The following table summarizes all of the selectors that can be used within
+the scope of a Builder. Note that they will extract objects from the builder that is
+currently within scope without it being explicitly referenced.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head" colspan="2"></th>
+<th class="head" colspan="3"><p>Builder</p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>Selector</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Line</p></th>
+<th class="head"><p>Sketch</p></th>
+<th class="head"><p>Part</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="#build_common.edge" title="build_common.edge"><code class="xref py py-func docutils literal notranslate"><span class="pre">edge()</span></code></a></p></td>
+<td><p>Select edge from current builder</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="#build_common.edges" title="build_common.edges"><code class="xref py py-func docutils literal notranslate"><span class="pre">edges()</span></code></a></p></td>
+<td><p>Select edges from current builder</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="#build_common.face" title="build_common.face"><code class="xref py py-func docutils literal notranslate"><span class="pre">face()</span></code></a></p></td>
+<td><p>Select face from current builder</p></td>
+<td></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="#build_common.faces" title="build_common.faces"><code class="xref py py-func docutils literal notranslate"><span class="pre">faces()</span></code></a></p></td>
+<td><p>Select faces from current builder</p></td>
+<td></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="#build_common.solid" title="build_common.solid"><code class="xref py py-func docutils literal notranslate"><span class="pre">solid()</span></code></a></p></td>
+<td><p>Select solid from current builder</p></td>
+<td></td>
+<td></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="#build_common.solids" title="build_common.solids"><code class="xref py py-func docutils literal notranslate"><span class="pre">solids()</span></code></a></p></td>
+<td><p>Select solids from current builder</p></td>
+<td></td>
+<td></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="#build_common.vertex" title="build_common.vertex"><code class="xref py py-func docutils literal notranslate"><span class="pre">vertex()</span></code></a></p></td>
+<td><p>Select vertex from current builder</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="#build_common.vertices" title="build_common.vertices"><code class="xref py py-func docutils literal notranslate"><span class="pre">vertices()</span></code></a></p></td>
+<td><p>Select vertices from current builder</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="#build_common.wire" title="build_common.wire"><code class="xref py py-func docutils literal notranslate"><span class="pre">wire()</span></code></a></p></td>
+<td><p>Select wire from current builder</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="#build_common.wires" title="build_common.wires"><code class="xref py py-func docutils literal notranslate"><span class="pre">wires()</span></code></a></p></td>
+<td><p>Select wires from current builder</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+</tbody>
+</table>
+<section id="reference">
+<h2>Reference<a class="headerlink" href="#reference" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="operations_generic.add">
+<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">objects:</span> <span class="pre">~build123d.topology.one_d.Edge</span> <span class="pre">|</span> <span class="pre">~build123d.topology.one_d.Wire</span> <span class="pre">|</span> <span class="pre">~build123d.topology.two_d.Face</span> <span class="pre">|</span> <span class="pre">~build123d.topology.three_d.Solid</span> <span class="pre">|</span> <span class="pre">~build123d.topology.composite.Compound</span> <span class="pre">|</span> <span class="pre">~build123d.build_common.Builder</span> <span class="pre">|</span> <span class="pre">~collections.abc.Iterable[~build123d.topology.one_d.Edge</span> <span class="pre">|</span> <span class="pre">~build123d.topology.one_d.Wire</span> <span class="pre">|</span> <span class="pre">~build123d.topology.two_d.Face</span> <span class="pre">|</span> <span class="pre">~build123d.topology.three_d.Solid</span> <span class="pre">|</span> <span class="pre">~build123d.topology.composite.Compound</span> <span class="pre">|</span> <span class="pre">~build123d.build_common.Builder],</span> <span class="pre">rotation:</span> <span class="pre">float</span> <span class="pre">|</span> <span class="pre">~build123d.geometry.Rotation</span> <span class="pre">|</span> <span class="pre">tuple[float,</span> <span class="pre">float,</span> <span class="pre">float]</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">clean:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True,</span> <span class="pre">mode:</span> <span class="pre">~build123d.build_enums.Mode</span> <span class="pre">=</span> <span class="pre">&lt;Mode.ADD&gt;</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Compound</span></span></span><a class="reference internal" href="_modules/operations_generic.html#add"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#operations_generic.add" title="Link to this definition"></a></dt>
+<dd><p>Generic Object: Add Object to Part or Sketch</p>
+<p>Add an object to a builder.</p>
+<dl class="simple">
+<dt>BuildPart:</dt><dd><p>Edges and Wires are added to pending_edges. Compounds of Face are added to
+pending_faces. Solids or Compounds of Solid are combined into the part.</p>
+</dd>
+<dt>BuildSketch:</dt><dd><p>Edges and Wires are added to pending_edges. Compounds of Face are added to sketch.</p>
+</dd>
+<dt>BuildLine:</dt><dd><p>Edges and Wires are added to line.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>objects</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Edge" title="topology.Edge"><em>Edge</em></a><em> |  </em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Wire" title="topology.Wire"><em>Wire</em></a><em> |  </em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Face" title="topology.Face"><em>Face</em></a><em> |  </em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Solid" title="topology.Solid"><em>Solid</em></a><em> |  </em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Compound" title="topology.Compound"><em>Compound</em></a><em>  or </em><em>Iterable of</em>) – objects to add</p></li>
+<li><p><strong>rotation</strong> (<em>float</em><em> |  </em><em>RotationLike</em><em>, </em><em>optional</em>) – rotation angle for sketch,
+rotation about each axis for part. Defaults to None.</p></li>
+<li><p><strong>clean</strong> – Remove extraneous internal structure. Defaults to True.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="operations_generic.bounding_box">
+<span class="sig-name descname"><span class="pre">bounding_box</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">objects:</span> <span class="pre">~build123d.topology.shape_core.Shape</span> <span class="pre">|</span> <span class="pre">~collections.abc.Iterable[~build123d.topology.shape_core.Shape]</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode:</span> <span class="pre">~build123d.build_enums.Mode</span> <span class="pre">=</span> <span class="pre">&lt;Mode.PRIVATE&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Sketch</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Part</span></span></span><a class="reference internal" href="_modules/operations_generic.html#bounding_box"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#operations_generic.bounding_box" title="Link to this definition"></a></dt>
+<dd><p>Generic Operation: Add Bounding Box</p>
+<p>Applies to: BuildSketch and BuildPart</p>
+<p>Add the 2D or 3D bounding boxes of the object sequence</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>objects</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Shape" title="topology.Shape"><em>Shape</em></a><em> or </em><em>Iterable of</em>) – objects to create bbox for</p></li>
+<li><p><strong>mode</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="builder_api_reference.html#build_enums.Mode" title="build_enums.Mode"><em>Mode</em></a><em>, </em><em>optional</em>) – combination mode. Defaults to Mode.ADD.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="operations_generic.chamfer">
+<span class="sig-name descname"><span class="pre">chamfer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">objects</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Edge</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Vertex</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">Edge</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Vertex</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Edge</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Face</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Sketch</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Part</span></span></span><a class="reference internal" href="_modules/operations_generic.html#chamfer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#operations_generic.chamfer" title="Link to this definition"></a></dt>
+<dd><p>Generic Operation: chamfer</p>
+<p>Applies to 2 and 3 dimensional objects.</p>
+<p>Chamfer the given sequence of edges or vertices.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>objects</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Edge" title="topology.Edge"><em>Edge</em></a><em> | </em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Vertex" title="topology.Vertex"><em>Vertex</em></a><em>  or </em><em>Iterable of</em>) – edges or vertices to chamfer</p></li>
+<li><p><strong>length</strong> (<em>float</em>) – chamfer size</p></li>
+<li><p><strong>length2</strong> (<em>float</em><em>, </em><em>optional</em>) – asymmetric chamfer size. Defaults to None.</p></li>
+<li><p><strong>angle</strong> (<em>float</em><em>, </em><em>optional</em>) – chamfer angle in degrees. Defaults to None.</p></li>
+<li><p><strong>reference</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Edge" title="topology.Edge"><em>Edge</em></a><em> | </em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Face" title="topology.Face"><em>Face</em></a>) – identifies the side where length is measured. Edge(s) must
+be part of the face. Vertex/Vertices must be part of edge</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – no objects provided</p></li>
+<li><p><strong>ValueError</strong> – objects must be Edges</p></li>
+<li><p><strong>ValueError</strong> – objects must be Vertices</p></li>
+<li><p><strong>ValueError</strong> – Only one of length2 or angle should be provided</p></li>
+<li><p><strong>ValueError</strong> – reference can only be used in conjunction with length2 or angle</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="operations_part.extrude">
+<span class="sig-name descname"><span class="pre">extrude</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">to_extrude:</span> <span class="pre">~build123d.topology.two_d.Face</span> <span class="pre">|</span> <span class="pre">~build123d.topology.composite.Sketch</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amount:</span> <span class="pre">float</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dir:</span> <span class="pre">~build123d.geometry.Vector</span> <span class="pre">|</span> <span class="pre">tuple[float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">float]</span> <span class="pre">|</span> <span class="pre">tuple[float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">float]</span> <span class="pre">|</span> <span class="pre">~collections.abc.Sequence[float]</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">until:</span> <span class="pre">~build123d.build_enums.Until</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target:</span> <span class="pre">~build123d.topology.composite.Compound</span> <span class="pre">|</span> <span class="pre">~build123d.topology.three_d.Solid</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">both:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">taper:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clean:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode:</span> <span class="pre">~build123d.build_enums.Mode</span> <span class="pre">=</span> <span class="pre">&lt;Mode.ADD&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Part</span></span></span><a class="reference internal" href="_modules/operations_part.html#extrude"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#operations_part.extrude" title="Link to this definition"></a></dt>
+<dd><p>Part Operation: extrude</p>
+<p>Extrude a sketch or face by an amount or until another object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>to_extrude</strong> (<em>Union</em><em>[</em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Face" title="topology.Face"><em>Face</em></a><em>, </em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Sketch" title="topology.Sketch"><em>Sketch</em></a><em>]</em><em>, </em><em>optional</em>) – object to extrude. Defaults to None.</p></li>
+<li><p><strong>amount</strong> (<em>float</em><em>, </em><em>optional</em>) – distance to extrude, sign controls direction. Defaults to None.</p></li>
+<li><p><strong>dir</strong> (<em>VectorLike</em><em>, </em><em>optional</em>) – direction. Defaults to None.</p></li>
+<li><p><strong>until</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="builder_api_reference.html#build_enums.Until" title="build_enums.Until"><em>Until</em></a><em>, </em><em>optional</em>) – extrude limit. Defaults to None.</p></li>
+<li><p><strong>target</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Shape" title="topology.Shape"><em>Shape</em></a><em>, </em><em>optional</em>) – extrude until target. Defaults to None.</p></li>
+<li><p><strong>both</strong> (<em>bool</em><em>, </em><em>optional</em>) – extrude in both directions. Defaults to False.</p></li>
+<li><p><strong>taper</strong> (<em>float</em><em>, </em><em>optional</em>) – taper angle. Defaults to 0.0.</p></li>
+<li><p><strong>clean</strong> (<em>bool</em><em>, </em><em>optional</em>) – Remove extraneous internal structure. Defaults to True.</p></li>
+<li><p><strong>mode</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="builder_api_reference.html#build_enums.Mode" title="build_enums.Mode"><em>Mode</em></a><em>, </em><em>optional</em>) – combination mode. Defaults to Mode.ADD.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – No object to extrude</p></li>
+<li><p><strong>ValueError</strong> – No target object</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>extruded object</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Part" title="topology.Part"><em>Part</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="operations_generic.fillet">
+<span class="sig-name descname"><span class="pre">fillet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">objects</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Edge</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Vertex</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">Edge</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Vertex</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Sketch</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Part</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Curve</span></span></span><a class="reference internal" href="_modules/operations_generic.html#fillet"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#operations_generic.fillet" title="Link to this definition"></a></dt>
+<dd><p>Generic Operation: fillet</p>
+<p>Applies to 2 and 3 dimensional objects.</p>
+<p>Fillet the given sequence of edges or vertices. Note that vertices on
+either end of an open line will be automatically skipped.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>objects</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Edge" title="topology.Edge"><em>Edge</em></a><em> | </em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Vertex" title="topology.Vertex"><em>Vertex</em></a><em> or </em><em>Iterable of</em>) – edges or vertices to fillet</p></li>
+<li><p><strong>radius</strong> (<em>float</em>) – fillet size - must be less than 1/2 local width</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – no objects provided</p></li>
+<li><p><strong>ValueError</strong> – objects must be Edges</p></li>
+<li><p><strong>ValueError</strong> – objects must be Vertices</p></li>
+<li><p><strong>ValueError</strong> – nothing to fillet</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="operations_sketch.full_round">
+<span class="sig-name descname"><span class="pre">full_round</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">edge:</span> <span class="pre">~build123d.topology.one_d.Edge</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">invert:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">voronoi_point_count:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode:</span> <span class="pre">~build123d.build_enums.Mode</span> <span class="pre">=</span> <span class="pre">&lt;Mode.REPLACE&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Sketch</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Vector</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/operations_sketch.html#full_round"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#operations_sketch.full_round" title="Link to this definition"></a></dt>
+<dd><p>Sketch Operation: full_round</p>
+<p>Given an edge from a Face/Sketch, modify the face by replacing the given edge with the
+arc of the Voronoi largest empty circle that will fit within the Face.  This
+“rounds off” the end of the object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>edge</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Edge" title="topology.Edge"><em>Edge</em></a>) – target Edge to remove</p></li>
+<li><p><strong>invert</strong> (<em>bool</em><em>, </em><em>optional</em>) – make the arc concave instead of convex. Defaults to False.</p></li>
+<li><p><strong>voronoi_point_count</strong> (<em>int</em><em>, </em><em>optional</em>) – number of points along each edge
+used to create the voronoi vertices as potential locations for the
+center of the largest empty circle. Defaults to 100.</p></li>
+<li><p><strong>mode</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="builder_api_reference.html#build_enums.Mode" title="build_enums.Mode"><em>Mode</em></a><em>, </em><em>optional</em>) – combination mode. Defaults to Mode.REPLACE.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – Invalid geometry</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A tuple where the first value is the modified shape, the second the
+geometric center of the arc, and the third the radius of the arc</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>(<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Sketch" title="topology.Sketch"><em>Sketch</em></a>, <a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#geometry.Vector" title="geometry.Vector"><em>Vector</em></a>, <em>float</em>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="operations_part.loft">
+<span class="sig-name descname"><span class="pre">loft</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sections:</span> <span class="pre">~build123d.topology.two_d.Face</span> <span class="pre">|</span> <span class="pre">~build123d.topology.composite.Sketch</span> <span class="pre">|</span> <span class="pre">~collections.abc.Iterable[~build123d.topology.zero_d.Vertex</span> <span class="pre">|</span> <span class="pre">~build123d.topology.two_d.Face</span> <span class="pre">|</span> <span class="pre">~build123d.topology.composite.Sketch]</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ruled:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clean:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode:</span> <span class="pre">~build123d.build_enums.Mode</span> <span class="pre">=</span> <span class="pre">&lt;Mode.ADD&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Part</span></span></span><a class="reference internal" href="_modules/operations_part.html#loft"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#operations_part.loft" title="Link to this definition"></a></dt>
+<dd><p>Part Operation: loft</p>
+<p>Loft the pending sketches/faces, across all workplanes, into a solid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sections</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Vertex" title="topology.Vertex"><em>Vertex</em></a><em>, </em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Face" title="topology.Face"><em>Face</em></a><em>, </em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Sketch" title="topology.Sketch"><em>Sketch</em></a>) – slices to loft into object. If not provided, pending_faces
+will be used. If vertices are to be used, a vertex can be the first, last, or
+first and last elements.</p></li>
+<li><p><strong>ruled</strong> (<em>bool</em><em>, </em><em>optional</em>) – discontiguous layer tangents. Defaults to False.</p></li>
+<li><p><strong>clean</strong> (<em>bool</em><em>, </em><em>optional</em>) – Remove extraneous internal structure. Defaults to True.</p></li>
+<li><p><strong>mode</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="builder_api_reference.html#build_enums.Mode" title="build_enums.Mode"><em>Mode</em></a><em>, </em><em>optional</em>) – combination mode. Defaults to Mode.ADD.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="operations_part.make_brake_formed">
+<span class="sig-name descname"><span class="pre">make_brake_formed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">thickness:</span> <span class="pre">float,</span> <span class="pre">station_widths:</span> <span class="pre">float</span> <span class="pre">|</span> <span class="pre">~collections.abc.Iterable[float],</span> <span class="pre">line:</span> <span class="pre">~build123d.topology.one_d.Edge</span> <span class="pre">|</span> <span class="pre">~build123d.topology.one_d.Wire</span> <span class="pre">|</span> <span class="pre">~build123d.topology.composite.Curve</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">side:</span> <span class="pre">~build123d.build_enums.Side</span> <span class="pre">=</span> <span class="pre">&lt;Side.LEFT&gt;,</span> <span class="pre">kind:</span> <span class="pre">~build123d.build_enums.Kind</span> <span class="pre">=</span> <span class="pre">&lt;Kind.ARC&gt;,</span> <span class="pre">clean:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True,</span> <span class="pre">mode:</span> <span class="pre">~build123d.build_enums.Mode</span> <span class="pre">=</span> <span class="pre">&lt;Mode.ADD&gt;</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Part</span></span></span><a class="reference internal" href="_modules/operations_part.html#make_brake_formed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#operations_part.make_brake_formed" title="Link to this definition"></a></dt>
+<dd><p>Create a part typically formed with a sheet metal brake from a single outline.
+The line parameter describes how the material is to be bent. Either a single
+width value or a width value at each vertex or station is provided to control
+the width of the end part.  Note that if multiple values are provided there
+must be one for each vertex and that the resulting part is composed of linear
+segments.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>thickness</strong> (<em>float</em>) – sheet metal thickness</p></li>
+<li><p><strong>station_widths</strong> (<em>Union</em><em>[</em><em>float</em><em>, </em><em>Iterable</em><em>[</em><em>float</em><em>]</em><em>]</em>) – width of part at
+each vertex or a single value. Note that this width is perpendicular
+to the provided line/plane.</p></li>
+<li><p><strong>line</strong> (<em>Union</em><em>[</em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Edge" title="topology.Edge"><em>Edge</em></a><em>, </em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Wire" title="topology.Wire"><em>Wire</em></a><em>, </em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Curve" title="topology.Curve"><em>Curve</em></a><em>]</em><em>, </em><em>optional</em>) – outline of part. Defaults to None.</p></li>
+<li><p><strong>side</strong> (<em>Side</em><em>, </em><em>optional</em>) – offset direction. Defaults to Side.LEFT.</p></li>
+<li><p><strong>kind</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="builder_api_reference.html#build_enums.Kind" title="build_enums.Kind"><em>Kind</em></a><em>, </em><em>optional</em>) – offset intersection type. Defaults to Kind.ARC.</p></li>
+<li><p><strong>clean</strong> (<em>bool</em><em>, </em><em>optional</em>) – clean the resulting solid. Defaults to True.</p></li>
+<li><p><strong>mode</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="builder_api_reference.html#build_enums.Mode" title="build_enums.Mode"><em>Mode</em></a><em>, </em><em>optional</em>) – combination mode. Defaults to Mode.ADD.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – invalid line type</p></li>
+<li><p><strong>ValueError</strong> – not line provided</p></li>
+<li><p><strong>ValueError</strong> – line not suitable</p></li>
+<li><p><strong>ValueError</strong> – incorrect # of width values</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>sheet metal part</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Part" title="topology.Part"><em>Part</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="operations_sketch.make_face">
+<span class="sig-name descname"><span class="pre">make_face</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">edges:</span> <span class="pre">~build123d.topology.one_d.Edge</span> <span class="pre">|</span> <span class="pre">~collections.abc.Iterable[~build123d.topology.one_d.Edge]</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode:</span> <span class="pre">~build123d.build_enums.Mode</span> <span class="pre">=</span> <span class="pre">&lt;Mode.ADD&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Sketch</span></span></span><a class="reference internal" href="_modules/operations_sketch.html#make_face"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#operations_sketch.make_face" title="Link to this definition"></a></dt>
+<dd><p>Sketch Operation: make_face</p>
+<p>Create a face from the given perimeter edges.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>edges</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Edge" title="topology.Edge"><em>Edge</em></a>) – sequence of perimeter edges. Defaults to all
+sketch pending edges.</p></li>
+<li><p><strong>mode</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="builder_api_reference.html#build_enums.Mode" title="build_enums.Mode"><em>Mode</em></a><em>, </em><em>optional</em>) – combination mode. Defaults to Mode.ADD.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="operations_sketch.make_hull">
+<span class="sig-name descname"><span class="pre">make_hull</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">edges:</span> <span class="pre">~build123d.topology.one_d.Edge</span> <span class="pre">|</span> <span class="pre">~collections.abc.Iterable[~build123d.topology.one_d.Edge]</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode:</span> <span class="pre">~build123d.build_enums.Mode</span> <span class="pre">=</span> <span class="pre">&lt;Mode.ADD&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Sketch</span></span></span><a class="reference internal" href="_modules/operations_sketch.html#make_hull"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#operations_sketch.make_hull" title="Link to this definition"></a></dt>
+<dd><p>Sketch Operation: make_hull</p>
+<p>Create a face from the convex hull of the given edges</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>edges</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Edge" title="topology.Edge"><em>Edge</em></a><em>, </em><em>optional</em>) – sequence of edges to hull. Defaults to all
+sketch pending edges.</p></li>
+<li><p><strong>mode</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="builder_api_reference.html#build_enums.Mode" title="build_enums.Mode"><em>Mode</em></a><em>, </em><em>optional</em>) – combination mode. Defaults to Mode.ADD.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="operations_generic.mirror">
+<span class="sig-name descname"><span class="pre">mirror</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">objects:</span> <span class="pre">~build123d.topology.one_d.Edge</span> <span class="pre">|</span> <span class="pre">~build123d.topology.one_d.Wire</span> <span class="pre">|</span> <span class="pre">~build123d.topology.two_d.Face</span> <span class="pre">|</span> <span class="pre">~build123d.topology.composite.Compound</span> <span class="pre">|</span> <span class="pre">~build123d.topology.composite.Curve</span> <span class="pre">|</span> <span class="pre">~build123d.topology.composite.Sketch</span> <span class="pre">|</span> <span class="pre">~build123d.topology.composite.Part</span> <span class="pre">|</span> <span class="pre">~collections.abc.Iterable[~build123d.topology.one_d.Edge</span> <span class="pre">|</span> <span class="pre">~build123d.topology.one_d.Wire</span> <span class="pre">|</span> <span class="pre">~build123d.topology.two_d.Face</span> <span class="pre">|</span> <span class="pre">~build123d.topology.composite.Compound</span> <span class="pre">|</span> <span class="pre">~build123d.topology.composite.Curve</span> <span class="pre">|</span> <span class="pre">~build123d.topology.composite.Sketch</span> <span class="pre">|</span> <span class="pre">~build123d.topology.composite.Part]</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">about:</span> <span class="pre">~build123d.geometry.Plane</span> <span class="pre">=</span> <span class="pre">Plane(o=(0.00</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">0.00</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">0.00)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x=(1.00</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">0.00</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">0.00)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z=(0.00</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">-1.00</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">0.00))</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode:</span> <span class="pre">~build123d.build_enums.Mode</span> <span class="pre">=</span> <span class="pre">&lt;Mode.ADD&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Curve</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Sketch</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Part</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Compound</span></span></span><a class="reference internal" href="_modules/operations_generic.html#mirror"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#operations_generic.mirror" title="Link to this definition"></a></dt>
+<dd><p>Generic Operation: mirror</p>
+<p>Applies to 1, 2, and 3 dimensional objects.</p>
+<p>Mirror a sequence of objects over the given plane.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>objects</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Edge" title="topology.Edge"><em>Edge</em></a><em> |  </em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Face" title="topology.Face"><em>Face</em></a><em> | </em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Compound" title="topology.Compound"><em>Compound</em></a><em>  or </em><em>Iterable of</em>) – objects to mirror</p></li>
+<li><p><strong>about</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#geometry.Plane" title="geometry.Plane"><em>Plane</em></a><em>, </em><em>optional</em>) – reference plane. Defaults to “XZ”.</p></li>
+<li><p><strong>mode</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="builder_api_reference.html#build_enums.Mode" title="build_enums.Mode"><em>Mode</em></a><em>, </em><em>optional</em>) – combination mode. Defaults to Mode.ADD.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – missing objects</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="operations_generic.offset">
+<span class="sig-name descname"><span class="pre">offset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">objects:</span> <span class="pre">~build123d.topology.one_d.Edge</span> <span class="pre">|</span> <span class="pre">~build123d.topology.two_d.Face</span> <span class="pre">|</span> <span class="pre">~build123d.topology.three_d.Solid</span> <span class="pre">|</span> <span class="pre">~build123d.topology.composite.Compound</span> <span class="pre">|</span> <span class="pre">~collections.abc.Iterable[~build123d.topology.one_d.Edge</span> <span class="pre">|</span> <span class="pre">~build123d.topology.two_d.Face</span> <span class="pre">|</span> <span class="pre">~build123d.topology.three_d.Solid</span> <span class="pre">|</span> <span class="pre">~build123d.topology.composite.Compound]</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amount:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">openings:</span> <span class="pre">~build123d.topology.two_d.Face</span> <span class="pre">|</span> <span class="pre">list[~build123d.topology.two_d.Face]</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kind:</span> <span class="pre">~build123d.build_enums.Kind</span> <span class="pre">=</span> <span class="pre">&lt;Kind.ARC&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">side:</span> <span class="pre">~build123d.build_enums.Side</span> <span class="pre">=</span> <span class="pre">&lt;Side.BOTH&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">closed:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_edge_length:</span> <span class="pre">float</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode:</span> <span class="pre">~build123d.build_enums.Mode</span> <span class="pre">=</span> <span class="pre">&lt;Mode.REPLACE&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Curve</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Sketch</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Part</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Compound</span></span></span><a class="reference internal" href="_modules/operations_generic.html#offset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#operations_generic.offset" title="Link to this definition"></a></dt>
+<dd><p>Generic Operation: offset</p>
+<p>Applies to 1, 2, and 3 dimensional objects.</p>
+<p>Offset the given sequence of Edges, Faces, Compound of Faces, or Solids.
+The kind parameter controls the shape of the transitions. For Solid
+objects, the openings parameter allows selected faces to be open, like
+a hollow box with no lid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>objects</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Edge" title="topology.Edge"><em>Edge</em></a><em> |  </em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Face" title="topology.Face"><em>Face</em></a><em> |  </em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Solid" title="topology.Solid"><em>Solid</em></a><em> |  </em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Compound" title="topology.Compound"><em>Compound</em></a><em>  or </em><em>Iterable of</em>) – objects to offset</p></li>
+<li><p><strong>amount</strong> (<em>float</em>) – positive values external, negative internal</p></li>
+<li><p><strong>openings</strong> (<em>list</em><em>[</em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Face" title="topology.Face"><em>Face</em></a><em>]</em><em>, </em><em>optional</em>) – Defaults to None.</p></li>
+<li><p><strong>kind</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="builder_api_reference.html#build_enums.Kind" title="build_enums.Kind"><em>Kind</em></a><em>, </em><em>optional</em>) – transition shape. Defaults to Kind.ARC.</p></li>
+<li><p><strong>side</strong> (<em>Side</em><em>, </em><em>optional</em>) – side to place offset. Defaults to Side.BOTH.</p></li>
+<li><p><strong>closed</strong> (<em>bool</em><em>, </em><em>optional</em>) – if Side!=BOTH, close the LEFT or RIGHT
+offset. Defaults to True.</p></li>
+<li><p><strong>min_edge_length</strong> (<em>float</em><em>, </em><em>optional</em>) – repair degenerate edges generated by offset
+by eliminating edges of minimum length in offset wire. Defaults to None.</p></li>
+<li><p><strong>mode</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="builder_api_reference.html#build_enums.Mode" title="build_enums.Mode"><em>Mode</em></a><em>, </em><em>optional</em>) – combination mode. Defaults to Mode.REPLACE.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – missing objects</p></li>
+<li><p><strong>ValueError</strong> – Invalid object type</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="operations_generic.project">
+<span class="sig-name descname"><span class="pre">project</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">objects:</span> <span class="pre">~build123d.topology.one_d.Edge</span> <span class="pre">|</span> <span class="pre">~build123d.topology.two_d.Face</span> <span class="pre">|</span> <span class="pre">~build123d.topology.one_d.Wire</span> <span class="pre">|</span> <span class="pre">~build123d.geometry.Vector</span> <span class="pre">|</span> <span class="pre">~build123d.topology.zero_d.Vertex</span> <span class="pre">|</span> <span class="pre">~collections.abc.Iterable[~build123d.topology.one_d.Edge</span> <span class="pre">|</span> <span class="pre">~build123d.topology.two_d.Face</span> <span class="pre">|</span> <span class="pre">~build123d.topology.one_d.Wire</span> <span class="pre">|</span> <span class="pre">~build123d.geometry.Vector</span> <span class="pre">|</span> <span class="pre">~build123d.topology.zero_d.Vertex]</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">workplane:</span> <span class="pre">~build123d.geometry.Plane</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target:</span> <span class="pre">~build123d.topology.three_d.Solid</span> <span class="pre">|</span> <span class="pre">~build123d.topology.composite.Compound</span> <span class="pre">|</span> <span class="pre">~build123d.topology.composite.Part</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode:</span> <span class="pre">~build123d.build_enums.Mode</span> <span class="pre">=</span> <span class="pre">&lt;Mode.ADD&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Curve</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Sketch</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Compound</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ShapeList</span><span class="p"><span class="pre">[</span></span><span class="pre">Vector</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/operations_generic.html#project"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#operations_generic.project" title="Link to this definition"></a></dt>
+<dd><p>Generic Operation: project</p>
+<p>Applies to 0, 1, and 2 dimensional objects.</p>
+<p>Project the given objects or points onto a BuildLine or BuildSketch workplane in
+the direction of the normal of that workplane. When projecting onto a
+sketch a Face(s) are generated while Edges are generated for BuildLine.
+Will only use the first if BuildSketch has multiple active workplanes.
+In algebra mode a workplane must be provided and the output is either
+a Face, Curve, Sketch, Compound, or ShapeList[Vector].</p>
+<p>Note that only if mode is not Mode.PRIVATE only Faces can be projected into
+BuildSketch and Edge/Wires into BuildLine.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>objects</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Edge" title="topology.Edge"><em>Edge</em></a><em> |  </em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Face" title="topology.Face"><em>Face</em></a><em> |  </em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Wire" title="topology.Wire"><em>Wire</em></a><em> |  </em><em>VectorLike</em><em> |  </em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Vertex" title="topology.Vertex"><em>Vertex</em></a><em> or </em><em>Iterable of</em>) – objects or points to project</p></li>
+<li><p><strong>workplane</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#geometry.Plane" title="geometry.Plane"><em>Plane</em></a><em>, </em><em>optional</em>) – screen workplane</p></li>
+<li><p><strong>mode</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="builder_api_reference.html#build_enums.Mode" title="build_enums.Mode"><em>Mode</em></a><em>, </em><em>optional</em>) – combination mode. Defaults to Mode.ADD.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – project doesn’t accept group_by</p></li>
+<li><p><strong>ValueError</strong> – Either a workplane must be provided or a builder must be active</p></li>
+<li><p><strong>ValueError</strong> – Points and faces can only be projected in PRIVATE mode</p></li>
+<li><p><strong>ValueError</strong> – Edges, wires and points can only be projected in PRIVATE mode</p></li>
+<li><p><strong>RuntimeError</strong> – BuildPart doesn’t have a project operation</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="operations_part.project_workplane">
+<span class="sig-name descname"><span class="pre">project_workplane</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">origin</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Vector</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Vertex</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Vector</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Vertex</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">projection_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Vector</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Plane</span></span></span><a class="reference internal" href="_modules/operations_part.html#project_workplane"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#operations_part.project_workplane" title="Link to this definition"></a></dt>
+<dd><p>Part Operation: project_workplane</p>
+<p>Return a plane to be used as a BuildSketch or BuildLine workplane
+with a known origin and x direction. The plane’s origin will be
+the projection of the provided origin (in 3D space). The plane’s
+x direction will be the projection of the provided x_dir (in 3D space).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>origin</strong> (<em>Union</em><em>[</em><em>VectorLike</em><em>, </em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Vertex" title="topology.Vertex"><em>Vertex</em></a><em>]</em>) – origin in 3D space</p></li>
+<li><p><strong>x_dir</strong> (<em>Union</em><em>[</em><em>VectorLike</em><em>, </em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Vertex" title="topology.Vertex"><em>Vertex</em></a><em>]</em>) – x direction in 3D space</p></li>
+<li><p><strong>projection_dir</strong> (<em>VectorLike</em>) – projection direction</p></li>
+<li><p><strong>distance</strong> (<em>float</em>) – distance from origin to workplane</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>RuntimeError</strong> – Not suitable for BuildLine or BuildSketch</p></li>
+<li><p><strong>ValueError</strong> – x_dir perpendicular to projection_dir</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>workplane aligned for projection</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#geometry.Plane" title="geometry.Plane"><em>Plane</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="operations_part.revolve">
+<span class="sig-name descname"><span class="pre">revolve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">profiles:</span> <span class="pre">~build123d.topology.two_d.Face</span> <span class="pre">|</span> <span class="pre">~collections.abc.Iterable[~build123d.topology.two_d.Face]</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis:</span> <span class="pre">~build123d.geometry.Axis</span> <span class="pre">=</span> <span class="pre">((0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">0.0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">(0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">1.0))</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">revolution_arc:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">360.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clean:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode:</span> <span class="pre">~build123d.build_enums.Mode</span> <span class="pre">=</span> <span class="pre">&lt;Mode.ADD&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Part</span></span></span><a class="reference internal" href="_modules/operations_part.html#revolve"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#operations_part.revolve" title="Link to this definition"></a></dt>
+<dd><p>Part Operation: Revolve</p>
+<p>Revolve the profile or pending sketches/face about the given axis.
+Note that the most common use case is when the axis is in the same plane as the
+face to be revolved but this isn’t required.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>profiles</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Face" title="topology.Face"><em>Face</em></a><em>, </em><em>optional</em>) – 2D profile(s) to revolve.</p></li>
+<li><p><strong>axis</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#geometry.Axis" title="geometry.Axis"><em>Axis</em></a><em>, </em><em>optional</em>) – axis of rotation. Defaults to Axis.Z.</p></li>
+<li><p><strong>revolution_arc</strong> (<em>float</em><em>, </em><em>optional</em>) – angular size of revolution. Defaults to 360.0.</p></li>
+<li><p><strong>clean</strong> (<em>bool</em><em>, </em><em>optional</em>) – Remove extraneous internal structure. Defaults to True.</p></li>
+<li><p><strong>mode</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="builder_api_reference.html#build_enums.Mode" title="build_enums.Mode"><em>Mode</em></a><em>, </em><em>optional</em>) – combination mode. Defaults to Mode.ADD.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – Invalid axis of revolution</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="operations_generic.scale">
+<span class="sig-name descname"><span class="pre">scale</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">objects:</span> <span class="pre">~build123d.topology.shape_core.Shape</span> <span class="pre">|</span> <span class="pre">~collections.abc.Iterable[~build123d.topology.shape_core.Shape]</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">by:</span> <span class="pre">float</span> <span class="pre">|</span> <span class="pre">tuple[float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">float]</span> <span class="pre">=</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode:</span> <span class="pre">~build123d.build_enums.Mode</span> <span class="pre">=</span> <span class="pre">&lt;Mode.REPLACE&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Curve</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Sketch</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Part</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Compound</span></span></span><a class="reference internal" href="_modules/operations_generic.html#scale"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#operations_generic.scale" title="Link to this definition"></a></dt>
+<dd><p>Generic Operation: scale</p>
+<p>Applies to 1, 2, and 3 dimensional objects.</p>
+<p>Scale a sequence of objects. Note that when scaling non-uniformly across
+the three axes, the type of the underlying object may change to bspline from
+line, circle, etc.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>objects</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Edge" title="topology.Edge"><em>Edge</em></a><em> |  </em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Face" title="topology.Face"><em>Face</em></a><em> |  </em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Compound" title="topology.Compound"><em>Compound</em></a><em> |  </em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Solid" title="topology.Solid"><em>Solid</em></a><em> or </em><em>Iterable of</em>) – objects to scale</p></li>
+<li><p><strong>by</strong> (<em>float</em><em> | </em><em>tuple</em><em>[</em><em>float</em><em>, </em><em>float</em><em>, </em><em>float</em><em>]</em>) – scale factor</p></li>
+<li><p><strong>mode</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="builder_api_reference.html#build_enums.Mode" title="build_enums.Mode"><em>Mode</em></a><em>, </em><em>optional</em>) – combination mode. Defaults to Mode.REPLACE.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – missing objects</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="operations_part.section">
+<span class="sig-name descname"><span class="pre">section</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj:</span> <span class="pre">~build123d.topology.composite.Part</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">section_by:</span> <span class="pre">~build123d.geometry.Plane</span> <span class="pre">|</span> <span class="pre">~collections.abc.Iterable[~build123d.geometry.Plane]</span> <span class="pre">=</span> <span class="pre">Plane(o=(0.00</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">0.00</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">0.00)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x=(1.00</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">0.00</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">0.00)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z=(0.00</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">-1.00</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">0.00))</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clean:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode:</span> <span class="pre">~build123d.build_enums.Mode</span> <span class="pre">=</span> <span class="pre">&lt;Mode.PRIVATE&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Sketch</span></span></span><a class="reference internal" href="_modules/operations_part.html#section"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#operations_part.section" title="Link to this definition"></a></dt>
+<dd><p>Part Operation: section</p>
+<p>Slices current part at the given height by section_by or current workplane(s).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Part" title="topology.Part"><em>Part</em></a><em>, </em><em>optional</em>) – object to section. Defaults to None.</p></li>
+<li><p><strong>section_by</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#geometry.Plane" title="geometry.Plane"><em>Plane</em></a><em>, </em><em>optional</em>) – plane(s) to section object.
+Defaults to None.</p></li>
+<li><p><strong>height</strong> (<em>float</em><em>, </em><em>optional</em>) – workplane offset. Defaults to 0.0.</p></li>
+<li><p><strong>clean</strong> (<em>bool</em><em>, </em><em>optional</em>) – Remove extraneous internal structure. Defaults to True.</p></li>
+<li><p><strong>mode</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="builder_api_reference.html#build_enums.Mode" title="build_enums.Mode"><em>Mode</em></a><em>, </em><em>optional</em>) – combination mode. Defaults to Mode.INTERSECT.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="operations_generic.split">
+<span class="sig-name descname"><span class="pre">split</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">objects:</span> <span class="pre">~build123d.topology.one_d.Edge</span> <span class="pre">|</span> <span class="pre">~build123d.topology.one_d.Wire</span> <span class="pre">|</span> <span class="pre">~build123d.topology.two_d.Face</span> <span class="pre">|</span> <span class="pre">~build123d.topology.three_d.Solid</span> <span class="pre">|</span> <span class="pre">~collections.abc.Iterable[~build123d.topology.one_d.Edge</span> <span class="pre">|</span> <span class="pre">~build123d.topology.one_d.Wire</span> <span class="pre">|</span> <span class="pre">~build123d.topology.two_d.Face</span> <span class="pre">|</span> <span class="pre">~build123d.topology.three_d.Solid]</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bisect_by:</span> <span class="pre">~build123d.geometry.Plane</span> <span class="pre">|</span> <span class="pre">~build123d.topology.two_d.Face</span> <span class="pre">|</span> <span class="pre">~build123d.topology.two_d.Shell</span> <span class="pre">=</span> <span class="pre">Plane(o=(0.00</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">0.00</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">0.00)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x=(1.00</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">0.00</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">0.00)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z=(0.00</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">-1.00</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">0.00))</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep:</span> <span class="pre">~build123d.build_enums.Keep</span> <span class="pre">=</span> <span class="pre">&lt;Keep.TOP&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode:</span> <span class="pre">~build123d.build_enums.Mode</span> <span class="pre">=</span> <span class="pre">&lt;Mode.REPLACE&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/operations_generic.html#split"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#operations_generic.split" title="Link to this definition"></a></dt>
+<dd><p>Generic Operation: split</p>
+<p>Applies to 1, 2, and 3 dimensional objects.</p>
+<p>Bisect object with plane and keep either top, bottom or both.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>objects</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Edge" title="topology.Edge"><em>Edge</em></a><em> |  </em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Wire" title="topology.Wire"><em>Wire</em></a><em> |  </em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Face" title="topology.Face"><em>Face</em></a><em> |  </em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Solid" title="topology.Solid"><em>Solid</em></a><em> or </em><em>Iterable of</em>)</p></li>
+<li><p><strong>bisect_by</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#geometry.Plane" title="geometry.Plane"><em>Plane</em></a><em> |  </em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Face" title="topology.Face"><em>Face</em></a><em>, </em><em>optional</em>) – plane to segment part.
+Defaults to Plane.XZ.</p></li>
+<li><p><strong>keep</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="builder_api_reference.html#build_enums.Keep" title="build_enums.Keep"><em>Keep</em></a><em>, </em><em>optional</em>) – selector for which segment to keep. Defaults to Keep.TOP.</p></li>
+<li><p><strong>mode</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="builder_api_reference.html#build_enums.Mode" title="build_enums.Mode"><em>Mode</em></a><em>, </em><em>optional</em>) – combination mode. Defaults to Mode.REPLACE.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – missing objects</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="operations_generic.sweep">
+<span class="sig-name descname"><span class="pre">sweep</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sections:</span> <span class="pre">~build123d.topology.composite.Compound</span> <span class="pre">|</span> <span class="pre">~build123d.topology.one_d.Edge</span> <span class="pre">|</span> <span class="pre">~build123d.topology.one_d.Wire</span> <span class="pre">|</span> <span class="pre">~build123d.topology.two_d.Face</span> <span class="pre">|</span> <span class="pre">~build123d.topology.three_d.Solid</span> <span class="pre">|</span> <span class="pre">~collections.abc.Iterable[~build123d.topology.composite.Compound</span> <span class="pre">|</span> <span class="pre">~build123d.topology.one_d.Edge</span> <span class="pre">|</span> <span class="pre">~build123d.topology.one_d.Wire</span> <span class="pre">|</span> <span class="pre">~build123d.topology.two_d.Face</span> <span class="pre">|</span> <span class="pre">~build123d.topology.three_d.Solid]</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path:</span> <span class="pre">~build123d.topology.composite.Curve</span> <span class="pre">|</span> <span class="pre">~build123d.topology.one_d.Edge</span> <span class="pre">|</span> <span class="pre">~build123d.topology.one_d.Wire</span> <span class="pre">|</span> <span class="pre">~collections.abc.Iterable[~build123d.topology.one_d.Edge]</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">multisection:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_frenet:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transition:</span> <span class="pre">~build123d.build_enums.Transition</span> <span class="pre">=</span> <span class="pre">&lt;Transition.TRANSFORMED&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normal:</span> <span class="pre">~build123d.geometry.Vector</span> <span class="pre">|</span> <span class="pre">tuple[float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">float]</span> <span class="pre">|</span> <span class="pre">tuple[float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">float]</span> <span class="pre">|</span> <span class="pre">~collections.abc.Sequence[float]</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">binormal:</span> <span class="pre">~build123d.topology.one_d.Edge</span> <span class="pre">|</span> <span class="pre">~build123d.topology.one_d.Wire</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clean:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode:</span> <span class="pre">~build123d.build_enums.Mode</span> <span class="pre">=</span> <span class="pre">&lt;Mode.ADD&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Part</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Sketch</span></span></span><a class="reference internal" href="_modules/operations_generic.html#sweep"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#operations_generic.sweep" title="Link to this definition"></a></dt>
+<dd><p>Generic Operation: sweep</p>
+<p>Sweep pending 1D or 2D objects along path.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sections</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Compound" title="topology.Compound"><em>Compound</em></a><em> |  </em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Edge" title="topology.Edge"><em>Edge</em></a><em> |  </em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Wire" title="topology.Wire"><em>Wire</em></a><em> |  </em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Face" title="topology.Face"><em>Face</em></a><em> |  </em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Solid" title="topology.Solid"><em>Solid</em></a>) – cross sections to sweep into object</p></li>
+<li><p><strong>path</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Curve" title="topology.Curve"><em>Curve</em></a><em> |  </em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Edge" title="topology.Edge"><em>Edge</em></a><em> |  </em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Wire" title="topology.Wire"><em>Wire</em></a><em>, </em><em>optional</em>) – path to follow.
+Defaults to context pending_edges.</p></li>
+<li><p><strong>multisection</strong> (<em>bool</em><em>, </em><em>optional</em>) – sweep multiple on path. Defaults to False.</p></li>
+<li><p><strong>is_frenet</strong> (<em>bool</em><em>, </em><em>optional</em>) – use frenet algorithm. Defaults to False.</p></li>
+<li><p><strong>transition</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="builder_api_reference.html#build_enums.Transition" title="build_enums.Transition"><em>Transition</em></a><em>, </em><em>optional</em>) – discontinuity handling option.
+Defaults to Transition.TRANSFORMED.</p></li>
+<li><p><strong>normal</strong> (<em>VectorLike</em><em>, </em><em>optional</em>) – fixed normal. Defaults to None.</p></li>
+<li><p><strong>binormal</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Edge" title="topology.Edge"><em>Edge</em></a><em> |  </em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Wire" title="topology.Wire"><em>Wire</em></a><em>, </em><em>optional</em>) – guide rotation along path. Defaults to None.</p></li>
+<li><p><strong>clean</strong> (<em>bool</em><em>, </em><em>optional</em>) – Remove extraneous internal structure. Defaults to True.</p></li>
+<li><p><strong>mode</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="builder_api_reference.html#build_enums.Mode" title="build_enums.Mode"><em>Mode</em></a><em>, </em><em>optional</em>) – combination. Defaults to Mode.ADD.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="operations_part.thicken">
+<span class="sig-name descname"><span class="pre">thicken</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">to_thicken:</span> <span class="pre">~build123d.topology.two_d.Face</span> <span class="pre">|</span> <span class="pre">~build123d.topology.composite.Sketch</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amount:</span> <span class="pre">float</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normal_override:</span> <span class="pre">~build123d.geometry.Vector</span> <span class="pre">|</span> <span class="pre">tuple[float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">float]</span> <span class="pre">|</span> <span class="pre">tuple[float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">float]</span> <span class="pre">|</span> <span class="pre">~collections.abc.Sequence[float]</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">both:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clean:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode:</span> <span class="pre">~build123d.build_enums.Mode</span> <span class="pre">=</span> <span class="pre">&lt;Mode.ADD&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Part</span></span></span><a class="reference internal" href="_modules/operations_part.html#thicken"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#operations_part.thicken" title="Link to this definition"></a></dt>
+<dd><p>Part Operation: thicken</p>
+<p>Create a solid(s) from a potentially non planar face(s) by thickening along the normals.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>to_thicken</strong> (<em>Union</em><em>[</em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Face" title="topology.Face"><em>Face</em></a><em>, </em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Sketch" title="topology.Sketch"><em>Sketch</em></a><em>]</em><em>, </em><em>optional</em>) – object to thicken. Defaults to None.</p></li>
+<li><p><strong>amount</strong> (<em>float</em>) – distance to extrude, sign controls direction.</p></li>
+<li><p><strong>normal_override</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#geometry.Vector" title="geometry.Vector"><em>Vector</em></a><em>, </em><em>optional</em>) – The normal_override vector can be used to
+indicate which way is ‘up’, potentially flipping the face normal direction
+such that many faces with different normals all go in the same direction
+(direction need only be +/- 90 degrees from the face normal). Defaults to None.</p></li>
+<li><p><strong>both</strong> (<em>bool</em><em>, </em><em>optional</em>) – thicken in both directions. Defaults to False.</p></li>
+<li><p><strong>clean</strong> (<em>bool</em><em>, </em><em>optional</em>) – Remove extraneous internal structure. Defaults to True.</p></li>
+<li><p><strong>mode</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="builder_api_reference.html#build_enums.Mode" title="build_enums.Mode"><em>Mode</em></a><em>, </em><em>optional</em>) – combination mode. Defaults to Mode.ADD.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – No object to extrude</p></li>
+<li><p><strong>ValueError</strong> – No target object</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>extruded object</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Part" title="topology.Part"><em>Part</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="operations_sketch.trace">
+<span class="sig-name descname"><span class="pre">trace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lines:</span> <span class="pre">~build123d.topology.composite.Curve</span> <span class="pre">|</span> <span class="pre">~build123d.topology.one_d.Edge</span> <span class="pre">|</span> <span class="pre">~build123d.topology.one_d.Wire</span> <span class="pre">|</span> <span class="pre">~collections.abc.Iterable[~build123d.topology.composite.Curve</span> <span class="pre">|</span> <span class="pre">~build123d.topology.one_d.Edge</span> <span class="pre">|</span> <span class="pre">~build123d.topology.one_d.Wire]</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_width:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode:</span> <span class="pre">~build123d.build_enums.Mode</span> <span class="pre">=</span> <span class="pre">&lt;Mode.ADD&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Sketch</span></span></span><a class="reference internal" href="_modules/operations_sketch.html#trace"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#operations_sketch.trace" title="Link to this definition"></a></dt>
+<dd><p>Sketch Operation: trace</p>
+<p>Convert edges, wires or pending edges into faces by sweeping a perpendicular line along them.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lines</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Curve" title="topology.Curve"><em>Curve</em></a><em> | </em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Edge" title="topology.Edge"><em>Edge</em></a><em> | </em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Wire" title="topology.Wire"><em>Wire</em></a><em> | </em><em>Iterable</em><em>[</em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Curve" title="topology.Curve"><em>Curve</em></a><em> | </em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Edge" title="topology.Edge"><em>Edge</em></a><em> | </em><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Wire" title="topology.Wire"><em>Wire</em></a><em>]</em><em>]</em><em>, </em><em>optional</em>) – lines to
+trace. Defaults to sketch pending edges.</p></li>
+<li><p><strong>line_width</strong> (<em>float</em><em>, </em><em>optional</em>) – Defaults to 1.</p></li>
+<li><p><strong>mode</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="builder_api_reference.html#build_enums.Mode" title="build_enums.Mode"><em>Mode</em></a><em>, </em><em>optional</em>) – combination mode. Defaults to Mode.ADD.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – No objects to trace</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Traced lines</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Sketch" title="topology.Sketch"><em>Sketch</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="build_common.edge">
+<span class="sig-name descname"><span class="pre">edge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">select:</span> <span class="pre">~build123d.build_enums.Select</span> <span class="pre">=</span> <span class="pre">&lt;Select.ALL&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Edge</span></span></span><a class="headerlink" href="#build_common.edge" title="Link to this definition"></a></dt>
+<dd><p>Return Edge</p>
+<p>Return an edge.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>select</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="builder_api_reference.html#build_enums.Select" title="build_enums.Select"><em>Select</em></a><em>, </em><em>optional</em>) – Edge selector. Defaults to Select.ALL.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Edge extracted</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Edge" title="topology.Edge"><em>Edge</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="build_common.edges">
+<span class="sig-name descname"><span class="pre">edges</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">select:</span> <span class="pre">~build123d.build_enums.Select</span> <span class="pre">=</span> <span class="pre">&lt;Select.ALL&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ShapeList</span><span class="p"><span class="pre">[</span></span><span class="pre">Edge</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#build_common.edges" title="Link to this definition"></a></dt>
+<dd><p>Return Edges</p>
+<p>Return either all or the edges created during the last operation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>select</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="builder_api_reference.html#build_enums.Select" title="build_enums.Select"><em>Select</em></a><em>, </em><em>optional</em>) – Edge selector. Defaults to Select.ALL.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Edges extracted</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.ShapeList" title="topology.ShapeList"><em>ShapeList</em></a>[<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Edge" title="topology.Edge"><em>Edge</em></a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="build_common.face">
+<span class="sig-name descname"><span class="pre">face</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">select:</span> <span class="pre">~build123d.build_enums.Select</span> <span class="pre">=</span> <span class="pre">&lt;Select.ALL&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Face</span></span></span><a class="headerlink" href="#build_common.face" title="Link to this definition"></a></dt>
+<dd><p>Return Face</p>
+<p>Return a face.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>select</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="builder_api_reference.html#build_enums.Select" title="build_enums.Select"><em>Select</em></a><em>, </em><em>optional</em>) – Face selector. Defaults to Select.ALL.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Face extracted</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Face" title="topology.Face"><em>Face</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="build_common.faces">
+<span class="sig-name descname"><span class="pre">faces</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">select:</span> <span class="pre">~build123d.build_enums.Select</span> <span class="pre">=</span> <span class="pre">&lt;Select.ALL&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ShapeList</span><span class="p"><span class="pre">[</span></span><span class="pre">Face</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#build_common.faces" title="Link to this definition"></a></dt>
+<dd><p>Return Faces</p>
+<p>Return either all or the faces created during the last operation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>select</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="builder_api_reference.html#build_enums.Select" title="build_enums.Select"><em>Select</em></a><em>, </em><em>optional</em>) – Face selector. Defaults to Select.ALL.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Faces extracted</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.ShapeList" title="topology.ShapeList"><em>ShapeList</em></a>[<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Face" title="topology.Face"><em>Face</em></a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="build_common.solid">
+<span class="sig-name descname"><span class="pre">solid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">select:</span> <span class="pre">~build123d.build_enums.Select</span> <span class="pre">=</span> <span class="pre">&lt;Select.ALL&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Solid</span></span></span><a class="headerlink" href="#build_common.solid" title="Link to this definition"></a></dt>
+<dd><p>Return Solid</p>
+<p>Return a solid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>select</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="builder_api_reference.html#build_enums.Select" title="build_enums.Select"><em>Select</em></a><em>, </em><em>optional</em>) – Solid selector. Defaults to Select.ALL.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Solid extracted</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Solid" title="topology.Solid"><em>Solid</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="build_common.solids">
+<span class="sig-name descname"><span class="pre">solids</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">select:</span> <span class="pre">~build123d.build_enums.Select</span> <span class="pre">=</span> <span class="pre">&lt;Select.ALL&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ShapeList</span><span class="p"><span class="pre">[</span></span><span class="pre">Solid</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#build_common.solids" title="Link to this definition"></a></dt>
+<dd><p>Return Solids</p>
+<p>Return either all or the solids created during the last operation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>select</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="builder_api_reference.html#build_enums.Select" title="build_enums.Select"><em>Select</em></a><em>, </em><em>optional</em>) – Solid selector. Defaults to Select.ALL.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Solids extracted</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.ShapeList" title="topology.ShapeList"><em>ShapeList</em></a>[<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Solid" title="topology.Solid"><em>Solid</em></a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="build_common.vertex">
+<span class="sig-name descname"><span class="pre">vertex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">select:</span> <span class="pre">~build123d.build_enums.Select</span> <span class="pre">=</span> <span class="pre">&lt;Select.ALL&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Vertex</span></span></span><a class="headerlink" href="#build_common.vertex" title="Link to this definition"></a></dt>
+<dd><p>Return Vertex</p>
+<p>Return a vertex.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>select</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="builder_api_reference.html#build_enums.Select" title="build_enums.Select"><em>Select</em></a><em>, </em><em>optional</em>) – Vertex selector. Defaults to Select.ALL.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Vertex extracted</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Vertex" title="topology.Vertex"><em>Vertex</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="build_common.vertices">
+<span class="sig-name descname"><span class="pre">vertices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">select:</span> <span class="pre">~build123d.build_enums.Select</span> <span class="pre">=</span> <span class="pre">&lt;Select.ALL&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ShapeList</span><span class="p"><span class="pre">[</span></span><span class="pre">Vertex</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#build_common.vertices" title="Link to this definition"></a></dt>
+<dd><p>Return Vertices</p>
+<p>Return either all or the vertices created during the last operation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>select</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="builder_api_reference.html#build_enums.Select" title="build_enums.Select"><em>Select</em></a><em>, </em><em>optional</em>) – Vertex selector. Defaults to Select.ALL.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Vertices extracted</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.ShapeList" title="topology.ShapeList"><em>ShapeList</em></a>[<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Vertex" title="topology.Vertex"><em>Vertex</em></a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="build_common.wire">
+<span class="sig-name descname"><span class="pre">wire</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">select:</span> <span class="pre">~build123d.build_enums.Select</span> <span class="pre">=</span> <span class="pre">&lt;Select.ALL&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Wire</span></span></span><a class="headerlink" href="#build_common.wire" title="Link to this definition"></a></dt>
+<dd><p>Return Wire</p>
+<p>Return a wire.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>select</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="builder_api_reference.html#build_enums.Select" title="build_enums.Select"><em>Select</em></a><em>, </em><em>optional</em>) – Wire selector. Defaults to Select.ALL.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Wire extracted</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Wire" title="topology.Wire"><em>Wire</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="build_common.wires">
+<span class="sig-name descname"><span class="pre">wires</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">select:</span> <span class="pre">~build123d.build_enums.Select</span> <span class="pre">=</span> <span class="pre">&lt;Select.ALL&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ShapeList</span><span class="p"><span class="pre">[</span></span><span class="pre">Wire</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#build_common.wires" title="Link to this definition"></a></dt>
+<dd><p>Return Wires</p>
+<p>Return either all or the wires created during the last operation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>select</strong> (<a class="hxr-hoverxref hxr-tooltip reference internal" href="builder_api_reference.html#build_enums.Select" title="build_enums.Select"><em>Select</em></a><em>, </em><em>optional</em>) – Wire selector. Defaults to Select.ALL.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Wires extracted</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.ShapeList" title="topology.ShapeList"><em>ShapeList</em></a>[<a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Wire" title="topology.Wire"><em>Wire</em></a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="selectors_operators/filter_examples.html" class="btn btn-neutral float-left" title="Filter Examples" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="builders.html" class="btn btn-neutral float-right" title="Builders" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Gumyr.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
