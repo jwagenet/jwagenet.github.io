@@ -160,14 +160,24 @@
 <span class="n">part</span><span class="o">.</span><span class="n">wires</span><span class="p">()</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="n">SortBy</span><span class="o">.</span><span class="n">LENGTH</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
-<img alt="../_images/sort_sortby_length.png" class="align-center" src="../_images/sort_sortby_length.png" />
+<figure class="align-center">
+<img alt="../_images/sort_sortby_length.png" src="../_images/sort_sortby_length.png" />
+</figure>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">part</span><span class="o">.</span><span class="n">vertices</span><span class="p">()</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="n">SortBy</span><span class="o">.</span><span class="n">DISTANCE</span><span class="p">)[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span>
 
 <span class="n">part</span><span class="o">.</span><span class="n">vertices</span><span class="p">()</span><span class="o">.</span><span class="n">sort_by_distance</span><span class="p">(</span><span class="n">Vertex</span><span class="p">())[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span>
 <span class="n">part</span><span class="o">.</span><span class="n">vertices</span><span class="p">()</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="n">Vertex</span><span class="p">()</span><span class="o">.</span><span class="n">distance</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
-<img alt="../_images/sort_sortby_distance.png" class="align-center" src="../_images/sort_sortby_distance.png" />
+<figure class="align-center">
+<img alt="../_images/sort_sortby_distance.png" src="../_images/sort_sortby_distance.png" />
+</figure>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
 </section>
 <section id="along-wire">
 <span id="sort-along-wire"></span><h2>Along Wire<a class="headerlink" href="#along-wire" title="Link to this heading"></a></h2>
@@ -191,16 +201,25 @@ ordering is random.</p>
         <span class="n">fillet</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
-<img alt="../_images/sort_not_along_wire.png" class="align-center" src="../_images/sort_not_along_wire.png" />
+<figure class="align-center">
+<img alt="../_images/sort_not_along_wire.png" src="../_images/sort_not_along_wire.png" />
+</figure>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
 <p>The vertices may be sorted along the wire they fall on to create order. Notice the fillet
 radii increase in order.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">build123d</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
-    <span class="n">sorted_verts</span> <span class="o">=</span> <span class="n">along_wire</span><span class="o">.</span><span class="n">vertices</span><span class="p">()</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="n">along_wire</span><span class="o">.</span><span class="n">wire</span><span class="p">())</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">sorted_verts</span> <span class="o">=</span> <span class="n">along_wire</span><span class="o">.</span><span class="n">vertices</span><span class="p">()</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="n">along_wire</span><span class="o">.</span><span class="n">wire</span><span class="p">())</span>
     <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">sorted_verts</span><span class="p">):</span>
         <span class="n">fillet</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
-<img alt="../_images/sort_along_wire.png" class="align-center" src="../_images/sort_along_wire.png" />
+<figure class="align-center">
+<img alt="../_images/sort_along_wire.png" src="../_images/sort_along_wire.png" />
+</figure>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
 </section>
 <section id="distance-from">
 <span id="sort-distance-from"></span><h2>Distance From<a class="headerlink" href="#distance-from" title="Link to this heading"></a></h2>
@@ -226,7 +245,12 @@ Here we are sorting the boxes by distance from the origin, using an empty <code 
 <span class="n">show</span><span class="p">(</span><span class="o">*</span><span class="n">boxes</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">ColorMap</span><span class="o">.</span><span class="n">listed</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">boxes</span><span class="p">)))</span>
 </pre></div>
 </div>
-<img alt="../_images/sort_distance_from_origin.png" class="align-center" src="../_images/sort_distance_from_origin.png" />
+<figure class="align-center">
+<img alt="../_images/sort_distance_from_origin.png" src="../_images/sort_distance_from_origin.png" />
+</figure>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
 <p>The example can be extended by first sorting the boxes by volume using the <code class="docutils literal notranslate"><span class="pre">Solid</span></code>
 property <cite>volume</cite> and getting the last (largest) box. The boxes are then sorted by using
 the largest box as the reference to sort distance from.</p>
@@ -234,7 +258,12 @@ the largest box as the reference to sort distance from.</p>
 <span class="n">show</span><span class="p">(</span><span class="o">*</span><span class="n">boxes</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">ColorMap</span><span class="o">.</span><span class="n">listed</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">boxes</span><span class="p">)))</span>
 </pre></div>
 </div>
-<img alt="../_images/sort_distance_from_largest.png" class="align-center" src="../_images/sort_distance_from_largest.png" />
+<figure class="align-center">
+<img alt="../_images/sort_distance_from_largest.png" src="../_images/sort_distance_from_largest.png" />
+</figure>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
 </section>
 </section>
 

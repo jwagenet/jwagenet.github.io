@@ -17,8 +17,10 @@ result knowing how many edges to expect.
         :language: python
         :lines: 4, 9-17
 
-.. image:: ../assets/selectors_operators/group_axis_without.png
+.. figure:: ../assets/selectors_operators/group_axis_without.png
     :align: center
+
+|
 
 However, ``group_by`` can be used to first group all the edges by z-axis position and then
 group again by length. In both cases, the last group can be used to select the desired
@@ -28,8 +30,10 @@ edges.
     :language: python
     :lines: 21-22
 
-.. image:: ../assets/selectors_operators/group_axis_with.png
+.. figure:: ../assets/selectors_operators/group_axis_with.png
     :align: center
+
+|
 
 .. _group_properties_with_keys:
 
@@ -52,8 +56,10 @@ then the desired groups are selected with the ``group`` method using the lengths
     :language: python
     :lines: 30, 31
 
-.. image:: ../assets/selectors_operators/group_length_key.png
+.. figure:: ../assets/selectors_operators/group_length_key.png
     :align: center
+
+|
 
 Next up is adding alignment pin and counterbore holes after the fillets to make sure
 screw heads sit flush where they overlap the fillet. Once that is done, its time to
@@ -72,8 +78,10 @@ further specify only the edges the bearings and pins are installed from.
     :language: python
     :lines: 47-50
 
-.. image:: ../assets/selectors_operators/group_radius_key.png
+.. figure:: ../assets/selectors_operators/group_radius_key.png
     :align: center
+
+|
 
 It's worth noting ``group_by`` is not the only way to capture edges with a known property
 value! ``filter_by`` with a lambda expression can be used as well:

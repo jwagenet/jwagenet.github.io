@@ -30,15 +30,19 @@ SortBy
     :language: python
     :lines: 19-22
 
-.. image:: ../assets/selectors_operators/sort_sortby_length.png
+.. figure:: ../assets/selectors_operators/sort_sortby_length.png
     :align: center
+
+|
 
 .. literalinclude:: examples/sort_sortby.py
     :language: python
     :lines: 24-27
 
-.. image:: ../assets/selectors_operators/sort_sortby_distance.png
+.. figure:: ../assets/selectors_operators/sort_sortby_distance.png
     :align: center
+
+|
 
 .. _sort_along_wire:
 
@@ -60,18 +64,22 @@ ordering is random.
     :language: python
     :lines: 14-15
 
-.. image:: ../assets/selectors_operators/sort_not_along_wire.png
+.. figure:: ../assets/selectors_operators/sort_not_along_wire.png
     :align: center
+
+|
 
 The vertices may be sorted along the wire they fall on to create order. Notice the fillet
 radii increase in order.
 
 .. literalinclude:: examples/sort_along_wire.py
     :language: python
-    :lines: 3, 26-28
+    :lines: 26-28
 
-.. image:: ../assets/selectors_operators/sort_along_wire.png
+.. figure:: ../assets/selectors_operators/sort_along_wire.png
     :align: center
+
+|
 
 .. _sort_distance_from:
 
@@ -92,8 +100,10 @@ Here we are sorting the boxes by distance from the origin, using an empty ``Vert
     :language: python
     :lines: 15-16
 
-.. image:: ../assets/selectors_operators/sort_distance_from_origin.png
+.. figure:: ../assets/selectors_operators/sort_distance_from_origin.png
     :align: center
+
+|
 
 The example can be extended by first sorting the boxes by volume using the ``Solid``
 property `volume` and getting the last (largest) box. The boxes are then sorted by using
@@ -103,5 +113,7 @@ the largest box as the reference to sort distance from.
     :language: python
     :lines: 19-20
 
-.. image:: ../assets/selectors_operators/sort_distance_from_largest.png
+.. figure:: ../assets/selectors_operators/sort_distance_from_largest.png
     :align: center
+
+|

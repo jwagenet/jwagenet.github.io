@@ -153,11 +153,21 @@ operations, and are sometimes necessary e.g. before sorting or filtering by radi
 </details><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">part</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="n">GeomType</span><span class="o">.</span><span class="n">LINE</span><span class="p">)</span>
 </pre></div>
 </div>
-<img alt="../_images/filter_geomtype_line.png" class="align-center" src="../_images/filter_geomtype_line.png" />
+<figure class="align-center">
+<img alt="../_images/filter_geomtype_line.png" src="../_images/filter_geomtype_line.png" />
+</figure>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">part</span><span class="o">.</span><span class="n">faces</span><span class="p">()</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="n">GeomType</span><span class="o">.</span><span class="n">CYLINDER</span><span class="p">)</span>
 </pre></div>
 </div>
-<img alt="../_images/filter_geomtype_cylinder.png" class="align-center" src="../_images/filter_geomtype_cylinder.png" />
+<figure class="align-center">
+<img alt="../_images/filter_geomtype_cylinder.png" src="../_images/filter_geomtype_cylinder.png" />
+</figure>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
 </section>
 <section id="axis-and-plane">
 <span id="filter-axis-plane"></span><h2>Axis and Plane<a class="headerlink" href="#axis-and-plane" title="Link to this heading"></a></h2>
@@ -177,7 +187,12 @@ Plane will select faces parallel to the plane.</p>
 <span class="n">part</span><span class="o">.</span><span class="n">faces</span><span class="p">()</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="n">Plane</span><span class="o">.</span><span class="n">XY</span><span class="p">)</span>
 </pre></div>
 </div>
-<img alt="../_images/filter_axisplane.png" class="align-center" src="../_images/filter_axisplane.png" />
+<figure class="align-center">
+<img alt="../_images/filter_axisplane.png" src="../_images/filter_axisplane.png" />
+</figure>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
 <p>It might be useful to filter by an Axis or Plane in other ways. A lambda can be used to
 accomplish this with feature properties or methods. Here, we are looking for faces where
 the dot product of face normal and either the axis direction or the plane normal is about
@@ -186,7 +201,12 @@ to 0. The result are faces parallel to the axis or perpendicular to the plane.</
 <span class="n">part</span><span class="o">.</span><span class="n">faces</span><span class="p">()</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="nb">abs</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">normal_at</span><span class="p">()</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Plane</span><span class="o">.</span><span class="n">XY</span><span class="o">.</span><span class="n">z_dir</span><span class="p">))</span> <span class="o">&lt;</span> <span class="mf">1e-6</span><span class="p">)</span>
 </pre></div>
 </div>
-<img alt="../_images/filter_dot_axisplane.png" class="align-center" src="../_images/filter_dot_axisplane.png" />
+<figure class="align-center">
+<img alt="../_images/filter_dot_axisplane.png" src="../_images/filter_dot_axisplane.png" />
+</figure>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
 </section>
 <section id="shape-properties">
 <span id="filter-shape-properties"></span><h2>Shape Properties<a class="headerlink" href="#shape-properties" title="Link to this heading"></a></h2>
@@ -213,7 +233,12 @@ highlight the resulting fillets.</p>
 <span class="n">inside_fillets</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">Color</span><span class="p">(</span><span class="mh">0x00798C</span><span class="p">)</span>
 </pre></div>
 </div>
-<img alt="../_images/filter_shape_properties.png" class="align-center" src="../_images/filter_shape_properties.png" />
+<figure class="align-center">
+<img alt="../_images/filter_shape_properties.png" src="../_images/filter_shape_properties.png" />
+</figure>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
 </section>
 </section>
 
