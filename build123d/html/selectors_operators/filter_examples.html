@@ -76,11 +76,11 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../selectors_operators.html">Selectors and Operators</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../selectors_operators.html#selectors">Selectors</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../selectors_operators.html#operators">Operators</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../selectors_operators.html#id1">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../selectors_operators.html#id5">Overview</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../selectors_operators.html#sort">Sort</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../selectors_operators.html#group">Group</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="../selectors_operators.html#filter">Filter</a><ul class="current">
-<li class="toctree-l4 current"><a class="reference internal" href="../selectors_operators.html#id3">Examples</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../selectors_operators.html#id7">Examples</a></li>
 </ul>
 </li>
 </ul>
@@ -130,7 +130,7 @@
 <section id="geomtype">
 <span id="filter-geomtype"></span><h2>GeomType<a class="headerlink" href="#geomtype" title="Link to this heading"></a></h2>
 <p><a class="hxr-hoverxref hxr-tooltip reference internal" href="../builder_api_reference.html#build_enums.GeomType" title="build_enums.GeomType"><code class="xref py py-class docutils literal notranslate"><span class="pre">GeomType</span></code></a> enums are shape type shorthands for <code class="docutils literal notranslate"><span class="pre">Edge</span></code> and <code class="docutils literal notranslate"><span class="pre">Face</span></code>
-objects. They are most helpful for filtering objects for that specific type for further
+objects. They are most helpful for filtering objects of that specific type for further
 operations, and are sometimes necessary e.g. before sorting or filtering by radius.
 <code class="docutils literal notranslate"><span class="pre">Edge</span></code> and <code class="docutils literal notranslate"><span class="pre">Face</span></code> each support a subset of <code class="docutils literal notranslate"><span class="pre">GeomType</span></code>:</p>
 <ul class="simple">
@@ -169,6 +169,67 @@ operations, and are sometimes necessary e.g. before sorting or filtering by radi
 <div class="line"><br /></div>
 </div>
 </section>
+<section id="all-edges-circle">
+<span id="filter-all-edges-circle"></span><h2>All Edges Circle<a class="headerlink" href="#all-edges-circle" title="Link to this heading"></a></h2>
+<p>In this complete bearing block, we want to add joints for the bearings. These should be
+located in the counterbore recess. One way to locate the joints is by finding faces with
+centers located where the joints need to be located. Filtering for faces with only
+circular edges selects the counterbore faces that meet the joint criteria.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Setup</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">build123d</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+
+<span class="k">with</span> <span class="n">BuildPart</span><span class="p">()</span> <span class="k">as</span> <span class="n">part</span><span class="p">:</span>
+    <span class="k">with</span> <span class="n">BuildSketch</span><span class="p">()</span> <span class="k">as</span> <span class="n">s</span><span class="p">:</span>
+        <span class="n">Rectangle</span><span class="p">(</span><span class="mi">115</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+        <span class="k">with</span> <span class="n">Locations</span><span class="p">((</span><span class="mi">5</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)):</span>
+            <span class="n">SlotOverall</span><span class="p">(</span><span class="mi">90</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">Mode</span><span class="o">.</span><span class="n">SUBTRACT</span><span class="p">)</span>
+    <span class="n">extrude</span><span class="p">(</span><span class="n">amount</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="n">BuildSketch</span><span class="p">(</span><span class="n">Plane</span><span class="o">.</span><span class="n">XZ</span><span class="o">.</span><span class="n">offset</span><span class="p">(</span><span class="mi">50</span> <span class="o">/</span> <span class="mi">2</span><span class="p">))</span> <span class="k">as</span> <span class="n">s3</span><span class="p">:</span>
+        <span class="k">with</span> <span class="n">Locations</span><span class="p">((</span><span class="o">-</span><span class="mi">115</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">15</span><span class="p">)):</span>
+            <span class="n">SlotOverall</span><span class="p">(</span><span class="mi">42</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">26</span> <span class="o">+</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">26</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+    <span class="n">zz</span> <span class="o">=</span> <span class="n">extrude</span><span class="p">(</span><span class="n">amount</span><span class="o">=-</span><span class="mi">12</span><span class="p">)</span>
+    <span class="n">split</span><span class="p">(</span><span class="n">bisect_by</span><span class="o">=</span><span class="n">Plane</span><span class="o">.</span><span class="n">XY</span><span class="p">)</span>
+    <span class="n">edgs</span> <span class="o">=</span> <span class="n">part</span><span class="o">.</span><span class="n">part</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="n">Axis</span><span class="o">.</span><span class="n">Y</span><span class="p">)</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="n">Axis</span><span class="o">.</span><span class="n">X</span><span class="p">)[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">fillet</span><span class="p">(</span><span class="n">edgs</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="n">Locations</span><span class="p">(</span><span class="n">zz</span><span class="o">.</span><span class="n">faces</span><span class="p">()</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="n">Axis</span><span class="o">.</span><span class="n">Y</span><span class="p">)[</span><span class="mi">0</span><span class="p">]):</span>
+        <span class="k">with</span> <span class="n">Locations</span><span class="p">((</span><span class="mi">42</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">)):</span>
+            <span class="n">CounterBoreHole</span><span class="p">(</span><span class="mi">24</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">34</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+    <span class="n">mirror</span><span class="p">(</span><span class="n">about</span><span class="o">=</span><span class="n">Plane</span><span class="o">.</span><span class="n">XZ</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="n">BuildSketch</span><span class="p">()</span> <span class="k">as</span> <span class="n">s4</span><span class="p">:</span>
+        <span class="n">RectangleRounded</span><span class="p">(</span><span class="mi">115</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+    <span class="n">extrude</span><span class="p">(</span><span class="n">amount</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">Mode</span><span class="o">.</span><span class="n">INTERSECT</span><span class="p">)</span>
+    <span class="c1"># fillet does not work right, mode intersect is safer</span>
+
+    <span class="k">with</span> <span class="n">BuildSketch</span><span class="p">(</span><span class="n">Plane</span><span class="o">.</span><span class="n">YZ</span><span class="p">)</span> <span class="k">as</span> <span class="n">s4</span><span class="p">:</span>
+        <span class="k">with</span> <span class="n">BuildLine</span><span class="p">()</span> <span class="k">as</span> <span class="n">bl</span><span class="p">:</span>
+            <span class="n">l1</span> <span class="o">=</span> <span class="n">Line</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">18</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+            <span class="n">l2</span> <span class="o">=</span> <span class="n">PolarLine</span><span class="p">(</span><span class="n">l1</span> <span class="o">@</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="n">length_mode</span><span class="o">=</span><span class="n">LengthMode</span><span class="o">.</span><span class="n">VERTICAL</span><span class="p">)</span>
+            <span class="n">l3</span> <span class="o">=</span> <span class="n">Line</span><span class="p">(</span><span class="n">l2</span> <span class="o">@</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+            <span class="n">mirror</span><span class="p">(</span><span class="n">about</span><span class="o">=</span><span class="n">Plane</span><span class="o">.</span><span class="n">YZ</span><span class="p">)</span>
+        <span class="n">make_face</span><span class="p">()</span>
+    <span class="n">extrude</span><span class="p">(</span><span class="n">amount</span><span class="o">=</span><span class="mi">115</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">both</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">Mode</span><span class="o">.</span><span class="n">SUBTRACT</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details><div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">faces</span> <span class="o">=</span> <span class="n">part</span><span class="o">.</span><span class="n">faces</span><span class="p">()</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span>
+        <span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="nb">all</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">geom_type</span> <span class="o">==</span> <span class="n">GeomType</span><span class="o">.</span><span class="n">CIRCLE</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">f</span><span class="o">.</span><span class="n">edges</span><span class="p">())</span>
+    <span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">f</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">faces</span><span class="p">):</span>
+        <span class="n">RigidJoint</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;bearing_bore_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">joint_location</span><span class="o">=</span><span class="n">f</span><span class="o">.</span><span class="n">center_location</span><span class="p">)</span>
+</pre></div>
+</div>
+<figure class="align-center">
+<img alt="../_images/filter_all_edges_circle.png" src="../_images/filter_all_edges_circle.png" />
+</figure>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
 <section id="axis-and-plane">
 <span id="filter-axis-plane"></span><h2>Axis and Plane<a class="headerlink" href="#axis-and-plane" title="Link to this heading"></a></h2>
 <p>Filtering by an Axis will select faces perpendicular to the axis. Likewise filtering by
@@ -196,7 +257,7 @@ Plane will select faces parallel to the plane.</p>
 <p>It might be useful to filter by an Axis or Plane in other ways. A lambda can be used to
 accomplish this with feature properties or methods. Here, we are looking for faces where
 the dot product of face normal and either the axis direction or the plane normal is about
-to 0. The result are faces parallel to the axis or perpendicular to the plane.</p>
+to 0. The result is faces parallel to the axis or perpendicular to the plane.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">part</span><span class="o">.</span><span class="n">faces</span><span class="p">()</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="nb">abs</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">normal_at</span><span class="p">()</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Axis</span><span class="o">.</span><span class="n">Z</span><span class="o">.</span><span class="n">direction</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">1e-6</span><span class="p">)</span>
 <span class="n">part</span><span class="o">.</span><span class="n">faces</span><span class="p">()</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="nb">abs</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">normal_at</span><span class="p">()</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Plane</span><span class="o">.</span><span class="n">XY</span><span class="o">.</span><span class="n">z_dir</span><span class="p">))</span> <span class="o">&lt;</span> <span class="mf">1e-6</span><span class="p">)</span>
 </pre></div>
@@ -208,12 +269,115 @@ to 0. The result are faces parallel to the axis or perpendicular to the plane.</
 <div class="line"><br /></div>
 </div>
 </section>
+<section id="inner-wire-count">
+<span id="filter-inner-wire-count"></span><h2>Inner Wire Count<a class="headerlink" href="#inner-wire-count" title="Link to this heading"></a></h2>
+<p>This motor bracket imported from a step file needs joints for adding to an assembly.
+Joints for the M3 clearance holes were already found by using the cylindrical face’s
+axis of rotation, but the motor bore and slots need specific placement. The motor bore
+can be found by filtering for faces with 5 inner wires, sorting for the desired face,
+and then filtering for the specific inner wire by radius.</p>
+<ul class="simple">
+<li><p>bracket STEP model: <a class="reference download internal" download="" href="../_downloads/51dc39575ceeca175514ccb328767ae1/nema-17-bracket.step"><code class="xref download docutils literal notranslate"><span class="pre">nema-17-bracket.step</span></code></a></p></li>
+</ul>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Setup</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">build123d</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">bracket</span> <span class="o">=</span> <span class="n">import_step</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">working_path</span><span class="p">,</span> <span class="s2">&quot;nema-17-bracket.step&quot;</span><span class="p">))</span>
+<span class="n">faces</span> <span class="o">=</span> <span class="n">bracket</span><span class="o">.</span><span class="n">faces</span><span class="p">()</span>
+
+<span class="n">motor_mounts</span> <span class="o">=</span> <span class="n">faces</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="n">GeomType</span><span class="o">.</span><span class="n">CYLINDER</span><span class="p">)</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="n">f</span><span class="o">.</span><span class="n">radius</span> <span class="o">==</span> <span class="mf">3.3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">f</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">motor_mounts</span><span class="p">):</span>
+    <span class="n">location</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">axis_of_rotation</span><span class="o">.</span><span class="n">location</span>
+    <span class="n">RigidJoint</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;motor_m3_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">bracket</span><span class="p">,</span> <span class="n">joint_location</span><span class="o">=</span><span class="n">location</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">motor_face</span> <span class="o">=</span> <span class="n">faces</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">inner_wires</span><span class="p">())</span> <span class="o">==</span> <span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="n">Axis</span><span class="o">.</span><span class="n">X</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">motor_bore</span> <span class="o">=</span> <span class="n">motor_face</span><span class="o">.</span><span class="n">inner_wires</span><span class="p">()</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="k">lambda</span> <span class="n">e</span><span class="p">:</span> <span class="n">e</span><span class="o">.</span><span class="n">radius</span> <span class="o">==</span> <span class="mi">16</span><span class="p">)</span><span class="o">.</span><span class="n">edge</span><span class="p">()</span>
+<span class="n">location</span> <span class="o">=</span> <span class="n">Location</span><span class="p">(</span><span class="n">motor_bore</span><span class="o">.</span><span class="n">arc_center</span><span class="p">,</span> <span class="n">motor_bore</span><span class="o">.</span><span class="n">normal</span><span class="p">()</span> <span class="o">*</span> <span class="mi">90</span><span class="p">,</span> <span class="n">Intrinsic</span><span class="o">.</span><span class="n">YXZ</span><span class="p">)</span>
+<span class="n">RigidJoint</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;motor&quot;</span><span class="p">,</span> <span class="n">bracket</span><span class="p">,</span> <span class="n">joint_location</span><span class="o">=</span><span class="n">location</span><span class="p">)</span>
+</pre></div>
+</div>
+<figure class="align-center">
+<img alt="../_images/filter_inner_wire_count.png" src="../_images/filter_inner_wire_count.png" />
+</figure>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Linear joints for the slots are appropriate for mating flexibility, but require more
+than a single location. The slot arc centers can be used for creating a linear joint
+axis and range. To do that we can filter for faces with 6 inner wires, sort for and
+select the top face, and then filter for the circular edges of the inner wires.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mount_face</span> <span class="o">=</span> <span class="n">faces</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">inner_wires</span><span class="p">())</span> <span class="o">==</span> <span class="mi">6</span><span class="p">)</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="n">Axis</span><span class="o">.</span><span class="n">Z</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">mount_slots</span> <span class="o">=</span> <span class="n">mount_face</span><span class="o">.</span><span class="n">inner_wires</span><span class="p">()</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="n">GeomType</span><span class="o">.</span><span class="n">CIRCLE</span><span class="p">)</span>
+<span class="n">joint_edges</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">Line</span><span class="p">(</span><span class="n">mount_slots</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">arc_center</span><span class="p">,</span> <span class="n">mount_slots</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">arc_center</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">mount_slots</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+<span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">e</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">joint_edges</span><span class="p">):</span>
+    <span class="n">LinearJoint</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;mount_m4_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">bracket</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">Axis</span><span class="p">(</span><span class="n">e</span><span class="p">),</span> <span class="n">linear_range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">length</span> <span class="o">/</span> <span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+<figure class="align-center">
+<img alt="../_images/filter_inner_wire_count_linear.png" src="../_images/filter_inner_wire_count_linear.png" />
+</figure>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="nested-filters">
+<span id="filter-nested"></span><h2>Nested Filters<a class="headerlink" href="#nested-filters" title="Link to this heading"></a></h2>
+<p>Filters can be nested to specify features by characteristics other than their own, like
+child properties. Here we want to chamfer the mating edges of the D bore and square
+shaft. A way to do this is first looking for faces with only 2 line edges among the
+inner wires. The nested filter captures the straight edges, while the parent filter
+selects faces based on the count. Then, from those faces, we filter for the wires with
+any line edges.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Setup</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">build123d</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+
+<span class="k">with</span> <span class="n">BuildPart</span><span class="p">()</span> <span class="k">as</span> <span class="n">part</span><span class="p">:</span>
+    <span class="n">Cylinder</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="p">(</span><span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">MIN</span><span class="p">))</span>
+    <span class="k">with</span> <span class="n">BuildSketch</span><span class="p">():</span>
+        <span class="n">RectangleRounded</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">)</span>
+    <span class="n">extrude</span><span class="p">(</span><span class="n">amount</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="n">BuildSketch</span><span class="p">():</span>
+        <span class="n">Circle</span><span class="p">(</span><span class="mf">2.5</span><span class="p">)</span>
+        <span class="n">Rectangle</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">Mode</span><span class="o">.</span><span class="n">INTERSECT</span><span class="p">)</span>
+    <span class="n">extrude</span><span class="p">(</span><span class="n">amount</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">Mode</span><span class="o">.</span><span class="n">SUBTRACT</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="n">GridLocations</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">Hole</span><span class="p">(</span><span class="mf">3.5</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details><div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">faces</span> <span class="o">=</span> <span class="n">part</span><span class="o">.</span><span class="n">faces</span><span class="p">()</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span>
+        <span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">inner_wires</span><span class="p">()</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="n">GeomType</span><span class="o">.</span><span class="n">LINE</span><span class="p">))</span> <span class="o">==</span> <span class="mi">2</span>
+    <span class="p">)</span>
+    <span class="n">wires</span> <span class="o">=</span> <span class="n">faces</span><span class="o">.</span><span class="n">wires</span><span class="p">()</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span>
+        <span class="k">lambda</span> <span class="n">w</span><span class="p">:</span> <span class="nb">any</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">geom_type</span> <span class="o">==</span> <span class="n">GeomType</span><span class="o">.</span><span class="n">LINE</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">w</span><span class="o">.</span><span class="n">edges</span><span class="p">())</span>
+    <span class="p">)</span>
+    <span class="n">chamfer</span><span class="p">(</span><span class="n">wires</span><span class="o">.</span><span class="n">edges</span><span class="p">(),</span> <span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+</div>
+<figure class="align-center">
+<img alt="../_images/filter_nested.png" src="../_images/filter_nested.png" />
+</figure>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
 <section id="shape-properties">
 <span id="filter-shape-properties"></span><h2>Shape Properties<a class="headerlink" href="#shape-properties" title="Link to this heading"></a></h2>
 <p>Selected features can be quickly filtered by feature properties. First, we filter by
-interior edges and not interior using the <code class="docutils literal notranslate"><span class="pre">Edge</span></code> <code class="docutils literal notranslate"><span class="pre">is</span> <span class="pre">interior</span></code> property to apply
-different fillets accordingly. Then the <code class="docutils literal notranslate"><span class="pre">Face</span></code> <code class="docutils literal notranslate"><span class="pre">is_circular_*</span></code> properties are used to
-highlight the resulting fillets.</p>
+interior and exterior edges using the <code class="docutils literal notranslate"><span class="pre">Edge</span></code> <code class="docutils literal notranslate"><span class="pre">is</span> <span class="pre">interior</span></code> property to apply
+different fillets accordingly. Then the <code class="docutils literal notranslate"><span class="pre">Face</span></code> <code class="docutils literal notranslate"><span class="pre">is_circular_*</span></code> properties are used
+to highlight the resulting fillets.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">build123d</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">ocp_vscode</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 

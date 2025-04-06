@@ -76,7 +76,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../selectors_operators.html">Selectors and Operators</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../selectors_operators.html#selectors">Selectors</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../selectors_operators.html#operators">Operators</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../selectors_operators.html#id1">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../selectors_operators.html#id5">Overview</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="../selectors_operators.html#sort">Sort</a><ul class="current">
 <li class="toctree-l4 current"><a class="reference internal" href="../selectors_operators.html#examples">Examples</a></li>
 </ul>
@@ -139,8 +139,8 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">SortBy.RADIUS</span></code> works with <code class="docutils literal notranslate"><span class="pre">Edge</span></code>, <code class="docutils literal notranslate"><span class="pre">Face</span></code> with <a class="hxr-hoverxref hxr-tooltip reference internal" href="../builder_api_reference.html#build_enums.GeomType" title="build_enums.GeomType"><code class="xref py py-class docutils literal notranslate"><span class="pre">GeomType</span></code></a> <code class="docutils literal notranslate"><span class="pre">CIRCLE</span></code>, <code class="docutils literal notranslate"><span class="pre">CYLINDER</span></code>, <code class="docutils literal notranslate"><span class="pre">SPHERE</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">SortBy.DISTANCE</span></code> works <code class="docutils literal notranslate"><span class="pre">Vertex</span></code>, <code class="docutils literal notranslate"><span class="pre">Edge</span></code>, <code class="docutils literal notranslate"><span class="pre">Wire</span></code>, <code class="docutils literal notranslate"><span class="pre">Face</span></code>, <code class="docutils literal notranslate"><span class="pre">Solid</span></code></p></li>
 </ul>
-<p><code class="docutils literal notranslate"><span class="pre">SortBy</span></code> is often interchangeable with the specific shape property or can be used with
-<code class="docutils literal notranslate"><span class="pre">group_by</span></code> as an alternative.</p>
+<p><code class="docutils literal notranslate"><span class="pre">SortBy</span></code> is often interchangeable with specific shape properties and can alternatively
+be used with``group_by``.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Setup</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
@@ -181,10 +181,10 @@
 </section>
 <section id="along-wire">
 <span id="sort-along-wire"></span><h2>Along Wire<a class="headerlink" href="#along-wire" title="Link to this heading"></a></h2>
-<p>Vertices selected from and edge or wire might have a useful ordering when created from
-a single object, but when created from multiple objects the ordering not useful. Here,
-when applying incrementing fillet radii to a list of vertices from the face, the
-ordering is random.</p>
+<p>Vertices selected from an edge or wire might have a useful ordering when created from
+a single object, but when created from multiple objects, the ordering not useful. For
+example, when applying incrementing fillet radii to a list of vertices from the face,
+the order is random.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Setup</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
@@ -207,8 +207,8 @@ ordering is random.</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>The vertices may be sorted along the wire they fall on to create order. Notice the fillet
-radii increase in order.</p>
+<p>Vertices may be sorted along the wire they fall on to create order. Notice the fillet
+radii now increase in order.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">sorted_verts</span> <span class="o">=</span> <span class="n">along_wire</span><span class="o">.</span><span class="n">vertices</span><span class="p">()</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="n">along_wire</span><span class="o">.</span><span class="n">wire</span><span class="p">())</span>
     <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">sorted_verts</span><span class="p">):</span>
         <span class="n">fillet</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
@@ -221,11 +221,46 @@ radii increase in order.</p>
 <div class="line"><br /></div>
 </div>
 </section>
+<section id="axis">
+<span id="sort-axis"></span><h2>Axis<a class="headerlink" href="#axis" title="Link to this heading"></a></h2>
+<p>Sorting by axis is often the most straightforward way to optimize selections. In this
+part we want to revolve the face at the end around an inside edge of the completed
+extrusion. First, the face to extrude can be found by sorting along x-axis and the revolution
+edge can be found sorting along y-axis.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Setup</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">build123d</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+
+<span class="k">with</span> <span class="n">BuildPart</span><span class="p">()</span> <span class="k">as</span> <span class="n">part</span><span class="p">:</span>
+    <span class="k">with</span> <span class="n">BuildSketch</span><span class="p">(</span><span class="n">Plane</span><span class="o">.</span><span class="n">YZ</span><span class="p">)</span> <span class="k">as</span> <span class="n">profile</span><span class="p">:</span>
+        <span class="k">with</span> <span class="n">BuildLine</span><span class="p">():</span>
+            <span class="n">l1</span> <span class="o">=</span> <span class="n">FilletPolyline</span><span class="p">((</span><span class="mi">16</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">25</span><span class="p">),</span> <span class="n">radius</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+            <span class="n">l2</span> <span class="o">=</span> <span class="n">FilletPolyline</span><span class="p">((</span><span class="mi">16</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">28</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">28</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="n">radius</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+            <span class="n">Line</span><span class="p">(</span><span class="n">l1</span> <span class="o">@</span> <span class="mi">0</span><span class="p">,</span> <span class="n">l2</span> <span class="o">@</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="n">Polyline</span><span class="p">(</span><span class="n">l1</span> <span class="o">@</span> <span class="mi">1</span><span class="p">,</span> <span class="n">l1</span> <span class="o">@</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">Vector</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">l2</span> <span class="o">@</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">Vector</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">l2</span> <span class="o">@</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">make_face</span><span class="p">()</span>
+    <span class="n">extrude</span><span class="p">(</span><span class="n">amount</span><span class="o">=</span><span class="mi">34</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details><div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">face</span> <span class="o">=</span> <span class="n">part</span><span class="o">.</span><span class="n">faces</span><span class="p">()</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="n">Axis</span><span class="o">.</span><span class="n">X</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">edge</span> <span class="o">=</span> <span class="n">face</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="n">Axis</span><span class="o">.</span><span class="n">Y</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">revolve</span><span class="p">(</span><span class="n">face</span><span class="p">,</span> <span class="o">-</span><span class="n">Axis</span><span class="p">(</span><span class="n">edge</span><span class="p">),</span> <span class="mi">90</span><span class="p">)</span>
+</pre></div>
+</div>
+<figure class="align-center">
+<img alt="../_images/sort_axis.png" src="../_images/sort_axis.png" />
+</figure>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
 <section id="distance-from">
 <span id="sort-distance-from"></span><h2>Distance From<a class="headerlink" href="#distance-from" title="Link to this heading"></a></h2>
-<p>A <code class="docutils literal notranslate"><span class="pre">sort_by_distance</span></code> and be used to sort objects by their distance from another object.
+<p>A <code class="docutils literal notranslate"><span class="pre">sort_by_distance</span></code> can be used to sort objects by their distance from another object.
 Here we are sorting the boxes by distance from the origin, using an empty <code class="docutils literal notranslate"><span class="pre">Vertex</span></code>
-(at the origin) as the other shape to find distance to.</p>
+(at the origin) as the reference shape to find distance to.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Setup</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
@@ -252,8 +287,8 @@ Here we are sorting the boxes by distance from the origin, using an empty <code 
 <div class="line"><br /></div>
 </div>
 <p>The example can be extended by first sorting the boxes by volume using the <code class="docutils literal notranslate"><span class="pre">Solid</span></code>
-property <cite>volume</cite> and getting the last (largest) box. The boxes are then sorted by using
-the largest box as the reference to sort distance from.</p>
+property <code class="docutils literal notranslate"><span class="pre">volume</span></code>, and getting the last (largest) box. Then, the boxes sorted by
+their distance from the largest box.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">boxes</span> <span class="o">=</span> <span class="n">boxes</span><span class="o">.</span><span class="n">sort_by_distance</span><span class="p">(</span><span class="n">boxes</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="n">Solid</span><span class="o">.</span><span class="n">volume</span><span class="p">)</span><span class="o">.</span><span class="n">last</span><span class="p">)</span>
 <span class="n">show</span><span class="p">(</span><span class="o">*</span><span class="n">boxes</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">ColorMap</span><span class="o">.</span><span class="n">listed</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">boxes</span><span class="p">)))</span>
 </pre></div>

@@ -76,10 +76,10 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../selectors_operators.html">Selectors and Operators</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../selectors_operators.html#selectors">Selectors</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../selectors_operators.html#operators">Operators</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../selectors_operators.html#id1">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../selectors_operators.html#id3">Overview</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../selectors_operators.html#sort">Sort</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="../selectors_operators.html#group">Group</a><ul class="current">
-<li class="toctree-l4 current"><a class="reference internal" href="../selectors_operators.html#id2">Examples</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../selectors_operators.html#id4">Examples</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../selectors_operators.html#filter">Filter</a></li>
@@ -130,7 +130,7 @@
 <section id="axis-and-length">
 <span id="group-axis"></span><h2>Axis and Length<a class="headerlink" href="#axis-and-length" title="Link to this heading"></a></h2>
 <p>This heatsink component could use fillets on the ends of the fins on the long ends. One
-way to accomplish this might be by filtering by length, sorting by axis, and slicing the
+way to accomplish this is to filter by length, sort by axis, and slice the
 result knowing how many edges to expect.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -155,8 +155,7 @@ result knowing how many edges to expect.</p>
 <div class="line"><br /></div>
 </div>
 <p>However, <code class="docutils literal notranslate"><span class="pre">group_by</span></code> can be used to first group all the edges by z-axis position and then
-group again by length. In both cases, the last group can be used to select the desired
-edges.</p>
+group again by length. In both cases, you can select the desired edges from the last group.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">target</span> <span class="o">=</span> <span class="n">part</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="n">Axis</span><span class="o">.</span><span class="n">Z</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="n">Edge</span><span class="o">.</span><span class="n">length</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
     <span class="n">fillet</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="mf">.75</span><span class="p">)</span>
 </pre></div>
@@ -168,11 +167,45 @@ edges.</p>
 <div class="line"><br /></div>
 </div>
 </section>
+<section id="hole-area">
+<span id="group-hole-area"></span><h2>Hole Area<a class="headerlink" href="#hole-area" title="Link to this heading"></a></h2>
+<p>Callables are available to <code class="docutils literal notranslate"><span class="pre">group_by</span></code>, like <code class="docutils literal notranslate"><span class="pre">sort_by</span></code>. Here, the first inner wire
+is converted to a face and then that area is the grouping criteria to find the faces
+with the largest hole.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Setup</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">build123d</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+
+<span class="k">with</span> <span class="n">BuildPart</span><span class="p">()</span> <span class="k">as</span> <span class="n">part</span><span class="p">:</span>
+    <span class="n">Cylinder</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="p">(</span><span class="mi">90</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="n">Cylinder</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="p">(</span><span class="mi">90</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">align</span><span class="o">=</span><span class="p">(</span><span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">MAX</span><span class="p">))</span>
+    <span class="n">Cylinder</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="p">(</span><span class="mi">90</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">align</span><span class="o">=</span><span class="p">(</span><span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">MIN</span><span class="p">))</span>
+    <span class="n">Cylinder</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="p">(</span><span class="mi">90</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">align</span><span class="o">=</span><span class="p">(</span><span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">MIN</span><span class="p">))</span>
+    <span class="k">with</span> <span class="n">BuildSketch</span><span class="p">(</span><span class="n">Plane</span><span class="o">.</span><span class="n">XY</span><span class="o">.</span><span class="n">offset</span><span class="p">(</span><span class="mi">8</span><span class="p">))</span> <span class="k">as</span> <span class="n">s</span><span class="p">:</span>
+        <span class="n">SlotCenterPoint</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">38</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">48</span><span class="p">),</span> <span class="mi">5</span><span class="p">)</span>
+    <span class="n">extrude</span><span class="p">(</span><span class="n">amount</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span> <span class="n">both</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">Mode</span><span class="o">.</span><span class="n">SUBTRACT</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details><div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">faces</span> <span class="o">=</span> <span class="n">part</span><span class="o">.</span><span class="n">faces</span><span class="p">()</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span>
+        <span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="n">Face</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">inner_wires</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">area</span> <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">inner_wires</span><span class="p">()</span> <span class="k">else</span> <span class="mi">0</span>
+    <span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">chamfer</span><span class="p">([</span><span class="n">f</span><span class="o">.</span><span class="n">outer_wire</span><span class="p">()</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">faces</span><span class="p">],</span> <span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+</div>
+<figure class="align-center">
+<img alt="../_images/group_hole_area.png" src="../_images/group_hole_area.png" />
+</figure>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
 <section id="properties-with-keys">
 <span id="group-properties-with-keys"></span><h2>Properties with Keys<a class="headerlink" href="#properties-with-keys" title="Link to this heading"></a></h2>
-<p>Groups are most selected by list slice, often smallest <code class="docutils literal notranslate"><span class="pre">[0]</span></code> or largest <code class="docutils literal notranslate"><span class="pre">[-1]</span></code>,
+<p>Groups are usually selected by list slice, often smallest <code class="docutils literal notranslate"><span class="pre">[0]</span></code> or largest <code class="docutils literal notranslate"><span class="pre">[-1]</span></code>,
 but they can also be selected by key with the <code class="docutils literal notranslate"><span class="pre">group</span></code> method if the keys are known.
-Beginning with an incomplete bearing block we are looking to add fillets to the ribs
+Starting with an incomplete bearing block we are looking to add fillets to the ribs
 and corners. We know the edge lengths so the edges can be grouped by <code class="docutils literal notranslate"><span class="pre">Edge.Length</span></code> and
 then the desired groups are selected with the <code class="docutils literal notranslate"><span class="pre">group</span></code> method using the lengths as keys.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
@@ -210,12 +243,12 @@ then the desired groups are selected with the <code class="docutils literal notr
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>Next up is adding alignment pin and counterbore holes after the fillets to make sure
-screw heads sit flush where they overlap the fillet. Once that is done, its time to
-finalize the tight tolerance bearing and pin holes with chamfers to make installation
+<p>Next, we add alignment pin and counterbore holes after the fillets to make sure
+screw heads sit flush where they overlap the fillet. Once that is done, it’s time to
+finalize the tight-tolerance bearing and pin holes with chamfers to make installation
 easier. We can filter by <code class="docutils literal notranslate"><span class="pre">GeomType.CIRCLE</span></code> and group by <code class="docutils literal notranslate"><span class="pre">Edge.radius</span></code> to group the
-circular edges. Again, the radii are known, so we can get those groups directly and then
-further specify only the edges the bearings and pins are installed from.</p>
+circular edges. Again, the radii are known, so we can retrieve those groups directly
+and then further specify only the edges the bearings and pins are installed from.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Adding holes</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
@@ -243,7 +276,7 @@ further specify only the edges the bearings and pins are installed from.</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>It’s worth noting <code class="docutils literal notranslate"><span class="pre">group_by</span></code> is not the only way to capture edges with a known property
+<p>Note that <code class="docutils literal notranslate"><span class="pre">group_by</span></code> is not the only way to capture edges with a known property
 value! <code class="docutils literal notranslate"><span class="pre">filter_by</span></code> with a lambda expression can be used as well:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">radius_groups</span> <span class="o">=</span> <span class="n">part</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="n">GeomType</span><span class="o">.</span><span class="n">CIRCLE</span><span class="p">)</span>
 <span class="n">bearing_edges</span> <span class="o">=</span> <span class="n">radius_groups</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="k">lambda</span> <span class="n">e</span><span class="p">:</span> <span class="n">e</span><span class="o">.</span><span class="n">radius</span> <span class="o">==</span> <span class="mi">8</span><span class="p">)</span>

@@ -76,21 +76,21 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Selectors and Operators</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#selectors">Selectors</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#use">Use</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#select-in-build-objects">Select In Build Objects</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#operators">Operators</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Overview</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#sort">Sort</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#examples">Examples</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#group">Group</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id2">Examples</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">Examples</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#filter">Filter</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id3">Examples</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">Examples</a></li>
 </ul>
 </li>
 </ul>
@@ -139,11 +139,12 @@
 <p>Selectors and operators are powerful methods to select and organize CAD objects for
 subsequent operations.</p>
 <section id="selectors">
-<h2>Selectors<a class="headerlink" href="#selectors" title="Link to this heading"></a></h2>
-<p>Selectors offer methods to extract all or a subset of a feature type in the referenced
-object. These methods select Edges, Faces, Solids, Vertices, or Wires in Builder objects.
-All of these methods return objects of a subclass of <code class="docutils literal notranslate"><span class="pre">list</span></code>, a <a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.ShapeList" title="topology.ShapeList"><code class="xref py py-class docutils literal notranslate"><span class="pre">ShapeList</span></code></a>
-which may be sorted, grouped, or filtered by <em>Operators</em>.</p>
+<span id="id1"></span><h2>Selectors<a class="headerlink" href="#selectors" title="Link to this heading"></a></h2>
+<p>Selectors provide methods to extract all or a subset of a feature type in the referenced
+object. These methods select Edges, Faces, Solids, Vertices, or Wires in Builder objects
+or from Shape objects themselves. All of these methods return a <a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.ShapeList" title="topology.ShapeList"><code class="xref py py-class docutils literal notranslate"><span class="pre">ShapeList</span></code></a>,
+which is a subclass of <code class="docutils literal notranslate"><span class="pre">list</span></code> and may be sorted, grouped, or filtered by
+<a class="reference internal" href="#operators"><span class="std std-ref">Operators</span></a>.</p>
 <section id="overview">
 <h3>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h3>
 <table class="docutils align-default">
@@ -182,94 +183,148 @@ which may be sorted, grouped, or filtered by <em>Operators</em>.</p>
 </tr>
 </tbody>
 </table>
-<p>Selector methods take <a class="hxr-hoverxref hxr-tooltip reference internal" href="builder_api_reference.html#build_enums.Select" title="build_enums.Select"><code class="xref py py-class docutils literal notranslate"><span class="pre">Select</span></code></a> as criteria to specify a subset of
-the feature to extract. By default a selector will select <code class="docutils literal notranslate"><span class="pre">ALL</span></code> of a feature, while
-<code class="docutils literal notranslate"><span class="pre">LAST</span></code> excludes features unchanged by the most recent operation. <a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Shape.edges" title="topology.Shape.edges"><code class="xref py py-meth docutils literal notranslate"><span class="pre">edges()</span></code></a> can uniquely
-specify <code class="docutils literal notranslate"><span class="pre">NEW</span></code> to only select edges created in the last operation which neither existed
-in the referenced object before the last operation, nor the modifying object.</p>
+<p>Both shape objects and builder objects have access to selector methods to select all of
+a feature as long as they can contain the feature being selected.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># In context</span>
+<span class="k">with</span> <span class="n">BuildSketch</span><span class="p">()</span> <span class="k">as</span> <span class="n">context</span><span class="p">:</span>
+    <span class="n">Rectangle</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">context</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span>
+
+    <span class="c1"># Build context implicitly has access to the selector</span>
+    <span class="n">edges</span><span class="p">()</span>
+
+<span class="c1"># Taking the sketch out of context</span>
+<span class="n">context</span><span class="o">.</span><span class="n">sketch</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span>
+
+<span class="c1"># Create sketch out of context</span>
+<span class="n">Rectangle</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span>
+</pre></div>
+</div>
 </section>
-<section id="use">
-<h3>Use<a class="headerlink" href="#use" title="Link to this heading"></a></h3>
-<p>Create a simple part to demonstrate selectors. Select using the default criteria <code class="docutils literal notranslate"><span class="pre">Select.ALL</span></code>.</p>
+<section id="select-in-build-objects">
+<h3>Select In Build Objects<a class="headerlink" href="#select-in-build-objects" title="Link to this heading"></a></h3>
+<p>Build objects track the last operation and their selector methods can take
+<a class="hxr-hoverxref hxr-tooltip reference internal" href="builder_api_reference.html#build_enums.Select" title="build_enums.Select"><code class="xref py py-class docutils literal notranslate"><span class="pre">Select</span></code></a> as criteria to specify a subset of
+features to extract. By default, a selector will select <code class="docutils literal notranslate"><span class="pre">ALL</span></code> of a feature, while
+<code class="docutils literal notranslate"><span class="pre">LAST</span></code> selects features created or altered by the most recent operation. <a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Shape.edges" title="topology.Shape.edges"><code class="xref py py-meth docutils literal notranslate"><span class="pre">edges()</span></code></a> can
+uniquely specify <code class="docutils literal notranslate"><span class="pre">NEW</span></code> to only select edges created in the last operation which neither
+existed in the referenced object before the last operation, nor the modifying object.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><a class="hxr-hoverxref hxr-tooltip reference internal" href="builder_api_reference.html#build_enums.Select" title="build_enums.Select"><code class="xref py py-class docutils literal notranslate"><span class="pre">Select</span></code></a> as selector criteria is only valid for builder objects!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># In context</span>
+<span class="k">with</span> <span class="n">BuildPart</span><span class="p">()</span> <span class="k">as</span> <span class="n">context</span><span class="p">:</span>
+    <span class="n">Box</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">Cylinder</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">context</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">Select</span><span class="o">.</span><span class="n">LAST</span><span class="p">)</span>
+
+<span class="c1"># Does not work out of context!</span>
+<span class="n">context</span><span class="o">.</span><span class="n">part</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">Select</span><span class="o">.</span><span class="n">LAST</span><span class="p">)</span>
+<span class="p">(</span><span class="n">Box</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">Cylinder</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">Select</span><span class="o">.</span><span class="n">LAST</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Create a simple part to demonstrate selectors. Select using the default criteria
+<code class="docutils literal notranslate"><span class="pre">Select.ALL</span></code>. Specifying <code class="docutils literal notranslate"><span class="pre">Select.ALL</span></code> for the selector is not required.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">BuildPart</span><span class="p">()</span> <span class="k">as</span> <span class="n">part</span><span class="p">:</span>
     <span class="n">Box</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
     <span class="n">Cylinder</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 
-<span class="n">part</span><span class="o">.</span><span class="n">vertices</span><span class="p">()</span>
-<span class="n">part</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span>
-<span class="n">part</span><span class="o">.</span><span class="n">faces</span><span class="p">()</span>
-</pre></div>
-</div>
-<figure class="align-center" id="id4">
-<img alt="_images/selectors_select_all.png" src="_images/selectors_select_all.png" />
-<figcaption>
-<p><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">Select.ALL</span></code> (default) features</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
-</figcaption>
-</figure>
-<p>Select features changed in the last operation with criteria <code class="docutils literal notranslate"><span class="pre">Select.LAST</span></code>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">part</span><span class="o">.</span><span class="n">vertices</span><span class="p">(</span><span class="n">Select</span><span class="o">.</span><span class="n">LAST</span><span class="p">)</span>
-<span class="n">part</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">Select</span><span class="o">.</span><span class="n">LAST</span><span class="p">)</span>
-<span class="n">part</span><span class="o">.</span><span class="n">faces</span><span class="p">(</span><span class="n">Select</span><span class="o">.</span><span class="n">LAST</span><span class="p">)</span>
-</pre></div>
-</div>
-<figure class="align-center" id="id5">
-<img alt="_images/selectors_select_last.png" src="_images/selectors_select_last.png" />
-<figcaption>
-<p><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">Select.LAST</span></code> features</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
-</figcaption>
-</figure>
-<p>Select only new edges from the last operation with <code class="docutils literal notranslate"><span class="pre">Select.NEW</span></code>. Only a <code class="docutils literal notranslate"><span class="pre">ShapeList</span></code>
-of edges has this option!</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">part</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">Select</span><span class="o">.</span><span class="n">NEW</span><span class="p">)</span>
+    <span class="n">part</span><span class="o">.</span><span class="n">vertices</span><span class="p">()</span>
+    <span class="n">part</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span>
+    <span class="n">part</span><span class="o">.</span><span class="n">faces</span><span class="p">()</span>
+
+    <span class="c1"># Is the same as</span>
+    <span class="n">part</span><span class="o">.</span><span class="n">vertices</span><span class="p">(</span><span class="n">Select</span><span class="o">.</span><span class="n">ALL</span><span class="p">)</span>
+    <span class="n">part</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">Select</span><span class="o">.</span><span class="n">ALL</span><span class="p">)</span>
+    <span class="n">part</span><span class="o">.</span><span class="n">faces</span><span class="p">(</span><span class="n">Select</span><span class="o">.</span><span class="n">ALL</span><span class="p">)</span>
 </pre></div>
 </div>
 <figure class="align-center" id="id6">
-<img alt="_images/selectors_select_new.png" src="_images/selectors_select_new.png" />
+<img alt="_images/selectors_select_all.png" src="_images/selectors_select_all.png" />
 <figcaption>
-<p><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">Select.NEW</span></code> edges where box and cylinder intersect</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+<p><span class="caption-text">The default <code class="docutils literal notranslate"><span class="pre">Select.ALL</span></code> features</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<p>This only returns the edges created where the Box and Cylinder <cite>intersect</cite>. But what
-happens if the objects don’t intersect?</p>
+<p>Select features changed in the last operation with criteria <code class="docutils literal notranslate"><span class="pre">Select.LAST</span></code>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">BuildPart</span><span class="p">()</span> <span class="k">as</span> <span class="n">part</span><span class="p">:</span>
-    <span class="n">Box</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="p">(</span><span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">MIN</span><span class="p">))</span>
-    <span class="n">Cylinder</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="p">(</span><span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">MAX</span><span class="p">))</span>
+    <span class="n">Box</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">Cylinder</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 
-<span class="n">part</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">Select</span><span class="o">.</span><span class="n">NEW</span><span class="p">)</span>
+    <span class="n">part</span><span class="o">.</span><span class="n">vertices</span><span class="p">(</span><span class="n">Select</span><span class="o">.</span><span class="n">LAST</span><span class="p">)</span>
+    <span class="n">part</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">Select</span><span class="o">.</span><span class="n">LAST</span><span class="p">)</span>
+    <span class="n">part</span><span class="o">.</span><span class="n">faces</span><span class="p">(</span><span class="n">Select</span><span class="o">.</span><span class="n">LAST</span><span class="p">)</span>
 </pre></div>
 </div>
 <figure class="align-center" id="id7">
-<img alt="_images/selectors_select_new_none.png" src="_images/selectors_select_new_none.png" />
+<img alt="_images/selectors_select_last.png" src="_images/selectors_select_last.png" />
 <figcaption>
-<p><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">Select.NEW</span></code> edges when box and cylinder don’t intersect</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+<p><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">Select.LAST</span></code> features</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<p>No edges are selected! Unlike the previous example, the Edge between the Box and Cylinder
-objects already existed as all or part of an Edge in Cylinder. It’s best to think of
-<code class="docutils literal notranslate"><span class="pre">Select.NEW</span></code> as a way to select only completely new edges created by the operation.</p>
-<p>Similarly, note that while chamfer and fillet only modify the current object without a
-new object, they do not have new edges</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">edges</span> <span class="o">=</span> <span class="n">part</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="n">a</span><span class="o">.</span><span class="n">length</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">fillet</span><span class="p">(</span><span class="n">edges</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">part</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">Select</span><span class="o">.</span><span class="n">NEW</span><span class="p">)</span>
+<p>Select only new edges from the last operation with <code class="docutils literal notranslate"><span class="pre">Select.NEW</span></code>. This option is only
+available for a <code class="docutils literal notranslate"><span class="pre">ShapeList</span></code> of edges!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">BuildPart</span><span class="p">()</span> <span class="k">as</span> <span class="n">part</span><span class="p">:</span>
+    <span class="n">Box</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">Cylinder</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+
+    <span class="n">part</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">Select</span><span class="o">.</span><span class="n">NEW</span><span class="p">)</span>
 </pre></div>
 </div>
 <figure class="align-center" id="id8">
-<img alt="_images/selectors_select_new_fillet.png" src="_images/selectors_select_new_fillet.png" />
+<img alt="_images/selectors_select_new.png" src="_images/selectors_select_new.png" />
 <figcaption>
-<p><span class="caption-text">Left, <code class="docutils literal notranslate"><span class="pre">Select.NEW</span></code> returns no edges after fillet. Right, <code class="docutils literal notranslate"><span class="pre">Select.LAST</span></code></span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+<p><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">Select.NEW</span></code> edges where box and cylinder intersect</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
 </figcaption>
 </figure>
+<p>This only returns new edges which are not reused from Box or Cylinder, in this case where
+the objects <cite>intersect</cite>. But what happens if the objects don’t intersect and all the
+edges are reused?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">BuildPart</span><span class="p">()</span> <span class="k">as</span> <span class="n">part</span><span class="p">:</span>
+    <span class="n">Box</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="p">(</span><span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">MAX</span><span class="p">))</span>
+    <span class="n">Cylinder</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="p">(</span><span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">CENTER</span><span class="p">,</span> <span class="n">Align</span><span class="o">.</span><span class="n">MIN</span><span class="p">))</span>
+
+    <span class="n">part</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">Select</span><span class="o">.</span><span class="n">NEW</span><span class="p">)</span>
+</pre></div>
+</div>
+<figure class="align-center" id="id9">
+<img alt="_images/selectors_select_new_none.png" src="_images/selectors_select_new_none.png" />
+<figcaption>
+<p><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">Select.NEW</span></code> edges when box and cylinder don’t intersect</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>No edges are selected! Unlike the previous example, the Edge between the Box and Cylinder
+objects is an edge reused from the Cylinder. Think of <code class="docutils literal notranslate"><span class="pre">Select.NEW</span></code> as a way to select
+only completely new edges created by the operation.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Chamfer and fillet modify the current object, but do not have new edges.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">BuildPart</span><span class="p">()</span> <span class="k">as</span> <span class="n">part</span><span class="p">:</span>
+    <span class="n">Box</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">Cylinder</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+    <span class="n">edges</span> <span class="o">=</span> <span class="n">part</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="n">a</span><span class="o">.</span><span class="n">length</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">fillet</span><span class="p">(</span><span class="n">edges</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">part</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">Select</span><span class="o">.</span><span class="n">NEW</span><span class="p">)</span>
+</pre></div>
+</div>
+<figure class="align-center" id="id10">
+<img alt="_images/selectors_select_new_fillet.png" src="_images/selectors_select_new_fillet.png" />
+<figcaption>
+<p><span class="caption-text">Left, <code class="docutils literal notranslate"><span class="pre">Select.NEW</span></code> returns no edges after fillet. Right, <code class="docutils literal notranslate"><span class="pre">Select.LAST</span></code></span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</div>
 </section>
 </section>
 <section id="operators">
-<h2>Operators<a class="headerlink" href="#operators" title="Link to this heading"></a></h2>
-<p>Operators offer methods refine a <code class="docutils literal notranslate"><span class="pre">ShapeList</span></code> of features isolated by a <em>selector</em> to
+<span id="id2"></span><h2>Operators<a class="headerlink" href="#operators" title="Link to this heading"></a></h2>
+<p>Operators provide methods refine a <code class="docutils literal notranslate"><span class="pre">ShapeList</span></code> of features isolated by a <em>selector</em> to
 further specify feature(s). These methods can sort, group, or filter <code class="docutils literal notranslate"><span class="pre">ShapeList</span></code>
-objects and return a modified <code class="docutils literal notranslate"><span class="pre">ShapeList</span></code>, or in the case of <a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.ShapeList.group_by" title="topology.ShapeList.group_by"><code class="xref py py-meth docutils literal notranslate"><span class="pre">group_by()</span></code></a>, a list of
-ShapeLists.</p>
-<section id="id1">
-<h3>Overview<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+objects and return a modified <code class="docutils literal notranslate"><span class="pre">ShapeList</span></code>, or in the case of <a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.ShapeList.group_by" title="topology.ShapeList.group_by"><code class="xref py py-meth docutils literal notranslate"><span class="pre">group_by()</span></code></a>, <code class="docutils literal notranslate"><span class="pre">GroupBy</span></code>,
+a list of <code class="docutils literal notranslate"><span class="pre">ShapeList</span></code> objects accessible by index or key.</p>
+<section id="id3">
+<h3>Overview<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Method</p></th>
@@ -291,7 +346,7 @@ ShapeLists.</p>
 <td><p>Group <code class="docutils literal notranslate"><span class="pre">ShapeList</span></code> by criteria</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.ShapeList.filter_by" title="topology.ShapeList.filter_by"><code class="xref py py-meth docutils literal notranslate"><span class="pre">filter_by()</span></code></a></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">Axis</span></code>, <code class="docutils literal notranslate"><span class="pre">Plane</span></code>, <code class="docutils literal notranslate"><span class="pre">`GeomType</span></code>, <code class="docutils literal notranslate"><span class="pre">ShapePredicate</span></code>, property</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Axis</span></code>, <code class="docutils literal notranslate"><span class="pre">Plane</span></code>, <code class="docutils literal notranslate"><span class="pre">GeomType</span></code>, <code class="docutils literal notranslate"><span class="pre">ShapePredicate</span></code>, property</p></td>
 <td><p>Filter <code class="docutils literal notranslate"><span class="pre">ShapeList</span></code> by criteria</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.ShapeList.filter_by_position" title="topology.ShapeList.filter_by_position"><code class="xref py py-meth docutils literal notranslate"><span class="pre">filter_by_position()</span></code></a></p></td>
@@ -300,20 +355,20 @@ ShapeLists.</p>
 </tr>
 </tbody>
 </table>
-<p>Operator methods take a criteria to refine ShapeList. Broadly speaking, the criteria
+<p>Operator methods take criteria to refine <code class="docutils literal notranslate"><span class="pre">ShapeList</span></code>. Broadly speaking, the criteria
 fall into the following categories, though not all operators take all criteria:</p>
 <ul class="simple">
 <li><p>Geometric objects: <code class="docutils literal notranslate"><span class="pre">Axis</span></code>, <code class="docutils literal notranslate"><span class="pre">Plane</span></code></p></li>
 <li><p>Topological objects: <code class="docutils literal notranslate"><span class="pre">Edge</span></code>, <code class="docutils literal notranslate"><span class="pre">Wire</span></code></p></li>
 <li><p>Enums: <a class="hxr-hoverxref hxr-tooltip reference internal" href="builder_api_reference.html#build_enums.SortBy" title="build_enums.SortBy"><code class="xref py py-class docutils literal notranslate"><span class="pre">SortBy</span></code></a>, <a class="hxr-hoverxref hxr-tooltip reference internal" href="builder_api_reference.html#build_enums.GeomType" title="build_enums.GeomType"><code class="xref py py-class docutils literal notranslate"><span class="pre">GeomType</span></code></a></p></li>
 <li><p>Properties, eg: <code class="docutils literal notranslate"><span class="pre">Face.area</span></code>, <code class="docutils literal notranslate"><span class="pre">Edge.length</span></code></p></li>
-<li><p>ShapePredicate, eg: <code class="docutils literal notranslate"><span class="pre">lambda</span> <span class="pre">e:</span> <span class="pre">e.is_interior</span> <span class="pre">==</span> <span class="pre">1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ShapePredicate</span></code>, eg: <code class="docutils literal notranslate"><span class="pre">lambda</span> <span class="pre">e:</span> <span class="pre">e.is_interior</span> <span class="pre">==</span> <span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">lambda</span> <span class="pre">f:</span> <span class="pre">lf.edges()</span> <span class="pre">&gt;=</span> <span class="pre">3</span></code></p></li>
 <li><p>Callable eg: <code class="docutils literal notranslate"><span class="pre">Vertex().distance</span></code></p></li>
 </ul>
 </section>
 <section id="sort">
 <h3>Sort<a class="headerlink" href="#sort" title="Link to this heading"></a></h3>
-<p>A ShapeList can be sorted with the <a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.ShapeList.sort_by" title="topology.ShapeList.sort_by"><code class="xref py py-meth docutils literal notranslate"><span class="pre">sort_by()</span></code></a>, <a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.ShapeList.sort_by_distance" title="topology.ShapeList.sort_by_distance"><code class="xref py py-meth docutils literal notranslate"><span class="pre">sort_by_distance()</span></code></a>, or <code class="docutils literal notranslate"><span class="pre">list.sorted</span></code>
+<p>A <code class="docutils literal notranslate"><span class="pre">ShapeList</span></code> can be sorted with the <a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.ShapeList.sort_by" title="topology.ShapeList.sort_by"><code class="xref py py-meth docutils literal notranslate"><span class="pre">sort_by()</span></code></a> and <a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.ShapeList.sort_by_distance" title="topology.ShapeList.sort_by_distance"><code class="xref py py-meth docutils literal notranslate"><span class="pre">sort_by_distance()</span></code></a>
 methods based on a sorting criteria. Sorting is a critical step when isolating individual
 features as a <code class="docutils literal notranslate"><span class="pre">ShapeList</span></code> from a selector is typically unordered.</p>
 <p>Here we want to capture some vertices from the object furthest along <code class="docutils literal notranslate"><span class="pre">X</span></code>: All the
@@ -321,7 +376,7 @@ vertices are first captured with the <code class="xref py py-meth docutils liter
 Finally, the vertices can be captured with a list slice for the last 4 list items, as the
 items are sorted from least to greatest <code class="docutils literal notranslate"><span class="pre">X</span></code> position. Remember, <code class="docutils literal notranslate"><span class="pre">ShapeList</span></code> is a
 subclass of <code class="docutils literal notranslate"><span class="pre">list</span></code>, so any list slice can be used.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">part</span><span class="o">.</span><span class="n">faces</span><span class="p">()</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="n">Axis</span><span class="o">.</span><span class="n">X</span><span class="p">)[</span><span class="o">-</span><span class="mi">4</span><span class="p">:]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">part</span><span class="o">.</span><span class="n">vertices</span><span class="p">()</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="n">Axis</span><span class="o">.</span><span class="n">X</span><span class="p">)[</span><span class="o">-</span><span class="mi">4</span><span class="p">:]</span>
 </pre></div>
 </div>
 <figure class="align-center">
@@ -335,7 +390,7 @@ subclass of <code class="docutils literal notranslate"><span class="pre">list</s
 <div class="toctree-wrapper compound">
 </div>
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
-<div class="sd-row sd-row-cols-3 sd-row-cols-xs-3 sd-row-cols-sm-3 sd-row-cols-md-3 sd-row-cols-lg-3 docutils">
+<div class="sd-row sd-row-cols-3 sd-row-cols-xs-3 sd-row-cols-sm-3 sd-row-cols-md-3 sd-row-cols-lg-3 sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
 <div class="sd-col sd-d-flex-row docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
 <img alt="" class="sd-card-img-top" src="_images/thumb_sort_sortby.png" />
@@ -356,6 +411,15 @@ Along Wire</div>
 </div>
 <div class="sd-col sd-d-flex-row docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<img alt="" class="sd-card-img-top" src="_images/thumb_sort_axis.png" />
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Axis</div>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="selectors_operators/sort_examples.html#sort-axis"><span class="std std-ref">Axis</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
 <img alt="" class="sd-card-img-top" src="_images/thumb_sort_distance.png" />
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
@@ -372,14 +436,14 @@ Distance From</div>
 <p>A ShapeList can be grouped and sorted with the <a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.ShapeList.group_by" title="topology.ShapeList.group_by"><code class="xref py py-meth docutils literal notranslate"><span class="pre">group_by()</span></code></a> method based on a grouping
 criteria. Grouping can be a great way to organize features without knowing the values of
 specific feature properties. Rather than returning a <code class="docutils literal notranslate"><span class="pre">Shapelist</span></code>, <a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.ShapeList.group_by" title="topology.ShapeList.group_by"><code class="xref py py-meth docutils literal notranslate"><span class="pre">group_by()</span></code></a> returns
-a <code class="docutils literal notranslate"><span class="pre">GroupBy</span></code> which can be indexed to get a <code class="docutils literal notranslate"><span class="pre">Shapelist</span></code> for further operations.
+a <code class="docutils literal notranslate"><span class="pre">GroupBy</span></code> which can be indexed to retrieve a <code class="docutils literal notranslate"><span class="pre">Shapelist</span></code> for further operations.
 <code class="docutils literal notranslate"><span class="pre">GroupBy</span></code> groups can also be accessed using a key with the <code class="docutils literal notranslate"><span class="pre">group</span></code> method. If the
 keys are unknown they can be discovered with <code class="docutils literal notranslate"><span class="pre">key_to_group_index</span></code>.</p>
 <p>If we want only the edges from the smallest faces by area we can get the faces, then
 group by <code class="docutils literal notranslate"><span class="pre">SortBy.AREA</span></code>. The <code class="docutils literal notranslate"><span class="pre">ShapeList</span></code> of smallest faces is available from the first
 list index. Finally, a <code class="docutils literal notranslate"><span class="pre">ShapeList</span></code> has access to selectors, so calling <a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.Shape.edges" title="topology.Shape.edges"><code class="xref py py-meth docutils literal notranslate"><span class="pre">edges()</span></code></a> will
 return a new list of all edges in the previous list.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">part</span><span class="o">.</span><span class="n">faces</span><span class="p">()</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="n">SortBy</span><span class="o">.</span><span class="n">AREA</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">part</span><span class="o">.</span><span class="n">faces</span><span class="p">()</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="n">SortBy</span><span class="o">.</span><span class="n">AREA</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">edges</span><span class="p">())</span>
 </pre></div>
 </div>
 <figure class="align-center">
@@ -388,12 +452,12 @@ return a new list of all edges in the previous list.</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<section id="id2">
-<h4>Examples<a class="headerlink" href="#id2" title="Link to this heading"></a></h4>
+<section id="id4">
+<h4>Examples<a class="headerlink" href="#id4" title="Link to this heading"></a></h4>
 <div class="toctree-wrapper compound">
 </div>
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
-<div class="sd-row sd-row-cols-3 sd-row-cols-xs-3 sd-row-cols-sm-3 sd-row-cols-md-3 sd-row-cols-lg-3 docutils">
+<div class="sd-row sd-row-cols-3 sd-row-cols-xs-3 sd-row-cols-sm-3 sd-row-cols-md-3 sd-row-cols-lg-3 sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
 <div class="sd-col sd-d-flex-row docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
 <img alt="" class="sd-card-img-top" src="_images/thumb_group_axis.png" />
@@ -402,6 +466,15 @@ return a new list of all edges in the previous list.</p>
 Axis and Length</div>
 </div>
 <a class="sd-stretched-link sd-hide-link-text reference internal" href="selectors_operators/group_examples.html#group-axis"><span class="std std-ref">Axis and Length</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<img alt="" class="sd-card-img-top" src="_images/thumb_group_hole_area.png" />
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Hole Area</div>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="selectors_operators/group_examples.html#group-hole-area"><span class="std std-ref">Hole Area</span></a></div>
 </div>
 <div class="sd-col sd-d-flex-row docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
@@ -418,9 +491,9 @@ Properties with Keys</div>
 </section>
 <section id="filter">
 <h3>Filter<a class="headerlink" href="#filter" title="Link to this heading"></a></h3>
-<p>A ShapeList can be filtered with the <a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.ShapeList.filter_by" title="topology.ShapeList.filter_by"><code class="xref py py-meth docutils literal notranslate"><span class="pre">filter_by()</span></code></a>, <a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.ShapeList.filter_by_position" title="topology.ShapeList.filter_by_position"><code class="xref py py-meth docutils literal notranslate"><span class="pre">filter_by_position()</span></code></a>, or
-<code class="docutils literal notranslate"><span class="pre">list.filter</span></code> methods based on a filtering criteria. Filters are flexible way to isolate
-(or exclude) features based on known criteria.</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">ShapeList</span></code> can be filtered with the <a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.ShapeList.filter_by" title="topology.ShapeList.filter_by"><code class="xref py py-meth docutils literal notranslate"><span class="pre">filter_by()</span></code></a> and <a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.ShapeList.filter_by_position" title="topology.ShapeList.filter_by_position"><code class="xref py py-meth docutils literal notranslate"><span class="pre">filter_by_position()</span></code></a> methods based
+on a filtering criteria. Filters are flexible way to isolate (or exclude) features based
+on known criteria.</p>
 <p>Lets say we need all the faces with a normal in the <code class="docutils literal notranslate"><span class="pre">+Z</span></code> direction. One way to do this
 might be with a list comprehension, however <a class="hxr-hoverxref hxr-tooltip reference internal" href="direct_api_reference.html#topology.ShapeList.filter_by" title="topology.ShapeList.filter_by"><code class="xref py py-meth docutils literal notranslate"><span class="pre">filter_by()</span></code></a> has the capability to take a
 lambda function as a filter condition on the entire list. In this case, the normal of
@@ -434,12 +507,12 @@ each face can be checked against a vector direction and filtered accordingly.</p
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<section id="id3">
-<h4>Examples<a class="headerlink" href="#id3" title="Link to this heading"></a></h4>
+<section id="id5">
+<h4>Examples<a class="headerlink" href="#id5" title="Link to this heading"></a></h4>
 <div class="toctree-wrapper compound">
 </div>
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
-<div class="sd-row sd-row-cols-3 sd-row-cols-xs-3 sd-row-cols-sm-3 sd-row-cols-md-3 sd-row-cols-lg-3 docutils">
+<div class="sd-row sd-row-cols-3 sd-row-cols-xs-3 sd-row-cols-sm-3 sd-row-cols-md-3 sd-row-cols-lg-3 sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
 <div class="sd-col sd-d-flex-row docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
 <img alt="" class="sd-card-img-top" src="_images/thumb_filter_geomtype.png" />
@@ -451,12 +524,39 @@ GeomType</div>
 </div>
 <div class="sd-col sd-d-flex-row docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<img alt="" class="sd-card-img-top" src="_images/thumb_filter_all_edges_circle.png" />
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+All Edges Circle</div>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="selectors_operators/filter_examples.html#filter-all-edges-circle"><span class="std std-ref">All Edges Circle</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
 <img alt="" class="sd-card-img-top" src="_images/thumb_filter_axisplane.png" />
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
 Axis and Plane</div>
 </div>
 <a class="sd-stretched-link sd-hide-link-text reference internal" href="selectors_operators/filter_examples.html#filter-axis-plane"><span class="std std-ref">Axis and Plane</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<img alt="" class="sd-card-img-top" src="_images/thumb_filter_inner_wire_count.png" />
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Inner Wire Count</div>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="selectors_operators/filter_examples.html#filter-inner-wire-count"><span class="std std-ref">Inner Wire Count</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<img alt="" class="sd-card-img-top" src="_images/thumb_filter_nested.png" />
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Nested Filters</div>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="selectors_operators/filter_examples.html#filter-nested"><span class="std std-ref">Nested Filters</span></a></div>
 </div>
 <div class="sd-col sd-d-flex-row docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
